@@ -6,7 +6,7 @@ except ImportError:
 def calculate_kinematics_epsilon_squared(
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float, 
-    verbose = True) -> float:
+    verbose: bool = True) -> float:
     """
     Description
     --------------
