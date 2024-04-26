@@ -18,3 +18,19 @@ $$f = f(\lambda, \Lambda; Q^{2}, x_{\text{B}}, k, \phi; \epsilon, y, \xi, t_{\te
 Regarding the set of CFFs, $\{ \mathcal{F} \}$, so far it comes in the "chronology" of
 
 $$\mathcal{H}, \tilde{\mathcal{H}}, \mathcal{E}, \tilde{\mathcal{E}}$$. 
+
+### Bethe-Heitler Contribuition:
+
+For the polarized target, we have two contributions:
+
+$$c_{0}^{\text{BH}}, c_{1}^{\text{BH}}$$.  
+
+### DVCS Contribution:
+
+For the polarized target, we have four contributions:
+
+$$ c_{0,\text{LP}}^{\text{DVCS}}, c_{1,\text{LP}}^{\text{DVCS}}, s_{1,\text{LP}}^{\text{DVCS}}$$
+
+and
+
+$$\mathcal{C}_{\text{LP}}^{DVCS}$$.
