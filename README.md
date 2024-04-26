@@ -21,11 +21,19 @@ $$\mathcal{H}, \tilde{\mathcal{H}}, \mathcal{E}, \tilde{\mathcal{E}}.$$
 
 ### Bethe-Heitler Contribuition:
 
+#### Unpolarized Target:
+
+#### Longitudinally-Polarized Target:
+
 For the polarized target, we have two contributions:
 
 $$c_{0}^{\text{BH}}, c_{1}^{\text{BH}}.$$
 
 ### DVCS Contribution:
+
+#### Unpolarized Target:
+
+#### Longitudinally-Polarized Target:
 
 For the polarized target, we have four contributions:
 
@@ -33,32 +41,65 @@ $$c_{0,\text{LP}}^{\text{DVCS}}, c_{1,\text{LP}}^{\text{DVCS}}, s_{1,\text{LP}}^
 
 ### Interference Contribution:
 
+#### Unpolarized Target:
+
+#### Longitudinally-Polarized Target:
+
 For the polarized target, we have too many goddamn contributions. We will break them up like so:
 
-#### C-Modes
+##### C-Modes:
 
-##### Helicity-Preserving
+###### Helicity-Preserving:
 
-$$C_{++}^{\text{LP}}(n = 0), C_{++}^{\text{LP}, V}(n = 0), C_{++}^{\text{LP}, A}(n = 0).$$
-$$C_{++}^{\text{LP}}(n = 1), C_{++}^{\text{LP}, V}(n = 1), C_{++}^{\text{LP}, A}(n = 1).$$
-$$C_{++}^{\text{LP}}(n = 2), C_{++}^{\text{LP}, V}(n = 2), C_{++}^{\text{LP}, A}(n = 2).$$
+$$C_{++}^{\text{LP}}(n = 0)$$
+$$C_{++}^{\text{LP}, V}(n = 0)$$
+$$C_{++}^{\text{LP}, A}(n = 0)$$
+$$C_{++}^{\text{LP}}(n = 1)$$
+$$C_{++}^{\text{LP}, V}(n = 1)$$
+$$C_{++}^{\text{LP}, A}(n = 1).$$$$
+$$C_{++}^{\text{LP}}(n = 2)$$
+$$C_{++}^{\text{LP}, V}(n = 2)$$
+$$C_{++}^{\text{LP}, A}(n = 2)$$
 
-##### Helicity Flip by One Unit
+###### Helicity Flip by One Unit
 
-$$C_{++}^{\text{LP}}(n = 0), C_{++}^{\text{LP}, V}(n = 0), C_{++}^{\text{LP}, A}(n = 0).$$
-$$C_{++}^{\text{LP}}(n = 1), C_{++}^{\text{LP}, V}(n = 1), C_{++}^{\text{LP}, A}(n = 1).$$
-$$C_{++}^{\text{LP}}(n = 2), C_{++}^{\text{LP}, V}(n = 2), C_{++}^{\text{LP}, A}(n = 2).$$
+$$C_{0+}^{\text{LP}}(n = 0)$$
+$$C_{0+}^{\text{LP}, V}(n = 0)$$
+$$C_{0+}^{\text{LP}, A}(n = 0)$$
+$$C_{0+}^{\text{LP}}(n = 1)$$
+$$C_{0+}^{\text{LP}, V}(n = 1)$$
+$$C_{0+}^{\text{LP}}(n = 2)$$
+$$C_{0+}^{\text{LP}, V}(n = 2)$$
+$$C_{0+}^{\text{LP}, A}(n = 2)$$
 
-##### Helicity Flip by Two Units
+###### Helicity Flip by Two Units
 
-#### S-Modes
+Not done yet.
 
-##### Helicity-Preserving
+##### S-Modes
 
-$$S_{++}^{\text{LP}}(n = 1), S_{++}^{\text{LP}, V}(n = 1), S_{++}^{\text{LP}, A}(n = 1).$$
-$$S_{++}^{\text{LP}}(n = 2), C_{++}^{\text{LP}, V}(n = 2), C_{++}^{\text{LP}, A}(n = 2).$$
-$$S_{++}^{\text{LP}}(n = 3), S_{++}^{\text{LP}, V}(n = 3), S_{++}^{\text{LP}, A}(n = 3).$$
+###### Helicity-Preserving
 
-##### Helicity Flip by One Unit
+$$S_{++}^{\text{LP}}(n = 1)$$
+$$S_{++}^{\text{LP}, V}(n = 1)$$
+$$S_{++}^{\text{LP}, A}(n = 1)$$
+$$S_{++}^{\text{LP}}(n = 2)$$
+$$C_{++}^{\text{LP}, V}(n = 2)$$
+$$C_{++}^{\text{LP}, A}(n = 2)$$
+$$S_{++}^{\text{LP}}(n = 3)$$
+$$S_{++}^{\text{LP}, V}(n = 3)$$
+$$S_{++}^{\text{LP}, A}(n = 3)$$
 
-##### Helicity Flip by Two Units
+###### Helicity Flip by One Unit
+
+$$S_{0+}^{\text{LP}}(n = 1)$$
+$$S_{0+}^{\text{LP}, V}(n = 1)$$
+$$S_{0+}^{\text{LP}}(n = 2)$$
+$$S_{0+}^{\text{LP}}(n = 2)$$
+$$S_{0+}^{\text{LP}, V}(n = 2)$$
+$$S_{0+}^{\text{LP}, A}(n = 2)$$
+
+
+###### Helicity Flip by Two Units
+
+Not done yet.
