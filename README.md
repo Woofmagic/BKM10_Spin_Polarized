@@ -52,24 +52,39 @@ For the polarized target, we have too many goddamn contributions. We will break 
 ###### Helicity-Preserving:
 
 $$C_{++}^{\text{LP}}(n = 0)$$
+
 $$C_{++}^{\text{LP}, V}(n = 0)$$
+
 $$C_{++}^{\text{LP}, A}(n = 0)$$
+
 $$C_{++}^{\text{LP}}(n = 1)$$
+
 $$C_{++}^{\text{LP}, V}(n = 1)$$
-$$C_{++}^{\text{LP}, A}(n = 1).$$$$
+
+$$C_{++}^{\text{LP}, A}(n = 1)$$
+
 $$C_{++}^{\text{LP}}(n = 2)$$
+
 $$C_{++}^{\text{LP}, V}(n = 2)$$
+
 $$C_{++}^{\text{LP}, A}(n = 2)$$
 
 ###### Helicity Flip by One Unit
 
 $$C_{0+}^{\text{LP}}(n = 0)$$
+
 $$C_{0+}^{\text{LP}, V}(n = 0)$$
+
 $$C_{0+}^{\text{LP}, A}(n = 0)$$
+
 $$C_{0+}^{\text{LP}}(n = 1)$$
+
 $$C_{0+}^{\text{LP}, V}(n = 1)$$
+
 $$C_{0+}^{\text{LP}}(n = 2)$$
+
 $$C_{0+}^{\text{LP}, V}(n = 2)$$
+
 $$C_{0+}^{\text{LP}, A}(n = 2)$$
 
 ###### Helicity Flip by Two Units
@@ -81,22 +96,35 @@ Not done yet.
 ###### Helicity-Preserving
 
 $$S_{++}^{\text{LP}}(n = 1)$$
+
 $$S_{++}^{\text{LP}, V}(n = 1)$$
+
 $$S_{++}^{\text{LP}, A}(n = 1)$$
+
 $$S_{++}^{\text{LP}}(n = 2)$$
+
 $$C_{++}^{\text{LP}, V}(n = 2)$$
+
 $$C_{++}^{\text{LP}, A}(n = 2)$$
+
 $$S_{++}^{\text{LP}}(n = 3)$$
+
 $$S_{++}^{\text{LP}, V}(n = 3)$$
+
 $$S_{++}^{\text{LP}, A}(n = 3)$$
 
 ###### Helicity Flip by One Unit
 
 $$S_{0+}^{\text{LP}}(n = 1)$$
+
 $$S_{0+}^{\text{LP}, V}(n = 1)$$
+
 $$S_{0+}^{\text{LP}}(n = 2)$$
+
 $$S_{0+}^{\text{LP}}(n = 2)$$
+
 $$S_{0+}^{\text{LP}, V}(n = 2)$$
+
 $$S_{0+}^{\text{LP}, A}(n = 2)$$
 
 
