@@ -8,11 +8,26 @@ from derived_kinematics.lepton_energy_fraction import calculate_kinematics_lepto
 # Derived Kinematics | Skewness | ξ
 from derived_kinematics.skewness import calculate_kinematics_skewness_parameter
 
-# Derived Kinematics | t_min | t_{min}
+# Derived Kinematics | Minimum t | t_{min}
 from derived_kinematics.t_minimum import calculate_kinematics_t_min
 
-# Derived Kinematics | t' | t'
+# Derived Kinematics | t Prime | t'
 from derived_kinematics.t_prime import calculate_kinematics_t_prime
+
+# Derived Kinematics | K Tilde | Ḱ
+from derived_kinematics.k_tilde import calculate_kinematics_k_tilde
+
+# Derived Kinematics | K | K
+from derived_kinematics.shorthand_K import calculate_kinematics_k
+
+# Derived Kinematics | k dot Delta | k ⋅ Δ 
+from derived_kinematics.shorthand_K import calculate_kinematics_k
+
+# Derived Kinematics | Lepton Propagator P1 | P_{1}(\phi)
+from derived_kinematics.lepton_propagator_p1 import calculate_kinematics_k
+
+# Derived Kinematics | Lepton Propagator P2 | P_{1}(\phi)
+from derived_kinematics.lepton_propagator_p2 import calculate_kinematics_k
 
 def calculate_bkm10_cross_section_longitudinally_polarized(
     lepton_polarization: int,
@@ -74,7 +89,7 @@ def calculate_bkm10_cross_section_longitudinally_polarized(
             squared_hadronic_momentum_transfer_t_minimum,
             verbose)
 
-        # (7): Calculate K:
+        # (7): Calculate K Squared:
         k_shorthand = calculate_kinematics_k(
             squared_Q_momentum_transfer,
             epsilon,

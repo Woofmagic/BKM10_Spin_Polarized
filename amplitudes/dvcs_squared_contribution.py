@@ -3,7 +3,7 @@ try:
 except ImportError:
     print("NumPy is not installed. Please install NumPy to use this script.")
 
-# Import helper modules:
+# Helper Modules | Convert Degrees to Radians
 from statics.mathematics.math_units import convert_degrees_to_radians
 
 # c_{0}^{DVCS}
