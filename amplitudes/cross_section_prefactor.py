@@ -1,0 +1,56 @@
+try:
+    import numpy as np
+except ImportError:
+    print("NumPy is not installed. Please install NumPy to use this script.")
+
+# Statics | EM Coupling
+from statics.couplings.couplings import _ELECTROMAGNETIC_FINE_STRUCTURE_CONSTANT
+
+def calculate_bkm10_cross_section_prefactor(
+    squared_Q_momentum_transfer: float, 
+    x_Bjorken: float, 
+    epsilon: float, 
+    lepton_energy_fraction_y: float, 
+    verbose: bool = True) -> float:
+    """
+    Description
+    --------------
+
+    Parameters
+    --------------
+    squared_Q_momentum_transfer: (float)
+
+    x_Bjorken: (float)
+
+    epsilon: (float)
+
+    lepton_energy_fraction_y: (float)
+
+    verbose: (bool)
+        Debugging console output.
+
+
+    Notes
+    --------------
+    """
+
+    try:
+
+        # (1): Calculate the numerator of the prefactor
+        numerator = _ELECTROMAGNETIC_FINE_STRUCTURE_CONSTANT**3 * lepton_energy_fraction_y**2 * x_Bjorken
+
+        # (2): Calculate the denominator of the prefactor:
+        denominator = 8. * np.pi * squared_Q_momentum_transfer**2 * np.sqrt(1 + epsilon**2)
+
+        # (3): Construct the prefactor:
+        prefactor = numerator / denominator
+
+        if verbose:
+            print(f"> Calculated BKM10 cross-section prefactor to be: {prefactor}")
+
+        # (4): Return the prefactor:
+        return prefactor
+
+    except Exception as ERROR:
+        print(f"> Error calculating BKM10 cross section prefactor:\n> {ERROR}")
+        return 0
