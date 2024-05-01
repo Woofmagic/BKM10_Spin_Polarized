@@ -21,13 +21,25 @@ from derived_kinematics.k_tilde import calculate_kinematics_k_tilde
 from derived_kinematics.shorthand_K import calculate_kinematics_k
 
 # Derived Kinematics | k dot Delta | k ⋅ Δ 
-from derived_kinematics.shorthand_K import calculate_kinematics_k
+from derived_kinematics.k_dot_delta import calculate_k_dot_delta
 
 # Derived Kinematics | Lepton Propagator P1 | P_{1}(\phi)
-from derived_kinematics.lepton_propagator_p1 import calculate_kinematics_k
+from derived_kinematics.lepton_propagator_p1 import calculate_lepton_propagator_p1
 
 # Derived Kinematics | Lepton Propagator P2 | P_{1}(\phi)
-from derived_kinematics.lepton_propagator_p2 import calculate_kinematics_k
+from derived_kinematics.lepton_propagator_p2 import calculate_lepton_propagator_p2
+
+# Form Factors | Electric Form Factor | F_{E}
+from form_factors.electric_form_factor import calculate_form_factor_electric
+
+# Form Factors | Magnetic Form Factor | F_{M}
+from form_factors.magnetic_form_factor import calculate_form_factor_magnetic
+
+# Form Factors | Pauli Form Factor | F_{2}
+from form_factors.pauli_form_factor import calculate_form_factor_pauli_f2
+
+# Form Factors | Dirac Form Factor | F_{1}
+from form_factors.dirac_form_factor import calculate_form_factor_dirac_f1
 
 def calculate_bkm10_cross_section_longitudinally_polarized(
     lepton_polarization: int,
