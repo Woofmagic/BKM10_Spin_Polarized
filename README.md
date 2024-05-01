@@ -33,7 +33,14 @@ $$c_{0,\text{LP}}^{\text{DVCS}}, c_{1,\text{LP}}^{\text{DVCS}}, s_{1,\text{LP}}^
 
 ### Interference Contribution:
 
-For the polarized target, we have too many goddamn contributions. We will break them up like so:
+The interference contribution is annoying.
+
+For the polarized target, we have too many goddamn contributions. It looks like:
+
+$$\mathcal{I} = \pm \frac{1}{x_{B} y^{3} t P_{1}(\phi) P_{2}(\phi)} \left( c_{0}^{I} + c_{1}^{I} cos(\phi) + c_{2}^{I} cos(2 \phi) + c_{3}^{I} cos(3 \phi) + s_{1}^{I} sin(\phi) + s_{2}^{I} sin(2 \phi) + s_{3}^{I} sin(3 \phi) \right)$$
+
+
+We will break them up like so:
 
 #### C-Modes
 
