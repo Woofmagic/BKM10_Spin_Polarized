@@ -6,11 +6,14 @@ except ImportError:
 # Import helper modules:
 from statics.mathematics.math_units import convert_degrees_to_radians
 
-# c_{n}^{DVCS}
+# c_{0}^{DVCS}
 from coefficients.dvcs_coefficients.lp_polarized import calculate_c_0_longitudinally_polarized_dvcs
 
-# s_{n}^{DVCS}
+# c_{1}^{DVCS}
 from coefficients.dvcs_coefficients.lp_polarized import calculate_c_1_longitudinally_polarized_dvcs
+
+# s_{1}^{DVCS}
+from coefficients.dvcs_coefficients.lp_polarized import calculate_s_1_longitudinally_polarized_dvcs
 
 def calculate_dvcs_amplitude_squared_longitudinally_polarized(
     lepton_polarization: int,
