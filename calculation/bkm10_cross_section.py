@@ -12,7 +12,7 @@ from derived_kinematics.skewness import calculate_kinematics_skewness_parameter
 from derived_kinematics.t_minimum import calculate_kinematics_t_min
 
 # Derived Kinematics | t' | t'
-from derived_kinematics.t_minimum import calculate_kinematics_t_min
+from derived_kinematics.t_prime import calculate_kinematics_t_prime
 
 def calculate_bkm10_cross_section_longitudinally_polarized(
     lepton_polarization: int,
