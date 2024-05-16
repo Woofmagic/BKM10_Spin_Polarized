@@ -81,10 +81,14 @@ def calculate_bkm10_cross_section_longitudinally_polarized(
     squared_hadronic_momentum_transfer_t: float,
     lab_kinematics_k: float,
     azimuthal_phi: float,
-    compton_form_factor_h: float,
-    compton_form_factor_h_tilde: float,
-    compton_form_factor_e: float,
-    compton_form_factor_e_tilde: float,
+    compton_form_factor_h_real_part: float,
+    compton_form_factor_h_tilde_real_part: float,
+    compton_form_factor_e_real_part: float,
+    compton_form_factor_e_tilde_real_part: float,
+    compton_form_factor_h_imaginary_part: float,
+    compton_form_factor_h_tilde_imaginary_part: float,
+    compton_form_factor_e_imaginary_part: float,
+    compton_form_factor_e_tilde_imaginary_part: float,
     verbose: bool = True) -> float:
     """
     """
@@ -228,10 +232,10 @@ def calculate_bkm10_cross_section_longitudinally_polarized(
             epsilon,
             lepton_energy_fraction_y,
             k_shorthand,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
+            compton_form_factor_h_real_part,
+            compton_form_factor_h_tilde_real_part,
+            compton_form_factor_e_real_part,
+            compton_form_factor_e_tilde_real_part,
             verbose
         )
 
@@ -253,10 +257,10 @@ def calculate_bkm10_cross_section_longitudinally_polarized(
             lepton_propagator_p2,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
+            compton_form_factor_h_real_part,
+            compton_form_factor_h_tilde_real_part,
+            compton_form_factor_e_real_part,
+            compton_form_factor_e_tilde_real_part,
             verbose
         )
 
