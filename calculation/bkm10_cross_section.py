@@ -128,6 +128,7 @@ def calculate_bkm10_cross_section_longitudinally_polarized(
         k_tilde = calculate_kinematics_k_tilde(
             squared_Q_momentum_transfer,
             x_Bjorken,
+            lepton_energy_fraction_y,
             squared_hadronic_momentum_transfer_t,
             epsilon,
             squared_hadronic_momentum_transfer_t_minimum,
