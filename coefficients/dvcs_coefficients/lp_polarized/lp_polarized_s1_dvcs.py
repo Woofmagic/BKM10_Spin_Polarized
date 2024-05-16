@@ -14,6 +14,7 @@ def calculate_s_1_longitudinally_polarized_dvcs(
     squared_hadronic_momentum_transfer_t: float,
     epsilon: float,
     lepton_energy_fraction_y: float, 
+    skewness_parameter: float,
     k_shorthand: float,
     compton_form_factor_h_real_part: float,
     compton_form_factor_h_tilde_real_part: float,
@@ -33,10 +34,10 @@ def calculate_s_1_longitudinally_polarized_dvcs(
         prefactor = -8. * target_polarization * k_shorthand * (2. - lepton_energy_fraction_y) / ((2. - x_Bjorken) * (1. + epsilon**2))
 
         # (2): Calculate the F_{eff}:
-        compton_form_factor_h_effective = compute_cff_effective(compton_form_factor_h_real_part)
-        compton_form_factor_h_tilde_effective = compute_cff_effective(compton_form_factor_h_tilde_real_part)
-        compton_form_factor_e_effective = compute_cff_effective(compton_form_factor_e_real_part)
-        compton_form_factor_e_tilde_effective = compute_cff_effective(compton_form_factor_e_tilde_real_part)
+        compton_form_factor_h_effective = compute_cff_effective(skewness_parameter, compton_form_factor_h_real_part)
+        compton_form_factor_h_tilde_effective = compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde_real_part)
+        compton_form_factor_e_effective = compute_cff_effective(skewness_parameter, compton_form_factor_e_real_part)
+        compton_form_factor_e_tilde_effective = compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde_real_part)
         
         # (3): Return the entire thing:
         s1LP_DVCS = prefactor * calculate_curly_c_longitudinally_polarized_dvcs(

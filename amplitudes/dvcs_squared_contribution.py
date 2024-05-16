@@ -24,11 +24,16 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
     azimuthal_phi: float,
     epsilon: float,
     lepton_energy_fraction_y: float,
+    skewness_parameter: float,
     k_shorthand: float,
-    compton_form_factor_h: float,
-    compton_form_factor_h_tilde: float,
-    compton_form_factor_e: float,
-    compton_form_factor_e_tilde: float,
+    compton_form_factor_h_real_part: float,
+    compton_form_factor_h_tilde_real_part: float,
+    compton_form_factor_e_real_part: float,
+    compton_form_factor_e_tilde_real_part: float,
+    compton_form_factor_h_imaginary_part: float,
+    compton_form_factor_h_tilde_imaginary_part: float,
+    compton_form_factor_e_imaginary_part: float,
+    compton_form_factor_e_tilde_imaginary_part: float,
     verbose: bool = True):
     """
     Description
@@ -77,11 +82,6 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
         Eq. (2.27) in the BKM10 Formalism available here:
         https://arxiv.org/pdf/1005.5209.pdf
     """
-
-    if verbose:
-        verbose_input = True
-    else:
-        verbose_input = False
         
     try:
 
@@ -97,11 +97,15 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
             squared_hadronic_momentum_transfer_t,
             epsilon,
             lepton_energy_fraction_y,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
-            verbose_input
+            compton_form_factor_h_real_part,
+            compton_form_factor_h_tilde_real_part,
+            compton_form_factor_e_real_part,
+            compton_form_factor_e_tilde_real_part,
+            compton_form_factor_h_imaginary_part,
+            compton_form_factor_h_tilde_imaginary_part,
+            compton_form_factor_e_imaginary_part,
+            compton_form_factor_e_tilde_imaginary_part,
+            verbose
         )
 
         # (3): Obtain the first coefficient in the unevaluated sum (cosine n = 1 term):
@@ -113,12 +117,17 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
             squared_hadronic_momentum_transfer_t,
             epsilon,
             lepton_energy_fraction_y,
+            skewness_parameter,
             k_shorthand,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
-            verbose_input
+            compton_form_factor_h_real_part,
+            compton_form_factor_h_tilde_real_part,
+            compton_form_factor_e_real_part,
+            compton_form_factor_e_tilde_real_part,
+            compton_form_factor_h_imaginary_part,
+            compton_form_factor_h_tilde_imaginary_part,
+            compton_form_factor_e_imaginary_part,
+            compton_form_factor_e_tilde_imaginary_part,
+            verbose
         )
 
         # (4): Obtain the first coefficient in the unevaluated sum (sin n = 1 term):
@@ -129,12 +138,17 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
             squared_hadronic_momentum_transfer_t,
             epsilon,
             lepton_energy_fraction_y,
+            skewness_parameter,
             k_shorthand,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
-            verbose_input
+            compton_form_factor_h_real_part,
+            compton_form_factor_h_tilde_real_part,
+            compton_form_factor_e_real_part,
+            compton_form_factor_e_tilde_real_part,
+            compton_form_factor_h_imaginary_part,
+            compton_form_factor_h_tilde_imaginary_part,
+            compton_form_factor_e_imaginary_part,
+            compton_form_factor_e_tilde_imaginary_part,
+            verbose
         )
 
         # (5): Compute the Fourier Mode Expansion:

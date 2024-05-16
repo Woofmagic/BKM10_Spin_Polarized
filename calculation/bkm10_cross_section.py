@@ -231,11 +231,16 @@ def calculate_bkm10_cross_section_longitudinally_polarized(
             azimuthal_phi,
             epsilon,
             lepton_energy_fraction_y,
+            skewness_parameter,
             k_shorthand,
             compton_form_factor_h_real_part,
             compton_form_factor_h_tilde_real_part,
             compton_form_factor_e_real_part,
             compton_form_factor_e_tilde_real_part,
+            compton_form_factor_h_imaginary_part,
+            compton_form_factor_h_tilde_imaginary_part,
+            compton_form_factor_e_imaginary_part,
+            compton_form_factor_e_tilde_imaginary_part,
             verbose
         )
 
