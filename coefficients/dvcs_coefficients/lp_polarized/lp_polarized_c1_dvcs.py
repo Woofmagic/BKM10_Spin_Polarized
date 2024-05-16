@@ -5,6 +5,8 @@ except ImportError:
 
 from lp_polarized_curlyC_dvcs import calculate_curly_c_longitudinally_polarized_dvcs
 
+from form_factors.effective_cffs import compute_cff_effective
+
 def calculate_c_1_longitudinally_polarized_dvcs(
     lepton_polarization: float,
     target_polarization: float,
@@ -32,10 +34,10 @@ def calculate_c_1_longitudinally_polarized_dvcs(
         prefactor = 8. * lepton_polarization * target_polarization * k_shorthand * lepton_energy_fraction_y / (np.sqrt(1. + epsilon**2) * (2. - x_Bjorken))
 
         # (2): Calculate the F_{eff}:
-        compton_form_factor_h_effective = compton_form_factor_h_real_part
-        compton_form_factor_h_tilde_effective = compton_form_factor_h_tilde_real_part
-        compton_form_factor_e_effective = compton_form_factor_e_real_part
-        compton_form_factor_e_tilde_effective = compton_form_factor_e_tilde_real_part
+        compton_form_factor_h_effective = compute_cff_effective(compton_form_factor_h_real_part)
+        compton_form_factor_h_tilde_effective = compute_cff_effective(compton_form_factor_h_tilde_real_part)
+        compton_form_factor_e_effective = compute_cff_effective(compton_form_factor_e_real_part)
+        compton_form_factor_e_tilde_effective = compute_cff_effective(compton_form_factor_e_tilde_real_part)
         
         # (3): Return the entire thing:
         c1LP_DVCS = prefactor * calculate_curly_c_longitudinally_polarized_dvcs(
