@@ -3,6 +3,8 @@ try:
 except ImportError:
     print("NumPy is not installed. Please install NumPy to use this script.")
 
+from statics.masses.particle_masses import _MASS_OF_PROTON_IN_GEV
+
 def calculate_c_2_unpolarized_bh( 
     x_Bjorken: float, 
     squared_hadronic_momentum_transfer_t: float,
