@@ -21,6 +21,14 @@ $$\mathcal{H}, \tilde{\mathcal{H}}, \mathcal{E}, \tilde{\mathcal{E}}.$$
 
 ### Bethe-Heitler Contribuition:
 
+#### Unpolarized Target:
+
+For the unpolarized target, we have three contributions:
+
+$$c_{0, \text{unp}}^{\text{BH}}, c_{1, \text{unp}}^{\text{BH}}, c_{2, \text{unp}}^{\text{BH}}.$$
+
+#### Polarized Target:
+
 For the polarized target, we have two contributions:
 
 $$c_{0}^{\text{BH}}, c_{1}^{\text{BH}}.$$
