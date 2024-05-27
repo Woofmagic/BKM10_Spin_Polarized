@@ -16,7 +16,7 @@ def calculate_c_1_unpolarized_bh(
     """
     Description
     --------------
-    Equation (35) of the BH02 Formalism.
+    Equation (36) of the BH02 Formalism.
 
     Parameters
     --------------
@@ -70,6 +70,6 @@ def calculate_c_1_unpolarized_bh(
         # (6): Return the coefficient:
         return c1_unpolarized_BH
     
-    except Exception as E:
-        print(f"> Error in computing c1_unpolarized_BH:\n> {E}")
+    except Exception as ERROR:
+        print(f"> Error in computing c1_unpolarized_BH:\n> {ERROR}")
         return 0.
