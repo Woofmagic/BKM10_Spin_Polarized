@@ -156,15 +156,15 @@ def calculate_curly_c_longitudinally_polarized_dvcs(
         prefactor = squared_Q_momentum_transfer * sum_Q_squared_xb_t / (np.sqrt(1. + epsilon**2) * weighted_sum_Q_squared_xb_t**2)
 
         # (16): Return the entire thing:
-        c1LP_BH = prefactor * curly_bracket_term
+        curlyCDVCS = prefactor * curly_bracket_term
 
         # (13.1): If verbose, log the output:
         if verbose:
-            print(f"> Calculated c1LP_BH to be: {c1LP_BH}")
+            print(f"> Calculated curlyCDVCS to be: {curlyCDVCS}")
 
         # (14): Return the coefficient:
-        return c1LP_BH
+        return curlyCDVCS
 
     except Exception as ERROR:
-        print(f"> Error in calculating c1LP for BH Amplitude Squared:\n> {ERROR}")
+        print(f"> Error in calculating curlyCDVCS for DVCS Amplitude Squared:\n> {ERROR}")
         return 0.

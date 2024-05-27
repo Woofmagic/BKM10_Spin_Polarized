@@ -24,7 +24,7 @@ def calculate_curly_c_unpolarized_dvcs(
     """
     Description
     --------------
-    Equation (2.23) of the BKM10 Formalism.
+    Equation (66) of the BKM02 Formalism.
 
     Parameters
     --------------
