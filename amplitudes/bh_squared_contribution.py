@@ -65,11 +65,6 @@ def calculate_bh_amplitude_squared_longitudinally_polarized(
         https://arxiv.org/pdf/hep-ph/0112108.pdf
     """
 
-    if verbose:
-        verbose_input = True
-    else:
-        verbose_input = False
-        
     try:
 
         # (1): Calculate the Prefactor of the Denominator:
@@ -92,7 +87,7 @@ def calculate_bh_amplitude_squared_longitudinally_polarized(
             lepton_energy_fraction_y,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
-            verbose_input
+            verbose
         )
 
         # (5): Obtain the first coefficient in the unevaluated sum (cosine n = 1 term):
@@ -107,11 +102,11 @@ def calculate_bh_amplitude_squared_longitudinally_polarized(
             k_shorthand,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
-            verbose_input
+            verbose
         )
 
         # (5): Compute the Fourier Mode Expansion:
-        mode_expansion = coefficient_0_BH + (coefficient_1_BH * np.cos(convert_degrees_to_radians(azimuthal_phi)))
+        mode_expansion = coefficient_0_BH + (coefficient_1_BH * np.cos(np.pi - convert_degrees_to_radians(azimuthal_phi)))
 
         # (6): Compute the numerator of the amplitude:
         numerator = mode_expansion

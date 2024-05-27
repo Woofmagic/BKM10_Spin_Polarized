@@ -153,8 +153,8 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
 
         # (5): Compute the Fourier Mode Expansion:
         mode_expansion = coefficient_c0_DVCS 
-        + (coefficient_c1_DVCS * np.cos(convert_degrees_to_radians(azimuthal_phi))) 
-        + (coefficient_s1_DVCS * np.sin(convert_degrees_to_radians(azimuthal_phi)))
+        + (coefficient_c1_DVCS * np.cos(np.pi - convert_degrees_to_radians(azimuthal_phi))) 
+        + (coefficient_s1_DVCS * np.sin(np.pi - convert_degrees_to_radians(azimuthal_phi)))
 
         # (6): Compute the numerator of the amplitude:
         numerator = mode_expansion

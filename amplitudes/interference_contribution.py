@@ -192,12 +192,12 @@ def calculate_interference_contribution_longitudinally_polarized(
         # (9): Calculate the interference contribution:
         interference_contribution = prefactor * (
             c_0_I
-            + c_1_I * np.cos(1. * (convert_degrees_to_radians(azimuthal_phi)))
-            + c_2_I * np.cos(2. * (convert_degrees_to_radians(azimuthal_phi)))
-            + c_3_I * np.cos(3. * (convert_degrees_to_radians(azimuthal_phi)))
-            + s_1_I * np.sin(1. * (convert_degrees_to_radians(azimuthal_phi)))
-            + s_2_I * np.sin(2. * (convert_degrees_to_radians(azimuthal_phi)))
-            + s_3_I * np.sin(3. * (convert_degrees_to_radians(azimuthal_phi)))
+            + c_1_I * np.cos(np.pi - 1. * (convert_degrees_to_radians(azimuthal_phi)))
+            + c_2_I * np.cos(np.pi - 2. * (convert_degrees_to_radians(azimuthal_phi)))
+            + c_3_I * np.cos(np.pi - 3. * (convert_degrees_to_radians(azimuthal_phi)))
+            + s_1_I * np.sin(np.pi - 1. * (convert_degrees_to_radians(azimuthal_phi)))
+            + s_2_I * np.sin(np.pi - 2. * (convert_degrees_to_radians(azimuthal_phi)))
+            + s_3_I * np.sin(np.pi - 3. * (convert_degrees_to_radians(azimuthal_phi)))
             )
 
         # (9.1): If verbose, print the calculation:
