@@ -7,6 +7,8 @@
 # Helper Module | Convert GeV^{-6} to nb/GeV^{4}
 from utilities.mathematics.math_units import convert_to_nb_over_GeV4
 
+from calculation.plot_results import plot_cross_section
+
 ######################
 # DERIVED KINEMATICS #
 ######################
@@ -286,6 +288,8 @@ def calculate_bkm10_cross_section_longitudinally_polarized(
         # (19.1): If verbose, print the conversion:
         if verbose:
             print(f"> Converted BKM10 differential cross section to {bkm10_cross_section_bh_in_nb_GeV4} nb/GeV^{4}")
+
+        plot_cross_section(azimuthal_phi, bkm10_cross_section_bh_in_nb_GeV4)
 
         # (20): Return the cross section.
         return bkm10_cross_section_bh_in_nb_GeV4
