@@ -3,7 +3,7 @@ try:
 except ImportError:
     print("NumPy is not installed. Please install NumPy to use this script.")
 
-from pl_polarized_C0p0 import calculate_c_0_zero_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p0 import calculate_c_0_zero_plus_longitudinally_polarized
 
 def calculate_c_0_zero_plus_longitudinally_polarized_A(
     lepton_polarization: float,

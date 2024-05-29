@@ -10,7 +10,7 @@ from utilities.mathematics.math_units import convert_degrees_to_radians
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_c_n import calculate_c_interference_coefficient
 
 # s_{n}^{I}
-from coefficients.interference_coefficients.lp_polarized import calculate_s_interference_coefficient
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_interference_coefficient
 
 def calculate_interference_contribution_longitudinally_polarized(
     lepton_polarization: int,
