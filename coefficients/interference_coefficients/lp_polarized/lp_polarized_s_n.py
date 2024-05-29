@@ -148,6 +148,7 @@ def calculate_s_interference_coefficient(
             verbose)
         
         # (5): Calculate the entire thing:
+        print(s_plus_plus, curly_s_plus_plus, s_zero_plus_n, curly_s_zero_plus)
         s_n_interference_coefficient = s_plus_plus * curly_s_plus_plus + s_zero_plus_n * curly_s_zero_plus
 
         # (): If verbose, print the output:

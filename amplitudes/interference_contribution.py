@@ -199,6 +199,14 @@ def calculate_interference_contribution_longitudinally_polarized(
             + s_2_I * np.sin(np.pi - 2. * (convert_degrees_to_radians(azimuthal_phi)))
             + s_3_I * np.sin(np.pi - 3. * (convert_degrees_to_radians(azimuthal_phi)))
             )
+        
+        print(f"c_0_I: {c_0_I}")
+        print(f"c_1_I: {c_1_I}")
+        print(f"c_2_I: {c_2_I}")
+        print(f"c_3_I: {c_3_I}")
+        print(f"s_1_I: {s_1_I}")
+        print(f"s_2_I: {s_2_I}")
+        print(f"s_3_I: {s_3_I}")
 
         # (9.1): If verbose, print the calculation:
         if verbose:
