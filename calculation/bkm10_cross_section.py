@@ -248,31 +248,31 @@ def calculate_bkm10_cross_section_longitudinally_polarized(
         )
 
         # (18): Compute the BH Amplitude Squared
-        interference_contribution = 0.
+        # interference_contribution = 0.
 
-        # interference_contribution = 0 * calculate_interference_contribution_longitudinally_polarized(
-        #     lepton_polarization,
-        #     target_polarization,
-        #     squared_Q_momentum_transfer,
-        #     x_Bjorken,
-        #     squared_hadronic_momentum_transfer_t,
-        #     azimuthal_phi,
-        #     epsilon,
-        #     lepton_energy_fraction_y,
-        #     skewness_parameter,
-        #     t_prime,
-        #     k_tilde,
-        #     k_shorthand,
-        #     lepton_propagator_p1,
-        #     lepton_propagator_p2,
-        #     Dirac_form_factor_F1,
-        #     Pauli_form_factor_F2,
-        #     compton_form_factor_h_real_part,
-        #     compton_form_factor_h_tilde_real_part,
-        #     compton_form_factor_e_real_part,
-        #     compton_form_factor_e_tilde_real_part,
-        #     verbose
-        # )
+        interference_contribution = 0 * calculate_interference_contribution_longitudinally_polarized(
+            lepton_polarization,
+            target_polarization,
+            squared_Q_momentum_transfer,
+            x_Bjorken,
+            squared_hadronic_momentum_transfer_t,
+            azimuthal_phi,
+            epsilon,
+            lepton_energy_fraction_y,
+            skewness_parameter,
+            t_prime,
+            k_tilde,
+            k_shorthand,
+            lepton_propagator_p1,
+            lepton_propagator_p2,
+            Dirac_form_factor_F1,
+            Pauli_form_factor_F2,
+            compton_form_factor_h_real_part,
+            compton_form_factor_h_tilde_real_part,
+            compton_form_factor_e_real_part,
+            compton_form_factor_e_tilde_real_part,
+            verbose
+        )
 
         # (18): Calculate the total cross section
         bkm10_cross_section = cross_section_prefactor * (bh_amplitude_squared + dvcs_amplitude_squared + interference_contribution)
