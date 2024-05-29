@@ -290,6 +290,10 @@ def calculate_bkm10_cross_section_longitudinally_polarized(
 
         plot_cross_section(
             lab_azimuthal_phi = azimuthal_phi,
+            value_of_beam_energy = lab_kinematics_k[0],
+            value_of_Q_squared = squared_Q_momentum_transfer[0],
+            value_of_hadron_recoil = squared_hadronic_momentum_transfer_t[0], 
+            value_of_x_Bjorken = x_Bjorken[0],
             calculated_cross_section = bkm10_cross_section_in_nb_GeV4)
 
         # (20): Return the cross section.
