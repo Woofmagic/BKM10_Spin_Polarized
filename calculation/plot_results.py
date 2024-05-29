@@ -21,3 +21,7 @@ def plot_cross_section(lab_azimuthal_phi, calculated_cross_section):
         x_data = lab_azimuthal_phi,
         y_data = calculated_cross_section,
         color = 'blue')
+    
+    plt.show()
+
+    return customized_plot
