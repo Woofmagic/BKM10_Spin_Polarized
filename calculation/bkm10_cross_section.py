@@ -35,10 +35,10 @@ from derived_kinematics.shorthand_K import calculate_kinematics_k
 # Derived Kinematics | k dot Delta | k ⋅ Δ 
 from derived_kinematics.k_dot_delta import calculate_k_dot_delta
 
-# Derived Kinematics | Lepton Propagator P1 | P_{1}(\phi)
+# Derived Kinematics | Lepton Propagator P1 | P_{1}(φ)
 from derived_kinematics.lepton_propagator_p1 import calculate_lepton_propagator_p1
 
-# Derived Kinematics | Lepton Propagator P2 | P_{1}(\phi)
+# Derived Kinematics | Lepton Propagator P2 | P_{1}(φ)
 from derived_kinematics.lepton_propagator_p2 import calculate_lepton_propagator_p2
 
 ################
