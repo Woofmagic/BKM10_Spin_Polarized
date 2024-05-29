@@ -2,7 +2,13 @@ import matplotlib.pyplot as plt
 
 from utilities.plotting.plot_customizer import PlotCustomizer
 
-def plot_cross_section(lab_azimuthal_phi, calculated_cross_section):
+def plot_cross_section(
+        lab_azimuthal_phi,
+        value_of_beam_energy,
+        value_of_Q_squared,
+        value_of_hadron_recoil,
+        value_of_x_Bjorken,
+        calculated_cross_section):
     
     # (1): Figure instance:
     figure = plt.figure(figsize = (18, 6))
@@ -12,9 +18,9 @@ def plot_cross_section(lab_azimuthal_phi, calculated_cross_section):
 
     customized_plot = PlotCustomizer(
         axes_object,
-        title = r"Kinematic Phase Space for JLab Data",
+        title = r"d^{{4}}\sigma \text{at} E = {} \text{{GeV}}, Q^{{2}} = {} \text{{GeV}}^{{2}}, t = {} \text{{GeV}}^{{2}}, x_{B} = {}".format(value_of_beam_energy, value_of_Q_squared, value_of_hadron_recoil, value_of_x_Bjorken),
         xlabel = r"$\phi [\text{deg}]$",
-        ylabel = r"$d^{4} \sigma [\text{nb}/\text{GeV}^{{4}}]$",
+        ylabel = r"$d^{4} \sigma [\text{nb}/\text{{GeV}}^{{4}}]$",
         grid = True)
     
     customized_plot.add_scatter_plot(

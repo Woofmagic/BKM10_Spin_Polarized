@@ -225,28 +225,27 @@ def calculate_bkm10_cross_section_longitudinally_polarized(
         )
 
         # (17): Compute the DVCS Amplitude Squared
-        dvcs_amplitude_squared = 0.
-        # dvcs_amplitude_squared = calculate_dvcs_amplitude_squared_longitudinally_polarized(
-        #     lepton_polarization,
-        #     target_polarization,
-        #     squared_Q_momentum_transfer,
-        #     x_Bjorken,
-        #     squared_hadronic_momentum_transfer_t,
-        #     azimuthal_phi,
-        #     epsilon,
-        #     lepton_energy_fraction_y,
-        #     skewness_parameter,
-        #     k_shorthand,
-        #     compton_form_factor_h_real_part,
-        #     compton_form_factor_h_tilde_real_part,
-        #     compton_form_factor_e_real_part,
-        #     compton_form_factor_e_tilde_real_part,
-        #     compton_form_factor_h_imaginary_part,
-        #     compton_form_factor_h_tilde_imaginary_part,
-        #     compton_form_factor_e_imaginary_part,
-        #     compton_form_factor_e_tilde_imaginary_part,
-        #     verbose
-        # )
+        dvcs_amplitude_squared = calculate_dvcs_amplitude_squared_longitudinally_polarized(
+            lepton_polarization,
+            target_polarization,
+            squared_Q_momentum_transfer,
+            x_Bjorken,
+            squared_hadronic_momentum_transfer_t,
+            azimuthal_phi,
+            epsilon,
+            lepton_energy_fraction_y,
+            skewness_parameter,
+            k_shorthand,
+            compton_form_factor_h_real_part,
+            compton_form_factor_h_tilde_real_part,
+            compton_form_factor_e_real_part,
+            compton_form_factor_e_tilde_real_part,
+            compton_form_factor_h_imaginary_part,
+            compton_form_factor_h_tilde_imaginary_part,
+            compton_form_factor_e_imaginary_part,
+            compton_form_factor_e_tilde_imaginary_part,
+            verbose
+        )
 
         # (18): Compute the BH Amplitude Squared
         interference_contribution = 0.
@@ -276,23 +275,25 @@ def calculate_bkm10_cross_section_longitudinally_polarized(
         # )
 
         # (18): Calculate the total cross section
-        bkm10_cross_section_bh = cross_section_prefactor * (bh_amplitude_squared + dvcs_amplitude_squared + interference_contribution)
+        bkm10_cross_section = cross_section_prefactor * (bh_amplitude_squared + dvcs_amplitude_squared + interference_contribution)
 
         # (18.1): If verbose, print the output:
         if verbose:
-            print(f"> Calculated BKM10 differential cross section longitudinally polarized target to be: {bkm10_cross_section_bh}")
+            print(f"> Calculated BKM10 differential cross section longitudinally polarized target to be: {bkm10_cross_section}")
 
         # (19): Convert to nb/GeV^{4}:
-        bkm10_cross_section_bh_in_nb_GeV4 = convert_to_nb_over_GeV4(bkm10_cross_section_bh)
+        bkm10_cross_section_in_nb_GeV4 = convert_to_nb_over_GeV4(bkm10_cross_section)
         
         # (19.1): If verbose, print the conversion:
         if verbose:
-            print(f"> Converted BKM10 differential cross section to {bkm10_cross_section_bh_in_nb_GeV4} nb/GeV^{4}")
+            print(f"> Converted BKM10 differential cross section to {bkm10_cross_section_in_nb_GeV4} nb/GeV^{4}")
 
-        plot_cross_section(azimuthal_phi, bkm10_cross_section_bh_in_nb_GeV4)
+        plot_cross_section(
+            lab_azimuthal_phi = azimuthal_phi,
+            calculated_cross_section = bkm10_cross_section_in_nb_GeV4)
 
         # (20): Return the cross section.
-        return bkm10_cross_section_bh_in_nb_GeV4
+        return bkm10_cross_section_in_nb_GeV4
 
     except Exception as ERROR:
         print(f"> Error in calculating the entire cross section:\n> {ERROR}")
