@@ -4,10 +4,10 @@ except ImportError:
     print("NumPy is not installed. Please install NumPy to use this script.")
 
 # Import helper modules:
-from statics.mathematics.math_units import convert_degrees_to_radians
+from utilities.mathematics.math_units import convert_degrees_to_radians
 
 # c_{n}^{I}
-from coefficients.interference_coefficients.lp_polarized import calculate_c_interference_coefficient
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_c_n import calculate_c_interference_coefficient
 
 # s_{n}^{I}
 from coefficients.interference_coefficients.lp_polarized import calculate_s_interference_coefficient

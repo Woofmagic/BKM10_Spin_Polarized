@@ -4,13 +4,13 @@ except ImportError:
     print("NumPy is not installed. Please install NumPy to use this script.")
 
 # Import helper modules:
-from statics.mathematics.math_units import convert_degrees_to_radians
+from utilities.mathematics.math_units import convert_degrees_to_radians
 
 # c_{n}^{DVCS}
-from coefficients.bh_coefficients.lp_polarized import calculate_c_0_longitudinally_polarized_bh
+from coefficients.bh_coefficients.lp_polarized.lp_polarized_c0_bh import calculate_c_0_longitudinally_polarized_bh
 
 # s_{n}^{DVCS}
-from coefficients.bh_coefficients.lp_polarized import calculate_c_1_longitudinally_polarized_bh
+from coefficients.bh_coefficients.lp_polarized.lp_polarized_c1_bh import calculate_c_1_longitudinally_polarized_bh
 
 def calculate_bh_amplitude_squared_longitudinally_polarized(
     lepton_polarization: int,

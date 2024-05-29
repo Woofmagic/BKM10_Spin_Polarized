@@ -4,7 +4,7 @@ except ImportError:
     print("NumPy is not installed. Please install NumPy to use this script.")
 
 # Helper Modules | Convert Degrees to Radians
-from statics.mathematics.math_units import convert_degrees_to_radians
+from utilities.mathematics.math_units import convert_degrees_to_radians
 
 def calculate_k_dot_delta(
     squared_Q_momentum_transfer: float, 

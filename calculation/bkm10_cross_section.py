@@ -5,7 +5,7 @@
 ##################
 
 # Helper Module | Convert GeV^{-6} to nb/GeV^{4}
-from statics.mathematics.math_units import convert_to_nb_over_GeV4
+from utilities.mathematics.math_units import convert_to_nb_over_GeV4
 
 ######################
 # DERIVED KINEMATICS #

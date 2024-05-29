@@ -3,7 +3,7 @@ try:
 except ImportError:
     print("NumPy is not installed. Please install NumPy to use this script.")
 
-from lp_polarized_curlyC_dvcs import calculate_curly_c_longitudinally_polarized_dvcs
+from coefficients.dvcs_coefficients.lp_polarized.lp_polarized_curlyC_dvcs import calculate_curly_c_longitudinally_polarized_dvcs
 
 from form_factors.effective_cffs import compute_cff_effective
 

@@ -5,7 +5,7 @@ except ImportError:
 
 from statics.masses.particle_masses import _MASS_OF_PROTON_IN_GEV
 
-from statics.mathematics.complex_variables import two_complex_variable_product
+from utilities.mathematics.complex_variables import two_complex_variable_product
 
 def calculate_curly_c_longitudinally_polarized_dvcs(
     squared_Q_momentum_transfer: float, 

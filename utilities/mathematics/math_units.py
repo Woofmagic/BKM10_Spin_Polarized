@@ -10,3 +10,8 @@ def convert_degrees_to_radians(degrees: float) -> float:
     using the standard formula.
     """
     return (degrees * np.pi / 180.)
+
+def convert_to_nb_over_GeV4(number: float) -> float:
+    """
+    """
+    return (.389379 * 1000000) * number

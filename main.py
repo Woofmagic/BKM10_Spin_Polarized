@@ -23,6 +23,13 @@ from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_VERBOS
 
 # DataFrame Columns
 from statics.strings.static_strings import _COLUMN_NAME_KINEMATIC_SET
+from statics.strings.static_strings import _COLUMN_NAME_X_BJORKEN
+from statics.strings.static_strings import _COLUMN_NAME_Q_SQUARED
+from statics.strings.static_strings import _COLUMN_NAME_T_MOMENTUM_CHANGE
+from statics.strings.static_strings import _COLUMN_NAME_AZIMUTHAL_PHI
+from statics.strings.static_strings import _COLUMN_NAME_LEPTON_MOMENTUM
+
+from calculation.bkm10_cross_section import calculate_bkm10_cross_section_longitudinally_polarized
 
 def main(
     kinematics_dataframe_path: str,
@@ -60,6 +67,47 @@ def main(
 
         if verbose:
             print(f"> Did we manage to fix to a kinematic range?\n{fixed_kinematic_set_dataframe is not None}")
+
+        # (5): Obtian the range of kinematic quantites:
+        range_of_Q_squared = fixed_kinematic_set_dataframe[_COLUMN_NAME_Q_SQUARED]
+        range_of_x_Bjorken = fixed_kinematic_set_dataframe[_COLUMN_NAME_X_BJORKEN]
+        range_of_hadronic_momentum_transfer_t = fixed_kinematic_set_dataframe[_COLUMN_NAME_T_MOMENTUM_CHANGE]
+        range_of_lepton_momentum_k = fixed_kinematic_set_dataframe[_COLUMN_NAME_LEPTON_MOMENTUM]
+        range_of_lab_azimuthal_phi = fixed_kinematic_set_dataframe[_COLUMN_NAME_AZIMUTHAL_PHI]
+
+        # (6): Obtain the polarizations -- set to 1 for now:
+        lepton_polarization = 1
+        target_polarization = 1
+
+        # (7): Obtain the values of the CFFs:
+        compton_form_factor_h_real = 1.
+        compton_form_factor_h_tilde_real = 1.
+        compton_form_factor_e_real = 1.
+        compton_form_factor_e_tilde_real = 1.
+        compton_form_factor_h_imaginary = 1.
+        compton_form_factor_h_tilde_imaginary = 1.
+        compton_form_factor_e_imaginary = 1.
+        compton_form_factor_e_tilde_imaginary = 1.
+
+        # (5): Attempt to calculate the BKM10 Cross Section:
+        calculate_bkm10_cross_section_longitudinally_polarized(
+            lepton_polarization,
+            target_polarization,
+            range_of_Q_squared,
+            range_of_x_Bjorken,
+            range_of_hadronic_momentum_transfer_t,
+            range_of_lepton_momentum_k,
+            range_of_lab_azimuthal_phi,
+            compton_form_factor_h_real,
+            compton_form_factor_h_tilde_real,
+            compton_form_factor_e_real,
+            compton_form_factor_e_tilde_real,
+            compton_form_factor_h_imaginary,
+            compton_form_factor_h_tilde_imaginary,
+            compton_form_factor_e_imaginary,
+            compton_form_factor_e_tilde_imaginary,
+            verbose,
+        )
 
     except KeyboardInterrupt:
 
