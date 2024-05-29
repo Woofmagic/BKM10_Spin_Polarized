@@ -250,7 +250,7 @@ def calculate_bkm10_cross_section_longitudinally_polarized(
         # (18): Compute the BH Amplitude Squared
         # interference_contribution = 0.
 
-        interference_contribution = 0 * calculate_interference_contribution_longitudinally_polarized(
+        interference_contribution = calculate_interference_contribution_longitudinally_polarized(
             lepton_polarization,
             target_polarization,
             squared_Q_momentum_transfer,

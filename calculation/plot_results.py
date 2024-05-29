@@ -20,7 +20,7 @@ def plot_cross_section(
         axes_object,
         title = r"$E = {} \text{{GeV}}, Q^{{2}} = {} \text{{GeV}}^{{2}}, t = {} \text{{GeV}}^{{2}}, x_{{B}}= {}$".format(value_of_beam_energy, value_of_Q_squared, value_of_hadron_recoil, value_of_x_Bjorken),
         xlabel = r"$\phi \left[ \text{deg} \right]$",
-        ylabel = r"$d^{{4}} \sigma \left[ \text{nb} / \text{GeV}^{4} \right]$",
+        ylabel = r"$d^{{4}} \sigma_{\text{LP}} \left[ \text{nb} / \text{GeV}^{4} \right]$",
         grid = True)
     
     customized_plot.add_scatter_plot(
