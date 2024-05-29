@@ -41,25 +41,25 @@ def main(
         possible_data_path = f"{_DIRECTORY_DATA}\\{kinematics_dataframe_path}"
 
         if verbose:
-            print(f"> Possible data path is: {possible_data_path}")
+            print(f"> Possible data path is:\n{possible_data_path}")
 
         # (2): Now, check if the kinematics is actually there:
         kinematics_dataframe_file_path = find_directory(os.getcwd(), possible_data_path)
 
         if verbose:
-            print(f"> Did we find the filepath for the kinematics? {kinematics_dataframe_file_path}")
+            print(f"> Did we find the filepath for the kinematics?\n{kinematics_dataframe_file_path}")
 
         # (3): If the file was there, turn it into a DF with Pandas:
         kinematics_dataframe = read_csv_file_with_pandas(kinematics_dataframe_file_path)
 
         if verbose:
-            print(f"> Did we convert the kinematics file to a Pandas DF? {kinematics_dataframe is not None}")
+            print(f"> Did we convert the kinematics file to a Pandas DF?\n{kinematics_dataframe is not None}")
 
         # (4): Partition the DF on a fixed kinematic set:
         fixed_kinematic_set_dataframe = kinematics_dataframe[kinematics_dataframe[_COLUMN_NAME_KINEMATIC_SET] == kinematic_set_number]
 
         if verbose:
-            print(f"> Did we manage to fix to a kinematic range? {fixed_kinematic_set_dataframe is not None}")
+            print(f"> Did we manage to fix to a kinematic range?\n{fixed_kinematic_set_dataframe is not None}")
 
     except KeyboardInterrupt:
 
