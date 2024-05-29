@@ -1,5 +1,7 @@
 from statics.masses.particle_masses import _MASS_OF_PROTON_IN_GEV
 
+from utilities.mathematics.polarization import check_polarization_datatype
+
 try:
     import numpy as np
 except ImportError:
