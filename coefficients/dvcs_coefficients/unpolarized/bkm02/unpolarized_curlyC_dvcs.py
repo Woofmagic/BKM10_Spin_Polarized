@@ -123,7 +123,7 @@ def calculate_curly_c_unpolarized_dvcs(
 
         # (7.1): If verbose, log the output:
         if verbose:
-            print(f"> Calculated curlyCDVCS_unpolarized to be: {curlyCDVCS_unpolarized}")
+            print(f"> Calculated curlyCDVCS_unpolarized to be:\n{curlyCDVCS_unpolarized}")
 
         # (8): Return the coefficient:
         return curlyCDVCS_unpolarized

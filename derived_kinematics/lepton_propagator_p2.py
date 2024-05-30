@@ -26,7 +26,7 @@ def calculate_lepton_propagator_p2(
         p2_propagator = (-2. * (k_dot_delta / squared_Q_momentum_transfer)) + (squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer)
         
         if verbose:
-            print(f"> Computed the P2 propagator to be: {p2_propagator}")
+            print(f"> Computed the P2 propagator to be:\n{p2_propagator}")
 
         return p2_propagator
     

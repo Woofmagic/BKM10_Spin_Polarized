@@ -38,7 +38,7 @@ def calculate_kinematics_epsilon(
 
         # (1.1): If verbose, print the result:
         if verbose:
-            print(f"> Calculated epsilon to be: {epsilon}")
+            print(f"> Calculated epsilon to be:\n{epsilon}")
 
         # (2): Return Epsilon:
         return epsilon

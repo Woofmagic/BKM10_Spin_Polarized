@@ -37,7 +37,7 @@ def calculate_kinematics_skewness_parameter(
 
         # (3.1): If verbose, print the output:
         if verbose:
-            print(f"> Calculated skewness xi to be: {skewness_parameter}")
+            print(f"> Calculated skewness xi to be:\n{skewness_parameter}")
 
         # (4): Return Xi:
         return skewness_parameter

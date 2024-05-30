@@ -38,7 +38,7 @@ def calculate_c_1_plus_plus_longitudinally_polarized(
 
         # (6.1): If verbose, log the output:
         if verbose:
-            print(f"> Calculated c_1_plus_plus_LP to be: {c_1_plus_plus_LP}")
+            print(f"> Calculated c_1_plus_plus_LP to be:\n{c_1_plus_plus_LP}")
 
         # (7): Return the coefficient:
         return c_1_plus_plus_LP

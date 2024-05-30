@@ -67,7 +67,7 @@ def calculate_c_1_unpolarized_bh(
         
         # (5.1): If verbose, log the output:
         if verbose:
-            print(f"> Calculated c1_unpolarized_BH to be: {c1_unpolarized_BH}")
+            print(f"> Calculated c1_unpolarized_BH to be:\n{c1_unpolarized_BH}")
 
         # (6): Return the coefficient:
         return c1_unpolarized_BH

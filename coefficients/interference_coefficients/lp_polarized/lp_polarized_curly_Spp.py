@@ -195,7 +195,7 @@ def calculate_curly_S_plus_plus_longitudinally_polarized_interference(
 
         # (6.1): If verbose, print the calculation:
         if verbose:
-            print(f"> Calculated curly S++ to be: {curly_S_longitudinally_polarized_interference}")
+            print(f"> Calculated curly S++ to be:\n{curly_S_longitudinally_polarized_interference}")
 
         # (7): Return the output.
         return curly_S_longitudinally_polarized_interference

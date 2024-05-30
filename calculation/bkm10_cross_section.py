@@ -75,6 +75,8 @@ from amplitudes.dvcs_squared_contribution import calculate_dvcs_amplitude_square
 # Amplitude Contributions | Interference | I
 from amplitudes.interference_contribution import calculate_interference_contribution_longitudinally_polarized
 
+import numpy as np
+
 def calculate_bkm10_cross_section_longitudinally_polarized(
     lepton_polarization: int,
     target_polarization: int,
@@ -279,7 +281,7 @@ def calculate_bkm10_cross_section_longitudinally_polarized(
 
         # (18.1): If verbose, print the output:
         if verbose:
-            print(f"> Calculated BKM10 differential cross section longitudinally polarized target to be: {bkm10_cross_section}")
+            print(f"> Calculated BKM10 differential cross section longitudinally polarized target to be:\n{bkm10_cross_section}")
 
         # (19): Convert to nb/GeV^{4}:
         bkm10_cross_section_in_nb_GeV4 = convert_to_nb_over_GeV4(bkm10_cross_section)
@@ -290,11 +292,11 @@ def calculate_bkm10_cross_section_longitudinally_polarized(
 
         plot_cross_section(
             lab_azimuthal_phi = azimuthal_phi,
-            value_of_beam_energy = lab_kinematics_k[0],
-            value_of_Q_squared = squared_Q_momentum_transfer[0],
-            value_of_hadron_recoil = squared_hadronic_momentum_transfer_t[0], 
-            value_of_x_Bjorken = x_Bjorken[0],
-            calculated_cross_section = bkm10_cross_section_in_nb_GeV4)
+            value_of_beam_energy = np.array(lab_kinematics_k)[0],
+            value_of_Q_squared = np.array(squared_Q_momentum_transfer)[0],
+            value_of_hadron_recoil = np.array(squared_hadronic_momentum_transfer_t)[0], 
+            value_of_x_Bjorken = np.array(x_Bjorken)[0],
+            calculated_cross_section = (bkm10_cross_section_in_nb_GeV4))
 
         # (20): Return the cross section.
         return bkm10_cross_section_in_nb_GeV4

@@ -34,7 +34,7 @@ def compute_cff_effective(
 
         # (1.1): If verbose, log the output:
         if verbose:
-            print(f"> Computed the CFF effective to be: {cff_effective}")
+            print(f"> Computed the CFF effective to be:\n{cff_effective}")
 
         # (2): Return the output:
         return cff_effective

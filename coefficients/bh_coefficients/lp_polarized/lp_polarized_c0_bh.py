@@ -100,7 +100,7 @@ def calculate_c_0_longitudinally_polarized_bh(
 
         # (13.1): If verbose, log the output:
         if verbose:
-            print(f"> Calculated c0LP_BH to be: {c0LP_BH}")
+            print(f"> Calculated c0LP_BH to be:\n{c0LP_BH}")
 
         # (14): Return the coefficient:
         return c0LP_BH

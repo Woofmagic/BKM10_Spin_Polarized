@@ -41,7 +41,7 @@ def calculate_kinematics_t_min(
 
         # (4.1): If verbose, print the result:
         if verbose:
-            print(f"> Calculated t_minimum to be: {t_minimum}")
+            print(f"> Calculated t_minimum to be:\n{t_minimum}")
 
         # (5): Print the result:
         return t_minimum

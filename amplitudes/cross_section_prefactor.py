@@ -46,7 +46,7 @@ def calculate_bkm10_cross_section_prefactor(
         prefactor = numerator / denominator
 
         if verbose:
-            print(f"> Calculated BKM10 cross-section prefactor to be: {prefactor}")
+            print(f"> Calculated BKM10 cross-section prefactor to be:\n{prefactor}")
 
         # (4): Return the prefactor:
         return prefactor

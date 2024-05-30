@@ -38,7 +38,7 @@ def calculate_kinematics_epsilon_squared(
 
         # (1.1): If verbose, print the result:
         if verbose:
-            print(f"> Calculated epsilon squared to be: {epsilon_squared}")
+            print(f"> Calculated epsilon squared to be:\n{epsilon_squared}")
 
         # (2): Return Epsilon:
         return epsilon_squared

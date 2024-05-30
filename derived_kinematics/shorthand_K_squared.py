@@ -79,7 +79,7 @@ def calculate_kinematics_k_squared(
         k_squared = -1. * k_squared_prefactor * one_minus_x_bjorken * second_multiplicative_quantity * third_multiplicative_quantity * fourth_multiplicative_quantity
 
         if verbose:
-            print(f"> Calculated k_squared to be: {k_squared}")
+            print(f"> Calculated k_squared to be:\n{k_squared}")
 
         # (10) Return K^{2}:
         return k_squared

@@ -32,7 +32,7 @@ def calculate_c_1_plus_plus_longitudinally_polarized_A(
 
         # (4.1): If verbose, log the output:
         if verbose:
-            print(f"> Calculated c_1_plus_plus_A_LP to be: {c_1_plus_plus_A_LP}")
+            print(f"> Calculated c_1_plus_plus_A_LP to be:\n{c_1_plus_plus_A_LP}")
 
         # (5): Return the coefficient:
         return c_1_plus_plus_A_LP

@@ -39,7 +39,7 @@ def calculate_kinematics_lepton_energy_fraction_y(
 
         # (1.1): If verbose output, then print the result:
         if verbose:
-            print(f"> Calculated y to be: {lepton_energy_fraction_y}")
+            print(f"> Calculated y to be:\n{lepton_energy_fraction_y}")
 
         # (2): Return the calculation:
         return lepton_energy_fraction_y

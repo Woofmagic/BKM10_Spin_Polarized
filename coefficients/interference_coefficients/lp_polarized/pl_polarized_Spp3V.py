@@ -32,7 +32,7 @@ def calculate_s_3_plus_plus_longitudinally_polarized_V(
 
         # (4.1): If verbose, log the output:
         if verbose:
-            print(f"> Calculated s_3_plus_plus_V_LP to be: {s_3_plus_plus_V_LP}")
+            print(f"> Calculated s_3_plus_plus_V_LP to be:\n{s_3_plus_plus_V_LP}")
 
         # (5): Return the coefficient:
         return s_3_plus_plus_V_LP

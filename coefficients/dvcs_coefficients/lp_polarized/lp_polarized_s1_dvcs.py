@@ -58,7 +58,7 @@ def calculate_s_1_longitudinally_polarized_dvcs(
 
         # (2.1): If verbose, log the output:
         if verbose:
-            print(f"> Calculated s1LP_DVCS to be: {s1LP_DVCS}")
+            print(f"> Calculated s1LP_DVCS to be:\n{s1LP_DVCS}")
 
         # (4): Return the coefficient:
         return s1LP_DVCS

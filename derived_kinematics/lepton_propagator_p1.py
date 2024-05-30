@@ -25,7 +25,7 @@ def calculate_lepton_propagator_p1(
         p1_propagator = 1. + (2. * (k_dot_delta / squared_Q_momentum_transfer))
         
         if verbose:
-            print(f"> Computed the P1 propagator to be: {p1_propagator}")
+            print(f"> Computed the P1 propagator to be:\n{p1_propagator}")
 
         return p1_propagator
     

@@ -63,7 +63,7 @@ def calculate_kinematics_k_tilde(
 
         # (6.1): Print the result of the calculation:
         if verbose:
-            print(f"> Calculated k_tilde to be: {k_tilde}")
+            print(f"> Calculated k_tilde to be:\n{k_tilde}")
 
         # (7) Return:
         return k_tilde

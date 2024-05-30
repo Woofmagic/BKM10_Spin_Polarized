@@ -29,7 +29,7 @@ def calculate_curly_C_longitudinally_polarized_interference_A(
 
         # (5.1): If verbose, log the output:
         if verbose:
-            print(f"> Calculated the curly C LP A for interference to be: {curly_C_A_longitudinally_polarized_interference}")
+            print(f"> Calculated the curly C LP A for interference to be:\n{curly_C_A_longitudinally_polarized_interference}")
         
         # (6): Return the output:
         return curly_C_A_longitudinally_polarized_interference

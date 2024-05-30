@@ -153,7 +153,7 @@ def calculate_s_interference_coefficient(
 
         # (): If verbose, print the output:
         if verbose:
-            print(f"> Calculated s_{n_number} interference coefficient to be: {s_n_interference_coefficient}")
+            print(f"> Calculated s_{n_number} interference coefficient to be:\n{s_n_interference_coefficient}")
 
         # (): Return the coefficient:
         return s_n_interference_coefficient

@@ -160,7 +160,7 @@ def calculate_curly_c_longitudinally_polarized_dvcs(
 
         # (13.1): If verbose, log the output:
         if verbose:
-            print(f"> Calculated curlyCDVCS to be: {curlyCDVCS}")
+            print(f"> Calculated curlyCDVCS to be:\n{curlyCDVCS}")
 
         # (14): Return the coefficient:
         return curlyCDVCS

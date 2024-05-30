@@ -29,7 +29,7 @@ def calculate_kinematics_t_prime(
 
         # (1.1): If verbose, print the result:
         if verbose:
-            print(f"> Calculated t prime to be: {t_prime}")
+            print(f"> Calculated t prime to be:\n{t_prime}")
 
         # (2): Return t_prime
         return t_prime

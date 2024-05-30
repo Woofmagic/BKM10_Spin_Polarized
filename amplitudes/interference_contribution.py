@@ -213,7 +213,7 @@ def calculate_interference_contribution_longitudinally_polarized(
 
         # (9.1): If verbose, print the calculation:
         if verbose:
-            print(f"> Calculated the interference contribution to be: {interference_contribution}")
+            print(f"> Calculated the interference contribution to be:\n{interference_contribution}")
             
         # (8): Return the amplitude:
         return interference_contribution

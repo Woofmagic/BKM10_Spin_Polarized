@@ -22,7 +22,7 @@ def calculate_kinematics_k(
 
         # (2.1); If verbose, log the output:
         if verbose:
-            print(f"> Calculated kinematic K to be: {kinematic_k}")
+            print(f"> Calculated kinematic K to be:\n{kinematic_k}")
 
         # (3): Return the value:
         return kinematic_k

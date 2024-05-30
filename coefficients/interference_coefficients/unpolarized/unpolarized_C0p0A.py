@@ -33,7 +33,7 @@ def calculate_c_0_plus_plus_unpolarized_A(
 
         # (5.1): If verbose, log the output:
         if verbose:
-            print(f"> Calculated c_0_zero_plus_A_unp to be: {c_0_zero_plus_A_unp}")
+            print(f"> Calculated c_0_zero_plus_A_unp to be:\n{c_0_zero_plus_A_unp}")
 
         # (6): Return the coefficient:
         return c_0_zero_plus_A_unp
