@@ -80,14 +80,14 @@ def main(
         target_polarization = 1
 
         # (7): Obtain the values of the CFFs:
-        compton_form_factor_h_real = 1.
-        compton_form_factor_h_tilde_real = 1.
-        compton_form_factor_e_real = 1.
-        compton_form_factor_e_tilde_real = 1.
-        compton_form_factor_h_imaginary = 1.
-        compton_form_factor_h_tilde_imaginary = 1.
-        compton_form_factor_e_imaginary = 1.
-        compton_form_factor_e_tilde_imaginary = 1.
+        compton_form_factor_h_real = -0.897
+        compton_form_factor_h_tilde_real = 2.444
+        compton_form_factor_e_real = -0.541
+        compton_form_factor_e_tilde_real = 2.207
+        compton_form_factor_h_imaginary = 2.421
+        compton_form_factor_h_tilde_imaginary = 1.131
+        compton_form_factor_e_imaginary = 0.903
+        compton_form_factor_e_tilde_imaginary = 5383
 
         # (5): Attempt to calculate the BKM10 Cross Section:
         calculate_bkm10_cross_section_longitudinally_polarized(

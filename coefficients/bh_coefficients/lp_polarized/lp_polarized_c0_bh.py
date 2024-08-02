@@ -19,8 +19,9 @@ def calculate_c_0_longitudinally_polarized_bh(
     Pauli_form_factor_F2: float, 
     verbose: bool = True) -> float:
     """
-    Description
-    --------------
+    # Title: `calculate_c_0_longitudinally_polarized_bh`
+    
+    ## Description:
     Equation (39) of the BKM02 Formalism.
 
     Parameters

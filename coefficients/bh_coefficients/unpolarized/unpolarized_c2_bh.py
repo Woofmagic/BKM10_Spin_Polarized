@@ -13,11 +13,12 @@ def calculate_c_2_unpolarized_bh(
     Pauli_form_factor_F2: float, 
     verbose: bool = True) -> float:
     """
-    Description
-    --------------
-    Equation (36) of the BH02 Formalism.
+    # Title: `calculate_c_2_unpolarized_bh`
 
-    Parameters
+    ## Description:
+    # Numerically evaluate Equation (36) of the BH02 Formalism.
+
+    ## Arguments:
     --------------
     x_Bjorken: (float)
 
