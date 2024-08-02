@@ -19,19 +19,13 @@ def calculate_c_2_unpolarized_bh(
     # Numerically evaluate Equation (36) of the BH02 Formalism.
 
     ## Arguments:
-    --------------
-    x_Bjorken: (float)
-
-    squared_hadronic_momentum_transfer_t: (float)
-
-    k_shorthand: (float)
-
-    Dirac_form_factor_F1: (float)
-
-    Pauli_form_factor_F2: (float)
-
-    verbose: (bool)
-        Debugging console output.
+        1. x_Bjorken: (float)
+        2. squared_hadronic_momentum_transfer_t: (float)
+        3. k_shorthand: (float)
+        4. Dirac_form_factor_F1: (float)
+        5. Pauli_form_factor_F2: (float)
+        6. verbose: (bool)
+            Debugging console output.
 
     Notes
     --------------
