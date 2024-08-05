@@ -24,7 +24,7 @@ def calculate_curly_c_unpolarized_dvcs(
     """
     Description
     --------------
-    Equation (2.23) of the BKM10 Formalism.
+    Equation (2.22) of the BKM10 Formalism.
 
     Parameters
     --------------
@@ -61,97 +61,98 @@ def calculate_curly_c_unpolarized_dvcs(
         the BKM10 Formalism, available here:
         https://arxiv.org/pdf/1005.5209.pdf
     """
-
+    
     try:
-
-        # (1): Calculate the "a" factor:
-        a_factor = squared_hadronic_momentum_transfer_t / (4. * _MASS_OF_PROTON_IN_GEV**2)
         
-        if verbose:
-            print(f"> [{__name__}]: Calculated `a_factor` to be: {a_factor}")
+        # (1): Calculate the appearance of Q^{2} + x_{B} t:
+        sum_Q_squared_xb_t = squared_Q_momentum_transfer + x_Bjorken * squared_hadronic_momentum_transfer_t
 
-        # (2): Calculate the "b" factor:
-        b_factor = 1. - x_Bjorken
+        # (2): Calculate (2 - x_{B})Q^{2} + x_{B} t:
+        weighted_sum_Q_squared_xb_t = (2. - x_Bjorken) * squared_Q_momentum_transfer + x_Bjorken * squared_hadronic_momentum_transfer_t
 
-        if verbose:
-            print(f"> [{__name__}]: Calculated `b_factor` to be: {b_factor}")
+        # (3): Calculate Q^{2} (Q^{2} + x_{B} t):
+        Q_squared_times_sum = squared_Q_momentum_transfer * sum_Q_squared_xb_t
 
-        # (3): Calculate the "c" factor:
-        c_factor = squared_Q_momentum_transfer + x_Bjorken * squared_hadronic_momentum_transfer_t
+        # (4): Calculate the first product of CFFs:
+        cff_h_h_star_with_prefactor = two_complex_variable_product(
+            compton_form_factor_h_real_part, 
+            compton_form_factor_h_imaginary_part, 
+            compton_form_factor_h_real_part, 
+            -1. * compton_form_factor_h_imaginary_part) * 4. * (1. - x_Bjorken)
 
-        if verbose:
-            print(f"> [{__name__}]: Calculated `c_factor` to be: {c_factor}")
+        # (5): Calculate the second product of CFFs:
+        cff_h_tilde_h_tilde_star = two_complex_variable_product(
+            compton_form_factor_h_tilde_real_part, 
+            compton_form_factor_h_tilde_imaginary_part, 
+            compton_form_factor_h_tilde_real_part, 
+            -1. * compton_form_factor_h_tilde_imaginary_part)
 
-        # (4): Calculate the "d" factor:
-        d_factor = squared_hadronic_momentum_transfer_t * c_factor
+        # (6): Calculate the third product of CFFs:
+        cff_h_e_star_plus_e_h_star = two_complex_variable_product(
+            compton_form_factor_h_real_part, 
+            compton_form_factor_h_imaginary_part, 
+            compton_form_factor_e_real_part, 
+            -1. * compton_form_factor_e_imaginary_part)
+        + two_complex_variable_product(
+            compton_form_factor_e_real_part, 
+            compton_form_factor_e_imaginary_part, 
+            compton_form_factor_h_real_part, 
+            -1. * compton_form_factor_h_imaginary_part)
 
-        if verbose:
-            print(f"> [{__name__}]: Calculated `d_factor` to be: {d_factor}")
-
-        # (5): Calculate the "e" factor:
-        e_factor = (2. - x_Bjorken) * squared_Q_momentum_transfer + x_Bjorken * squared_hadronic_momentum_transfer_t
-
-        if verbose:
-            print(f"> [{__name__}]: Calculated `e_factor` to be: {e_factor}")
-
-        # (6): Calculate the "f" factor:
-        f_factor = squared_Q_momentum_transfer + squared_hadronic_momentum_transfer_t
-
-        if verbose:
-            print(f"> [{__name__}]: Calculated `f_factor` to be: {f_factor}")
-
-        # (7): Calculate the prefactor:
-        prefactor = d_factor / e_factor**2
-
-        if verbose:
-            print(f"> [{__name__}]: Calculated `prefactor` to be: {prefactor}")
-
-        # (8): Calculate the scaling on the H and H-tilde CFFs:
-        cff_h_h_tilde_contribution_first_term = 4. * b_factor * compton_form_factor_h * compton_form_factor_h
-
-        if verbose:
-            print(f"> [{__name__}]: Calculated `cff_h_h_tilde_contribution_first_term` to be: {cff_h_h_tilde_contribution_first_term}")
-
-
-        # (9): Calculate the scaling on the H and H-tilde CFFs:
-        cff_h_h_tilde_contribution_second_term = 4. * compton_form_factor_h_tilde * compton_form_factor_h_tilde * (b_factor + ((2. * squared_Q_momentum_transfer + squared_hadronic_momentum_transfer_t) * epsilon) / (4. * c_factor)) 
-
-        if verbose:
-            print(f"> [{__name__}]: Calculated `cff_h_h_tilde_contribution_second_term` to be: {cff_h_h_tilde_contribution_second_term}")
+        # (7): Calculate the fourth product of CFFs:
+        cff_h_tilde_e_tilde_star_plus_e_tilde_h_tilde_star = two_complex_variable_product(
+            compton_form_factor_h_tilde_real_part, 
+            compton_form_factor_h_tilde_imaginary_part, 
+            compton_form_factor_e_tilde_real_part, 
+            -1. * compton_form_factor_e_tilde_imaginary_part)
+        + two_complex_variable_product(
+            compton_form_factor_e_tilde_real_part, 
+            compton_form_factor_e_tilde_imaginary_part, 
+            compton_form_factor_h_tilde_real_part, 
+            -1. * compton_form_factor_h_tilde_imaginary_part)
         
-        # (10): Calculate the scaling on mixing H and E CFFs (with relative complex-conjugation):
-        cff_e_h_mixing_contribution = -1. * x_Bjorken * f_factor**2 * (compton_form_factor_h * compton_form_factor_e + compton_form_factor_h * compton_form_factor_e) / d_factor
-
-        if verbose:
-            print(f"> [{__name__}]: Calculated `cff_e_h_mixing_contribution` to be: {cff_e_h_mixing_contribution}")
+        # (8): Calculate the fifth product of CFFs:
+        cff_e_e_star = two_complex_variable_product(
+            compton_form_factor_e_real_part, 
+            compton_form_factor_e_imaginary_part, 
+            compton_form_factor_e_real_part, 
+            -1. * compton_form_factor_e_imaginary_part)
         
-        # (11): Calculate the scaling on mixing H-Tilde and E-Tilde CFFs:
-        cff_e_tilde_h_tilde_mixing_contribution = -1. * x_Bjorken * squared_Q_momentum_transfer * (compton_form_factor_h_tilde * compton_form_factor_e_tilde + compton_form_factor_h_tilde * compton_form_factor_e_tilde) / c_factor
+        # (9): Calculate the sixth product of CFFs:
+        cff_e_tilde_e_tilde_star = two_complex_variable_product(
+            compton_form_factor_e_tilde_real_part, 
+            compton_form_factor_e_tilde_imaginary_part, 
+            compton_form_factor_e_tilde_real_part, 
+            -1. * compton_form_factor_e_tilde_imaginary_part)
 
+        # (10): Calculate the second bracket term:
+        second_bracket_term = 4. * (1. - x_Bjorken + ((2. * squared_Q_momentum_transfer + squared_hadronic_momentum_transfer_t) * epsilon**2 / (4. * sum_Q_squared_xb_t))) * cff_h_tilde_h_tilde_star
+
+        # (11): Calculate the third_bracket term's prefactor
+        third_bracket_term_prefactor = x_Bjorken**2 * (squared_Q_momentum_transfer + squared_hadronic_momentum_transfer_t)**2 / Q_squared_times_sum
+
+        # (12): Calculate the fourth bracket term (yes, we're skipping the third for a minute):
+        fourth_bracket_term = x_Bjorken**2 * squared_Q_momentum_transfer * cff_h_tilde_e_tilde_star_plus_e_tilde_h_tilde_star / sum_Q_squared_xb_t
+
+        # (13): Calculate the fifth bracket term:
+        fifth_bracket_term = (weighted_sum_Q_squared_xb_t**2 * squared_hadronic_momentum_transfer_t / (4. * _MASS_OF_PROTON_IN_GEV**2 * Q_squared_times_sum) + third_bracket_term_prefactor) * cff_e_e_star
+
+        # (14): Calculate the third bracket term:
+        third_bracket_term  = third_bracket_term_prefactor * cff_h_e_star_plus_e_h_star
+
+        # (15): Calculate the sixth bracket term:
+        sixth_bracket_term = x_Bjorken**2 * squared_Q_momentum_transfer * squared_hadronic_momentum_transfer_t * cff_e_tilde_e_tilde_star / (4. * _MASS_OF_PROTON_IN_GEV**2 * sum_Q_squared_xb_t)
+
+        # (16): Return the entire thing:
+        curlyC_unp_DVCS = Q_squared_times_sum * (cff_h_h_star_with_prefactor + second_bracket_term - third_bracket_term - fourth_bracket_term - fifth_bracket_term - sixth_bracket_term) / Q_squared_times_sum
+
+        # (13.1): If verbose, log the output:
         if verbose:
-            print(f"> [{__name__}]: Calculated `cff_e_tilde_h_tilde_mixing_contribution` to be: {cff_e_tilde_h_tilde_mixing_contribution}")
-        
-        # (12): Calculate the scaling on E/EStar CFFs:
-        cff_e_estar_contribution = -1. * (x_Bjorken * f_factor**2 / d_factor + e_factor**2 * a_factor / d_factor) * compton_form_factor_e * compton_form_factor_e
+            print(f"> Calculated curlyC_unp_DVCS to be:\n{curlyC_unp_DVCS}")
 
-        if verbose:
-            print(f"> [{__name__}]: Calculated `cff_e_estar_contribution` to be: {cff_e_estar_contribution}")
-        
-        # (13): Calculate the scaling on E-Tilde/E-TildeStar CFFs:
-        cff_e_tilde_e_tilde_star_contribution = -1. * x_Bjorken * squared_Q_momentum_transfer * a_factor * c_factor * compton_form_factor_e_tilde * compton_form_factor_e_tilde
+        # (14): Return the coefficient:
+        return curlyC_unp_DVCS
 
-        if verbose:
-            print(f"> [{__name__}]: Calculated `cff_e_tilde_e_tilde_star_contribution` to be: {cff_e_tilde_e_tilde_star_contribution}")
-        
-        # (14): Put together everything
-        C_function_of_CFFs_unpolarized = prefactor * (cff_h_h_tilde_contribution_first_term + cff_h_h_tilde_contribution_second_term + cff_e_h_mixing_contribution + cff_e_tilde_h_tilde_mixing_contribution + cff_e_estar_contribution + cff_e_tilde_e_tilde_Star_contribution)
-
-        if verbose:
-            print(f"> [{__name__}]: Calculated `C_function_of_CFFs_unpolarized` to be: {C_function_of_CFFs_unpolarized}")
-
-        # (15): Return the huge number:
-        return C_function_of_CFFs_unpolarized
-
-    except Exception as E:
-        print(f"> Error computing C_function_of_CFFs_unpolarized:\n> {E}")  
-        return None
+    except Exception as ERROR:
+        print(f"> Error in calculating curlyC_unp_DVCS for DVCS Amplitude Squared:\n> {ERROR}")
+        return 0.
