@@ -7,13 +7,13 @@ except ImportError:
 from utilities.mathematics.math_units import convert_degrees_to_radians
 
 # c_{0}^{DVCS}
-from coefficients.dvcs_coefficients.lp_polarized.lp_polarized_c0_dvcs import calculate_c_0_longitudinally_polarized_dvcs
+from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_c0_dvcs import calculate_c_0_longitudinally_polarized_dvcs
 
 # c_{1}^{DVCS}
-from coefficients.dvcs_coefficients.lp_polarized.lp_polarized_c1_dvcs import calculate_c_1_longitudinally_polarized_dvcs
+from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_c1_dvcs import calculate_c_1_longitudinally_polarized_dvcs
 
 # s_{1}^{DVCS}
-from coefficients.dvcs_coefficients.lp_polarized.lp_polarized_s1_dvcs import calculate_s_1_longitudinally_polarized_dvcs
+from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_s1_dvcs import calculate_s_1_longitudinally_polarized_dvcs
 
 def calculate_dvcs_amplitude_squared_longitudinally_polarized(
     lepton_polarization: int,

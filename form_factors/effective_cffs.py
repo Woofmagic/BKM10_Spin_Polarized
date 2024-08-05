@@ -3,28 +3,27 @@ def compute_cff_effective(
     compton_form_factor: float,
     verbose: bool = True) -> float:
     """
-    Description
-    --------------
+    # Title: `compute_cff_effective`
+    
+    ## Description:
     The CFF_{effective} is not actually easy to compute, but
     we are going to pretend it is and compute it as below. (All
     it needs is the skewness parameter.)
 
-    Parameters
-    --------------
-    skewness_parameter: (float)
+    ## Arguments:
 
-    compton_form_factor: (flaot)
+        skewness_parameter: (float)
 
-    verbose: (bool)
-        Debugging console output.
+        compton_form_factor: (flaot)
 
-    Returns
-    --------------
+        verbose: (bool)
+            Debugging console output.
+
+    ## Returns:
     cff_effective : (float)
         the effective CFF
     
-    Notes
-    --------------
+    ## Notes:
     """
 
     try:
