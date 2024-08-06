@@ -67,6 +67,7 @@ from form_factors.dirac_form_factor import calculate_form_factor_dirac_f1
 from amplitudes.cross_section_prefactor import calculate_bkm10_cross_section_prefactor
 
 # Amplitude Contributions | Bethe-Heitler | |M_{BH}|^{2}
+from amplitudes.bh_squared_contribution import calculate_bh_amplitude_squared
 from amplitudes.bh_squared_contribution import calculate_bh_amplitude_squared_longitudinally_polarized
 
 # Amplitude Contributions | Deeply-Virtual Compton Scattering | |M_{DVCS}|^{2}
@@ -200,15 +201,13 @@ def calculate_bkm10_cross_section_longitudinally_polarized(
             squared_hadronic_momentum_transfer_t,
             electric_form_factor,
             magnetic_form_factor,
-            verbose
-        )
+            verbose)
 
         # (14): Calculate the Dirac Form Factor, F1:
         Dirac_form_factor_F1 = calculate_form_factor_dirac_f1(
             magnetic_form_factor,
             Pauli_form_factor_F2,
-            verbose
-        )
+            verbose)
 
         # (15): Calculate the cross-section prefactor:
         cross_section_prefactor = calculate_bkm10_cross_section_prefactor(
@@ -216,11 +215,10 @@ def calculate_bkm10_cross_section_longitudinally_polarized(
             x_Bjorken,
             epsilon,
             lepton_energy_fraction_y,
-            verbose
-        )
+            verbose)
         
         # (16): Compute the BH Amplitude Squared
-        bh_amplitude_squared = calculate_bh_amplitude_squared_longitudinally_polarized(
+        bh_amplitude_squared = calculate_bh_amplitude_squared(
             lepton_polarization,
             target_polarization,
             squared_Q_momentum_transfer,

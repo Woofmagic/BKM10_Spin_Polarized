@@ -80,7 +80,7 @@ def main(
 
         # (6): Obtain the polarizations -- set to 1 for now:
         lepton_polarization = 1
-        target_polarization = 1
+        target_polarization = 2
 
         # (7): Obtain the values of the CFFs:
         compton_form_factor_h_real = -0.897
@@ -155,8 +155,9 @@ if __name__ == "__main__":
     parser.add_argument(
         '-v',
         _ARGPARSE_ARGUMENT_VERBOSE,
+        type = bool,
         required = False,
-        action = 'store_false',
+        default = False,
         help = _ARGPARSE_ARGUMENT_DESCRIPTION_VERBOSE)
     
     # (5): Parse the arguments:
