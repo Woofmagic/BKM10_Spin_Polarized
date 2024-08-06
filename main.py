@@ -13,11 +13,13 @@ from statics.strings.static_strings import _ARGPARSE_DESCRIPTION
 
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_INPUT_DATAFILE
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_KINEMATIC_SET_NUMBER
+from statics.strings.static_strings import _ARGPARSE_ARGUMENT_FORMALISM_VERSION
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_NUMBER_REPLICAS
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_VERBOSE
 
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_INPUT_DATAFILE
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_KINEMATIC_SET_NUMBER
+from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_FORMALISM_VERSION
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_NUMBER_REPLICAS
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_VERBOSE
 
@@ -34,6 +36,7 @@ from calculation.bkm10_cross_section import calculate_bkm10_cross_section_longit
 def main(
     kinematics_dataframe_path: str,
     kinematic_set_number: int,
+    formalism_version: str,
     verbose: bool = False):
 
     # utilities > data_handling > pandas_reading > read_csv_file_with_pandas
@@ -81,13 +84,16 @@ def main(
 
         # (7): Obtain the values of the CFFs:
         compton_form_factor_h_real = -0.897
-        compton_form_factor_h_tilde_real = 2.444
-        compton_form_factor_e_real = -0.541
-        compton_form_factor_e_tilde_real = 2.207
         compton_form_factor_h_imaginary = 2.421
+
+        compton_form_factor_h_tilde_real = 2.444
         compton_form_factor_h_tilde_imaginary = 1.131
+
+        compton_form_factor_e_real = -0.541
+        compton_form_factor_e_imaginary = 2.207
+
         compton_form_factor_e_imaginary = 0.903
-        compton_form_factor_e_tilde_imaginary = 5383
+        compton_form_factor_e_tilde_imaginary = 5.383
 
         # (5): Attempt to calculate the BKM10 Cross Section:
         calculate_bkm10_cross_section_longitudinally_polarized(
@@ -101,7 +107,7 @@ def main(
             compton_form_factor_h_real,
             compton_form_factor_h_tilde_real,
             compton_form_factor_e_real,
-            compton_form_factor_e_tilde_real,
+            compton_form_factor_e_imaginary,
             compton_form_factor_h_imaginary,
             compton_form_factor_h_tilde_imaginary,
             compton_form_factor_e_imaginary,
@@ -136,7 +142,16 @@ if __name__ == "__main__":
         required = True,
         help = _ARGPARSE_ARGUMENT_DESCRIPTION_KINEMATIC_SET_NUMBER)
     
-    # (4): Ask, but don't enforce debugging verbosity:
+    # (4): Ask, but don't enforce BKM Formalism:
+    parser.add_argument(
+        '-form',
+        _ARGPARSE_ARGUMENT_FORMALISM_VERSION,
+        type = str,
+        required = True,
+        default = '10',
+        help = _ARGPARSE_ARGUMENT_DESCRIPTION_FORMALISM_VERSION)
+    
+    # (5): Ask, but don't enforce debugging verbosity:
     parser.add_argument(
         '-v',
         _ARGPARSE_ARGUMENT_VERBOSE,
@@ -151,4 +166,5 @@ if __name__ == "__main__":
     main(
         kinematics_dataframe_path = arguments.input_datafile,
         kinematic_set_number = arguments.kinematic_set,
+        formalism_version = arguments.formalism,
         verbose = arguments.verbose)

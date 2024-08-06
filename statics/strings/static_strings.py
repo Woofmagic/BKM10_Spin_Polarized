@@ -20,11 +20,13 @@ _ARGPARSE_DESCRIPTION = "Run DNN Replicas to extract the CFFs."
 _ARGPARSE_ARGUMENT_INPUT_DATAFILE = '--input-datafile'
 _ARGPARSE_ARGUMENT_KINEMATIC_SET_NUMBER = '--kinematic-set'
 _ARGPARSE_ARGUMENT_NUMBER_REPLICAS = '--number-of-replicas'
+_ARGPARSE_ARGUMENT_FORMALISM_VERSION = '--formalism'
 _ARGPARSE_ARGUMENT_VERBOSE = '--verbose'
 
 _ARGPARSE_ARGUMENT_DESCRIPTION_INPUT_DATAFILE = 'Path to the input CSV file.'
 _ARGPARSE_ARGUMENT_DESCRIPTION_KINEMATIC_SET_NUMBER = 'An integer specifying which kinematic set to analyze.'
 _ARGPARSE_ARGUMENT_DESCRIPTION_NUMBER_REPLICAS = 'The number of DNN Replicas to run.'
+_ARGPARSE_ARGUMENT_DESCRIPTION_FORMALISM_VERSION = 'The version of the formalism that we are using to analyze the cross section. Usually, it is BKM10.'
 _ARGPARSE_ARGUMENT_DESCRIPTION_VERBOSE = 'Enable verbose logging.'
 
 _COLUMN_NAME_KINEMATIC_SET = "set"

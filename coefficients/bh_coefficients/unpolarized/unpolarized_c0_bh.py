@@ -16,12 +16,12 @@ def calculate_c_0_unpolarized_bh(
     Pauli_form_factor_F2: float, 
     verbose: bool = True) -> float:
     """
-    Description
-    --------------
-    Equation (35) of the BH02 Formalism.
+    # Title: `calculate_c_0_unpolarized_bh`
 
-    Parameters
-    --------------
+    ## Description
+    Equation (35) of the BKM02 Formalism.
+
+    ## Arguments:
     squared_Q_momentum_transfer: (float)
 
     x_Bjorken: (float)
@@ -40,9 +40,10 @@ def calculate_c_0_unpolarized_bh(
 
     verbose: (bool)
         Debugging console output.
+        
+    ## Returns:
 
-    Notes
-    --------------
+    ## Notes:
     (1): This coefficient is in Equation (35) from
         this paper:
         https://arxiv.org/pdf/hep-ph/0112108.pdf

@@ -95,6 +95,17 @@ def calculate_bkm10_cross_section_longitudinally_polarized(
     compton_form_factor_e_tilde_imaginary_part: float,
     verbose: bool = True) -> float:
     """
+    # Title: `calculate_bkm10_cross_section_longitudinally_polarized`
+
+    ## Description:
+    Numerically evaluates the four-fold cross-section for the electroproduction
+    of photons.
+
+    ## Arguments:
+    Holy fuckk
+
+    ## Returns:
+    Shit
     """
 
     try:

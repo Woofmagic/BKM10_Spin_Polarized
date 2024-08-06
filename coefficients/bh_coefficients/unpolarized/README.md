@@ -1,6 +1,6 @@
 # Fourier Coefficients for the Unpolarized Target in the Bethe-Heitler Process:
 
-There are (thankfully) only four coefficients that come into play in the Bethe-Heitler process. These do not change from across the BKM02 formalism to the BKM10 formalism.
+There are (thankfully) only three coefficients that come into play in the Bethe-Heitler process when the target is **unpolarized**. These do not change from across the BKM02 formalism to the BKM10 formalism.
 
 **Important Note**: 
 
@@ -19,9 +19,5 @@ Fill in later.
 Fill in later.
 
 ## $c_{2}^{BH}$:
-
-Fill in later.
-
-## $s_{1}^{BH}$:
 
 Fill in later.

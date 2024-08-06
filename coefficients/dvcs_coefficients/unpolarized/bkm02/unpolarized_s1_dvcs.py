@@ -3,7 +3,7 @@ try:
 except ImportError:
     print("NumPy is not installed. Please install NumPy to use this script.")
 
-from coefficients.dvcs_coefficients.lp_polarized.lp_polarized_curlyC_dvcs import calculate_curly_c_longitudinally_polarized_dvcs
+from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_curlyC_dvcs import calculate_curly_c_longitudinally_polarized_dvcs
 
 def calculate_s_1_unpolarized_dvcs(
     lepton_polarization: float,

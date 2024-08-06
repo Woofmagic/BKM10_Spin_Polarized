@@ -28,16 +28,16 @@ def calculate_bh_amplitude_squared_longitudinally_polarized(
     Pauli_form_factor_F2: float,
     verbose: bool = True) -> float:
     """
-    Description
-    --------------
+    # Title: `calculate_bh_amplitude_squared_longitudinally_polarized`
+    
+    ## Description
     We finally put everything together and calculate the Bethe-Heitler
     Amplitude squared. This amplitude contains ten billion different
     contributions that we coded earlier. This amplitude requires 
     essentially every kinematic variable and derived kinematic
     variable, and even needs F1 and F2.
 
-    Parameters
-    --------------
+    ## Arguments:
     lepton_polarization: (int)
 
     target_polarization: (int)
@@ -55,11 +55,11 @@ def calculate_bh_amplitude_squared_longitudinally_polarized(
     verbose: (bool)
         Debugging console output.
 
-    Function Flow
-    --------------
+    ## Returns:
 
-    Notes
-    --------------
+    ## Function Flow:
+
+    ## Notes
     (1): The equation for the amplitude squared comes from
         Eq. (25) in this paper:
         https://arxiv.org/pdf/hep-ph/0112108.pdf
