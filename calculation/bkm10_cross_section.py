@@ -68,7 +68,6 @@ from amplitudes.cross_section_prefactor import calculate_bkm10_cross_section_pre
 
 # Amplitude Contributions | Bethe-Heitler | |M_{BH}|^{2}
 from amplitudes.bh_squared_contribution import calculate_bh_amplitude_squared
-from amplitudes.bh_squared_contribution import calculate_bh_amplitude_squared_longitudinally_polarized
 
 # Amplitude Contributions | Deeply-Virtual Compton Scattering | |M_{DVCS}|^{2}
 from amplitudes.dvcs_squared_contribution import calculate_dvcs_amplitude_squared_longitudinally_polarized
