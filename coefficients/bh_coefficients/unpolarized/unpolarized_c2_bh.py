@@ -16,7 +16,7 @@ def calculate_c_2_unpolarized_bh(
     # Title: `calculate_c_2_unpolarized_bh`
 
     ## Description:
-    # Numerically evaluate Equation (36) of the BH02 Formalism.
+    Numerically evaluate Equation (36) of the BH02 Formalism.
 
     ## Arguments:
         1. x_Bjorken: (float)
@@ -27,8 +27,11 @@ def calculate_c_2_unpolarized_bh(
         6. verbose: (bool)
             Debugging console output.
 
-    Notes
-    --------------
+    ## Return:
+
+    ## Function Flow:
+
+    ## Notes:
     (1): This coefficient is in Equation (37) from
         this paper:
         https://arxiv.org/pdf/hep-ph/0112108.pdf

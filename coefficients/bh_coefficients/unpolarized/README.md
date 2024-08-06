@@ -10,14 +10,14 @@ The BH coefficients remain the same across the BKM02 and BKM10 formalisms becaus
 available vast data on the nucleon electromagnetic form factors measured at facilities around the
 world. 
 
-## $c_{0}^{BH}$:
+## $c_{0, \text{unp}}^{BH}$:
 
 Fill in later.
 
-## $c_{1}^{BH}$:
+## $c_{1, \text{unp}}^{BH}$:
 
 Fill in later.
 
-## $c_{2}^{BH}$:
+## $c_{2, \text{unp}}^{BH}$:
 
 Fill in later.

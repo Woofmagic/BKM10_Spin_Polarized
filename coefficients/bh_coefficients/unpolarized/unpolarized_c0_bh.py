@@ -22,24 +22,16 @@ def calculate_c_0_unpolarized_bh(
     Equation (35) of the BKM02 Formalism.
 
     ## Arguments:
-    squared_Q_momentum_transfer: (float)
-
-    x_Bjorken: (float)
-
-    squared_hadronic_momentum_transfer_t: (float)
-
-    epsilon: (float)
-
-    lepton_energy_fraction_y: (float)
-
-    k_shorthand: (float)
-
-    Dirac_form_factor_F1: (float)
-
-    Pauli_form_factor_F2: (float)
-
-    verbose: (bool)
-        Debugging console output.
+        1. squared_Q_momentum_transfer: (float)
+        2. x_Bjorken: (float)
+        3. squared_hadronic_momentum_transfer_t: (float)
+        4. epsilon: (float)
+        5. lepton_energy_fraction_y: (float)
+        6. k_shorthand: (float)
+        7. Dirac_form_factor_F1: (float)
+        8. Pauli_form_factor_F2: (float)
+        9. verbose: (bool)
+            Debugging console output.
         
     ## Returns:
 
