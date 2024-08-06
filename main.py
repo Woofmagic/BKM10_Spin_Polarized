@@ -14,12 +14,16 @@ from statics.strings.static_strings import _ARGPARSE_DESCRIPTION
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_INPUT_DATAFILE
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_KINEMATIC_SET_NUMBER
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_FORMALISM_VERSION
+from statics.strings.static_strings import _ARGPARSE_ARGUMENT_LEPTON_POLARIZATION
+from statics.strings.static_strings import _ARGPARSE_ARGUMENT_TARGET_POLARIZATION
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_NUMBER_REPLICAS
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_VERBOSE
 
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_INPUT_DATAFILE
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_KINEMATIC_SET_NUMBER
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_FORMALISM_VERSION
+from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_LEPTON_POLARIZATION
+from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_TARGET_POLARIZATION
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_NUMBER_REPLICAS
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_VERBOSE
 
@@ -37,6 +41,8 @@ def main(
     kinematics_dataframe_path: str,
     kinematic_set_number: int,
     formalism_version: str,
+    lepton_polarization: str,
+    target_polarization: str,
     verbose: bool = False):
 
     # utilities > data_handling > pandas_reading > read_csv_file_with_pandas
@@ -79,8 +85,8 @@ def main(
         range_of_lab_azimuthal_phi = fixed_kinematic_set_dataframe[_COLUMN_NAME_AZIMUTHAL_PHI]
 
         # (6): Obtain the polarizations -- set to 1 for now:
-        lepton_polarization = 1
-        target_polarization = 2
+        numerical_lepton_polarization = 1 if lepton_polarization == 'polarized' else 0
+        numerical_target_polarization = 1 if target_polarization == 'polarized' else 0
 
         # (7): Obtain the values of the CFFs:
         compton_form_factor_h_real = -0.897
@@ -97,8 +103,8 @@ def main(
 
         # (5): Attempt to calculate the BKM10 Cross Section:
         calculate_bkm10_cross_section_longitudinally_polarized(
-            lepton_polarization,
-            target_polarization,
+            numerical_lepton_polarization,
+            numerical_target_polarization,
             range_of_Q_squared,
             range_of_x_Bjorken,
             range_of_hadronic_momentum_transfer_t,
@@ -150,6 +156,24 @@ if __name__ == "__main__":
         required = True,
         default = '10',
         help = _ARGPARSE_ARGUMENT_DESCRIPTION_FORMALISM_VERSION)
+    
+    # (5): Ask, but don't enforce BKM Formalism:
+    parser.add_argument(
+        '-lep-polar',
+        _ARGPARSE_ARGUMENT_LEPTON_POLARIZATION,
+        type = str,
+        required = True,
+        default = 'polarized',
+        help = _ARGPARSE_ARGUMENT_DESCRIPTION_LEPTON_POLARIZATION)
+    
+    # (5): Ask, but don't enforce BKM Formalism:
+    parser.add_argument(
+        '-target-polar',
+        _ARGPARSE_ARGUMENT_TARGET_POLARIZATION,
+        type = str,
+        required = True,
+        default = 'unpolarized',
+        help = _ARGPARSE_ARGUMENT_DESCRIPTION_TARGET_POLARIZATION)
     
     # (5): Ask, but don't enforce debugging verbosity:
     parser.add_argument(

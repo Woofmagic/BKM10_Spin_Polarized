@@ -26,8 +26,7 @@ def calculate_c_0_transversely_polarized_bh(
     ## Description:
     Equation (40) of the BKM02 Formalism.
 
-    Parameters
-    --------------
+    ## Arguments:
     lepton_polarization: (float)
 
     target_polarization: (float)
@@ -49,8 +48,11 @@ def calculate_c_0_transversely_polarized_bh(
     verbose: (bool)
         Debugging console output.
 
-    Notes
-    --------------
+    ## Returns:
+
+    ## Function Flow:
+
+    ## Notes:
     (1): This coefficient is in Equation (40) from
         the BKM02 Formalism, available here:
         https://arxiv.org/pdf/hep-ph/0112108.pdf
