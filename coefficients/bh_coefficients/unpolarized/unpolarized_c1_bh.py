@@ -43,7 +43,7 @@ def calculate_c_1_unpolarized_bh(
 
     Notes
     --------------
-    (1): This coefficient is in Equation (35) from
+    (1): This coefficient is in Equation (36) from
         this paper:
         https://arxiv.org/pdf/hep-ph/0112108.pdf
     """

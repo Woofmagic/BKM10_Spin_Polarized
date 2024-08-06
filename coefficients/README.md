@@ -4,7 +4,7 @@ Since the calculation of this shit is so large, we have to write a document to r
 
 Calculation of the cross-section involves computing tons of Fourier Coefficients that are obtained via fancy mode expansion in a particular gauge or coordinate system, probably lightcone gauge or something like that. It is further complicated by the fact that the fancy-sounding process of electroproduction of real photons can happen in two different ways at tree level or something. Since there are two processes that show up at the amplitude level, the square of the amplitude becomes even more of an pain. Please see what is happening below:
 
-$$|\mathcal{M}|^{2} = |\mathcal{M}_{1} + \mathcal{M}_{2}|^{2} = |\mathcal{M}_{1}|^{2} + |\mathcal{M}_{2}|^{2} + \mathcal{M}_{1} \mathcal{M}_{2}^{*} + \mathcal{M}_{1}^{*} \mathcal{M}_{2}.$$
+$$ |\mathcal{M}|^{2} = |\mathcal{M}_{1} + \mathcal{M}_{2}|^{2} = |\mathcal{M}_{1}|^{2} + |\mathcal{M}_{2}|^{2} + \mathcal{M}_{1} \mathcal{M}_{2}^{*} + \mathcal{M}_{1}^{*} \mathcal{M}_{2}. $$
 
 ## Bethe-Heitler Process:
 
