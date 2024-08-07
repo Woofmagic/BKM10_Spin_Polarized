@@ -57,25 +57,25 @@ def main(
         possible_data_path = f"{_DIRECTORY_DATA}\\{kinematics_dataframe_path}"
 
         if verbose:
-            print(f"> Possible data path is:\n{possible_data_path}")
+            print(f"> Possible data path is: {possible_data_path}")
 
         # (2): Now, check if the kinematics is actually there:
         kinematics_dataframe_file_path = find_directory(os.getcwd(), possible_data_path)
 
         if verbose:
-            print(f"> Did we find the filepath for the kinematics?\n{kinematics_dataframe_file_path}")
+            print(f"> Did we find the filepath for the kinematics? {kinematics_dataframe_file_path}")
 
         # (3): If the file was there, turn it into a DF with Pandas:
         kinematics_dataframe = read_csv_file_with_pandas(kinematics_dataframe_file_path)
 
         if verbose:
-            print(f"> Did we convert the kinematics file to a Pandas DF?\n{kinematics_dataframe is not None}")
+            print(f"> Did we convert the kinematics file to a Pandas DF? {kinematics_dataframe is not None}")
 
         # (4): Partition the DF on a fixed kinematic set:
         fixed_kinematic_set_dataframe = kinematics_dataframe[kinematics_dataframe[_COLUMN_NAME_KINEMATIC_SET] == kinematic_set_number]
 
         if verbose:
-            print(f"> Did we manage to fix to a kinematic range?\n{fixed_kinematic_set_dataframe is not None}")
+            print(f"> Did we manage to fix to a kinematic range? {fixed_kinematic_set_dataframe is not None}")
 
         # (5): Obtian the range of kinematic quantites:
         range_of_Q_squared = fixed_kinematic_set_dataframe[_COLUMN_NAME_Q_SQUARED]
@@ -87,6 +87,10 @@ def main(
         # (6): Obtain the polarizations -- set to 1 for now:
         numerical_lepton_polarization = 1 if lepton_polarization == 'polarized' else 0
         numerical_target_polarization = 1 if target_polarization == 'polarized' else 0
+
+        if verbose:
+            print(f"> Obtained lepton helicity to be: {numerical_lepton_polarization}")
+            print(f"> Obtained target polarization to be: {numerical_target_polarization}")
 
         # (7): Obtain the values of the CFFs:
         compton_form_factor_h_real = -0.897
@@ -162,8 +166,9 @@ if __name__ == "__main__":
         '-lep-polar',
         _ARGPARSE_ARGUMENT_LEPTON_POLARIZATION,
         type = str,
-        required = True,
+        required = False,
         default = 'polarized',
+        choices = ['polarized', 'unpolarized'],
         help = _ARGPARSE_ARGUMENT_DESCRIPTION_LEPTON_POLARIZATION)
     
     # (5): Ask, but don't enforce BKM Formalism:
@@ -171,8 +176,9 @@ if __name__ == "__main__":
         '-target-polar',
         _ARGPARSE_ARGUMENT_TARGET_POLARIZATION,
         type = str,
-        required = True,
+        required = False,
         default = 'unpolarized',
+        choices = ['polarized', 'unpolarized'],
         help = _ARGPARSE_ARGUMENT_DESCRIPTION_TARGET_POLARIZATION)
     
     # (5): Ask, but don't enforce debugging verbosity:
@@ -192,4 +198,6 @@ if __name__ == "__main__":
         kinematics_dataframe_path = arguments.input_datafile,
         kinematic_set_number = arguments.kinematic_set,
         formalism_version = arguments.formalism,
+        lepton_polarization = arguments.lepton_polarization,
+        target_polarization = arguments.target_polarization,
         verbose = arguments.verbose)
