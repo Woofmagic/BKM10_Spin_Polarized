@@ -29,13 +29,18 @@ def calculate_interference_contribution_longitudinally_polarized(
     lepton_propagator_p2: float,
     Dirac_form_factor_F1: float,
     Pauli_form_factor_F2: float,
-    compton_form_factor_h: float,
-    compton_form_factor_h_tilde: float,
-    compton_form_factor_e: float,
-    compton_form_factor_e_tilde: float,
-    verbose: bool = True) -> float:
+    compton_form_factor_h_real_part: float,
+    compton_form_factor_h_tilde_real_part: float,
+    compton_form_factor_e_real_part: float,
+    compton_form_factor_e_tilde_real_part: float,
+    compton_form_factor_h_imaginary_part: float,
+    compton_form_factor_h_tilde_imaginary_part: float,
+    compton_form_factor_e_imaginary_part: float,
+    compton_form_factor_e_tilde_imaginary_part: float,
+    verbose: bool = False) -> float:
     """
     """
+    print(f"> Verbose setting; {verbose}")
 
     try:
 
@@ -43,6 +48,7 @@ def calculate_interference_contribution_longitudinally_polarized(
         prefactor = 1. / (x_Bjorken * lepton_energy_fraction_y**3 * squared_hadronic_momentum_transfer_t * lepton_propagator_p1 * lepton_propagator_p2)
 
         # (2): Calculate c_{0}^{I}:
+        print(f"> Now calculating c0I...")
         c_0_I = calculate_c_interference_coefficient(
             0,
             lepton_polarization,
@@ -57,13 +63,14 @@ def calculate_interference_contribution_longitudinally_polarized(
             shorthand_k,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
+            compton_form_factor_h_real_part,
+            compton_form_factor_h_tilde_real_part,
+            compton_form_factor_e_real_part,
+            compton_form_factor_e_tilde_real_part,
             verbose)
         
         # (3): Calculate c_{1}^{I}:
+        print(f"> Now calculating c1I...")
         c_1_I = calculate_c_interference_coefficient(
             1,
             lepton_polarization,
@@ -79,13 +86,14 @@ def calculate_interference_contribution_longitudinally_polarized(
             shorthand_k,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
+            compton_form_factor_h_real_part,
+            compton_form_factor_h_tilde_real_part,
+            compton_form_factor_e_real_part,
+            compton_form_factor_e_tilde_real_part,
             verbose)
         
         # (4): Calculate c_{2}^{I}:
+        print(f"> Now calculating c2I...")
         c_2_I = calculate_c_interference_coefficient(
             2,
             lepton_polarization,
@@ -101,13 +109,14 @@ def calculate_interference_contribution_longitudinally_polarized(
             shorthand_k,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
+            compton_form_factor_h_real_part,
+            compton_form_factor_h_tilde_real_part,
+            compton_form_factor_e_real_part,
+            compton_form_factor_e_tilde_real_part,
             verbose)
         
         # (5): Calculate c_{3}^{I}:
+        print(f"> Now calculating c3I...")
         c_3_I = calculate_c_interference_coefficient(
             3,
             lepton_polarization,
@@ -123,10 +132,10 @@ def calculate_interference_contribution_longitudinally_polarized(
             shorthand_k,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
+            compton_form_factor_h_real_part,
+            compton_form_factor_h_tilde_real_part,
+            compton_form_factor_e_real_part,
+            compton_form_factor_e_tilde_real_part,
             verbose)
 
         # (6): Calculate s_{1}^{I}:
@@ -142,12 +151,13 @@ def calculate_interference_contribution_longitudinally_polarized(
             skewness_parameter,
             t_prime,
             k_tilde,
+            shorthand_k,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
+            compton_form_factor_h_imaginary_part,
+            compton_form_factor_h_tilde_imaginary_part,
+            compton_form_factor_e_imaginary_part,
+            compton_form_factor_e_tilde_imaginary_part,
             verbose)
         
         # (7): Calculate s_{2}^{I}:
@@ -163,12 +173,13 @@ def calculate_interference_contribution_longitudinally_polarized(
             skewness_parameter,
             t_prime,
             k_tilde,
+            shorthand_k,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
+            compton_form_factor_h_imaginary_part,
+            compton_form_factor_h_tilde_imaginary_part,
+            compton_form_factor_e_imaginary_part,
+            compton_form_factor_e_tilde_imaginary_part,
             verbose)
         
         # (8): Calculate s_{3}^{I}:
@@ -184,12 +195,13 @@ def calculate_interference_contribution_longitudinally_polarized(
             skewness_parameter,
             t_prime,
             k_tilde,
+            shorthand_k,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
+            compton_form_factor_h_imaginary_part,
+            compton_form_factor_h_tilde_imaginary_part,
+            compton_form_factor_e_imaginary_part,
+            compton_form_factor_e_tilde_imaginary_part,
             verbose)
 
         # (9): Calculate the interference contribution:

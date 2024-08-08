@@ -44,7 +44,8 @@ def calculate_curly_S_plus_plus_longitudinally_polarized_interference(
             compton_form_factor_h_real_part,
             compton_form_factor_h_tilde_real_part,
             compton_form_factor_e_real_part,
-            compton_form_factor_e_tilde_real_part)
+            compton_form_factor_e_tilde_real_part,
+            verbose)
         
         # (2): Calculate curly C_{LP}^{I, V}(F):
         curly_C_V_longitudinally_polarized_interference = calculate_curly_C_longitudinally_polarized_interference_V(
@@ -54,7 +55,8 @@ def calculate_curly_S_plus_plus_longitudinally_polarized_interference(
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
             compton_form_factor_h_real_part,
-            compton_form_factor_e_real_part)
+            compton_form_factor_e_real_part,
+            verbose)
         
         # (3): Calculate curly C_{LP}^{I, A}(F):
         curly_C_A_longitudinally_polarized_interference = calculate_curly_C_longitudinally_polarized_interference_A(
@@ -64,19 +66,20 @@ def calculate_curly_S_plus_plus_longitudinally_polarized_interference(
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
             compton_form_factor_h_tilde_real_part,
-            compton_form_factor_e_tilde_real_part)
+            compton_form_factor_e_tilde_real_part,
+            verbose)
         
         # (4): Split on the integer n:
         if n_number == 0:
 
             # (4.1): Calculate the S_{++}(0) contribution
-            s_plus_plus_contribution = 0
+            s_plus_plus_contribution = 0.
 
             # (4.2): Calculate the S_{++}^{V}(0) contribution
-            s_V_plus_plus_contribution = 0
+            s_V_plus_plus_contribution = 0.
 
             # (4.3): Calculate the S_{++}^{A}(0) contribution
-            s_A_plus_plus_contribution = 0
+            s_A_plus_plus_contribution = 0.
 
         elif n_number == 1:
 

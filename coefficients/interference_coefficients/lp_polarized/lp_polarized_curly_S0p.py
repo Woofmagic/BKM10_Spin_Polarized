@@ -33,6 +33,14 @@ def calculate_curly_S_zero_plus_longitudinally_polarized_interference(
     compton_form_factor_e_tilde_eff: float,
     verbose: bool = True) -> float:
 
+    curly_C_longitudinally_polarized_interference = 0.
+    s_V_zero_plus_contribution = 0.
+    curly_C_V_longitudinally_polarized_interference = 0.
+    s_zero_plus_contribution = 0.
+    s_A_zero_plus_contribution = 0.
+    curly_C_A_longitudinally_polarized_interference = 0.
+    s_zero_plus_contribution = 0.
+
     try:
 
         # (1): Calculate the prefactor: Ktilde/ (2 - xb) * sqrt(2 / Q^{2})
@@ -70,13 +78,17 @@ def calculate_curly_S_zero_plus_longitudinally_polarized_interference(
             compton_form_factor_h_tilde_eff,
             compton_form_factor_e_tilde_eff)
         
-        # (5): Split on the integer n:
-        if n_number == 0:
+        print('fuckzzz')
+        print(curly_C_longitudinally_polarized_interference)
+        print('fuckzzz')
+        print(curly_C_V_longitudinally_polarized_interference)
+        print('fuckzzz')
+        print(curly_C_A_longitudinally_polarized_interference)
+        print('fuckzzz')
 
-            # (6): Calculate the curly S0+ coefficient:
-            curly_S_longitudinally_polarized_interference = 0.
-            
-        elif n_number == 1:
+        print(f"> THE FUCKING NUMBER IS: {n_number}")
+
+        if n_number == 1:
 
             # (5.1): Calculate the S_{0+}(1) contribution
             s_zero_plus_contribution = calculate_s_1_zero_plus_longitudinally_polarized(
@@ -109,11 +121,9 @@ def calculate_curly_S_zero_plus_longitudinally_polarized_interference(
                 epsilon,
                 lepton_energy_fraction_y,
                 verbose)
-
+            
             # (6): Calculate the curly S0+ coefficient:
-            curly_S_longitudinally_polarized_interference = prefactor * (curly_C_longitudinally_polarized_interference
-            + s_V_zero_plus_contribution * curly_C_V_longitudinally_polarized_interference / s_zero_plus_contribution
-            + s_A_zero_plus_contribution * curly_C_A_longitudinally_polarized_interference / s_zero_plus_contribution)
+            curly_S_longitudinally_polarized_interference = prefactor * (curly_C_longitudinally_polarized_interference + s_V_zero_plus_contribution * curly_C_V_longitudinally_polarized_interference / s_zero_plus_contribution + s_A_zero_plus_contribution * curly_C_A_longitudinally_polarized_interference / s_zero_plus_contribution)
 
         elif n_number == 2:
 
@@ -149,16 +159,22 @@ def calculate_curly_S_zero_plus_longitudinally_polarized_interference(
                 lepton_energy_fraction_y,
                 shorthand_k,
                 verbose)
-
+            
             # (6): Calculate the curly S0+ coefficient:
-            curly_S_longitudinally_polarized_interference = prefactor * (curly_C_longitudinally_polarized_interference
-            + s_V_zero_plus_contribution * curly_C_V_longitudinally_polarized_interference / s_zero_plus_contribution
-            + s_A_zero_plus_contribution * curly_C_A_longitudinally_polarized_interference / s_zero_plus_contribution)
-
+            curly_S_longitudinally_polarized_interference = prefactor * (curly_C_longitudinally_polarized_interference + s_V_zero_plus_contribution * curly_C_V_longitudinally_polarized_interference / s_zero_plus_contribution + s_A_zero_plus_contribution * curly_C_A_longitudinally_polarized_interference / s_zero_plus_contribution)
+            
         elif n_number == 3:
 
             # (6): Calculate the curly S0+ coefficient:
             curly_S_longitudinally_polarized_interference = 0.
+
+        print(prefactor)
+        print(curly_C_longitudinally_polarized_interference)
+        print(curly_C_V_longitudinally_polarized_interference)
+        print(curly_C_A_longitudinally_polarized_interference)
+        print(f"> Calculated S0+: {s_zero_plus_contribution}")
+        print(f"> Calculated SV0+: {s_V_zero_plus_contribution}")
+        print(f"> Calculated SA0+: {s_A_zero_plus_contribution}")
 
         # (6.1): If verbose, print the calculation:
         if verbose:
@@ -170,3 +186,5 @@ def calculate_curly_S_zero_plus_longitudinally_polarized_interference(
     except Exception as ERROR:
         print(f"> Error in calculating the curly S0+ LP entire contribution amplitude squared\n> {ERROR}")
         return 0.
+    
+    

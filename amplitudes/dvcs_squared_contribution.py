@@ -36,8 +36,9 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
     compton_form_factor_e_tilde_imaginary_part: float,
     verbose: bool = True):
     """
-    Description
-    --------------
+    # Title: `calculate_dvcs_amplitude_squared_longitudinally_polarized`
+
+    ## Description:
     We now calculate the DVCS amplitude squared.
 
     Parameters

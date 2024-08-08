@@ -32,15 +32,21 @@ def calculate_s_interference_coefficient(
     """
     """
 
+    s_plus_plus = 0.
+    s_zero_plus_n = 0.
+
     try:
 
         if n_number == 0:
 
-            # (1): We compute the first part of the term: S++, n = 0
+            # (1): We compute the first part of the term: S_{++}(n), n = 0
             s_plus_plus = 0.
 
-            # (2): The second part of the term is S0+, n = 0
+            # (2): The second part of the term is S_{0+}(n), n = 0
             s_zero_plus_n = 0.
+
+            # (3): The first part of the term is S_{-+}(n).
+            s_minus_plus = 0.
             
         elif n_number == 1:
 
@@ -65,6 +71,12 @@ def calculate_s_interference_coefficient(
                 lepton_energy_fraction_y,
                 k_tilde,
                 verbose)
+            
+            print('fuckfuckf')
+            print(s_plus_plus)
+            print('fuckfuckf')
+            print(s_zero_plus_n)
+            print('fuckfuckf')
             
         elif n_number == 2:
 
@@ -148,7 +160,6 @@ def calculate_s_interference_coefficient(
             verbose)
         
         # (5): Calculate the entire thing:
-        print(s_plus_plus, curly_s_plus_plus, s_zero_plus_n, curly_s_zero_plus)
         s_n_interference_coefficient = s_plus_plus * curly_s_plus_plus + s_zero_plus_n * curly_s_zero_plus
 
         # (): If verbose, print the output:

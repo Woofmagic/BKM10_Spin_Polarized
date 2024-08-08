@@ -77,7 +77,7 @@ from amplitudes.interference_contribution import calculate_interference_contribu
 
 import numpy as np
 
-def calculate_bkm10_cross_section_longitudinally_polarized(
+def calculate_bkm10_cross_section(
     lepton_polarization: int,
     target_polarization: int,
     squared_Q_momentum_transfer: float, 
@@ -95,7 +95,7 @@ def calculate_bkm10_cross_section_longitudinally_polarized(
     compton_form_factor_e_tilde_imaginary_part: float,
     verbose: bool = False) -> float:
     """
-    # Title: `calculate_bkm10_cross_section_longitudinally_polarized`
+    # Title: `calculate_bkm10_cross_section`
 
     ## Description:
     Numerically evaluates the four-fold cross-section for the electroproduction
@@ -217,25 +217,25 @@ def calculate_bkm10_cross_section_longitudinally_polarized(
             verbose)
         
         # (16): Compute the BH Amplitude Squared
-        bh_amplitude_squared = calculate_bh_amplitude_squared(
-            lepton_polarization,
-            target_polarization,
-            squared_Q_momentum_transfer,
-            x_Bjorken,
-            squared_hadronic_momentum_transfer_t,
-            azimuthal_phi,
-            epsilon,
-            lepton_energy_fraction_y,
-            k_shorthand,
-            lepton_propagator_p1,
-            lepton_propagator_p2,
-            Dirac_form_factor_F1,
-            Pauli_form_factor_F2,
-            verbose,
-        )
+        bh_amplitude_squared = 0.
+        # bh_amplitude_squared = calculate_bh_amplitude_squared(
+        #     lepton_polarization,
+        #     target_polarization,
+        #     squared_Q_momentum_transfer,
+        #     x_Bjorken,
+        #     squared_hadronic_momentum_transfer_t,
+        #     azimuthal_phi,
+        #     epsilon,
+        #     lepton_energy_fraction_y,
+        #     k_shorthand,
+        #     lepton_propagator_p1,
+        #     lepton_propagator_p2,
+        #     Dirac_form_factor_F1,
+        #     Pauli_form_factor_F2,
+        #     verbose)
 
         # (17): Compute the DVCS Amplitude Squared
-        dvcs_amplitude_squared = 0
+        dvcs_amplitude_squared = 0.
         # dvcs_amplitude_squared = calculate_dvcs_amplitude_squared_longitudinally_polarized(
         #     lepton_polarization,
         #     target_polarization,
@@ -255,35 +255,37 @@ def calculate_bkm10_cross_section_longitudinally_polarized(
         #     compton_form_factor_h_tilde_imaginary_part,
         #     compton_form_factor_e_imaginary_part,
         #     compton_form_factor_e_tilde_imaginary_part,
-        #     verbose
-        # )
+        #     verbose)
 
         # (18): Compute the BH Amplitude Squared
-        interference_contribution = 0.
+        # interference_contribution = 0.
 
-        # interference_contribution = calculate_interference_contribution_longitudinally_polarized(
-        #     lepton_polarization,
-        #     target_polarization,
-        #     squared_Q_momentum_transfer,
-        #     x_Bjorken,
-        #     squared_hadronic_momentum_transfer_t,
-        #     azimuthal_phi,
-        #     epsilon,
-        #     lepton_energy_fraction_y,
-        #     skewness_parameter,
-        #     t_prime,
-        #     k_tilde,
-        #     k_shorthand,
-        #     lepton_propagator_p1,
-        #     lepton_propagator_p2,
-        #     Dirac_form_factor_F1,
-        #     Pauli_form_factor_F2,
-        #     compton_form_factor_h_real_part,
-        #     compton_form_factor_h_tilde_real_part,
-        #     compton_form_factor_e_real_part,
-        #     compton_form_factor_e_tilde_real_part,
-        #     verbose
-        # )
+        interference_contribution = calculate_interference_contribution_longitudinally_polarized(
+            lepton_polarization,
+            target_polarization,
+            squared_Q_momentum_transfer,
+            x_Bjorken,
+            squared_hadronic_momentum_transfer_t,
+            azimuthal_phi,
+            epsilon,
+            lepton_energy_fraction_y,
+            skewness_parameter,
+            t_prime,
+            k_tilde,
+            k_shorthand,
+            lepton_propagator_p1,
+            lepton_propagator_p2,
+            Dirac_form_factor_F1,
+            Pauli_form_factor_F2,
+            compton_form_factor_h_real_part,
+            compton_form_factor_h_tilde_real_part,
+            compton_form_factor_e_real_part,
+            compton_form_factor_e_tilde_real_part,
+            compton_form_factor_h_imaginary_part,
+            compton_form_factor_h_tilde_imaginary_part,
+            compton_form_factor_e_imaginary_part,
+            compton_form_factor_e_tilde_imaginary_part,
+            verbose)
 
         # (18): Calculate the total cross section
         bkm10_cross_section = cross_section_prefactor * (bh_amplitude_squared + dvcs_amplitude_squared + interference_contribution)

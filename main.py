@@ -35,7 +35,7 @@ from statics.strings.static_strings import _COLUMN_NAME_T_MOMENTUM_CHANGE
 from statics.strings.static_strings import _COLUMN_NAME_AZIMUTHAL_PHI
 from statics.strings.static_strings import _COLUMN_NAME_LEPTON_MOMENTUM
 
-from calculation.bkm10_cross_section import calculate_bkm10_cross_section_longitudinally_polarized
+from calculation.bkm10_cross_section import calculate_bkm10_cross_section
 
 def main(
     kinematics_dataframe_path: str,
@@ -86,7 +86,7 @@ def main(
 
         # (6): Obtain the polarizations -- set to 1 for now:
         numerical_lepton_polarization = 1 if lepton_polarization == 'polarized' else 0
-        numerical_target_polarization = 1 if target_polarization == 'polarized' else 0
+        numerical_target_polarization = -1 if target_polarization == 'polarized' else 0
 
         if verbose:
             print(f"> Obtained lepton helicity to be: {numerical_lepton_polarization}")
@@ -106,7 +106,7 @@ def main(
         compton_form_factor_e_tilde_imaginary = 5.383
 
         # (5): Attempt to calculate the BKM10 Cross Section:
-        calculate_bkm10_cross_section_longitudinally_polarized(
+        calculate_bkm10_cross_section(
             numerical_lepton_polarization,
             numerical_target_polarization,
             range_of_Q_squared,
@@ -122,8 +122,7 @@ def main(
             compton_form_factor_h_tilde_imaginary,
             compton_form_factor_e_imaginary,
             compton_form_factor_e_tilde_imaginary,
-            verbose,
-        )
+            verbose)
 
     except KeyboardInterrupt:
 

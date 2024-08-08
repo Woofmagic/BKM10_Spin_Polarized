@@ -33,6 +33,15 @@ def calculate_c_interference_coefficient(
     """
     """
 
+    print(f"> The number is C_{n_number}! FUCKER BIGG")
+
+    c_plus_plus = 0.
+    curly_c_plus_plus = 0.
+    c_zero_plus_n = 0.
+    curly_c_zero_plus = 0.
+    c_minus_plus_n = 0.
+    curly_c_minus_plus = 0.
+
     try:
 
         if n_number == 0:
@@ -72,7 +81,7 @@ def calculate_c_interference_coefficient(
                 squared_hadronic_momentum_transfer_t,
                 epsilon,
                 lepton_energy_fraction_y,
-                k_tilde,
+                shorthand_k,
                 verbose)
 
             # (2): The second part of the term is C0+, n = 1
@@ -131,6 +140,7 @@ def calculate_c_interference_coefficient(
             lepton_energy_fraction_y,
             t_prime,
             k_tilde,
+            shorthand_k,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
             compton_form_factor_h_real_part,
@@ -161,9 +171,15 @@ def calculate_c_interference_coefficient(
             verbose)
         
         # (5): Calculate the entire thing:
+        print(c_plus_plus)
+        print(curly_c_plus_plus)
+        print(c_zero_plus_n)
+        print(curly_c_zero_plus)
+        print(c_minus_plus_n)
+        print(curly_c_minus_plus)
+        c_n_interference_coefficient = c_plus_plus * curly_c_plus_plus + c_zero_plus_n * curly_c_zero_plus + c_minus_plus_n * curly_c_minus_plus
         print(f"c_n_interference_coefficient: {c_n_interference_coefficient}")
-        c_n_interference_coefficient = c_plus_plus * curly_c_plus_plus + c_zero_plus_n * curly_c_zero_plus
-
+        
         # (): If verbose, print the output:
         if verbose:
             print(f"> Calculated c_{n_number} interference coefficient to be:\n{c_n_interference_coefficient}")
