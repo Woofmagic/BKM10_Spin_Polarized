@@ -1,6 +1,32 @@
 # BKM10_Spin_Polarized
 BKM10 four-fold cross section parametrization for a spin-polarized target.
 
+## About the Program:
+
+To run the program, run `main.py` with the required arguments. We require a 
+
+### Arguments:
+
+1. `-d data_file.extension [str]`
+2. `-kin kinematic set [int]`
+3. `-form formalism [str: bkm02 | bkm10]`
+4. `-lep-polar`
+5. `-target-polar`
+
+
+#### Required Arguments:
+
+#### Optional Arguments:
+
+
+
+### Examples: 
+
+
+```bash
+python main.py -d basic_model_pseudodata_for_Jlab_kinematics.csv -kin 1 -form 10 -lep-polar polarized -target-polar polarized
+```
+
 ## The Four-Fold Cross Section
 
 What we are numerically calculating is a four-fold (meaning, we need to do four integrals) cross section. We need to integrate over four variables: $Q^{2}, x_{\text{B}}, t, \phi$. By the way, the first three quantities are called the \textit{kinematics}, and $\phi$ is an azimuthal angle that is measured in a chosen reference frame. However, the function actually requires a bit more detail. It is a function of several different things -- schematically, we express this as:

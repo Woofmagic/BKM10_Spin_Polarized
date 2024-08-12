@@ -51,8 +51,7 @@ def calculate_c_0_unpolarized_dvcs(
             compton_form_factor_h_tilde_imaginary_part,
             compton_form_factor_e_imaginary_part,
             compton_form_factor_e_tilde_imaginary_part,
-            verbose
-        )
+            verbose)
         
         # (4): Calculate the second terms' Curly C contribution:
         first_term_curlyC_unp_DVCS = calculate_curly_c_unpolarized_dvcs(
