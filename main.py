@@ -85,8 +85,8 @@ def main(
         range_of_lab_azimuthal_phi = fixed_kinematic_set_dataframe[_COLUMN_NAME_AZIMUTHAL_PHI]
 
         # (6): Obtain the polarizations -- set to 1 for now:
-        numerical_lepton_polarization = 1 if lepton_polarization == 'polarized' else 0
-        numerical_target_polarization = -1 if target_polarization == 'polarized' else 0
+        numerical_lepton_polarization = 0.5 if lepton_polarization == 'polarized' else 0
+        numerical_target_polarization = 1 if target_polarization == 'polarized' else 0
 
         if verbose:
             print(f"> Obtained lepton helicity to be: {numerical_lepton_polarization}")
