@@ -3,7 +3,7 @@ try:
 except ImportError:
     print("NumPy is not installed. Please install NumPy to use this script.")
 
-def calculate_s_3_minus_plus_longitudinally_polarized(
+def calculate_s_1_minus_plus_longitudinally_polarized_A(
     target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float, 
@@ -23,25 +23,37 @@ def calculate_s_3_minus_plus_longitudinally_polarized(
         # (2): Calculate t/Q^{2}:
         t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
 
-        # (3): Calculate 1 - sqrt(1 + epsilon^2):
+        # (3): Calculate 1 + sqrt(1 + epsilon^2):
         fancy_epsilon_term = 1. + root_one_plus_epsilon_squared
 
-        # (4): Calculate the first term in brackets:
-        bracket_term = 2. * fancy_epsilon_term + epsilon**2 + t_over_Q_squared * (epsilon**2 + 2. * x_Bjorken * fancy_epsilon_term)
+        # (4): Calculate the prefactor of the first term:
+        prefactor_first_term = 2. - 2. * lepton_energy_fraction_y + lepton_energy_fraction_y**2 + epsilon**2 * lepton_energy_fraction_y**2 / 2.
 
-        # (5): Calculate the prefactor:
-        prefactor = 4. * target_polarization * shorthand_K * (1. - lepton_energy_fraction_y * lepton_energy_fraction_y**2 * epsilon**2 / 4.) / root_one_plus_epsilon_squared**6
+        # (5): Calculate the prefactor of the second term:
+        prefactor_second_term = 1. - lepton_energy_fraction_y + lepton_energy_fraction_y**2 * epsilon**2 / 4.
 
-        # (6): Calculate entire coefficient in one:
-        s_3_minus_plus_LP = prefactor * bracket_term
+        # (6): Calculate the meat of the first term:
+        main_first_term = 1. - t_over_Q_squared * (1. - root_one_plus_epsilon_squared - 2. * x_Bjorken) / fancy_epsilon_term
+
+        # (7): Calculate the meat of the second term:
+        main_second_term = 3. - root_one_plus_epsilon_squared - t_over_Q_squared * (3. + root_one_plus_epsilon_squared - 6. * x_Bjorken)
+
+        # (8): Calculate the bracket term in its entirety:
+        bracket_term = prefactor_first_term * fancy_epsilon_term * main_first_term + prefactor_second_term * main_second_term
+
+        # (9): Calculate the prefactor:
+        prefactor = -8. * target_polarization * shorthand_K * x_Bjorken * t_over_Q_squared / root_one_plus_epsilon_squared**6
+
+        # (10): Calculate entire coefficient in one:
+        s_1_minus_plus_LP_A = prefactor * bracket_term
         
-        # (6.1): If verbose, log the output:
+        # (10.1): If verbose, log the output:
         if verbose:
-            print(f"> Calculated s_3_minus_plus_LP to be:\n{s_3_minus_plus_LP}")
+            print(f"> Calculated s_1_minus_plus_LP_A to be:\n{s_1_minus_plus_LP_A}")
 
-        # (7): Return the coefficient:
-        return s_3_minus_plus_LP
+        # (11): Return the coefficient:
+        return s_1_minus_plus_LP_A
 
     except Exception as ERROR:
-        print(f"> Error in calculating s_3_minus_plus_LP for Interference Term:\n> {ERROR}")
+        print(f"> Error in calculating s_1_minus_plus_LP_A for Interference Term:\n> {ERROR}")
         return 0.
