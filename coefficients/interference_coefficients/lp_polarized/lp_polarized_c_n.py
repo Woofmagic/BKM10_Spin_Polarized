@@ -173,6 +173,9 @@ def calculate_c_interference_coefficient(
             # (2): The second part of the term is C0+, n = 3
             c_zero_plus_n = 0.
 
+            # (3): C_{-+}(n = 0) is 0:
+            c_minus_plus_n = 0.
+
         # (3): Calculate the curly C_{++} contribution - requires both n and the CFFs:
         curly_c_plus_plus = calculate_curly_C_plus_plus_longitudinally_polarized_interference(
             n_number,
@@ -236,12 +239,6 @@ def calculate_c_interference_coefficient(
             verbose)
         
         # (5): Calculate the entire thing:
-        print(c_plus_plus)
-        print(curly_c_plus_plus)
-        print(c_zero_plus_n)
-        print(curly_c_zero_plus)
-        print(c_minus_plus_n)
-        print(curly_c_minus_plus)
         c_n_interference_coefficient = c_plus_plus * curly_c_plus_plus + c_zero_plus_n * curly_c_zero_plus + c_minus_plus_n * curly_c_minus_plus
         print(f"c_n_interference_coefficient: {c_n_interference_coefficient}")
         
@@ -254,4 +251,4 @@ def calculate_c_interference_coefficient(
     
     except Exception as ERROR:
         print(f"> Error in c_{n_number} contribution to the interference term: \n> {ERROR}")
-        return 0
+        return 0.
