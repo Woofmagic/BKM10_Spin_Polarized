@@ -8,13 +8,13 @@ There are three contributions.
 
 ## Interference:
 
-The contribution from the interference terms are a major pain. We have to iterate through $n \in \left{ 0, 1, 2, 3 \right}$ and compute $s_{n}^{I}$.
+The contribution from the interference terms are a major pain. We have to iterate through $n \in \{ 0, 1, 2, 3 \}$ and compute $s_{n}^{I}$.
 
 The chronology of the calculation is the following:
 
 1. Calculate the prefactor: $$\frac{1}{x_{B} y^{3} t P_{1} (\phi) P_{2} (\phi)}.$$
 
-Please note that we do not include the electric charge $e$ because it gets canceled out in the overall prefactor of the amplitude. (The sign still matters!) Proof is an exercise for the reader.
+> Please note that we do not include the electric charge $e$ because it gets canceled out in the overall prefactor of the amplitude. (The sign still matters!) Proof is an exercise for the reader.
 
 2. Calculate $c_{0}^{I}$. This coefficient is always here and does not require any fancy iteration. This calls `calculate_c_interference_coefficient` with $n = 0$.
 
@@ -30,7 +30,7 @@ Please note that we do not include the electric charge $e$ because it gets cance
         6. Calculate $C_{++}^{A}(n = 0)$.
         7. Calculate $$\mathcal{C}_{++}^{I}(n = 0 | \mathcal{F}) = \mathcal{C}^{I}(\mathcal{F}) + \frac{C_{++}^{V}(n = 0)}{C_{++}(n = 0)} \mathcal{C}^{I,V}(\mathcal{F}) +  \frac{C_{++}^{A}(n = 0)}{C_{++}(n = 0)} \mathcal{C}^{I,A}(\mathcal{F})$$
     5. Calculates $\mathcal{C}_{0+}^{I}(n = 0 | \mathcal{F}_{\text{Eff}})$, passing in $\text{Re}[\mathcal{F}_{\text{Eff}}]$ only.
-        1. Calculate $\frac{\sqrt{2}}{2 - x_{B}} \frac{\Tilde{K}}{Q}$
+        1. Calculate $\frac{\sqrt{2}}{2 - x_{B}} \frac{\tilde{K}}{Q}$
         2. Calculate $\mathcal{C}^{I}(\mathcal{F}_{\text{Eff}})$
         3. Calculate $\mathcal{C}^{I,V}(\mathcal{F}_{\text{Eff}})$
         4. Calculate $\mathcal{C}^{I,A}(\mathcal{F}_{\text{Eff}})$
@@ -39,7 +39,7 @@ Please note that we do not include the electric charge $e$ because it gets cance
         7. Calculate $C_{0+}^{A}(n = 0)$.
         8. Calculate $$\mathcal{C}_{0+}^{I}(n = 0 | \mathcal{F}_{\text{Eff}}) = \mathcal{C}^{I}(\mathcal{F}_{\text{Eff}}) + \frac{C_{0+}^{V}(n = 0)}{C_{++}(n = 0)} \mathcal{C}^{I,V}(\mathcal{F}_{\text{Eff}}) +  \frac{C_{0+}^{A}(n = 0)}{C_{0+}(n = 0)} \mathcal{C}^{I,A}(\mathcal{F}_{\text{Eff}})$$
     6. Calculates $\mathcal{C}_{-+}^{I}(n = 0 | \mathcal{F}_{\text{T}})$, passing in $\text{Re}[\mathcal{F}_{\text{T}}]$ only.
-        1. Calculate $\frac{\sqrt{2}}{2 - x_{B}} \frac{\Tilde{K}}{Q}$
+        1. Calculate $\frac{\sqrt{2}}{2 - x_{B}} \frac{\tilde{K}}{Q}$
         2. Calculate $\mathcal{C}^{I}(\mathcal{F}_{\text{T}})$
         3. Calculate $\mathcal{C}^{I,V}(\mathcal{F}_{\text{T}})$
         4. Calculate $\mathcal{C}^{I,A}(\mathcal{F}_{\text{T}})$
