@@ -30,7 +30,23 @@ Please note that we do not include the electric charge $e$ because it gets cance
         6. Calculate $C_{++}^{A}(n = 0)$.
         7. Calculate $$\mathcal{C}_{++}^{I}(n = 0 | \mathcal{F}) = \mathcal{C}^{I}(\mathcal{F}) + \frac{C_{++}^{V}(n = 0)}{C_{++}(n = 0)} \mathcal{C}^{I,V}(\mathcal{F}) +  \frac{C_{++}^{A}(n = 0)}{C_{++}(n = 0)} \mathcal{C}^{I,A}(\mathcal{F})$$
     5. Calculates $\mathcal{C}_{0+}^{I}(n = 0 | \mathcal{F}_{\text{Eff}})$, passing in $\text{Re}[\mathcal{F}_{\text{Eff}}]$ only.
+        1. Calculate $\frac{\sqrt{2}}{2 - x_{B}} \frac{\Tilde{K}}{Q}$
+        2. Calculate $\mathcal{C}^{I}(\mathcal{F}_{\text{Eff}})$
+        3. Calculate $\mathcal{C}^{I,V}(\mathcal{F}_{\text{Eff}})$
+        4. Calculate $\mathcal{C}^{I,A}(\mathcal{F}_{\text{Eff}})$
+        5. Calculate $C_{0+}(n = 0)$.
+        6. Calculate $C_{0+}^{V}(n = 0)$.
+        7. Calculate $C_{0+}^{A}(n = 0)$.
+        8. Calculate $$\mathcal{C}_{0+}^{I}(n = 0 | \mathcal{F}_{\text{Eff}}) = \mathcal{C}^{I}(\mathcal{F}_{\text{Eff}}) + \frac{C_{0+}^{V}(n = 0)}{C_{++}(n = 0)} \mathcal{C}^{I,V}(\mathcal{F}_{\text{Eff}}) +  \frac{C_{0+}^{A}(n = 0)}{C_{0+}(n = 0)} \mathcal{C}^{I,A}(\mathcal{F}_{\text{Eff}})$$
     6. Calculates $\mathcal{C}_{-+}^{I}(n = 0 | \mathcal{F}_{\text{T}})$, passing in $\text{Re}[\mathcal{F}_{\text{T}}]$ only.
+        1. Calculate $\frac{\sqrt{2}}{2 - x_{B}} \frac{\Tilde{K}}{Q}$
+        2. Calculate $\mathcal{C}^{I}(\mathcal{F}_{\text{T}})$
+        3. Calculate $\mathcal{C}^{I,V}(\mathcal{F}_{\text{T}})$
+        4. Calculate $\mathcal{C}^{I,A}(\mathcal{F}_{\text{T}})$
+        5. Calculate $C_{-+}(n = 0)$.
+        6. Calculate $C_{-+}^{V}(n = 0)$.
+        7. Calculate $C_{-+}^{A}(n = 0)$.
+        8. Calculate $$\mathcal{C}_{0+}^{I}(n = 0 | \mathcal{F}_{\text{T}}) = \mathcal{C}^{I}(\mathcal{F}_{\text{T}}) + \frac{C_{-+}^{V}(n = 0)}{C_{++}(n = 0)} \mathcal{C}^{I,V}(\mathcal{F}_{\text{T}}) +  \frac{C_{-+}^{A}(n = 0)}{C_{-+}(n = 0)} \mathcal{C}^{I,A}(\mathcal{F}_{\text{T}})$$
 
 3. Calculate $c_{1}^{I}$. Again, this calls `calculate_c_interference_coefficient` with $n = 1$.
 
