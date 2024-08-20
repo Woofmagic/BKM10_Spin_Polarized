@@ -15,6 +15,7 @@ from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_Cpp 
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_C0p import calculate_curly_C_zero_plus_longitudinally_polarized_interference
 
 from form_factors.effective_cffs import compute_cff_effective
+from form_factors.effective_cffs import compute_cff_transverse
 
 def calculate_c_interference_coefficient(
     n_number: int,

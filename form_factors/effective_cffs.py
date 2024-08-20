@@ -14,14 +14,15 @@ def compute_cff_effective(
 
         skewness_parameter: (float)
 
-        compton_form_factor: (flaot)
+        compton_form_factor: (float)
 
         verbose: (bool)
             Debugging console output.
 
     ## Returns:
-    cff_effective : (float)
-        the effective CFF
+
+        cff_effective : (float)
+            the effective CFF
     
     ## Notes:
     """
@@ -41,3 +42,25 @@ def compute_cff_effective(
     except Exception as ERROR:
         print(f"> Error in calculating F_effective:\n> {ERROR}")
         return 0.
+    
+def compute_cff_transverse(
+    compton_form_factor: float,
+    verbose: bool = True) -> float:
+    """
+    # Title: `compute_cff_transverse`
+
+    ## Description: 
+    Calculates what is called $\mathcal{F}_{T}$: the transverse
+    Compton Form Factors.
+
+    ## Arguments:
+
+        compton_form_factor: (float)
+
+        verbose: (bool)
+            Debugging console output.
+    
+    ## Returns:
+    NOT KNOWN YET
+    """
+    return compton_form_factor
