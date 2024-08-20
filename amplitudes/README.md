@@ -22,6 +22,13 @@ Please note that we do not include the electric charge $e$ because it gets cance
     2. Calculates $C_{0+}(n = 0)$.
     3. Calculates $C_{-+}(n = 0)$.
     4. Calculates $\mathcal{C}_{++}^{I}(n = 0 | \mathcal{F})$, passing in $\text{Re}[\mathcal{F}]$ only.
+        1. Calculate $\mathcal{C}^{I}(\mathcal{F})$
+        2. Calculate $\mathcal{C}^{I,V}(\mathcal{F})$
+        3. Calculate $\mathcal{C}^{I,A}(\mathcal{F})$
+        4. Calculate $C_{++}(n = 0)$.
+        5. Calculate $C_{++}^{V}(n = 0)$.
+        6. Calculate $C_{++}^{A}(n = 0)$.
+        7. Calculate $$\mathcal{C}_{++}^{I}(n = 0 | \mathcal{F}) = \mathcal{C}^{I}(\mathcal{F}) + \frac{C_{++}^{V}(n = 0)}{C_{++}(n = 0)} \mathcal{C}^{I,V}(\mathcal{F}) +  \frac{C_{++}^{A}(n = 0)}{C_{++}(n = 0)} \mathcal{C}^{I,A}(\mathcal{F})$$
     5. Calculates $\mathcal{C}_{0+}^{I}(n = 0 | \mathcal{F}_{\text{Eff}})$, passing in $\text{Re}[\mathcal{F}_{\text{Eff}}]$ only.
     6. Calculates $\mathcal{C}_{-+}^{I}(n = 0 | \mathcal{F}_{\text{T}})$, passing in $\text{Re}[\mathcal{F}_{\text{T}}]$ only.
 

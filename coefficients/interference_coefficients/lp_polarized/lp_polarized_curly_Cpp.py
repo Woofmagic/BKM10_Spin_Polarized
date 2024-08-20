@@ -1,3 +1,15 @@
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_Cpp0 import calculate_c_0_plus_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_Cpp0V import calculate_c_0_plus_plus_longitudinally_polarized_V
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_Cpp0A import calculate_c_0_plus_plus_longitudinally_polarized_A
+
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_Cpp1 import calculate_c_1_plus_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_Cpp1V import calculate_c_1_plus_plus_longitudinally_polarized_V
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_Cpp1A import calculate_c_1_plus_plus_longitudinally_polarized_A
+
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_Cpp2 import calculate_c_2_plus_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_Cpp2V import calculate_c_2_plus_plus_longitudinally_polarized_V
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_Cpp2A import calculate_c_2_plus_plus_longitudinally_polarized_A
+
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_CLP import calculate_curly_C_longitudinally_polarized_interference
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_CLPV import calculate_curly_C_longitudinally_polarized_interference_V
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_CLPA import calculate_curly_C_longitudinally_polarized_interference_A
@@ -185,6 +197,10 @@ def calculate_curly_C_plus_plus_longitudinally_polarized_interference(
             + c_A_plus_plus_contribution * curly_C_A_longitudinally_polarized_interference / c_plus_plus_contribution
 
         elif n_number == 3:
+
+            curly_C_plus_plus_longitudinally_polarized_interference = 0.
+
+        else:
 
             curly_C_plus_plus_longitudinally_polarized_interference = 0.
 
