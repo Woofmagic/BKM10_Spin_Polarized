@@ -7,12 +7,13 @@ from coefficients.interference_coefficients.lp_polarized.pl_polarized_S0p2 impor
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_Smp2 import calculate_s_2_minus_plus_longitudinally_polarized
 
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_Spp3 import calculate_s_3_plus_plus_longitudinally_polarized
-from coefficients.interference_coefficients.lp_polarized.lp_polarized_Smp3 import calculate_s_1_minus_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_Smp3 import calculate_s_3_minus_plus_longitudinally_polarized
 
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_Spp import calculate_curly_S_plus_plus_longitudinally_polarized_interference
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_S0p import calculate_curly_S_zero_plus_longitudinally_polarized_interference
 
 from form_factors.effective_cffs import compute_cff_effective
+from form_factors.effective_cffs import compute_cff_transverse
 
 def calculate_s_interference_coefficient(
     n_number: int,
@@ -117,6 +118,17 @@ def calculate_s_interference_coefficient(
                 lepton_energy_fraction_y,
                 shorthand_k,
                 verbose)
+            
+            # (3): The second part of the term is S_{-+}(n = 2):
+            s_minus_plus_n = calculate_s_2_minus_plus_longitudinally_polarized(
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                k_tilde,
+                verbose)
 
         elif n_number == 3:
 
@@ -133,6 +145,17 @@ def calculate_s_interference_coefficient(
 
             # (2): The second part of the term is S0+, n = 3
             s_zero_plus_n = 0.
+
+            # (3): The second part of the term is S_{-+}(n = 3):
+            s_minus_plus_n = calculate_s_3_minus_plus_longitudinally_polarized(
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                verbose)
 
         # (3): Calculate the curly S_{++} contribution - requires both n and the CFFs:
         curly_s_plus_plus = calculate_curly_S_plus_plus_longitudinally_polarized_interference(
@@ -155,7 +178,7 @@ def calculate_s_interference_coefficient(
             compton_form_factor_e_tilde_real_part,
             verbose)
 
-        # (4): Calculate the curly S_{+0} contribution - requires both n and the CFFs:
+        # (4): Calculate the curly S_{0+} contribution - requires both n and the CFFs:
         curly_s_zero_plus = calculate_curly_S_zero_plus_longitudinally_polarized_interference(
             n_number,
             target_polarization,
@@ -174,8 +197,27 @@ def calculate_s_interference_coefficient(
             compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde_real_part),
             verbose)
         
+        # (5): Calculate the curly S_{-+} contribution - requires both n and the CFFs:
+        curly_s_minus_plus = calculate_curly_S_zero_plus_longitudinally_polarized_interference(
+            n_number,
+            target_polarization,
+            squared_Q_momentum_transfer,
+            x_Bjorken,
+            squared_hadronic_momentum_transfer_t,
+            epsilon,
+            lepton_energy_fraction_y,
+            shorthand_k,
+            k_tilde,
+            Dirac_form_factor_F1,
+            Pauli_form_factor_F2,
+            compute_cff_transverse(skewness_parameter, compton_form_factor_h_real_part),
+            compute_cff_transverse(skewness_parameter, compton_form_factor_h_tilde_real_part),
+            compute_cff_transverse(skewness_parameter, compton_form_factor_e_real_part),
+            compute_cff_transverse(skewness_parameter, compton_form_factor_e_tilde_real_part),
+            verbose)
+        
         # (5): Calculate the entire thing:
-        s_n_interference_coefficient = s_plus_plus * curly_s_plus_plus + s_zero_plus_n * curly_s_zero_plus
+        s_n_interference_coefficient = s_plus_plus * curly_s_plus_plus + s_zero_plus_n * curly_s_zero_plus + s_minus_plus_n * curly_s_minus_plus
 
         # (): If verbose, print the output:
         if verbose:
