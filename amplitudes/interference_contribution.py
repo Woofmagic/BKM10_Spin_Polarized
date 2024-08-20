@@ -40,7 +40,6 @@ def calculate_interference_contribution_longitudinally_polarized(
     verbose: bool = False) -> float:
     """
     """
-    print(f"> Verbose setting; {verbose}")
 
     try:
 
@@ -48,7 +47,6 @@ def calculate_interference_contribution_longitudinally_polarized(
         prefactor = 1. / (x_Bjorken * lepton_energy_fraction_y**3 * squared_hadronic_momentum_transfer_t * lepton_propagator_p1 * lepton_propagator_p2)
 
         # (2): Calculate c_{0}^{I}:
-        print(f"> Now calculating c0I...")
         c_0_I = calculate_c_interference_coefficient(
             0,
             lepton_polarization,
@@ -70,7 +68,6 @@ def calculate_interference_contribution_longitudinally_polarized(
             verbose)
         
         # (3): Calculate c_{1}^{I}:
-        print(f"> Now calculating c1I...")
         c_1_I = calculate_c_interference_coefficient(
             1,
             lepton_polarization,

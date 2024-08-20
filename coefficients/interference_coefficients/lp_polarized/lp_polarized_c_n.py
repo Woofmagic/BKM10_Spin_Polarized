@@ -1,9 +1,15 @@
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_Cpp0 import calculate_c_0_plus_plus_longitudinally_polarized
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p0 import calculate_c_0_zero_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_Cmp0 import calculate_c_0_minus_plus_longitudinally_polarized
+
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_Cpp1 import calculate_c_1_plus_plus_longitudinally_polarized
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p1 import calculate_c_1_zero_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_Cmp1 import calculate_c_1_minus_plus_longitudinally_polarized
+
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_Cpp2 import calculate_c_2_plus_plus_longitudinally_polarized
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p2 import calculate_c_2_zero_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_Cmp2 import calculate_c_2_minus_plus_longitudinally_polarized
+
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_Cpp import calculate_curly_C_plus_plus_longitudinally_polarized_interference
 
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_C0p import calculate_curly_C_zero_plus_longitudinally_polarized_interference
@@ -33,10 +39,13 @@ def calculate_c_interference_coefficient(
     """
     """
 
-    print(f"> The number is C_{n_number}! FUCKER BIGG")
-
+    # (1): Initialize the contribution from C_{++}(n) by setting it equal to 0.:
     c_plus_plus = 0.
+
+    # (2): Initialize the contribution from CurlyC_{++}(n | F):
     curly_c_plus_plus = 0.
+
+
     c_zero_plus_n = 0.
     curly_c_zero_plus = 0.
     c_minus_plus_n = 0.
@@ -70,6 +79,18 @@ def calculate_c_interference_coefficient(
                 shorthand_k,
                 verbose)
             
+            # (3): The third part of the term is C_{-+}(n = 0):
+            c_minus_plus_n = calculate_c_0_minus_plus_longitudinally_polarized(
+                lepton_polarization,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                k_tilde,
+                verbose)
+            
         elif n_number == 1:
 
             # (1): We compute the first part of the term: C++, n = 1
@@ -92,6 +113,18 @@ def calculate_c_interference_coefficient(
                 epsilon,
                 lepton_energy_fraction_y,
                 k_tilde,
+                shorthand_k,
+                verbose)
+            
+            # (3): The third part of the term is C_{-+}(n = 1):
+            c_minus_plus_n = calculate_c_1_minus_plus_longitudinally_polarized(
+                lepton_polarization,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
                 shorthand_k,
                 verbose)
             
@@ -120,6 +153,17 @@ def calculate_c_interference_coefficient(
                 shorthand_k,
                 verbose)
 
+            # (3): The third part of the term is C_{-+}(n = 2):
+            c_minus_plus_n = calculate_c_2_minus_plus_longitudinally_polarized(
+                lepton_polarization,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                verbose)
+            
         elif n_number == 3:
 
             # (1): We compute the first part of the term: C++, n = 3

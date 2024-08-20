@@ -9,3 +9,23 @@ There are three contributions.
 ## Interference:
 
 The contribution from the interference terms are a major pain. We have to iterate through $n \in \left{ 0, 1, 2, 3 \right}$ and compute $s_{n}^{I}$.
+
+The chronology of the calculation is the following:
+
+1. Calculate the prefactor: $$\frac{1}{x_{B} y^{3} t P_{1} (\phi) P_{2} (\phi)}.$$
+
+Please note that we do not include the electric charge $e$ because it gets canceled out in the overall prefactor of the amplitude. (The sign still matters!) Proof is an exercise for the reader.
+
+2. Calculate $c_{0}^{I}$. This coefficient is always here and does not require any fancy iteration. This calls `calculate_c_interference_coefficient` with $n = 0$.
+
+3. Calculate $c_{1}^{I}$. Again, this calls `calculate_c_interference_coefficient` with $n = 1$.
+
+4. Calculate $c_{2}^{I}$. This calls `calculate_c_interference_coefficient` with $n = 2$.
+
+5. Calculate $c_{3}^{I}$. This calls `calculate_c_interference_coefficient` with $n = 3$.
+
+6. Calculate $s_{1}^{I}$. This calls `calculate_s_interference_coefficient` with $n = 1$.
+
+7. Calculate $s_{2}^{I}$. This calls `calculate_s_interference_coefficient` with $n = 2$.
+
+8. Calculate $s_{3}^{I}$. This calls `calculate_s_interference_coefficient` with $n = 3$.
