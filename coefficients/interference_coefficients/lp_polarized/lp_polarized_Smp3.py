@@ -3,7 +3,7 @@ try:
 except ImportError:
     print("NumPy is not installed. Please install NumPy to use this script.")
 
-def calculate_s_1_minus_plus_longitudinally_polarized(
+def calculate_s_3_minus_plus_longitudinally_polarized(
     target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float, 

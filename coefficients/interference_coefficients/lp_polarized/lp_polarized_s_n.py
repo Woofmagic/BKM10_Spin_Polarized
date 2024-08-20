@@ -1,8 +1,13 @@
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_Spp1 import calculate_s_1_plus_plus_longitudinally_polarized
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_S0p1 import calculate_s_1_zero_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_Smp1 import calculate_s_1_minus_plus_longitudinally_polarized
+
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_Spp2 import calculate_s_2_plus_plus_longitudinally_polarized
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_S0p2 import calculate_s_2_zero_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_Smp2 import calculate_s_2_minus_plus_longitudinally_polarized
+
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_Spp3 import calculate_s_3_plus_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_Smp3 import calculate_s_1_minus_plus_longitudinally_polarized
 
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_Spp import calculate_curly_S_plus_plus_longitudinally_polarized_interference
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_S0p import calculate_curly_S_zero_plus_longitudinally_polarized_interference
@@ -33,7 +38,11 @@ def calculate_s_interference_coefficient(
     """
 
     s_plus_plus = 0.
+    curly_s_plus_plus = 0.
     s_zero_plus_n = 0.
+    curly_s_zero_plus_n = 0.
+    s_minus_plus = 0.
+    curly_s_minus_plus = 0.
 
     try:
 
@@ -72,11 +81,17 @@ def calculate_s_interference_coefficient(
                 k_tilde,
                 verbose)
             
-            print('fuckfuckf')
-            print(s_plus_plus)
-            print('fuckfuckf')
-            print(s_zero_plus_n)
-            print('fuckfuckf')
+            # (3): The second part of the term is S_{-+}(n = 1):
+            s_minus_plus_n = calculate_s_1_minus_plus_longitudinally_polarized(
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                k_tilde,
+                verbose)
+        
             
         elif n_number == 2:
 
