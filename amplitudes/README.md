@@ -18,14 +18,42 @@ Please note that we do not include the electric charge $e$ because it gets cance
 
 2. Calculate $c_{0}^{I}$. This coefficient is always here and does not require any fancy iteration. This calls `calculate_c_interference_coefficient` with $n = 0$.
 
+    1. Calculates $C_{++}(n = 0)$.
+    2. Calculates $C_{0+}(n = 0)$.
+    3. Calculates $C_{-+}(n = 0)$.
+
 3. Calculate $c_{1}^{I}$. Again, this calls `calculate_c_interference_coefficient` with $n = 1$.
+
+    1. Calculates $C_{++}(n = 1)$.
+    2. Calculates $C_{0+}(n = 1)$.
+    3. Calculates $C_{-+}(n = 1)$.
 
 4. Calculate $c_{2}^{I}$. This calls `calculate_c_interference_coefficient` with $n = 2$.
 
+    1. Calculates $C_{++}(n = 2)$.
+    2. Calculates $C_{0+}(n = 2)$.
+    3. Calculates $C_{-+}(n = 2)$.
+
 5. Calculate $c_{3}^{I}$. This calls `calculate_c_interference_coefficient` with $n = 3$.
+
+    1. Calculates $C_{++}(n = 3)$.
+    2. Calculates $C_{0+}(n = 3)$.
+    3. Calculates $C_{-+}(n = 3)$.
 
 6. Calculate $s_{1}^{I}$. This calls `calculate_s_interference_coefficient` with $n = 1$.
 
+    1. Calculates $S_{++}(n = 1)$.
+    2. Calculates $S_{0+}(n = 1)$.
+    3. Calculates $S_{-+}(n = 1)$.
+
 7. Calculate $s_{2}^{I}$. This calls `calculate_s_interference_coefficient` with $n = 2$.
 
+    1. Calculates $S_{++}(n = 2)$.
+    2. Calculates $S_{0+}(n = 2)$.
+    3. Calculates $S_{-+}(n = 2)$.
+
 8. Calculate $s_{3}^{I}$. This calls `calculate_s_interference_coefficient` with $n = 3$.
+
+    1. Calculates $S_{++}(n = 3)$.
+    2. Calculates $S_{0+}(n = 3)$.
+    3. Calculates $S_{-+}(n = 3)$.

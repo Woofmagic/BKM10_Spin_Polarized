@@ -90,7 +90,6 @@ def calculate_interference_contribution_longitudinally_polarized(
             verbose)
         
         # (4): Calculate c_{2}^{I}:
-        print(f"> Now calculating c2I...")
         c_2_I = calculate_c_interference_coefficient(
             2,
             lepton_polarization,

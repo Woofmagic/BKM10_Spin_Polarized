@@ -194,7 +194,7 @@ def calculate_c_interference_coefficient(
             verbose)
 
 
-        # (4): Calculate the curly C_{+0} contribution - requires both n and the CFFs:
+        # (4): Calculate the curly C_{0+} contribution - requires both n and the CFFs:
         curly_c_zero_plus = calculate_curly_C_zero_plus_longitudinally_polarized_interference(
             n_number,
             lepton_polarization,
@@ -212,6 +212,26 @@ def calculate_c_interference_coefficient(
             compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde_real_part),
             compute_cff_effective(skewness_parameter, compton_form_factor_e_real_part),
             compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde_real_part),
+            verbose)
+        
+        # (5): Calculate the curly C_{-+} contribution - requires both n and the TRANSVERSE CFFs:
+        curly_c_minus_plus = calculate_curly_C_zero_plus_longitudinally_polarized_interference(
+            n_number,
+            lepton_polarization,
+            target_polarization,
+            squared_Q_momentum_transfer,
+            x_Bjorken,
+            squared_hadronic_momentum_transfer_t,
+            epsilon,
+            lepton_energy_fraction_y,
+            k_tilde,
+            shorthand_k,
+            Dirac_form_factor_F1,
+            Pauli_form_factor_F2,
+            compute_cff_transverse(skewness_parameter, compton_form_factor_h_real_part),
+            compute_cff_transverse(skewness_parameter, compton_form_factor_h_tilde_real_part),
+            compute_cff_transverse(skewness_parameter, compton_form_factor_e_real_part),
+            compute_cff_transverse(skewness_parameter, compton_form_factor_e_tilde_real_part),
             verbose)
         
         # (5): Calculate the entire thing:
