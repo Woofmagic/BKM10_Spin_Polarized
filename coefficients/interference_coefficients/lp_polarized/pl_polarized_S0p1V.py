@@ -11,7 +11,7 @@ def calculate_s_1_zero_plus_longitudinally_polarized_V(
     epsilon: float,
     lepton_energy_fraction_y: float, 
     k_tilde: float,
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     """
 

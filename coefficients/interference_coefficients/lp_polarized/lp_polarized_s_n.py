@@ -34,13 +34,13 @@ def calculate_s_interference_coefficient(
     compton_form_factor_h_tilde_real_part: float,
     compton_form_factor_e_real_part: float,
     compton_form_factor_e_tilde_real_part: float,
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     """
 
     s_plus_plus = 0.
     curly_s_plus_plus = 0.
-    s_zero_plus_n = 0.
+    s_zero_plus = 0.
     curly_s_zero_plus_n = 0.
     s_minus_plus = 0.
     curly_s_minus_plus = 0.
@@ -53,7 +53,7 @@ def calculate_s_interference_coefficient(
             s_plus_plus = 0.
 
             # (2): The second part of the term is S_{0+}(n), n = 0
-            s_zero_plus_n = 0.
+            s_zero_plus = 0.
 
             # (3): The first part of the term is S_{-+}(n).
             s_minus_plus = 0.
@@ -72,7 +72,7 @@ def calculate_s_interference_coefficient(
                 verbose)
 
             # (2): The second part of the term is S0+, n = 1
-            s_zero_plus_n = calculate_s_1_zero_plus_longitudinally_polarized(
+            s_zero_plus = calculate_s_1_zero_plus_longitudinally_polarized(
                 target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
@@ -83,7 +83,7 @@ def calculate_s_interference_coefficient(
                 verbose)
             
             # (3): The second part of the term is S_{-+}(n = 1):
-            s_minus_plus_n = calculate_s_1_minus_plus_longitudinally_polarized(
+            s_minus_plus = calculate_s_1_minus_plus_longitudinally_polarized(
                 target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
@@ -109,7 +109,7 @@ def calculate_s_interference_coefficient(
                 verbose)
 
             # (2): The second part of the term is S0+, n = 2
-            s_zero_plus_n = calculate_s_2_zero_plus_longitudinally_polarized(
+            s_zero_plus = calculate_s_2_zero_plus_longitudinally_polarized(
                 target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
@@ -120,14 +120,13 @@ def calculate_s_interference_coefficient(
                 verbose)
             
             # (3): The second part of the term is S_{-+}(n = 2):
-            s_minus_plus_n = calculate_s_2_minus_plus_longitudinally_polarized(
+            s_minus_plus = calculate_s_2_minus_plus_longitudinally_polarized(
                 target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
                 squared_hadronic_momentum_transfer_t,
                 epsilon,
                 lepton_energy_fraction_y,
-                k_tilde,
                 verbose)
 
         elif n_number == 3:
@@ -144,10 +143,10 @@ def calculate_s_interference_coefficient(
                 verbose)
 
             # (2): The second part of the term is S0+, n = 3
-            s_zero_plus_n = 0.
+            s_zero_plus = 0.
 
             # (3): The second part of the term is S_{-+}(n = 3):
-            s_minus_plus_n = calculate_s_3_minus_plus_longitudinally_polarized(
+            s_minus_plus = calculate_s_3_minus_plus_longitudinally_polarized(
                 target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
@@ -217,7 +216,7 @@ def calculate_s_interference_coefficient(
             verbose)
         
         # (5): Calculate the entire thing:
-        s_n_interference_coefficient = s_plus_plus * curly_s_plus_plus + s_zero_plus_n * curly_s_zero_plus + s_minus_plus_n * curly_s_minus_plus
+        s_n_interference_coefficient = s_plus_plus * curly_s_plus_plus + s_zero_plus * curly_s_zero_plus + s_minus_plus * curly_s_minus_plus
 
         # (): If verbose, print the output:
         if verbose:

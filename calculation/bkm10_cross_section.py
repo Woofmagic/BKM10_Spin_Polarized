@@ -78,8 +78,8 @@ from amplitudes.interference_contribution import calculate_interference_contribu
 import numpy as np
 
 def calculate_bkm10_cross_section(
-    lepton_polarization: int,
-    target_polarization: int,
+    lepton_polarization: float,
+    target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float,
     squared_hadronic_momentum_transfer_t: float,
@@ -288,6 +288,10 @@ def calculate_bkm10_cross_section(
             verbose)
 
         # (18): Calculate the total cross section
+        print(f"> BH was: {convert_to_nb_over_GeV4(bh_amplitude_squared)}")
+        print(f"> DVCS was: {convert_to_nb_over_GeV4(dvcs_amplitude_squared)}")
+        print(f"> I was: {convert_to_nb_over_GeV4(interference_contribution)}")
+        print(cross_section_prefactor)
         bkm10_cross_section = cross_section_prefactor * (bh_amplitude_squared + dvcs_amplitude_squared + interference_contribution)
 
         # (18.1): If verbose, print the output:
@@ -296,10 +300,11 @@ def calculate_bkm10_cross_section(
 
         # (19): Convert to nb/GeV^{4}:
         bkm10_cross_section_in_nb_GeV4 = convert_to_nb_over_GeV4(bkm10_cross_section)
+        print(bkm10_cross_section_in_nb_GeV4)
         
         # (19.1): If verbose, print the conversion:
         if verbose:
-            print(f"> Converted BKM10 differential cross section to {bkm10_cross_section_in_nb_GeV4} nb/GeV^{4}")
+            print(f"> Converted BKM10 differential cross section to {bkm10_cross_section_in_nb_GeV4} nb/GeV4")
 
         plot_cross_section(
             lab_azimuthal_phi = azimuthal_phi,

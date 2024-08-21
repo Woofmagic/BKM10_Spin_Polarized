@@ -10,7 +10,7 @@ def calculate_kinematics_k_squared(
     squared_hadronic_momentum_transfer_t: float,
     epsilon: float,
     squared_hadronic_momentum_transfer_t_minimum: float,
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     Description
     --------------

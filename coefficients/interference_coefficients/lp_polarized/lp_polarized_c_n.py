@@ -36,7 +36,7 @@ def calculate_c_interference_coefficient(
     compton_form_factor_h_tilde_real_part: float,
     compton_form_factor_e_real_part: float,
     compton_form_factor_e_tilde_real_part: float,
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     """
 
@@ -247,8 +247,8 @@ def calculate_c_interference_coefficient(
             verbose)
         
         # (5): Calculate the entire thing:
-        c_n_interference_coefficient = c_plus_plus * curly_c_plus_plus + c_zero_plus * curly_c_zero_plus + c_minus_plus * curly_c_minus_plus
-        print(f"c_n_interference_coefficient: {c_n_interference_coefficient}")
+        # c_n_interference_coefficient = c_plus_plus * curly_c_plus_plus + c_zero_plus * curly_c_zero_plus + c_minus_plus * curly_c_minus_plus
+        c_n_interference_coefficient = c_plus_plus * curly_c_plus_plus + c_zero_plus * curly_c_zero_plus
         
         # (): If verbose, print the output:
         if verbose:

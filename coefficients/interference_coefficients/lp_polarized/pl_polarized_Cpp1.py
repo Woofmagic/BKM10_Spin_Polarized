@@ -12,7 +12,7 @@ def calculate_c_1_plus_plus_longitudinally_polarized(
     epsilon: float,
     lepton_energy_fraction_y: float, 
     shorthand_k: float,
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     """
 

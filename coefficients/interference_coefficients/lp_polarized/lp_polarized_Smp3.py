@@ -11,7 +11,7 @@ def calculate_s_3_minus_plus_longitudinally_polarized(
     epsilon: float,
     lepton_energy_fraction_y: float, 
     shorthand_K: float,
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     """
 

@@ -20,7 +20,7 @@ def calculate_curly_c_longitudinally_polarized_dvcs(
     compton_form_factor_h_tilde_imaginary_part: float,
     compton_form_factor_e_imaginary_part: float,
     compton_form_factor_e_tilde_imaginary_part: float,
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     Description
     --------------

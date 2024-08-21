@@ -31,7 +31,7 @@ def calculate_curly_S_zero_plus_longitudinally_polarized_interference(
     compton_form_factor_h_tilde_eff: float,
     compton_form_factor_e_eff: float,
     compton_form_factor_e_tilde_eff: float,
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
 
     curly_C_longitudinally_polarized_interference = 0.
     s_V_zero_plus_contribution = 0.
@@ -77,16 +77,6 @@ def calculate_curly_S_zero_plus_longitudinally_polarized_interference(
             Pauli_form_factor_F2,
             compton_form_factor_h_tilde_eff,
             compton_form_factor_e_tilde_eff)
-        
-        print('fuckzzz')
-        print(curly_C_longitudinally_polarized_interference)
-        print('fuckzzz')
-        print(curly_C_V_longitudinally_polarized_interference)
-        print('fuckzzz')
-        print(curly_C_A_longitudinally_polarized_interference)
-        print('fuckzzz')
-
-        print(f"> THE FUCKING NUMBER IS: {n_number}")
 
         if n_number == 1:
 
@@ -167,14 +157,6 @@ def calculate_curly_S_zero_plus_longitudinally_polarized_interference(
 
             # (6): Calculate the curly S0+ coefficient:
             curly_S_longitudinally_polarized_interference = 0.
-
-        print(prefactor)
-        print(curly_C_longitudinally_polarized_interference)
-        print(curly_C_V_longitudinally_polarized_interference)
-        print(curly_C_A_longitudinally_polarized_interference)
-        print(f"> Calculated S0+: {s_zero_plus_contribution}")
-        print(f"> Calculated SV0+: {s_V_zero_plus_contribution}")
-        print(f"> Calculated SA0+: {s_A_zero_plus_contribution}")
 
         # (6.1): If verbose, print the calculation:
         if verbose:

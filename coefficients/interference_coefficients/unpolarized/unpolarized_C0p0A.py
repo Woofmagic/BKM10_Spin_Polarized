@@ -10,7 +10,7 @@ def calculate_c_0_plus_plus_unpolarized_A(
     epsilon: float,
     lepton_energy_fraction_y: float, 
     shorthand_k: float,
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     """
 

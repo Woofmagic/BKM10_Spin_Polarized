@@ -32,7 +32,7 @@ def calculate_curly_C_plus_plus_longitudinally_polarized_interference(
     compton_form_factor_h_tilde_real_part: float,
     compton_form_factor_e_real_part: float,
     compton_form_factor_e_tilde_real_part: float,
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
 
     try:
 

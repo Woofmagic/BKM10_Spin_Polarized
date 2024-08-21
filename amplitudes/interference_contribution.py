@@ -13,8 +13,8 @@ from coefficients.interference_coefficients.lp_polarized.lp_polarized_c_n import
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_interference_coefficient
 
 def calculate_interference_contribution_longitudinally_polarized(
-    lepton_polarization: int,
-    target_polarization: int,
+    lepton_polarization: float,
+    target_polarization: float,
     squared_Q_momentum_transfer: float,
     x_Bjorken: float,
     squared_hadronic_momentum_transfer_t: float,
@@ -207,16 +207,7 @@ def calculate_interference_contribution_longitudinally_polarized(
             + c_3_I * np.cos(np.pi - 3. * (convert_degrees_to_radians(azimuthal_phi)))
             + s_1_I * np.sin(np.pi - 1. * (convert_degrees_to_radians(azimuthal_phi)))
             + s_2_I * np.sin(np.pi - 2. * (convert_degrees_to_radians(azimuthal_phi)))
-            + s_3_I * np.sin(np.pi - 3. * (convert_degrees_to_radians(azimuthal_phi)))
-            )
-        
-        print(f"c_0_I: {c_0_I}")
-        print(f"c_1_I: {c_1_I}")
-        print(f"c_2_I: {c_2_I}")
-        print(f"c_3_I: {c_3_I}")
-        print(f"s_1_I: {s_1_I}")
-        print(f"s_2_I: {s_2_I}")
-        print(f"s_3_I: {s_3_I}")
+            + s_3_I * np.sin(np.pi - 3. * (convert_degrees_to_radians(azimuthal_phi))))
 
         # (9.1): If verbose, print the calculation:
         if verbose:

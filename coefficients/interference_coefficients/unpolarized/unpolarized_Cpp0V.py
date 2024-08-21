@@ -10,7 +10,7 @@ def calculate_c_0_plus_plus_unpolarized_V(
     epsilon: float,
     lepton_energy_fraction_y: float, 
     k_tilde: float,
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     """
 

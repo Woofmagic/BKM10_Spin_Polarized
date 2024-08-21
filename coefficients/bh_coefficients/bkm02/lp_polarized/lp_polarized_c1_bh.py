@@ -18,7 +18,7 @@ def calculate_c_1_longitudinally_polarized_bh(
     k_shorthand: float,
     Dirac_form_factor_F1: float, 
     Pauli_form_factor_F2: float, 
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     Description
     --------------

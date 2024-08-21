@@ -1,7 +1,7 @@
 def calculate_form_factor_dirac_f1(
     magnetic_form_factor: float,
     pauli_f2_form_factor: float,
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     Description
     --------------

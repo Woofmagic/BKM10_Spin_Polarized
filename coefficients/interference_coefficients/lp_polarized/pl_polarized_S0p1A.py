@@ -10,7 +10,7 @@ def calculate_s_1_zero_plus_longitudinally_polarized_A(
     squared_hadronic_momentum_transfer_t: float,
     epsilon: float,
     lepton_energy_fraction_y: float, 
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     """
 

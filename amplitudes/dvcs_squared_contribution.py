@@ -16,8 +16,8 @@ from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_c1_dvcs impo
 from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_s1_dvcs import calculate_s_1_longitudinally_polarized_dvcs
 
 def calculate_dvcs_amplitude_squared_longitudinally_polarized(
-    lepton_polarization: int,
-    target_polarization: int,
+    lepton_polarization: float,
+    target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float,
     squared_hadronic_momentum_transfer_t: float,
@@ -34,7 +34,7 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
     compton_form_factor_h_tilde_imaginary_part: float,
     compton_form_factor_e_imaginary_part: float,
     compton_form_factor_e_tilde_imaginary_part: float,
-    verbose: bool = True):
+    verbose: bool = False):
     """
     # Title: `calculate_dvcs_amplitude_squared_longitudinally_polarized`
 

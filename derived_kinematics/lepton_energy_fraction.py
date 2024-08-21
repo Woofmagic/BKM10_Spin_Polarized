@@ -7,7 +7,7 @@ def calculate_kinematics_lepton_energy_fraction_y(
     squared_Q_momentum_transfer: float, 
     lab_kinematics_k: float,
     epsilon: float, 
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     Description
     --------------

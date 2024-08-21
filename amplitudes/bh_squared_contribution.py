@@ -31,8 +31,8 @@ from coefficients.bh_coefficients.bkm02.tp_polarized.tp_polarized_c1_bh import c
 from coefficients.bh_coefficients.bkm02.tp_polarized.tp_polarized_s1_bh import calculate_s_1_transversely_polarized_bh
 
 def calculate_bh_amplitude_squared(
-    lepton_polarization: int,
-    target_polarization: int,
+    lepton_polarization: float,
+    target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float,
     squared_hadronic_momentum_transfer_t: float,

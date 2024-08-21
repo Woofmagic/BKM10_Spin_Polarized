@@ -11,7 +11,7 @@ def calculate_c_2_plus_plus_longitudinally_polarized_V(
     squared_hadronic_momentum_transfer_t: float,
     epsilon: float,
     lepton_energy_fraction_y: float, 
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     """
 

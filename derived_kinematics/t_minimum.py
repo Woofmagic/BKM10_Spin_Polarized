@@ -7,7 +7,7 @@ def calculate_kinematics_t_min(
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float, 
     epsilon: float, 
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     Description
     --------------

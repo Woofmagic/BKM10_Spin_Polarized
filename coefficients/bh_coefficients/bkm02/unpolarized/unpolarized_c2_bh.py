@@ -11,7 +11,7 @@ def calculate_c_2_unpolarized_bh(
     k_shorthand: float,
     Dirac_form_factor_F1: float, 
     Pauli_form_factor_F2: float, 
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     # Title: `calculate_c_2_unpolarized_bh`
 

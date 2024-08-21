@@ -2,7 +2,7 @@ from statics.other.other import _ELECTRIC_FORM_FACTOR_CONSTANT
 
 def calculate_form_factor_electric(
     squared_hadronic_momentum_transfer_t: float,
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     Description
     --------------

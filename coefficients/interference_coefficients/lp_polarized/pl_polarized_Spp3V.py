@@ -12,7 +12,7 @@ def calculate_s_3_plus_plus_longitudinally_polarized_V(
     lepton_energy_fraction_y: float,
     t_prime: float,
     shorthand_k: float,
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     """
 

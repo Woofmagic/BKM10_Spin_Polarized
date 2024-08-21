@@ -8,7 +8,7 @@ def calculate_kinematics_k(
     lepton_energy_fraction_y: float,
     epsilon: float,
     k_tilde: float,
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     """
 

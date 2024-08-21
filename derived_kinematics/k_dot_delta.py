@@ -14,7 +14,7 @@ def calculate_k_dot_delta(
     epsilon: float, 
     lepton_energy_fraction_y: float,
     kinematic_k: float,
-    verbose: bool = True):
+    verbose: bool = False):
     """
     Description
     --------------

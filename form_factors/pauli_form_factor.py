@@ -4,7 +4,7 @@ def calculate_form_factor_pauli_f2(
     squared_hadronic_momentum_transfer_t: float,
     electric_form_factor: float,
     magnetic_form_factor: float,
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     Description
     --------------

@@ -1,7 +1,7 @@
 def compute_cff_effective(
     skewness_parameter: float,
     compton_form_factor: float,
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     # Title: `compute_cff_effective`
     
@@ -45,7 +45,7 @@ def compute_cff_effective(
     
 def compute_cff_transverse(
     compton_form_factor: float,
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     # Title: `compute_cff_transverse`
 

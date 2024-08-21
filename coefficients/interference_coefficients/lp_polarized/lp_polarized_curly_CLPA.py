@@ -8,7 +8,7 @@ def calculate_curly_C_longitudinally_polarized_interference_A(
     Pauli_form_factor_F2: float,
     compton_form_factor_h_tilde_real_part: float,
     compton_form_factor_e_tilde_real_part: float,
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
 
     try:
 

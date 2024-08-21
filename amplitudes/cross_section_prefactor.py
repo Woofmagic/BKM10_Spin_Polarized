@@ -11,7 +11,7 @@ def calculate_bkm10_cross_section_prefactor(
     x_Bjorken: float, 
     epsilon: float, 
     lepton_energy_fraction_y: float, 
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
     """
     Description
     --------------

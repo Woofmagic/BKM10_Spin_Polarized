@@ -34,7 +34,7 @@ def calculate_curly_C_unpolarized_interference(
     compton_form_factor_h_tilde_eff: float,
     compton_form_factor_e_eff: float,
     compton_form_factor_e_tilde_eff: float,
-    verbose: bool = True) -> float:
+    verbose: bool = False) -> float:
 
     try:
 
