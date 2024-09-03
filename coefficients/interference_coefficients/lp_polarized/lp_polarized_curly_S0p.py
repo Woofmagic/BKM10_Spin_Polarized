@@ -56,7 +56,8 @@ def calculate_curly_S_zero_plus_longitudinally_polarized_interference(
             compton_form_factor_h_eff,
             compton_form_factor_h_tilde_eff,
             compton_form_factor_e_eff,
-            compton_form_factor_e_tilde_eff)
+            compton_form_factor_e_tilde_eff,
+            verbose)
         
         # (3): Calculate curly C_{LP}^{I, V}(F):
         curly_C_V_longitudinally_polarized_interference = calculate_curly_C_longitudinally_polarized_interference_V(
@@ -66,7 +67,8 @@ def calculate_curly_S_zero_plus_longitudinally_polarized_interference(
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
             compton_form_factor_h_eff,
-            compton_form_factor_e_eff)
+            compton_form_factor_e_eff,
+            verbose)
         
         # (4): Calculate curly C_{LP}^{I, A}(F):
         curly_C_A_longitudinally_polarized_interference = calculate_curly_C_longitudinally_polarized_interference_A(
@@ -76,7 +78,8 @@ def calculate_curly_S_zero_plus_longitudinally_polarized_interference(
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
             compton_form_factor_h_tilde_eff,
-            compton_form_factor_e_tilde_eff)
+            compton_form_factor_e_tilde_eff,
+            verbose)
 
         if n_number == 1:
 

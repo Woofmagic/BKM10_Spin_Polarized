@@ -30,10 +30,10 @@ def calculate_s_interference_coefficient(
     shorthand_k: float,
     Dirac_form_factor_F1: float,
     Pauli_form_factor_F2: float,
-    compton_form_factor_h_real_part: float,
-    compton_form_factor_h_tilde_real_part: float,
-    compton_form_factor_e_real_part: float,
-    compton_form_factor_e_tilde_real_part: float,
+    compton_form_factor_h_imaginary_part: float,
+    compton_form_factor_h_tilde_imaginary_part: float,
+    compton_form_factor_e_imaginary_part: float,
+    compton_form_factor_e_tilde_imaginary_part: float,
     verbose: bool = False) -> float:
     """
     """
@@ -60,7 +60,7 @@ def calculate_s_interference_coefficient(
             
         elif n_number == 1:
 
-            # (1): We compute the first part of the term: S++, n = 1
+            # (1): We compute the first part of the term: S_{++}(n = 1):
             s_plus_plus = calculate_s_1_plus_plus_longitudinally_polarized(
                 target_polarization,
                 squared_Q_momentum_transfer,
@@ -71,7 +71,7 @@ def calculate_s_interference_coefficient(
                 shorthand_k,
                 verbose)
 
-            # (2): The second part of the term is S0+, n = 1
+            # (2): The second part of the term is S_{0+}(n = 1):
             s_zero_plus = calculate_s_1_zero_plus_longitudinally_polarized(
                 target_polarization,
                 squared_Q_momentum_transfer,
@@ -96,7 +96,7 @@ def calculate_s_interference_coefficient(
             
         elif n_number == 2:
 
-            # (1): We compute the first part of the term: S++, n = 2
+            # (1): We compute the first part of the term: S_{++}(n = 2):
             s_plus_plus = calculate_s_2_plus_plus_longitudinally_polarized(
                 target_polarization,
                 squared_Q_momentum_transfer,
@@ -108,7 +108,7 @@ def calculate_s_interference_coefficient(
                 k_tilde,
                 verbose)
 
-            # (2): The second part of the term is S0+, n = 2
+            # (2): The second part of the term is S_{0+}(n = 2):
             s_zero_plus = calculate_s_2_zero_plus_longitudinally_polarized(
                 target_polarization,
                 squared_Q_momentum_transfer,
@@ -131,7 +131,7 @@ def calculate_s_interference_coefficient(
 
         elif n_number == 3:
 
-            # (1): We compute the first part of the term: S++, n = 3
+            # (1): We compute the first part of the term: S_{++}(n = 3):
             s_plus_plus = calculate_s_3_plus_plus_longitudinally_polarized(
                 target_polarization,
                 squared_Q_momentum_transfer,
@@ -142,7 +142,7 @@ def calculate_s_interference_coefficient(
                 shorthand_k,
                 verbose)
 
-            # (2): The second part of the term is S0+, n = 3
+            # (2): The second part of the term is S_{0+}(n = 2):
             s_zero_plus = 0.
 
             # (3): The second part of the term is S_{-+}(n = 3):
@@ -171,10 +171,10 @@ def calculate_s_interference_coefficient(
             shorthand_k,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
-            compton_form_factor_h_real_part,
-            compton_form_factor_h_tilde_real_part,
-            compton_form_factor_e_real_part,
-            compton_form_factor_e_tilde_real_part,
+            compton_form_factor_h_imaginary_part,
+            compton_form_factor_h_tilde_imaginary_part,
+            compton_form_factor_e_imaginary_part,
+            compton_form_factor_e_tilde_imaginary_part,
             verbose)
 
         # (4): Calculate the curly S_{0+} contribution - requires both n and the CFFs:
@@ -190,10 +190,10 @@ def calculate_s_interference_coefficient(
             k_tilde,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
-            compute_cff_effective(skewness_parameter, compton_form_factor_h_real_part),
-            compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde_real_part),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e_real_part),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde_real_part),
+            compute_cff_effective(skewness_parameter, compton_form_factor_h_imaginary_part),
+            compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde_imaginary_part),
+            compute_cff_effective(skewness_parameter, compton_form_factor_e_imaginary_part),
+            compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde_imaginary_part),
             verbose)
         
         # (5): Calculate the curly S_{-+} contribution - requires both n and the CFFs:
@@ -209,14 +209,15 @@ def calculate_s_interference_coefficient(
             k_tilde,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
-            compute_cff_transverse(skewness_parameter, compton_form_factor_h_real_part),
-            compute_cff_transverse(skewness_parameter, compton_form_factor_h_tilde_real_part),
-            compute_cff_transverse(skewness_parameter, compton_form_factor_e_real_part),
-            compute_cff_transverse(skewness_parameter, compton_form_factor_e_tilde_real_part),
+            compute_cff_transverse(skewness_parameter, compton_form_factor_h_imaginary_part),
+            compute_cff_transverse(skewness_parameter, compton_form_factor_h_tilde_imaginary_part),
+            compute_cff_transverse(skewness_parameter, compton_form_factor_e_imaginary_part),
+            compute_cff_transverse(skewness_parameter, compton_form_factor_e_tilde_imaginary_part),
             verbose)
         
         # (5): Calculate the entire thing:
-        s_n_interference_coefficient = s_plus_plus * curly_s_plus_plus + s_zero_plus * curly_s_zero_plus + s_minus_plus * curly_s_minus_plus
+        # s_n_interference_coefficient = s_plus_plus * curly_s_plus_plus + s_zero_plus * curly_s_zero_plus + s_minus_plus * curly_s_minus_plus
+        s_n_interference_coefficient = s_plus_plus * curly_s_plus_plus + s_zero_plus * curly_s_zero_plus
 
         # (): If verbose, print the output:
         if verbose:

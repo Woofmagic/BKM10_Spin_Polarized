@@ -77,11 +77,21 @@ def main(
         if verbose:
             print(f"> Did we manage to fix to a kinematic range? {fixed_kinematic_set_dataframe is not None}")
 
-        # (5): Obtian the range of kinematic quantites:
+        # (5): Obtain the range of kinematic quantites:
+
+        # (5.1): We index the DF with the column named "QQ" or something like that:
         range_of_Q_squared = fixed_kinematic_set_dataframe[_COLUMN_NAME_Q_SQUARED]
+
+        # (5.2): We obtain the column of the DF named "x_b":
         range_of_x_Bjorken = fixed_kinematic_set_dataframe[_COLUMN_NAME_X_BJORKEN]
+
+        # (5.3): We obtain the column of the DF named "t":
         range_of_hadronic_momentum_transfer_t = fixed_kinematic_set_dataframe[_COLUMN_NAME_T_MOMENTUM_CHANGE]
+
+        # (5.4): We obtain the column of the DF named "k":
         range_of_lepton_momentum_k = fixed_kinematic_set_dataframe[_COLUMN_NAME_LEPTON_MOMENTUM]
+
+        # (5.5): We obtain the column of the DF named "phi_x":
         range_of_lab_azimuthal_phi = fixed_kinematic_set_dataframe[_COLUMN_NAME_AZIMUTHAL_PHI]
 
         # (6): Obtain the polarizations -- set to 1 for now:
@@ -105,7 +115,7 @@ def main(
         compton_form_factor_e_imaginary = 0.903
         compton_form_factor_e_tilde_imaginary = 5.383
 
-        # (5): Attempt to calculate the BKM10 Cross Section:
+        # (8): Attempt to calculate the BKM10 Cross Section:
         calculate_bkm10_cross_section(
             numerical_lepton_polarization,
             numerical_target_polarization,

@@ -80,6 +80,9 @@ The chronology of the calculation is the following:
     1. Calculates $S_{++}(n = 1)$.
     2. Calculates $S_{0+}(n = 1)$.
     3. Calculates $S_{-+}(n = 1)$.
+    4. Calculates $\mathcal{S}_{++}^{I}(n = 1 | \mathcal{F})$, passing in $\text{Im}[\mathcal{F}]$ only.
+    5. Calculates $\mathcal{S}_{0+}^{I}(n = 1 | \mathcal{F}_{\text{Eff}})$, passing in $\text{Im}[\mathcal{F}_{\text{Eff}}]$ only.
+    6. Calculates $\mathcal{S}_{-+}^{I}(n = 1 | \mathcal{F}_{\text{T}})$, passing in $\text{Im}[\mathcal{F}_{\text{Y}}]$ only. 
 
 7. Calculate $s_{2}^{I}$. This calls `calculate_s_interference_coefficient` with $n = 2$.
 
