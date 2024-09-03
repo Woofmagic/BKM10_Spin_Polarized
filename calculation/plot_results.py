@@ -14,7 +14,7 @@ def plot_cross_section(
     figure = plt.figure(figsize = (18, 6))
 
     # (2): Add an Axes Object:
-    axes_object = figure.add_subplot(131)
+    axes_object = figure.add_subplot(111)
 
     customized_plot = PlotCustomizer(
         axes_object,
