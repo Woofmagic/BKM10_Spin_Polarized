@@ -102,10 +102,72 @@ def calculate_bkm10_cross_section(
     of photons.
 
     ## Arguments:
-    Holy fuckk
+    
+        lepton_polarization: (float)
+
+        target_polarization: (float)
+
+        squared_Q_momentum_transfer: (float)
+
+        x_Bjorken: (float)
+
+        squared_hadronic_momentum_transfer_t: (float)
+
+        lab_kinematics_k: (float)
+
+        azimuthal_phi: (float)
+
+        compton_form_factor_h_real_part: (float)
+
+            The real part of the Compton Form Factor (CFF) called H. We will
+            write this as Re[H].
+
+        compton_form_factor_h_tilde_real_part: (float)
+
+            The real part of the Compton Form Factor (CFF) called Ht (H-tilde). We will
+            write this as Re[HT].
+
+        compton_form_factor_e_real_part: (float)
+
+            The real part of the Compton Form Factor (CFF) called E. We will
+            write this as Re[E].
+
+        compton_form_factor_e_tilde_real_part: (float)
+
+            The real part of the Compton Form Factor (CFF) called Et (E-tilde). We will
+            write this as Re[Et].
+
+        compton_form_factor_h_imaginary_part: (float)
+
+            The imaginary/complex part of the Compton Form Factor (CFF) called H. We will
+            write this as Re[H].
+
+        compton_form_factor_h_tilde_imaginary_part: (float)
+
+            The imaginary/complex part of the Compton Form Factor (CFF) called Ht (H-tilde). We will
+            write this as Re[HT].
+
+        compton_form_factor_e_imaginary_part: (float)
+
+            The imaginary/complex part of the Compton Form Factor (CFF) called E. We will
+            write this as Re[E].
+
+        compton_form_factor_e_tilde_imaginary_part: (float)
+
+            The imaginary/complex part of the Compton Form Factor (CFF) called Et (E-tilde). We will
+            write this as Re[Et].
+
+        verbose: (bool)
 
     ## Returns:
-    Shit
+    
+        bkm10_cross_section_in_nb_GeV4: (float)
+
+            The four-fold differential cross section.
+
+    ## Notes:
+
+    ## Examples:
     """
 
     try:
