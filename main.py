@@ -97,7 +97,7 @@ def main(
         # (6): Obtain the polarizations -- set to 1 for now:
 
         # This is BKM lambda
-        numerical_lepton_polarization = 1.0 if lepton_helicity == 'positive' else -1.0
+        numerical_lepton_polarization = 1.0 if lepton_helicity == 'positive' else -1.0 if lepton_helicity == 'negative' else 0.0
 
         #This is BKM Lambda:
         numerical_target_polarization = 1.0 if target_polarization == 'polarized' else 0.0
@@ -179,8 +179,8 @@ if __name__ == "__main__":
         _ARGPARSE_ARGUMENT_LEPTON_HELICITY,
         type = str,
         required = False,
-        default = 'positive',
-        choices = ['positive', 'negative'],
+        default = 'none',
+        choices = ['positive','none', 'negative'],
         help = _ARGPARSE_ARGUMENT_DESCRIPTION_LEPTON_HELICITY)
     
     # (5): Ask, but don't enforce BKM Formalism:
