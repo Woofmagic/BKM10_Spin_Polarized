@@ -19,7 +19,7 @@ from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p2A impo
 
 def calculate_s_1_unpolarized(
     n_number: int,
-    lepton_polarization: float,
+    lepton_helicity: float,
     target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float,

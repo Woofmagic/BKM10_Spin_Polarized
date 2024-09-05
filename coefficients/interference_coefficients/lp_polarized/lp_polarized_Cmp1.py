@@ -4,7 +4,7 @@ except ImportError:
     print("NumPy is not installed. Please install NumPy to use this script.")
 
 def calculate_c_1_minus_plus_longitudinally_polarized(
-    lepton_polarization: float,
+    lepton_helicity: float,
     target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float, 
@@ -25,7 +25,7 @@ def calculate_c_1_minus_plus_longitudinally_polarized(
         fancy_epsilon_term = 1. - epsilon**2 - root_one_plus_epsilon_squared
 
         # (3): Calculate prefactor:
-        prefactor = 4. * lepton_polarization * target_polarization * shorthand_k * lepton_energy_fraction_y * (2. - lepton_energy_fraction_y) / root_one_plus_epsilon_squared**5
+        prefactor = 4. * lepton_helicity * target_polarization * shorthand_k * lepton_energy_fraction_y * (2. - lepton_energy_fraction_y) / root_one_plus_epsilon_squared**5
 
         # (4): Calculate the bracket term:
         bracket_term = fancy_epsilon_term - (squared_hadronic_momentum_transfer_t * (fancy_epsilon_term - 2. * x_Bjorken * (2. - root_one_plus_epsilon_squared)) / squared_Q_momentum_transfer)

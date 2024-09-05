@@ -28,7 +28,7 @@ def calculate_curly_c_longitudinally_polarized_dvcs(
 
     Parameters
     --------------
-    lepton_polarization: (float)
+    lepton_helicity: (float)
 
     target_polarization: (float)
 

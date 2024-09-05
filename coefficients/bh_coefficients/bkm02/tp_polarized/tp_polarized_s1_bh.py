@@ -8,7 +8,7 @@ except ImportError:
     print("NumPy is not installed. Please install NumPy to use this script.")
 
 def calculate_s_1_transversely_polarized_bh(
-    lepton_polarization: float,
+    lepton_helicity: float,
     target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float, 
@@ -28,7 +28,7 @@ def calculate_s_1_transversely_polarized_bh(
 
     Parameters
     --------------
-    lepton_polarization: (float)
+    lepton_helicity: (float)
 
     target_polarization: (float)
 
@@ -56,7 +56,7 @@ def calculate_s_1_transversely_polarized_bh(
         https://arxiv.org/pdf/hep-ph/0112108.pdf
     """
 
-    if (check_polarization_datatype(lepton_polarization) or check_polarization_datatype(target_polarization)) is False:
+    if (check_polarization_datatype(lepton_helicity) or check_polarization_datatype(target_polarization)) is False:
 
         raise ValueError("> Received unacceptable polarization type.")
     
@@ -69,7 +69,7 @@ def calculate_s_1_transversely_polarized_bh(
         second_third = (1. - squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer) * (Dirac_form_factor_F1 + Pauli_form_factor_F2) * (Dirac_form_factor_F1 + (squared_hadronic_momentum_transfer_t * Pauli_form_factor_F2 / (4. * _MASS_OF_PROTON_IN_GEV**2)))
 
         # (3): Calculate the whole thing:
-        s1TP_BH = 16. * lepton_polarization * np.sin(azimuthal_phi) * lepton_energy_fraction_y * x_Bjorken**2 * first_third * second_third
+        s1TP_BH = 16. * lepton_helicity * np.sin(azimuthal_phi) * lepton_energy_fraction_y * x_Bjorken**2 * first_third * second_third
 
         # (3.1): If verbose, log the output:
         if verbose:

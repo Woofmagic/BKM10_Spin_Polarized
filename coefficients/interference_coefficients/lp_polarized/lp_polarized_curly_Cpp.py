@@ -16,7 +16,7 @@ from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_CLPA
 
 def calculate_curly_C_plus_plus_longitudinally_polarized_interference(
     n_number: int,
-    lepton_polarization: float,
+    lepton_helicity: float,
     target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float,
@@ -73,7 +73,7 @@ def calculate_curly_C_plus_plus_longitudinally_polarized_interference(
 
             # (4.1): Calculate the C_{++}(0) contribution
             c_plus_plus_contribution = calculate_c_0_plus_plus_longitudinally_polarized(
-                lepton_polarization,
+                lepton_helicity,
                 target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
@@ -85,7 +85,7 @@ def calculate_curly_C_plus_plus_longitudinally_polarized_interference(
 
             # (4.2): Calculate the C_{++}^{V}(0) contribution
             c_V_plus_plus_contribution = calculate_c_0_plus_plus_longitudinally_polarized_V(
-                lepton_polarization,
+                lepton_helicity,
                 target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
@@ -97,7 +97,7 @@ def calculate_curly_C_plus_plus_longitudinally_polarized_interference(
 
             # (4.3): Calculate the C_{++}^{A}(0) contribution
             c_A_plus_plus_contribution = calculate_c_0_plus_plus_longitudinally_polarized_A(
-                lepton_polarization,
+                lepton_helicity,
                 target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
@@ -116,7 +116,7 @@ def calculate_curly_C_plus_plus_longitudinally_polarized_interference(
 
             # (4.1): Calculate the C_{++}(1) contribution
             c_plus_plus_contribution = calculate_c_1_plus_plus_longitudinally_polarized(
-                lepton_polarization,
+                lepton_helicity,
                 target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
@@ -128,7 +128,7 @@ def calculate_curly_C_plus_plus_longitudinally_polarized_interference(
 
             # (4.2): Calculate the C_{++}^{V}(1) contribution
             c_V_plus_plus_contribution = calculate_c_1_plus_plus_longitudinally_polarized_V(
-                lepton_polarization,
+                lepton_helicity,
                 target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
@@ -141,7 +141,7 @@ def calculate_curly_C_plus_plus_longitudinally_polarized_interference(
 
             # (4.3): Calculate the C_{++}^{A}(1) contribution
             c_A_plus_plus_contribution = calculate_c_1_plus_plus_longitudinally_polarized_A(
-                lepton_polarization,
+                lepton_helicity,
                 target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
@@ -160,7 +160,7 @@ def calculate_curly_C_plus_plus_longitudinally_polarized_interference(
 
             # (4.1): Calculate the C_{++}(2) contribution
             c_plus_plus_contribution = calculate_c_2_plus_plus_longitudinally_polarized(
-                lepton_polarization,
+                lepton_helicity,
                 target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
@@ -171,7 +171,7 @@ def calculate_curly_C_plus_plus_longitudinally_polarized_interference(
 
             # (4.2): Calculate the C_{++}^{V}(2) contribution
             c_V_plus_plus_contribution = calculate_c_2_plus_plus_longitudinally_polarized_V(
-                lepton_polarization,
+                lepton_helicity,
                 target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
@@ -182,7 +182,7 @@ def calculate_curly_C_plus_plus_longitudinally_polarized_interference(
 
             # (4.3): Calculate the C_{++}^{A}(2) contribution
             c_A_plus_plus_contribution = calculate_c_2_plus_plus_longitudinally_polarized_A(
-                lepton_polarization,
+                lepton_helicity,
                 target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,

@@ -17,7 +17,7 @@ from form_factors.effective_cffs import compute_cff_transverse
 
 def calculate_s_interference_coefficient(
     n_number: int,
-    lepton_polarization: float,
+    lepton_helicity: float,
     target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float,
@@ -159,7 +159,7 @@ def calculate_s_interference_coefficient(
         # (3): Calculate the curly S_{++} contribution - requires both n and the CFFs:
         curly_s_plus_plus = calculate_curly_S_plus_plus_longitudinally_polarized_interference(
             n_number,
-            lepton_polarization,
+            lepton_helicity,
             target_polarization,
             squared_Q_momentum_transfer,
             x_Bjorken,

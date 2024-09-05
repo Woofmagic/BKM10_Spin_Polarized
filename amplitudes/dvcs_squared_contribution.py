@@ -16,7 +16,7 @@ from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_c1_dvcs impo
 from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_s1_dvcs import calculate_s_1_longitudinally_polarized_dvcs
 
 def calculate_dvcs_amplitude_squared_longitudinally_polarized(
-    lepton_polarization: float,
+    lepton_helicity: float,
     target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float,
@@ -43,7 +43,7 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
 
     Parameters
     --------------
-    lepton_polarization: (int)
+    lepton_helicity: (int)
 
     target_polarization: (int)
 
@@ -91,7 +91,7 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
 
         # (2): Obtain the first coefficient in the sum:
         coefficient_c0_DVCS = calculate_c_0_longitudinally_polarized_dvcs(
-            lepton_polarization,
+            lepton_helicity,
             target_polarization,
             squared_Q_momentum_transfer,
             x_Bjorken,
@@ -111,7 +111,7 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
 
         # (3): Obtain the first coefficient in the unevaluated sum (cosine n = 1 term):
         coefficient_c1_DVCS = calculate_c_1_longitudinally_polarized_dvcs(
-            lepton_polarization,
+            lepton_helicity,
             target_polarization,
             squared_Q_momentum_transfer,
             x_Bjorken,

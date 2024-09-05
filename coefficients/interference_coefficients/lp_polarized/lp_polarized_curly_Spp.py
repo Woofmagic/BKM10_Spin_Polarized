@@ -14,7 +14,7 @@ from coefficients.interference_coefficients.lp_polarized.pl_polarized_Spp3A impo
 
 def calculate_curly_S_plus_plus_longitudinally_polarized_interference(
     n_number: int,
-    lepton_polarization: float,
+    lepton_helicity: float,
     target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float,

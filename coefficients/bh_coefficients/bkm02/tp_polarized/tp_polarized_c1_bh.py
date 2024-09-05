@@ -8,7 +8,7 @@ except ImportError:
     print("NumPy is not installed. Please install NumPy to use this script.")
 
 def calculate_c_1_transversely_polarized_bh(
-    lepton_polarization: float,
+    lepton_helicity: float,
     target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float, 
@@ -28,7 +28,7 @@ def calculate_c_1_transversely_polarized_bh(
 
     Parameters
     --------------
-    lepton_polarization: (float)
+    lepton_helicity: (float)
 
     target_polarization: (float)
 
@@ -56,7 +56,7 @@ def calculate_c_1_transversely_polarized_bh(
         https://arxiv.org/pdf/hep-ph/0112108.pdf
     """
 
-    if (check_polarization_datatype(lepton_polarization) or check_polarization_datatype(target_polarization)) is False:
+    if (check_polarization_datatype(lepton_helicity) or check_polarization_datatype(target_polarization)) is False:
 
         raise ValueError("> Received unacceptable polarization type.")
     
@@ -78,7 +78,7 @@ def calculate_c_1_transversely_polarized_bh(
         bracket_term = 2. * k_shorthand**2 * squared_Q_momentum_transfer * first_part_first_bracket_term / (squared_hadronic_momentum_transfer_t * combination_of_y_and_epsilon) + second_bracket_term
 
         # (6): Calculate the first part of the prefactor:
-        first_part_prefactor = - 16. * lepton_polarization * np.cos(azimuthal_phi) * x_Bjorken * lepton_energy_fraction_y * np.sqrt(combination_of_y_and_epsilon)
+        first_part_prefactor = - 16. * lepton_helicity * np.cos(azimuthal_phi) * x_Bjorken * lepton_energy_fraction_y * np.sqrt(combination_of_y_and_epsilon)
 
         # (7): Piece together all of the factors:
         c1TP_BH = first_part_prefactor * _MASS_OF_PROTON_IN_GEV * np.sqrt(1. + epsilon**2) * (Dirac_form_factor_F1 + Pauli_form_factor_F2) * bracket_term / np.sqrt(squared_Q_momentum_transfer)

@@ -78,7 +78,7 @@ from amplitudes.interference_contribution import calculate_interference_contribu
 import numpy as np
 
 def calculate_bkm10_cross_section(
-    lepton_polarization: float,
+    lepton_helicity: float,
     target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float,
@@ -103,7 +103,7 @@ def calculate_bkm10_cross_section(
 
     ## Arguments:
     
-        lepton_polarization: (float)
+        lepton_helicity: (float)
 
         target_polarization: (float)
 
@@ -281,7 +281,7 @@ def calculate_bkm10_cross_section(
         # (16): Compute the BH Amplitude Squared
         bh_amplitude_squared = 0.
         # bh_amplitude_squared = calculate_bh_amplitude_squared(
-        #     lepton_polarization,
+        #     lepton_helicity,
         #     target_polarization,
         #     squared_Q_momentum_transfer,
         #     x_Bjorken,
@@ -299,7 +299,7 @@ def calculate_bkm10_cross_section(
         # (17): Compute the DVCS Amplitude Squared
         dvcs_amplitude_squared = 0.
         # dvcs_amplitude_squared = calculate_dvcs_amplitude_squared_longitudinally_polarized(
-        #     lepton_polarization,
+        #     lepton_helicity,
         #     target_polarization,
         #     squared_Q_momentum_transfer,
         #     x_Bjorken,
@@ -323,7 +323,7 @@ def calculate_bkm10_cross_section(
         # interference_contribution = 0.
 
         interference_contribution = calculate_interference_contribution_longitudinally_polarized(
-            lepton_polarization,
+            lepton_helicity,
             target_polarization,
             squared_Q_momentum_transfer,
             x_Bjorken,

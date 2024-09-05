@@ -31,7 +31,7 @@ from coefficients.bh_coefficients.bkm02.tp_polarized.tp_polarized_c1_bh import c
 from coefficients.bh_coefficients.bkm02.tp_polarized.tp_polarized_s1_bh import calculate_s_1_transversely_polarized_bh
 
 def calculate_bh_amplitude_squared(
-    lepton_polarization: float,
+    lepton_helicity: float,
     target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float,
@@ -104,7 +104,7 @@ def calculate_bh_amplitude_squared(
 
             # (6.1): Longitudinally-polarized target requires c0: Obtain the first coefficient in the sum:
             coefficient_c0_BH = calculate_c_0_longitudinally_polarized_bh(
-                lepton_polarization,
+                lepton_helicity,
                 target_polarization,
                 squared_Q_momentum_transfer, 
                 x_Bjorken, 
@@ -117,7 +117,7 @@ def calculate_bh_amplitude_squared(
 
             # (6.2): Longitudinally-polarized target requires c1: Obtain the first coefficient in the unevaluated sum (cosine n = 1 term):
             coefficient_c1_BH = calculate_c_1_longitudinally_polarized_bh(
-                lepton_polarization,
+                lepton_helicity,
                 target_polarization,
                 squared_Q_momentum_transfer, 
                 x_Bjorken, 
@@ -134,7 +134,7 @@ def calculate_bh_amplitude_squared(
 
             # (6.1): Transversely-polarized target requires c0: Obtain the first coefficient in the sum:
             coefficient_c0_BH = calculate_c_0_transversely_polarized_bh(
-                lepton_polarization,
+                lepton_helicity,
                 target_polarization,
                 squared_Q_momentum_transfer, 
                 x_Bjorken, 
@@ -148,7 +148,7 @@ def calculate_bh_amplitude_squared(
 
             # (6.2): Transversely-polarized target requires c1: Obtain the first coefficient in the unevaluated sum (cosine n = 1 term):
             coefficient_c1_BH = calculate_c_1_transversely_polarized_bh(
-                lepton_polarization,
+                lepton_helicity,
                 target_polarization,
                 squared_Q_momentum_transfer, 
                 x_Bjorken, 
@@ -163,7 +163,7 @@ def calculate_bh_amplitude_squared(
         
             # (6.3): Transversely-polarized target requires s1: Obtain the first coefficient in the unevaluated sum (cosine n = 1 term):
             coefficient_s1_BH = calculate_s_1_transversely_polarized_bh(
-                lepton_polarization,
+                lepton_helicity,
                 target_polarization,
                 squared_Q_momentum_transfer, 
                 x_Bjorken, 

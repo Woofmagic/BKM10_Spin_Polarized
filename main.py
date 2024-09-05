@@ -41,7 +41,7 @@ def main(
     kinematics_dataframe_path: str,
     kinematic_set_number: int,
     formalism_version: str,
-    lepton_polarization: str,
+    lepton_helicity: str,
     target_polarization: str,
     verbose: bool = False):
 
@@ -95,12 +95,15 @@ def main(
         range_of_lab_azimuthal_phi = fixed_kinematic_set_dataframe[_COLUMN_NAME_AZIMUTHAL_PHI]
 
         # (6): Obtain the polarizations -- set to 1 for now:
-        numerical_lepton_polarization = 0.5 if lepton_polarization == 'polarized' else 0
-        numerical_target_polarization = 1 if target_polarization == 'polarized' else 0
 
-        if verbose:
-            print(f"> Obtained lepton helicity to be: {numerical_lepton_polarization}")
-            print(f"> Obtained target polarization to be: {numerical_target_polarization}")
+        # This is BKM lambda
+        numerical_lepton_polarization = 1. if lepton_helicity == 'polarized' else 0.
+
+        #This is BKM Lambda:
+        numerical_target_polarization = 1. if target_polarization == 'polarized' else 0.
+
+        print(f"> Obtained lepton helicity to be: {numerical_lepton_polarization}")
+        print(f"> Obtained target polarization to be: {numerical_target_polarization}")
 
         # (7): Obtain the values of the CFFs:
         compton_form_factor_h_real = -0.897
@@ -207,6 +210,6 @@ if __name__ == "__main__":
         kinematics_dataframe_path = arguments.input_datafile,
         kinematic_set_number = arguments.kinematic_set,
         formalism_version = arguments.formalism,
-        lepton_polarization = arguments.lepton_polarization,
+        lepton_helicity = arguments.lepton_helicity,
         target_polarization = arguments.target_polarization,
         verbose = arguments.verbose)

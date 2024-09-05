@@ -8,7 +8,7 @@ from form_factors.effective_cffs import compute_cff_effective
 from coefficients.dvcs_coefficients.unpolarized.bkm10.unpolarized_curlyC_dvcs import calculate_curly_c_unpolarized_dvcs
 
 def calculate_s_1_unpolarized_dvcs(
-    lepton_polarization: float,
+    lepton_helicity: float,
     target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float, 
@@ -32,7 +32,7 @@ def calculate_s_1_unpolarized_dvcs(
     try:
 
         # (1): Calculate the first term's prefactor:
-        prefactor = -8. * k_shorthand * lepton_polarization * lepton_energy_fraction_y * np.sqrt(1. + epsilon**2) / ((2. - x_Bjorken) * (1. + epsilon**2))
+        prefactor = -8. * k_shorthand * lepton_helicity * lepton_energy_fraction_y * np.sqrt(1. + epsilon**2) / ((2. - x_Bjorken) * (1. + epsilon**2))
         
         # (2): Calculate the second terms' Curly C contribution:
         curlyC_unp_DVCS = calculate_curly_c_unpolarized_dvcs(

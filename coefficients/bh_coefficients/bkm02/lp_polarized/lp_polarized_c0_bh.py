@@ -8,7 +8,7 @@ except ImportError:
     print("NumPy is not installed. Please install NumPy to use this script.")
 
 def calculate_c_0_longitudinally_polarized_bh(
-    lepton_polarization: float,
+    lepton_helicity: float,
     target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float, 
@@ -25,7 +25,7 @@ def calculate_c_0_longitudinally_polarized_bh(
     Equation (38) of the **BKM02 Formalism**.
 
     ## Arguments:
-    lepton_polarization: (float)
+    lepton_helicity: (float)
 
     target_polarization: (float)
 
@@ -54,7 +54,7 @@ def calculate_c_0_longitudinally_polarized_bh(
         https://arxiv.org/pdf/hep-ph/0112108.pdf
     """
 
-    if (check_polarization_datatype(lepton_polarization) or check_polarization_datatype(target_polarization)) is False:
+    if (check_polarization_datatype(lepton_helicity) or check_polarization_datatype(target_polarization)) is False:
 
         raise ValueError("> Received unacceptable polarization type.")
     
@@ -94,7 +94,7 @@ def calculate_c_0_longitudinally_polarized_bh(
         second_term = (1. - (1. - x_Bjorken) * t_over_Q_squared) * weighted_sum_of_form_factors * second_term_first_bracket
 
         # (12): Calculate the overall prefactor:
-        prefactor = 8. * float(lepton_polarization) * float(target_polarization) * x_Bjorken * (2. - lepton_energy_fraction_y) * lepton_energy_fraction_y * np.sqrt(1. + epsilon**2) * sum_of_form_factors / (1. - t_over_four_mp_squared)
+        prefactor = 8. * float(lepton_helicity) * float(target_polarization) * x_Bjorken * (2. - lepton_energy_fraction_y) * lepton_energy_fraction_y * np.sqrt(1. + epsilon**2) * sum_of_form_factors / (1. - t_over_four_mp_squared)
 
         # (13): Calculate the entire coefficient:
         c0LP_BH = prefactor * (first_term + second_term)

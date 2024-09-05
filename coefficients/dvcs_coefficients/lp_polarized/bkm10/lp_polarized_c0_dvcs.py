@@ -6,7 +6,7 @@ except ImportError:
 from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_curlyC_dvcs import calculate_curly_c_longitudinally_polarized_dvcs
 
 def calculate_c_0_longitudinally_polarized_dvcs(
-    lepton_polarization: float,
+    lepton_helicity: float,
     target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float, 
@@ -28,7 +28,7 @@ def calculate_c_0_longitudinally_polarized_dvcs(
     try:
         
         # (1): Calculate the prefactor
-        prefactor = 2. * lepton_polarization * target_polarization * lepton_energy_fraction_y * (2. - lepton_energy_fraction_y) / np.sqrt(1. + epsilon**2)
+        prefactor = 2. * lepton_helicity * target_polarization * lepton_energy_fraction_y * (2. - lepton_energy_fraction_y) / np.sqrt(1. + epsilon**2)
 
         # (2): Return the entire thing:
         c0LP_DVCS = prefactor * calculate_curly_c_longitudinally_polarized_dvcs(

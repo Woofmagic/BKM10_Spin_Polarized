@@ -6,7 +6,7 @@ except ImportError:
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p0 import calculate_c_0_zero_plus_longitudinally_polarized
 
 def calculate_c_0_zero_plus_longitudinally_polarized_A(
-    lepton_polarization: float,
+    lepton_helicity: float,
     target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float, 
@@ -25,7 +25,7 @@ def calculate_c_0_zero_plus_longitudinally_polarized_A(
 
         # (2): Calculate the C_{0+}^{LP} coefficient:
         c_0_zero_plus_LP = calculate_c_0_zero_plus_longitudinally_polarized(
-            lepton_polarization,
+            lepton_helicity,
             target_polarization,
             squared_Q_momentum_transfer, 
             x_Bjorken, 

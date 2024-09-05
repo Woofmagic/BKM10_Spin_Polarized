@@ -4,7 +4,7 @@ except ImportError:
     print("NumPy is not installed. Please install NumPy to use this script.")
 
 def calculate_c_1_zero_plus_longitudinally_polarized_V(
-    lepton_polarization: float,
+    lepton_helicity: float,
     target_polarization: float,
     squared_Q_momentum_transfer: float, 
     squared_hadronic_momentum_transfer_t: float,
@@ -21,7 +21,7 @@ def calculate_c_1_zero_plus_longitudinally_polarized_V(
         root_combination_of_y_and_epsilon = np.sqrt(1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.))
 
         # (2): Calculate the "prefactor":
-        prefactor = 8. * np.sqrt(2.) * lepton_polarization * target_polarization  * (2. - lepton_energy_fraction_y) * lepton_energy_fraction_y / (1. + epsilon**2)**2
+        prefactor = 8. * np.sqrt(2.) * lepton_helicity * target_polarization  * (2. - lepton_energy_fraction_y) * lepton_energy_fraction_y / (1. + epsilon**2)**2
 
         # (3): Calculate everything:
         c_1_zero_plus_V_LP = prefactor * root_combination_of_y_and_epsilon * squared_hadronic_momentum_transfer_t * k_tilde**2 / squared_Q_momentum_transfer**2

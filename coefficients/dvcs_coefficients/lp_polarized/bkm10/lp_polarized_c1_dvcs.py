@@ -8,7 +8,7 @@ from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_curlyC_dvcs 
 from form_factors.effective_cffs import compute_cff_effective
 
 def calculate_c_1_longitudinally_polarized_dvcs(
-    lepton_polarization: float,
+    lepton_helicity: float,
     target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float, 
@@ -32,7 +32,7 @@ def calculate_c_1_longitudinally_polarized_dvcs(
     try:
         
         # (1): Calculate the prefactor
-        prefactor = 8. * lepton_polarization * target_polarization * k_shorthand * lepton_energy_fraction_y / (np.sqrt(1. + epsilon**2) * (2. - x_Bjorken))
+        prefactor = 8. * lepton_helicity * target_polarization * k_shorthand * lepton_energy_fraction_y / (np.sqrt(1. + epsilon**2) * (2. - x_Bjorken))
 
         # (2): Calculate the F_{eff}:
         compton_form_factor_h_effective = compute_cff_effective(skewness_parameter, compton_form_factor_h_real_part)
