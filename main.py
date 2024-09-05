@@ -14,7 +14,7 @@ from statics.strings.static_strings import _ARGPARSE_DESCRIPTION
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_INPUT_DATAFILE
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_KINEMATIC_SET_NUMBER
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_FORMALISM_VERSION
-from statics.strings.static_strings import _ARGPARSE_ARGUMENT_LEPTON_POLARIZATION
+from statics.strings.static_strings import _ARGPARSE_ARGUMENT_LEPTON_HELICITY
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_TARGET_POLARIZATION
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_NUMBER_REPLICAS
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_VERBOSE
@@ -175,12 +175,12 @@ if __name__ == "__main__":
     
     # (5): Ask, but don't enforce BKM Formalism:
     parser.add_argument(
-        '-lep-polar',
-        _ARGPARSE_ARGUMENT_LEPTON_POLARIZATION,
+        '-lep-helicity',
+        _ARGPARSE_ARGUMENT_LEPTON_HELICITY,
         type = str,
         required = False,
-        default = 'polarized',
-        choices = ['polarized', 'unpolarized'],
+        default = 'positive',
+        choices = ['positive', 'negative'],
         help = _ARGPARSE_ARGUMENT_DESCRIPTION_LEPTON_POLARIZATION)
     
     # (5): Ask, but don't enforce BKM Formalism:
