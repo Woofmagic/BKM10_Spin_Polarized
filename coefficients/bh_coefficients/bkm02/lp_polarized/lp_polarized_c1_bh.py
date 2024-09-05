@@ -15,7 +15,7 @@ def calculate_c_1_longitudinally_polarized_bh(
     squared_hadronic_momentum_transfer_t: float,
     epsilon: float,
     lepton_energy_fraction_y: float,
-    k_shorthand: float,
+    shorthand_k: float,
     Dirac_form_factor_F1: float, 
     Pauli_form_factor_F2: float, 
     verbose: bool = False) -> float:
@@ -84,7 +84,7 @@ def calculate_c_1_longitudinally_polarized_bh(
         second_term = weighted_sum_of_form_factors * second_term_bracket_term
         
         # (8): Calculate the overall prefactor:
-        prefactor = -8. * float(lepton_helicity) * float(target_polarization) * x_Bjorken * lepton_energy_fraction_y * k_shorthand * np.sqrt(1. + epsilon**2) * sum_of_form_factors / (1. - t_over_four_mp_squared)
+        prefactor = -8. * float(lepton_helicity) * float(target_polarization) * x_Bjorken * lepton_energy_fraction_y * shorthand_k * np.sqrt(1. + epsilon**2) * sum_of_form_factors / (1. - t_over_four_mp_squared)
 
         # (13): Calculate the entire coefficient:
         c1LP_BH = prefactor * (first_term + second_term)

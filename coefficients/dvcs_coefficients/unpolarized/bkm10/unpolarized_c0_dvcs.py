@@ -16,7 +16,7 @@ def calculate_c_0_unpolarized_dvcs(
     epsilon: float,
     lepton_energy_fraction_y: float, 
     skewness_parameter: float,
-    k_shorthand: float,
+    shorthand_k: float,
     compton_form_factor_h_real_part: float,
     compton_form_factor_h_tilde_real_part: float,
     compton_form_factor_e_real_part: float,
@@ -35,7 +35,7 @@ def calculate_c_0_unpolarized_dvcs(
         first_term_prefactor = 2. * ( 2. - 2. * lepton_energy_fraction_y + lepton_energy_fraction_y**2 + (epsilon**2 * lepton_energy_fraction_y**2 / 2.)) / (1. + epsilon**2)
 
         # (2): Calcualte the second term's prefactor:
-        second_term_prefactor = 16. * k_shorthand**2 / ((2. - x_Bjorken)**2 * (1. + epsilon**2))
+        second_term_prefactor = 16. * shorthand_k**2 / ((2. - x_Bjorken)**2 * (1. + epsilon**2))
 
         # (3): Calculate the first term's Curly C contribution:
         first_term_curlyC_unp_DVCS = calculate_curly_c_unpolarized_dvcs(

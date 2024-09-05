@@ -16,7 +16,7 @@ def calculate_c_0_transversely_polarized_bh(
     azimuthal_phi: float,
     epsilon: float,
     lepton_energy_fraction_y: float,
-    k_shorthand: float,
+    shorthand_k: float,
     Dirac_form_factor_F1: float, 
     Pauli_form_factor_F2: float, 
     verbose: bool = False) -> float:
@@ -80,7 +80,7 @@ def calculate_c_0_transversely_polarized_bh(
         second_bracket_term = (1. - (1. - x_Bjorken) * squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer) *  second_part_second_bracket_term
 
         # (6): Calculate crazy prefactor thing:
-        epsilon_prefactor = np.sqrt(1. - epsilon**2) * k_shorthand * sum_of_form_factors / np.sqrt(1. - lepton_energy_fraction_y - (epsilon**2 * lepton_energy_fraction_y**2 / 4.))
+        epsilon_prefactor = np.sqrt(1. - epsilon**2) * shorthand_k * sum_of_form_factors / np.sqrt(1. - lepton_energy_fraction_y - (epsilon**2 * lepton_energy_fraction_y**2 / 4.))
 
         # (7): Calculate the rest of the prefactor:
         remaining_prefactor = -8. * lepton_helicity * np.cos(azimuthal_phi) * (2. - lepton_energy_fraction_y) * lepton_energy_fraction_y * np.sqrt(squared_Q_momentum_transfer) / _MASS_OF_PROTON_IN_GEV

@@ -216,7 +216,7 @@ def calculate_bkm10_cross_section(
             verbose)
 
         # (7): Calculate K Squared:
-        k_shorthand = calculate_kinematics_k(
+        shorthand_k = calculate_kinematics_k(
             squared_Q_momentum_transfer,
             lepton_energy_fraction_y,
             epsilon,
@@ -231,7 +231,7 @@ def calculate_bkm10_cross_section(
             azimuthal_phi,
             epsilon,
             lepton_energy_fraction_y,
-            k_shorthand,
+            shorthand_k,
             verbose)
 
         # (9): Calculate Lepton Propagator 1:
@@ -289,7 +289,7 @@ def calculate_bkm10_cross_section(
         #     azimuthal_phi,
         #     epsilon,
         #     lepton_energy_fraction_y,
-        #     k_shorthand,
+        #     shorthand_k,
         #     lepton_propagator_p1,
         #     lepton_propagator_p2,
         #     Dirac_form_factor_F1,
@@ -308,7 +308,7 @@ def calculate_bkm10_cross_section(
         #     epsilon,
         #     lepton_energy_fraction_y,
         #     skewness_parameter,
-        #     k_shorthand,
+        #     shorthand_k,
         #     compton_form_factor_h_real_part,
         #     compton_form_factor_h_tilde_real_part,
         #     compton_form_factor_e_real_part,
@@ -334,7 +334,7 @@ def calculate_bkm10_cross_section(
             skewness_parameter,
             t_prime,
             k_tilde,
-            k_shorthand,
+            shorthand_k,
             lepton_propagator_p1,
             lepton_propagator_p2,
             Dirac_form_factor_F1,

@@ -8,7 +8,7 @@ from statics.masses.particle_masses import _MASS_OF_PROTON_IN_GEV
 def calculate_c_2_unpolarized_bh( 
     x_Bjorken: float, 
     squared_hadronic_momentum_transfer_t: float,
-    k_shorthand: float,
+    shorthand_k: float,
     Dirac_form_factor_F1: float, 
     Pauli_form_factor_F2: float, 
     verbose: bool = False) -> float:
@@ -21,7 +21,7 @@ def calculate_c_2_unpolarized_bh(
     ## Arguments:
         1. x_Bjorken: (float)
         2. squared_hadronic_momentum_transfer_t: (float)
-        3. k_shorthand: (float)
+        3. shorthand_k: (float)
         4. Dirac_form_factor_F1: (float)
         5. Pauli_form_factor_F2: (float)
         6. verbose: (bool)
@@ -49,7 +49,7 @@ def calculate_c_2_unpolarized_bh(
         first_part_of_contribution = (4. * _MASS_OF_PROTON_IN_GEV**2 / squared_hadronic_momentum_transfer_t) * weighted_combination_of_form_factors
         
         # (4):  Multiply by the prefactor to obtain the coefficient.
-        c2_unpolarized_BH = 8. * x_Bjorken**2 * k_shorthand**2 * (first_part_of_contribution + 2. * addition_of_form_factors_squared)
+        c2_unpolarized_BH = 8. * x_Bjorken**2 * shorthand_k**2 * (first_part_of_contribution + 2. * addition_of_form_factors_squared)
         
         # (4.1): If verbose, log the output:
         if verbose:

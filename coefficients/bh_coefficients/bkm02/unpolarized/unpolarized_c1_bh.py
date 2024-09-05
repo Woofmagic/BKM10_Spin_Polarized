@@ -11,7 +11,7 @@ def calculate_c_1_unpolarized_bh(
     squared_hadronic_momentum_transfer_t: float,
     epsilon: float,
     lepton_energy_fraction_y: float,
-    k_shorthand: float,
+    shorthand_k: float,
     Dirac_form_factor_F1: float, 
     Pauli_form_factor_F2: float, 
     verbose: bool = False) -> float:
@@ -32,7 +32,7 @@ def calculate_c_1_unpolarized_bh(
 
     lepton_energy_fraction_y: (float)
 
-    k_shorthand: (float)
+    shorthand_k: (float)
 
     Dirac_form_factor_F1: (float)
 
@@ -63,7 +63,7 @@ def calculate_c_1_unpolarized_bh(
         first_line_second_part = 2. * x_Bjorken**2 * (1. - (1. - 2. * x_Bjorken) * (squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer)) * addition_of_form_factors_squared
 
         # (5): Multiply by the prefactor to obtain c^{(1)}_{BH}
-        c1_unpolarized_BH = 8. * k_shorthand * (2. - lepton_energy_fraction_y) * (first_line_first_part + first_line_second_part)
+        c1_unpolarized_BH = 8. * shorthand_k * (2. - lepton_energy_fraction_y) * (first_line_first_part + first_line_second_part)
         
         # (5.1): If verbose, log the output:
         if verbose:

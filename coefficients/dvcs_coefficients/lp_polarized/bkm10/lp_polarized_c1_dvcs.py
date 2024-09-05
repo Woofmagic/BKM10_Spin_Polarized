@@ -16,7 +16,7 @@ def calculate_c_1_longitudinally_polarized_dvcs(
     epsilon: float,
     lepton_energy_fraction_y: float, 
     skewness_parameter: float,
-    k_shorthand: float,
+    shorthand_k: float,
     compton_form_factor_h_real_part: float,
     compton_form_factor_h_tilde_real_part: float,
     compton_form_factor_e_real_part: float,
@@ -32,7 +32,7 @@ def calculate_c_1_longitudinally_polarized_dvcs(
     try:
         
         # (1): Calculate the prefactor
-        prefactor = 8. * lepton_helicity * target_polarization * k_shorthand * lepton_energy_fraction_y / (np.sqrt(1. + epsilon**2) * (2. - x_Bjorken))
+        prefactor = 8. * lepton_helicity * target_polarization * shorthand_k * lepton_energy_fraction_y / (np.sqrt(1. + epsilon**2) * (2. - x_Bjorken))
 
         # (2): Calculate the F_{eff}:
         compton_form_factor_h_effective = compute_cff_effective(skewness_parameter, compton_form_factor_h_real_part)

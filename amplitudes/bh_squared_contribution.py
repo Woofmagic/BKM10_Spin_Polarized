@@ -39,7 +39,7 @@ def calculate_bh_amplitude_squared(
     azimuthal_phi: float,
     epsilon: float,
     lepton_energy_fraction_y: float,
-    k_shorthand: float,
+    shorthand_k: float,
     lepton_propagator_p1: float,
     lepton_propagator_p2: float,
     Dirac_form_factor_F1: float,
@@ -73,7 +73,7 @@ def calculate_bh_amplitude_squared(
                 squared_hadronic_momentum_transfer_t, 
                 epsilon,
                 lepton_energy_fraction_y,
-                k_shorthand,
+                shorthand_k,
                 Dirac_form_factor_F1,
                 Pauli_form_factor_F2,
                 verbose)
@@ -85,7 +85,7 @@ def calculate_bh_amplitude_squared(
                 squared_hadronic_momentum_transfer_t, 
                 epsilon,
                 lepton_energy_fraction_y,
-                k_shorthand,
+                shorthand_k,
                 Dirac_form_factor_F1,
                 Pauli_form_factor_F2,
                 verbose)
@@ -94,7 +94,7 @@ def calculate_bh_amplitude_squared(
             coefficient_c2_BH = calculate_c_2_unpolarized_bh(
                 x_Bjorken, 
                 squared_hadronic_momentum_transfer_t, 
-                k_shorthand,
+                shorthand_k,
                 Dirac_form_factor_F1,
                 Pauli_form_factor_F2,
                 verbose)
@@ -124,7 +124,7 @@ def calculate_bh_amplitude_squared(
                 squared_hadronic_momentum_transfer_t, 
                 epsilon,
                 lepton_energy_fraction_y,
-                k_shorthand,
+                shorthand_k,
                 Dirac_form_factor_F1,
                 Pauli_form_factor_F2,
                 verbose)
@@ -156,7 +156,7 @@ def calculate_bh_amplitude_squared(
                 azimuthal_phi,
                 epsilon,
                 lepton_energy_fraction_y,
-                k_shorthand,
+                shorthand_k,
                 Dirac_form_factor_F1,
                 Pauli_form_factor_F2,
                 verbose)
@@ -171,7 +171,7 @@ def calculate_bh_amplitude_squared(
                 azimuthal_phi,
                 epsilon,
                 lepton_energy_fraction_y,
-                k_shorthand,
+                shorthand_k,
                 Dirac_form_factor_F1,
                 Pauli_form_factor_F2,
                 verbose)

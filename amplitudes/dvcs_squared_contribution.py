@@ -25,7 +25,7 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
     epsilon: float,
     lepton_energy_fraction_y: float,
     skewness_parameter: float,
-    k_shorthand: float,
+    shorthand_k: float,
     compton_form_factor_h_real_part: float,
     compton_form_factor_h_tilde_real_part: float,
     compton_form_factor_e_real_part: float,
@@ -61,7 +61,7 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
 
     lepton_energy_fraction_y: (float)
 
-    k_shorthand: (float)
+    shorthand_k: (float)
 
     compton_form_factor_h: (float)
 
@@ -119,7 +119,7 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
             epsilon,
             lepton_energy_fraction_y,
             skewness_parameter,
-            k_shorthand,
+            shorthand_k,
             compton_form_factor_h_real_part,
             compton_form_factor_h_tilde_real_part,
             compton_form_factor_e_real_part,
@@ -140,7 +140,7 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
             epsilon,
             lepton_energy_fraction_y,
             skewness_parameter,
-            k_shorthand,
+            shorthand_k,
             compton_form_factor_h_real_part,
             compton_form_factor_h_tilde_real_part,
             compton_form_factor_e_real_part,

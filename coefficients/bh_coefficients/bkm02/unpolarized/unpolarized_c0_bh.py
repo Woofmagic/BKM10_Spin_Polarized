@@ -11,7 +11,7 @@ def calculate_c_0_unpolarized_bh(
     squared_hadronic_momentum_transfer_t: float,
     epsilon: float,
     lepton_energy_fraction_y: float,
-    k_shorthand: float,
+    shorthand_k: float,
     Dirac_form_factor_F1: float, 
     Pauli_form_factor_F2: float, 
     verbose: bool = False) -> float:
@@ -27,7 +27,7 @@ def calculate_c_0_unpolarized_bh(
         3. squared_hadronic_momentum_transfer_t: (float)
         4. epsilon: (float)
         5. lepton_energy_fraction_y: (float)
-        6. k_shorthand: (float)
+        6. shorthand_k: (float)
         7. Dirac_form_factor_F1: (float)
         8. Pauli_form_factor_F2: (float)
         9. verbose: (bool)
@@ -53,7 +53,7 @@ def calculate_c_0_unpolarized_bh(
         t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
         
         # (4):  The first line that contributes to c^{(0)}_{BH}:
-        first_line = 8. * k_shorthand**2 * (((2. + 3. * epsilon**2) * weighted_combination_of_form_factors / t_over_Q_squared) + (2. * x_Bjorken**2 * addition_of_form_factors_squared))
+        first_line = 8. * shorthand_k**2 * (((2. + 3. * epsilon**2) * weighted_combination_of_form_factors / t_over_Q_squared) + (2. * x_Bjorken**2 * addition_of_form_factors_squared))
 
         # (5): The first part of the second line:
         second_line_first_part = (2. + epsilon**2) * ((4. * x_Bjorken**2 * _MASS_OF_PROTON_IN_GEV**2 / squared_hadronic_momentum_transfer_t) * (1. + t_over_Q_squared)**2 + 4. * (1 - x_Bjorken) * (1. + (x_Bjorken * t_over_Q_squared) )) * weighted_combination_of_form_factors

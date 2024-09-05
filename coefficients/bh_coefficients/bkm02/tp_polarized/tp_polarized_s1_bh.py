@@ -16,7 +16,7 @@ def calculate_s_1_transversely_polarized_bh(
     azimuthal_phi: float,
     epsilon: float,
     lepton_energy_fraction_y: float,
-    k_shorthand: float,
+    shorthand_k: float,
     Dirac_form_factor_F1: float, 
     Pauli_form_factor_F2: float, 
     verbose: bool = False) -> float:
