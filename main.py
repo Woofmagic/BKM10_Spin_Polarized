@@ -22,7 +22,7 @@ from statics.strings.static_strings import _ARGPARSE_ARGUMENT_VERBOSE
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_INPUT_DATAFILE
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_KINEMATIC_SET_NUMBER
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_FORMALISM_VERSION
-from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_LEPTON_POLARIZATION
+from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_LEPTON_HELICITY
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_TARGET_POLARIZATION
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_NUMBER_REPLICAS
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_VERBOSE
@@ -181,7 +181,7 @@ if __name__ == "__main__":
         required = False,
         default = 'positive',
         choices = ['positive', 'negative'],
-        help = _ARGPARSE_ARGUMENT_DESCRIPTION_LEPTON_POLARIZATION)
+        help = _ARGPARSE_ARGUMENT_DESCRIPTION_LEPTON_HELICITY)
     
     # (5): Ask, but don't enforce BKM Formalism:
     parser.add_argument(

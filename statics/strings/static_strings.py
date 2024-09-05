@@ -29,7 +29,7 @@ _ARGPARSE_ARGUMENT_DESCRIPTION_INPUT_DATAFILE = 'Path to the input CSV file.'
 _ARGPARSE_ARGUMENT_DESCRIPTION_KINEMATIC_SET_NUMBER = 'An integer specifying which kinematic set to analyze.'
 _ARGPARSE_ARGUMENT_DESCRIPTION_NUMBER_REPLICAS = 'The number of DNN Replicas to run.'
 _ARGPARSE_ARGUMENT_DESCRIPTION_FORMALISM_VERSION = 'The version of the formalism that we are using to analyze the cross section. Usually, it is BKM10.'
-_ARGPARSE_ARGUMENT_DESCRIPTION_LEPTON_POLARIZATION = 'The incoming lepton helicitiy: unpolarized or polarized.'
+_ARGPARSE_ARGUMENT_DESCRIPTION_LEPTON_HELICITY = 'The incoming lepton helicitiy: unpolarized or polarized.'
 _ARGPARSE_ARGUMENT_DESCRIPTION_TARGET_POLARIZATION = 'The nucleon target polarization: unpolarized or polarized.'
 _ARGPARSE_ARGUMENT_DESCRIPTION_VERBOSE = 'Enable verbose logging.'
 
