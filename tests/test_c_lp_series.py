@@ -32,5 +32,18 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 0.491757,
                 0.157396,
                 False), 
-            -0.22258
-        )
+            -0.22258)
+        
+    def test_calculate_c_0_plus_plus_longitudinally_polarized_A(self):
+        self.assertAlmostEqual(
+            calculate_c_0_plus_plus_longitudinally_polarized_A(
+                1.0,
+                1.0,
+                1.82,
+                0.343,
+                -0.172,
+                0.477109,
+                0.491757,
+                0.157396,
+                False), 
+            -0.0418893)
