@@ -217,24 +217,9 @@ def calculate_curly_C_zero_plus_longitudinally_polarized_interference(
         if verbose:
             print(f"> Calculated curly C0+ to be:\n{curly_C_zero_plus_longitudinally_polarized_interference}")
 
-        print('ff')
-        print(prefactor)
-        print('ff')
-        print(curly_C_longitudinally_polarized_interference)
-        print('ff')
-        print(c_V_zero_plus_contribution)
-        print('ff')
-        print(curly_C_V_longitudinally_polarized_interference)
-        print('ff')
-        print(c_zero_plus_contribution)
-        print('ff')
-        print(c_A_zero_plus_contribution)
-        print('ff')
-        print(curly_C_A_longitudinally_polarized_interference)
-
         # (7): Return the output.
         return curly_C_zero_plus_longitudinally_polarized_interference
 
     except Exception as ERROR:
         print(f"> Error in calculating the curly C0+ LP entire contribution: \n> {ERROR}")
-        return 0
+        return 0.

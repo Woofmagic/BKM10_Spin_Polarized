@@ -8,6 +8,8 @@
 from utilities.mathematics.math_units import convert_to_nb_over_GeV4
 
 from calculation.plot_results import plot_cross_section
+from calculation.plot_results import plot_beam_spin_asymmetry
+from calculation.plot_results import plot_coefficient_contributions
 
 ######################
 # DERIVED KINEMATICS #
@@ -417,10 +419,116 @@ def calculate_bkm10_cross_section(
 
         # (19): Convert to nb/GeV^{4}:
         bkm10_cross_section_in_nb_GeV4 = convert_to_nb_over_GeV4(bkm10_cross_section)
+
+        beam_spin_asymmetry_in_GeV6 = (calculate_interference_contribution_longitudinally_polarized(
+                1.0,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                azimuthal_phi,
+                epsilon,
+                lepton_energy_fraction_y,
+                skewness_parameter,
+                t_prime,
+                k_tilde,
+                shorthand_k,
+                lepton_propagator_p1,
+                lepton_propagator_p2,
+                Dirac_form_factor_F1,
+                Pauli_form_factor_F2,
+                compton_form_factor_h_real_part,
+                compton_form_factor_h_tilde_real_part,
+                compton_form_factor_e_real_part,
+                compton_form_factor_e_tilde_real_part,
+                compton_form_factor_h_imaginary_part,
+                compton_form_factor_h_tilde_imaginary_part,
+                compton_form_factor_e_imaginary_part,
+                compton_form_factor_e_tilde_imaginary_part,
+                verbose) - calculate_interference_contribution_longitudinally_polarized(
+                -1.0,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                azimuthal_phi,
+                epsilon,
+                lepton_energy_fraction_y,
+                skewness_parameter,
+                t_prime,
+                k_tilde,
+                shorthand_k,
+                lepton_propagator_p1,
+                lepton_propagator_p2,
+                Dirac_form_factor_F1,
+                Pauli_form_factor_F2,
+                compton_form_factor_h_real_part,
+                compton_form_factor_h_tilde_real_part,
+                compton_form_factor_e_real_part,
+                compton_form_factor_e_tilde_real_part,
+                compton_form_factor_h_imaginary_part,
+                compton_form_factor_h_tilde_imaginary_part,
+                compton_form_factor_e_imaginary_part,
+                compton_form_factor_e_tilde_imaginary_part,
+                verbose)) / (calculate_interference_contribution_longitudinally_polarized(
+                1.0,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                azimuthal_phi,
+                epsilon,
+                lepton_energy_fraction_y,
+                skewness_parameter,
+                t_prime,
+                k_tilde,
+                shorthand_k,
+                lepton_propagator_p1,
+                lepton_propagator_p2,
+                Dirac_form_factor_F1,
+                Pauli_form_factor_F2,
+                compton_form_factor_h_real_part,
+                compton_form_factor_h_tilde_real_part,
+                compton_form_factor_e_real_part,
+                compton_form_factor_e_tilde_real_part,
+                compton_form_factor_h_imaginary_part,
+                compton_form_factor_h_tilde_imaginary_part,
+                compton_form_factor_e_imaginary_part,
+                compton_form_factor_e_tilde_imaginary_part,
+                verbose) + calculate_interference_contribution_longitudinally_polarized(
+                -1.0,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                azimuthal_phi,
+                epsilon,
+                lepton_energy_fraction_y,
+                skewness_parameter,
+                t_prime,
+                k_tilde,
+                shorthand_k,
+                lepton_propagator_p1,
+                lepton_propagator_p2,
+                Dirac_form_factor_F1,
+                Pauli_form_factor_F2,
+                compton_form_factor_h_real_part,
+                compton_form_factor_h_tilde_real_part,
+                compton_form_factor_e_real_part,
+                compton_form_factor_e_tilde_real_part,
+                compton_form_factor_h_imaginary_part,
+                compton_form_factor_h_tilde_imaginary_part,
+                compton_form_factor_e_imaginary_part,
+                compton_form_factor_e_tilde_imaginary_part,
+                verbose))
+        
+        beam_spin_asymmetry = convert_to_nb_over_GeV4(beam_spin_asymmetry_in_GeV6)
         
         # (19.1): If verbose, print the conversion:
         if verbose:
             print(f"> Converted BKM10 differential cross section to {bkm10_cross_section_in_nb_GeV4} nb/GeV4")
+
+        plot_coefficient_contributions()
 
         plot_cross_section(
             lab_azimuthal_phi = azimuthal_phi,
@@ -429,6 +537,14 @@ def calculate_bkm10_cross_section(
             value_of_hadron_recoil = np.array(squared_hadronic_momentum_transfer_t)[0], 
             value_of_x_Bjorken = np.array(x_Bjorken)[0],
             calculated_cross_section = (bkm10_cross_section_in_nb_GeV4))
+
+        plot_beam_spin_asymmetry(
+            lab_azimuthal_phi = azimuthal_phi,
+            value_of_beam_energy = np.array(lab_kinematics_k)[0],
+            value_of_Q_squared = np.array(squared_Q_momentum_transfer)[0],
+            value_of_hadron_recoil = np.array(squared_hadronic_momentum_transfer_t)[0], 
+            value_of_x_Bjorken = np.array(x_Bjorken)[0],
+            bsa_data = (beam_spin_asymmetry))
 
         # (20): Return the cross section.
         return bkm10_cross_section_in_nb_GeV4
