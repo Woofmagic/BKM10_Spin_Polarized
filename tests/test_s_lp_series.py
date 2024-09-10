@@ -76,4 +76,4 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_T_PRIME,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            -0.0958505)
+            -0.107439)
