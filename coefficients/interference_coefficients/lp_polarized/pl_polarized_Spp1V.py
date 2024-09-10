@@ -49,7 +49,7 @@ def calculate_s_1_plus_plus_longitudinally_polarized_V(
         second_bracket_term = 1. - (t_over_Q_squared * second_bracket_term_numerator / second_bracket_term_denominator)
         
         # (11): Calculate the almost_prefactor:
-        almost_prefactor = 8. * target_polarization * shorthand_k / root_one_plus_epsilon_squared**2
+        almost_prefactor = 8. * target_polarization * shorthand_k / root_one_plus_epsilon_squared**4
 
         # (12): Calculate the first prefactor:
         prefactor_one = almost_prefactor * (2. - 2. * lepton_energy_fraction_y + lepton_energy_fraction_y**2 + 2. * epsilon_y_over_2_squared) * t_over_Q_squared
