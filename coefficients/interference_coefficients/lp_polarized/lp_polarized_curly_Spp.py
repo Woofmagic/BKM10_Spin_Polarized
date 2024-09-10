@@ -102,6 +102,7 @@ def calculate_curly_S_plus_plus_longitudinally_polarized_interference(
                 squared_hadronic_momentum_transfer_t,
                 epsilon,
                 lepton_energy_fraction_y,
+                t_prime,
                 shorthand_k,
                 verbose)
 

@@ -10,6 +10,7 @@ def calculate_s_1_plus_plus_longitudinally_polarized_V(
     squared_hadronic_momentum_transfer_t: float,
     epsilon: float,
     lepton_energy_fraction_y: float, 
+    t_prime: float,
     shorthand_k: float,
     verbose: bool = False) -> float:
     """
@@ -27,7 +28,7 @@ def calculate_s_1_plus_plus_longitudinally_polarized_V(
         t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
 
         # (4): Calculate the quantity t'/Q^{2}
-        t_prime_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
+        t_prime_over_Q_squared = t_prime / squared_Q_momentum_transfer
 
         # (5): Calculate epsilon^{2} y^{2} / 4
         epsilon_y_over_2_squared = (epsilon * lepton_energy_fraction_y / 2.) ** 2
