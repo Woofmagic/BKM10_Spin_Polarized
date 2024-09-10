@@ -31,7 +31,7 @@ def calculate_c_0_plus_plus_longitudinally_polarized(
         second_bracket_term_first_part = 1. - lepton_energy_fraction_y + (epsilon**2 * lepton_energy_fraction_y**2 / 4.)
 
         # (5): Calculate the second part of the second term in brackets:
-        second_bracket_term_second_part = x_Bjorken** t_over_Q_squared - (epsilon**2 * (1. - t_over_Q_squared) / 2.)
+        second_bracket_term_second_part = x_Bjorken * t_over_Q_squared - (epsilon**2 * (1. - t_over_Q_squared) / 2.)
 
         # (6): Calculate the third part of the second term in brackets:
         second_bracket_term_third_part = 1. + t_over_Q_squared * (root_one_plus_epsilon_squared - 1. + 2. * x_Bjorken / (1. + root_one_plus_epsilon_squared))

@@ -5,7 +5,7 @@ from coefficients.interference_coefficients.lp_polarized.lp_polarized_Cpp0 impor
 class TestCLPSeriesCoefficients(unittest.TestCase):
 
     def test_calculate_c_0_plus_plus_longitudinally_polarized(self):
-        self.assertEqual(
+        self.assertAlmostEqual(
             calculate_c_0_plus_plus_longitudinally_polarized(
                 1.0,
                 1.0,
