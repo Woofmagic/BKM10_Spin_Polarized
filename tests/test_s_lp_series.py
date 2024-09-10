@@ -24,9 +24,9 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
         self.assertAlmostEqual(
             calculate_s_1_plus_plus_longitudinally_polarized(
                 1.0,
-                1.82,
-                0.343,
-                -0.172,
+                1.8200000524520876,
+                0.3429999947547912,
+                -0.1720000058412552,
                 0.477109,
                 0.491757,
                 0.0842939,
