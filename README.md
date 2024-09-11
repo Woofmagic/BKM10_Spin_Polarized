@@ -24,7 +24,7 @@ To run the program, run `main.py` with the required arguments. We require a
 
 
 ```bash
-python main.py -d basic_model_pseudodata_for_Jlab_kinematics.csv -kin 1 -form 10 -lep-polar polarized -target-polar polarized
+python main.py -d basic_model_pseudodata_for_Jlab_kinematics.csv -kin 1 -form 10 -lep-helicity polarized -target-polar polarized
 ```
 
 ## The Four-Fold Cross Section
