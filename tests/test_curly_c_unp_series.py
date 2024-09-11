@@ -2,6 +2,7 @@ import unittest
 
 from coefficients.interference_coefficients.unpolarized.unpolarized_curly_C import calculate_curly_C_unpolarized_interference
 from coefficients.interference_coefficients.unpolarized.unpolarized_curly_CV import calculate_curly_C_unpolarized_interference_V
+from coefficients.interference_coefficients.unpolarized.unpolarized_curly_CA import calculate_curly_C_unpolarized_interference_A
 
 _TEST_LEPTON_POLARIZATION = 1.0
 _TEST_TARGET_POLARIZATION = 1.0
@@ -60,6 +61,7 @@ class TestCurlyCUnpolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_CFF_REAL_E,
                 _TEST_VERBOSE), 
             20.024667250345)
+        
     def test_calculate_curly_C_unpolarized_interference_V(self):
         """
         # Title: `test_test_calculate_curly_C_unpolarized_interference_V`
@@ -88,4 +90,32 @@ class TestCurlyCUnpolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_CFF_REAL_E,
                 _TEST_VERBOSE), 
             -0.54965740801746)
+        
+    def test_calculate_curly_C_unpolarized_interference_A(self):
+        """
+        # Title: `test_test_calculate_curly_C_unpolarized_interference_A`
+
+        ## Description: Test the function `calculate_curly_C_unpolarized_interference_A`.
+        These Curly Cs don't rely on the helicity flip of the lepton or not, so they
+        are easy to test.
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_curly_C_unpolarized_interference_A(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_DIRAC_FORM_FACTOR_F1,
+                _TEST_PAULI_FORM_FACTOR_F2,
+                _TEST_CFF_REAL_H_TILDE,
+                _TEST_VERBOSE), 
+            0.93418825117849)
         
