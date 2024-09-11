@@ -22,10 +22,10 @@ def calculate_s_2_plus_plus_longitudinally_polarized_V(
         root_one_plus_epsilon_squared = np.sqrt(1. + epsilon**2)
 
         # (2): Calculate the first contribution to the bracket term:
-        bracket_term_first_term = (3. - root_one_plus_epsilon_squared - 2. * x_Bjorken + epsilon**2 / x_Bjorken) * x_Bjorken * t_prime / squared_Q_momentum_transfer
+        bracket_term_second_term = (3. - root_one_plus_epsilon_squared - 2. * x_Bjorken + (epsilon**2 / x_Bjorken)) * x_Bjorken * t_prime / squared_Q_momentum_transfer
 
         # (3): Calculate second contribution to the bracket term:
-        bracket_term_second_term = 4. * k_tilde**2 * (1. - 2. * x_Bjorken) / (root_one_plus_epsilon_squared * squared_Q_momentum_transfer)
+        bracket_term_first_term = 4. * k_tilde**2 * (1. - 2. * x_Bjorken) / (root_one_plus_epsilon_squared * squared_Q_momentum_transfer)
 
         # (4): Calculate the bracket term:
         bracket_term = squared_hadronic_momentum_transfer_t * (bracket_term_first_term - bracket_term_second_term) / squared_Q_momentum_transfer
