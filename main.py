@@ -121,32 +121,14 @@ def main(
         compton_form_factor_e_tilde_imaginary = 5.383
 
         # (8): Attempt to calculate the BKM10 Cross Section:
-        calculate_bkm10_cross_section(
-            numerical_lepton_polarization,
-            numerical_target_polarization,
-            range_of_Q_squared,
-            range_of_x_Bjorken,
-            range_of_hadronic_momentum_transfer_t,
-            range_of_lepton_momentum_k,
-            range_of_lab_azimuthal_phi,
-            compton_form_factor_h_real,
-            compton_form_factor_h_tilde_real,
-            compton_form_factor_e_real,
-            compton_form_factor_e_imaginary,
-            compton_form_factor_h_imaginary,
-            compton_form_factor_h_tilde_imaginary,
-            compton_form_factor_e_imaginary,
-            compton_form_factor_e_tilde_imaginary,
-            verbose)
-
         # calculate_bkm10_cross_section(
         #     numerical_lepton_polarization,
         #     numerical_target_polarization,
-        #     np.array([1.82 for i in range(len(np.arange(0, 361, 1.)))]),
-        #     np.array([0.34 for i in range(len(np.arange(0, 361, 1.)))]),
-        #     np.array([-0.17 for i in range(len(np.arange(0, 361, 1.)))]),
-        #     np.array([5.75 for i in range(len(np.arange(0, 361, 1.)))]),
-        #     np.arange(0, 361, 1.),
+        #     range_of_Q_squared,
+        #     range_of_x_Bjorken,
+        #     range_of_hadronic_momentum_transfer_t,
+        #     range_of_lepton_momentum_k,
+        #     range_of_lab_azimuthal_phi,
         #     compton_form_factor_h_real,
         #     compton_form_factor_h_tilde_real,
         #     compton_form_factor_e_real,
@@ -156,6 +138,24 @@ def main(
         #     compton_form_factor_e_imaginary,
         #     compton_form_factor_e_tilde_imaginary,
         #     verbose)
+
+        calculate_bkm10_cross_section(
+            numerical_lepton_polarization,
+            numerical_target_polarization,
+            np.array([1.82 for i in range(len(np.arange(0, 361, 1.)))]),
+            np.array([0.34 for i in range(len(np.arange(0, 361, 1.)))]),
+            np.array([-0.17 for i in range(len(np.arange(0, 361, 1.)))]),
+            np.array([5.75 for i in range(len(np.arange(0, 361, 1.)))]),
+            np.arange(0, 361, 1.),
+            compton_form_factor_h_real,
+            compton_form_factor_h_tilde_real,
+            compton_form_factor_e_real,
+            compton_form_factor_e_imaginary,
+            compton_form_factor_h_imaginary,
+            compton_form_factor_h_tilde_imaginary,
+            compton_form_factor_e_imaginary,
+            compton_form_factor_e_tilde_imaginary,
+            verbose)
 
     except KeyboardInterrupt:
 
