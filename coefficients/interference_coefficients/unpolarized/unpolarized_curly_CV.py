@@ -21,7 +21,7 @@ def calculate_curly_C_unpolarized_interference_V(
 
         # (4.1): If verbose, print the calculation:
         if verbose:
-            print(f"> Calculated Curly C interference unpolarized target to be:\n{curly_C_unpolarized_interference_V}")
+            print(f"> Calculated Curly C interference V unpolarized target to be:\n{curly_C_unpolarized_interference_V}")
 
         # (5): Return the output:
         return curly_C_unpolarized_interference_V
