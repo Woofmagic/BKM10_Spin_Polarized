@@ -12,6 +12,13 @@ from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p0 impor
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p0V import calculate_c_0_zero_plus_longitudinally_polarized_V
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p0A import calculate_c_0_zero_plus_longitudinally_polarized_A
 
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p1 import calculate_c_1_zero_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p1V import calculate_c_1_zero_plus_longitudinally_polarized_V
+
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p2 import calculate_c_2_zero_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p2V import calculate_c_2_zero_plus_longitudinally_polarized_V
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p2A import calculate_c_2_zero_plus_longitudinally_polarized_A
+
 _TEST_LEPTON_POLARIZATION = 1.0
 _TEST_TARGET_POLARIZATION = 1.0
 _TEST_SQUARED_Q_MOMENTUM_TRANSFER = 1.8200000524520876
@@ -294,6 +301,94 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_X_BJORKEN,
                 _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
                 _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
             0.0064228342909204)
+
+    def test_calculate_c_1_zero_plus_longitudinally_polarized(self):
+        """
+        # Title: `test_calculate_c_1_zero_plus_longitudinally_polarized`
+
+        ## Description: Test the function `calculate_c_1_zero_plus_longitudinally_polarized`.
+        Remember, that function corresponds to the BKM10 coefficient called $C_{0+}^{LP}(n = 1)$.
+        We call it "CLP0P1" for C (series) LP (longitudinally polarized [target]) 0P (0+) 1 (n = 1).
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_c_1_zero_plus_longitudinally_polarized(
+                _TEST_LEPTON_POLARIZATION,
+                _TEST_TARGET_POLARIZATION,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_K_TILDE,
+                _TEST_SHORTHAND_K,
+                _TEST_VERBOSE), 
+            -0.0015138356876065)
+        
+    def test_calculate_c_1_zero_plus_longitudinally_polarized_V(self):
+        """
+        # Title: `test_calculate_c_1_zero_plus_longitudinally_polarized_V`
+
+        ## Description: Test the function `calculate_c_1_zero_plus_longitudinally_polarized_V`.
+        Remember, that function corresponds to the BKM10 coefficient called $C_{0+}^{LP,V}(n = 1)$.
+        We call it "CLPV0P1" for C (series) LP (longitudinally polarized [target]) V (vector) 0P (0+) 1 (n = 1).
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_c_1_zero_plus_longitudinally_polarized_V(
+                _TEST_LEPTON_POLARIZATION,
+                _TEST_TARGET_POLARIZATION,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_K_TILDE,
+                _TEST_VERBOSE), 
+            -0.0050366261470188)
+        
+    def test_calculate_c_2_zero_plus_longitudinally_polarized(self):
+        """
+        # Title: `test_calculate_c_2_zero_plus_longitudinally_polarized`
+
+        ## Description: Test the function `calculate_c_2_zero_plus_longitudinally_polarized`.
+        Remember, that function corresponds to the BKM10 coefficient called $C_{0+}^{LP}(n = 2)$.
+        We call it "CLP0P2" for C (series) LP (longitudinally polarized [target]) 0P (0+) 2 (n = 2).
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_c_2_zero_plus_longitudinally_polarized(
+                _TEST_LEPTON_POLARIZATION,
+                _TEST_TARGET_POLARIZATION,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SHORTHAND_K,
+                _TEST_VERBOSE), 
+            -0.21172818677533)
