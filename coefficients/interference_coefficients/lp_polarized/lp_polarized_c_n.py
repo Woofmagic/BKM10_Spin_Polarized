@@ -247,8 +247,8 @@ def calculate_c_interference_coefficient(
             verbose)
 
         # (5): Calculate the entire thing:
-        c_n_interference_coefficient = c_plus_plus * curly_c_plus_plus + c_zero_plus * curly_c_zero_plus + c_minus_plus * curly_c_minus_plus
-        # c_n_interference_coefficient = c_plus_plus * curly_c_plus_plus + c_zero_plus * curly_c_zero_plus
+        # c_n_interference_coefficient = c_plus_plus * curly_c_plus_plus + c_zero_plus * curly_c_zero_plus + c_minus_plus * curly_c_minus_plus
+        c_n_interference_coefficient = c_plus_plus * curly_c_plus_plus + c_zero_plus * curly_c_zero_plus
         
         # (): If verbose, print the output:
         if verbose:
