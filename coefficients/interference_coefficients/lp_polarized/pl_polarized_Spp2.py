@@ -22,7 +22,7 @@ def calculate_s_2_plus_plus_longitudinally_polarized(
         root_one_plus_epsilon_squared = np.sqrt(1. + epsilon**2)
 
         # (2): Calculate 1 + sqrt(1 + epsilon^2)
-        one_plus_root_epsilon_stuff = 3 + root_one_plus_epsilon_squared
+        one_plus_root_epsilon_stuff = 1. + root_one_plus_epsilon_squared
 
         # (3): Calculate 4 * Kt^{2} * (1 + sqrt(1 + e^{2})) * (1 + sqrt(1 + e^{2}) + xb t / Q^{2})t'/Q^{2}
         bracket_term = 4. * k_tilde**2 * (one_plus_root_epsilon_stuff - 2. * x_Bjorken) * (one_plus_root_epsilon_stuff + x_Bjorken * squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer) * t_prime / (root_one_plus_epsilon_squared * squared_Q_momentum_transfer**2)

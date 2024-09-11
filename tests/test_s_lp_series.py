@@ -4,6 +4,10 @@ from coefficients.interference_coefficients.lp_polarized.pl_polarized_Spp1 impor
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_Spp1V import calculate_s_1_plus_plus_longitudinally_polarized_V
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_Spp1A import calculate_s_1_plus_plus_longitudinally_polarized_A
 
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_Spp2 import calculate_s_2_plus_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_Spp2V import calculate_s_2_plus_plus_longitudinally_polarized_V
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_Spp2A import calculate_s_2_plus_plus_longitudinally_polarized_A
+
 _TEST_LEPTON_POLARIZATION = 1.0
 _TEST_TARGET_POLARIZATION = 1.0
 _TEST_SQUARED_Q_MOMENTUM_TRANSFER = 1.8200000524520876
@@ -106,3 +110,33 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
             -0.0243094)
+        
+    def test_calculate_s_2_plus_plus_longitudinally_polarized(self):
+        """
+        # Title: `test_calculate_s_2_plus_plus_longitudinally_polarized`
+
+        ## Description: Test the function `calculate_s_2_plus_plus_longitudinally_polarized`.
+        Remember, that function corresponds to the BKM10 coefficient called $S_{++}^{LP}(n = 2)$.
+        We call it "SLPPP2" for S (series) LP (longitudinally polarized [target]) PP (++) 2 (n = 2).
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_s_2_plus_plus_longitudinally_polarized(
+                _TEST_TARGET_POLARIZATION,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_T_PRIME,
+                _TEST_K_TILDE,
+                _TEST_VERBOSE), 
+            0.0048104884071469)
