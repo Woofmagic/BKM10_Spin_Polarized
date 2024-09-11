@@ -386,9 +386,40 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_POLARIZATION,
                 _TEST_TARGET_POLARIZATION,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
                 _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
                 _TEST_EPSILON,
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
             -0.21172818677533)
+        
+    def test_calculate_c_2_zero_plus_longitudinally_polarized_V(self):
+        """
+        # Title: `test_calculate_c_2_zero_plus_longitudinally_polarized_V`
+
+        ## Description: Test the function `calculate_c_2_zero_plus_longitudinally_polarized_V`.
+        Remember, that function corresponds to the BKM10 coefficient called $C_{0+}^{LP,V}(n = 2)$.
+        We call it "CLPV0P2" for C (series) LP (longitudinally polarized [target]) V (vector) 0P (0+) 2 (n = 2).
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_c_2_zero_plus_longitudinally_polarized_V(
+                _TEST_LEPTON_POLARIZATION,
+                _TEST_TARGET_POLARIZATION,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SHORTHAND_K,
+                _TEST_VERBOSE), 
+            -0.013586642803901)
