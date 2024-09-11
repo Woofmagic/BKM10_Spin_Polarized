@@ -51,7 +51,7 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_K_TILDE,
                 _TEST_VERBOSE), 
-            0.119359)
+            0.11935918886665)
         
     def test_calculate_c_0_plus_plus_longitudinally_polarized_V(self):
         """
@@ -81,7 +81,7 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_K_TILDE,
                 _TEST_VERBOSE), 
-            -0.22258)
+            -0.22257983433145)
         
     def test_calculate_c_0_plus_plus_longitudinally_polarized_A(self):
         """
@@ -111,7 +111,7 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_K_TILDE,
                 _TEST_VERBOSE), 
-            -0.0418893)
+            -0.041889300265988)
         
     def test_calculate_c_1_plus_plus_longitudinally_polarized(self):
         """
@@ -141,7 +141,7 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            -0.278046)
+            -0.27804613812563)
         
     def test_calculate_c_1_plus_plus_longitudinally_polarized_V(self):
         """
@@ -172,7 +172,7 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_T_PRIME,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            -0.0757833)
+            -0.075783256772997)
         
     def test_calculate_c_1_plus_plus_longitudinally_polarized_A(self):
         """
@@ -201,4 +201,4 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_EPSILON,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            -0.0199949)
+            -0.019994852134866)
