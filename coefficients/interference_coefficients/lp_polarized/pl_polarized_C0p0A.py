@@ -3,8 +3,6 @@ try:
 except ImportError:
     print("NumPy is not installed. Please install NumPy to use this script.")
 
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p0 import calculate_c_0_zero_plus_longitudinally_polarized
-
 def calculate_c_0_zero_plus_longitudinally_polarized_A(
     lepton_helicity: float,
     target_polarization: float,
@@ -20,30 +18,23 @@ def calculate_c_0_zero_plus_longitudinally_polarized_A(
 
     try:
 
-        # (1): Calculate the modulation to C_{0+}^{LP, A}:
-        modulating_factor = -1. * (x_Bjorken * (1. + (squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer))) / (1. - x_Bjorken)
+        # (1): Calculate the annoying quantity sqrt(1 - y - y^{2} epsilon^{2} / 2)
+        root_combination_of_y_and_epsilon = np.sqrt(1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.))
 
-        # (2): Calculate the C_{0+}^{LP} coefficient:
-        c_0_zero_plus_LP = calculate_c_0_zero_plus_longitudinally_polarized(
-            lepton_helicity,
-            target_polarization,
-            squared_Q_momentum_transfer, 
-            x_Bjorken, 
-            squared_hadronic_momentum_transfer_t,
-            epsilon,
-            lepton_energy_fraction_y, 
-            shorthand_k,
-            verbose
-        )
+        # (2): Calculate the "prefactor":
+        prefactor = -8. * np.sqrt(2.) * lepton_helicity * target_polarization * shorthand_k * lepton_energy_fraction_y / (1. + epsilon**2)**2
 
-        # (3): Calculate everything:
-        c_0_zero_plus_A_LP = c_0_zero_plus_LP * modulating_factor
+        # (3): Calculate t/Q^2:
+        t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
 
-        # (3.1): If verbose, log the output:
+        # (4): Calculate everything:
+        c_0_zero_plus_A_LP = prefactor * root_combination_of_y_and_epsilon * x_Bjorken * t_over_Q_squared * (1. + t_over_Q_squared)
+
+        # (4.1): If verbose, log the output:
         if verbose:
             print(f"> Calculated c_0_zero_plus_A_LP to be:\n{c_0_zero_plus_A_LP}")
 
-        # (4): Return the coefficient:
+        # (5): Return the coefficient:
         return c_0_zero_plus_A_LP
 
     except Exception as ERROR:

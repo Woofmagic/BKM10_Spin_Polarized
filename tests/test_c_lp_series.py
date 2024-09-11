@@ -208,13 +208,13 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_VERBOSE), 
             -0.019994852134866)
         
-    def test_calculate_c_0_plus_plus_longitudinally_polarized(self):
+    def test_calculate_c_0_zero_plus_longitudinally_polarized(self):
         """
-        # Title: `test_calculate_c_0_plus_plus_longitudinally_polarized`
+        # Title: `test_calculate_c_0_zero_plus_longitudinally_polarized`
 
-        ## Description: Test the function `calculate_c_0_plus_plus_longitudinally_polarized`.
-        Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{LP}(n = 0)$.
-        We call it "CLPPP0" for C (series) LP (longitudinally polarized [target]) PP (++) 0 (n = 0).
+        ## Description: Test the function `calculate_c_0_zero_plus_longitudinally_polarized`.
+        Remember, that function corresponds to the BKM10 coefficient called $C_{0+}^{LP}(n = 0)$.
+        We call it "CLP0P0" for C (series) LP (longitudinally polarized [target]) 0P (0+) 0 (n = 0).
 
         ## Arguments:
         None
@@ -237,3 +237,63 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
             -0.013586642803901)
+        
+    def test_calculate_c_0_zero_plus_longitudinally_polarized_V(self):
+        """
+        # Title: `test_calculate_c_0_zero_plus_longitudinally_polarized_V`
+
+        ## Description: Test the function `calculate_c_0_zero_plus_longitudinally_polarized_V`.
+        Remember, that function corresponds to the BKM10 coefficient called $C_{0+}^{LP,V}(n = 0)$.
+        We call it "CLPV0P0" for C (series) LP (longitudinally polarized [target]) V (vector) 0P (0+) 0 (n = 0).
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_c_0_zero_plus_longitudinally_polarized_V(
+                _TEST_LEPTON_POLARIZATION,
+                _TEST_TARGET_POLARIZATION,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SHORTHAND_K,
+                _TEST_VERBOSE), 
+            -0.0077068466943737)
+        
+    def test_calculate_c_0_zero_plus_longitudinally_polarized_A(self):
+        
+        """
+        # Title: `test_calculate_c_0_zero_plus_longitudinally_polarized_A`
+
+        ## Description: Test the function `calculate_c_0_zero_plus_longitudinally_polarized_A`.
+        Remember, that function corresponds to the BKM10 coefficient called $C_{0+}^{LP, A}(n = 0)$.
+        We call it "CLPA0P0" for C (series) LP (longitudinally polarized [target]) A (axial vector) 0P (0+) 0 (n = 0).
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_c_0_zero_plus_longitudinally_polarized_A(
+                _TEST_LEPTON_POLARIZATION,
+                _TEST_TARGET_POLARIZATION,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_SHORTHAND_K,
+                _TEST_VERBOSE), 
+            0.0064228342909204)

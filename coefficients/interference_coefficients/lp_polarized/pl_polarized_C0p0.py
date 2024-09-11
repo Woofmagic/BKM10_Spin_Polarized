@@ -21,17 +21,11 @@ def calculate_c_0_zero_plus_longitudinally_polarized(
         # (1): Calculate the annoying quantity sqrt(1 - y - y^{2} epsilon^{2} / 2)
         root_combination_of_y_and_epsilon = np.sqrt(1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.))
 
-        print(root_combination_of_y_and_epsilon)
-
         # (2): Calculate the "prefactor":
         prefactor = 8. * np.sqrt(2.) * lepton_helicity * target_polarization * shorthand_k * (1. - x_Bjorken) * lepton_energy_fraction_y / (1. + epsilon**2)**2
 
-        print(prefactor)
-
         # (3): Calculate everything:
         c_0_zero_plus_LP = prefactor * root_combination_of_y_and_epsilon * squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
-
-        print(f"> Calculated c_0_zero_plus_LP to be:\n{c_0_zero_plus_LP}")
 
         # (3.1): If verbose, log the output:
         if verbose:
