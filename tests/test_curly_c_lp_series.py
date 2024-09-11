@@ -4,6 +4,8 @@ from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_CLP 
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_CLPV import calculate_curly_C_longitudinally_polarized_interference_V
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_CLPA import calculate_curly_C_longitudinally_polarized_interference_A
 
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_Cpp import calculate_curly_C_plus_plus_longitudinally_polarized_interference
+
 _TEST_LEPTON_POLARIZATION = 1.0
 _TEST_TARGET_POLARIZATION = 1.0
 _TEST_SQUARED_Q_MOMENTUM_TRANSFER = 1.8200000524520876
@@ -30,13 +32,13 @@ _TEST_CFF_IMAGINARY_E_TILDE = 5.383
 
 _TEST_VERBOSE = False
 
-class TestCurlyCUnpolarizedSeriesCoefficients(unittest.TestCase):
+class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
 
-    def test_calculate_curly_C_unpolarized_interference(self):
+    def test_calculate_curly_C_longitudinally_polarized_interference(self):
         """
-        # Title: `test_test_calculate_curly_C_unpolarized_interference`
+        # Title: `test_test_calculate_curly_C_longitudinally_polarized_interference`
 
-        ## Description: Test the function `test_calculate_curly_C_unpolarized_interference`.
+        ## Description: Test the function `test_calculate_curly_C_longitudinally_polarized_interference`.
         These Curly Cs don't rely on the helicity flip of the lepton or not, so they
         are easy to test.
 
@@ -63,9 +65,9 @@ class TestCurlyCUnpolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_VERBOSE), 
             -57.840734602245)
     
-    def test_calculate_curly_C_unpolarized_interference_V(self):
+    def test_calculate_curly_C_longitudinally_polarized_interference_V(self):
         """
-        # Title: `test_calculate_curly_C_unpolarized_interference_V`
+        # Title: `test_calculate_curly_C_longitudinally_polarized_interference_V`
 
         ## Description: Test the function `calculate_curly_C_longitudinally_polarized_interference_V`.
         These Curly Cs don't rely on the helicity flip of the lepton or not, so they
@@ -92,9 +94,9 @@ class TestCurlyCUnpolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_VERBOSE), 
             -0.38168312089056)
         
-    def test_calculate_curly_C_unpolarized_interference_A(self):
+    def test_calculate_curly_C_longitudinally_polarized_interference_A(self):
         """
-        # Title: `test_calculate_curly_C_unpolarized_interference_A`
+        # Title: `test_calculate_curly_C_longitudinally_polarized_interference_A`
 
         ## Description: Test the function `calculate_curly_C_longitudinally_polarized_interference_A`.
         These Curly Cs don't rely on the helicity flip of the lepton or not, so they
@@ -120,3 +122,42 @@ class TestCurlyCUnpolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_CFF_REAL_E_TILDE,
                 _TEST_VERBOSE), 
             1.3033711297087)
+        
+    def test_calculate_curly_C_longitudinally_polarized_plus_plus_interference_A(self):
+        """
+        # Title: `test_calculate_curly_C_longitudinally_polarized_plus_plus_interference_A`
+
+        ## Description: Test the function `calculate_curly_C_plus_plus_longitudinally_polarized_interference`.
+        These Curly Cs don't rely on the helicity flip of the lepton or not, so they
+        are easy to test.
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_curly_C_plus_plus_longitudinally_polarized_interference(
+                0,
+                _TEST_LEPTON_POLARIZATION,
+                _TEST_TARGET_POLARIZATION,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_T_PRIME,
+                _TEST_K_TILDE,
+                _TEST_SHORTHAND_K,
+                _TEST_DIRAC_FORM_FACTOR_F1,
+                _TEST_PAULI_FORM_FACTOR_F2,
+                _TEST_CFF_REAL_H,
+                _TEST_CFF_REAL_H_TILDE,
+                _TEST_CFF_REAL_E,
+                _TEST_CFF_REAL_E_TILDE,
+                _TEST_VERBOSE), 
+            -57.586395899939)
