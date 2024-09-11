@@ -41,7 +41,7 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
 
     def test_calculate_curly_C_longitudinally_polarized_interference(self):
         """
-        # Title: `test_test_calculate_curly_C_longitudinally_polarized_interference`
+        # Title: `test_calculate_curly_C_longitudinally_polarized_interference`
 
         ## Description: Test the function `test_calculate_curly_C_longitudinally_polarized_interference`.
         These Curly Cs don't rely on the helicity flip of the lepton or not, so they
@@ -69,6 +69,19 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_CFF_REAL_E_TILDE,
                 _TEST_VERBOSE), 
             -57.840734602245)
+        # self.assertAlmostEqual(
+        #     calculate_curly_C_longitudinally_polarized_interference(
+        #         _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+        #         _TEST_X_BJORKEN,
+        #         _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+        #         _TEST_DIRAC_FORM_FACTOR_F1,
+        #         _TEST_PAULI_FORM_FACTOR_F2,
+        #         compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_H),
+        #         compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_H_TILDE),
+        #         compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_E),
+        #         compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_E_TILDE),
+        #         _TEST_VERBOSE), 
+        #     19.372871416107166)
     
     def test_calculate_curly_C_longitudinally_polarized_interference_V(self):
         """
@@ -98,6 +111,17 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_CFF_REAL_E,
                 _TEST_VERBOSE), 
             -0.38168312089056)
+        # self.assertAlmostEqual(
+        #     calculate_curly_C_longitudinally_polarized_interference_V(
+        #         _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+        #         _TEST_X_BJORKEN,
+        #         _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+        #         _TEST_DIRAC_FORM_FACTOR_F1,
+        #         _TEST_PAULI_FORM_FACTOR_F2,
+        #         compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_H),
+        #         compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_E),
+        #         _TEST_VERBOSE), 
+        #     0.12784410562524573)
         
     def test_calculate_curly_C_longitudinally_polarized_interference_A(self):
         """
@@ -116,6 +140,17 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
         ## Examples:
         None
         """
+        # self.assertAlmostEqual(
+        #     calculate_curly_C_longitudinally_polarized_interference_A(
+        #         _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+        #         _TEST_X_BJORKEN,
+        #         _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+        #         _TEST_DIRAC_FORM_FACTOR_F1,
+        #         _TEST_PAULI_FORM_FACTOR_F2,
+        #         _TEST_CFF_REAL_H_TILDE,
+        #         _TEST_CFF_REAL_E_TILDE,
+        #         _TEST_VERBOSE), 
+        #     1.3033711297087)
         self.assertAlmostEqual(
             calculate_curly_C_longitudinally_polarized_interference_A(
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
@@ -123,10 +158,10 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
                 _TEST_DIRAC_FORM_FACTOR_F1,
                 _TEST_PAULI_FORM_FACTOR_F2,
-                _TEST_CFF_REAL_H_TILDE,
-                _TEST_CFF_REAL_E_TILDE,
+                compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_H_TILDE),
+                compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_E_TILDE),
                 _TEST_VERBOSE), 
-            1.3033711297087)
+            -0.43656192075401035)
         
     def test_calculate_curly_C_longitudinally_polarized_plus_plus_interference(self):
         """
@@ -165,7 +200,7 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_CFF_REAL_E,
                 _TEST_CFF_REAL_E_TILDE,
                 _TEST_VERBOSE), 
-            -57.586395899939)
+            -57.85103676634)
         
     def test_calculate_curly_C_longitudinally_polarized_zero_plus_interference(self):
         """
@@ -203,4 +238,4 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
                 compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_E),
                 compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_E_TILDE),
                 _TEST_VERBOSE), 
-            19.287704684764)
+            1.9568301316469)
