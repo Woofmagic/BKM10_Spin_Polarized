@@ -199,8 +199,6 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_X_BJORKEN,
                 _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
                 _TEST_EPSILON,
-                _TEST_LEPTON_ENERGY_FRACTION,
-                _TEST_T_PRIME,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
             -0.0199949)
