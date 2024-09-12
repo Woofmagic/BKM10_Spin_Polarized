@@ -8,7 +8,11 @@ from coefficients.interference_coefficients.lp_polarized.pl_polarized_Cpp1 impor
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_Cpp1V import calculate_c_1_plus_plus_longitudinally_polarized_V
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_Cpp1A import calculate_c_1_plus_plus_longitudinally_polarized_A
 
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p0 import calculate_c_0_zero_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_Cpp2 import calculate_c_2_plus_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_Cpp2V import calculate_c_2_plus_plus_longitudinally_polarized_V
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_Cpp2A import calculate_c_2_plus_plus_longitudinally_polarized_A
+
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_C0p0 import calculate_c_0_zero_plus_longitudinally_polarized
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p0V import calculate_c_0_zero_plus_longitudinally_polarized_V
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p0A import calculate_c_0_zero_plus_longitudinally_polarized_A
 
@@ -205,6 +209,36 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
         """
         self.assertAlmostEqual(
             calculate_c_1_plus_plus_longitudinally_polarized_A(
+                _TEST_LEPTON_POLARIZATION,
+                _TEST_TARGET_POLARIZATION,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_SHORTHAND_K,
+                _TEST_VERBOSE), 
+            -0.019994852134866)
+        
+    def test_calculate_c_2_plus_plus_longitudinally_polarized(self):
+        
+        """
+        # Title: `test_calculate_c_2_plus_plus_longitudinally_polarized`
+
+        ## Description: Test the function `calculate_c_2_plus_plus_longitudinally_polarized`.
+        Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{LP, A}(n = 1)$.
+        We call it "CLPAPP1" for C (series) LP (longitudinally polarized [target]) A (axial vector) PP (++) 0 (n = 1).
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_c_2_plus_plus_longitudinally_polarized(
                 _TEST_LEPTON_POLARIZATION,
                 _TEST_TARGET_POLARIZATION,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,

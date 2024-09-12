@@ -14,6 +14,25 @@ def calculate_c_0_zero_plus_longitudinally_polarized(
     shorthand_k: float,
     verbose: bool = False) -> float:
     """
+    # Title: `calculate_c_0_zero_plus_longitudinally_polarized`
+
+    ## Description: 
+    We calculate the coefficient C++(n = 0) for the longitudinally-polarized
+    target.
+
+    ## Arguments:
+    
+    1. lepton_helicity (float)
+
+    The helicity of the lepton beam. The number, while a float, 
+    is usually either -1.0 or +1.0.
+
+    ## Returns:
+    
+    1. c_0_zero_plus_LP (float)
+
+    ## Examples:
+    None
     """
 
     try:

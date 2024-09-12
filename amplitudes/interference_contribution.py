@@ -6,11 +6,26 @@ except ImportError:
 # Import helper modules:
 from utilities.mathematics.math_units import convert_degrees_to_radians
 
-# c_{n}^{I}
-from coefficients.interference_coefficients.lp_polarized.lp_polarized_c_n import calculate_c_interference_coefficient
+# Coefficient | c_{0}^{I}
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_c_n import calculate_c_0_interference_coefficient
 
-# s_{n}^{I}
-from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_interference_coefficient
+# Coefficient | c_{1}^{I}
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_c_n import calculate_c_1_interference_coefficient
+
+# Coefficient | c_{2}^{I}
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_c_n import calculate_c_2_interference_coefficient
+
+# Coefficient | c_{3}^{I}
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_c_n import calculate_c_3_interference_coefficient
+
+# Coefficient | s_{1}^{I}
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_1_interference_coefficient
+
+# Coefficient | s_{2}^{I}
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_1_interference_coefficient
+
+# Coefficient | s_{3}^{I}
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_1_interference_coefficient
 
 def calculate_interference_contribution_longitudinally_polarized(
     lepton_helicity: float,
@@ -141,7 +156,7 @@ def calculate_interference_contribution_longitudinally_polarized(
 
         # (2): Calculate c_{0}^{I}:
         # c_0_I = 0.
-        c_0_I = calculate_c_interference_coefficient(
+        c_0_I = calculate_c_0_interference_coefficient(
             0,
             lepton_helicity,
             target_polarization,
@@ -163,7 +178,7 @@ def calculate_interference_contribution_longitudinally_polarized(
         
         # (3): Calculate c_{1}^{I}:
         # c_1_I = 0.
-        c_1_I = calculate_c_interference_coefficient(
+        c_1_I = calculate_c_1_interference_coefficient(
             1,
             lepton_helicity,
             target_polarization,
