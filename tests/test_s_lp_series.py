@@ -12,6 +12,10 @@ from coefficients.interference_coefficients.lp_polarized.pl_polarized_Spp3 impor
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_Spp3V import calculate_s_3_plus_plus_longitudinally_polarized_V
 from coefficients.interference_coefficients.lp_polarized.pl_polarized_Spp3A import calculate_s_3_plus_plus_longitudinally_polarized_A
 
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_S0p1 import calculate_s_1_zero_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_S0p1V import calculate_s_1_zero_plus_longitudinally_polarized_V
+from coefficients.interference_coefficients.lp_polarized.pl_polarized_S0p1A import calculate_s_1_zero_plus_longitudinally_polarized_A
+
 _TEST_LEPTON_POLARIZATION = 1.0
 _TEST_TARGET_POLARIZATION = 1.0
 _TEST_SQUARED_Q_MOMENTUM_TRANSFER = 1.8200000524520876
@@ -293,3 +297,62 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_K_TILDE,
                 _TEST_VERBOSE), 
             0.00015423393697809)
+        
+    def test_calculate_s_1_zero_plus_longitudinally_polarized(self):
+        """
+        # Title: `test_calculate_s_1_zero_plus_longitudinally_polarized`
+
+        ## Description: Test the function `calculate_s_1_zero_plus_longitudinally_polarized`.
+        Remember, that function corresponds to the BKM10 coefficient called $S_{0+}^{LP}(n = 1)$.
+        We call it "SLP0P1" for S (series) LP (longitudinally polarized [target]) 0P (0+) 1 (n = 1).
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_s_1_zero_plus_longitudinally_polarized(
+                _TEST_TARGET_POLARIZATION,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_K_TILDE,
+                _TEST_VERBOSE), 
+            -0.52226678511777)
+        
+    def test_calculate_s_1_zero_plus_longitudinally_polarized_V(self):
+        """
+        # Title: `test_calculate_s_1_zero_plus_longitudinally_polarized_V`
+
+        ## Description: Test the function `calculate_s_1_zero_plus_longitudinally_polarized_V`.
+        Remember, that function corresponds to the BKM10 coefficient called $S_{0+}^{LP, V}(n = 1)$.
+        We call it "SLPV0PP1" for S (series) LP (longitudinally polarized [target]) V (vector) 0P (0+) 1 (n = 1).
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_s_1_zero_plus_longitudinally_polarized_V(
+                _TEST_TARGET_POLARIZATION,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_T_PRIME,
+                _TEST_SHORTHAND_K,
+                _TEST_VERBOSE), 
+            0.79822543528701)
