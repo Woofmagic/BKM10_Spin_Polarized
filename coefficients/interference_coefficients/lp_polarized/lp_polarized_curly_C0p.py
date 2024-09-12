@@ -72,56 +72,131 @@ def calculate_curly_C_zero_plus_longitudinally_polarized_interference(
             Pauli_form_factor_F2,
             compton_form_factor_h_tilde_eff,
             compton_form_factor_e_tilde_eff)
-
-        # (5.1): Calculate the C_{0+}(0) contribution
-        c_zero_plus_contribution = calculate_c_0_zero_plus_longitudinally_polarized(
-            lepton_helicity,
-            target_polarization,
-            squared_Q_momentum_transfer,
-            x_Bjorken,
-            squared_hadronic_momentum_transfer_t,
-            epsilon,
-            lepton_energy_fraction_y,
-            shorthand_k,
-            verbose)
-
-        # (5.2): Calculate the C_{0+}^{V}(0) contribution
-        c_V_zero_plus_contribution = calculate_c_0_zero_plus_longitudinally_polarized_V(
-            lepton_helicity,
-            target_polarization,
-            squared_Q_momentum_transfer,
-            x_Bjorken,
-            squared_hadronic_momentum_transfer_t,
-            epsilon,
-            lepton_energy_fraction_y,
-            shorthand_k,
-            verbose)
-
-        # (5.3): Calculate the C_{0+}^{A}(0) contribution
-        c_A_zero_plus_contribution = calculate_c_0_zero_plus_longitudinally_polarized_A(
-            lepton_helicity,
-            target_polarization,
-            squared_Q_momentum_transfer,
-            x_Bjorken,
-            squared_hadronic_momentum_transfer_t,
-            epsilon,
-            lepton_energy_fraction_y,
-            shorthand_k,
-            verbose)
         
-        print(c_zero_plus_contribution)
-        print(c_V_zero_plus_contribution)
-        print(c_A_zero_plus_contribution)
-        print(curly_C_longitudinally_polarized_interference)
-        print(curly_C_V_longitudinally_polarized_interference)
-        print(curly_C_A_longitudinally_polarized_interference)
+        # (5): Split on the integer n:
+        if n_number == 0:
 
-        # (6): Calculate the curly C0+ coefficient:
-        vector_contribution = c_V_zero_plus_contribution * curly_C_V_longitudinally_polarized_interference / c_zero_plus_contribution
-        axialvector_contribution = c_A_zero_plus_contribution * curly_C_A_longitudinally_polarized_interference / c_zero_plus_contribution
+            # (5.1): Calculate the C_{0+}(0) contribution
+            c_zero_plus_contribution = calculate_c_0_zero_plus_longitudinally_polarized(
+                lepton_helicity,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                verbose)
 
-        curly_C_zero_plus_longitudinally_polarized_interference = prefactor * (curly_C_longitudinally_polarized_interference + vector_contribution + axialvector_contribution)
+            # (5.2): Calculate the C_{0+}^{V}(0) contribution
+            c_V_zero_plus_contribution = calculate_c_0_zero_plus_longitudinally_polarized_V(
+                lepton_helicity,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                verbose)
 
+            # (5.3): Calculate the C_{0+}^{A}(0) contribution
+            c_A_zero_plus_contribution = calculate_c_0_zero_plus_longitudinally_polarized_A(
+                lepton_helicity,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                verbose)
+            
+            # (6): Calculate the curly C0+ coefficient:
+            curly_C_zero_plus_longitudinally_polarized_interference = prefactor * (curly_C_longitudinally_polarized_interference
+            + c_V_zero_plus_contribution * curly_C_V_longitudinally_polarized_interference / c_zero_plus_contribution
+            + c_A_zero_plus_contribution * curly_C_A_longitudinally_polarized_interference / c_zero_plus_contribution)
+
+        elif n_number == 1:
+
+            # (5.1): Calculate the C_{0+}(1) contribution
+            c_zero_plus_contribution = calculate_c_1_zero_plus_longitudinally_polarized(
+                lepton_helicity,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                epsilon,
+                lepton_energy_fraction_y,
+                k_tilde,
+                shorthand_k,
+                verbose)
+
+            # (5.2): Calculate the C_{0+}^{V}(1) contribution
+            c_V_zero_plus_contribution = calculate_c_1_zero_plus_longitudinally_polarized_V(
+                lepton_helicity,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                k_tilde,
+                verbose)
+
+            # (5.3): Calculate the C_{0+}^{A}(1) contribution
+            c_A_zero_plus_contribution = 0
+
+            # (6): Calculate the curly C0+ coefficient:
+            curly_C_zero_plus_longitudinally_polarized_interference = prefactor * (curly_C_longitudinally_polarized_interference
+            + c_V_zero_plus_contribution * curly_C_V_longitudinally_polarized_interference / c_zero_plus_contribution
+            + c_A_zero_plus_contribution * curly_C_A_longitudinally_polarized_interference / c_zero_plus_contribution)
+
+        elif n_number == 2:
+
+            # (5.1): Calculate the C_{0+}(2) contribution
+            c_zero_plus_contribution = calculate_c_2_zero_plus_longitudinally_polarized(
+                lepton_helicity,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                verbose)
+
+            # (5.2): Calculate the C_{0+}^{V}(2) contribution
+            c_V_zero_plus_contribution = calculate_c_2_zero_plus_longitudinally_polarized_V(
+                lepton_helicity,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                verbose)
+
+            # (5.3): Calculate the C_{0+}^{A}(2) contribution
+            c_A_zero_plus_contribution = calculate_c_2_zero_plus_longitudinally_polarized_A(
+                lepton_helicity,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                verbose)
+
+            # (6): Calculate the curly C0+ coefficient:
+            curly_C_zero_plus_longitudinally_polarized_interference = prefactor * (curly_C_longitudinally_polarized_interference
+            + c_V_zero_plus_contribution * curly_C_V_longitudinally_polarized_interference / c_zero_plus_contribution
+            + c_A_zero_plus_contribution * curly_C_A_longitudinally_polarized_interference / c_zero_plus_contribution)
+
+        elif n_number == 3:
+
+            # (6): Calculate the curly C0+ coefficient:
+            curly_C_zero_plus_longitudinally_polarized_interference = 0.
+        
         # (6.1): If verbose, print the calculation:
         if verbose:
             print(f"> Calculated curly C0+ to be:\n{curly_C_zero_plus_longitudinally_polarized_interference}")
