@@ -22,10 +22,10 @@ from coefficients.interference_coefficients.lp_polarized.lp_polarized_c_n import
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_1_interference_coefficient
 
 # Coefficient | s_{2}^{I}
-from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_1_interference_coefficient
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_2_interference_coefficient
 
 # Coefficient | s_{3}^{I}
-from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_1_interference_coefficient
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_3_interference_coefficient
 
 def calculate_interference_contribution_longitudinally_polarized(
     lepton_helicity: float,
@@ -201,7 +201,7 @@ def calculate_interference_contribution_longitudinally_polarized(
         
         # (4): Calculate c_{2}^{I}:
         # c_2_I = 0.
-        c_2_I = calculate_c_interference_coefficient(
+        c_2_I = calculate_c_2_interference_coefficient(
             2,
             lepton_helicity,
             target_polarization,
@@ -224,7 +224,7 @@ def calculate_interference_contribution_longitudinally_polarized(
         
         # (5): Calculate c_{3}^{I}:
         # c_3_I = 0.
-        c_3_I = calculate_c_interference_coefficient(
+        c_3_I = calculate_c_3_interference_coefficient(
             3,
             lepton_helicity,
             target_polarization,
@@ -247,7 +247,7 @@ def calculate_interference_contribution_longitudinally_polarized(
 
         # (6): Calculate s_{1}^{I}:
         # s_1_I = 0.
-        s_1_I = calculate_s_interference_coefficient(
+        s_1_I = calculate_s_1_interference_coefficient(
             1,
             lepton_helicity,
             target_polarization,
