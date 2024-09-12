@@ -445,3 +445,32 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
             0.037609589418397)
+        
+    def test_calculate_s_2_zero_plus_longitudinally_polarized_A(self):
+        """
+        # Title: `test_calculate_s_2_zero_plus_longitudinally_polarized_A`
+
+        ## Description: Test the function `calculate_s_2_zero_plus_longitudinally_polarized_V`.
+        Remember, that function corresponds to the BKM10 coefficient called $S_{0+}^{LP, A}(n = 2)$.
+        We call it "SLPA0P2" for S (series) LP (longitudinally polarized [target]) A (axial vector) 0P (0+) 2 (n = 2).
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_s_2_zero_plus_longitudinally_polarized_A(
+                _TEST_TARGET_POLARIZATION,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SHORTHAND_K,
+                _TEST_VERBOSE), 
+            0.017779238335062)
