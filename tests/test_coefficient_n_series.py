@@ -3,6 +3,8 @@ import unittest
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_c_n import calculate_c_0_interference_coefficient
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_c_n import calculate_c_1_interference_coefficient
 
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_1_interference_coefficient
+
 _TEST_LEPTON_POLARIZATION = 1.0
 _TEST_TARGET_POLARIZATION = 1.0
 _TEST_SQUARED_Q_MOMENTUM_TRANSFER = 1.8200000524520876
@@ -154,4 +156,4 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_CFF_REAL_E,
                 _TEST_CFF_REAL_E_TILDE,
                 _TEST_VERBOSE), 
-            16.075328092023)
+            -13.220445277043)
