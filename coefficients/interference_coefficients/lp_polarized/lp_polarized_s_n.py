@@ -88,7 +88,6 @@ def calculate_s_1_interference_coefficient(
         # (3): Calculate the curly S_{++} contribution - requires both n and the CFFs:
         curly_s_plus_plus = calculate_curly_S_plus_plus_longitudinally_polarized_interference(
             n_number,
-            lepton_helicity,
             target_polarization,
             squared_Q_momentum_transfer,
             x_Bjorken,
@@ -145,6 +144,10 @@ def calculate_s_1_interference_coefficient(
             verbose)
         
         # (5): Calculate the entire thing:
+        print(s_plus_plus)
+        print(curly_s_plus_plus)
+        print(s_zero_plus)
+        print(curly_s_zero_plus)
         # s_1_interference_coefficient = s_plus_plus * curly_s_plus_plus + s_zero_plus * curly_s_zero_plus + s_minus_plus * curly_s_minus_plus
         s_1_interference_coefficient = s_plus_plus * curly_s_plus_plus + s_zero_plus * curly_s_zero_plus
 
@@ -232,7 +235,6 @@ def calculate_s_2_interference_coefficient(
         # (3): Calculate the curly S_{++} contribution - requires both n and the CFFs:
         curly_s_plus_plus = calculate_curly_S_plus_plus_longitudinally_polarized_interference(
             n_number,
-            lepton_helicity,
             target_polarization,
             squared_Q_momentum_transfer,
             x_Bjorken,
@@ -368,7 +370,6 @@ def calculate_s_3_interference_coefficient(
         # (3): Calculate the curly S_{++} contribution - requires both n and the CFFs:
         curly_s_plus_plus = calculate_curly_S_plus_plus_longitudinally_polarized_interference(
             n_number,
-            lepton_helicity,
             target_polarization,
             squared_Q_momentum_transfer,
             x_Bjorken,
