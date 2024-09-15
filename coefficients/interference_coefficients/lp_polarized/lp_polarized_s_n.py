@@ -44,7 +44,7 @@ def calculate_s_1_interference_coefficient(
 
     s_zero_plus = 0.
 
-    curly_s_zero_plus_n = 0.
+    curly_s_zero_plus = 0.
 
     s_minus_plus = 0.
 
@@ -82,7 +82,7 @@ def calculate_s_1_interference_coefficient(
             squared_hadronic_momentum_transfer_t,
             epsilon,
             lepton_energy_fraction_y,
-            k_tilde,
+            shorthand_k,
             verbose)
 
         # (3): Calculate the curly S_{++} contribution - requires both n and the CFFs:
@@ -145,8 +145,8 @@ def calculate_s_1_interference_coefficient(
             verbose)
         
         # (5): Calculate the entire thing:
-        s_1_interference_coefficient = s_plus_plus * curly_s_plus_plus + s_zero_plus * curly_s_zero_plus + s_minus_plus * curly_s_minus_plus
-        # s_1_interference_coefficient = s_plus_plus * curly_s_plus_plus + s_zero_plus * curly_s_zero_plus
+        # s_1_interference_coefficient = s_plus_plus * curly_s_plus_plus + s_zero_plus * curly_s_zero_plus + s_minus_plus * curly_s_minus_plus
+        s_1_interference_coefficient = s_plus_plus * curly_s_plus_plus + s_zero_plus * curly_s_zero_plus
 
         # (): If verbose, print the output:
         if verbose:
@@ -188,7 +188,7 @@ def calculate_s_2_interference_coefficient(
 
     s_zero_plus = 0.
 
-    curly_s_zero_plus_n = 0.
+    curly_s_zero_plus = 0.
 
     s_minus_plus = 0.
 
@@ -332,7 +332,7 @@ def calculate_s_3_interference_coefficient(
 
     s_zero_plus = 0.
 
-    curly_s_zero_plus_n = 0.
+    curly_s_zero_plus = 0.
 
     s_minus_plus = 0.
 
