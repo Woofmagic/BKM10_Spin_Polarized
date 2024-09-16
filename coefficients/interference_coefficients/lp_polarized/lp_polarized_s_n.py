@@ -171,18 +171,6 @@ def calculate_s_2_interference_coefficient(
     """
     """
 
-    s_plus_plus = 0.
-
-    curly_s_plus_plus = 0.
-
-    s_zero_plus = 0.
-
-    curly_s_zero_plus = 0.
-
-    s_minus_plus = 0.
-
-    curly_s_minus_plus = 0.
-
     try:
 
         # (1): We compute the first part of the term: S_{++}(n = 2):
@@ -276,9 +264,15 @@ def calculate_s_2_interference_coefficient(
             compute_cff_transverse(skewness_parameter, compton_form_factor_e_tilde_imaginary_part),
             verbose)
         
+        print(s_plus_plus)
+        print(s_zero_plus)
+        print(curly_s_plus_plus)
+        print(curly_s_zero_plus)
+        
         # (5): Calculate the entire thing:
-        s_2_interference_coefficient = s_plus_plus * curly_s_plus_plus + s_zero_plus * curly_s_zero_plus + s_minus_plus * curly_s_minus_plus
-        # s_2_interference_coefficient = s_plus_plus * curly_s_plus_plus + s_zero_plus * curly_s_zero_plus
+        # s_2_interference_coefficient = s_plus_plus * curly_s_plus_plus + s_zero_plus * curly_s_zero_plus + s_minus_plus * curly_s_minus_plus
+        s_2_interference_coefficient = (s_plus_plus * curly_s_plus_plus) + (s_zero_plus * curly_s_zero_plus)
+        print(s_2_interference_coefficient)
 
         # (): If verbose, print the output:
         if verbose:
