@@ -77,7 +77,7 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
         # Title: `test_calculate_curly_C_unpolarized_interference_V`
 
         ## Description: Test the function `calculate_curly_C_unpolarized_interference_V`.
-        This is curly C I (unpolarized)
+        This is curly C I V (unpolarized)
 
         ## Arguments:
         None
@@ -105,7 +105,7 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
         # Title: `test_calculate_curly_C_unpolarized_interference_A`
 
         ## Description: Test the function `calculate_curly_C_unpolarized_interference_A`.
-        This is curly C I (unpolarized)
+        This is curly C I A (unpolarized)
 
         ## Arguments:
         None
@@ -246,7 +246,7 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
         """
         self.assertAlmostEqual(
             calculate_curly_C_plus_plus_longitudinally_polarized_interference(
-                0,
+                1,
                 _TEST_LEPTON_POLARIZATION,
                 _TEST_TARGET_POLARIZATION,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
@@ -264,7 +264,7 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_CFF_REAL_E,
                 _TEST_CFF_REAL_E_TILDE,
                 _TEST_VERBOSE), 
-            -57.85103676634)
+            -57.586395899939)
         
     def test_calculate_curly_C_longitudinally_polarized_zero_plus_interference(self):
         """
@@ -285,7 +285,7 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
         """
         self.assertAlmostEqual(
             calculate_curly_C_zero_plus_longitudinally_polarized_interference(
-                0,
+                1,
                 _TEST_LEPTON_POLARIZATION,
                 _TEST_TARGET_POLARIZATION,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
@@ -302,4 +302,4 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
                 compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_E),
                 compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_E_TILDE),
                 _TEST_VERBOSE), 
-            1.9568301316469)
+            1.9270876848325)

@@ -33,14 +33,6 @@ def calculate_curly_S_zero_plus_longitudinally_polarized_interference(
     compton_form_factor_e_tilde_eff: float,
     verbose: bool = False) -> float:
 
-    curly_C_longitudinally_polarized_interference = 0.
-    s_V_zero_plus_contribution = 0.
-    curly_C_V_longitudinally_polarized_interference = 0.
-    s_zero_plus_contribution = 0.
-    s_A_zero_plus_contribution = 0.
-    curly_C_A_longitudinally_polarized_interference = 0.
-    s_zero_plus_contribution = 0.
-
     try:
 
         # (1): Calculate the prefactor: Ktilde/ (2 - xb) * sqrt(2 / Q^{2})
@@ -80,8 +72,13 @@ def calculate_curly_S_zero_plus_longitudinally_polarized_interference(
             compton_form_factor_h_tilde_eff,
             compton_form_factor_e_tilde_eff,
             verbose)
+        
+        if n_number == 0:
 
-        if n_number == 1:
+            # (6): Calculate the curly S0+ coefficient:
+            curly_S_longitudinally_polarized_interference = 0.
+
+        elif n_number == 2:
 
             # (5.1): Calculate the S_{0+}(1) contribution
             s_zero_plus_contribution = calculate_s_1_zero_plus_longitudinally_polarized(
@@ -116,7 +113,7 @@ def calculate_curly_S_zero_plus_longitudinally_polarized_interference(
                 verbose)
             
             # (6): Calculate the curly S0+ coefficient:
-            curly_S_longitudinally_polarized_interference = prefactor * (curly_C_longitudinally_polarized_interference + s_V_zero_plus_contribution * curly_C_V_longitudinally_polarized_interference / s_zero_plus_contribution + s_A_zero_plus_contribution * curly_C_A_longitudinally_polarized_interference / s_zero_plus_contribution)
+            curly_S_longitudinally_polarized_interference = prefactor * (curly_C_longitudinally_polarized_interference + (s_V_zero_plus_contribution * curly_C_V_longitudinally_polarized_interference / s_zero_plus_contribution) + (s_A_zero_plus_contribution * curly_C_A_longitudinally_polarized_interference / s_zero_plus_contribution))
 
         elif n_number == 2:
 

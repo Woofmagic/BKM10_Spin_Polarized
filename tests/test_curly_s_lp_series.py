@@ -1,6 +1,7 @@
 import unittest
 
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_Spp import calculate_curly_S_plus_plus_longitudinally_polarized_interference
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_S0p import calculate_curly_S_zero_plus_longitudinally_polarized_interference
 
 from form_factors.effective_cffs import compute_cff_effective
 
@@ -34,11 +35,11 @@ _TEST_VERBOSE = False
 
 class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
 
-    def test_calculate_curly_C_longitudinally_polarized_interference(self):
+    def test_calculate_curly_S_plus_plus_longitudinally_polarized_interference(self):
         """
-        # Title: `test_calculate_curly_C_longitudinally_polarized_interference`
+        # Title: `test_calculate_curly_S_plus_plus_longitudinally_polarized_interference`
 
-        ## Description: Test the function `test_calculate_curly_C_longitudinally_polarized_interference`.
+        ## Description: Test the function `calculate_curly_S_plus_plus_longitudinally_polarized_interference`.
         These Curly Cs don't rely on the helicity flip of the lepton or not, so they
         are easy to test.
 
@@ -53,7 +54,7 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
         """
         self.assertAlmostEqual(
             calculate_curly_S_plus_plus_longitudinally_polarized_interference(
-                1,
+                3,
                 _TEST_TARGET_POLARIZATION,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
@@ -65,9 +66,46 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_SHORTHAND_K,
                 _TEST_DIRAC_FORM_FACTOR_F1,
                 _TEST_PAULI_FORM_FACTOR_F2,
-                _TEST_CFF_REAL_H,
-                _TEST_CFF_REAL_H_TILDE,
-                _TEST_CFF_REAL_E,
-                _TEST_CFF_REAL_E_TILDE,
+                _TEST_CFF_IMAGINARY_H,
+                _TEST_CFF_IMAGINARY_H_TILDE,
+                _TEST_CFF_IMAGINARY_E,
+                _TEST_CFF_IMAGINARY_E_TILDE,
                 _TEST_VERBOSE), 
-            -20.177625612618)
+            -19.766743031335)
+        
+    def test_calculate_curly_S_zero_plus_longitudinally_polarized_interference(self):
+        """
+        # Title: `test_calculate_curly_S_zero_plus_longitudinally_polarized_interference`
+
+        ## Description: Test the function `calculate_curly_S_zero_plus_longitudinally_polarized_interference`.
+        These Curly Cs don't rely on the helicity flip of the lepton or not, so they
+        are easy to test.
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_curly_S_zero_plus_longitudinally_polarized_interference(
+                2,
+                _TEST_TARGET_POLARIZATION,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SHORTHAND_K,
+                _TEST_K_TILDE,
+                _TEST_DIRAC_FORM_FACTOR_F1,
+                _TEST_PAULI_FORM_FACTOR_F2,
+                compute_cff_effective(_TEST_SKEWNESS,_TEST_CFF_IMAGINARY_H),
+                compute_cff_effective(_TEST_SKEWNESS,_TEST_CFF_IMAGINARY_H_TILDE),
+                compute_cff_effective(_TEST_SKEWNESS,_TEST_CFF_IMAGINARY_E),
+                compute_cff_effective(_TEST_SKEWNESS,_TEST_CFF_IMAGINARY_E_TILDE),
+                _TEST_VERBOSE), 
+            0.66250804420337)
