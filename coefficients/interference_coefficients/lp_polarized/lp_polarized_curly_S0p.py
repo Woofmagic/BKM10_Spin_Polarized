@@ -78,7 +78,7 @@ def calculate_curly_S_zero_plus_longitudinally_polarized_interference(
             # (6): Calculate the curly S0+ coefficient:
             curly_S_longitudinally_polarized_interference = 0.
 
-        elif n_number == 2:
+        elif n_number == 1:
 
             # (5.1): Calculate the S_{0+}(1) contribution
             s_zero_plus_contribution = calculate_s_1_zero_plus_longitudinally_polarized(
