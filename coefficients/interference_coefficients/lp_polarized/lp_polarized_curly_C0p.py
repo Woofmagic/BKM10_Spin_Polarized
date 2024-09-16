@@ -76,12 +76,6 @@ def calculate_curly_C_zero_plus_longitudinally_polarized_interference(
             compton_form_factor_e_tilde_eff,
             verbose)
         
-        print(curly_C_longitudinally_polarized_interference)
-        print(curly_C_V_longitudinally_polarized_interference)
-        print(curly_C_A_longitudinally_polarized_interference)
-
-        print("fuckerz")
-        
         # (5): Split on the integer n:
         if n_number == 0:
 

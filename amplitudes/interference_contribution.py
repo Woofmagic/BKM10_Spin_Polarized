@@ -15,9 +15,6 @@ from coefficients.interference_coefficients.lp_polarized.lp_polarized_c_n import
 # Coefficient | c_{2}^{I}
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_c_n import calculate_c_2_interference_coefficient
 
-# Coefficient | c_{3}^{I}
-from coefficients.interference_coefficients.lp_polarized.lp_polarized_c_n import calculate_c_3_interference_coefficient
-
 # Coefficient | s_{1}^{I}
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_1_interference_coefficient
 
@@ -203,29 +200,6 @@ def calculate_interference_contribution_longitudinally_polarized(
         # c_2_I = 0.
         c_2_I = calculate_c_2_interference_coefficient(
             2,
-            lepton_helicity,
-            target_polarization,
-            squared_Q_momentum_transfer,
-            x_Bjorken,
-            squared_hadronic_momentum_transfer_t,
-            epsilon,
-            lepton_energy_fraction_y,
-            skewness_parameter,
-            t_prime,
-            k_tilde,
-            shorthand_k,
-            Dirac_form_factor_F1,
-            Pauli_form_factor_F2,
-            compton_form_factor_h_real_part,
-            compton_form_factor_h_tilde_real_part,
-            compton_form_factor_e_real_part,
-            compton_form_factor_e_tilde_real_part,
-            verbose)
-        
-        # (5): Calculate c_{3}^{I}:
-        # c_3_I = 0.
-        c_3_I = calculate_c_3_interference_coefficient(
-            3,
             lepton_helicity,
             target_polarization,
             squared_Q_momentum_transfer,

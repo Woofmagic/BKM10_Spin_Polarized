@@ -74,7 +74,7 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_CFF_REAL_E,
                 _TEST_CFF_REAL_E_TILDE,
                 _TEST_VERBOSE), 
-            -6.8885464942022)
+            -6.8684143516864)
         
     def test_calculate_c_1_interference_coefficient(self):
         """

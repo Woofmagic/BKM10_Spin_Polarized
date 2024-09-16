@@ -307,7 +307,6 @@ def calculate_s_2_interference_coefficient(
     
 def calculate_s_3_interference_coefficient(
     n_number: int,
-    lepton_helicity: float,
     target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float,
