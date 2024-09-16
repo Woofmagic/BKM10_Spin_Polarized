@@ -17,7 +17,6 @@ from form_factors.effective_cffs import compute_cff_transverse
 
 def calculate_s_1_interference_coefficient(
     n_number: int,
-    lepton_helicity: float,
     target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float,
@@ -37,18 +36,6 @@ def calculate_s_1_interference_coefficient(
     verbose: bool = False) -> float:
     """
     """
-
-    s_plus_plus = 0.
-
-    curly_s_plus_plus = 0.
-
-    s_zero_plus = 0.
-
-    curly_s_zero_plus = 0.
-
-    s_minus_plus = 0.
-
-    curly_s_minus_plus = 0.
 
     try:
             
@@ -164,7 +151,6 @@ def calculate_s_1_interference_coefficient(
     
 def calculate_s_2_interference_coefficient(
     n_number: int,
-    lepton_helicity: float,
     target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float,

@@ -471,10 +471,19 @@ def calculate_c_2_interference_coefficient(
             compute_cff_transverse(skewness_parameter, compton_form_factor_e_real_part),
             compute_cff_transverse(skewness_parameter, compton_form_factor_e_tilde_real_part),
             verbose)
+        
+        print(c_plus_plus)
+        print(c_zero_plus)
+
+        print(curly_c_plus_plus)
+        print(curly_c_zero_plus)
 
         # (5): Calculate the entire thing:
         # c_n_interference_coefficient = c_plus_plus * curly_c_plus_plus + c_zero_plus * curly_c_zero_plus + c_minus_plus * curly_c_minus_plus
-        c_2_interference_coefficient = c_plus_plus * curly_c_plus_plus + c_zero_plus * curly_c_zero_plus
+        c_2_interference_coefficient = (c_plus_plus * curly_c_plus_plus) + (c_zero_plus * curly_c_zero_plus)
+        print(c_plus_plus * curly_c_plus_plus)
+        print(c_zero_plus * curly_c_zero_plus)
+        print(c_2_interference_coefficient)
         
         # (): If verbose, print the output:
         if verbose:
