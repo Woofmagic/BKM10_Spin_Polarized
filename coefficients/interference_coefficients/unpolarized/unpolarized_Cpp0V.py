@@ -38,13 +38,13 @@ def calculate_c_0_plus_plus_unpolarized_V(
         second_term_third_multiplicative_term = 1. + t_over_Q_squared
 
         # (8): Fourth multiplicative term numerator in the second term in the brackets:
-        second_term_fourth_multiplicative_term = (root_one_plus_epsilon_squared - 1. + 2. * x_Bjorken) * t_over_Q_squared / one_plus_root_epsilon_stuff
+        second_term_fourth_multiplicative_term = 1. + (root_one_plus_epsilon_squared - 1. + (2. * x_Bjorken)) * t_over_Q_squared / one_plus_root_epsilon_stuff
 
         # (9): Fourth multiplicative term in its entirety:
         second_term_in_brackets = second_term_first_multiplicative_term * second_term_second_multiplicative_term * second_term_third_multiplicative_term * second_term_fourth_multiplicative_term
 
         # (10): The prefactor in front of the brackets:
-        coefficient_prefactor = 8. * (2. - lepton_energy_fraction_y) * x_Bjorken * t_over_Q_squared / np.power(root_one_plus_epsilon_squared, 4)
+        coefficient_prefactor = 8. * (2. - lepton_energy_fraction_y) * x_Bjorken * t_over_Q_squared / root_one_plus_epsilon_squared**4
 
         # (11): The entire thing:
         c_0_plus_plus_V_unp = coefficient_prefactor * (first_term_in_brackets + second_term_in_brackets)
