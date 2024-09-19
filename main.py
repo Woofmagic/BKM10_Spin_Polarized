@@ -117,7 +117,7 @@ def main(
         compton_form_factor_e_real = -0.541
         compton_form_factor_e_imaginary = 2.207
 
-        compton_form_factor_e_imaginary = 0.903
+        compton_form_factor_e_tilde_real = 0.903
         compton_form_factor_e_tilde_imaginary = 5.383
 
         # (8): Attempt to calculate the BKM10 Cross Section:
@@ -147,14 +147,10 @@ def main(
             np.array([-0.17 for i in range(len(np.arange(0, 361, 1.)))]),
             np.array([5.75 for i in range(len(np.arange(0, 361, 1.)))]),
             np.arange(0, 361, 1.),
-            compton_form_factor_h_real,
-            compton_form_factor_h_tilde_real,
-            compton_form_factor_e_real,
-            compton_form_factor_e_imaginary,
-            compton_form_factor_h_imaginary,
-            compton_form_factor_h_tilde_imaginary,
-            compton_form_factor_e_imaginary,
-            compton_form_factor_e_tilde_imaginary,
+            complex(compton_form_factor_h_real, compton_form_factor_h_imaginary),
+            complex(compton_form_factor_h_tilde_real, compton_form_factor_h_tilde_imaginary),
+            complex(compton_form_factor_e_real, compton_form_factor_e_imaginary),
+            complex(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary),
             verbose)
 
     except KeyboardInterrupt:

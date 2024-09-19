@@ -76,22 +76,14 @@ def calculate_curly_c_longitudinally_polarized_dvcs(
         # (4): Calculate the first product of CFFs:
         first_term_CFFs = compton_form_factor_h * conjugated_compton_form_factor_h_tilde + compton_form_factor_h_tilde * conjugated_compton_form_factor_h 
 
-        print(first_term_CFFs)
-
         # (5): Calculate the second product of CFFs:
         second_term_CFFs = compton_form_factor_h * conjugated_compton_form_factor_e_tilde + compton_form_factor_e_tilde * conjugated_compton_form_factor_h + compton_form_factor_h_tilde * conjugated_compton_form_factor_e + compton_form_factor_e * conjugated_compton_form_factor_h_tilde
-        
-        print(second_term_CFFs)
 
         # (6): Calculate the third product of CFFs:
         third_term_CFFs = compton_form_factor_h_tilde * conjugated_compton_form_factor_e + compton_form_factor_e * conjugated_compton_form_factor_h_tilde
-        
-        print(third_term_CFFs)
 
         # (7): Calculate the fourth product of CFFs:
         fourth_term_CFFs = compton_form_factor_e * conjugated_compton_form_factor_e_tilde + compton_form_factor_e_tilde * conjugated_compton_form_factor_e
-
-        print(fourth_term_CFFs)
 
         # (8): Calculate the first term's prefactor:
         first_term_prefactor = 4. * (1. - x_Bjorken + (epsilon**2 * ((3. - 2. * x_Bjorken) * squared_Q_momentum_transfer + squared_hadronic_momentum_transfer_t)) / (4. * sum_Q_squared_xb_t))
