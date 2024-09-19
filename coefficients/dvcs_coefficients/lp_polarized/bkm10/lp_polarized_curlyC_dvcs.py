@@ -12,14 +12,14 @@ def calculate_curly_c_longitudinally_polarized_dvcs(
     x_Bjorken: float, 
     squared_hadronic_momentum_transfer_t: float,
     epsilon: float,
-    compton_form_factor_h_real_part: float,
-    compton_form_factor_h_tilde_real_part: float,
-    compton_form_factor_e_real_part: float,
-    compton_form_factor_e_tilde_real_part: float,
-    compton_form_factor_h_imaginary_part: float,
-    compton_form_factor_h_tilde_imaginary_part: float,
-    compton_form_factor_e_imaginary_part: float,
-    compton_form_factor_e_tilde_imaginary_part: float,
+    compton_form_factor_h: float,
+    compton_form_factor_h_tilde: float,
+    compton_form_factor_e: float,
+    compton_form_factor_e_tilde: float,
+    conjugated_compton_form_factor_h: float,
+    conjugated_compton_form_factor_h_tilde: float,
+    conjugated_compton_form_factor_e: float,
+    conjugated_compton_form_factor_e_tilde: float,
     verbose: bool = False) -> float:
     """
     Description
@@ -74,76 +74,24 @@ def calculate_curly_c_longitudinally_polarized_dvcs(
         weighted_sum_Q_squared_xb_t = two_minus_xb * squared_Q_momentum_transfer + x_Bjorken * squared_hadronic_momentum_transfer_t
 
         # (4): Calculate the first product of CFFs:
-        first_term_CFFs = two_complex_variable_product(
-            compton_form_factor_h_real_part, 
-            compton_form_factor_h_imaginary_part, 
-            compton_form_factor_h_tilde_real_part, 
-            -1. * compton_form_factor_h_tilde_imaginary_part) + two_complex_variable_product(
-            compton_form_factor_h_tilde_real_part, 
-            compton_form_factor_h_tilde_imaginary_part, 
-            compton_form_factor_h_real_part, 
-            -1. * compton_form_factor_h_imaginary_part)
-        
-        if (first_term_CFFs.imag != 0 or first_term_CFFs.imag != 0.) :
-            print(f"> WARNING! Nonvanishing imaginary piece to first bilinear CFF product: {first_term_CFFs.imag}")
-        else:
-            first_term_CFFs = first_term_CFFs.real
+        first_term_CFFs = compton_form_factor_h * conjugated_compton_form_factor_h_tilde + compton_form_factor_h_tilde * conjugated_compton_form_factor_h 
+
+        print(first_term_CFFs)
 
         # (5): Calculate the second product of CFFs:
-        second_term_CFFs = two_complex_variable_product(
-            compton_form_factor_h_real_part, 
-            compton_form_factor_h_imaginary_part, 
-            compton_form_factor_e_tilde_real_part, 
-            -1. * compton_form_factor_e_tilde_imaginary_part) + two_complex_variable_product(
-            compton_form_factor_e_tilde_real_part, 
-            compton_form_factor_e_tilde_imaginary_part, 
-            compton_form_factor_h_real_part, 
-            -1. * compton_form_factor_h_imaginary_part) + two_complex_variable_product(
-            compton_form_factor_h_tilde_real_part, 
-            compton_form_factor_h_tilde_imaginary_part, 
-            compton_form_factor_e_real_part, 
-            -1. * compton_form_factor_e_imaginary_part) + two_complex_variable_product(
-            compton_form_factor_e_real_part, 
-            compton_form_factor_e_imaginary_part, 
-            compton_form_factor_h_tilde_real_part, 
-            -1. * compton_form_factor_h_tilde_imaginary_part)
+        second_term_CFFs = compton_form_factor_h * conjugated_compton_form_factor_e_tilde + compton_form_factor_e_tilde * conjugated_compton_form_factor_h + compton_form_factor_h_tilde * conjugated_compton_form_factor_e + compton_form_factor_e * conjugated_compton_form_factor_h_tilde
         
-        if (second_term_CFFs.imag != 0 or second_term_CFFs.imag != 0.) :
-            print(f"> WARNING! Nonvanishing imaginary piece to second bilinear CFF product: {second_term_CFFs.imag}")
-        else:
-            second_term_CFFs = second_term_CFFs.real
+        print(second_term_CFFs)
 
         # (6): Calculate the third product of CFFs:
-        third_term_CFFs = two_complex_variable_product(
-            compton_form_factor_h_tilde_real_part, 
-            compton_form_factor_h_tilde_imaginary_part, 
-            compton_form_factor_e_real_part, 
-            -1. * compton_form_factor_e_imaginary_part) + two_complex_variable_product(
-            compton_form_factor_e_real_part, 
-            compton_form_factor_e_imaginary_part, 
-            compton_form_factor_h_tilde_real_part, 
-            -1. * compton_form_factor_h_tilde_imaginary_part)
+        third_term_CFFs = compton_form_factor_h_tilde * conjugated_compton_form_factor_e + compton_form_factor_e * conjugated_compton_form_factor_h_tilde
         
-        if (third_term_CFFs.imag != 0 or third_term_CFFs.imag != 0.) :
-            print(f"> WARNING! Nonvanishing imaginary piece to third bilinear CFF product: {fourth_term_CFFs.imag}")
-        else:
-            third_term_CFFs = third_term_CFFs.real
+        print(third_term_CFFs)
 
         # (7): Calculate the fourth product of CFFs:
-        fourth_term_CFFs = two_complex_variable_product(
-            compton_form_factor_e_real_part, 
-            compton_form_factor_e_imaginary_part, 
-            compton_form_factor_e_tilde_real_part, 
-            -1. * compton_form_factor_e_tilde_imaginary_part) + two_complex_variable_product(
-            compton_form_factor_e_tilde_real_part, 
-            compton_form_factor_e_tilde_imaginary_part, 
-            compton_form_factor_e_real_part, 
-            -1. * compton_form_factor_e_imaginary_part)
-        
-        if (fourth_term_CFFs.imag != 0 or fourth_term_CFFs.imag != 0.) :
-            print(f"> WARNING! Nonvanishing imaginary piece to fourth bilinear CFF product: {fourth_term_CFFs.imag}")
-        else:
-            fourth_term_CFFs = fourth_term_CFFs.real
+        fourth_term_CFFs = compton_form_factor_e * conjugated_compton_form_factor_e_tilde + compton_form_factor_e_tilde * conjugated_compton_form_factor_e
+
+        print(fourth_term_CFFs)
 
         # (8): Calculate the first term's prefactor:
         first_term_prefactor = 4. * (1. - x_Bjorken + (epsilon**2 * ((3. - 2. * x_Bjorken) * squared_Q_momentum_transfer + squared_hadronic_momentum_transfer_t)) / (4. * sum_Q_squared_xb_t))

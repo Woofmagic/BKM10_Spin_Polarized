@@ -76,7 +76,7 @@ class TestDVCSCoefficients(unittest.TestCase):
         # Title: `test_calculate_c_0_longitudinally_polarized_dvcs`
 
         ## Description: Test the function `calculate_c_0_longitudinally_polarized_dvcs`.
-        This is the first coefficient that enters into the DVCS mode expansions, c_{0, LP}^{DVCS}.
+        This is the first c coefficient that enters into the DVCS mode expansions, c_{0, LP}^{DVCS}.
 
         ## Arguments:
         None
@@ -96,14 +96,14 @@ class TestDVCSCoefficients(unittest.TestCase):
                 _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
                 _TEST_EPSILON,
                 _TEST_LEPTON_ENERGY_FRACTION,
-                _TEST_CFF_REAL_H,
-                _TEST_CFF_REAL_H_TILDE,
-                _TEST_CFF_REAL_E,
-                _TEST_CFF_REAL_E_TILDE,
-                _TEST_CFF_IMAGINARY_H,
-                _TEST_CFF_IMAGINARY_H_TILDE,
-                _TEST_CFF_IMAGINARY_E,
-                _TEST_CFF_IMAGINARY_E_TILDE,
+                complex(_TEST_CFF_REAL_H, _TEST_CFF_IMAGINARY_H),
+                complex(_TEST_CFF_REAL_H_TILDE, _TEST_CFF_IMAGINARY_H_TILDE),
+                complex(_TEST_CFF_REAL_E, _TEST_CFF_IMAGINARY_E),
+                complex(_TEST_CFF_REAL_E_TILDE, _TEST_CFF_IMAGINARY_E_TILDE),
+                complex(_TEST_CFF_REAL_H, _TEST_CFF_IMAGINARY_H).conjugate(),
+                complex(_TEST_CFF_REAL_H_TILDE, _TEST_CFF_IMAGINARY_H_TILDE).conjugate(),
+                complex(_TEST_CFF_REAL_E, _TEST_CFF_IMAGINARY_E).conjugate(),
+                complex(_TEST_CFF_REAL_E_TILDE, _TEST_CFF_IMAGINARY_E_TILDE).conjugate(),
                 _TEST_VERBOSE), 
             0.20591565057326)
         
@@ -112,7 +112,7 @@ class TestDVCSCoefficients(unittest.TestCase):
         # Title: `test_calculate_c_1_longitudinally_polarized_dvcs`
 
         ## Description: Test the function `calculate_c_1_longitudinally_polarized_dvcs`.
-        This is the first coefficient that enters into the DVCS mode expansions, c_{1, LP}^{DVCS}.
+        This is the second c coefficient that enters into the DVCS mode expansions, c_{1, LP}^{DVCS}.
 
         ## Arguments:
         None
@@ -132,6 +132,45 @@ class TestDVCSCoefficients(unittest.TestCase):
                 _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
                 _TEST_EPSILON,
                 _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SKEWNESS,
+                _TEST_SHORTHAND_K,
+                complex(_TEST_CFF_REAL_H, _TEST_CFF_IMAGINARY_H),
+                complex(_TEST_CFF_REAL_H_TILDE, _TEST_CFF_IMAGINARY_H_TILDE),
+                complex(_TEST_CFF_REAL_E, _TEST_CFF_IMAGINARY_E),
+                complex(_TEST_CFF_REAL_E, _TEST_CFF_IMAGINARY_E_TILDE),
+                complex(_TEST_CFF_REAL_H, _TEST_CFF_IMAGINARY_H).conjugate(),
+                complex(_TEST_CFF_REAL_H_TILDE, _TEST_CFF_IMAGINARY_H_TILDE).conjugate(),
+                complex(_TEST_CFF_REAL_E, _TEST_CFF_IMAGINARY_E).conjugate(),
+                complex(_TEST_CFF_REAL_E, _TEST_CFF_IMAGINARY_E_TILDE).conjugate(),
+                _TEST_VERBOSE), 
+            -0.0093049118180245)
+        
+    def test_calculate_s_1_longitudinally_polarized_dvcs(self):
+        """
+        # Title: `test_calculate_s_1_longitudinally_polarized_dvcs`
+
+        ## Description: Test the function `calculate_s_1_longitudinally_polarized_dvcs`.
+        This is the first s coefficient that enters into the DVCS mode expansions, s_{1, LP}^{DVCS}.
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_s_1_longitudinally_polarized_dvcs(
+                _TEST_TARGET_POLARIZATION,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SKEWNESS,
+                _TEST_SHORTHAND_K,
                 _TEST_CFF_REAL_H,
                 _TEST_CFF_REAL_H_TILDE,
                 _TEST_CFF_REAL_E,
@@ -141,4 +180,4 @@ class TestDVCSCoefficients(unittest.TestCase):
                 _TEST_CFF_IMAGINARY_E,
                 _TEST_CFF_IMAGINARY_E_TILDE,
                 _TEST_VERBOSE), 
-            0.027781239111881)
+            0.)

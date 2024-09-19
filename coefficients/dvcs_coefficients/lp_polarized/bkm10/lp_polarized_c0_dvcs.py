@@ -52,7 +52,7 @@ def calculate_c_0_longitudinally_polarized_dvcs(
             print(f"> Calculated c0LP_DVCS to be:\n{c0LP_DVCS}")
 
         # (3): Return the coefficient:
-        return c0LP_DVCS
+        return c0LP_DVCS.real
 
     except Exception as ERROR:
         print(f"> Error in calculating c0LP for DVCS Amplitude Squared:\n> {ERROR}")

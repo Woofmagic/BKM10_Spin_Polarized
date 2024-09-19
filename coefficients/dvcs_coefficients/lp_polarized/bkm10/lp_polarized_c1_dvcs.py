@@ -54,8 +54,7 @@ def calculate_c_1_longitudinally_polarized_dvcs(
             compton_form_factor_h_tilde_imaginary_part,
             compton_form_factor_e_imaginary_part,
             compton_form_factor_e_tilde_imaginary_part,
-            verbose
-        )
+            verbose).real
 
         # (3.1): If verbose, log the output:
         if verbose:
