@@ -115,7 +115,6 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
             squared_hadronic_momentum_transfer_t,
             epsilon,
             lepton_energy_fraction_y,
-            skewness_parameter,
             shorthand_k,
             compute_cff_effective(skewness_parameter, compton_form_factor_h),
             compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
@@ -148,9 +147,7 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
             verbose)
 
         # (5): Compute the Fourier Mode Expansion:
-        mode_expansion = coefficient_c0_DVCS 
-        + (coefficient_c1_DVCS * np.cos(np.pi - convert_degrees_to_radians(azimuthal_phi))) 
-        + (coefficient_s1_DVCS * np.sin(np.pi - convert_degrees_to_radians(azimuthal_phi)))
+        mode_expansion = coefficient_c0_DVCS + (coefficient_c1_DVCS * np.cos(np.pi - convert_degrees_to_radians(azimuthal_phi))) + (coefficient_s1_DVCS * np.sin(np.pi - convert_degrees_to_radians(azimuthal_phi)))
 
         # (6): Compute the numerator of the amplitude:
         numerator = mode_expansion
