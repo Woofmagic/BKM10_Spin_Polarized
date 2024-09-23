@@ -535,4 +535,33 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            0.068510750279744)
+            0.13509164613432)
+        
+    def test_calculate_s_1_minus_plus_longitudinally_polarized_A(self):
+        """
+        # Title: `test_calculate_s_1_minus_plus_longitudinally_polarized_A`
+
+        ## Description: Test the function `calculate_s_1_minus_plus_longitudinally_polarized_A`.
+        Remember, that function corresponds to the BKM10 coefficient called $S_{-+}^{LP, A}(n = 1)$.
+        We call it "SLPVPP1" for S (series) LP (longitudinally polarized [target]) A (axial vector) MP (-+) 1 (n = 1).
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_s_1_minus_plus_longitudinally_polarized_A(
+                _TEST_TARGET_POLARIZATION,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SHORTHAND_K,
+                _TEST_VERBOSE), 
+            0.045267549381737)
