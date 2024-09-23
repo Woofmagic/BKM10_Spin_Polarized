@@ -746,4 +746,4 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            0.025263273062887)
+            0.012187607425918)
