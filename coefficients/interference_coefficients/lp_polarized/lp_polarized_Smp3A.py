@@ -24,7 +24,7 @@ def calculate_s_3_minus_plus_longitudinally_polarized_A(
         t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
 
         # (3): Calculate the main bracket term:
-        bracket_term = x_Bjorken * t_over_Q_squared * (1. - root_one_plus_epsilon_squared - t_over_Q_squared * (1. - 2. * x_Bjorken - root_one_plus_epsilon_squared))
+        bracket_term = x_Bjorken * t_over_Q_squared * (1. + root_one_plus_epsilon_squared - t_over_Q_squared * (1. - 2. * x_Bjorken - root_one_plus_epsilon_squared))
 
         # (4): Calculate the prefactor:
         prefactor = -8. * target_polarization * shorthand_k * (1. - lepton_energy_fraction_y - lepton_energy_fraction_y**2 * epsilon**2 / 4.) / root_one_plus_epsilon_squared**6
