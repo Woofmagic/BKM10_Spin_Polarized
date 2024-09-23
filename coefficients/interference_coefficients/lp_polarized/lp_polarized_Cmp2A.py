@@ -17,17 +17,29 @@ def calculate_c_2_minus_plus_longitudinally_polarized_A(
 
     try:
 
-        # (1): Calculate the main prefactor
-        prefactor = -4. * lepton_helicity * target_polarization * x_Bjorken * lepton_energy_fraction_y * (1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.))
+        # (1): Calculate the recurrent quantity sqrt(1 + epsilon^2):
+        root_one_plus_epsilon_squared = np.sqrt(1. + epsilon**2)
 
-        # (2): Calculate the coefficient:
-        c_2_minus_plus_LP_A = prefactor / (1. + epsilon**2)**2.5
+        # (2): Calculate t/Q^{2}:
+        t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
 
-        # (2.1): If verbose, log the output:
+        # (3): Calculate the first factor:
+        first_factor = t_over_Q_squared * (1. - (1. - 2. * x_Bjorken) * t_over_Q_squared)
+
+        # (4): Calculate the second factor:
+        second_factor = 1. + root_one_plus_epsilon_squared - t_over_Q_squared * (1. - root_one_plus_epsilon_squared - 2. * x_Bjorken)
+
+        # (5): Calculate the prefactor:
+        prefactor = -4. * lepton_helicity * target_polarization * x_Bjorken * lepton_energy_fraction_y * (1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.)) * t_over_Q_squared / root_one_plus_epsilon_squared**5
+
+        # (6): Calculate the coefficient:
+        c_2_minus_plus_LP_A = prefactor * first_factor * second_factor
+
+        # (6.1): If verbose, log the output:
         if verbose:
             print(f"> Calculated c_2_minus_plus_LP_A to be:\n{c_2_minus_plus_LP_A}")
 
-        # (3): Return the coefficient:
+        # (10): Return the coefficient:
         return c_2_minus_plus_LP_A
 
     except Exception as ERROR:

@@ -823,4 +823,4 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_EPSILON,
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_VERBOSE), 
-            0.21767807213023)
+            0.039524572890599)
