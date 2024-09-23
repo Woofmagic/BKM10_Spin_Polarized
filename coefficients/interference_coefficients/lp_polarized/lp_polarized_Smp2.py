@@ -26,23 +26,23 @@ def calculate_s_2_minus_plus_longitudinally_polarized(
         fancy_epsilon_term = 1. + root_one_plus_epsilon_squared
 
         # (4): Calculate the first bracket term:
-        first_bracket_term = t_over_Q_squared * (2. * fancy_epsilon_term + epsilon**2 * root_one_plus_epsilon_squared - x_Bjorken * (3. * fancy_epsilon_term - epsilon**2))
-
+        first_bracket_term = t_over_Q_squared * (2. * fancy_epsilon_term + epsilon**2 * root_one_plus_epsilon_squared - x_Bjorken * (3. * (1. + root_one_plus_epsilon_squared) - epsilon**2))
+        
         # (5): Calculate the second term:
         second_bracket_term = t_over_Q_squared**2 * (epsilon**2 - 2. * x_Bjorken**2 * (2. + root_one_plus_epsilon_squared) + x_Bjorken * (3. - epsilon**2 + root_one_plus_epsilon_squared))
-
+        
         # (6): Combine all the terms:
         entire_bracket_term = first_bracket_term + second_bracket_term + epsilon**2 * fancy_epsilon_term
 
         # (7): Calculate the prefactor:
-        prefactor = -4. * target_polarization * (2. - lepton_energy_fraction_y) * (1. - lepton_energy_fraction_y - lepton_energy_fraction_y**2 * epsilon**2 / 4.) / root_one_plus_epsilon_squared**6
+        prefactor = -4. * target_polarization * (2. - lepton_energy_fraction_y) * (1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.)) / root_one_plus_epsilon_squared**6
 
         # (8): Calculate the coefficient:
         s_2_minus_plus_LP = prefactor * entire_bracket_term
 
         # (8.1): If verbose, log the output:
         if verbose:
-            print(f"> s_2_minus_plus_LP s_2_minus_plus_LP to be:\n{s_2_minus_plus_LP}")
+            print(f"> Calculated s_2_minus_plus_LP to be:\n{s_2_minus_plus_LP}")
 
         # (9): Return the coefficient:
         return s_2_minus_plus_LP
