@@ -29,7 +29,6 @@ from coefficients.interference_coefficients.lp_polarized.lp_polarized_Smp2V impo
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_Smp2A import calculate_s_2_minus_plus_longitudinally_polarized_A
 
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_Smp3 import calculate_s_3_minus_plus_longitudinally_polarized
-from coefficients.interference_coefficients.lp_polarized.lp_polarized_Smp3V import calculate_s_3_minus_plus_longitudinally_polarized_V
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_Smp3A import calculate_s_3_minus_plus_longitudinally_polarized_A
 
 _TEST_LEPTON_POLARIZATION = 1.0
@@ -660,13 +659,13 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_VERBOSE), 
             0.11404596503142)
         
-    def test_calculate_s_2_minus_plus_longitudinally_polarized(self):
+    def test_calculate_s_3_minus_plus_longitudinally_polarized(self):
         """
-        # Title: `test_calculate_s_2_minus_plus_longitudinally_polarized`
+        # Title: `test_calculate_s_3_minus_plus_longitudinally_polarized`
 
-        ## Description: Test the function `calculate_s_2_minus_plus_longitudinally_polarized`.
-        Remember, that function corresponds to the BKM10 coefficient called $S_{-+}^{LP}(n = 2)$.
-        We call it "SLPPP2" for S (series) LP (longitudinally polarized [target]) MP (-+) 2 (n = 2).
+        ## Description: Test the function `calculate_s_3_minus_plus_longitudinally_polarized`.
+        Remember, that function corresponds to the BKM10 coefficient called $S_{-+}^{LP}(n = 3)$.
+        We call it "SLPPP3" for S (series) LP (longitudinally polarized [target]) MP (-+) 3 (n = 3).
 
         ## Arguments:
         None
