@@ -28,7 +28,7 @@ def calculate_c_0_minus_plus_longitudinally_polarized_V(
         first_term_first_part = (4. - 2. * x_Bjorken + 3. * epsilon**2) * (1. - lepton_energy_fraction_y - lepton_energy_fraction_y**2 * epsilon**2 / 4.)
 
         # (4): Calculate second  part of the first term:
-        first_term_second_part =  1. + root_one_plus_epsilon_squared * (4. * x_Bjorken * (1. - x_Bjorken) + epsilon**2) / (4. - 2. * x_Bjorken + 3. * epsilon**2)
+        first_term_second_part =  1. + t_over_Q_squared * (4. * x_Bjorken * (1. - x_Bjorken) + epsilon**2) / (4. - 2. * x_Bjorken + 3. * epsilon**2)
 
         # (5): Calculate the third part of the first term:
         first_term_third_part = root_one_plus_epsilon_squared - 1. + t_over_Q_squared * (1. - 2. * x_Bjorken + root_one_plus_epsilon_squared)
