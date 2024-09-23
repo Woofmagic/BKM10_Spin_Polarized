@@ -24,7 +24,7 @@ def calculate_c_2_minus_plus_longitudinally_polarized_V(
         t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
 
         # (3): Calculate the first factor:
-        first_factor = 4. - 2. * x_Bjorken + 3. * epsilon**2 + t_over_Q_squared * (4. * x_Bjorken (1. - x_Bjorken) + epsilon**2)
+        first_factor = 4. - 2. * x_Bjorken + 3. * epsilon**2 + t_over_Q_squared * (4. * x_Bjorken * (1. - x_Bjorken) + epsilon**2)
 
         # (4): Calculate the second factor:
         second_factor = 1. + root_one_plus_epsilon_squared - t_over_Q_squared * (1. - root_one_plus_epsilon_squared - 2. * x_Bjorken)
