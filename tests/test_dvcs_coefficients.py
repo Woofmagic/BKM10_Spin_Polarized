@@ -34,16 +34,22 @@ _TEST_CFF_IMAGINARY_H_TILDE = 1.131
 _TEST_CFF_IMAGINARY_E = 2.207
 _TEST_CFF_IMAGINARY_E_TILDE = 5.383
 
+_TEST_CFF_H = complex(_TEST_CFF_REAL_H, _TEST_CFF_IMAGINARY_H)
+_TEST_CFF_H_TILDE = complex(_TEST_CFF_REAL_H_TILDE, _TEST_CFF_IMAGINARY_H_TILDE)
+_TEST_CFF_E = complex(_TEST_CFF_REAL_E, _TEST_CFF_IMAGINARY_E)
+_TEST_CFF_E_TILDE = complex(_TEST_CFF_REAL_E_TILDE, _TEST_CFF_IMAGINARY_E_TILDE)
+
 _TEST_VERBOSE = False
 
 class TestDVCSCoefficients(unittest.TestCase):
 
-    def test_calculate_curly_c_longitudinally_polarized_dvcs(self):
+    def test_calculate_curly_c_longitudinally_polarized_dvcs_normal_cffs(self):
         """
-        # Title: `test_calculate_curly_C_unpolarized_interference`
+        # Title: `test_calculate_curly_c_longitudinally_polarized_dvcs_normal_cffs`
 
         ## Description: Test the function `calculate_curly_c_longitudinally_polarized_dvcs`.
-        This is curly C DVCS for the LP case.
+        This is curly C DVCS for the LP case. Please note what is being passed in as arguments!
+        Notice that we're evaluating CurlyC(F, F*), not any effective stuff!
 
         ## Arguments:
         None
@@ -60,17 +66,51 @@ class TestDVCSCoefficients(unittest.TestCase):
                 _TEST_X_BJORKEN,
                 _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
                 _TEST_EPSILON,
-                _TEST_CFF_REAL_H,
-                _TEST_CFF_REAL_H_TILDE,
-                _TEST_CFF_REAL_E,
-                _TEST_CFF_REAL_E_TILDE,
-                _TEST_CFF_IMAGINARY_H,
-                _TEST_CFF_IMAGINARY_H_TILDE,
-                _TEST_CFF_IMAGINARY_E,
-                _TEST_CFF_IMAGINARY_E_TILDE,
+                _TEST_CFF_H,
+                _TEST_CFF_H_TILDE,
+                _TEST_CFF_E,
+                _TEST_CFF_E_TILDE,
+                _TEST_CFF_H.conjugate(),
+                _TEST_CFF_H_TILDE.conjugate(),
+                _TEST_CFF_E.conjugate(),
+                _TEST_CFF_E_TILDE.conjugate(),
                 _TEST_VERBOSE), 
-            0.15380541535815)
+            complex(0.15380541535815, 0.))
         
+    def test_calculate_curly_c_longitudinally_polarized_dvcs_effective_cffs(self):
+        """
+        # Title: `test_calculate_curly_c_longitudinally_polarized_dvcs_effective_cffs`
+
+        ## Description: Test the function `calculate_curly_c_longitudinally_polarized_dvcs`.
+        This is curly C DVCS for the LP case. Notice what is being passed in! We are evaluating
+        it for EFFECTIVE CFFs!
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_curly_c_longitudinally_polarized_dvcs(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_H),
+                compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_H_TILDE),
+                compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_E),
+                compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_E_TILDE),
+                _TEST_CFF_H.conjugate(),
+                _TEST_CFF_H_TILDE.conjugate(),
+                _TEST_CFF_E.conjugate(),
+                _TEST_CFF_E_TILDE.conjugate(),
+                _TEST_VERBOSE), 
+            complex(-0.05151483061208, 4.6288407527249e-16))
+    
     def test_calculate_c_0_longitudinally_polarized_dvcs(self):
         """
         # Title: `test_calculate_c_0_longitudinally_polarized_dvcs`
