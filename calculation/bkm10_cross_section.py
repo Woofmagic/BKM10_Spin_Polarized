@@ -115,7 +115,7 @@ def calculate_bkm10_cross_section(
 
         azimuthal_phi: (float)
 
-        compton_form_factor_h_real_part: (float)
+        compton_form_factor_h_real_part: (complex)
 
             The real part of the Compton Form Factor (CFF) called H. We will
             write this as Re[H].
@@ -296,8 +296,8 @@ def calculate_bkm10_cross_section(
 
         # (17): Compute the DVCS Amplitude Squared
         # dvcs_amplitude_squared = 0.
-        dvcs_amplitude_squared = calculate_dvcs_amplitude_squared_longitudinally_polarized(
-            lepton_helicity,
+        dvcs_amplitude_squared = 0.5 *( calculate_dvcs_amplitude_squared_longitudinally_polarized(
+            -1.0,
             target_polarization,
             squared_Q_momentum_transfer,
             x_Bjorken,
@@ -311,7 +311,22 @@ def calculate_bkm10_cross_section(
             compton_form_factor_h_tilde,
             compton_form_factor_e,
             compton_form_factor_e_tilde,
-            verbose)
+            verbose) + calculate_dvcs_amplitude_squared_longitudinally_polarized(
+            1.0,
+            target_polarization,
+            squared_Q_momentum_transfer,
+            x_Bjorken,
+            squared_hadronic_momentum_transfer_t,
+            azimuthal_phi,
+            epsilon,
+            lepton_energy_fraction_y,
+            skewness_parameter,
+            shorthand_k,
+            compton_form_factor_h,
+            compton_form_factor_h_tilde,
+            compton_form_factor_e,
+            compton_form_factor_e_tilde,
+            verbose))
 
         # (18): Compute the BH Amplitude Squared
         interference_contribution = 0.
