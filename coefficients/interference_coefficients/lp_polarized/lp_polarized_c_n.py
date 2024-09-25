@@ -32,10 +32,10 @@ def calculate_c_0_interference_coefficient(
     shorthand_k: float,
     Dirac_form_factor_F1: float,
     Pauli_form_factor_F2: float,
-    compton_form_factor_h_real_part: float,
-    compton_form_factor_h_tilde_real_part: float,
-    compton_form_factor_e_real_part: float,
-    compton_form_factor_e_tilde_real_part: float,
+    compton_form_factor_h: complex,
+    compton_form_factor_h_tilde: complex,
+    compton_form_factor_e: complex,
+    compton_form_factor_e_tilde: complex,
     verbose: bool = False) -> float:
     """
     """
