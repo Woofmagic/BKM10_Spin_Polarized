@@ -113,10 +113,10 @@ def calculate_c_0_interference_coefficient(
             shorthand_k,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
-            compton_form_factor_h_real_part,
-            compton_form_factor_h_tilde_real_part,
-            compton_form_factor_e_real_part,
-            compton_form_factor_e_tilde_real_part,
+            compton_form_factor_h,
+            compton_form_factor_h_tilde,
+            compton_form_factor_e,
+            compton_form_factor_e_tilde,
             verbose)
 
 
@@ -134,10 +134,10 @@ def calculate_c_0_interference_coefficient(
             shorthand_k,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
-            compute_cff_effective(skewness_parameter, compton_form_factor_h_real_part),
-            compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde_real_part),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e_real_part),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde_real_part),
+            compute_cff_effective(skewness_parameter, compton_form_factor_h),
+            compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
+            compute_cff_effective(skewness_parameter, compton_form_factor_e),
+            compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde),
             verbose)
         
         # (5): Calculate the curly C_{-+} contribution - requires both n and the TRANSVERSE CFFs:
@@ -154,10 +154,10 @@ def calculate_c_0_interference_coefficient(
             shorthand_k,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
-            compute_cff_transverse(skewness_parameter, compton_form_factor_h_real_part),
-            compute_cff_transverse(skewness_parameter, compton_form_factor_h_tilde_real_part),
-            compute_cff_transverse(skewness_parameter, compton_form_factor_e_real_part),
-            compute_cff_transverse(skewness_parameter, compton_form_factor_e_tilde_real_part),
+            compute_cff_transverse(skewness_parameter, compton_form_factor_h),
+            compute_cff_transverse(skewness_parameter, compton_form_factor_h_tilde),
+            compute_cff_transverse(skewness_parameter, compton_form_factor_e),
+            compute_cff_transverse(skewness_parameter, compton_form_factor_e_tilde),
             verbose)
 
         # (5): Calculate the entire thing:
@@ -190,10 +190,10 @@ def calculate_c_1_interference_coefficient(
     shorthand_k: float,
     Dirac_form_factor_F1: float,
     Pauli_form_factor_F2: float,
-    compton_form_factor_h_real_part: float,
-    compton_form_factor_h_tilde_real_part: float,
-    compton_form_factor_e_real_part: float,
-    compton_form_factor_e_tilde_real_part: float,
+    compton_form_factor_h: complex,
+    compton_form_factor_h_tilde: complex,
+    compton_form_factor_e: complex,
+    compton_form_factor_e_tilde: complex,
     verbose: bool = False) -> float:
     """
     """
@@ -270,10 +270,10 @@ def calculate_c_1_interference_coefficient(
             shorthand_k,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
-            compton_form_factor_h_real_part,
-            compton_form_factor_h_tilde_real_part,
-            compton_form_factor_e_real_part,
-            compton_form_factor_e_tilde_real_part,
+            compton_form_factor_h,
+            compton_form_factor_h_tilde,
+            compton_form_factor_e,
+            compton_form_factor_e_tilde,
             verbose)
 
         # (4): Calculate the curly C_{0+} contribution - requires both n and the CFFs:
@@ -290,10 +290,10 @@ def calculate_c_1_interference_coefficient(
             shorthand_k,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
-            compute_cff_effective(skewness_parameter, compton_form_factor_h_real_part),
-            compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde_real_part),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e_real_part),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde_real_part),
+            compute_cff_effective(skewness_parameter, compton_form_factor_h),
+            compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
+            compute_cff_effective(skewness_parameter, compton_form_factor_e),
+            compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde),
             verbose)
         
         # (5): Calculate the curly C_{-+} contribution - requires both n and the TRANSVERSE CFFs:
@@ -310,10 +310,10 @@ def calculate_c_1_interference_coefficient(
             shorthand_k,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
-            compute_cff_transverse(skewness_parameter, compton_form_factor_h_real_part),
-            compute_cff_transverse(skewness_parameter, compton_form_factor_h_tilde_real_part),
-            compute_cff_transverse(skewness_parameter, compton_form_factor_e_real_part),
-            compute_cff_transverse(skewness_parameter, compton_form_factor_e_tilde_real_part),
+            compute_cff_transverse(skewness_parameter, compton_form_factor_h),
+            compute_cff_transverse(skewness_parameter, compton_form_factor_h_tilde),
+            compute_cff_transverse(skewness_parameter, compton_form_factor_e),
+            compute_cff_transverse(skewness_parameter, compton_form_factor_e_tilde),
             verbose)
 
         # (5): Calculate the entire thing:
@@ -346,10 +346,10 @@ def calculate_c_2_interference_coefficient(
     shorthand_k: float,
     Dirac_form_factor_F1: float,
     Pauli_form_factor_F2: float,
-    compton_form_factor_h_real_part: float,
-    compton_form_factor_h_tilde_real_part: float,
-    compton_form_factor_e_real_part: float,
-    compton_form_factor_e_tilde_real_part: float,
+    compton_form_factor_h: complex,
+    compton_form_factor_h_tilde: complex,
+    compton_form_factor_e: complex,
+    compton_form_factor_e_tilde: complex,
     verbose: bool = False) -> float:
     """
     """
@@ -425,12 +425,11 @@ def calculate_c_2_interference_coefficient(
             shorthand_k,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
-            compton_form_factor_h_real_part,
-            compton_form_factor_h_tilde_real_part,
-            compton_form_factor_e_real_part,
-            compton_form_factor_e_tilde_real_part,
+            compton_form_factor_h,
+            compton_form_factor_h_tilde,
+            compton_form_factor_e,
+            compton_form_factor_e_tilde,
             verbose)
-
 
         # (4): Calculate the curly C_{0+} contribution - requires both n and the CFFs:
         curly_c_zero_plus = calculate_curly_C_zero_plus_longitudinally_polarized_interference(
@@ -446,10 +445,10 @@ def calculate_c_2_interference_coefficient(
             shorthand_k,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
-            compute_cff_effective(skewness_parameter, compton_form_factor_h_real_part),
-            compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde_real_part),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e_real_part),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde_real_part),
+            compute_cff_effective(skewness_parameter, compton_form_factor_h),
+            compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
+            compute_cff_effective(skewness_parameter, compton_form_factor_e),
+            compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde),
             verbose)
         
         # (5): Calculate the curly C_{-+} contribution - requires both n and the TRANSVERSE CFFs:
@@ -466,24 +465,15 @@ def calculate_c_2_interference_coefficient(
             shorthand_k,
             Dirac_form_factor_F1,
             Pauli_form_factor_F2,
-            compute_cff_transverse(skewness_parameter, compton_form_factor_h_real_part),
-            compute_cff_transverse(skewness_parameter, compton_form_factor_h_tilde_real_part),
-            compute_cff_transverse(skewness_parameter, compton_form_factor_e_real_part),
-            compute_cff_transverse(skewness_parameter, compton_form_factor_e_tilde_real_part),
+            compute_cff_transverse(skewness_parameter, compton_form_factor_h),
+            compute_cff_transverse(skewness_parameter, compton_form_factor_h_tilde),
+            compute_cff_transverse(skewness_parameter, compton_form_factor_e),
+            compute_cff_transverse(skewness_parameter, compton_form_factor_e_tilde),
             verbose)
         
-        print(c_plus_plus)
-        print(c_zero_plus)
-
-        print(curly_c_plus_plus)
-        print(curly_c_zero_plus)
-
         # (5): Calculate the entire thing:
         # c_n_interference_coefficient = c_plus_plus * curly_c_plus_plus + c_zero_plus * curly_c_zero_plus + c_minus_plus * curly_c_minus_plus
         c_2_interference_coefficient = (c_plus_plus * curly_c_plus_plus) + (c_zero_plus * curly_c_zero_plus)
-        print(c_plus_plus * curly_c_plus_plus)
-        print(c_zero_plus * curly_c_zero_plus)
-        print(c_2_interference_coefficient)
         
         # (): If verbose, print the output:
         if verbose:
