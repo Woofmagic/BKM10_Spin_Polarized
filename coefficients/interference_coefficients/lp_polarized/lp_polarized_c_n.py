@@ -161,8 +161,8 @@ def calculate_c_0_interference_coefficient(
             verbose)
 
         # (5): Calculate the entire thing:
-        # c_n_interference_coefficient = c_plus_plus * curly_c_plus_plus + c_zero_plus * curly_c_zero_plus + c_minus_plus * curly_c_minus_plus
-        c_0_interference_coefficient = c_plus_plus * curly_c_plus_plus + c_zero_plus * curly_c_zero_plus
+        # c_n_interference_coefficient = c_plus_plus * curly_c_plus_plus.real + c_zero_plus * curly_c_zero_plus.real + c_minus_plus * curly_c_minus_plus
+        c_0_interference_coefficient = c_plus_plus * curly_c_plus_plus.real + c_zero_plus * curly_c_zero_plus.real
         
         # (): If verbose, print the output:
         if verbose:
@@ -317,8 +317,8 @@ def calculate_c_1_interference_coefficient(
             verbose)
 
         # (5): Calculate the entire thing:
-        # c_n_interference_coefficient = c_plus_plus * curly_c_plus_plus + c_zero_plus * curly_c_zero_plus + c_minus_plus * curly_c_minus_plus
-        c_1_interference_coefficient = c_plus_plus * curly_c_plus_plus + c_zero_plus * curly_c_zero_plus
+        # c_n_interference_coefficient = c_plus_plus * curly_c_plus_plus.real + c_zero_plus * curly_c_zero_plus.real + c_minus_plus * curly_c_minus_plus
+        c_1_interference_coefficient = c_plus_plus * curly_c_plus_plus.real + c_zero_plus * curly_c_zero_plus.real
         
         # (): If verbose, print the output:
         if verbose:
@@ -472,8 +472,8 @@ def calculate_c_2_interference_coefficient(
             verbose)
         
         # (5): Calculate the entire thing:
-        # c_n_interference_coefficient = c_plus_plus * curly_c_plus_plus + c_zero_plus * curly_c_zero_plus + c_minus_plus * curly_c_minus_plus
-        c_2_interference_coefficient = (c_plus_plus * curly_c_plus_plus) + (c_zero_plus * curly_c_zero_plus)
+        # c_n_interference_coefficient = c_plus_plus * curly_c_plus_plus.real + c_zero_plus * curly_c_zero_plus.real + c_minus_plus * curly_c_minus_plus
+        c_2_interference_coefficient = (c_plus_plus * curly_c_plus_plus.real) + (c_zero_plus * curly_c_zero_plus.real)
         
         # (): If verbose, print the output:
         if verbose:
