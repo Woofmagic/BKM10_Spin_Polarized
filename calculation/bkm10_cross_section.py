@@ -352,6 +352,11 @@ def calculate_bkm10_cross_section(
 
         # (18): Compute the BH Amplitude Squared
         interference_contribution = 0.
+
+        print(electric_form_factor)
+        print(magnetic_form_factor)
+        print(Dirac_form_factor_F1)
+        print(Pauli_form_factor_F2)
         
         if lepton_helicity == 0.0: 
 

@@ -1,3 +1,7 @@
+import matplotlib.pyplot as plt
+
+from utilities.plotting.plot_customizer import PlotCustomizer
+
 try:
     import numpy as np
 except ImportError:
@@ -142,10 +146,30 @@ def calculate_interference_contribution_longitudinally_polarized(
     ## Examples:
     """
 
+    print(f"> Lepton jelicity is: {lepton_helicity}")
+
     try:
 
         # (1): Calculate the prefactor:
         prefactor = 1. / (x_Bjorken * lepton_energy_fraction_y**3 * squared_hadronic_momentum_transfer_t * lepton_propagator_p1 * lepton_propagator_p2)
+
+        # print(lepton_helicity)
+        # print(target_polarization)
+        # print(squared_Q_momentum_transfer)
+        # print(x_Bjorken)
+        # print(squared_hadronic_momentum_transfer_t)
+        # print(epsilon)
+        # print(lepton_energy_fraction_y)
+        # print(skewness_parameter)
+        # print(t_prime)
+        # print(k_tilde)
+        # print(shorthand_k)
+        # print(Dirac_form_factor_F1)
+        # print(Pauli_form_factor_F2)
+        # print(compton_form_factor_h)
+        # print(compton_form_factor_h_tilde)
+        # print(compton_form_factor_e)
+        # print(compton_form_factor_e_tilde)
 
         # (2): Calculate c_{0}^{I}:
         # c_0_I = 0.
@@ -158,6 +182,7 @@ def calculate_interference_contribution_longitudinally_polarized(
             squared_hadronic_momentum_transfer_t,
             epsilon,
             lepton_energy_fraction_y,
+            skewness_parameter,
             t_prime,
             k_tilde,
             shorthand_k,

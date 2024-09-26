@@ -34,6 +34,11 @@ _TEST_CFF_IMAGINARY_H_TILDE = 1.131
 _TEST_CFF_IMAGINARY_E = 2.207
 _TEST_CFF_IMAGINARY_E_TILDE = 5.383
 
+_TEST_CFF_H = complex(_TEST_CFF_REAL_H, _TEST_CFF_IMAGINARY_H)
+_TEST_CFF_H_TILDE = complex(_TEST_CFF_REAL_H_TILDE, _TEST_CFF_IMAGINARY_H_TILDE)
+_TEST_CFF_E = complex(_TEST_CFF_REAL_E, _TEST_CFF_IMAGINARY_E)
+_TEST_CFF_E_TILDE = complex(_TEST_CFF_REAL_E_TILDE, _TEST_CFF_IMAGINARY_E_TILDE)
+
 _TEST_VERBOSE = False
 
 class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
@@ -72,10 +77,10 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_SHORTHAND_K,
                 _TEST_DIRAC_FORM_FACTOR_F1,
                 _TEST_PAULI_FORM_FACTOR_F2,
-                _TEST_CFF_REAL_H,
-                _TEST_CFF_REAL_H_TILDE,
-                _TEST_CFF_REAL_E,
-                _TEST_CFF_REAL_E_TILDE,
+                _TEST_CFF_H,
+                _TEST_CFF_H_TILDE,
+                _TEST_CFF_E,
+                _TEST_CFF_E_TILDE,
                 _TEST_VERBOSE), 
             -6.9000522563972)
         

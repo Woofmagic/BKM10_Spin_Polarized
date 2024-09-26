@@ -42,6 +42,7 @@ from calculation.bkm10_cross_section import calculate_bkm10_cross_section
 def main(
     kinematics_dataframe_path: str,
     kinematic_set_number: int,
+    formalism_version: str,
     lepton_helicity: str,
     target_polarization: str,
     verbose: bool = False):
