@@ -425,9 +425,6 @@ def calculate_bkm10_cross_section(
                 verbose)
 
         # (18): Calculate the total cross section
-        print(f"> BH was: {convert_to_nb_over_GeV4(bh_amplitude_squared)}")
-        print(f"> DVCS was: {convert_to_nb_over_GeV4(dvcs_amplitude_squared)}")
-        print(f"> I was: {convert_to_nb_over_GeV4(interference_contribution)}")
         bkm10_cross_section = cross_section_prefactor * (bh_amplitude_squared + dvcs_amplitude_squared + interference_contribution)
 
         # (18.1): If verbose, print the output:
@@ -447,7 +444,7 @@ def calculate_bkm10_cross_section(
             value_of_Q_squared = np.array(squared_Q_momentum_transfer)[0],
             value_of_hadron_recoil = np.array(squared_hadronic_momentum_transfer_t)[0], 
             value_of_x_Bjorken = np.array(x_Bjorken)[0],
-            calculated_cross_section = (bkm10_cross_section_in_nb_GeV4))
+            calculated_cross_section = bkm10_cross_section_in_nb_GeV4)
 
         # plot_beam_spin_asymmetry(
         #     lab_azimuthal_phi = azimuthal_phi,
