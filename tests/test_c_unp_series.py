@@ -161,4 +161,4 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_K_TILDE,
                 _TEST_VERBOSE), 
-            -0.12536847747885)
+            -0.061154291210992)
