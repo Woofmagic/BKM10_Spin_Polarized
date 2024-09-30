@@ -3,7 +3,7 @@ try:
 except ImportError:
     print("NumPy is not installed. Please install NumPy to use this script.")
 
-def calculate_c_0_plus_plus_unpolarized_A(
+def calculate_c_0_zero_plus_unpolarized_A(
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float, 
     squared_hadronic_momentum_transfer_t: float,

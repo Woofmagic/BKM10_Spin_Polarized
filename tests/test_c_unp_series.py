@@ -17,6 +17,8 @@ from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp3V import
 from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp3A import calculate_c_3_plus_plus_unpolarized_A
 
 from coefficients.interference_coefficients.unpolarized.unpolarized_C0p0 import calculate_c_0_zero_plus_unpolarized
+from coefficients.interference_coefficients.unpolarized.unpolarized_C0p0V import calculate_c_0_zero_plus_unpolarized_V
+from coefficients.interference_coefficients.unpolarized.unpolarized_C0p0A import calculate_c_0_zero_plus_unpolarized_A
 
 _TEST_LEPTON_POLARIZATION = 1.0
 _TEST_TARGET_POLARIZATION = 1.0
@@ -402,3 +404,59 @@ class TestCUnpolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
             0.21499986235893)
+        
+    def test_calculate_c_0_zero_plus_unpolarized_V(self):
+        """
+        # Title: `test_calculate_c_0_zero_plus_unpolarized_V`
+
+        ## Description: Test the function `calculate_c_0_zero_plus_unpolarized_V`.
+        Remember, that function corresponds to the BKM10 coefficient called $C_{0+}^{unp, V}(n = 0)$.
+        We call it "CunpV0P0" for C (series) unp (unpolarized [target]) V (vector) 0P (0+) 0 (n = 0).
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_c_0_zero_plus_unpolarized_V(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SHORTHAND_K,
+                _TEST_VERBOSE), 
+            -0.060652490768276)
+        
+    def test_calculate_c_0_zero_plus_unpolarized_A(self):
+        """
+        # Title: `test_calculate_c_0_zero_plus_unpolarized_A`
+
+        ## Description: Test the function `calculate_c_0_zero_plus_unpolarized_A`.
+        Remember, that function corresponds to the BKM10 coefficient called $C_{0+}^{unp, A}(n = 0)$.
+        We call it "CunpA0P0" for C (series) unp (unpolarized [target]) A (axial vector) 0P (0+) 0 (n = 0).
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_c_0_zero_plus_unpolarized_A(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SHORTHAND_K,
+                _TEST_VERBOSE), 
+            -0.20012933850328)
