@@ -16,6 +16,8 @@ from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp3 import 
 from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp3V import calculate_c_3_plus_plus_unpolarized_V
 from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp3A import calculate_c_3_plus_plus_unpolarized_A
 
+from coefficients.interference_coefficients.unpolarized.unpolarized_C0p0 import calculate_c_0_zero_plus_unpolarized
+
 _TEST_LEPTON_POLARIZATION = 1.0
 _TEST_TARGET_POLARIZATION = 1.0
 _TEST_SQUARED_Q_MOMENTUM_TRANSFER = 1.8200000524520876
@@ -29,7 +31,7 @@ _TEST_T_PRIME = -0.0337889
 
 _TEST_VERBOSE = False
 
-class TestCLPSeriesCoefficients(unittest.TestCase):
+class TestCUnpolarizedSeriesCoefficients(unittest.TestCase):
 
     def test_calculate_c_0_plus_plus_unpolarized(self):
         """
@@ -372,3 +374,31 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
             0.00019778929274808)
+        
+    def test_calculate_c_0_zero_plus_unpolarized(self):
+        """
+        # Title: `test_calculate_c_0_zero_plus_unpolarized`
+
+        ## Description: Test the function `calculate_c_0_zero_plus_unpolarized`.
+        Remember, that function corresponds to the BKM10 coefficient called $C_{0+}^{unp}(n = 0)$.
+        We call it "Cunp0P0" for C (series) unp (unpolarized [target]) 0P (0+) 0 (n = 0).
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_c_0_zero_plus_unpolarized(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SHORTHAND_K,
+                _TEST_VERBOSE), 
+            0.21499986235893)
