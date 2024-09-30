@@ -12,6 +12,8 @@ from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp2 import 
 from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp2V import calculate_c_2_plus_plus_unpolarized_V
 from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp2A import calculate_c_2_plus_plus_unpolarized_A
 
+from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp3 import calculate_c_3_plus_plus_unpolarized
+
 _TEST_LEPTON_POLARIZATION = 1.0
 _TEST_TARGET_POLARIZATION = 1.0
 _TEST_SQUARED_Q_MOMENTUM_TRANSFER = 1.8200000524520876
@@ -283,3 +285,31 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_K_TILDE,
                 _TEST_VERBOSE), 
             -0.0051137346445324)
+        
+    def test_calculate_c_3_plus_plus_unpolarized(self):
+        """
+        # Title: `test_calculate_c_3_plus_plus_unpolarized`
+
+        ## Description: Test the function `calculate_c_3_plus_plus_unpolarized`.
+        Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{unp}(n = 3)$.
+        We call it "CunpPP3" for C (series) unp (unpolarized [target]) PP (++) 3 (n = 3).
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_c_3_plus_plus_unpolarized(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SHORTHAND_K,
+                _TEST_VERBOSE), 
+            0.000284642472448)
