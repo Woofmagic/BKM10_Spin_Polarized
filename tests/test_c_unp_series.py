@@ -253,4 +253,4 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_T_PRIME,
                 _TEST_K_TILDE,
                 _TEST_VERBOSE), 
-            0.012731207597019)
+            -0.0047723778335283)

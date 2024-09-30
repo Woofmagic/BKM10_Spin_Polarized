@@ -27,7 +27,7 @@ def calculate_c_2_plus_plus_unpolarized_V(
         t_prime_over_Q_squared = t_prime / squared_Q_momentum_transfer
 
         # (4): Calculate the major term:
-        major_term = 4. * k_tilde**2 / (root_one_plus_epsilon_squared * squared_Q_momentum_transfer) + 0.5 * (1. + root_one_plus_epsilon_squared - 2. * x_Bjorken) * (1. + t_over_Q_squared) * t_prime_over_Q_squared
+        major_term = (4. * k_tilde**2 / (root_one_plus_epsilon_squared * squared_Q_momentum_transfer)) + 0.5 * (1. + root_one_plus_epsilon_squared - 2. * x_Bjorken) * (1. + t_over_Q_squared) * t_prime_over_Q_squared
 
         # (5): Calculate the prefactor: 
         prefactor = 8. * (2. - lepton_energy_fraction_y) * (1. - lepton_energy_fraction_y - epsilon**2 * lepton_energy_fraction_y**2 / 4.) * x_Bjorken * t_over_Q_squared / root_one_plus_epsilon_squared**4
