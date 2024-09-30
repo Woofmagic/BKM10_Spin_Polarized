@@ -153,24 +153,6 @@ def calculate_interference_contribution_longitudinally_polarized(
         # (1): Calculate the prefactor:
         prefactor = 1. / (x_Bjorken * lepton_energy_fraction_y**3 * squared_hadronic_momentum_transfer_t * lepton_propagator_p1 * lepton_propagator_p2)
 
-        # print(lepton_helicity)
-        # print(target_polarization)
-        # print(squared_Q_momentum_transfer)
-        # print(x_Bjorken)
-        # print(squared_hadronic_momentum_transfer_t)
-        # print(epsilon)
-        # print(lepton_energy_fraction_y)
-        # print(skewness_parameter)
-        # print(t_prime)
-        # print(k_tilde)
-        # print(shorthand_k)
-        # print(Dirac_form_factor_F1)
-        # print(Pauli_form_factor_F2)
-        # print(compton_form_factor_h)
-        # print(compton_form_factor_h_tilde)
-        # print(compton_form_factor_e)
-        # print(compton_form_factor_e_tilde)
-
         # (2): Calculate c_{0}^{I}:
         # c_0_I = 0.
         c_0_I = calculate_c_0_interference_coefficient(
@@ -305,6 +287,50 @@ def calculate_interference_contribution_longitudinally_polarized(
             compton_form_factor_e,
             compton_form_factor_e_tilde,
             verbose)
+        
+        # (1): Figure instance:
+        figure = plt.figure(figsize = (18, 6))
+
+        # (2): Add an Axes Object:
+        axes_object = figure.add_subplot(111)
+
+        customized_plot = PlotCustomizer(
+            axes_object,
+            grid = True)
+        
+        print(c_0_I[0])
+        print(c_1_I[0])
+        print(c_2_I[0])
+        print(s_1_I[0])
+        print(s_2_I[0])
+        print(s_3_I[0])
+        
+        customized_plot.add_line_plot(
+            x_data = azimuthal_phi,
+            y_data = c_0_I,
+            color = 'red')
+        customized_plot.add_line_plot(
+            x_data = azimuthal_phi,
+            y_data = c_1_I * np.cos(np.pi - 1. * (convert_degrees_to_radians(azimuthal_phi))),
+            color = 'orange')
+        customized_plot.add_line_plot(
+            x_data = azimuthal_phi,
+            y_data = c_2_I * np.cos(np.pi - 2. * (convert_degrees_to_radians(azimuthal_phi))),
+            color = 'yellow')
+        customized_plot.add_line_plot(
+            x_data = azimuthal_phi,
+            y_data = s_1_I * np.sin(np.pi - 1. * (convert_degrees_to_radians(azimuthal_phi))),
+            color = 'green')
+        customized_plot.add_line_plot(
+            x_data = azimuthal_phi,
+            y_data = s_2_I * np.sin(np.pi - 2. * (convert_degrees_to_radians(azimuthal_phi))),
+            color = 'blue')
+        customized_plot.add_line_plot(
+            x_data = azimuthal_phi,
+            y_data = s_3_I * np.sin(np.pi - 3. * (convert_degrees_to_radians(azimuthal_phi))),
+            color = 'purple')
+        
+        plt.show()
 
         # (9): Calculate the interference contribution:
         interference_contribution = prefactor * (c_0_I + c_1_I * np.cos(np.pi - 1. * (convert_degrees_to_radians(azimuthal_phi))) + c_2_I * np.cos(np.pi - 2. * (convert_degrees_to_radians(azimuthal_phi))) + s_1_I * np.sin(np.pi - 1. * (convert_degrees_to_radians(azimuthal_phi))) + s_2_I * np.sin(np.pi - 2. * (convert_degrees_to_radians(azimuthal_phi))) + s_3_I * np.sin(np.pi - 3. * (convert_degrees_to_radians(azimuthal_phi))))

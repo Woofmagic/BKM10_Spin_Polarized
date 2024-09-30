@@ -18,13 +18,12 @@ _TEST_LEPTON_ENERGY_FRACTION = 0.491757
 _TEST_K_TILDE = 0.157396
 _TEST_SHORTHAND_K = 0.0842939
 _TEST_T_PRIME = -0.0337889
-
 _TEST_SKEWNESS = 0.20115437410625
 
 _TEST_ELECTRIC_FORM_FACTOR_FE = 0.648238
 _TEST_MAGNETIC_FORM_FACTOR_FG = 1.81043
-_TEST_DIRAC_FORM_FACTOR_F1 = -21.9835
-_TEST_PAULI_FORM_FACTOR_F2 = 23.794
+_TEST_DIRAC_FORM_FACTOR_F1 = 0.70236007205643
+_TEST_PAULI_FORM_FACTOR_F2 = 1.1080686200383
 _TEST_CFF_REAL_H = -0.897
 _TEST_CFF_REAL_H_TILDE = 2.444
 _TEST_CFF_REAL_E = -0.541
@@ -82,7 +81,7 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_CFF_E,
                 _TEST_CFF_E_TILDE,
                 _TEST_VERBOSE), 
-            -6.9000522563972)
+            0.21313871477944)
         
     def test_calculate_c_1_interference_coefficient(self):
         """
@@ -104,7 +103,7 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
         """
         self.assertAlmostEqual(
             calculate_c_1_interference_coefficient(
-                0,
+                1,
                 _TEST_LEPTON_POLARIZATION,
                 _TEST_TARGET_POLARIZATION,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
@@ -118,12 +117,12 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_SHORTHAND_K,
                 _TEST_DIRAC_FORM_FACTOR_F1,
                 _TEST_PAULI_FORM_FACTOR_F2,
-                _TEST_CFF_REAL_H,
-                _TEST_CFF_REAL_H_TILDE,
-                _TEST_CFF_REAL_E,
-                _TEST_CFF_REAL_E_TILDE,
+                _TEST_CFF_H,
+                _TEST_CFF_H_TILDE,
+                _TEST_CFF_E,
+                _TEST_CFF_E_TILDE,
                 _TEST_VERBOSE), 
-            16.086256937885)
+            -0.42217450884426)
         
     def test_calculate_c_2_interference_coefficient(self):
         """
@@ -145,7 +144,7 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
         """
         self.assertAlmostEqual(
             calculate_c_2_interference_coefficient(
-                0,
+                2,
                 _TEST_LEPTON_POLARIZATION,
                 _TEST_TARGET_POLARIZATION,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
@@ -159,12 +158,12 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_SHORTHAND_K,
                 _TEST_DIRAC_FORM_FACTOR_F1,
                 _TEST_PAULI_FORM_FACTOR_F2,
-                _TEST_CFF_REAL_H,
-                _TEST_CFF_REAL_H_TILDE,
-                _TEST_CFF_REAL_E,
-                _TEST_CFF_REAL_E_TILDE,
+                _TEST_CFF_H,
+                _TEST_CFF_H_TILDE,
+                _TEST_CFF_E,
+                _TEST_CFF_E_TILDE,
                 _TEST_VERBOSE), 
-            -0.54724169582401)
+            0.01531287624191)
     
     def test_calculate_s_1_interference_coefficient(self):
         """
@@ -199,12 +198,12 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_SHORTHAND_K,
                 _TEST_DIRAC_FORM_FACTOR_F1,
                 _TEST_PAULI_FORM_FACTOR_F2,
-                _TEST_CFF_IMAGINARY_H,
-                _TEST_CFF_IMAGINARY_H_TILDE,
-                _TEST_CFF_IMAGINARY_E,
-                _TEST_CFF_IMAGINARY_E_TILDE,
+                _TEST_CFF_H,
+                _TEST_CFF_H_TILDE,
+                _TEST_CFF_E,
+                _TEST_CFF_E_TILDE,
                 _TEST_VERBOSE), 
-            -13.40639270235)
+            1.0782901511926)
         
     def test_calculate_s_2_interference_coefficient(self):
         """
@@ -226,7 +225,7 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
         """
         self.assertAlmostEqual(
             calculate_s_2_interference_coefficient(
-                1,
+                2,
                 _TEST_TARGET_POLARIZATION,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
@@ -239,9 +238,49 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_SHORTHAND_K,
                 _TEST_DIRAC_FORM_FACTOR_F1,
                 _TEST_PAULI_FORM_FACTOR_F2,
-                _TEST_CFF_IMAGINARY_H,
-                _TEST_CFF_IMAGINARY_H_TILDE,
-                _TEST_CFF_IMAGINARY_E,
-                _TEST_CFF_IMAGINARY_E_TILDE,
+                _TEST_CFF_H,
+                _TEST_CFF_H_TILDE,
+                _TEST_CFF_E,
+                _TEST_CFF_E_TILDE,
                 _TEST_VERBOSE), 
-            0.28286989880064)
+            -0.07240060165189)
+        
+    def test_calculate_s_3_interference_coefficient(self):
+        """
+        # Title: `test_calculate_s_3_interference_coefficient`
+
+        ## Description: Test the function `calculate_s_3_interference_coefficient`.
+        This is a major function that computes for us the s_{n}^{I} coefficients that
+        are directly present in the Fourier sum. We test the s_{n = 3}^{I} contribution
+        here.
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_s_3_interference_coefficient(
+                3,
+                _TEST_TARGET_POLARIZATION,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SKEWNESS,
+                _TEST_T_PRIME,
+                _TEST_K_TILDE,
+                _TEST_SHORTHAND_K,
+                _TEST_DIRAC_FORM_FACTOR_F1,
+                _TEST_PAULI_FORM_FACTOR_F2,
+                _TEST_CFF_H,
+                _TEST_CFF_H_TILDE,
+                _TEST_CFF_E,
+                _TEST_CFF_E_TILDE,
+                _TEST_VERBOSE), 
+            0.025686629890608)

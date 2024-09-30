@@ -322,7 +322,7 @@ def calculate_s_3_interference_coefficient(
             shorthand_k,
             verbose)
 
-        # (2): The second part of the term is S_{0+}(n = 2):
+        # (2): The second part of the term is S_{0+}(n = 3):
         s_zero_plus = 0.
 
         # (3): The second part of the term is S_{-+}(n = 3):
