@@ -4,6 +4,10 @@ from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp0 import 
 from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp0V import calculate_c_0_plus_plus_unpolarized_V
 from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp0A import calculate_c_0_plus_plus_unpolarized_A
 
+from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp1 import calculate_c_1_plus_plus_unpolarized
+from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp1V import calculate_c_1_plus_plus_unpolarized_V
+# from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp1A import calculate_c_1_plus_plus_unpolarized_A
+
 _TEST_LEPTON_POLARIZATION = 1.0
 _TEST_TARGET_POLARIZATION = 1.0
 _TEST_SQUARED_Q_MOMENTUM_TRANSFER = 1.8200000524520876
@@ -102,3 +106,59 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_K_TILDE,
                 _TEST_VERBOSE), 
             -0.66566222115038)
+        
+    def test_calculate_c_1_plus_plus_unpolarized(self):
+        """
+        # Title: `test_calculate_c_1_plus_plus_unpolarized`
+
+        ## Description: Test the function `calculate_c_1_plus_plus_unpolarized`.
+        Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{unp}(n = 1)$.
+        We call it "CunpPP1" for C (series) unp (unpolarized [target]) PP (++) 1 (n = 1).
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_c_1_plus_plus_unpolarized(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SHORTHAND_K,
+                _TEST_VERBOSE), 
+            -0.39741815117728)
+
+    def test_calculate_c_1_plus_plus_unpolarized_V(self):
+        """
+        # Title: `test_calculate_c_1_plus_plus_unpolarized_V`
+
+        ## Description: Test the function `calculate_c_1_plus_plus_unpolarized_V`.
+        Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{unp}(n = 1)$.
+        We call it "CunpVPP1" for C (series) unp (unpolarized [target]) V (vector) PP (++) 1 (n = 1).
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_c_1_plus_plus_unpolarized_V(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_K_TILDE,
+                _TEST_VERBOSE), 
+            -0.12536847747885)
