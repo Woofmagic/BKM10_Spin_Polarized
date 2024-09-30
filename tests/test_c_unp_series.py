@@ -21,6 +21,7 @@ from coefficients.interference_coefficients.unpolarized.unpolarized_C0p0V import
 from coefficients.interference_coefficients.unpolarized.unpolarized_C0p0A import calculate_c_0_zero_plus_unpolarized_A
 
 from coefficients.interference_coefficients.unpolarized.unpolarized_C0p1 import calculate_c_1_zero_plus_unpolarized
+from coefficients.interference_coefficients.unpolarized.unpolarized_C0p1V import calculate_c_1_zero_plus_unpolarized_V
 
 _TEST_LEPTON_POLARIZATION = 1.0
 _TEST_TARGET_POLARIZATION = 1.0
@@ -490,3 +491,31 @@ class TestCUnpolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_T_PRIME,
                 _TEST_VERBOSE), 
             0.61623151340909)
+        
+    def test_calculate_c_1_zero_plus_unpolarized_V(self):
+        """
+        # Title: `test_calculate_c_1_zero_plus_unpolarized_V`
+
+        ## Description: Test the function `calculate_c_1_zero_plus_unpolarized_V`.
+        Remember, that function corresponds to the BKM10 coefficient called $C_{0+}^{unp, V}(n = 1)$.
+        We call it "CunpV0P1" for C (series) unp (unpolarized [target]) V (vector) 0P (0+) 1 (n = 1).
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_c_1_zero_plus_unpolarized_V(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_K_TILDE,
+                _TEST_VERBOSE), 
+            -0.17149887555549)
