@@ -159,6 +159,35 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
                 _TEST_EPSILON,
                 _TEST_LEPTON_ENERGY_FRACTION,
-                _TEST_K_TILDE,
+                _TEST_T_PRIME,
+                _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
             -0.061154291210992)
+        
+    def test_calculate_c_1_plus_plus_unpolarized_A(self):
+        """
+        # Title: `test_calculate_c_1_plus_plus_unpolarized_A`
+
+        ## Description: Test the function `calculate_c_1_plus_plus_unpolarized_A`.
+        Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{unp, A}(n = 1)$.
+        We call it "CunpAPP1" for C (series) unp (unpolarized [target]) A (axial vector) PP (++) 1 (n = 1).
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_c_1_plus_plus_unpolarized_A(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_K_TILDE,
+                _TEST_VERBOSE), 
+            -0.66566222115038)
