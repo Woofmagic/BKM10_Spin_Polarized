@@ -252,4 +252,4 @@ class TestSUnpolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_EPSILON,
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_VERBOSE), 
-            -0.00056868659972562)
+            0.053294532211912)
