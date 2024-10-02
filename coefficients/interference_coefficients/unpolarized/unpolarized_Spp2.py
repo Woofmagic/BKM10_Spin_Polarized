@@ -10,7 +10,6 @@ def calculate_s_2_plus_plus_unpolarized(
     epsilon: float,
     lepton_energy_fraction_y: float,
     t_prime: float,
-    shorthand_k: float,
     verbose: bool = False) -> float:
     """
     """
