@@ -30,7 +30,7 @@ def calculate_s_2_zero_plus_unpolarized(
         bracket_term = 1. + ((1. + epsilon_squared_over_2 / x_Bjorken) / (1. + epsilon_squared_over_2)) * x_Bjorken * squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
 
         # (5): Calculate the prefactor:
-        prefactor = 8. * lepton_helicity * np.sqrt(2. * y_quantity) * shorthand_k / root_one_plus_epsilon_squared**4
+        prefactor = 8. * lepton_helicity * np.sqrt(2. * y_quantity) * shorthand_k * lepton_helicity / root_one_plus_epsilon_squared**4
         
         # (6): Calculate the coefficient:
         s_2_zero_plus_unp = prefactor * (1. + epsilon_squared_over_2) * bracket_term
