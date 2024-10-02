@@ -66,12 +66,13 @@ class TestSUnpolarizedSeriesCoefficients(unittest.TestCase):
         """
         self.assertAlmostEqual(
             calculate_s_1_plus_plus_unpolarized_V(
+                _TEST_LEPTON_POLARIZATION,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
                 _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
                 _TEST_EPSILON,
                 _TEST_LEPTON_ENERGY_FRACTION,
-                _TEST_K_TILDE,
+                _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
             -0.00028400148536359)
         
