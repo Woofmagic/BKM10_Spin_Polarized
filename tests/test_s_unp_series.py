@@ -1,6 +1,6 @@
 import unittest
 
-from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp0 import calculate_c_0_plus_plus_unpolarized
+from coefficients.interference_coefficients.unpolarized.unpolarized_Spp1 import calculate_s_1_plus_plus_unpolarized
 
 
 _TEST_LEPTON_POLARIZATION = 1.0
@@ -37,14 +37,15 @@ class TestSUnpolarizedSeriesCoefficients(unittest.TestCase):
         """
         self.assertAlmostEqual(
             calculate_s_1_plus_plus_unpolarized(
+                _TEST_LEPTON_POLARIZATION,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
-                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
                 _TEST_EPSILON,
                 _TEST_LEPTON_ENERGY_FRACTION,
-                _TEST_K_TILDE,
+                _TEST_T_PRIME,
+                _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            0.42395672814361)
+            0.40303674720775)
         
     def test_calculate_c_0_plus_plus_unpolarized_V(self):
         """
