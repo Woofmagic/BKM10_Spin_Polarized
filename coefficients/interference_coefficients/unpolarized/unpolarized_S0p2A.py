@@ -4,12 +4,12 @@ except ImportError:
     print("NumPy is not installed. Please install NumPy to use this script.")
 
 def calculate_s_2_zero_plus_unpolarized_A(
+    lepton_helicity: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float, 
     squared_hadronic_momentum_transfer_t: float,
     epsilon: float,
     lepton_energy_fraction_y: float, 
-    t_prime: float,
     shorthand_k: float,
     verbose: bool = False) -> float:
     """
@@ -33,7 +33,7 @@ def calculate_s_2_zero_plus_unpolarized_A(
         main_term = 4. * one_minus_xb + 2. * epsilon**2 + 4. * t_over_Q_squared * (4. * x_Bjorken * one_minus_xb + epsilon**2)
         
         # (6): Calculate part of the prefactor:
-        prefactor = 8. * np.sqrt(2. * y_quantity) * shorthand_k * (2. - lepton_energy_fraction_y) * t_over_Q_squared / root_one_plus_epsilon_squared**4
+        prefactor = -2. * np.sqrt(2. * y_quantity) * lepton_helicity * shorthand_k * lepton_energy_fraction_y * t_over_Q_squared / root_one_plus_epsilon_squared**4
         
         # (7): Calculate the coefficient:
         c_2_zero_plus_unp_A = prefactor * main_term

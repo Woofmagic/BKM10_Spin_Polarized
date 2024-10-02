@@ -14,6 +14,7 @@ from coefficients.interference_coefficients.unpolarized.unpolarized_S0p1A import
 
 from coefficients.interference_coefficients.unpolarized.unpolarized_S0p2 import calculate_s_2_zero_plus_unpolarized
 from coefficients.interference_coefficients.unpolarized.unpolarized_S0p2V import calculate_s_2_zero_plus_unpolarized_V
+from coefficients.interference_coefficients.unpolarized.unpolarized_S0p2A import calculate_s_2_zero_plus_unpolarized_A
 
 _TEST_LEPTON_POLARIZATION = 1.0
 _TEST_TARGET_POLARIZATION = 1.0
@@ -344,3 +345,32 @@ class TestSUnpolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
             0.0068826905144446)
+        
+    def test_calculate_s_2_zero_plus_unpolarized_A(self):
+        """
+        # Title: `test_calculate_s_2_zero_plus_unpolarized_A`
+
+        ## Description: Test the function `calculate_s_2_zero_plus_unpolarized_A`.
+        Remember, that function corresponds to the BKM10 coefficient called $S_{0+}^{unp, A}(n = 2)$.
+        We call it "Sunp0PA2" for S (series) unp (unpolarized [target]) A (axial vector) 0P (0+) 2 (n = 2).
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_s_2_zero_plus_unpolarized_A(
+                _TEST_LEPTON_POLARIZATION,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SHORTHAND_K,
+                _TEST_VERBOSE), 
+            0.013733803057501)
