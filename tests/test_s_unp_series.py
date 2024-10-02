@@ -2,6 +2,7 @@ import unittest
 
 from coefficients.interference_coefficients.unpolarized.unpolarized_Spp1 import calculate_s_1_plus_plus_unpolarized
 from coefficients.interference_coefficients.unpolarized.unpolarized_Spp1V import calculate_s_1_plus_plus_unpolarized_V
+from coefficients.interference_coefficients.unpolarized.unpolarized_Spp1A import calculate_s_1_plus_plus_unpolarized_A
 
 _TEST_LEPTON_POLARIZATION = 1.0
 _TEST_TARGET_POLARIZATION = 1.0
@@ -76,13 +77,13 @@ class TestSUnpolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_VERBOSE), 
             -0.00028400148536359)
         
-    def test_calculate_c_0_plus_plus_unpolarized_A(self):
+    def test_calculate_s_1_plus_plus_unpolarized_A(self):
         """
-        # Title: `test_calculate_c_0_plus_plus_unpolarized_A`
+        # Title: `test_calculate_s_1_plus_plus_unpolarized_A`
 
-        ## Description: Test the function `calculate_c_0_plus_plus_unpolarized_A`.
-        Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{unp}(n = 0)$.
-        We call it "CunpVPP0" for C (series) unp (unpolarized [target]) A (axial vector) PP (++) 0 (n = 0).
+        ## Description: Test the function `calculate_s_1_plus_plus_unpolarized_A`.
+        Remember, that function corresponds to the BKM10 coefficient called $S_{++}^{unp, A}(n = 1)$.
+        We call it "SunpAPP0" for S (series) unp (unpolarized [target]) A (axial vector) PP (++) 1 (n = 1).
 
         ## Arguments:
         None
@@ -94,12 +95,14 @@ class TestSUnpolarizedSeriesCoefficients(unittest.TestCase):
         None
         """
         self.assertAlmostEqual(
-            calculate_c_0_plus_plus_unpolarized_A(
+            calculate_s_1_plus_plus_unpolarized_A(
+                _TEST_LEPTON_POLARIZATION,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
                 _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
                 _TEST_EPSILON,
                 _TEST_LEPTON_ENERGY_FRACTION,
-                _TEST_K_TILDE,
+                _TEST_T_PRIME,
+                _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            -0.66566222115038)
+            -0.038359151179004)
