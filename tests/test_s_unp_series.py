@@ -341,5 +341,6 @@ class TestSUnpolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
                 _TEST_EPSILON,
                 _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
             0.0068826905144446)
