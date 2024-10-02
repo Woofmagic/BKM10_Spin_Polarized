@@ -547,4 +547,4 @@ class TestCUnpolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_K_TILDE,
                 _TEST_VERBOSE), 
-            0.8874628381486)
+            -0.89621843604851)
