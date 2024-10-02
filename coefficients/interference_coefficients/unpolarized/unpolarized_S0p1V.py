@@ -10,7 +10,6 @@ def calculate_s_1_zero_plus_unpolarized_V(
     squared_hadronic_momentum_transfer_t: float,
     epsilon: float,
     lepton_energy_fraction_y: float, 
-    t_prime: float,
     verbose: bool = False) -> float:
     """
     """
