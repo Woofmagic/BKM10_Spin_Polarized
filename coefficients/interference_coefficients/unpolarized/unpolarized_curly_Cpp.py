@@ -28,7 +28,6 @@ def calculate_curly_C_plus_plus_unpolarized_interference(
     epsilon: float,
     lepton_energy_fraction_y: float,
     t_prime: float,
-    k_tilde: float,
     shorthand_k: float,
     Dirac_form_factor_F1: float,
     Pauli_form_factor_F2: float,
