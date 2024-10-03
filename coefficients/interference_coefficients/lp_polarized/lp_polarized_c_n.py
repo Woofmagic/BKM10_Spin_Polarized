@@ -120,8 +120,6 @@ def calculate_c_0_interference_coefficient(
             # (3): Calculate the curly C_{++} contribution - requires both n and the CFFs:
             curly_c_plus_plus = calculate_curly_C_plus_plus_unpolarized_interference(
                 n_number,
-                lepton_helicity,
-                target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
                 squared_hadronic_momentum_transfer_t,
@@ -135,7 +133,6 @@ def calculate_c_0_interference_coefficient(
                 compton_form_factor_h,
                 compton_form_factor_h_tilde,
                 compton_form_factor_e,
-                compton_form_factor_e_tilde,
                 verbose)
 
 
