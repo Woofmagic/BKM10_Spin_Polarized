@@ -137,7 +137,7 @@ def calculate_c_0_interference_coefficient(
 
 
             # (4): Calculate the curly C_{0+} contribution - requires both n and the CFFs:
-            curly_c_zero_plus = calculate_curly_C_zero_plus_longitudinally_polarized_interference(
+            curly_c_zero_plus = calculate_curly_C_zero_plus_unpolarized_interference(
                 n_number,
                 lepton_helicity,
                 target_polarization,
