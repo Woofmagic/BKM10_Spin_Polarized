@@ -14,6 +14,8 @@ from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp3 import 
 from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp3V import calculate_c_3_plus_plus_unpolarized_V
 from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp3A import calculate_c_3_plus_plus_unpolarized_A
 
+from coefficients.interference_coefficients.unpolarized.unpolarized_curly_Cpp import calculate_curly_C_plus_plus_unpolarized_interference
+
 from coefficients.interference_coefficients.unpolarized.unpolarized_C0p0 import calculate_c_0_zero_plus_unpolarized
 from coefficients.interference_coefficients.unpolarized.unpolarized_C0p0V import calculate_c_0_zero_plus_unpolarized_V
 from coefficients.interference_coefficients.unpolarized.unpolarized_C0p0A import calculate_c_0_zero_plus_unpolarized_A
@@ -39,7 +41,6 @@ from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p2 impor
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_Cmp2 import calculate_c_2_minus_plus_longitudinally_polarized
 
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_Cpp import calculate_curly_C_plus_plus_longitudinally_polarized_interference
-
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_C0p import calculate_curly_C_zero_plus_longitudinally_polarized_interference
 
 from form_factors.effective_cffs import compute_cff_effective
@@ -117,7 +118,7 @@ def calculate_c_0_interference_coefficient(
                 verbose)
 
             # (3): Calculate the curly C_{++} contribution - requires both n and the CFFs:
-            curly_c_plus_plus = calculate_curly_C_plus_plus_longitudinally_polarized_interference(
+            curly_c_plus_plus = calculate_curly_C_plus_plus_unpolarized_interference(
                 n_number,
                 lepton_helicity,
                 target_polarization,
