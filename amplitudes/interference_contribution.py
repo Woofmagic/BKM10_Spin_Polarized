@@ -260,6 +260,7 @@ def calculate_interference_contribution_longitudinally_polarized(
         # s_1_I = 0.
         s_1_I = calculate_s_1_interference_coefficient(
             1,
+            lepton_helicity,
             target_polarization,
             squared_Q_momentum_transfer,
             x_Bjorken,
@@ -284,6 +285,7 @@ def calculate_interference_contribution_longitudinally_polarized(
         # s_2_I = 0.
         s_2_I = calculate_s_2_interference_coefficient(
             2,
+            lepton_helicity,
             target_polarization,
             squared_Q_momentum_transfer,
             x_Bjorken,
@@ -308,6 +310,7 @@ def calculate_interference_contribution_longitudinally_polarized(
         # s_3_I = 0.
         s_3_I = calculate_s_3_interference_coefficient(
             3,
+            lepton_helicity,
             target_polarization,
             squared_Q_momentum_transfer,
             x_Bjorken,
