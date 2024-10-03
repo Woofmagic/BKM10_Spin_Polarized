@@ -75,6 +75,8 @@ def calculate_curly_S_plus_plus_unpolarized_interference(
             # (4.3): Calculate the S_{++}^{A}(0) contribution
             s_A_plus_plus_contribution = 0.
 
+            curly_S_longitudinally_polarized_interference = 0.0
+
         elif n_number == 1:
 
             # (4.1): Calculate the S_{++}(1) contribution
@@ -110,6 +112,8 @@ def calculate_curly_S_plus_plus_unpolarized_interference(
                 t_prime,
                 shorthand_k,
                 verbose)
+            
+            curly_S_longitudinally_polarized_interference = curly_C_longitudinally_polarized_interference + s_V_plus_plus_contribution * curly_C_V_longitudinally_polarized_interference / s_plus_plus_contribution + s_A_plus_plus_contribution * curly_C_A_longitudinally_polarized_interference / s_plus_plus_contribution
 
         elif n_number == 2:
 
@@ -143,6 +147,8 @@ def calculate_curly_S_plus_plus_unpolarized_interference(
                 lepton_energy_fraction_y,
                 t_prime,
                 verbose)
+            
+            curly_S_longitudinally_polarized_interference = curly_C_longitudinally_polarized_interference + s_V_plus_plus_contribution * curly_C_V_longitudinally_polarized_interference / s_plus_plus_contribution + s_A_plus_plus_contribution * curly_C_A_longitudinally_polarized_interference / s_plus_plus_contribution
 
         elif n_number == 3:
 
@@ -155,8 +161,7 @@ def calculate_curly_S_plus_plus_unpolarized_interference(
             # (4.3): Calculate the S_{++}^{A}(3) contribution
             s_A_plus_plus_contribution = 0.
 
-        # (6): 
-        curly_S_longitudinally_polarized_interference = curly_C_longitudinally_polarized_interference + s_V_plus_plus_contribution * curly_C_V_longitudinally_polarized_interference / s_plus_plus_contribution + s_A_plus_plus_contribution * curly_C_A_longitudinally_polarized_interference / s_plus_plus_contribution
+            curly_S_longitudinally_polarized_interference = 0.
 
         # (6.1): If verbose, print the calculation:
         if verbose:

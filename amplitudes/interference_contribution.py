@@ -151,8 +151,6 @@ def calculate_interference_contribution_longitudinally_polarized(
 
     try:
 
-        print('fick')
-
         # (1): Calculate the prefactor:
         prefactor = 1. / (x_Bjorken * lepton_energy_fraction_y**3 * squared_hadronic_momentum_transfer_t * lepton_propagator_p1 * lepton_propagator_p2)
 
@@ -178,9 +176,7 @@ def calculate_interference_contribution_longitudinally_polarized(
             compton_form_factor_e,
             compton_form_factor_e_tilde,
             verbose)
-        
-        print('fick')
-        
+
         # (3): Calculate c_{1}^{I}:
         # c_1_I = 0.
         c_1_I = calculate_c_1_interference_coefficient(
@@ -204,8 +200,6 @@ def calculate_interference_contribution_longitudinally_polarized(
             compton_form_factor_e_tilde,
             verbose)
         
-        print('fick')
-        
         # (4): Calculate c_{2}^{I}:
         # c_2_I = 0.
         c_2_I = calculate_c_2_interference_coefficient(
@@ -228,9 +222,7 @@ def calculate_interference_contribution_longitudinally_polarized(
             compton_form_factor_e,
             compton_form_factor_e_tilde,
             verbose)
-        
-        print('fick')
-        
+
         # (5): Calculate c_{2}^{I}:
         # c_3_I = 0.
         c_3_I = calculate_c_3_interference_coefficient(
@@ -253,8 +245,6 @@ def calculate_interference_contribution_longitudinally_polarized(
             compton_form_factor_e,
             compton_form_factor_e_tilde,
             verbose)
-        
-        print('fick')
 
         # (6): Calculate s_{1}^{I}:
         # s_1_I = 0.
@@ -279,8 +269,6 @@ def calculate_interference_contribution_longitudinally_polarized(
             compton_form_factor_e_tilde,
             verbose)
         
-        print('fick')
-        
         # (7): Calculate s_{2}^{I}:
         # s_2_I = 0.
         s_2_I = calculate_s_2_interference_coefficient(
@@ -303,9 +291,7 @@ def calculate_interference_contribution_longitudinally_polarized(
             compton_form_factor_e,
             compton_form_factor_e_tilde,
             verbose)
-        
-        print('fick')
-        
+
         # (8): Calculate s_{3}^{I}:
         # s_3_I = 0.
         s_3_I = calculate_s_3_interference_coefficient(
@@ -329,8 +315,6 @@ def calculate_interference_contribution_longitudinally_polarized(
             compton_form_factor_e_tilde,
             verbose)
         
-        print('fick')
-        
         # (1): Figure instance:
         figure = plt.figure(figsize = (18, 6))
 
@@ -341,12 +325,13 @@ def calculate_interference_contribution_longitudinally_polarized(
             axes_object,
             grid = True)
         
-        print(c_0_I[0])
+        print(c_0_I)
         print(c_1_I[0])
         print(c_2_I[0])
+        print(c_3_I[0])
         print(s_1_I[0])
         print(s_2_I[0])
-        print(s_3_I[0])
+        print(s_3_I)
         
         customized_plot.add_line_plot(
             x_data = azimuthal_phi,
@@ -362,21 +347,25 @@ def calculate_interference_contribution_longitudinally_polarized(
             color = 'yellow')
         customized_plot.add_line_plot(
             x_data = azimuthal_phi,
-            y_data = s_1_I * np.sin(np.pi - 1. * (convert_degrees_to_radians(azimuthal_phi))),
+            y_data = c_3_I * np.cos(np.pi - 2. * (convert_degrees_to_radians(azimuthal_phi))),
             color = 'green')
         customized_plot.add_line_plot(
             x_data = azimuthal_phi,
-            y_data = s_2_I * np.sin(np.pi - 2. * (convert_degrees_to_radians(azimuthal_phi))),
+            y_data = s_1_I * np.sin(np.pi - 1. * (convert_degrees_to_radians(azimuthal_phi))),
             color = 'blue')
         customized_plot.add_line_plot(
             x_data = azimuthal_phi,
-            y_data = s_3_I * np.sin(np.pi - 3. * (convert_degrees_to_radians(azimuthal_phi))),
+            y_data = s_2_I * np.sin(np.pi - 2. * (convert_degrees_to_radians(azimuthal_phi))),
             color = 'purple')
+        customized_plot.add_line_plot(
+            x_data = azimuthal_phi,
+            y_data = s_3_I * np.sin(np.pi - 3. * (convert_degrees_to_radians(azimuthal_phi))),
+            color = 'PINK')
         
         plt.show()
 
         # (9): Calculate the interference contribution:
-        interference_contribution = prefactor * (c_0_I + c_1_I * np.cos(np.pi - 1. * (convert_degrees_to_radians(azimuthal_phi))) + c_2_I * np.cos(np.pi - 2. * (convert_degrees_to_radians(azimuthal_phi))) + s_1_I * np.sin(np.pi - 1. * (convert_degrees_to_radians(azimuthal_phi))) + s_2_I * np.sin(np.pi - 2. * (convert_degrees_to_radians(azimuthal_phi))) + s_3_I * np.sin(np.pi - 3. * (convert_degrees_to_radians(azimuthal_phi))))
+        interference_contribution = prefactor * (c_0_I + c_1_I * np.cos(np.pi - 1. * (convert_degrees_to_radians(azimuthal_phi))) + c_2_I * np.cos(np.pi - 2. * (convert_degrees_to_radians(azimuthal_phi))) + c_3_I * np.cos(np.pi - 3. * (convert_degrees_to_radians(azimuthal_phi))) + s_1_I * np.sin(np.pi - 1. * (convert_degrees_to_radians(azimuthal_phi))) + s_2_I * np.sin(np.pi - 2. * (convert_degrees_to_radians(azimuthal_phi))) + s_3_I * np.sin(np.pi - 3. * (convert_degrees_to_radians(azimuthal_phi))))
 
         # (9.1): If verbose, print the calculation:
         if verbose:
