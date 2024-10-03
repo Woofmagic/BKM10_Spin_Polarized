@@ -18,13 +18,12 @@ from coefficients.interference_coefficients.unpolarized.unpolarized_curly_CA imp
 
 def calculate_curly_C_zero_plus_unpolarized_interference(
     n_number: int,
-    lepton_helicity: float,
-    target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float,
     squared_hadronic_momentum_transfer_t: float,
     epsilon: float,
     lepton_energy_fraction_y: float,
+    t_prime: float,
     k_tilde: float,
     shorthand_k: float,
     Dirac_form_factor_F1: float,
@@ -32,7 +31,6 @@ def calculate_curly_C_zero_plus_unpolarized_interference(
     compton_form_factor_h_eff: float,
     compton_form_factor_h_tilde_eff: float,
     compton_form_factor_e_eff: float,
-    compton_form_factor_e_tilde_eff: float,
     verbose: bool = False) -> float:
 
     try:
@@ -78,8 +76,6 @@ def calculate_curly_C_zero_plus_unpolarized_interference(
 
             # (5.1): Calculate the C_{0+}(0) contribution
             c_zero_plus_contribution = calculate_c_0_zero_plus_unpolarized(
-                lepton_helicity,
-                target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
                 squared_hadronic_momentum_transfer_t,
@@ -90,8 +86,6 @@ def calculate_curly_C_zero_plus_unpolarized_interference(
 
             # (5.2): Calculate the C_{0+}^{V}(0) contribution
             c_V_zero_plus_contribution = calculate_c_0_zero_plus_unpolarized_V(
-                lepton_helicity,
-                target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
                 squared_hadronic_momentum_transfer_t,
@@ -102,8 +96,6 @@ def calculate_curly_C_zero_plus_unpolarized_interference(
 
             # (5.3): Calculate the C_{0+}^{A}(0) contribution
             c_A_zero_plus_contribution = calculate_c_0_zero_plus_unpolarized_A(
-                lepton_helicity,
-                target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
                 squared_hadronic_momentum_transfer_t,
@@ -121,20 +113,18 @@ def calculate_curly_C_zero_plus_unpolarized_interference(
 
             # (5.1): Calculate the C_{0+}(1) contribution
             c_zero_plus_contribution = calculate_c_1_zero_plus_unpolarized(
-                lepton_helicity,
-                target_polarization,
                 squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
                 epsilon,
                 lepton_energy_fraction_y,
-                k_tilde,
-                shorthand_k,
+                t_prime,
                 verbose)
 
             # (5.2): Calculate the C_{0+}^{V}(1) contribution
             c_V_zero_plus_contribution = calculate_c_1_zero_plus_unpolarized_V(
-                lepton_helicity,
-                target_polarization,
                 squared_Q_momentum_transfer,
+                x_Bjorken,
                 squared_hadronic_momentum_transfer_t,
                 epsilon,
                 lepton_energy_fraction_y,
@@ -142,7 +132,14 @@ def calculate_curly_C_zero_plus_unpolarized_interference(
                 verbose)
 
             # (5.3): Calculate the C_{0+}^{A}(1) contribution
-            c_A_zero_plus_contribution = 0
+            c_A_zero_plus_contribution = calculate_c_1_zero_plus_unpolarized_A(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                k_tilde,
+                verbose)
 
             # (6): Calculate the curly C0+ coefficient:
             curly_C_zero_plus_unpolarized_interference = prefactor * (curly_C_unpolarized_interference
@@ -153,8 +150,6 @@ def calculate_curly_C_zero_plus_unpolarized_interference(
 
             # (5.1): Calculate the C_{0+}(2) contribution
             c_zero_plus_contribution = calculate_c_2_zero_plus_unpolarized(
-                lepton_helicity,
-                target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
                 squared_hadronic_momentum_transfer_t,
@@ -165,8 +160,6 @@ def calculate_curly_C_zero_plus_unpolarized_interference(
 
             # (5.2): Calculate the C_{0+}^{V}(2) contribution
             c_V_zero_plus_contribution = calculate_c_2_zero_plus_unpolarized_V(
-                lepton_helicity,
-                target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
                 squared_hadronic_momentum_transfer_t,
@@ -177,13 +170,12 @@ def calculate_curly_C_zero_plus_unpolarized_interference(
 
             # (5.3): Calculate the C_{0+}^{A}(2) contribution
             c_A_zero_plus_contribution = calculate_c_2_zero_plus_unpolarized_A(
-                lepton_helicity,
-                target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
                 squared_hadronic_momentum_transfer_t,
                 epsilon,
                 lepton_energy_fraction_y,
+                t_prime,
                 shorthand_k,
                 verbose)
 
