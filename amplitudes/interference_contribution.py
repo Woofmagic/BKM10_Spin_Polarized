@@ -19,6 +19,9 @@ from coefficients.interference_coefficients.lp_polarized.lp_polarized_c_n import
 # Coefficient | c_{2}^{I}
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_c_n import calculate_c_2_interference_coefficient
 
+# Coefficient | c_{3}^{I}
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_c_n import calculate_c_3_interference_coefficient
+
 # Coefficient | s_{1}^{I}
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_1_interference_coefficient
 
@@ -146,9 +149,9 @@ def calculate_interference_contribution_longitudinally_polarized(
     ## Examples:
     """
 
-    print(f"> Lepton jelicity is: {lepton_helicity}")
-
     try:
+
+        print('fick')
 
         # (1): Calculate the prefactor:
         prefactor = 1. / (x_Bjorken * lepton_energy_fraction_y**3 * squared_hadronic_momentum_transfer_t * lepton_propagator_p1 * lepton_propagator_p2)
@@ -176,6 +179,8 @@ def calculate_interference_contribution_longitudinally_polarized(
             compton_form_factor_e_tilde,
             verbose)
         
+        print('fick')
+        
         # (3): Calculate c_{1}^{I}:
         # c_1_I = 0.
         c_1_I = calculate_c_1_interference_coefficient(
@@ -199,6 +204,8 @@ def calculate_interference_contribution_longitudinally_polarized(
             compton_form_factor_e_tilde,
             verbose)
         
+        print('fick')
+        
         # (4): Calculate c_{2}^{I}:
         # c_2_I = 0.
         c_2_I = calculate_c_2_interference_coefficient(
@@ -221,6 +228,33 @@ def calculate_interference_contribution_longitudinally_polarized(
             compton_form_factor_e,
             compton_form_factor_e_tilde,
             verbose)
+        
+        print('fick')
+        
+        # (5): Calculate c_{2}^{I}:
+        # c_3_I = 0.
+        c_3_I = calculate_c_3_interference_coefficient(
+            3,
+            lepton_helicity,
+            target_polarization,
+            squared_Q_momentum_transfer,
+            x_Bjorken,
+            squared_hadronic_momentum_transfer_t,
+            epsilon,
+            lepton_energy_fraction_y,
+            skewness_parameter,
+            t_prime,
+            k_tilde,
+            shorthand_k,
+            Dirac_form_factor_F1,
+            Pauli_form_factor_F2,
+            compton_form_factor_h,
+            compton_form_factor_h_tilde,
+            compton_form_factor_e,
+            compton_form_factor_e_tilde,
+            verbose)
+        
+        print('fick')
 
         # (6): Calculate s_{1}^{I}:
         # s_1_I = 0.
@@ -244,6 +278,8 @@ def calculate_interference_contribution_longitudinally_polarized(
             compton_form_factor_e_tilde,
             verbose)
         
+        print('fick')
+        
         # (7): Calculate s_{2}^{I}:
         # s_2_I = 0.
         s_2_I = calculate_s_2_interference_coefficient(
@@ -266,6 +302,8 @@ def calculate_interference_contribution_longitudinally_polarized(
             compton_form_factor_e_tilde,
             verbose)
         
+        print('fick')
+        
         # (8): Calculate s_{3}^{I}:
         # s_3_I = 0.
         s_3_I = calculate_s_3_interference_coefficient(
@@ -287,6 +325,8 @@ def calculate_interference_contribution_longitudinally_polarized(
             compton_form_factor_e,
             compton_form_factor_e_tilde,
             verbose)
+        
+        print('fick')
         
         # (1): Figure instance:
         figure = plt.figure(figsize = (18, 6))

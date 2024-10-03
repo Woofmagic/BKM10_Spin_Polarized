@@ -79,8 +79,6 @@ def calculate_c_0_interference_coefficient(
 
             # (1): We compute the first part of the term: C_{++}(n = 0):
             c_plus_plus = calculate_c_0_plus_plus_unpolarized(
-                lepton_helicity,
-                target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
                 squared_hadronic_momentum_transfer_t,
@@ -91,8 +89,6 @@ def calculate_c_0_interference_coefficient(
 
             # (2): The second part of the term is C_{0+}(n = 0):
             c_zero_plus = calculate_c_0_zero_plus_unpolarized(
-                lepton_helicity,
-                target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
                 squared_hadronic_momentum_transfer_t,
@@ -122,8 +118,6 @@ def calculate_c_0_interference_coefficient(
             # (4): Calculate the curly C_{0+} contribution - requires both n and the CFFs:
             curly_c_zero_plus = calculate_curly_C_zero_plus_unpolarized_interference(
                 n_number,
-                lepton_helicity,
-                target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
                 squared_hadronic_momentum_transfer_t,
