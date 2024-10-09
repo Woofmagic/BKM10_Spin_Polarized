@@ -34,30 +34,29 @@ def plot_cross_section(
 
 def plot_coefficient_contributions():
 
-    pass
     # (1): Figure instance:
-    # figure = plt.figure(figsize = (18, 6))
+    figure = plt.figure(figsize = (18, 6))
 
-    # # (2): Add an Axes Object:
-    # axes_object = figure.add_subplot(111)
+    # (2): Add an Axes Object:
+    axes_object = figure.add_subplot(111)
 
-    # customized_plot = PlotCustomizer(
-    #     axes_object,
-    #     title = r"Coefficient Contributions",
-    #     xlabel = r"Fuck",
-    #     ylabel = r"Coefficient Value",
-    #     grid = True)
+    customized_plot = PlotCustomizer(
+        axes_object,
+        title = r"Coefficient Contributions",
+        xlabel = r"Fuck",
+        ylabel = r"Coefficient Value",
+        grid = True)
     
-    # coefficient_heights = np.array([
+    coefficient_heights = np.array([
 
-    # ])
+    ])
     
-    # customized_plot.add_bar_plot(
-    #     x_data = ,
-    #     y_data_heights = ,
-    #     color = 'blue')
+    customized_plot.add_bar_plot(
+        x_data = 0.,
+        y_data_heights = 0.,
+        color = 'blue')
     
-    # plt.show()
+    plt.show()
 
     # return customized_plot
 

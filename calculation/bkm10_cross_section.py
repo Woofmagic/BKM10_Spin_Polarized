@@ -75,7 +75,7 @@ from amplitudes.bh_squared_contribution import calculate_bh_amplitude_squared
 from amplitudes.dvcs_squared_contribution import calculate_dvcs_amplitude_squared_longitudinally_polarized
 
 # Amplitude Contributions | Interference | I
-from amplitudes.interference_contribution import calculate_interference_contribution_longitudinally_polarized
+from amplitudes.interference_contribution import calculate_interference_contribution
 
 import numpy as np
 
@@ -295,67 +295,67 @@ def calculate_bkm10_cross_section(
         #     verbose)
 
         # (17): Compute the DVCS Amplitude Squared
-        dvcs_amplitude_squared = 0.
+        # dvcs_amplitude_squared = 0.
 
-        # if lepton_helicity == 0.0: 
+        if lepton_helicity == 0.0: 
 
-        #     dvcs_amplitude_squared = 0.5 * (calculate_dvcs_amplitude_squared_longitudinally_polarized(
-        #     1.0,
-        #     target_polarization,
-        #     squared_Q_momentum_transfer,
-        #     x_Bjorken,
-        #     squared_hadronic_momentum_transfer_t,
-        #     azimuthal_phi,
-        #     epsilon,
-        #     lepton_energy_fraction_y,
-        #     skewness_parameter,
-        #     shorthand_k,
-        #     compton_form_factor_h,
-        #     compton_form_factor_h_tilde,
-        #     compton_form_factor_e,
-        #     compton_form_factor_e_tilde,
-        #     verbose) + calculate_dvcs_amplitude_squared_longitudinally_polarized(
-        #     -1.0,
-        #     target_polarization,
-        #     squared_Q_momentum_transfer,
-        #     x_Bjorken,
-        #     squared_hadronic_momentum_transfer_t,
-        #     azimuthal_phi,
-        #     epsilon,
-        #     lepton_energy_fraction_y,
-        #     skewness_parameter,
-        #     shorthand_k,
-        #     compton_form_factor_h,
-        #     compton_form_factor_h_tilde,
-        #     compton_form_factor_e,
-        #     compton_form_factor_e_tilde,
-        #     verbose))
+            dvcs_amplitude_squared = 0.5 * (calculate_dvcs_amplitude_squared_longitudinally_polarized(
+            1.0,
+            target_polarization,
+            squared_Q_momentum_transfer,
+            x_Bjorken,
+            squared_hadronic_momentum_transfer_t,
+            azimuthal_phi,
+            epsilon,
+            lepton_energy_fraction_y,
+            skewness_parameter,
+            shorthand_k,
+            compton_form_factor_h,
+            compton_form_factor_h_tilde,
+            compton_form_factor_e,
+            compton_form_factor_e_tilde,
+            verbose) + calculate_dvcs_amplitude_squared_longitudinally_polarized(
+            -1.0,
+            target_polarization,
+            squared_Q_momentum_transfer,
+            x_Bjorken,
+            squared_hadronic_momentum_transfer_t,
+            azimuthal_phi,
+            epsilon,
+            lepton_energy_fraction_y,
+            skewness_parameter,
+            shorthand_k,
+            compton_form_factor_h,
+            compton_form_factor_h_tilde,
+            compton_form_factor_e,
+            compton_form_factor_e_tilde,
+            verbose))
 
-        # else:
+        else:
 
-        #     dvcs_amplitude_squared = calculate_dvcs_amplitude_squared_longitudinally_polarized(
-        #     lepton_helicity,
-        #     target_polarization,
-        #     squared_Q_momentum_transfer,
-        #     x_Bjorken,
-        #     squared_hadronic_momentum_transfer_t,
-        #     azimuthal_phi,
-        #     epsilon,
-        #     lepton_energy_fraction_y,
-        #     skewness_parameter,
-        #     shorthand_k,
-        #     compton_form_factor_h,
-        #     compton_form_factor_h_tilde,
-        #     compton_form_factor_e,
-        #     compton_form_factor_e_tilde,
-        #     verbose)
+            dvcs_amplitude_squared = calculate_dvcs_amplitude_squared_longitudinally_polarized(
+            lepton_helicity,
+            target_polarization,
+            squared_Q_momentum_transfer,
+            x_Bjorken,
+            squared_hadronic_momentum_transfer_t,
+            azimuthal_phi,
+            epsilon,
+            lepton_energy_fraction_y,
+            skewness_parameter,
+            shorthand_k,
+            compton_form_factor_h,
+            compton_form_factor_h_tilde,
+            compton_form_factor_e,
+            compton_form_factor_e_tilde,
+            verbose)
 
         # (18): Compute the BH Amplitude Squared
         interference_contribution = 0.
         
         if lepton_helicity == 0.0: 
 
-            interference_contribution = (calculate_interference_contribution_longitudinally_polarized(
+            interference_contribution = (calculate_interference_contribution(
                 1.0,
                 target_polarization,
                 squared_Q_momentum_transfer,
@@ -376,7 +376,7 @@ def calculate_bkm10_cross_section(
                 compton_form_factor_h_tilde,
                 compton_form_factor_e,
                 compton_form_factor_e_tilde,
-                verbose) + calculate_interference_contribution_longitudinally_polarized(
+                verbose) + calculate_interference_contribution(
                 -1.0,
                 target_polarization,
                 squared_Q_momentum_transfer,
@@ -401,7 +401,7 @@ def calculate_bkm10_cross_section(
 
         else:
 
-            interference_contribution = calculate_interference_contribution_longitudinally_polarized(
+            interference_contribution = calculate_interference_contribution(
                 lepton_helicity,
                 target_polarization,
                 squared_Q_momentum_transfer,
@@ -423,6 +423,10 @@ def calculate_bkm10_cross_section(
                 compton_form_factor_e,
                 compton_form_factor_e_tilde,
                 verbose)
+            
+        print(f"> BH was: {bh_amplitude_squared}")
+        print(f"> DVCS was: {dvcs_amplitude_squared}")
+        print(f"> I was: {interference_contribution}")
 
         # (18): Calculate the total cross section
         bkm10_cross_section = cross_section_prefactor * (bh_amplitude_squared + dvcs_amplitude_squared + interference_contribution)

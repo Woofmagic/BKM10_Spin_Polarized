@@ -31,7 +31,7 @@ from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import
 # Coefficient | s_{3}^{I}
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_3_interference_coefficient
 
-def calculate_interference_contribution_longitudinally_polarized(
+def calculate_interference_contribution(
     lepton_helicity: float,
     target_polarization: float,
     squared_Q_momentum_transfer: float,
@@ -54,7 +54,7 @@ def calculate_interference_contribution_longitudinally_polarized(
     compton_form_factor_e_tilde: complex,
     verbose: bool = False) -> float:
     """
-    # Title: `calculate_interference_contribution_longitudinally_polarized`
+    # Title: `calculate_interference_contribution`
 
     ## Description:
     We calculated the BKM10-predicted contribution of the interference between
