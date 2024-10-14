@@ -51,43 +51,28 @@ def calculate_coefficients_independently(
     compton_form_factor_e_tilde: complex,
     verbose):
     
-    c_0_plus_plus = calculate_c_0_plus_plus_unpolarized(
-                squared_Q_momentum_transfer,
-                x_Bjorken,
-                squared_hadronic_momentum_transfer_t,
-                epsilon,
-                lepton_energy_fraction_y,
-                k_tilde,
-                verbose)
+    c_0_plus_plus = calculate_c_0_plus_plus_unpolarized(squared_Q_momentum_transfer,x_Bjorken,squared_hadronic_momentum_transfer_t,epsilon,lepton_energy_fraction_y,k_tilde,verbose)
+    c_1_plus_plus = calculate_c_1_plus_plus_unpolarized(squared_Q_momentum_transfer,x_Bjorken,squared_hadronic_momentum_transfer_t,epsilon,lepton_energy_fraction_y,shorthand_k,verbose)
+    c_2_plus_plus = calculate_c_2_plus_plus_unpolarized(squared_Q_momentum_transfer,x_Bjorken,squared_hadronic_momentum_transfer_t,epsilon,lepton_energy_fraction_y,t_prime,k_tilde,verbose)
+    c_3_plus_plus = calculate_c_3_plus_plus_unpolarized(squared_Q_momentum_transfer,x_Bjorken,squared_hadronic_momentum_transfer_t,epsilon,lepton_energy_fraction_y,shorthand_k,verbose)
     
-    c_1_plus_plus = calculate_c_1_plus_plus_unpolarized(
-                squared_Q_momentum_transfer,
-                x_Bjorken,
-                squared_hadronic_momentum_transfer_t,
-                epsilon,
-                lepton_energy_fraction_y,
-                shorthand_k,
-                verbose)
+    c_0_V_plus_plus = calculate_c_0_plus_plus_unpolarized_V(squared_Q_momentum_transfer,x_Bjorken,squared_hadronic_momentum_transfer_t,epsilon,lepton_energy_fraction_y,k_tilde,verbose)
+    c_1_V_plus_plus = calculate_c_1_plus_plus_unpolarized_V(squared_Q_momentum_transfer,x_Bjorken,squared_hadronic_momentum_transfer_t,epsilon,lepton_energy_fraction_y,t_prime,shorthand_k,verbose)
+    c_2_V_plus_plus = calculate_c_2_plus_plus_unpolarized_V(squared_Q_momentum_transfer,x_Bjorken,squared_hadronic_momentum_transfer_t,epsilon,lepton_energy_fraction_y,t_prime,k_tilde,verbose)
+    c_3_V_plus_plus = calculate_c_3_plus_plus_unpolarized_V(squared_Q_momentum_transfer,x_Bjorken,squared_hadronic_momentum_transfer_t,epsilon,lepton_energy_fraction_y,shorthand_k,verbose)
+
+    c_0_A_plus_plus = calculate_c_0_plus_plus_unpolarized_A(squared_Q_momentum_transfer,x_Bjorken,squared_hadronic_momentum_transfer_t,epsilon,lepton_energy_fraction_y,k_tilde,verbose)
+    c_1_A_plus_plus = calculate_c_1_plus_plus_unpolarized_A(squared_Q_momentum_transfer,x_Bjorken,squared_hadronic_momentum_transfer_t,epsilon,lepton_energy_fraction_y,t_prime,shorthand_k,verbose)
+    c_2_A_plus_plus = calculate_c_2_plus_plus_unpolarized_A(squared_Q_momentum_transfer,x_Bjorken,squared_hadronic_momentum_transfer_t,epsilon,lepton_energy_fraction_y,t_prime,k_tilde,verbose)
+    c_3_A_plus_plus = calculate_c_3_plus_plus_unpolarized_A(squared_Q_momentum_transfer,x_Bjorken,squared_hadronic_momentum_transfer_t,epsilon,lepton_energy_fraction_y,t_prime,shorthand_k,verbose)
+
+    c_0_zero_plus = calculate_c_0_zero_plus_unpolarized(squared_Q_momentum_transfer,x_Bjorken,squared_hadronic_momentum_transfer_t,epsilon,lepton_energy_fraction_y,shorthand_k,verbose)
+    c_1_zero_plus = calculate_c_1_zero_plus_unpolarized(squared_Q_momentum_transfer,x_Bjorken,squared_hadronic_momentum_transfer_t,epsilon,lepton_energy_fraction_y,t_prime,verbose)
+    c_2_zero_plus = calculate_c_2_zero_plus_unpolarized(squared_Q_momentum_transfer,x_Bjorken,squared_hadronic_momentum_transfer_t,epsilon,lepton_energy_fraction_y,shorthand_k,verbose)
+    c_3_zero_plus = 0.
+
     
-    c_2_plus_plus = calculate_c_2_plus_plus_unpolarized(
-                squared_Q_momentum_transfer,
-                x_Bjorken,
-                squared_hadronic_momentum_transfer_t,
-                epsilon,
-                lepton_energy_fraction_y,
-                t_prime,
-                k_tilde,
-                verbose)
-    
-    c_3_plus_plus = calculate_c_3_plus_plus_unpolarized(
-                squared_Q_momentum_transfer,
-                x_Bjorken,
-                squared_hadronic_momentum_transfer_t,
-                epsilon,
-                lepton_energy_fraction_y,
-                shorthand_k,
-                verbose)
-    
+
     results = np.array([c_0_plus_plus, c_1_plus_plus, c_2_plus_plus, c_3_plus_plus])
 
 fourier_coefficient_labels = {

@@ -727,7 +727,7 @@ def calculate_c_3_interference_coefficient(
             
         if target_polarization == 0.0:
 
-                # (1): We compute the first part of the term: C++, n = 2
+            # (1): We compute the first part of the term: C++, n = 2
             c_plus_plus = calculate_c_3_plus_plus_unpolarized(
                 squared_Q_momentum_transfer,
                 x_Bjorken,
