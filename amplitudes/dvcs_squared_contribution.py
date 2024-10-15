@@ -8,13 +8,23 @@ from utilities.mathematics.math_units import convert_degrees_to_radians
 
 from form_factors.effective_cffs import compute_cff_effective
 
-# c_{0}^{DVCS}
+# c_{0, unp}^{DVCS}
+from coefficients.dvcs_coefficients.unpolarized.bkm10.unpolarized_c0_dvcs import calculate_c_0_unpolarized_dvcs
+
+# c_{1, unp}^{DVCS}
+from coefficients.dvcs_coefficients.unpolarized.bkm10.unpolarized_c1_dvcs import calculate_c_1_unpolarized_dvcs
+
+# s_{1, unp}^{DVCS}
+from coefficients.dvcs_coefficients.unpolarized.bkm10.unpolarized_s1_dvcs import calculate_s_1_unpolarized_dvcs
+
+
+# c_{0, LP}^{DVCS}
 from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_c0_dvcs import calculate_c_0_longitudinally_polarized_dvcs
 
-# c_{1}^{DVCS}
+# c_{1, LP}^{DVCS}
 from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_c1_dvcs import calculate_c_1_longitudinally_polarized_dvcs
 
-# s_{1}^{DVCS}
+# s_{1, LP}^{DVCS}
 from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_s1_dvcs import calculate_s_1_longitudinally_polarized_dvcs
 
 def calculate_dvcs_amplitude_squared_longitudinally_polarized(
@@ -87,64 +97,127 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
         # (1): Calculate the Prefactor of the Denominator:
         denominator = lepton_energy_fraction_y**2 * squared_Q_momentum_transfer
 
-        # (2): Obtain the first coefficient in the sum:
-        coefficient_c0_DVCS = calculate_c_0_longitudinally_polarized_dvcs(
-            lepton_helicity,
-            target_polarization,
-            squared_Q_momentum_transfer,
-            x_Bjorken,
-            squared_hadronic_momentum_transfer_t,
-            epsilon,
-            lepton_energy_fraction_y,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
-            compton_form_factor_h.conjugate(),
-            compton_form_factor_h_tilde.conjugate(),
-            compton_form_factor_e.conjugate(),
-            compton_form_factor_e_tilde.conjugate(),
-            verbose)
+        if target_polarization == 0.0:
 
-        # (3): Obtain the first coefficient in the unevaluated sum (cosine n = 1 term):
-        coefficient_c1_DVCS = calculate_c_1_longitudinally_polarized_dvcs(
-            lepton_helicity,
-            target_polarization,
-            squared_Q_momentum_transfer,
-            x_Bjorken,
-            squared_hadronic_momentum_transfer_t,
-            epsilon,
-            lepton_energy_fraction_y,
-            shorthand_k,
-            compute_cff_effective(skewness_parameter, compton_form_factor_h),
-            compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde),
-            compton_form_factor_h.conjugate(),
-            compton_form_factor_h_tilde.conjugate(),
-            compton_form_factor_e.conjugate(),
-            compton_form_factor_e_tilde.conjugate(),
-            verbose
-        )
+                # (2): Obtain the first coefficient in the sum:
+            coefficient_c0_DVCS = calculate_c_0_unpolarized_dvcs(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                skewness_parameter,
+                shorthand_k,
+                lepton_energy_fraction_y,
+                compton_form_factor_h,
+                compton_form_factor_h_tilde,
+                compton_form_factor_e,
+                compton_form_factor_e_tilde,
+                compton_form_factor_h.conjugate(),
+                compton_form_factor_h_tilde.conjugate(),
+                compton_form_factor_e.conjugate(),
+                compton_form_factor_e_tilde.conjugate(),
+                verbose)
 
-        # (4): Obtain the first coefficient in the unevaluated sum (sin n = 1 term):
-        coefficient_s1_DVCS = calculate_s_1_longitudinally_polarized_dvcs(
-            target_polarization,
-            squared_Q_momentum_transfer,
-            x_Bjorken,
-            squared_hadronic_momentum_transfer_t,
-            epsilon,
-            lepton_energy_fraction_y,
-            shorthand_k,
-            compute_cff_effective(skewness_parameter, compton_form_factor_h),
-            compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde),
-            compton_form_factor_h.conjugate(),
-            compton_form_factor_h_tilde.conjugate(),
-            compton_form_factor_e.conjugate(),
-            compton_form_factor_e_tilde.conjugate(),
-            verbose)
+            # (3): Obtain the first coefficient in the unevaluated sum (cosine n = 1 term):
+            coefficient_c1_DVCS = calculate_c_1_unpolarized_dvcs(
+                lepton_helicity,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                compute_cff_effective(skewness_parameter, compton_form_factor_h),
+                compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
+                compute_cff_effective(skewness_parameter, compton_form_factor_e),
+                compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde),
+                compton_form_factor_h.conjugate(),
+                compton_form_factor_h_tilde.conjugate(),
+                compton_form_factor_e.conjugate(),
+                compton_form_factor_e_tilde.conjugate(),
+                verbose
+            )
+
+            # (4): Obtain the first coefficient in the unevaluated sum (sin n = 1 term):
+            coefficient_s1_DVCS = calculate_s_1_unpolarized_dvcs(
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                compute_cff_effective(skewness_parameter, compton_form_factor_h),
+                compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
+                compute_cff_effective(skewness_parameter, compton_form_factor_e),
+                compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde),
+                compton_form_factor_h.conjugate(),
+                compton_form_factor_h_tilde.conjugate(),
+                compton_form_factor_e.conjugate(),
+                compton_form_factor_e_tilde.conjugate(),
+                verbose)
+
+        elif target_polarization != 0.0:
+
+            # (2): Obtain the first coefficient in the sum:
+            coefficient_c0_DVCS = calculate_c_0_longitudinally_polarized_dvcs(
+                lepton_helicity,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                compton_form_factor_h,
+                compton_form_factor_h_tilde,
+                compton_form_factor_e,
+                compton_form_factor_e_tilde,
+                compton_form_factor_h.conjugate(),
+                compton_form_factor_h_tilde.conjugate(),
+                compton_form_factor_e.conjugate(),
+                compton_form_factor_e_tilde.conjugate(),
+                verbose)
+
+            # (3): Obtain the first coefficient in the unevaluated sum (cosine n = 1 term):
+            coefficient_c1_DVCS = calculate_c_1_longitudinally_polarized_dvcs(
+                lepton_helicity,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                compute_cff_effective(skewness_parameter, compton_form_factor_h),
+                compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
+                compute_cff_effective(skewness_parameter, compton_form_factor_e),
+                compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde),
+                compton_form_factor_h.conjugate(),
+                compton_form_factor_h_tilde.conjugate(),
+                compton_form_factor_e.conjugate(),
+                compton_form_factor_e_tilde.conjugate(),
+                verbose
+            )
+
+            # (4): Obtain the first coefficient in the unevaluated sum (sin n = 1 term):
+            coefficient_s1_DVCS = calculate_s_1_longitudinally_polarized_dvcs(
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                compute_cff_effective(skewness_parameter, compton_form_factor_h),
+                compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
+                compute_cff_effective(skewness_parameter, compton_form_factor_e),
+                compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde),
+                compton_form_factor_h.conjugate(),
+                compton_form_factor_h_tilde.conjugate(),
+                compton_form_factor_e.conjugate(),
+                compton_form_factor_e_tilde.conjugate(),
+                verbose)
 
         # (5): Compute the Fourier Mode Expansion:
         mode_expansion = coefficient_c0_DVCS + (coefficient_c1_DVCS * np.cos(np.pi - convert_degrees_to_radians(azimuthal_phi))) + (coefficient_s1_DVCS * np.sin(np.pi - convert_degrees_to_radians(azimuthal_phi)))

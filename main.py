@@ -56,7 +56,7 @@ def main(
     try:
         
         # (1): Construct the filepath to the data:
-        possible_data_path = f"{_DIRECTORY_DATA}\\{kinematics_dataframe_path}"
+        possible_data_path = f"{_DIRECTORY_DATA}/{kinematics_dataframe_path}"
 
         if verbose:
             print(f"> Possible data path is: {possible_data_path}")

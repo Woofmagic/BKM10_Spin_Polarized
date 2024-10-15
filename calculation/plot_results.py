@@ -16,11 +16,18 @@ def plot_cross_section(
     # (2): Add an Axes Object:
     axes_object = figure.add_subplot(111)
 
+    # customized_plot = PlotCustomizer(
+    #     axes_object,
+    #     title = r"$E = {} \text{{GeV}}, Q^{{2}} = {} \text{{GeV}}^{{2}}, t = {} \text{{GeV}}^{{2}}, x_{{B}}= {}$".format(value_of_beam_energy, value_of_Q_squared, value_of_hadron_recoil, value_of_x_Bjorken),
+    #     xlabel = r"$\phi \left[ \text{deg} \right]$",
+    #     ylabel = r"$d^{{4}} \sigma_{\text{LP}} \left[ \text{nb} / \text{GeV}^{4} \right]$",
+    #     grid = True)
+    
     customized_plot = PlotCustomizer(
         axes_object,
-        title = r"$E = {} \text{{GeV}}, Q^{{2}} = {} \text{{GeV}}^{{2}}, t = {} \text{{GeV}}^{{2}}, x_{{B}}= {}$".format(value_of_beam_energy, value_of_Q_squared, value_of_hadron_recoil, value_of_x_Bjorken),
-        xlabel = r"$\phi \left[ \text{deg} \right]$",
-        ylabel = r"$d^{{4}} \sigma_{\text{LP}} \left[ \text{nb} / \text{GeV}^{4} \right]$",
+        title = r"fuck",
+        xlabel = r"z",
+        ylabel = r"d",
         grid = True)
     
     customized_plot.add_scatter_plot(
