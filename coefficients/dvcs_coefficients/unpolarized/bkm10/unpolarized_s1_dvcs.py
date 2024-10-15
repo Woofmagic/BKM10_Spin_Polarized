@@ -14,7 +14,6 @@ def calculate_s_1_unpolarized_dvcs(
     squared_hadronic_momentum_transfer_t: float,
     epsilon: float,
     lepton_energy_fraction_y: float, 
-    skewness_parameter: float,
     shorthand_k: float,
     compton_form_factor_h_real_part: float,
     compton_form_factor_h_tilde_real_part: float,
