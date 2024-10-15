@@ -12,14 +12,14 @@ def calculate_curly_c_unpolarized_dvcs(
     x_Bjorken: float, 
     squared_hadronic_momentum_transfer_t: float,
     epsilon: float,
-    compton_form_factor_h: float,
-    compton_form_factor_h_tilde: float,
-    compton_form_factor_e: float,
-    compton_form_factor_e_tilde: float,
-    conjugated_compton_form_factor_h: float,
-    conjugated_compton_form_factor_h_tilde: float,
-    conjugated_compton_form_factor_e: float,
-    conjugated_compton_form_factor_e_tilde: float,
+    compton_form_factor_h: complex,
+    compton_form_factor_h_tilde: complex,
+    compton_form_factor_e: complex,
+    compton_form_factor_e_tilde: complex,
+    compton_form_factor_h_conjugate: complex,
+    compton_form_factor_h_tilde_conjugate: complex,
+    compton_form_factor_e_conjugate: complex,
+    compton_form_factor_e_tilde_conjugate: complex,
     verbose: bool = False) -> float:
     """
     Description
@@ -74,22 +74,22 @@ def calculate_curly_c_unpolarized_dvcs(
         Q_squared_times_sum = squared_Q_momentum_transfer * sum_Q_squared_xb_t
 
         # (4): Calculate the first product of CFFs:
-        cff_h_h_star_with_prefactor = compton_form_factor_h * conjugated_compton_form_factor_h * 4. * (1. - x_Bjorken)
+        cff_h_h_star_with_prefactor = compton_form_factor_h * compton_form_factor_h_conjugate * 4. * (1. - x_Bjorken)
 
         # (5): Calculate the second product of CFFs:
-        cff_h_tilde_h_tilde_star = compton_form_factor_h_tilde * conjugated_compton_form_factor_h_tilde
+        cff_h_tilde_h_tilde_star = compton_form_factor_h_tilde * compton_form_factor_h_tilde_conjugate
 
         # (6): Calculate the third product of CFFs:
-        cff_h_e_star_plus_e_h_star = compton_form_factor_h * conjugated_compton_form_factor_e + compton_form_factor_e_tilde * conjugated_compton_form_factor_h
+        cff_h_e_star_plus_e_h_star = compton_form_factor_h * compton_form_factor_e_conjugate + compton_form_factor_e_tilde * compton_form_factor_h_conjugate
 
         # (7): Calculate the fourth product of CFFs:
-        cff_h_tilde_e_tilde_star_plus_e_tilde_h_tilde_star = compton_form_factor_h_tilde * conjugated_compton_form_factor_e_tilde + compton_form_factor_e_tilde * conjugated_compton_form_factor_h_tilde
+        cff_h_tilde_e_tilde_star_plus_e_tilde_h_tilde_star = compton_form_factor_h_tilde * compton_form_factor_e_tilde_conjugate + compton_form_factor_e_tilde * compton_form_factor_h_tilde_conjugate
         
         # (8): Calculate the fifth product of CFFs:
-        cff_e_e_star = compton_form_factor_e * conjugated_compton_form_factor_e
+        cff_e_e_star = compton_form_factor_e * compton_form_factor_e_conjugate
         
         # (9): Calculate the sixth product of CFFs:
-        cff_e_tilde_e_tilde_star = compton_form_factor_e_tilde * conjugated_compton_form_factor_e_tilde
+        cff_e_tilde_e_tilde_star = compton_form_factor_e_tilde * compton_form_factor_e_tilde_conjugate
 
         # (10): Calculate the second bracket term:
         second_bracket_term = 4. * (1. - x_Bjorken + ((2. * squared_Q_momentum_transfer + squared_hadronic_momentum_transfer_t) * epsilon**2 / (4. * sum_Q_squared_xb_t))) * cff_h_tilde_h_tilde_star
