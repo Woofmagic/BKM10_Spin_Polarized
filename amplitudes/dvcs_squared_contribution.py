@@ -108,7 +108,6 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
                 lepton_energy_fraction_y,
                 skewness_parameter,
                 shorthand_k,
-                lepton_energy_fraction_y,
                 compton_form_factor_h,
                 compton_form_factor_h_tilde,
                 compton_form_factor_e,
@@ -124,16 +123,11 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
                 lepton_energy_fraction_y,
                 skewness_parameter,
                 shorthand_k,
-                compute_cff_effective(skewness_parameter, compton_form_factor_h),
-                compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
-                compute_cff_effective(skewness_parameter, compton_form_factor_e),
-                compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde),
-                compton_form_factor_h.conjugate(),
-                compton_form_factor_h_tilde.conjugate(),
-                compton_form_factor_e.conjugate(),
-                compton_form_factor_e_tilde.conjugate(),
-                verbose
-            )
+                compton_form_factor_h,
+                compton_form_factor_h_tilde,
+                compton_form_factor_e,
+                compton_form_factor_e_tilde,
+                verbose)
 
             # (4): Obtain the first coefficient in the unevaluated sum (sin n = 1 term):
             coefficient_s1_DVCS = calculate_s_1_unpolarized_dvcs(
