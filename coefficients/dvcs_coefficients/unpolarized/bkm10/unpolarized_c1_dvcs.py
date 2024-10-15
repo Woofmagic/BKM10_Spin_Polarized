@@ -8,8 +8,6 @@ from form_factors.effective_cffs import compute_cff_effective
 from coefficients.dvcs_coefficients.unpolarized.bkm10.unpolarized_curlyC_dvcs import calculate_curly_c_unpolarized_dvcs
 
 def calculate_c_1_unpolarized_dvcs(
-    lepton_helicity: float,
-    target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float, 
     squared_hadronic_momentum_transfer_t: float,
