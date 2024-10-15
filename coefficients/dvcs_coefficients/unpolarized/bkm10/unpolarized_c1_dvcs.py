@@ -15,14 +15,10 @@ def calculate_c_1_unpolarized_dvcs(
     lepton_energy_fraction_y: float, 
     skewness_parameter: float,
     shorthand_k: float,
-    compton_form_factor_h_real_part: float,
-    compton_form_factor_h_tilde_real_part: float,
-    compton_form_factor_e_real_part: float,
-    compton_form_factor_e_tilde_real_part: float,
-    compton_form_factor_h_imaginary_part: float,
-    compton_form_factor_h_tilde_imaginary_part: float,
-    compton_form_factor_e_imaginary_part: float,
-    compton_form_factor_e_tilde_imaginary_part: float,
+    compton_form_factor_h: complex,
+    compton_form_factor_h_tilde: complex,
+    compton_form_factor_e: complex,
+    compton_form_factor_e_tilde: complex,
     verbose: bool = False) -> float:
     """
     """
@@ -38,15 +34,14 @@ def calculate_c_1_unpolarized_dvcs(
             x_Bjorken,
             squared_hadronic_momentum_transfer_t,
             epsilon,
-            compute_cff_effective(skewness_parameter, compton_form_factor_h_real_part),
-            compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde_real_part),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e_real_part),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde_real_part),
-            compute_cff_effective(skewness_parameter, compton_form_factor_h_imaginary_part),
-            compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde_imaginary_part),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e_imaginary_part),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde_imaginary_part),
-            verbose
+            compute_cff_effective(skewness_parameter, compton_form_factor_h),
+            compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
+            compute_cff_effective(skewness_parameter, compton_form_factor_e),
+            compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde),
+            compton_form_factor_h.conjugate(),
+            compton_form_factor_h_tilde.conjugate(),
+            compton_form_factor_e.conjugate(),
+            compton_form_factor_e_tilde.conjugate(),
         ).real
 
         # (3): Calculate the entire coefficient:
