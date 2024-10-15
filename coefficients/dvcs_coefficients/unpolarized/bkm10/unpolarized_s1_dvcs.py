@@ -9,7 +9,6 @@ from coefficients.dvcs_coefficients.unpolarized.bkm10.unpolarized_curlyC_dvcs im
 
 def calculate_s_1_unpolarized_dvcs(
     lepton_helicity: float,
-    target_polarization: float,
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float, 
     squared_hadronic_momentum_transfer_t: float,

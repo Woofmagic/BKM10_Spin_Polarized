@@ -120,13 +120,12 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
 
             # (3): Obtain the first coefficient in the unevaluated sum (cosine n = 1 term):
             coefficient_c1_DVCS = calculate_c_1_unpolarized_dvcs(
-                lepton_helicity,
-                target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
                 squared_hadronic_momentum_transfer_t,
                 epsilon,
                 lepton_energy_fraction_y,
+                skewness_parameter,
                 shorthand_k,
                 compute_cff_effective(skewness_parameter, compton_form_factor_h),
                 compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
