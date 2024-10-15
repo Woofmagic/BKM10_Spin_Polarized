@@ -143,15 +143,12 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
                 squared_hadronic_momentum_transfer_t,
                 epsilon,
                 lepton_energy_fraction_y,
+                skewness_parameter,
                 shorthand_k,
-                compute_cff_effective(skewness_parameter, compton_form_factor_h),
-                compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
-                compute_cff_effective(skewness_parameter, compton_form_factor_e),
-                compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde),
-                compton_form_factor_h.conjugate(),
-                compton_form_factor_h_tilde.conjugate(),
-                compton_form_factor_e.conjugate(),
-                compton_form_factor_e_tilde.conjugate(),
+                compton_form_factor_h,
+                compton_form_factor_h_tilde,
+                compton_form_factor_e,
+                compton_form_factor_e_tilde,
                 verbose)
 
         elif target_polarization != 0.0:
