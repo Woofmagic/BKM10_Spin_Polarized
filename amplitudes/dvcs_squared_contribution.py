@@ -140,7 +140,7 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
 
             # (4): Obtain the first coefficient in the unevaluated sum (sin n = 1 term):
             coefficient_s1_DVCS = calculate_s_1_unpolarized_dvcs(
-                target_polarization,
+                lepton_helicity,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
                 squared_hadronic_momentum_transfer_t,
