@@ -80,7 +80,7 @@ def calculate_curly_c_unpolarized_dvcs(
         cff_h_tilde_h_tilde_star = compton_form_factor_h_tilde * compton_form_factor_h_tilde_conjugate
 
         # (6): Calculate the third product of CFFs:
-        cff_h_e_star_plus_e_h_star = compton_form_factor_h * compton_form_factor_e_conjugate + compton_form_factor_e_tilde * compton_form_factor_h_conjugate
+        cff_h_e_star_plus_e_h_star = compton_form_factor_h * compton_form_factor_e_conjugate + compton_form_factor_e * compton_form_factor_h_conjugate
 
         # (7): Calculate the fourth product of CFFs:
         cff_h_tilde_e_tilde_star_plus_e_tilde_h_tilde_star = compton_form_factor_h_tilde * compton_form_factor_e_tilde_conjugate + compton_form_factor_e_tilde * compton_form_factor_h_tilde_conjugate
@@ -110,7 +110,7 @@ def calculate_curly_c_unpolarized_dvcs(
         sixth_bracket_term = x_Bjorken**2 * squared_Q_momentum_transfer * squared_hadronic_momentum_transfer_t * cff_e_tilde_e_tilde_star / (4. * _MASS_OF_PROTON_IN_GEV**2 * sum_Q_squared_xb_t)
 
         # (16): Return the entire thing:
-        curlyC_unp_DVCS = Q_squared_times_sum * (cff_h_h_star_with_prefactor + second_bracket_term - third_bracket_term - fourth_bracket_term - fifth_bracket_term - sixth_bracket_term) / Q_squared_times_sum
+        curlyC_unp_DVCS = Q_squared_times_sum * (cff_h_h_star_with_prefactor + second_bracket_term - third_bracket_term - fourth_bracket_term - fifth_bracket_term - sixth_bracket_term) / weighted_sum_Q_squared_xb_t**2
         
         # (13.1): If verbose, log the output:
         if verbose:
