@@ -14,7 +14,7 @@ class PlotCustomizer:
             grid: bool = False):
         
         self._custom_rc_params = {
-            'text.usetex': True,
+            'text.usetex': False,
             'font.family': 'serif',
             'font.size': 11.,
             'mathtext.fontset': 'dejavuserif', # https://matplotlib.org/stable/gallery/text_labels_and_annotations/mathtext_fontfamily_example.html

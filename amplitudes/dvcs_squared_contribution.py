@@ -1,3 +1,8 @@
+import matplotlib.pyplot as plt
+
+from utilities.plotting.plot_customizer import PlotCustomizer
+
+
 try:
     import numpy as np
 except ImportError:
@@ -97,6 +102,8 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
         # (1): Calculate the Prefactor of the Denominator:
         denominator = lepton_energy_fraction_y**2 * squared_Q_momentum_transfer
 
+        print(target_polarization)
+
         if target_polarization == 0.0:
 
                 # (2): Obtain the first coefficient in the sum:
@@ -184,8 +191,7 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
                 compton_form_factor_h_tilde.conjugate(),
                 compton_form_factor_e.conjugate(),
                 compton_form_factor_e_tilde.conjugate(),
-                verbose
-            )
+                verbose)
 
             # (4): Obtain the first coefficient in the unevaluated sum (sin n = 1 term):
             coefficient_s1_DVCS = calculate_s_1_longitudinally_polarized_dvcs(
@@ -205,6 +211,58 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
                 compton_form_factor_e.conjugate(),
                 compton_form_factor_e_tilde.conjugate(),
                 verbose)
+            
+        # # (1): Figure instance:
+        # figure = plt.figure(figsize = (18, 6))
+
+        # # (2): Add an Axes Object:
+        # axes_object = figure.add_subplot(111)
+
+        # customized_plot = PlotCustomizer(
+        #     axes_object,
+        #     title = "fuckckckck",
+        #     grid = True)
+        
+        # customized_plot.add_bar_plot(
+        #     x_data = np.array([1,2,3]),
+        #     y_data = np.array([coefficient_c0_DVCS, coefficient_c1_DVCS, coefficient_s1_DVCS]),
+        #     label="fuczzz",
+        #     color = 'red')
+        
+        # plt.savefig('fuck.jpg', dpi = 150)
+
+        # (1): Figure instance:
+        figure = plt.figure(figsize = (18, 6))
+
+        # (2): Add an Axes Object:
+        axes_object = figure.add_subplot(111)
+
+        customized_plot = PlotCustomizer(
+            axes_object,
+            title = "Upolarized DVCS Coefficients",
+            xlabel = "phi",
+            ylabel = "nbGeV6",
+            grid = True)
+        
+        customized_plot.add_line_plot(
+            x_data = azimuthal_phi,
+            y_data = coefficient_c1_DVCS * np.cos(np.pi - convert_degrees_to_radians(azimuthal_phi)),
+            label = "c1",
+            color = 'red')
+        
+        customized_plot.add_line_plot(
+            x_data = azimuthal_phi,
+            y_data = coefficient_s1_DVCS * np.sin(np.pi - convert_degrees_to_radians(azimuthal_phi)),
+            label = "s1",
+            color = 'orange')
+        
+        customized_plot.add_line_plot(
+            x_data = azimuthal_phi,
+            y_data = coefficient_c0_DVCS,
+            label = "c0",
+            color = 'yellow')
+
+        plt.savefig('unpolarized_contribution.png', dpi = 150)
 
         # (5): Compute the Fourier Mode Expansion:
         mode_expansion = coefficient_c0_DVCS + (coefficient_c1_DVCS * np.cos(np.pi - convert_degrees_to_radians(azimuthal_phi))) + (coefficient_s1_DVCS * np.sin(np.pi - convert_degrees_to_radians(azimuthal_phi)))

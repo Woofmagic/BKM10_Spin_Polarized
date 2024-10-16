@@ -35,7 +35,7 @@ def plot_cross_section(
         y_data = calculated_cross_section,
         color = 'blue')
     
-    plt.show()
+    plt.savefig('cross_section_v1.png')
 
     return customized_plot
 
@@ -53,10 +53,6 @@ def plot_coefficient_contributions():
         xlabel = r"Fuck",
         ylabel = r"Coefficient Value",
         grid = True)
-    
-    coefficient_heights = np.array([
-
-    ])
     
     customized_plot.add_bar_plot(
         x_data = 0.,
