@@ -152,6 +152,7 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
                 compton_form_factor_e_tilde,
                 verbose)
             
+            print('fuckz')
             print(coefficient_c0_DVCS[0])
             print(coefficient_c1_DVCS[0])
             print(coefficient_s1_DVCS[0])

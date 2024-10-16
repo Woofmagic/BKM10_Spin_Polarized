@@ -47,10 +47,8 @@ def calculate_c_0_unpolarized_dvcs(
             compton_form_factor_e_tilde.conjugate(),
             verbose)
         
-        print(first_term_curlyC_unp_DVCS[0])
-        
         # (4): Calculate the second terms' Curly C contribution:
-        first_term_curlyC_unp_DVCS = calculate_curly_c_unpolarized_dvcs(
+        first_term_curlyC_unp_DVCS_effective_cffs = calculate_curly_c_unpolarized_dvcs(
             squared_Q_momentum_transfer,
             x_Bjorken,
             squared_hadronic_momentum_transfer_t,
@@ -63,11 +61,10 @@ def calculate_c_0_unpolarized_dvcs(
             compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde).conjugate(),
             compute_cff_effective(skewness_parameter, compton_form_factor_e).conjugate(),
             compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde).conjugate(),
-            verbose
-        )
+            verbose)
 
         # (5): Calculate the entire coefficient:
-        c0_dvcs_unpolarized_coefficient = first_term_prefactor * first_term_curlyC_unp_DVCS + second_term_prefactor * first_term_curlyC_unp_DVCS
+        c0_dvcs_unpolarized_coefficient = first_term_prefactor * first_term_curlyC_unp_DVCS + second_term_prefactor * first_term_curlyC_unp_DVCS_effective_cffs
         
         if verbose:
             print(f"> Calculated c0_dvcs_unpolarized_coefficient to be: {c0_dvcs_unpolarized_coefficient}")
