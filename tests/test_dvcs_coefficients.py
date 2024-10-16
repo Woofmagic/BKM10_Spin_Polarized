@@ -1,5 +1,6 @@
 import unittest
 
+from coefficients.dvcs_coefficients.unpolarized.bkm10.unpolarized_curlyC_dvcs import calculate_curly_c_unpolarized_dvcs
 from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_curlyC_dvcs import calculate_curly_c_longitudinally_polarized_dvcs
 
 from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_c0_dvcs import calculate_c_0_longitudinally_polarized_dvcs
@@ -28,10 +29,10 @@ _TEST_PAULI_FORM_FACTOR_F2 = 23.794
 _TEST_CFF_REAL_H = -0.897
 _TEST_CFF_REAL_H_TILDE = 2.444
 _TEST_CFF_REAL_E = -0.541
-_TEST_CFF_REAL_E_TILDE = 0.903
+_TEST_CFF_REAL_E_TILDE = 2.207
 _TEST_CFF_IMAGINARY_H = 2.421
 _TEST_CFF_IMAGINARY_H_TILDE = 1.131
-_TEST_CFF_IMAGINARY_E = 2.207
+_TEST_CFF_IMAGINARY_E = 0.903
 _TEST_CFF_IMAGINARY_E_TILDE = 5.383
 
 _TEST_CFF_H = complex(_TEST_CFF_REAL_H, _TEST_CFF_IMAGINARY_H)
@@ -42,6 +43,44 @@ _TEST_CFF_E_TILDE = complex(_TEST_CFF_REAL_E_TILDE, _TEST_CFF_IMAGINARY_E_TILDE)
 _TEST_VERBOSE = False
 
 class TestDVCSCoefficients(unittest.TestCase):
+
+    def test_calculate_curly_c_unpolarized_dvcs_normal_cffs(self):
+        """
+        # Title: `test_calculate_curly_c_longitudinally_polarized_dvcs_normal_cffs`
+
+        ## Description: Test the function `calculate_curly_c_longitudinally_polarized_dvcs`.
+        This is curly C DVCS for the LP case. Please note what is being passed in as arguments!
+        Notice that we're evaluating CurlyC(F, F*), not any effective stuff!
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        print(_TEST_CFF_H)
+        print(_TEST_CFF_H_TILDE)
+        print(_TEST_CFF_E)
+        print(_TEST_CFF_E_TILDE)
+        self.assertAlmostEqual(
+            calculate_curly_c_unpolarized_dvcs(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_CFF_H,
+                _TEST_CFF_H_TILDE,
+                _TEST_CFF_E,
+                _TEST_CFF_E_TILDE,
+                _TEST_CFF_H.conjugate(),
+                _TEST_CFF_H_TILDE.conjugate(),
+                _TEST_CFF_E.conjugate(),
+                _TEST_CFF_E_TILDE.conjugate(),
+                _TEST_VERBOSE), 
+            complex(13.4697, 1.27193e-18 ))
 
     def test_calculate_curly_c_longitudinally_polarized_dvcs_normal_cffs(self):
         """

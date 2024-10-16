@@ -47,6 +47,8 @@ def calculate_c_0_unpolarized_dvcs(
             compton_form_factor_e_tilde.conjugate(),
             verbose)
         
+        print(first_term_curlyC_unp_DVCS[0])
+        
         # (4): Calculate the second terms' Curly C contribution:
         first_term_curlyC_unp_DVCS = calculate_curly_c_unpolarized_dvcs(
             squared_Q_momentum_transfer,

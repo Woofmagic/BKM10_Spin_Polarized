@@ -111,7 +111,7 @@ def calculate_curly_c_unpolarized_dvcs(
 
         # (16): Return the entire thing:
         curlyC_unp_DVCS = Q_squared_times_sum * (cff_h_h_star_with_prefactor + second_bracket_term - third_bracket_term - fourth_bracket_term - fifth_bracket_term - sixth_bracket_term) / Q_squared_times_sum
-
+        
         # (13.1): If verbose, log the output:
         if verbose:
             print(f"> Calculated curlyC_unp_DVCS to be:\n{curlyC_unp_DVCS}")

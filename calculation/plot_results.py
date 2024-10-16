@@ -2,6 +2,46 @@ import matplotlib.pyplot as plt
 
 from utilities.plotting.plot_customizer import PlotCustomizer
 
+def plot_dvcs_contributions(
+        lab_azimuthal_phi,
+        c0DVCS_contribution,
+        c1DVCS_contribution,
+        s1DVCS_contribution):
+    
+    # (1): Figure instance:
+    figure = plt.figure(figsize = (18, 6))
+
+    # (2): Add an Axes Object:
+    axes_object = figure.add_subplot(111)
+
+    customized_plot = PlotCustomizer(
+            axes_object,
+            title = "Upolarized DVCS Coefficients",
+            xlabel = "phi",
+            ylabel = "nb/GeV6",
+            grid = True)
+    
+    customized_plot.add_line_plot(
+            x_data = lab_azimuthal_phi,
+            y_data = c0DVCS_contribution,
+            label = "c1",
+            color = 'red')
+        
+    customized_plot.add_line_plot(
+        x_data = lab_azimuthal_phi,
+        y_data = c1DVCS_contribution,
+        label = "s1",
+        color = 'orange')
+    
+    customized_plot.add_line_plot(
+        x_data = lab_azimuthal_phi,
+        y_data = s1DVCS_contribution,
+        label = "c0",
+        color = 'yellow')
+    
+    plt.savefig('dvcs_coefficient_contributions_v1.png')
+
+
 def plot_cross_section(
         lab_azimuthal_phi,
         value_of_beam_energy,
