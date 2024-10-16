@@ -1,6 +1,6 @@
 def compute_cff_effective(
     skewness_parameter: float,
-    compton_form_factor: float,
+    compton_form_factor: complex,
     verbose: bool = False) -> float:
     """
     # Title: `compute_cff_effective`
@@ -14,7 +14,7 @@ def compute_cff_effective(
 
         skewness_parameter: (float)
 
-        compton_form_factor: (float)
+        compton_form_factor: (complex)
 
         verbose: (bool)
             Debugging console output.
