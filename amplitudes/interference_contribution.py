@@ -31,6 +31,10 @@ from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import
 # Coefficient | s_{3}^{I}
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_3_interference_coefficient
 
+from coefficients.interference_coefficients.unpolarized.unpolarized_curly_C import calculate_curly_C_unpolarized_interference
+from coefficients.interference_coefficients.unpolarized.unpolarized_curly_CV import calculate_curly_C_unpolarized_interference_V
+from coefficients.interference_coefficients.unpolarized.unpolarized_curly_CA import calculate_curly_C_unpolarized_interference_A
+
 def calculate_interference_contribution(
     lepton_helicity: float,
     target_polarization: float,
@@ -153,6 +157,39 @@ def calculate_interference_contribution(
 
         # (1): Calculate the prefactor:
         prefactor = 1. / (x_Bjorken * lepton_energy_fraction_y**3 * squared_hadronic_momentum_transfer_t * lepton_propagator_p1 * lepton_propagator_p2)
+
+        # (1): Calculate curly C_{unp}^{I}(F):
+        curly_C_longitudinally_polarized_interference = calculate_curly_C_unpolarized_interference(
+            squared_Q_momentum_transfer, 
+            x_Bjorken,
+            squared_hadronic_momentum_transfer_t,
+            Dirac_form_factor_F1,
+            Pauli_form_factor_F2,
+            compton_form_factor_h,
+            compton_form_factor_h_tilde,
+            compton_form_factor_e,
+            verbose)
+        
+        # (2): Calculate curly C_{unp}^{I, V}(F):
+        curly_C_V_longitudinally_polarized_interference = calculate_curly_C_unpolarized_interference_V(
+            squared_Q_momentum_transfer, 
+            x_Bjorken,
+            squared_hadronic_momentum_transfer_t,
+            Dirac_form_factor_F1,
+            Pauli_form_factor_F2,
+            compton_form_factor_h,
+            compton_form_factor_e,
+            verbose)
+        
+        # (3): Calculate curly C_{LP}^{I, A}(F):
+        curly_C_A_longitudinally_polarized_interference = calculate_curly_C_unpolarized_interference_A(
+            squared_Q_momentum_transfer, 
+            x_Bjorken,
+            squared_hadronic_momentum_transfer_t,
+            Dirac_form_factor_F1,
+            Pauli_form_factor_F2,
+            compton_form_factor_h_tilde,
+            verbose)
 
         # (2): Calculate c_{0}^{I}:
         # c_0_I = 0.
