@@ -12,14 +12,14 @@ def calculate_curly_c_longitudinally_polarized_dvcs(
     x_Bjorken: float, 
     squared_hadronic_momentum_transfer_t: float,
     epsilon: float,
-    compton_form_factor_h: float,
-    compton_form_factor_h_tilde: float,
-    compton_form_factor_e: float,
-    compton_form_factor_e_tilde: float,
-    conjugated_compton_form_factor_h: float,
-    conjugated_compton_form_factor_h_tilde: float,
-    conjugated_compton_form_factor_e: float,
-    conjugated_compton_form_factor_e_tilde: float,
+    compton_form_factor_h: complex,
+    compton_form_factor_h_tilde: complex,
+    compton_form_factor_e: complex,
+    compton_form_factor_e_tilde: complex,
+    compton_form_factor_h_conjugate: complex,
+    compton_form_factor_h_tilde_conjugate: complex,
+    compton_form_factor_e_conjugate: complex,
+    compton_form_factor_e_tilde_conjugate: complex,
     verbose: bool = False) -> float:
     """
     Description
@@ -74,16 +74,16 @@ def calculate_curly_c_longitudinally_polarized_dvcs(
         weighted_sum_Q_squared_xb_t = two_minus_xb * squared_Q_momentum_transfer + x_Bjorken * squared_hadronic_momentum_transfer_t
 
         # (4): Calculate the first product of CFFs:
-        first_term_CFFs = compton_form_factor_h * conjugated_compton_form_factor_h_tilde + compton_form_factor_h_tilde * conjugated_compton_form_factor_h 
+        first_term_CFFs = compton_form_factor_h * compton_form_factor_h_tilde_conjugate + compton_form_factor_h_tilde * compton_form_factor_h_conjugate
 
         # (5): Calculate the second product of CFFs:
-        second_term_CFFs = compton_form_factor_h * conjugated_compton_form_factor_e_tilde + compton_form_factor_e_tilde * conjugated_compton_form_factor_h + compton_form_factor_h_tilde * conjugated_compton_form_factor_e + compton_form_factor_e * conjugated_compton_form_factor_h_tilde
+        second_term_CFFs = compton_form_factor_h * compton_form_factor_e_tilde_conjugate + compton_form_factor_e_tilde * compton_form_factor_h_conjugate + compton_form_factor_h_tilde * compton_form_factor_e_conjugate + compton_form_factor_e * compton_form_factor_h_tilde_conjugate
 
         # (6): Calculate the third product of CFFs:
-        third_term_CFFs = compton_form_factor_h_tilde * conjugated_compton_form_factor_e + compton_form_factor_e * conjugated_compton_form_factor_h_tilde
+        third_term_CFFs = compton_form_factor_h_tilde * compton_form_factor_e_conjugate + compton_form_factor_e * compton_form_factor_h_tilde_conjugate
 
         # (7): Calculate the fourth product of CFFs:
-        fourth_term_CFFs = compton_form_factor_e * conjugated_compton_form_factor_e_tilde + compton_form_factor_e_tilde * conjugated_compton_form_factor_e
+        fourth_term_CFFs = compton_form_factor_e * compton_form_factor_e_tilde_conjugate + compton_form_factor_e_tilde * compton_form_factor_e_conjugate
 
         # (8): Calculate the first term's prefactor:
         first_term_prefactor = 4. * (1. - x_Bjorken + (epsilon**2 * ((3. - 2. * x_Bjorken) * squared_Q_momentum_transfer + squared_hadronic_momentum_transfer_t)) / (4. * sum_Q_squared_xb_t))

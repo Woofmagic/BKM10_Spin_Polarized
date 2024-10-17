@@ -13,14 +13,10 @@ def calculate_c_0_longitudinally_polarized_dvcs(
     squared_hadronic_momentum_transfer_t: float,
     epsilon: float,
     lepton_energy_fraction_y: float, 
-    compton_form_factor_h: float,
-    compton_form_factor_h_tilde: float,
-    compton_form_factor_e: float,
-    compton_form_factor_e_tilde: float,
-    conjugated_compton_form_factor_h: float,
-    conjugated_compton_form_factor_h_tilde: float,
-    conjugated_compton_form_factor_e: float,
-    conjugated_compton_form_factor_e_tilde: float,
+    compton_form_factor_h: complex,
+    compton_form_factor_h_tilde: complex,
+    compton_form_factor_e: complex,
+    compton_form_factor_e_tilde: complex,
     verbose: bool = False) -> float:
     """
     """
@@ -30,8 +26,8 @@ def calculate_c_0_longitudinally_polarized_dvcs(
         # (1): Calculate the prefactor
         prefactor = 2. * lepton_helicity * target_polarization * lepton_energy_fraction_y * (2. - lepton_energy_fraction_y) / np.sqrt(1. + epsilon**2)
 
-        # (2): Return the entire thing:
-        c0LP_DVCS = prefactor * calculate_curly_c_longitudinally_polarized_dvcs(
+        # (2): Calculate the Curly C contribution:
+        curlyC_lp_contribution = calculate_curly_c_longitudinally_polarized_dvcs(
             squared_Q_momentum_transfer,
             x_Bjorken,
             squared_hadronic_momentum_transfer_t,
@@ -40,18 +36,27 @@ def calculate_c_0_longitudinally_polarized_dvcs(
             compton_form_factor_h_tilde,
             compton_form_factor_e,
             compton_form_factor_e_tilde,
-            conjugated_compton_form_factor_h,
-            conjugated_compton_form_factor_h_tilde,
-            conjugated_compton_form_factor_e,
-            conjugated_compton_form_factor_e_tilde,
+            compton_form_factor_h.conjugate(),
+            compton_form_factor_h_tilde.conjugate(),
+            compton_form_factor_e.conjugate(),
+            compton_form_factor_e_tilde.conjugate(),
             verbose)
 
-        # (2.1): If verbose, log the output:
+        # (3): Return the entire thing:
+        c0LP_DVCS = prefactor * curlyC_lp_contribution
+
+        print('fuck')
+        print(prefactor[0])
+        print(curlyC_lp_contribution[0])
+
+        print(c0LP_DVCS[0])
+
+        # (3.1): If verbose, log the output:
         if verbose:
             print(f"> Calculated c0LP_DVCS to be:\n{c0LP_DVCS}")
 
-        # (3): Return the coefficient:
-        return c0LP_DVCS.real
+        # (4): Return the coefficient:
+        return c0LP_DVCS
 
     except Exception as ERROR:
         print(f"> Error in calculating c0LP for DVCS Amplitude Squared:\n> {ERROR}")
