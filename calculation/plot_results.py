@@ -1,3 +1,4 @@
+import numpy as np
 import matplotlib.pyplot as plt
 
 from utilities.plotting.plot_customizer import PlotCustomizer
@@ -12,32 +13,45 @@ def plot_dvcs_contributions(
     figure = plt.figure(figsize = (18, 6))
 
     # (2): Add an Axes Object:
-    axes_object = figure.add_subplot(111)
+    DVCS_coefficient_contours = figure.add_subplot(121)
+    DVCS_coefficient_bar_graph = figure.add_subplot(122)
 
-    customized_plot = PlotCustomizer(
-            axes_object,
-            title = "Upolarized DVCS Coefficients",
+    DVCS_coefficients_plot = PlotCustomizer(
+            DVCS_coefficient_contours,
+            title = "Unpolarized DVCS Coefficients",
             xlabel = "phi",
-            ylabel = "nb/GeV6",
+            ylabel = "nb/GeV4",
             grid = True)
     
-    customized_plot.add_line_plot(
+    DVCS_coefficients_plot.add_line_plot(
             x_data = lab_azimuthal_phi,
             y_data = c0DVCS_contribution,
             label = "c0",
             color = 'red')
         
-    customized_plot.add_line_plot(
+    DVCS_coefficients_plot.add_line_plot(
         x_data = lab_azimuthal_phi,
         y_data = c1DVCS_contribution,
         label = "c1 cos(\pi - \phi)",
         color = 'orange')
     
-    customized_plot.add_line_plot(
+    DVCS_coefficients_plot.add_line_plot(
         x_data = lab_azimuthal_phi,
         y_data = s1DVCS_contribution,
         label = "s1 sin(\pi - \phi)",
         color = 'yellow')
+    
+    DVCS_coefficients_contributions = PlotCustomizer(
+            DVCS_coefficient_bar_graph,
+            title = "Unpolarized DVCS Coefficients",
+            xlabel = "coefficients",
+            ylabel = "nb/GeV4",
+            grid = True)
+    
+    # DVCS_coefficients_contributions.add_bar_plot(
+    #     x_data = np.array([c0DVCS_contribution, c1DVCS_contribution, s1DVCS_contribution]),
+    #     y_data_heights = np.array([c0DVCS_contribution, c1DVCS_contribution, s1DVCS_contribution])
+    # )
     
     plt.savefig('dvcs_coefficient_contributions_v1.png')
 

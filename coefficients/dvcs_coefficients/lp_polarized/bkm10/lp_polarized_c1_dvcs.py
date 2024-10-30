@@ -5,6 +5,8 @@ except ImportError:
 
 from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_curlyC_dvcs import calculate_curly_c_longitudinally_polarized_dvcs
 
+from form_factors.effective_cffs import compute_cff_effective
+
 def calculate_c_1_longitudinally_polarized_dvcs(
     lepton_helicity: float,
     target_polarization: float,
@@ -13,15 +15,12 @@ def calculate_c_1_longitudinally_polarized_dvcs(
     squared_hadronic_momentum_transfer_t: float,
     epsilon: float,
     lepton_energy_fraction_y: float, 
+    skewness_parameter: float,
     shorthand_k: float,
     compton_form_factor_h: float,
     compton_form_factor_h_tilde: float,
     compton_form_factor_e: float,
     compton_form_factor_e_tilde: float,
-    conjugated_compton_form_factor_h: float,
-    conjugated_compton_form_factor_h_tilde: float,
-    conjugated_compton_form_factor_e: float,
-    conjugated_compton_form_factor_e_tilde: float,
     verbose: bool = False) -> float:
     """
     """
@@ -37,14 +36,14 @@ def calculate_c_1_longitudinally_polarized_dvcs(
             x_Bjorken,
             squared_hadronic_momentum_transfer_t,
             epsilon,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
-            conjugated_compton_form_factor_h,
-            conjugated_compton_form_factor_h_tilde,
-            conjugated_compton_form_factor_e,
-            conjugated_compton_form_factor_e_tilde,
+            compute_cff_effective(skewness_parameter, compton_form_factor_h),
+            compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
+            compute_cff_effective(skewness_parameter, compton_form_factor_e),
+            compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde),
+            compton_form_factor_h.conjugate(),
+            compton_form_factor_h_tilde.conjugate(),
+            compton_form_factor_e.conjugate(),
+            compton_form_factor_e_tilde.conjugate(),
             verbose).real
         
         # (3.1): If verbose, log the output:
