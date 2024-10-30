@@ -334,8 +334,6 @@ def calculate_bkm10_cross_section(
             compton_form_factor_e_tilde,
             verbose))
 
-            print("fuckzz")
-
         else:
 
             if verbose:
@@ -358,12 +356,8 @@ def calculate_bkm10_cross_section(
             compton_form_factor_e_tilde,
             verbose)
 
-            print("fuckzzzzzz")
-
         # (18): Compute the BH Amplitude Squared
         interference_contribution = 0.
-        
-        print("fuzzckzz")
 
         # if lepton_helicity == 0.0: 
 
@@ -439,8 +433,6 @@ def calculate_bkm10_cross_section(
         # (18): Calculate the total cross section
         bkm10_cross_section = cross_section_prefactor * (bh_amplitude_squared + dvcs_amplitude_squared + interference_contribution)
 
-        print("fucsdfsdfkzz")
-
         # (18.1): If verbose, print the output:
         if verbose:
             print(f"> Calculated BKM10 differential cross section longitudinally polarized target to be:\n{bkm10_cross_section}")
@@ -451,8 +443,6 @@ def calculate_bkm10_cross_section(
         # (19.1): If verbose, print the conversion:
         if verbose:
             print(f"> Converted BKM10 differential cross section to {bkm10_cross_section_in_nb_GeV4} nb/GeV4")
-
-        print("fucksdfjhsdgzz")
 
         plot_cross_section(
             lab_azimuthal_phi = azimuthal_phi,

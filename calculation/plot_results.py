@@ -63,6 +63,24 @@ def plot_cross_section(
         value_of_hadron_recoil,
         value_of_x_Bjorken,
         calculated_cross_section):
+    """
+    # Title: `plot_cross_section`
+
+    ## Description:
+    We plot the four-fold cross section using this method. It uses the custom-
+    built `PlotCustomizer` class that allows us to easily configure things 
+    about the plot. 
+
+    Parameters
+    --------------
+
+    Function Flow
+    --------------
+
+    Notes
+    --------------
+
+    """
     
     # (1): Figure instance:
     figure = plt.figure(figsize = (18, 6))
@@ -70,18 +88,11 @@ def plot_cross_section(
     # (2): Add an Axes Object:
     axes_object = figure.add_subplot(111)
 
-    # customized_plot = PlotCustomizer(
-    #     axes_object,
-    #     title = r"$E = {} \text{{GeV}}, Q^{{2}} = {} \text{{GeV}}^{{2}}, t = {} \text{{GeV}}^{{2}}, x_{{B}}= {}$".format(value_of_beam_energy, value_of_Q_squared, value_of_hadron_recoil, value_of_x_Bjorken),
-    #     xlabel = r"$\phi \left[ \text{deg} \right]$",
-    #     ylabel = r"$d^{{4}} \sigma_{\text{LP}} \left[ \text{nb} / \text{GeV}^{4} \right]$",
-    #     grid = True)
-    
     customized_plot = PlotCustomizer(
         axes_object,
-        title = r"fuck",
-        xlabel = r"z",
-        ylabel = r"d",
+        title = r"$E = {} \text{{GeV}}, Q^{{2}} = {} \text{{GeV}}^{{2}}, t = {} \text{{GeV}}^{{2}}, x_{{B}}= {}$".format(value_of_beam_energy, value_of_Q_squared, value_of_hadron_recoil, value_of_x_Bjorken),
+        xlabel = r"$\phi \left[ \text{deg} \right]$",
+        ylabel = r"$d^{{4}} \sigma_{\text{LP}} \left[ \text{nb} / \text{GeV}^{4} \right]$",
         grid = True)
     
     customized_plot.add_scatter_plot(
