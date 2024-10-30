@@ -24,19 +24,19 @@ def plot_dvcs_contributions(
     customized_plot.add_line_plot(
             x_data = lab_azimuthal_phi,
             y_data = c0DVCS_contribution,
-            label = "c1",
+            label = "c0",
             color = 'red')
         
     customized_plot.add_line_plot(
         x_data = lab_azimuthal_phi,
         y_data = c1DVCS_contribution,
-        label = "s1",
+        label = "c1 cos(\pi - \phi)",
         color = 'orange')
     
     customized_plot.add_line_plot(
         x_data = lab_azimuthal_phi,
         y_data = s1DVCS_contribution,
-        label = "c0",
+        label = "s1 sin(\pi - \phi)",
         color = 'yellow')
     
     plt.savefig('dvcs_coefficient_contributions_v1.png')

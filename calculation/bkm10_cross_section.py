@@ -72,7 +72,7 @@ from amplitudes.cross_section_prefactor import calculate_bkm10_cross_section_pre
 from amplitudes.bh_squared_contribution import calculate_bh_amplitude_squared
 
 # Amplitude Contributions | Deeply-Virtual Compton Scattering | |M_{DVCS}|^{2}
-from amplitudes.dvcs_squared_contribution import calculate_dvcs_amplitude_squared_longitudinally_polarized
+from amplitudes.dvcs_squared_contribution import calculate_dvcs_amplitude_squared
 
 # Amplitude Contributions | Interference | I
 from amplitudes.interference_contribution import calculate_interference_contribution
@@ -299,7 +299,10 @@ def calculate_bkm10_cross_section(
 
         if lepton_helicity == 0.0: 
 
-            dvcs_amplitude_squared = 0.5 * (calculate_dvcs_amplitude_squared_longitudinally_polarized(
+            if verbose:
+                print(f"> Now evaluating unpolarized DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
+
+            dvcs_amplitude_squared = 0.5 * (calculate_dvcs_amplitude_squared(
             1.0,
             target_polarization,
             squared_Q_momentum_transfer,
@@ -314,7 +317,7 @@ def calculate_bkm10_cross_section(
             compton_form_factor_h_tilde,
             compton_form_factor_e,
             compton_form_factor_e_tilde,
-            verbose) + calculate_dvcs_amplitude_squared_longitudinally_polarized(
+            verbose) + calculate_dvcs_amplitude_squared(
             -1.0,
             target_polarization,
             squared_Q_momentum_transfer,
@@ -333,7 +336,10 @@ def calculate_bkm10_cross_section(
 
         else:
 
-            dvcs_amplitude_squared = calculate_dvcs_amplitude_squared_longitudinally_polarized(
+            if verbose:
+                print(f"> Now evaluating polarized DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
+
+            dvcs_amplitude_squared = calculate_dvcs_amplitude_squared(
             lepton_helicity,
             target_polarization,
             squared_Q_momentum_transfer,
@@ -423,11 +429,7 @@ def calculate_bkm10_cross_section(
         #         compton_form_factor_e,
         #         compton_form_factor_e_tilde,
         #         verbose)
-            
-        print(f"> BH was: {bh_amplitude_squared}")
-        print(f"> DVCS was: {dvcs_amplitude_squared}")
-        print(f"> I was: {interference_contribution}")
-
+        
         # (18): Calculate the total cross section
         bkm10_cross_section = cross_section_prefactor * (bh_amplitude_squared + dvcs_amplitude_squared + interference_contribution)
 

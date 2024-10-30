@@ -1,15 +1,18 @@
 import unittest
 
 from coefficients.dvcs_coefficients.unpolarized.bkm10.unpolarized_curlyC_dvcs import calculate_curly_c_unpolarized_dvcs
-from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_curlyC_dvcs import calculate_curly_c_longitudinally_polarized_dvcs
+from coefficients.dvcs_coefficients.unpolarized.bkm10.unpolarized_c0_dvcs import calculate_c_0_unpolarized_dvcs
+from coefficients.dvcs_coefficients.unpolarized.bkm10.unpolarized_c1_dvcs import calculate_c_1_unpolarized_dvcs
+from coefficients.dvcs_coefficients.unpolarized.bkm10.unpolarized_s1_dvcs import calculate_s_1_unpolarized_dvcs
 
+from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_curlyC_dvcs import calculate_curly_c_longitudinally_polarized_dvcs
 from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_c0_dvcs import calculate_c_0_longitudinally_polarized_dvcs
 from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_c1_dvcs import calculate_c_1_longitudinally_polarized_dvcs
 from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_s1_dvcs import calculate_s_1_longitudinally_polarized_dvcs
 
 from form_factors.effective_cffs import compute_cff_effective
 
-_TEST_LEPTON_POLARIZATION = 1.0
+_TEST_LEPTON_POLARIZATION = 0.5
 _TEST_TARGET_POLARIZATION = 1.0
 _TEST_SQUARED_Q_MOMENTUM_TRANSFER = 1.8200000524520876
 _TEST_X_BJORKEN = 0.3429999947547912
@@ -76,7 +79,7 @@ class TestDVCSCoefficients(unittest.TestCase):
                 _TEST_CFF_E.conjugate(),
                 _TEST_CFF_E_TILDE.conjugate(),
                 _TEST_VERBOSE), 
-            complex(13.4697, 1.27193e-18))
+            complex(13.469720827800701, 1.2719338656422867e-18))
 
     def test_calculate_curly_c_unpolarized_dvcs_effective_cffs(self):
         """
@@ -110,7 +113,7 @@ class TestDVCSCoefficients(unittest.TestCase):
                 compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_E.conjugate()),
                 compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_E_TILDE.conjugate()),
                 _TEST_VERBOSE), 
-            complex(1.51105, 0.))
+            complex(1.5110536811619562, 0.))
 
     def test_calculate_curly_c_longitudinally_polarized_dvcs_normal_cffs(self):
         """
@@ -179,6 +182,38 @@ class TestDVCSCoefficients(unittest.TestCase):
                 _TEST_CFF_E_TILDE.conjugate(),
                 _TEST_VERBOSE), 
             complex(-0.05151483061208, 4.6288407527249e-16))
+        
+    def test_calculate_c_0_unpolarized_dvcs(self):
+        """
+        # Title: `test_calculate_c_0_unpolarized_dvcs`
+
+        ## Description: Test the function `calculate_c_0_unpolarized_dvcs`.
+        This is the first c coefficient that enters into the DVCS mode expansions, c_{0, unp}^{DVCS}.
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_c_0_unpolarized_dvcs(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SKEWNESS,
+                _TEST_SHORTHAND_K,
+                complex(_TEST_CFF_REAL_H, _TEST_CFF_IMAGINARY_H),
+                complex(_TEST_CFF_REAL_H_TILDE, _TEST_CFF_IMAGINARY_H_TILDE),
+                complex(_TEST_CFF_REAL_E, _TEST_CFF_IMAGINARY_E),
+                complex(_TEST_CFF_REAL_E_TILDE, _TEST_CFF_IMAGINARY_E_TILDE),
+                _TEST_VERBOSE), 
+            28.26760257132236)
     
     def test_calculate_c_0_longitudinally_polarized_dvcs(self):
         """
@@ -209,13 +244,41 @@ class TestDVCSCoefficients(unittest.TestCase):
                 complex(_TEST_CFF_REAL_H_TILDE, _TEST_CFF_IMAGINARY_H_TILDE),
                 complex(_TEST_CFF_REAL_E, _TEST_CFF_IMAGINARY_E),
                 complex(_TEST_CFF_REAL_E_TILDE, _TEST_CFF_IMAGINARY_E_TILDE),
-                complex(_TEST_CFF_REAL_H, _TEST_CFF_IMAGINARY_H).conjugate(),
-                complex(_TEST_CFF_REAL_H_TILDE, _TEST_CFF_IMAGINARY_H_TILDE).conjugate(),
-                complex(_TEST_CFF_REAL_E, _TEST_CFF_IMAGINARY_E).conjugate(),
-                complex(_TEST_CFF_REAL_E_TILDE, _TEST_CFF_IMAGINARY_E_TILDE).conjugate(),
                 _TEST_VERBOSE), 
             0.20591565057326)
         
+    def test_calculate_c_1_unpolarized_dvcs(self):
+        """
+        # Title: `test_calculate_c_1_unpolarized_dvcs`
+
+        ## Description: Test the function `calculate_c_1_unpolarized_dvcs`.
+        This is the first c coefficient that enters into the DVCS mode expansions, c_{1, unp}^{DVCS}.
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_c_1_unpolarized_dvcs(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SKEWNESS,
+                _TEST_SHORTHAND_K,
+                complex(_TEST_CFF_REAL_H, _TEST_CFF_IMAGINARY_H),
+                complex(_TEST_CFF_REAL_H_TILDE, _TEST_CFF_IMAGINARY_H_TILDE),
+                complex(_TEST_CFF_REAL_E, _TEST_CFF_IMAGINARY_E),
+                complex(_TEST_CFF_REAL_E_TILDE, _TEST_CFF_IMAGINARY_E_TILDE),
+                _TEST_VERBOSE), 
+            -2.2557224607532707)
+    
     def test_calculate_c_1_longitudinally_polarized_dvcs(self):
         """
         # Title: `test_calculate_c_1_longitudinally_polarized_dvcs`
@@ -253,6 +316,39 @@ class TestDVCSCoefficients(unittest.TestCase):
                 _TEST_VERBOSE), 
             -0.0093049118180245)
         
+    def test_calculate_s_1_unpolarized_dvcs(self):
+        """
+        # Title: `test_calculate_s_1_unpolarized_dvcs`
+
+        ## Description: Test the function `calculate_s_1_unpolarized_dvcs`.
+        This is the first s coefficient that enters into the DVCS mode expansions, s_{1, unp}^{DVCS}.
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_s_1_unpolarized_dvcs(
+                _TEST_LEPTON_POLARIZATION,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SKEWNESS,
+                _TEST_SHORTHAND_K,
+                complex(_TEST_CFF_REAL_H, _TEST_CFF_IMAGINARY_H),
+                complex(_TEST_CFF_REAL_H_TILDE, _TEST_CFF_IMAGINARY_H_TILDE),
+                complex(_TEST_CFF_REAL_E, _TEST_CFF_IMAGINARY_E),
+                complex(_TEST_CFF_REAL_E_TILDE, _TEST_CFF_IMAGINARY_E_TILDE),
+                _TEST_VERBOSE), 
+            1.461321506702021e-17)
+    
     def test_calculate_s_1_longitudinally_polarized_dvcs(self):
         """
         # Title: `test_calculate_s_1_longitudinally_polarized_dvcs`

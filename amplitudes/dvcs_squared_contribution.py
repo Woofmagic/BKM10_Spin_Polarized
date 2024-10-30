@@ -4,6 +4,8 @@ from utilities.plotting.plot_customizer import PlotCustomizer
 
 from calculation.plot_results import plot_dvcs_contributions
 
+# Helper Module | Convert GeV^{-6} to nb/GeV^{4}
+from utilities.mathematics.math_units import convert_to_nb_over_GeV4
 
 try:
     import numpy as np
@@ -15,6 +17,9 @@ from utilities.mathematics.math_units import convert_degrees_to_radians
 
 from form_factors.effective_cffs import compute_cff_effective
 
+# Amplitude Contributions | BKM10 Prefactor
+from amplitudes.cross_section_prefactor import calculate_bkm10_cross_section_prefactor
+
 # c_{0, unp}^{DVCS}
 from coefficients.dvcs_coefficients.unpolarized.bkm10.unpolarized_c0_dvcs import calculate_c_0_unpolarized_dvcs
 
@@ -23,7 +28,6 @@ from coefficients.dvcs_coefficients.unpolarized.bkm10.unpolarized_c1_dvcs import
 
 # s_{1, unp}^{DVCS}
 from coefficients.dvcs_coefficients.unpolarized.bkm10.unpolarized_s1_dvcs import calculate_s_1_unpolarized_dvcs
-
 
 # c_{0, LP}^{DVCS}
 from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_c0_dvcs import calculate_c_0_longitudinally_polarized_dvcs
@@ -34,7 +38,7 @@ from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_c1_dvcs impo
 # s_{1, LP}^{DVCS}
 from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_s1_dvcs import calculate_s_1_longitudinally_polarized_dvcs
 
-def calculate_dvcs_amplitude_squared_longitudinally_polarized(
+def calculate_dvcs_amplitude_squared(
     lepton_helicity: float,
     target_polarization: float,
     squared_Q_momentum_transfer: float, 
@@ -51,7 +55,7 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
     compton_form_factor_e_tilde: complex,
     verbose: bool = False):
     """
-    # Title: `calculate_dvcs_amplitude_squared_longitudinally_polarized`
+    # Title: `calculate_dvcs_amplitude_squared`
 
     ## Description:
     We now calculate the DVCS amplitude squared.
@@ -207,12 +211,19 @@ def calculate_dvcs_amplitude_squared_longitudinally_polarized(
                 compton_form_factor_e.conjugate(),
                 compton_form_factor_e_tilde.conjugate(),
                 verbose)
+            
+        cross_section_prefactor = calculate_bkm10_cross_section_prefactor(
+            squared_Q_momentum_transfer,
+            x_Bjorken,
+            epsilon,
+            lepton_energy_fraction_y,
+            verbose)
 
         plot_dvcs_contributions(
             azimuthal_phi,
-            coefficient_c0_DVCS,
-            coefficient_c1_DVCS * np.cos(np.pi - convert_degrees_to_radians(azimuthal_phi)),
-            coefficient_s1_DVCS * np.sin(np.pi - convert_degrees_to_radians(azimuthal_phi)))
+            convert_to_nb_over_GeV4(coefficient_c0_DVCS),
+            convert_to_nb_over_GeV4(coefficient_c1_DVCS * np.cos(np.pi - convert_degrees_to_radians(azimuthal_phi))),
+            convert_to_nb_over_GeV4(coefficient_s1_DVCS * np.sin(np.pi - convert_degrees_to_radians(azimuthal_phi))))
 
         # (5): Compute the Fourier Mode Expansion:
         mode_expansion = coefficient_c0_DVCS + (coefficient_c1_DVCS * np.cos(np.pi - convert_degrees_to_radians(azimuthal_phi))) + (coefficient_s1_DVCS * np.sin(np.pi - convert_degrees_to_radians(azimuthal_phi)))
