@@ -46,6 +46,8 @@ def calculate_c_1_longitudinally_polarized_dvcs(
             compton_form_factor_e_tilde.conjugate(),
             verbose).real
         
+        print(c1LP_DVCS)
+        
         # (3.1): If verbose, log the output:
         if verbose:
             print(f"> Calculated c1LP_DVCS to be:\n{c1LP_DVCS}")

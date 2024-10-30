@@ -110,6 +110,9 @@ def calculate_dvcs_amplitude_squared(
 
         if target_polarization == 0.0:
 
+            if verbose:
+                print(f"> Now evaluating LP target DVCS amplitude squared because target polarization was set to: {target_polarization}")
+
                 # (2): Obtain the first coefficient in the sum:
             coefficient_c0_DVCS = calculate_c_0_unpolarized_dvcs(
                 squared_Q_momentum_transfer,
@@ -158,6 +161,21 @@ def calculate_dvcs_amplitude_squared(
             
         elif target_polarization != 0.0:
 
+            if verbose:
+                print(f"> Now evaluating LP target DVCS amplitude squared because target polarization was set to: {target_polarization}")
+
+            print(lepton_helicity),
+            print(target_polarization),
+            print(squared_Q_momentum_transfer),
+            print(x_Bjorken),
+            print(squared_hadronic_momentum_transfer_t),
+            print(epsilon),
+            print(lepton_energy_fraction_y),
+            print(compton_form_factor_h),
+            print(compton_form_factor_h_tilde),
+            print(compton_form_factor_e),
+            print(compton_form_factor_e_tilde)
+            
             # (2): Obtain the first coefficient in the sum:
             coefficient_c0_DVCS = calculate_c_0_longitudinally_polarized_dvcs(
                 lepton_helicity,
@@ -205,6 +223,10 @@ def calculate_dvcs_amplitude_squared(
                 compton_form_factor_e,
                 compton_form_factor_e_tilde,
                 verbose)
+            
+        print(coefficient_c0_DVCS)
+        print(coefficient_c1_DVCS)
+        print(coefficient_s1_DVCS)
             
         cross_section_prefactor = calculate_bkm10_cross_section_prefactor(
             squared_Q_momentum_transfer,

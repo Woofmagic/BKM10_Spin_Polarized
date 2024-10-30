@@ -99,7 +99,7 @@ def main(
         # (6): Obtain the polarizations -- set to 1 for now:
 
         # This is BKM lambda
-        numerical_lepton_polarization = 1.0 if lepton_helicity == 'positive' else -1.0 if lepton_helicity == 'negative' else 0.0
+        numerical_lepton_polarization = 0.5 if lepton_helicity == 'positive' else -0.5 if lepton_helicity == 'negative' else 0.0
 
         #This is BKM Lambda:
         numerical_target_polarization = 1.0 if target_polarization == 'polarized' else 0.0

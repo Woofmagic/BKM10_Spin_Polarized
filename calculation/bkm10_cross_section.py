@@ -303,7 +303,7 @@ def calculate_bkm10_cross_section(
                 print(f"> Now evaluating unpolarized DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
 
             dvcs_amplitude_squared = 0.5 * (calculate_dvcs_amplitude_squared(
-            1.0,
+            0.5,
             target_polarization,
             squared_Q_momentum_transfer,
             x_Bjorken,
@@ -318,7 +318,7 @@ def calculate_bkm10_cross_section(
             compton_form_factor_e,
             compton_form_factor_e_tilde,
             verbose) + calculate_dvcs_amplitude_squared(
-            -1.0,
+            -0.5,
             target_polarization,
             squared_Q_momentum_transfer,
             x_Bjorken,
@@ -333,6 +333,8 @@ def calculate_bkm10_cross_section(
             compton_form_factor_e,
             compton_form_factor_e_tilde,
             verbose))
+
+            print("fuckzz")
 
         else:
 
@@ -356,9 +358,13 @@ def calculate_bkm10_cross_section(
             compton_form_factor_e_tilde,
             verbose)
 
+            print("fuckzzzzzz")
+
         # (18): Compute the BH Amplitude Squared
         interference_contribution = 0.
         
+        print("fuzzckzz")
+
         # if lepton_helicity == 0.0: 
 
         #     interference_contribution = (calculate_interference_contribution(
@@ -429,9 +435,11 @@ def calculate_bkm10_cross_section(
         #         compton_form_factor_e,
         #         compton_form_factor_e_tilde,
         #         verbose)
-        
+
         # (18): Calculate the total cross section
         bkm10_cross_section = cross_section_prefactor * (bh_amplitude_squared + dvcs_amplitude_squared + interference_contribution)
+
+        print("fucsdfsdfkzz")
 
         # (18.1): If verbose, print the output:
         if verbose:
@@ -443,6 +451,8 @@ def calculate_bkm10_cross_section(
         # (19.1): If verbose, print the conversion:
         if verbose:
             print(f"> Converted BKM10 differential cross section to {bkm10_cross_section_in_nb_GeV4} nb/GeV4")
+
+        print("fucksdfjhsdgzz")
 
         plot_cross_section(
             lab_azimuthal_phi = azimuthal_phi,

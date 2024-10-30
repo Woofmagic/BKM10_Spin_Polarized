@@ -45,8 +45,6 @@ def calculate_c_0_longitudinally_polarized_dvcs(
         # (3): Return the entire thing:
         c0LP_DVCS = prefactor * curlyC_lp_contribution
 
-        print('fuck')
-
         # (3.1): If verbose, log the output:
         if verbose:
             print(f"> Calculated c0LP_DVCS to be:\n{c0LP_DVCS}")
