@@ -362,7 +362,7 @@ def calculate_bkm10_cross_section(
         if lepton_helicity == 0.0: 
 
             interference_contribution = (calculate_interference_contribution(
-                1.0,
+                0.5,
                 target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
@@ -383,7 +383,7 @@ def calculate_bkm10_cross_section(
                 compton_form_factor_e,
                 compton_form_factor_e_tilde,
                 verbose) + calculate_interference_contribution(
-                -1.0,
+                0.5,
                 target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
