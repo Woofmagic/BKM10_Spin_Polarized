@@ -182,12 +182,12 @@ class PlotCustomizer:
             if label:
                 self.axes_object.legend()
 
-    def add_bar_plot(self, x_data, y_data_heights, label = "", color = None):
+    def add_bar_plot(self, x_positions, y_data_heights, label = "", color = None):
 
         with rc_context(rc = self._custom_rc_params):
 
             # (1): Add the bar plot:
-            self.axes_object.bar(x_data, y_data_heights, label = label, color = color)
+            self.axes_object.bar(x_positions, y_data_heights, label = label, color = color)
 
             if label:
                 self.axes_object.legend()

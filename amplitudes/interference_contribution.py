@@ -2,6 +2,11 @@ import matplotlib.pyplot as plt
 
 from utilities.plotting.plot_customizer import PlotCustomizer
 
+from calculation.plot_results import plot_interference_contributions
+
+# Helper Module | Convert GeV^{-6} to nb/GeV^{4}
+from utilities.mathematics.math_units import convert_to_nb_over_GeV4
+
 try:
     import numpy as np
 except ImportError:
@@ -352,55 +357,24 @@ def calculate_interference_contribution(
             compton_form_factor_e_tilde,
             verbose)
         
-        # (1): Figure instance:
-        figure = plt.figure(figsize = (18, 6))
-
-        # (2): Add an Axes Object:
-        axes_object = figure.add_subplot(111)
-
-        customized_plot = PlotCustomizer(
-            axes_object,
-            grid = True)
-        
-        customized_plot.add_line_plot(
-            x_data = azimuthal_phi,
-            y_data = c_0_I,
-            color = 'red')
-        customized_plot.add_line_plot(
-            x_data = azimuthal_phi,
-            y_data = c_1_I * np.cos(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))),
-            color = 'orange')
-        customized_plot.add_line_plot(
-            x_data = azimuthal_phi,
-            y_data = c_2_I * np.cos(2. * (np.pi - convert_degrees_to_radians(azimuthal_phi))),
-            color = 'yellow')
-        customized_plot.add_line_plot(
-            x_data = azimuthal_phi,
-            y_data = c_3_I * np.cos(3. * (np.pi - convert_degrees_to_radians(azimuthal_phi))),
-            color = 'green')
-        customized_plot.add_line_plot(
-            x_data = azimuthal_phi,
-            y_data = s_1_I * np.sin(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))),
-            color = 'blue')
-        customized_plot.add_line_plot(
-            x_data = azimuthal_phi,
-            y_data = s_2_I * np.sin(2. * (np.pi - convert_degrees_to_radians(azimuthal_phi))),
-            color = 'purple')
-        customized_plot.add_line_plot(
-            x_data = azimuthal_phi,
-            y_data = s_3_I * np.sin(3. * (np.pi - convert_degrees_to_radians(azimuthal_phi))),
-            color = 'PINK')
-        
-        plt.show()
+        plot_interference_contributions(
+            azimuthal_phi,
+            convert_to_nb_over_GeV4(c_0_I),
+            convert_to_nb_over_GeV4(c_1_I),
+            convert_to_nb_over_GeV4(c_2_I),
+            convert_to_nb_over_GeV4(c_3_I),
+            convert_to_nb_over_GeV4(s_1_I),
+            convert_to_nb_over_GeV4(s_2_I),
+            convert_to_nb_over_GeV4(s_3_I))
 
         # (9): Calculate the interference contribution:
         interference_contribution = prefactor * (c_0_I + 
-                                                c_1_I * np.cos(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
-                                                c_2_I * np.cos(2. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
-                                                c_3_I * np.cos(3. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
-                                                s_1_I * np.sin(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
-                                                s_2_I * np.sin(2. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
-                                                s_3_I * np.sin(3. * (np.pi - convert_degrees_to_radians(azimuthal_phi))))
+            c_1_I * np.cos(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
+            c_2_I * np.cos(2. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
+            c_3_I * np.cos(3. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
+            s_1_I * np.sin(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
+            s_2_I * np.sin(2. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
+            s_3_I * np.sin(3. * (np.pi - convert_degrees_to_radians(azimuthal_phi))))
 
         # (9.1): If verbose, print the calculation:
         if verbose:

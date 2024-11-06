@@ -222,8 +222,8 @@ def calculate_dvcs_amplitude_squared(
         plot_dvcs_contributions(
             azimuthal_phi,
             convert_to_nb_over_GeV4(coefficient_c0_DVCS),
-            convert_to_nb_over_GeV4(coefficient_c1_DVCS * np.cos(np.pi - convert_degrees_to_radians(azimuthal_phi))),
-            convert_to_nb_over_GeV4(coefficient_s1_DVCS * np.sin(np.pi - convert_degrees_to_radians(azimuthal_phi))))
+            convert_to_nb_over_GeV4(coefficient_c1_DVCS),
+            convert_to_nb_over_GeV4(coefficient_s1_DVCS))
 
         # (5): Compute the Fourier Mode Expansion:
         mode_expansion = coefficient_c0_DVCS + (coefficient_c1_DVCS * np.cos(np.pi - convert_degrees_to_radians(azimuthal_phi))) + (coefficient_s1_DVCS * np.sin(np.pi - convert_degrees_to_radians(azimuthal_phi)))
