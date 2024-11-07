@@ -35,14 +35,14 @@ from coefficients.interference_coefficients.lp_polarized.lp_polarized_Cmp2 impor
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_Cmp2V import calculate_c_2_minus_plus_longitudinally_polarized_V
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_Cmp2A import calculate_c_2_minus_plus_longitudinally_polarized_A
 
-_TEST_LEPTON_POLARIZATION = 1.0
+_TEST_LEPTON_POLARIZATION = 0.5
 _TEST_TARGET_POLARIZATION = 1.0
 _TEST_SQUARED_Q_MOMENTUM_TRANSFER = 1.8200000524520876
 _TEST_X_BJORKEN = 0.3429999947547912
 _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER = -0.1720000058412552
-_TEST_EPSILON = 0.477109
-_TEST_LEPTON_ENERGY_FRACTION = 0.491757
-_TEST_K_TILDE = 0.157396
+_TEST_EPSILON = 0.4771085571437671
+_TEST_LEPTON_ENERGY_FRACTION = 0.4917571121010006
+_TEST_K_TILDE = 0.1573963123403191
 _TEST_SHORTHAND_K = 0.0842939
 _TEST_T_PRIME = -0.0337889
 
@@ -78,7 +78,7 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_K_TILDE,
                 _TEST_VERBOSE), 
-            0.11935918886665)
+            0.059679594433325746)
         
     def test_calculate_c_0_plus_plus_longitudinally_polarized_V(self):
         """
