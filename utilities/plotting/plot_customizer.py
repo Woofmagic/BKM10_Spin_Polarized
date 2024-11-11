@@ -15,9 +15,9 @@ class PlotCustomizer:
         
         self._custom_rc_params = {
             'text.usetex': True,
-            'font.family': 'serif',
+            'font.family': 'serif, sans-serif',
             'font.size': 11.,
-            'mathtext.fontset': 'cm', # https://matplotlib.org/stable/gallery/text_labels_and_annotations/mathtext_fontfamily_example.html
+            'mathtext.fontset': 'dejavusans', # https://matplotlib.org/stable/gallery/text_labels_and_annotations/mathtext_fontfamily_example.html
             'xtick.direction': 'in',
             'xtick.major.size': 5,
             'xtick.major.width': 0.5,
