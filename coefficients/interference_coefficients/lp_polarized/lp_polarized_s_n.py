@@ -244,7 +244,7 @@ def calculate_s_2_interference_coefficient(
 
         if target_polarization == 0.0:
 
-                # (1): We compute the first part of the term: S_{++}(n = 2):
+            # (1): We compute the first part of the term: S_{++}(n = 2):
             s_plus_plus = calculate_s_2_plus_plus_unpolarized(
                 lepton_helicity,
                 squared_Q_momentum_transfer,
@@ -376,25 +376,25 @@ def calculate_s_2_interference_coefficient(
                 compute_cff_effective(skewness_parameter, compton_form_factor_e),
                 compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde),
                 verbose)
-            
+
             # (5): Calculate the curly S_{-+} contribution - requires both n and the CFFs:
-            curly_s_minus_plus = calculate_curly_S_zero_plus_longitudinally_polarized_interference(
-                n_number,
-                target_polarization,
-                squared_Q_momentum_transfer,
-                x_Bjorken,
-                squared_hadronic_momentum_transfer_t,
-                epsilon,
-                lepton_energy_fraction_y,
-                shorthand_k,
-                k_tilde,
-                Dirac_form_factor_F1,
-                Pauli_form_factor_F2,
-                compute_cff_transverse(skewness_parameter, compton_form_factor_h),
-                compute_cff_transverse(skewness_parameter, compton_form_factor_h_tilde),
-                compute_cff_transverse(skewness_parameter, compton_form_factor_e),
-                compute_cff_transverse(skewness_parameter, compton_form_factor_e_tilde),
-                verbose)
+            # curly_s_minus_plus = calculate_curly_S_zero_plus_longitudinally_polarized_interference(
+            #     n_number,
+            #     target_polarization,
+            #     squared_Q_momentum_transfer,
+            #     x_Bjorken,
+            #     squared_hadronic_momentum_transfer_t,
+            #     epsilon,
+            #     lepton_energy_fraction_y,
+            #     shorthand_k,
+            #     k_tilde,
+            #     Dirac_form_factor_F1,
+            #     Pauli_form_factor_F2,
+            #     compute_cff_transverse(skewness_parameter, compton_form_factor_h),
+            #     compute_cff_transverse(skewness_parameter, compton_form_factor_h_tilde),
+            #     compute_cff_transverse(skewness_parameter, compton_form_factor_e),
+            #     compute_cff_transverse(skewness_parameter, compton_form_factor_e_tilde),
+            #     verbose)
         
         # (5): Calculate the entire thing:
         # s_2_interference_coefficient = s_plus_plus * curly_s_plus_plus.imag + s_zero_plus * curly_s_zero_plus.imag + s_minus_plus * curly_s_minus_plus
@@ -474,8 +474,6 @@ def calculate_s_3_interference_coefficient(
                 compton_form_factor_h_tilde,
                 compton_form_factor_e,
                 verbose)
-            
-            print(f'> fuck {curly_s_plus_plus}')
 
             # (4): Calculate the curly S_{0+} contribution - requires both n and the CFFs:
             curly_s_zero_plus = calculate_curly_S_zero_plus_unpolarized_interference(
@@ -495,8 +493,6 @@ def calculate_s_3_interference_coefficient(
                 compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
                 compute_cff_effective(skewness_parameter, compton_form_factor_e),
                 verbose)
-            
-            print(f'> fuck {curly_s_zero_plus}')
             
         elif target_polarization == 1.0:
 

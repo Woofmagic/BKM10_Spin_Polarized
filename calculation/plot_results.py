@@ -23,7 +23,7 @@ def plot_dvcs_contributions(
             DVCS_coefficient_contours,
             title = "DVCS Coefficients",
             xlabel = r"$\phi$",
-            ylabel = "nb/GeV4",
+            ylabel = r"nb$/$GeV$^{-4}$",
             grid = True)
     
     DVCS_coefficients_plot.add_line_plot(
@@ -48,12 +48,15 @@ def plot_dvcs_contributions(
             DVCS_coefficient_bar_graph,
             title = "DVCS Coefficients",
             xlabel = "Fourier Coefficients",
-            ylabel = r"$\mathrm{nb} / \mathrm{GeV}^{4}",
+            ylabel = r"$\mathrm{{nb}} / \mathrm{{GeV}}^{4}",
             grid = True)
     
     DVCS_coefficients_contributions.add_bar_plot(
         x_positions = [r'$c_{0}$',r'$c_{1}$',r'$s_{1}$'],
-        y_data_heights = np.array([c0DVCS_amplitude_contribution[0], c1DVCS_amplitude_contribution[0], s1DVCS_amplitude_contribution[0]])
+        y_data_heights = np.array([
+            c0DVCS_amplitude_contribution[0],
+            c1DVCS_amplitude_contribution[0],
+            s1DVCS_amplitude_contribution[0]])
     )
     
     plt.savefig('dvcs_coefficient_contributions_v1.png')
@@ -85,7 +88,7 @@ def plot_interference_contributions(
     
     interference_coefficients_plot.add_line_plot(
             x_data = lab_azimuthal_phi,
-            y_data = c0Interference_amplitude_contribution ,
+            y_data = c0Interference_amplitude_contribution,
             label = r"$c_{0}$",
             color = 'red')
         
@@ -125,23 +128,23 @@ def plot_interference_contributions(
         label = r"$s_{3} \sin(3 ( \pi - \phi ))$",
         color = 'purple')
     
-    DVCS_coefficients_contributions = PlotCustomizer(
+    interference_coefficients_contributions = PlotCustomizer(
             interference_coefficient_bar_graph,
             title = "Interference Coefficients",
             xlabel = "Fourier Coefficients",
-            ylabel = r"$\mathrm{nb} / \mathrm{GeV}^{4}",
+            ylabel = r"$\mathrm{{nb}} / \mathrm{{GeV}}^{4}",
             grid = True)
     
-    DVCS_coefficients_contributions.add_bar_plot(
+    interference_coefficients_contributions.add_bar_plot(
         x_positions = [r'$c_{0}$', r'$c_{1}$', r'$c_{2}$', r'$c_{3}$', r'$s_{1}$', r'$s_{2}$', r'$s_{3}$'],
         y_data_heights = np.array([
-            c0Interference_amplitude_contribution[0],
-            c1Interference_amplitude_contribution[0],
-            c2Interference_amplitude_contribution[0],
-            c3Interference_amplitude_contribution[0],
-            s1Interference_amplitude_contribution[0],
-            s2Interference_amplitude_contribution[0],
-            s3Interference_amplitude_contribution[0]
+            np.max(c0Interference_amplitude_contribution),
+            np.max(c1Interference_amplitude_contribution),
+            np.max(c2Interference_amplitude_contribution),
+            np.max(c3Interference_amplitude_contribution),
+            np.max(s1Interference_amplitude_contribution),
+            np.max(s2Interference_amplitude_contribution),
+            np.max(s3Interference_amplitude_contribution)
             ])
     )
     
@@ -176,16 +179,20 @@ def plot_cross_section(
     """
     
     # (1): Figure instance:
-    figure = plt.figure(figsize = (18, 6))
+    figure = plt.figure(figsize = (10.5, 7))
 
     # (2): Add an Axes Object:
     axes_object = figure.add_subplot(111)
 
     customized_plot = PlotCustomizer(
         axes_object,
-        title = r"$E = {} \mathrm{GeV}, Q^{{2}} = {} \mathrm{GeV}^{{2}}, t = {} \mathrm{GeV}^{{2}}, x_{\mathrm{B}}= {}$".format(value_of_beam_energy, value_of_Q_squared, value_of_hadron_recoil, value_of_x_Bjorken),
-        xlabel = r"$\phi \left[ \mathrm{deg} \right]$",
-        ylabel = r"$d^{4} \sigma_{\mathrm{LP}} \left[ \mathrm{nb} / \mathrm{GeV}^{4} \right]$",
+        title = r"$E = {} \mathrm{{GeV}}, Q^{{2}} = {} \mathrm{{GeV}}^{{2}}, t = {} \mathrm{{GeV}}^{{2}}, x_{{\mathrm{{B}}}}= {}$".format(
+            round(value_of_beam_energy, 5), 
+            round(value_of_Q_squared, 5),
+            round(value_of_hadron_recoil, 5),
+            round(value_of_x_Bjorken, 5)),
+        xlabel = r"$\phi \left[ \mathrm{{deg}} \right]$",
+        ylabel = r"$d^{4} \sigma_{{\mathrm{{LP}}}} \left[ \mathrm{{nb}} / \mathrm{{GeV}}^{4} \right]$",
         grid = True)
     
     customized_plot.add_scatter_plot(
@@ -193,7 +200,9 @@ def plot_cross_section(
         y_data = calculated_cross_section,
         color = 'blue')
     
-    plt.savefig('cross_section_v1.png')
+    plt.savefig(
+        fname = 'cross_section_v1.png',
+        dpi = 500)
 
     return customized_plot
 

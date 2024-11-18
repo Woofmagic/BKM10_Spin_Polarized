@@ -192,7 +192,7 @@ def calculate_curly_S_plus_plus_longitudinally_polarized_interference(
                 verbose)
 
         # (6): 
-        curly_S_longitudinally_polarized_interference = curly_C_longitudinally_polarized_interference + s_V_plus_plus_contribution * curly_C_V_longitudinally_polarized_interference / s_plus_plus_contribution + s_A_plus_plus_contribution * curly_C_A_longitudinally_polarized_interference / s_plus_plus_contribution
+        curly_S_longitudinally_polarized_interference = curly_C_longitudinally_polarized_interference + (s_V_plus_plus_contribution * curly_C_V_longitudinally_polarized_interference / s_plus_plus_contribution) + (s_A_plus_plus_contribution * curly_C_A_longitudinally_polarized_interference / s_plus_plus_contribution)
 
         # (6.1): If verbose, print the calculation:
         if verbose:

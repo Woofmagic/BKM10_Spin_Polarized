@@ -151,8 +151,8 @@ def calculate_curly_S_zero_plus_longitudinally_polarized_interference(
                 verbose)
             
             # (6): Calculate the curly S0+ coefficient:
-            curly_S_longitudinally_polarized_interference = prefactor * (curly_C_longitudinally_polarized_interference + s_V_zero_plus_contribution * curly_C_V_longitudinally_polarized_interference / s_zero_plus_contribution + s_A_zero_plus_contribution * curly_C_A_longitudinally_polarized_interference / s_zero_plus_contribution)
-            
+            curly_S_longitudinally_polarized_interference = prefactor * (curly_C_longitudinally_polarized_interference + (s_V_zero_plus_contribution * curly_C_V_longitudinally_polarized_interference / s_zero_plus_contribution) + (s_A_zero_plus_contribution * curly_C_A_longitudinally_polarized_interference / s_zero_plus_contribution))
+
         elif n_number == 3:
 
             # (6): Calculate the curly S0+ coefficient:

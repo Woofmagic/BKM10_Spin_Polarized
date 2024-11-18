@@ -22,10 +22,10 @@ def calculate_s_3_plus_plus_longitudinally_polarized_A(
         root_one_plus_epsilon_squared = np.sqrt(1. + epsilon**2)
 
         # (2): Calculate the main contribution:
-        multiplicative_contribution = squared_hadronic_momentum_transfer_t * t_prime * (1. + root_one_plus_epsilon_squared - 2. * x_Bjorken) / squared_Q_momentum_transfer**2
+        multiplicative_contribution = x_Bjorken * squared_hadronic_momentum_transfer_t * t_prime * (1. + root_one_plus_epsilon_squared - 2. * x_Bjorken) / squared_Q_momentum_transfer**2
 
         # (3): Calculate the coefficient
-        prefactor = -8. * target_polarization * shorthand_k * (1. - lepton_energy_fraction_y - lepton_energy_fraction_y**2 * epsilon**2 / 4.) / root_one_plus_epsilon_squared**6
+        prefactor = -8. * target_polarization * shorthand_k * (1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.)) / root_one_plus_epsilon_squared**6
 
         # (4): Calculate the coefficient:
         s_3_plus_plus_A_LP = prefactor * multiplicative_contribution

@@ -7,6 +7,8 @@ from calculation.plot_results import plot_interference_contributions
 # Helper Module | Convert GeV^{-6} to nb/GeV^{4}
 from utilities.mathematics.math_units import convert_to_nb_over_GeV4
 
+from calculation.plot_results import plot_interference_contributions
+
 try:
     import numpy as np
 except ImportError:
@@ -218,6 +220,8 @@ def calculate_interference_contribution(
             compton_form_factor_e,
             compton_form_factor_e_tilde,
             verbose)
+        
+        print("s2fgg")
 
         # (3): Calculate c_{1}^{I}:
         # c_1_I = 0.
@@ -242,6 +246,7 @@ def calculate_interference_contribution(
             compton_form_factor_e_tilde,
             verbose)
         
+        print("c1")
         # (4): Calculate c_{2}^{I}:
         # c_2_I = 0.
         c_2_I = calculate_c_2_interference_coefficient(
@@ -264,6 +269,8 @@ def calculate_interference_contribution(
             compton_form_factor_e,
             compton_form_factor_e_tilde,
             verbose)
+
+        print("c2")
 
         # (5): Calculate c_{2}^{I}:
         # c_3_I = 0.
@@ -288,6 +295,7 @@ def calculate_interference_contribution(
             compton_form_factor_e_tilde,
             verbose)
 
+        print("c3")
         # (6): Calculate s_{1}^{I}:
         # s_1_I = 0.
         s_1_I = calculate_s_1_interference_coefficient(
@@ -311,6 +319,8 @@ def calculate_interference_contribution(
             compton_form_factor_e_tilde,
             verbose)
         
+        print("s1")
+
         # (7): Calculate s_{2}^{I}:
         # s_2_I = 0.
         s_2_I = calculate_s_2_interference_coefficient(
@@ -333,6 +343,8 @@ def calculate_interference_contribution(
             compton_form_factor_e,
             compton_form_factor_e_tilde,
             verbose)
+        
+        print("s2")
 
         # (8): Calculate s_{3}^{I}:
         # s_3_I = 0.

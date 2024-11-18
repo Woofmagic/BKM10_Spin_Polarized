@@ -52,6 +52,7 @@ def calculate_c_0_interference_coefficient(
     verbose: bool = False) -> float:
     """
     """
+    print("cufnt")
 
     # (1): We initialize all terms of: c_{n}^{I} = C_{++}(n) Re[CurlyC_{++}(n|F)] + C_{0+}(n) Re[CurlyC_{0+}(n|F_{eff})] + C_{-+}(n) Re[CurlyC_{-+}(n|F_{T})]
 
@@ -77,6 +78,8 @@ def calculate_c_0_interference_coefficient(
 
         if target_polarization == 0.0:
 
+            print('fagggg')
+
             # (1): We compute the first part of the term: C_{++}(n = 0):
             c_plus_plus = calculate_c_0_plus_plus_unpolarized(
                 squared_Q_momentum_transfer,
@@ -86,6 +89,8 @@ def calculate_c_0_interference_coefficient(
                 lepton_energy_fraction_y,
                 k_tilde,
                 verbose)
+            
+            print('2')
 
             # (2): The second part of the term is C_{0+}(n = 0):
             c_zero_plus = calculate_c_0_zero_plus_unpolarized(
@@ -96,6 +101,8 @@ def calculate_c_0_interference_coefficient(
                 lepton_energy_fraction_y,
                 shorthand_k,
                 verbose)
+            
+            print('3')
 
             # (3): Calculate the curly C_{++} contribution - requires both n and the CFFs:
             curly_c_plus_plus = calculate_curly_C_plus_plus_unpolarized_interference(
@@ -114,6 +121,8 @@ def calculate_c_0_interference_coefficient(
                 compton_form_factor_h_tilde,
                 compton_form_factor_e,
                 verbose)
+            
+            print('45')
 
             # (4): Calculate the curly C_{0+} contribution - requires both n and the CFFs:
             curly_c_zero_plus = calculate_curly_C_zero_plus_unpolarized_interference(
@@ -132,6 +141,8 @@ def calculate_c_0_interference_coefficient(
                 compute_cff_effective(skewness_parameter, compton_form_factor_e),
                 compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde),
                 verbose)
+            
+            print('7')
 
         elif target_polarization == 1.0:
 
@@ -233,6 +244,7 @@ def calculate_c_0_interference_coefficient(
                 compute_cff_transverse(skewness_parameter, compton_form_factor_e_tilde),
                 verbose)
 
+        print('266')
         # (5): Calculate the entire thing:
         # c_n_interference_coefficient = c_plus_plus * curly_c_plus_plus.real + c_zero_plus * curly_c_zero_plus.real + c_minus_plus * curly_c_minus_plus
         c_0_interference_coefficient = c_plus_plus * curly_c_plus_plus.real + c_zero_plus * curly_c_zero_plus.real

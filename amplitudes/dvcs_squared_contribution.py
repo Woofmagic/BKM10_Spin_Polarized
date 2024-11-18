@@ -234,6 +234,8 @@ def calculate_dvcs_amplitude_squared(
         # (7): The entire amplitude:
         dvcs_amplitude_squared = numerator / denominator
 
+        print('fuck')
+
         # (7.1): If verbose, then print the output:
         if verbose:
             print(f"> Calculated DVCS amplitude squared as: {dvcs_amplitude_squared}")
