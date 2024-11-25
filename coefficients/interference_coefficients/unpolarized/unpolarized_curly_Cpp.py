@@ -38,7 +38,7 @@ def calculate_curly_C_plus_plus_unpolarized_interference(
     try:
 
         # (1): Calculate curly C_{unp}^{I}(F):
-        curly_C_longitudinally_polarized_interference = calculate_curly_C_unpolarized_interference(
+        curly_C_unpolarized_interference = calculate_curly_C_unpolarized_interference(
             squared_Q_momentum_transfer, 
             x_Bjorken,
             squared_hadronic_momentum_transfer_t,
@@ -50,7 +50,7 @@ def calculate_curly_C_plus_plus_unpolarized_interference(
             verbose)
         
         # (2): Calculate curly C_{unp}^{I, V}(F):
-        curly_C_V_longitudinally_polarized_interference = calculate_curly_C_unpolarized_interference_V(
+        curly_C_V_unpolarized_interference = calculate_curly_C_unpolarized_interference_V(
             squared_Q_momentum_transfer, 
             x_Bjorken,
             squared_hadronic_momentum_transfer_t,
@@ -61,7 +61,7 @@ def calculate_curly_C_plus_plus_unpolarized_interference(
             verbose)
         
         # (3): Calculate curly C_{LP}^{I, A}(F):
-        curly_C_A_longitudinally_polarized_interference = calculate_curly_C_unpolarized_interference_A(
+        curly_C_A_unpolarized_interference = calculate_curly_C_unpolarized_interference_A(
             squared_Q_momentum_transfer, 
             x_Bjorken,
             squared_hadronic_momentum_transfer_t,
@@ -104,9 +104,9 @@ def calculate_curly_C_plus_plus_unpolarized_interference(
                 verbose)
 
             # (5): Perform the calculation:
-            curly_C_plus_plus_longitudinally_polarized_interference = curly_C_longitudinally_polarized_interference
-            + c_V_plus_plus_contribution * curly_C_V_longitudinally_polarized_interference / c_plus_plus_contribution
-            + c_A_plus_plus_contribution * curly_C_A_longitudinally_polarized_interference / c_plus_plus_contribution
+            curly_C_plus_plus_unpolarized_interference = (curly_C_unpolarized_interference
+            + (c_V_plus_plus_contribution * curly_C_V_unpolarized_interference / c_plus_plus_contribution)
+            + (c_A_plus_plus_contribution * curly_C_A_unpolarized_interference / c_plus_plus_contribution))
 
         elif n_number == 1:
 
@@ -143,9 +143,9 @@ def calculate_curly_C_plus_plus_unpolarized_interference(
                 verbose)
 
             # (5): Perform the calculation:
-            curly_C_plus_plus_longitudinally_polarized_interference = curly_C_longitudinally_polarized_interference
-            + c_V_plus_plus_contribution * curly_C_V_longitudinally_polarized_interference / c_plus_plus_contribution
-            + c_A_plus_plus_contribution * curly_C_A_longitudinally_polarized_interference / c_plus_plus_contribution
+            curly_C_plus_plus_unpolarized_interference = (curly_C_unpolarized_interference
+            + (c_V_plus_plus_contribution * curly_C_V_unpolarized_interference / c_plus_plus_contribution)
+            + (c_A_plus_plus_contribution * curly_C_A_unpolarized_interference / c_plus_plus_contribution))
 
         elif n_number == 2:
 
@@ -183,9 +183,9 @@ def calculate_curly_C_plus_plus_unpolarized_interference(
                 verbose)
 
             # (5): Perform the calculation:
-            curly_C_plus_plus_longitudinally_polarized_interference = curly_C_longitudinally_polarized_interference
-            + c_V_plus_plus_contribution * curly_C_V_longitudinally_polarized_interference / c_plus_plus_contribution
-            + c_A_plus_plus_contribution * curly_C_A_longitudinally_polarized_interference / c_plus_plus_contribution
+            curly_C_plus_plus_unpolarized_interference = (curly_C_unpolarized_interference
+            + (c_V_plus_plus_contribution * curly_C_V_unpolarized_interference / c_plus_plus_contribution)
+            + (c_A_plus_plus_contribution * curly_C_A_unpolarized_interference / c_plus_plus_contribution))
 
         elif n_number == 3:
 
@@ -221,20 +221,20 @@ def calculate_curly_C_plus_plus_unpolarized_interference(
                 verbose)
 
             # (5): Perform the calculation:
-            curly_C_plus_plus_longitudinally_polarized_interference = curly_C_longitudinally_polarized_interference
-            + c_V_plus_plus_contribution * curly_C_V_longitudinally_polarized_interference / c_plus_plus_contribution
-            + c_A_plus_plus_contribution * curly_C_A_longitudinally_polarized_interference / c_plus_plus_contribution
+            curly_C_plus_plus_unpolarized_interference = (curly_C_unpolarized_interference
+            + (c_V_plus_plus_contribution * curly_C_V_unpolarized_interference / c_plus_plus_contribution)
+            + (c_A_plus_plus_contribution * curly_C_A_unpolarized_interference / c_plus_plus_contribution))
 
         else:
 
-            curly_C_plus_plus_longitudinally_polarized_interference = 0.
+            curly_C_plus_plus_unpolarized_interference = 0.
 
         # (5.1): If verbose, print the calculation:
         if verbose:
-            print(f"> Calculated curly C++ to be:\n{curly_C_plus_plus_longitudinally_polarized_interference}")
+            print(f"> Calculated curly C++ to be:\n{curly_C_plus_plus_unpolarized_interference}")
 
         # (6): Return the output.
-        return curly_C_plus_plus_longitudinally_polarized_interference
+        return curly_C_plus_plus_unpolarized_interference
 
     except Exception as ERROR:
         print(f"> Error in calculating the curly C++ LP entire contribution amplitude squared\n> {ERROR}")

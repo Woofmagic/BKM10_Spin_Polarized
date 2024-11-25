@@ -19,6 +19,7 @@ def calculate_c_0_unpolarized_dvcs(
     compton_form_factor_h_tilde: complex,
     compton_form_factor_e: complex,
     compton_form_factor_e_tilde: complex,
+    use_ww: bool = False,
     verbose: bool = False) -> float:
     """
     """
@@ -53,14 +54,14 @@ def calculate_c_0_unpolarized_dvcs(
             x_Bjorken,
             squared_hadronic_momentum_transfer_t,
             epsilon,
-            compute_cff_effective(skewness_parameter, compton_form_factor_h),
-            compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde),
-            compute_cff_effective(skewness_parameter, compton_form_factor_h).conjugate(),
-            compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde).conjugate(),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e).conjugate(),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde).conjugate(),
+            compute_cff_effective(skewness_parameter, compton_form_factor_h, use_ww),
+            compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde, use_ww),
+            compute_cff_effective(skewness_parameter, compton_form_factor_e, use_ww),
+            compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde, use_ww),
+            compute_cff_effective(skewness_parameter, compton_form_factor_h, use_ww).conjugate(),
+            compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde, use_ww).conjugate(),
+            compute_cff_effective(skewness_parameter, compton_form_factor_e, use_ww).conjugate(),
+            compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde, use_ww).conjugate(),
             verbose)
 
         # (5): Calculate the entire coefficient:

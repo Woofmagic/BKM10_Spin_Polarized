@@ -21,6 +21,7 @@ def calculate_c_1_longitudinally_polarized_dvcs(
     compton_form_factor_h_tilde: float,
     compton_form_factor_e: float,
     compton_form_factor_e_tilde: float,
+    use_ww: bool = False,
     verbose: bool = False) -> float:
     """
     """
@@ -36,17 +37,15 @@ def calculate_c_1_longitudinally_polarized_dvcs(
             x_Bjorken,
             squared_hadronic_momentum_transfer_t,
             epsilon,
-            compute_cff_effective(skewness_parameter, compton_form_factor_h),
-            compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde),
+            compute_cff_effective(skewness_parameter, compton_form_factor_h, use_ww),
+            compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde, use_ww),
+            compute_cff_effective(skewness_parameter, compton_form_factor_e, use_ww),
+            compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde, use_ww),
             compton_form_factor_h.conjugate(),
             compton_form_factor_h_tilde.conjugate(),
             compton_form_factor_e.conjugate(),
             compton_form_factor_e_tilde.conjugate(),
             verbose).real
-        
-        print(c1LP_DVCS)
         
         # (3.1): If verbose, log the output:
         if verbose:

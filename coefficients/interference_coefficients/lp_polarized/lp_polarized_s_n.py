@@ -43,6 +43,7 @@ def calculate_s_1_interference_coefficient(
     compton_form_factor_h_tilde: complex,
     compton_form_factor_e: complex,
     compton_form_factor_e_tilde: complex,
+    use_ww: bool = False,
     verbose: bool = False) -> float:
     """
     """
@@ -104,9 +105,9 @@ def calculate_s_1_interference_coefficient(
                 shorthand_k,
                 Dirac_form_factor_F1,
                 Pauli_form_factor_F2,
-                compute_cff_effective(skewness_parameter, compton_form_factor_h),
-                compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
-                compute_cff_effective(skewness_parameter, compton_form_factor_e),
+                compute_cff_effective(skewness_parameter, compton_form_factor_h, use_ww),
+                compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde, use_ww),
+                compute_cff_effective(skewness_parameter, compton_form_factor_e, use_ww),
                 verbose)
 
         elif target_polarization == 1.0:
@@ -177,10 +178,10 @@ def calculate_s_1_interference_coefficient(
                 k_tilde,
                 Dirac_form_factor_F1,
                 Pauli_form_factor_F2,
-                compute_cff_effective(skewness_parameter, compton_form_factor_h),
-                compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
-                compute_cff_effective(skewness_parameter, compton_form_factor_e),
-                compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde),
+                compute_cff_effective(skewness_parameter, compton_form_factor_h, use_ww),
+                compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde, use_ww),
+                compute_cff_effective(skewness_parameter, compton_form_factor_e, use_ww),
+                compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde, use_ww),
                 verbose)
             
             # (5): Calculate the curly S_{-+} contribution - requires both n and the CFFs:
@@ -236,6 +237,7 @@ def calculate_s_2_interference_coefficient(
     compton_form_factor_h_tilde: complex,
     compton_form_factor_e: complex,
     compton_form_factor_e_tilde: complex,
+    use_ww: bool = False,
     verbose: bool = False) -> float:
     """
     """
@@ -298,9 +300,9 @@ def calculate_s_2_interference_coefficient(
                 shorthand_k,
                 Dirac_form_factor_F1,
                 Pauli_form_factor_F2,
-                compute_cff_effective(skewness_parameter, compton_form_factor_h),
-                compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
-                compute_cff_effective(skewness_parameter, compton_form_factor_e),
+                compute_cff_effective(skewness_parameter, compton_form_factor_h, use_ww),
+                compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde, use_ww),
+                compute_cff_effective(skewness_parameter, compton_form_factor_e, use_ww),
                 verbose)
 
         elif target_polarization == 1.0:
@@ -371,10 +373,10 @@ def calculate_s_2_interference_coefficient(
                 k_tilde,
                 Dirac_form_factor_F1,
                 Pauli_form_factor_F2,
-                compute_cff_effective(skewness_parameter, compton_form_factor_h),
-                compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
-                compute_cff_effective(skewness_parameter, compton_form_factor_e),
-                compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde),
+                compute_cff_effective(skewness_parameter, compton_form_factor_h, use_ww),
+                compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde, use_ww),
+                compute_cff_effective(skewness_parameter, compton_form_factor_e, use_ww),
+                compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde, use_ww),
                 verbose)
 
             # (5): Calculate the curly S_{-+} contribution - requires both n and the CFFs:
@@ -430,6 +432,7 @@ def calculate_s_3_interference_coefficient(
     compton_form_factor_h_tilde: complex,
     compton_form_factor_e: complex,
     compton_form_factor_e_tilde: complex,
+    use_ww: bool = False,
     verbose: bool = False) -> float:
     """
     """
@@ -489,9 +492,9 @@ def calculate_s_3_interference_coefficient(
                 shorthand_k,
                 Dirac_form_factor_F1,
                 Pauli_form_factor_F2,
-                compute_cff_effective(skewness_parameter, compton_form_factor_h),
-                compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
-                compute_cff_effective(skewness_parameter, compton_form_factor_e),
+                compute_cff_effective(skewness_parameter, compton_form_factor_h, use_ww),
+                compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde, use_ww),
+                compute_cff_effective(skewness_parameter, compton_form_factor_e, use_ww),
                 verbose)
             
         elif target_polarization == 1.0:
@@ -554,10 +557,10 @@ def calculate_s_3_interference_coefficient(
                 k_tilde,
                 Dirac_form_factor_F1,
                 Pauli_form_factor_F2,
-                compute_cff_effective(skewness_parameter, compton_form_factor_h),
-                compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
-                compute_cff_effective(skewness_parameter, compton_form_factor_e),
-                compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde),
+                compute_cff_effective(skewness_parameter, compton_form_factor_h, use_ww),
+                compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde, use_ww),
+                compute_cff_effective(skewness_parameter, compton_form_factor_e, use_ww),
+                compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde, use_ww),
                 verbose)
             
             # (5): Calculate the curly S_{-+} contribution - requires both n and the CFFs:

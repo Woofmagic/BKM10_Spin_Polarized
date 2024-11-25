@@ -108,7 +108,7 @@ class PlotCustomizer:
             if label:
                 self.axes_object.legend()
 
-    def add_scatter_plot(self, x_data, y_data, label: str = "", color = None, marker = 'o'):
+    def add_scatter_plot(self, x_data, y_data, radial_size: float = 1., label: str = "", color = None, marker = 'o'):
         """
         Add a scatter plot to the Axes object.
 
@@ -118,9 +118,11 @@ class PlotCustomizer:
             
         y_data: array_like
 
+        radial_size: float
+        
         label: str
 
-        color: str |
+        color: str 
 
         marker: str
         """
@@ -128,7 +130,13 @@ class PlotCustomizer:
         with rc_context(rc = self._custom_rc_params):
 
             # (1): Add the scatter plot:
-            self.axes_object.scatter(x_data, y_data, label = label, color = color, marker = marker)
+            self.axes_object.scatter(
+                x_data,
+                y_data,
+                s = radial_size,
+                label = label,
+                color = color,
+                marker = marker)
 
             if label:
                 self.axes_object.legend()

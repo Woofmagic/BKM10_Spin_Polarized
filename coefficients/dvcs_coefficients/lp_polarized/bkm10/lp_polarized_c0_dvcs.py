@@ -17,6 +17,7 @@ def calculate_c_0_longitudinally_polarized_dvcs(
     compton_form_factor_h_tilde: complex,
     compton_form_factor_e: complex,
     compton_form_factor_e_tilde: complex,
+    use_ww: bool = False,
     verbose: bool = False) -> float:
     """
     """

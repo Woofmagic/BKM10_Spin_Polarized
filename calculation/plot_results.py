@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
 
 from utilities.plotting.plot_customizer import PlotCustomizer
 
@@ -56,8 +57,9 @@ def plot_dvcs_contributions(
         y_data_heights = np.array([
             c0DVCS_amplitude_contribution[0],
             c1DVCS_amplitude_contribution[0],
-            s1DVCS_amplitude_contribution[0]])
-    )
+            s1DVCS_amplitude_contribution[0]
+            ]),
+            color = ['red', 'orange', 'yellow'])
     
     plt.savefig('dvcs_coefficient_contributions_v1.png')
 
@@ -145,8 +147,8 @@ def plot_interference_contributions(
             np.max(s1Interference_amplitude_contribution),
             np.max(s2Interference_amplitude_contribution),
             np.max(s3Interference_amplitude_contribution)
-            ])
-    )
+            ]),
+            color = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'])
     
     plt.savefig('interference_coefficient_contributions_v1.png')
 
@@ -182,7 +184,7 @@ def plot_cross_section(
     figure = plt.figure(figsize = (10.5, 7))
 
     # (2): Add an Axes Object:
-    axes_object = figure.add_subplot(111)
+    axes_object = figure.add_subplot(1, 1, 1)
 
     customized_plot = PlotCustomizer(
         axes_object,
@@ -195,10 +197,29 @@ def plot_cross_section(
         ylabel = r"$d^{4} \sigma_{{\mathrm{{LP}}}} \left[ \mathrm{{nb}} / \mathrm{{GeV}}^{4} \right]$",
         grid = True)
     
+    df = pd.read_csv('interference_unpolarized_beam_unpolarized_target_v1.csv', names = ['sigma'])
+    df_ji = pd.read_csv('ji_interference_unpolarized_beam_unpolarized_target_v1.csv', names = ['ji_sigma'])
+    
     customized_plot.add_scatter_plot(
         x_data = lab_azimuthal_phi,
         y_data = calculated_cross_section,
+        radial_size = 1.3,
+        label = "Dima's BKM 10 Python (no WW)",
         color = 'blue')
+    
+    customized_plot.add_scatter_plot(
+        x_data = lab_azimuthal_phi,
+        y_data = df['sigma'],
+        radial_size = 1.3,
+        label = "Dima's BKM10 Mathematica (no WW)",
+        color = 'red')
+    
+    customized_plot.add_scatter_plot(
+        x_data = lab_azimuthal_phi,
+        y_data = df_ji['ji_sigma'],
+        radial_size = 1.3,
+        label = "Ji's Covariant Formalism with Dima's Mathematica'",
+        color = 'green')
     
     plt.savefig(
         fname = 'cross_section_v1.png',
@@ -217,7 +238,7 @@ def plot_coefficient_contributions():
     customized_plot = PlotCustomizer(
         axes_object,
         title = r"Coefficient Contributions",
-        xlabel = r"Fuck",
+        xlabel = r"XX",
         ylabel = r"Coefficient Value",
         grid = True)
     

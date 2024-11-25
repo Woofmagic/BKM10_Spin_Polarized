@@ -28,9 +28,9 @@ def calculate_curly_C_zero_plus_unpolarized_interference(
     shorthand_k: float,
     Dirac_form_factor_F1: float,
     Pauli_form_factor_F2: float,
-    compton_form_factor_h_eff: float,
-    compton_form_factor_h_tilde_eff: float,
-    compton_form_factor_e_eff: float,
+    compton_form_factor_h_eff: complex,
+    compton_form_factor_h_tilde_eff: complex,
+    compton_form_factor_e_eff: complex,
     verbose: bool = False) -> float:
 
     try:
@@ -49,6 +49,7 @@ def calculate_curly_C_zero_plus_unpolarized_interference(
             compton_form_factor_h_tilde_eff,
             compton_form_factor_e_eff,
             verbose)
+        print(curly_C_unpolarized_interference)
         
         # (2): Calculate curly C_{unp}^{I, V}(F):
         curly_C_V_unpolarized_interference = calculate_curly_C_unpolarized_interference_V(

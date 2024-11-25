@@ -63,6 +63,7 @@ def calculate_interference_contribution(
     compton_form_factor_h_tilde: complex,
     compton_form_factor_e: complex,
     compton_form_factor_e_tilde: complex,
+    use_ww: bool = False,
     verbose: bool = False) -> float:
     """
     # Title: `calculate_interference_contribution`
@@ -219,9 +220,8 @@ def calculate_interference_contribution(
             compton_form_factor_h_tilde,
             compton_form_factor_e,
             compton_form_factor_e_tilde,
+            use_ww,
             verbose)
-        
-        print("s2fgg")
 
         # (3): Calculate c_{1}^{I}:
         # c_1_I = 0.
@@ -244,9 +244,9 @@ def calculate_interference_contribution(
             compton_form_factor_h_tilde,
             compton_form_factor_e,
             compton_form_factor_e_tilde,
+            use_ww,
             verbose)
         
-        print("c1")
         # (4): Calculate c_{2}^{I}:
         # c_2_I = 0.
         c_2_I = calculate_c_2_interference_coefficient(
@@ -268,9 +268,8 @@ def calculate_interference_contribution(
             compton_form_factor_h_tilde,
             compton_form_factor_e,
             compton_form_factor_e_tilde,
+            use_ww,
             verbose)
-
-        print("c2")
 
         # (5): Calculate c_{2}^{I}:
         # c_3_I = 0.
@@ -293,9 +292,9 @@ def calculate_interference_contribution(
             compton_form_factor_h_tilde,
             compton_form_factor_e,
             compton_form_factor_e_tilde,
+            use_ww,
             verbose)
-
-        print("c3")
+        
         # (6): Calculate s_{1}^{I}:
         # s_1_I = 0.
         s_1_I = calculate_s_1_interference_coefficient(
@@ -317,9 +316,8 @@ def calculate_interference_contribution(
             compton_form_factor_h_tilde,
             compton_form_factor_e,
             compton_form_factor_e_tilde,
+            use_ww,
             verbose)
-        
-        print("s1")
 
         # (7): Calculate s_{2}^{I}:
         # s_2_I = 0.
@@ -342,9 +340,8 @@ def calculate_interference_contribution(
             compton_form_factor_h_tilde,
             compton_form_factor_e,
             compton_form_factor_e_tilde,
+            use_ww,
             verbose)
-        
-        print("s2")
 
         # (8): Calculate s_{3}^{I}:
         # s_3_I = 0.
@@ -367,6 +364,7 @@ def calculate_interference_contribution(
             compton_form_factor_h_tilde,
             compton_form_factor_e,
             compton_form_factor_e_tilde,
+            use_ww,
             verbose)
         
         plot_interference_contributions(

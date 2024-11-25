@@ -53,6 +53,7 @@ def calculate_dvcs_amplitude_squared(
     compton_form_factor_h_tilde: complex,
     compton_form_factor_e: complex,
     compton_form_factor_e_tilde: complex,
+    use_ww: bool = False,
     verbose: bool = False):
     """
     # Title: `calculate_dvcs_amplitude_squared`
@@ -126,6 +127,7 @@ def calculate_dvcs_amplitude_squared(
                 compton_form_factor_h_tilde,
                 compton_form_factor_e,
                 compton_form_factor_e_tilde,
+                use_ww,
                 verbose)
 
             # (3): Obtain the first coefficient in the unevaluated sum (cosine n = 1 term):
@@ -141,6 +143,7 @@ def calculate_dvcs_amplitude_squared(
                 compton_form_factor_h_tilde,
                 compton_form_factor_e,
                 compton_form_factor_e_tilde,
+                use_ww,
                 verbose)
 
             # (4): Obtain the first coefficient in the unevaluated sum (sin n = 1 term):
@@ -157,6 +160,7 @@ def calculate_dvcs_amplitude_squared(
                 compton_form_factor_h_tilde,
                 compton_form_factor_e,
                 compton_form_factor_e_tilde,
+                use_ww,
                 verbose)
             
         elif target_polarization != 0.0:
@@ -177,6 +181,7 @@ def calculate_dvcs_amplitude_squared(
                 compton_form_factor_h_tilde,
                 compton_form_factor_e,
                 compton_form_factor_e_tilde,
+                use_ww,
                 verbose)
 
             # (3): Obtain the first coefficient in the unevaluated sum (cosine n = 1 term):
@@ -194,6 +199,7 @@ def calculate_dvcs_amplitude_squared(
                 compton_form_factor_h_tilde,
                 compton_form_factor_e,
                 compton_form_factor_e_tilde,
+                use_ww,
                 verbose)
 
             # (4): Obtain the first coefficient in the unevaluated sum (sin n = 1 term):
@@ -210,6 +216,7 @@ def calculate_dvcs_amplitude_squared(
                 compton_form_factor_h_tilde,
                 compton_form_factor_e,
                 compton_form_factor_e_tilde,
+                use_ww,
                 verbose)
             
         cross_section_prefactor = calculate_bkm10_cross_section_prefactor(
@@ -233,8 +240,6 @@ def calculate_dvcs_amplitude_squared(
 
         # (7): The entire amplitude:
         dvcs_amplitude_squared = numerator / denominator
-
-        print('fuck')
 
         # (7.1): If verbose, then print the output:
         if verbose:

@@ -20,6 +20,7 @@ def calculate_s_1_unpolarized_dvcs(
     compton_form_factor_h_tilde: complex,
     compton_form_factor_e: complex,
     compton_form_factor_e_tilde: complex,
+    use_ww: bool = False,
     verbose: bool = False) -> float:
     """
     """
@@ -35,10 +36,10 @@ def calculate_s_1_unpolarized_dvcs(
             x_Bjorken,
             squared_hadronic_momentum_transfer_t,
             epsilon,
-            compute_cff_effective(skewness_parameter, compton_form_factor_h),
-            compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e),
-            compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde),
+            compute_cff_effective(skewness_parameter, compton_form_factor_h, use_ww),
+            compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde, use_ww),
+            compute_cff_effective(skewness_parameter, compton_form_factor_e, use_ww),
+            compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde, use_ww),
             compton_form_factor_h.conjugate(),
             compton_form_factor_h_tilde.conjugate(),
             compton_form_factor_e.conjugate(),

@@ -1,6 +1,7 @@
 def compute_cff_effective(
     skewness_parameter: float,
     compton_form_factor: complex,
+    use_ww: bool = False,
     verbose: bool = False) -> complex:
     """
     # Title: `compute_cff_effective`
@@ -30,7 +31,10 @@ def compute_cff_effective(
     try:
 
         # (1): Do the calculation in one line:
-        cff_effective = -2. * skewness_parameter * compton_form_factor / (1. + skewness_parameter)
+        if use_ww:
+            cff_effective = 2. * compton_form_factor / (1. + skewness_parameter)
+        else:
+            cff_effective = -2. * skewness_parameter * compton_form_factor / (1. + skewness_parameter)
 
         # (1.1): If verbose, log the output:
         if verbose:
