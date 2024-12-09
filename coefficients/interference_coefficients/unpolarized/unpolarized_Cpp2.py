@@ -18,19 +18,19 @@ def calculate_c_2_plus_plus_unpolarized(
     try:
 
         # (1): Calculate the recurrent quantity sqrt(1 + epsilon^2):
-        root_one_plus_epsilon_squared = np.sqrt(1. + epsilon**2)
+        root_one_plus_epsilon_squared = sqrt(Decimal("1.") + epsilon**2)
 
         # (2): Calculate the recurrent quantity t/Q^{2}:
         t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
 
         # (3): Calculate the first bracket quantity:
-        first_bracket_term = 2. * epsilon**2 * k_tilde**2 / (root_one_plus_epsilon_squared * (1. + root_one_plus_epsilon_squared) * squared_Q_momentum_transfer)
+        first_bracket_term = Decimal("2.") * epsilon**2 * k_tilde**2 / (root_one_plus_epsilon_squared * (Decimal("1.") + root_one_plus_epsilon_squared) * squared_Q_momentum_transfer)
     
         # (4): Calculate the second bracket quantity:
-        second_bracket_term = x_Bjorken * t_prime * t_over_Q_squared * (1. - x_Bjorken - 0.5 * (root_one_plus_epsilon_squared - 1.) + 0.5 * epsilon**2 / x_Bjorken) / squared_Q_momentum_transfer
+        second_bracket_term = x_Bjorken * t_prime * t_over_Q_squared * (Decimal("1.") - x_Bjorken - Decimal("0.5") * (root_one_plus_epsilon_squared - 1.) + Decimal("0.5") * epsilon**2 / x_Bjorken) / squared_Q_momentum_transfer
 
         # (5): Calculate the prefactor:
-        prefactor = 8. * (2. - lepton_energy_fraction_y) * (1. - lepton_energy_fraction_y - epsilon**2 * lepton_energy_fraction_y**2 / 4.) / root_one_plus_epsilon_squared**4
+        prefactor = Decimal("8. ") * (Decimal("2.") - lepton_energy_fraction_y) * (Decimal("1.") - lepton_energy_fraction_y - epsilon**2 * lepton_energy_fraction_y**2 / Decimal("4.0")) / root_one_plus_epsilon_squared**4
         
         # (6): Calculate the coefficient
         c_2_plus_plus_unp = prefactor * (first_bracket_term + second_bracket_term)
@@ -44,4 +44,4 @@ def calculate_c_2_plus_plus_unpolarized(
 
     except Exception as ERROR:
         print(f"> Error in calculating c_2_plus_plus_unp for Interference Term:\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

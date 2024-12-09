@@ -1,6 +1,6 @@
-import matplotlib.pyplot as plt
-
-from utilities.plotting.plot_customizer import PlotCustomizer
+from decimal import Decimal
+import math
+from utilities.mathematics.trigonometric import cos, sin
 
 from calculation.plot_results import plot_dvcs_contributions
 
@@ -233,8 +233,10 @@ def calculate_dvcs_amplitude_squared(
             convert_to_nb_over_GeV4(coefficient_s1_DVCS))
 
         # (5): Compute the Fourier Mode Expansion:
-        mode_expansion = coefficient_c0_DVCS + (coefficient_c1_DVCS * np.cos(np.pi - convert_degrees_to_radians(azimuthal_phi))) + (coefficient_s1_DVCS * np.sin(np.pi - convert_degrees_to_radians(azimuthal_phi)))
-
+        mode_expansion = (coefficient_c0_DVCS + 
+            coefficient_c1_DVCS * np.array([cos(Decimal("1.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) + 
+            coefficient_s1_DVCS * np.array([sin(Decimal("1.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]))
+        
         # (6): Compute the numerator of the amplitude:
         numerator = mode_expansion
 
@@ -250,4 +252,4 @@ def calculate_dvcs_amplitude_squared(
     
     except Exception as ERROR:
         print(f"> Error in calculating the DVCS amplitude squared\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

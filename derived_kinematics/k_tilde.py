@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 try:
     import numpy as np
 except ImportError:
@@ -47,19 +49,19 @@ def calculate_kinematics_k_tilde(
         tmin_minus_t = squared_hadronic_momentum_transfer_t_minimum - squared_hadronic_momentum_transfer_t
 
         # (2): Calculate the duplicate quantity 1 - x_{B}
-        one_minus_xb = 1. - x_Bjorken
+        one_minus_xb = Decimal("1.") - x_Bjorken
 
         # (3): Calculate the crazy root quantity:
-        second_root_quantity = (one_minus_xb * np.sqrt(1. + epsilon**2)) + ((tmin_minus_t * (epsilon**2 + (4. * one_minus_xb * x_Bjorken))) / (4. * squared_Q_momentum_transfer))
+        second_root_quantity = (one_minus_xb * (Decimal("1.") + epsilon**2).sqrt()) + ((tmin_minus_t * (epsilon**2 + (Decimal("4.") * one_minus_xb * x_Bjorken))) / (Decimal("4.") * squared_Q_momentum_transfer))
     
         # (4): Calculate the first annoying root quantity:
-        first_root_quantity = np.sqrt(1. - lepton_energy_fraction_y - lepton_energy_fraction_y**2 * epsilon**2 / 4.)
+        first_root_quantity = (Decimal("1.") - lepton_energy_fraction_y - lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0")).sqrt()
 
         # (5): Calculate the second annoying root quantity:
-        second_root_quantity = np.sqrt(1. - lepton_energy_fraction_y + lepton_energy_fraction_y**2 * epsilon**2 / 4.)
+        second_root_quantity = (Decimal("1.") - lepton_energy_fraction_y + lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0")).sqrt()
         
         # (6): Calculate K_tilde
-        k_tilde = np.sqrt(tmin_minus_t) * np.sqrt(second_root_quantity) * first_root_quantity / second_root_quantity
+        k_tilde = tmin_minus_t.sqrt() * second_root_quantity.sqrt() * first_root_quantity / second_root_quantity
 
         # (6.1): Print the result of the calculation:
         if verbose:
@@ -70,4 +72,4 @@ def calculate_kinematics_k_tilde(
 
     except Exception as ERROR:
         print(f"> Error in calculating K_tilde:\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

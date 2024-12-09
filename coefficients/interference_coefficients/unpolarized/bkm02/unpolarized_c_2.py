@@ -39,7 +39,7 @@ def calculate_c_2_unpolarized(
     try:
         
         # (1): Calculate the prefactor:
-        coefficient_prefactor = -16. * kinematic_k**2 * (2. -  lepton_energy_fraction_y) / (2. - x_Bjorken)
+        coefficient_prefactor = -Decimal("16. ") * kinematic_k**2 * (Decimal("2.") -  lepton_energy_fraction_y) / (Decimal("2.") - x_Bjorken)
 
         # (2): Calculate the Re{...} brackets:
         # THIS NEEDS TO BE F_EFF
@@ -64,4 +64,4 @@ def calculate_c_2_unpolarized(
 
     except Exception as E:
         print(f"> Error calculating interference coefficient c_2_I_unpolarized:\n> {E}")
-        return 0.
+        return Decimal("0.0")

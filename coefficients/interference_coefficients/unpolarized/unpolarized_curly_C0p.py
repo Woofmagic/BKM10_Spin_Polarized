@@ -36,7 +36,7 @@ def calculate_curly_C_zero_plus_unpolarized_interference(
     try:
 
         # (1): Calculate the prefactor: Ktilde / (2 - xb) * sqrt(2 / Q^{2})
-        prefactor = np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)
+        prefactor = sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (Decimal("2.") - x_Bjorken)
 
         # (1): Calculate curly C_{unp}^{I}(F):
         curly_C_unpolarized_interference = calculate_curly_C_unpolarized_interference(
@@ -49,7 +49,6 @@ def calculate_curly_C_zero_plus_unpolarized_interference(
             compton_form_factor_h_tilde_eff,
             compton_form_factor_e_eff,
             verbose)
-        print(curly_C_unpolarized_interference)
         
         # (2): Calculate curly C_{unp}^{I, V}(F):
         curly_C_V_unpolarized_interference = calculate_curly_C_unpolarized_interference_V(
@@ -199,4 +198,4 @@ def calculate_curly_C_zero_plus_unpolarized_interference(
 
     except Exception as ERROR:
         print(f"> Error in calculating the curly C0+ LP entire contribution: \n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

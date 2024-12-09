@@ -39,7 +39,7 @@ def calculate_c_3_unpolarized(
     try:
         
         # (1): Calculate the prefactor:
-        coefficient_prefactor = -8. * squared_Q_momentum_transfer * kinematic_k**3 / (_MASS_OF_PROTON_IN_GEV**2 * (2. - x_Bjorken)**2)
+        coefficient_prefactor = -Decimal("8. ") * squared_Q_momentum_transfer * kinematic_k**3 / (_MASS_OF_PROTON_IN_GEV**2 * (Decimal("2.") - x_Bjorken)**2)
 
         # (2): Calculate the Re{...} brackets:
         # THIS NEEDS TO BE F_T
@@ -62,4 +62,4 @@ def calculate_c_3_unpolarized(
 
     except Exception as E:
         print(f"> Error calculating interference coefficient c_3_I_unpolarized:\n> {E}")
-        return 0.
+        return Decimal("0.0")

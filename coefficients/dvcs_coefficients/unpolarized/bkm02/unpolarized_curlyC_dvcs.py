@@ -65,58 +65,58 @@ def calculate_curly_c_unpolarized_dvcs(
     try:
         
         # (1): Compute the recurring term 4*m_{p}^{2}
-        four_times_proton_mass = (4. * _MASS_OF_PROTON_IN_GEV**2)
+        four_times_proton_mass = (Decimal("4.") * _MASS_OF_PROTON_IN_GEV**2)
 
         # (2): Compute the recurring term 2 - xB
-        two_minus_xB = 2. - x_Bjorken
+        two_minus_xB = Decimal("2.") - x_Bjorken
 
         # (3): Calculate the first product of CFFs:
-        first_term_CFFs = 4. * (1. - x_Bjorken ) *(two_complex_variable_product(
+        first_term_CFFs = Decimal("4.") * (Decimal("1.") - x_Bjorken ) *(two_complex_variable_product(
             compton_form_factor_h_real_part, 
             compton_form_factor_h_imaginary_part, 
             compton_form_factor_h_real_part, 
-            -1. * compton_form_factor_h_imaginary_part)
+            Decimal("-1.0") * compton_form_factor_h_imaginary_part)
         + two_complex_variable_product(
             compton_form_factor_h_tilde_real_part, 
             compton_form_factor_h_tilde_imaginary_part, 
             compton_form_factor_h_tilde_real_part, 
-            -1. * compton_form_factor_h_tilde_imaginary_part))
+            Decimal("-1.0") * compton_form_factor_h_tilde_imaginary_part))
         
         # (4): Calculate the second product of CFFs:
         second_term_CFFs = x_Bjorken**2 * (two_complex_variable_product(
             compton_form_factor_h_real_part, 
             compton_form_factor_h_imaginary_part, 
             compton_form_factor_e_real_part, 
-            -1. * compton_form_factor_e_imaginary_part)
+            Decimal("-1.0") * compton_form_factor_e_imaginary_part)
         + two_complex_variable_product(
             compton_form_factor_e_real_part, 
             compton_form_factor_e_imaginary_part, 
             compton_form_factor_h_real_part, 
-            -1. * compton_form_factor_h_imaginary_part)
+            Decimal("-1.0") * compton_form_factor_h_imaginary_part)
         + two_complex_variable_product(
             compton_form_factor_h_tilde_real_part, 
             compton_form_factor_h_tilde_imaginary_part, 
             compton_form_factor_e_tilde_real_part, 
-            -1. * compton_form_factor_e_tilde_imaginary_part)
+            Decimal("-1.0") * compton_form_factor_e_tilde_imaginary_part)
         + two_complex_variable_product(
             compton_form_factor_e_tilde_real_part, 
             compton_form_factor_e_tilde_imaginary_part, 
             compton_form_factor_h_tilde_real_part, 
-            -1. * compton_form_factor_h_tilde_imaginary_part))
+            Decimal("-1.0") * compton_form_factor_h_tilde_imaginary_part))
         
         # (5): Calculate the second product of CFFs:
         third_term_CFFs = (x_Bjorken**2 + two_minus_xB**2 * squared_hadronic_momentum_transfer_t / four_times_proton_mass) * two_complex_variable_product(
             compton_form_factor_e_real_part, 
             compton_form_factor_e_imaginary_part, 
             compton_form_factor_e_real_part, 
-            -1. * compton_form_factor_e_imaginary_part)
+            Decimal("-1.0") * compton_form_factor_e_imaginary_part)
         
         # (6): Calculate the second product of CFFs:
         four_term_CFFs = x_Bjorken**2 * squared_hadronic_momentum_transfer_t * two_complex_variable_product(
             compton_form_factor_e_tilde_real_part, 
             compton_form_factor_e_tilde_imaginary_part, 
             compton_form_factor_e_tilde_real_part, 
-            -1. * compton_form_factor_e_tilde_imaginary_part) / four_times_proton_mass
+            Decimal("-1.0") * compton_form_factor_e_tilde_imaginary_part) / four_times_proton_mass
 
         # (7): Return the entire thing:
         curlyCDVCS_unpolarized = (first_term_CFFs - second_term_CFFs - third_term_CFFs - four_term_CFFs) / two_minus_xB**2
@@ -130,4 +130,4 @@ def calculate_curly_c_unpolarized_dvcs(
 
     except Exception as ERROR:
         print(f"> Error in calculating curlyCDVCS for DVCS Amplitude Squared:\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

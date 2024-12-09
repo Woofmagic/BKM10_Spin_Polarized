@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 try:
     import numpy as np
 except ImportError:
@@ -19,16 +21,16 @@ def calculate_c_1_minus_plus_longitudinally_polarized(
     try:
 
         # (1): Calculate the recurrent quantity sqrt(1 + epsilon^2):
-        root_one_plus_epsilon_squared = np.sqrt(1. + epsilon**2)
+        root_one_plus_epsilon_squared = sqrt(Decimal("1.") + epsilon**2)
 
         # (2): Calculate modulated epsilon term:
-        fancy_epsilon_term = 1. - epsilon**2 - root_one_plus_epsilon_squared
+        fancy_epsilon_term = Decimal("1.") - epsilon**2 - root_one_plus_epsilon_squared
 
         # (3): Calculate prefactor:
-        prefactor = 4. * lepton_helicity * target_polarization * shorthand_k * lepton_energy_fraction_y * (2. - lepton_energy_fraction_y) / root_one_plus_epsilon_squared**5
+        prefactor = Decimal("4.") * lepton_helicity * target_polarization * shorthand_k * lepton_energy_fraction_y * (Decimal("2.") - lepton_energy_fraction_y) / root_one_plus_epsilon_squared**5
 
         # (4): Calculate the bracket term:
-        bracket_term = fancy_epsilon_term - (squared_hadronic_momentum_transfer_t * (fancy_epsilon_term - 2. * x_Bjorken * (2. - root_one_plus_epsilon_squared)) / squared_Q_momentum_transfer)
+        bracket_term = fancy_epsilon_term - (squared_hadronic_momentum_transfer_t * (fancy_epsilon_term - Decimal("2.") * x_Bjorken * (Decimal("2.") - root_one_plus_epsilon_squared)) / squared_Q_momentum_transfer)
 
         # (5): Calculate the coefficient:
         c_1_minus_plus_LP = prefactor * bracket_term
@@ -42,4 +44,4 @@ def calculate_c_1_minus_plus_longitudinally_polarized(
 
     except Exception as ERROR:
         print(f"> Error in calculating c_1_minus_plus_LP for Interference Term:\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

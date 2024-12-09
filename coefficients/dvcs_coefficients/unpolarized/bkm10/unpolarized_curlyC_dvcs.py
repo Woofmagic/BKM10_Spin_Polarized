@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 try:
     import numpy as np
 except ImportError:
@@ -68,13 +70,13 @@ def calculate_curly_c_unpolarized_dvcs(
         sum_Q_squared_xb_t = squared_Q_momentum_transfer + x_Bjorken * squared_hadronic_momentum_transfer_t
 
         # (2): Calculate (2 - x_{B})Q^{2} + x_{B} t:
-        weighted_sum_Q_squared_xb_t = (2. - x_Bjorken) * squared_Q_momentum_transfer + x_Bjorken * squared_hadronic_momentum_transfer_t
+        weighted_sum_Q_squared_xb_t = (Decimal("2.") - x_Bjorken) * squared_Q_momentum_transfer + x_Bjorken * squared_hadronic_momentum_transfer_t
 
         # (3): Calculate Q^{2} (Q^{2} + x_{B} t):
         Q_squared_times_sum = squared_Q_momentum_transfer * sum_Q_squared_xb_t
 
         # (4): Calculate the first product of CFFs:
-        cff_h_h_star_with_prefactor = compton_form_factor_h * compton_form_factor_h_conjugate * 4. * (1. - x_Bjorken)
+        cff_h_h_star_with_prefactor = compton_form_factor_h * compton_form_factor_h_conjugate * Decimal("4.") * (Decimal("1.") - x_Bjorken)
 
         # (5): Calculate the second product of CFFs:
         cff_h_tilde_h_tilde_star = compton_form_factor_h_tilde * compton_form_factor_h_tilde_conjugate
@@ -92,7 +94,7 @@ def calculate_curly_c_unpolarized_dvcs(
         cff_e_tilde_e_tilde_star = compton_form_factor_e_tilde * compton_form_factor_e_tilde_conjugate
 
         # (10): Calculate the second bracket term:
-        second_bracket_term = 4. * (1. - x_Bjorken + ((2. * squared_Q_momentum_transfer + squared_hadronic_momentum_transfer_t) * epsilon**2 / (4. * sum_Q_squared_xb_t))) * cff_h_tilde_h_tilde_star
+        second_bracket_term = Decimal("4.") * (Decimal("1.") - x_Bjorken + ((Decimal("2.") * squared_Q_momentum_transfer + squared_hadronic_momentum_transfer_t) * epsilon**2 / (Decimal("4.") * sum_Q_squared_xb_t))) * cff_h_tilde_h_tilde_star
 
         # (11): Calculate the third_bracket term's prefactor
         third_bracket_term_prefactor = x_Bjorken**2 * (squared_Q_momentum_transfer + squared_hadronic_momentum_transfer_t)**2 / Q_squared_times_sum
@@ -101,13 +103,13 @@ def calculate_curly_c_unpolarized_dvcs(
         fourth_bracket_term = x_Bjorken**2 * squared_Q_momentum_transfer * cff_h_tilde_e_tilde_star_plus_e_tilde_h_tilde_star / sum_Q_squared_xb_t
 
         # (13): Calculate the fifth bracket term:
-        fifth_bracket_term = (weighted_sum_Q_squared_xb_t**2 * squared_hadronic_momentum_transfer_t / (4. * _MASS_OF_PROTON_IN_GEV**2 * Q_squared_times_sum) + third_bracket_term_prefactor) * cff_e_e_star
+        fifth_bracket_term = (weighted_sum_Q_squared_xb_t**2 * squared_hadronic_momentum_transfer_t / (Decimal("4.") * _MASS_OF_PROTON_IN_GEV**2 * Q_squared_times_sum) + third_bracket_term_prefactor) * cff_e_e_star
 
         # (14): Calculate the third bracket term:
         third_bracket_term  = third_bracket_term_prefactor * cff_h_e_star_plus_e_h_star
 
         # (15): Calculate the sixth bracket term:
-        sixth_bracket_term = x_Bjorken**2 * squared_Q_momentum_transfer * squared_hadronic_momentum_transfer_t * cff_e_tilde_e_tilde_star / (4. * _MASS_OF_PROTON_IN_GEV**2 * sum_Q_squared_xb_t)
+        sixth_bracket_term = x_Bjorken**2 * squared_Q_momentum_transfer * squared_hadronic_momentum_transfer_t * cff_e_tilde_e_tilde_star / (Decimal("4.") * _MASS_OF_PROTON_IN_GEV**2 * sum_Q_squared_xb_t)
 
         # (16): Return the entire thing:
         curlyC_unp_DVCS = Q_squared_times_sum * (cff_h_h_star_with_prefactor + second_bracket_term - third_bracket_term - fourth_bracket_term - fifth_bracket_term - sixth_bracket_term) / weighted_sum_Q_squared_xb_t**2
@@ -121,4 +123,4 @@ def calculate_curly_c_unpolarized_dvcs(
 
     except Exception as ERROR:
         print(f"> Error in calculating curlyC_unp_DVCS for DVCS Amplitude Squared:\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

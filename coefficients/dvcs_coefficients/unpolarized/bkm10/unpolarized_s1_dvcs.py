@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 try:
     import numpy as np
 except ImportError:
@@ -28,7 +30,7 @@ def calculate_s_1_unpolarized_dvcs(
     try:
 
         # (1): Calculate the first term's prefactor:
-        prefactor = -8. * shorthand_k * lepton_helicity * lepton_energy_fraction_y * np.sqrt(1. + epsilon**2) / ((2. - x_Bjorken) * (1. + epsilon**2))
+        prefactor = -Decimal("8. ") * shorthand_k * lepton_helicity * lepton_energy_fraction_y * sqrt(Decimal("1.") + epsilon**2) / ((Decimal("2.") - x_Bjorken) * (Decimal("1.") + epsilon**2))
         
         # (2): Calculate the second terms' Curly C contribution:
         curlyC_unp_DVCS = calculate_curly_c_unpolarized_dvcs(
@@ -56,4 +58,4 @@ def calculate_s_1_unpolarized_dvcs(
     
     except Exception as E:
         print(f"> Error in computing s1_dvcs_unpolarized_coefficient:\n> {E}")
-        return 0.
+        return Decimal("0.0")

@@ -20,13 +20,13 @@ def calculate_c_1_zero_plus_unpolarized_V(
         t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
 
         # (2): Calculate the huge y quantity:
-        y_quantity = 1. - lepton_energy_fraction_y - (epsilon**2 * lepton_energy_fraction_y**2 / 4.)
+        y_quantity = Decimal("1.") - lepton_energy_fraction_y - (epsilon**2 * lepton_energy_fraction_y**2 / Decimal("4.0"))
 
         # (3): Calculate the major part:
-        major_part = (2 - lepton_energy_fraction_y)**2 * k_tilde**2 / squared_Q_momentum_transfer + (1. - (1. - 2. * x_Bjorken) * t_over_Q_squared)**2 * y_quantity
+        major_part = (2 - lepton_energy_fraction_y)**2 * k_tilde**2 / squared_Q_momentum_transfer + (Decimal("1.") - (Decimal("1.") - Decimal("2.") * x_Bjorken) * t_over_Q_squared)**2 * y_quantity
 
         # (4): Calculate the prefactor:
-        prefactor = 16. * np.sqrt(2. * y_quantity) * x_Bjorken * t_over_Q_squared / (1. + epsilon**2)**2.5
+        prefactor = Decimal("16. ") * sqrt(Decimal("2.") * y_quantity) * x_Bjorken * t_over_Q_squared / (Decimal("1.") + epsilon**2)**2.5
 
         # (5): Stitch together the coefficient:
         c_1_zero_plus_V_unp = prefactor * major_part
@@ -40,4 +40,4 @@ def calculate_c_1_zero_plus_unpolarized_V(
 
     except Exception as ERROR:
         print(f"> Error in calculating c_1_zero_plus_V_unp for Interference Term:\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

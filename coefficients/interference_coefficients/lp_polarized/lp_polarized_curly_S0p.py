@@ -36,7 +36,7 @@ def calculate_curly_S_zero_plus_longitudinally_polarized_interference(
     try:
 
         # (1): Calculate the prefactor: Ktilde/ (2 - xb) * sqrt(2 / Q^{2})
-        prefactor = np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)
+        prefactor = sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (Decimal("2.") - x_Bjorken)
 
         # (2): Calculate curly C_{LP}^{I}(F):
         curly_C_longitudinally_polarized_interference = calculate_curly_C_longitudinally_polarized_interference(
@@ -167,6 +167,6 @@ def calculate_curly_S_zero_plus_longitudinally_polarized_interference(
 
     except Exception as ERROR:
         print(f"> Error in calculating the curly S0+ LP entire contribution amplitude squared\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")
     
     

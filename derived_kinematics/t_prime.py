@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 def calculate_kinematics_t_prime(
     squared_hadronic_momentum_transfer_t: float,
     squared_hadronic_momentum_transfer_t_minimum: float,
@@ -36,4 +38,4 @@ def calculate_kinematics_t_prime(
 
     except Exception as ERROR:
         print(f"> Error calculating t_prime:\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

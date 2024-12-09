@@ -16,13 +16,13 @@ def calculate_curly_C_longitudinally_polarized_interference_A(
         t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
 
         # (2): Calculate a fancy quantity:
-        ratio_of_xb_to_more_xb = x_Bjorken / (2. - x_Bjorken + x_Bjorken * t_over_Q_squared)
+        ratio_of_xb_to_more_xb = x_Bjorken / (Decimal("2.") - x_Bjorken + x_Bjorken * t_over_Q_squared)
 
         # (3): Calculate the sum of form factors:
         sum_of_form_factors = Dirac_form_factor_F1 + Pauli_form_factor_F2
         
         # (4): Calculate the CFFs appearance:
-        cff_appearance = compton_form_factor_h_tilde_real_part * (1. + (2. * x_Bjorken * _MASS_OF_PROTON_SQUARED_IN_GEV_SQUARED / squared_Q_momentum_transfer)) + (x_Bjorken * compton_form_factor_e_tilde_real_part / 2.)
+        cff_appearance = compton_form_factor_h_tilde_real_part * (Decimal("1.") + (Decimal("2.") * x_Bjorken * _MASS_OF_PROTON_SQUARED_IN_GEV_SQUARED / squared_Q_momentum_transfer)) + (x_Bjorken * compton_form_factor_e_tilde_real_part / Decimal("2.0"))
 
         # (5): Calculate the entire thing:
         curly_C_A_longitudinally_polarized_interference = ratio_of_xb_to_more_xb * sum_of_form_factors * cff_appearance
@@ -36,4 +36,4 @@ def calculate_curly_C_longitudinally_polarized_interference_A(
 
     except Exception as ERROR:
         print(f"> Error in calculating the curly C LP A contribution amplitude squared\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

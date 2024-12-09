@@ -20,16 +20,16 @@ class PlotCustomizer:
             'mathtext.fontset': 'dejavusans', # https://matplotlib.org/stable/gallery/text_labels_and_annotations/mathtext_fontfamily_example.html
             'xtick.direction': 'in',
             'xtick.major.size': 5,
-            'xtick.major.width': 0.5,
+            'xtick.major.width': Decimal("0.5"),
             'xtick.minor.size': 2.5,
-            'xtick.minor.width': 0.5,
+            'xtick.minor.width': Decimal("0.5"),
             'xtick.minor.visible': True,
             'xtick.top': True,
             'ytick.direction': 'in',
             'ytick.major.size': 5,
-            'ytick.major.width': 0.5,
+            'ytick.major.width': Decimal("0.5"),
             'ytick.minor.size': 2.5,
-            'ytick.minor.width': 0.5,
+            'ytick.minor.width': Decimal("0.5"),
             'ytick.minor.visible': True,
             'ytick.right': True,
         }
@@ -184,7 +184,7 @@ class PlotCustomizer:
                 linestyle = '', 
                 markersize = 1.0,
                 ecolor = 'black',
-                elinewidth = 0.5,
+                elinewidth = Decimal("0.5"),
                 capsize = 1)
 
             if label:

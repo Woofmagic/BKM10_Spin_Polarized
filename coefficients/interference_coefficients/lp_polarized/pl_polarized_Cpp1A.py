@@ -22,10 +22,10 @@ def calculate_c_1_plus_plus_longitudinally_polarized_A(
         t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
 
         # (2): Calculate the major factor
-        major_factor = x_Bjorken * t_over_Q_squared * (1. - (1. - 2. * x_Bjorken) * t_over_Q_squared)
+        major_factor = x_Bjorken * t_over_Q_squared * (Decimal("1.") - (Decimal("1.") - Decimal("2.") * x_Bjorken) * t_over_Q_squared)
 
         # (3): Calculate the prefactor:
-        prefactor = 16. * lepton_helicity * target_polarization * shorthand_k * lepton_energy_fraction_y * (2. - lepton_energy_fraction_y) / np.sqrt(1. + epsilon**2)**5
+        prefactor = Decimal("16. ") * lepton_helicity * target_polarization * shorthand_k * lepton_energy_fraction_y * (Decimal("2.") - lepton_energy_fraction_y) / sqrt(Decimal("1.") + epsilon**2)**5
 
         # (4): Calculate the entire thing:
         c_1_plus_plus_A_LP = prefactor * major_factor
@@ -39,4 +39,4 @@ def calculate_c_1_plus_plus_longitudinally_polarized_A(
 
     except Exception as ERROR:
         print(f"> Error in calculating c_1_plus_plus_A_LP for Interference Term:\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 try:
     import numpy as np
 except ImportError:
@@ -15,7 +17,7 @@ def calculate_kinematics_k(
     try:
 
         # (1): Calculate the amazing prefactor:
-        prefactor = np.sqrt((1. - lepton_energy_fraction_y + (epsilon**2 * lepton_energy_fraction_y**2 / 4.)) / squared_Q_momentum_transfer)
+        prefactor = sqrt((Decimal("1.") - lepton_energy_fraction_y + (epsilon**2 * lepton_energy_fraction_y**2 / Decimal("4.0"))) / squared_Q_momentum_transfer)
 
         # (2): Calculate the remaining part of the term:
         kinematic_k = prefactor * k_tilde
@@ -29,4 +31,4 @@ def calculate_kinematics_k(
 
     except Exception as ERROR:
         print(f"> Error in calculating derived kinematic K:\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

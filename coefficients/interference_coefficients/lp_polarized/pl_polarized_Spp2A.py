@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 try:
     import numpy as np
 except ImportError:
@@ -19,19 +21,19 @@ def calculate_s_2_plus_plus_longitudinally_polarized_A(
     try:
 
         # (1): Calculate the recurrent quantity sqrt(1 + epsilon^2):
-        root_one_plus_epsilon_squared = np.sqrt(1. + epsilon**2)
+        root_one_plus_epsilon_squared = sqrt(Decimal("1.") + epsilon**2)
 
         # (2): Calculate the first contribution to the bracket term:
-        bracket_term_first_term = (1. + root_one_plus_epsilon_squared - 2. * x_Bjorken) * (1. - ((1. - 2. * x_Bjorken) * squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer)) * t_prime / squared_Q_momentum_transfer
+        bracket_term_first_term = (Decimal("1.") + root_one_plus_epsilon_squared - Decimal("2.") * x_Bjorken) * (Decimal("1.") - ((Decimal("1.") - Decimal("2.") * x_Bjorken) * squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer)) * t_prime / squared_Q_momentum_transfer
 
         # (3): Calculate second contribution to the bracket term:
-        bracket_term_second_term = 4. * k_tilde**2 / squared_Q_momentum_transfer
+        bracket_term_second_term = Decimal("4.") * k_tilde**2 / squared_Q_momentum_transfer
 
         # (4): Calculate the bracket term:
         bracket_term = x_Bjorken * squared_hadronic_momentum_transfer_t * (bracket_term_second_term - bracket_term_first_term) / squared_Q_momentum_transfer
 
         # (5): Calculate the prefactor:
-        prefactor = 4. * target_polarization * (2. - lepton_energy_fraction_y) * (1. - lepton_energy_fraction_y - epsilon**2 * lepton_energy_fraction_y**2 / 4.) / root_one_plus_epsilon_squared**5
+        prefactor = Decimal("4.") * target_polarization * (Decimal("2.") - lepton_energy_fraction_y) * (Decimal("1.") - lepton_energy_fraction_y - epsilon**2 * lepton_energy_fraction_y**2 / Decimal("4.0")) / root_one_plus_epsilon_squared**5
 
         # (6): Calculate the coefficient
         s_2_plus_plus_A_LP = prefactor * bracket_term

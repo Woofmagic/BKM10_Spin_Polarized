@@ -10,7 +10,7 @@ def calculate_curly_C_unpolarized_interference_A(
     try:
 
         # (1): Calculate the next term:
-        xb_modulation = x_Bjorken * (Dirac_form_factor_F1 + Pauli_form_factor_F2) / (2. - x_Bjorken + (x_Bjorken * squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer))
+        xb_modulation = x_Bjorken * (Dirac_form_factor_F1 + Pauli_form_factor_F2) / (Decimal("2.") - x_Bjorken + (x_Bjorken * squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer))
 
         # (2): Add them together:
         curly_C_unpolarized_interference_A = compton_form_factor_h_tilde_real_part * xb_modulation
@@ -24,4 +24,4 @@ def calculate_curly_C_unpolarized_interference_A(
 
     except Exception as ERROR:
         print(f"> Error in calculating the Curly C interference A unpolarized target: \n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

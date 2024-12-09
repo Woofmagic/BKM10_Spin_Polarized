@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 try:
     import numpy as np
 except ImportError:
@@ -35,7 +37,7 @@ def calculate_kinematics_lepton_energy_fraction_y(
     try:
 
         # (1): Calculate the y right away:
-        lepton_energy_fraction_y = np.sqrt(squared_Q_momentum_transfer) / (epsilon * lab_kinematics_k)
+        lepton_energy_fraction_y = squared_Q_momentum_transfer.sqrt() / (epsilon * lab_kinematics_k)
 
         # (1.1): If verbose output, then print the result:
         if verbose:
@@ -46,4 +48,4 @@ def calculate_kinematics_lepton_energy_fraction_y(
     
     except Exception as ERROR:
         print(f"> Error in computing lepton_energy_fraction_y:\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

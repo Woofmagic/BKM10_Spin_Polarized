@@ -21,7 +21,7 @@ def calculate_c_0_zero_plus_longitudinally_polarized_V(
     try:
 
         # (1): Calculate the modulation to C_{0+}^{LP}:
-        modulating_factor = (x_Bjorken - (squared_hadronic_momentum_transfer_t * (1. - 2. * x_Bjorken) / squared_Q_momentum_transfer)) / (1. - x_Bjorken)
+        modulating_factor = (x_Bjorken - (squared_hadronic_momentum_transfer_t * (Decimal("1.") - Decimal("2.") * x_Bjorken) / squared_Q_momentum_transfer)) / (Decimal("1.") - x_Bjorken)
 
         # (2): Calculate the C_{0+}^{LP} coefficient:
         c_0_zero_plus_LP = calculate_c_0_zero_plus_longitudinally_polarized(
@@ -48,4 +48,4 @@ def calculate_c_0_zero_plus_longitudinally_polarized_V(
 
     except Exception as ERROR:
         print(f"> Error in calculating c_0_zero_plus_V_LP for Interference Term:\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

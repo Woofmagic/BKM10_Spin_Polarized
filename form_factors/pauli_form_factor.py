@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from statics.masses.particle_masses import _MASS_OF_PROTON_IN_GEV
 
 def calculate_form_factor_pauli_f2(
@@ -35,13 +37,13 @@ def calculate_form_factor_pauli_f2(
     try:
 
         # (1): Calculate tau:
-        tau = -1. * squared_hadronic_momentum_transfer_t / (4. * _MASS_OF_PROTON_IN_GEV**2)
+        tau = Decimal("-1.0") * squared_hadronic_momentum_transfer_t / (Decimal("4.") * _MASS_OF_PROTON_IN_GEV**2)
 
         # (2): Calculate the numerator:
         numerator = magnetic_form_factor - electric_form_factor
 
         # (3): Calculate the denominator:
-        denominator = 1. + tau
+        denominator = Decimal("1.") + tau
     
         # (4): Calculate the Pauli form factor:
         pauli_form_factor = numerator / denominator
@@ -53,4 +55,4 @@ def calculate_form_factor_pauli_f2(
 
     except Exception as ERROR:
         print(f"> Error in calculating Fermi form factor:\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

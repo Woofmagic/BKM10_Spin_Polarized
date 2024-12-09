@@ -65,16 +65,16 @@ def calculate_curly_c_unpolarized_dvcs(
     try:
 
         # (1): Compute the recurring term 2 - xB
-        two_minus_xB = 2. - x_Bjorken
+        two_minus_xB = Decimal("2.") - x_Bjorken
 
         # (2): Compute the first term in the brackets:
         first_bracket_term = compton_form_factor_hT * (two_minus_xB * compton_form_factor_e - x_Bjorken * compton_form_factor_e_tilde )
 
         # (3): Compute the second term in the brackets:
-        second_bracket_term = -2. * two_minus_xB * compton_form_factor_hT_tilde * compton_form_factor_hT_tilde * (compton_form_factor_h + (squared_hadronic_momentum_transfer_t * compton_form_factor_e_tilde / (4. * _MASS_OF_PROTON_IN_GEV**2)))
+        second_bracket_term = -Decimal("2.") * two_minus_xB * compton_form_factor_hT_tilde * compton_form_factor_hT_tilde * (compton_form_factor_h + (squared_hadronic_momentum_transfer_t * compton_form_factor_e_tilde / (Decimal("4.") * _MASS_OF_PROTON_IN_GEV**2)))
 
         # (4): Compute the third term in the brackets:
-        third_bracket_term = -1. * compton_form_factor_eT * (two_minus_xB * compton_form_factor_h - x_Bjorken * compton_form_factor_h_tilde)
+        third_bracket_term = Decimal("-1.0") * compton_form_factor_eT * (two_minus_xB * compton_form_factor_h - x_Bjorken * compton_form_factor_h_tilde)
 
         # (5): Compute the fourth term in the brackets:
         fourth_bracket_term = compton_form_factor_eT_tilde * (x_Bjorken * compton_form_factor_h + x_Bjorken * compton_form_factor_e) - two_minus_xB * compton_form_factor_h_tilde
@@ -90,4 +90,4 @@ def calculate_curly_c_unpolarized_dvcs(
 
     except Exception as E:
         print(f"> Error computing c_dvcs_T_unpolarized_ff:\n> {E}")
-        return 0.
+        return Decimal("0.0")

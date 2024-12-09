@@ -18,16 +18,16 @@ def calculate_s_1_plus_plus_unpolarized(
     try:
 
         # (1): Calculate the recurrent quantity sqrt(1 + epsilon^2):
-        root_one_plus_epsilon_squared = np.sqrt(1. + epsilon**2)
+        root_one_plus_epsilon_squared = sqrt(Decimal("1.") + epsilon**2)
 
         # (2): Calculate the quantity t'/Q^{2}:
         tPrime_over_Q_squared = t_prime / squared_Q_momentum_transfer
 
         # (3): Calculate the bracket term:
-        bracket_term = 1. + ((1. - x_Bjorken + 0.5 * (root_one_plus_epsilon_squared - 1.)) * tPrime_over_Q_squared) / root_one_plus_epsilon_squared**2
+        bracket_term = Decimal("1.") + ((Decimal("1.") - x_Bjorken + Decimal("0.5") * (root_one_plus_epsilon_squared - 1.)) * tPrime_over_Q_squared) / root_one_plus_epsilon_squared**2
         
         # (4): Calculate the prefactor:
-        prefactor = 8. * lepton_helicity * shorthand_k * lepton_energy_fraction_y * (2. - lepton_energy_fraction_y) / root_one_plus_epsilon_squared**2
+        prefactor = Decimal("8. ") * lepton_helicity * shorthand_k * lepton_energy_fraction_y * (Decimal("2.") - lepton_energy_fraction_y) / root_one_plus_epsilon_squared**2
 
         # (5): Calculate the coefficient
         s_1_plus_plus_unp = prefactor * bracket_term
@@ -41,4 +41,4 @@ def calculate_s_1_plus_plus_unpolarized(
 
     except Exception as ERROR:
         print(f"> Error in calculating s_1_plus_plus_unp for Interference Term:\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

@@ -238,4 +238,4 @@ def calculate_curly_C_plus_plus_unpolarized_interference(
 
     except Exception as ERROR:
         print(f"> Error in calculating the curly C++ LP entire contribution amplitude squared\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

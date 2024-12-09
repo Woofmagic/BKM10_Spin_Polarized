@@ -8,8 +8,10 @@ from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_2_interference_coefficient
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_3_interference_coefficient
 
-_TEST_LEPTON_POLARIZATION = 0.5
+_TEST_LEPTON_POLARIZATION = Decimal("0.5")
 _TEST_TARGET_POLARIZATION = 1.0
+
+_TEST_USE_WW = False
 
 _TEST_SQUARED_Q_MOMENTUM_TRANSFER = 1.8200000524520876
 _TEST_X_BJORKEN = 0.3429999947547912
@@ -43,204 +45,232 @@ _TEST_CFF_E_TILDE = complex(_TEST_CFF_REAL_E_TILDE, _TEST_CFF_IMAGINARY_E_TILDE)
 
 _TEST_VERBOSE = False
 
-class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
+class TestCurlyCSeriesCoefficients(unittest.TestCase):
 
-    def test_calculate_c_0_interference_coefficient(self):
+    def test_calculate_c_0_interference_coefficient_unpolarized_beam_unpolarized_target(self):
         """
-        # Title: `test_calculate_c_0_interference_coefficient`
+        # Title: `test_calculate_c_0_interference_coefficient_unpolarized_beam_unpolarized_target`
 
         ## Description: Test the function `calculate_c_0_interference_coefficient`.
-        This is a major function that computes for us the c_{n}^{I} coefficients that
-        are directly present in the Fourier sum. We test the c_{n = 0}^{I} contribution
-        here.
+        Here, we test for the unpolarized target and unpolarized beam configuration.
         """
         print(f"> Now testing c0I for the unpolarized beam and unpolarized target:")
-        with self.subTest():
-            self.assertAlmostEqual(
-                0.5 * (calculate_c_0_interference_coefficient(
-                    0,
-                    0.5,
-                    0.0,
-                    _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
-                    _TEST_X_BJORKEN,
-                    _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
-                    _TEST_EPSILON,
-                    _TEST_LEPTON_ENERGY_FRACTION,
-                    _TEST_SKEWNESS,
-                    _TEST_T_PRIME,
-                    _TEST_K_TILDE,
-                    _TEST_SHORTHAND_K,
-                    _TEST_DIRAC_FORM_FACTOR_F1,
-                    _TEST_PAULI_FORM_FACTOR_F2,
-                    _TEST_CFF_H,
-                    _TEST_CFF_H_TILDE,
-                    _TEST_CFF_E,
-                    _TEST_CFF_E_TILDE,
-                    _TEST_VERBOSE) + calculate_c_0_interference_coefficient(
-                    0,
-                    -0.5,
-                    0.0,
-                    _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
-                    _TEST_X_BJORKEN,
-                    _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
-                    _TEST_EPSILON,
-                    _TEST_LEPTON_ENERGY_FRACTION,
-                    _TEST_SKEWNESS,
-                    _TEST_T_PRIME,
-                    _TEST_K_TILDE,
-                    _TEST_SHORTHAND_K,
-                    _TEST_DIRAC_FORM_FACTOR_F1,
-                    _TEST_PAULI_FORM_FACTOR_F2,
-                    _TEST_CFF_H,
-                    _TEST_CFF_H_TILDE,
-                    _TEST_CFF_E,
-                    _TEST_CFF_E_TILDE,
-                    _TEST_VERBOSE)), 
-                -0.43324989732249)
+        self.assertAlmostEqual(
+            Decimal("0.5") * (calculate_c_0_interference_coefficient(
+                0,
+                Decimal("0.5"),
+                0.0,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SKEWNESS,
+                _TEST_T_PRIME,
+                _TEST_K_TILDE,
+                _TEST_SHORTHAND_K,
+                _TEST_DIRAC_FORM_FACTOR_F1,
+                _TEST_PAULI_FORM_FACTOR_F2,
+                _TEST_CFF_H,
+                _TEST_CFF_H_TILDE,
+                _TEST_CFF_E,
+                _TEST_CFF_E_TILDE,
+                _TEST_VERBOSE) + calculate_c_0_interference_coefficient(
+                0,
+                -Decimal("0.5"),
+                0.0,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SKEWNESS,
+                _TEST_T_PRIME,
+                _TEST_K_TILDE,
+                _TEST_SHORTHAND_K,
+                _TEST_DIRAC_FORM_FACTOR_F1,
+                _TEST_PAULI_FORM_FACTOR_F2,
+                _TEST_CFF_H,
+                _TEST_CFF_H_TILDE,
+                _TEST_CFF_E,
+                _TEST_CFF_E_TILDE,
+                _TEST_VERBOSE)), 
+            -0.43324989732249)
+        
+    def test_calculate_c_0_interference_coefficient_plus_beam_unpolarized_target(self):
+        """
+        # Title: `test_calculate_c_0_interference_coefficient_plus_beam_unpolarized_target`
 
+        ## Description: Test the function `calculate_c_0_interference_coefficient`.
+        Here, we test for the unpolarized target and (+) beam helicity configuration.
+        """
         print(f"> Now testing c0I for the (+) polarized beam and unpolarized target:")
-        with self.subTest():
-            self.assertAlmostEqual(
-                calculate_c_0_interference_coefficient(
-                    0,
-                    0.5,
-                    0.0,
-                    _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
-                    _TEST_X_BJORKEN,
-                    _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
-                    _TEST_EPSILON,
-                    _TEST_LEPTON_ENERGY_FRACTION,
-                    _TEST_SKEWNESS,
-                    _TEST_T_PRIME,
-                    _TEST_K_TILDE,
-                    _TEST_SHORTHAND_K,
-                    _TEST_DIRAC_FORM_FACTOR_F1,
-                    _TEST_PAULI_FORM_FACTOR_F2,
-                    _TEST_CFF_H,
-                    _TEST_CFF_H_TILDE,
-                    _TEST_CFF_E,
-                    _TEST_CFF_E_TILDE,
-                    _TEST_VERBOSE), 
-                -0.43324989732249)
-        
+        self.assertAlmostEqual(
+            calculate_c_0_interference_coefficient(
+                0,
+                Decimal("0.5"),
+                0.0,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SKEWNESS,
+                _TEST_T_PRIME,
+                _TEST_K_TILDE,
+                _TEST_SHORTHAND_K,
+                _TEST_DIRAC_FORM_FACTOR_F1,
+                _TEST_PAULI_FORM_FACTOR_F2,
+                _TEST_CFF_H,
+                _TEST_CFF_H_TILDE,
+                _TEST_CFF_E,
+                _TEST_CFF_E_TILDE,
+                _TEST_USE_WW,
+                _TEST_VERBOSE), 
+            -0.43324989732249)
+    
+    def test_calculate_c_0_interference_coefficient_minus_beam_unpolarized_target(self):
+        """
+        # Title: `test_calculate_c_0_interference_coefficient_minus_beam_unpolarized_target`
+
+        ## Description: Test the function `calculate_c_0_interference_coefficient`.
+        Here, we test for the unpolarized target and (-) beam helicity configuration.
+        """
         print(f"> Now testing c0I for the (-) polarized beam and unpolarized target:")
-        with self.subTest():
-            self.assertAlmostEqual(
-                calculate_c_0_interference_coefficient(
-                    0,
-                    -0.5,
-                    0.0,
-                    _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
-                    _TEST_X_BJORKEN,
-                    _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
-                    _TEST_EPSILON,
-                    _TEST_LEPTON_ENERGY_FRACTION,
-                    _TEST_SKEWNESS,
-                    _TEST_T_PRIME,
-                    _TEST_K_TILDE,
-                    _TEST_SHORTHAND_K,
-                    _TEST_DIRAC_FORM_FACTOR_F1,
-                    _TEST_PAULI_FORM_FACTOR_F2,
-                    _TEST_CFF_H,
-                    _TEST_CFF_H_TILDE,
-                    _TEST_CFF_E,
-                    _TEST_CFF_E_TILDE,
-                    _TEST_VERBOSE), 
-                -0.43324989732249)
-        
+        self.assertAlmostEqual(
+            calculate_c_0_interference_coefficient(
+                0,
+                -Decimal("0.5"),
+                0.0,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SKEWNESS,
+                _TEST_T_PRIME,
+                _TEST_K_TILDE,
+                _TEST_SHORTHAND_K,
+                _TEST_DIRAC_FORM_FACTOR_F1,
+                _TEST_PAULI_FORM_FACTOR_F2,
+                _TEST_CFF_H,
+                _TEST_CFF_H_TILDE,
+                _TEST_CFF_E,
+                _TEST_CFF_E_TILDE,
+                _TEST_VERBOSE), 
+            -0.43324989732249)
+    
+    def test_calculate_c_0_interference_coefficient_unpolarized_beam_lp_target(self):
+        """
+        # Title: `test_calculate_c_0_interference_coefficient_unpolarized_beam_lp_target`
+
+        ## Description: Test the function `calculate_c_0_interference_coefficient`.
+        Here, we test for the longitudinally-polarized target and unpolarized beam helicity configuration.
+        """
         print(f"> Now testing c0I for the unpolarized beam and LP target:")
-        with self.subTest():
-            self.assertAlmostEqual(
-                0.5 * (calculate_c_0_interference_coefficient(
-                    0,
-                    0.5,
-                    1.0,
-                    _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
-                    _TEST_X_BJORKEN,
-                    _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
-                    _TEST_EPSILON,
-                    _TEST_LEPTON_ENERGY_FRACTION,
-                    _TEST_SKEWNESS,
-                    _TEST_T_PRIME,
-                    _TEST_K_TILDE,
-                    _TEST_SHORTHAND_K,
-                    _TEST_DIRAC_FORM_FACTOR_F1,
-                    _TEST_PAULI_FORM_FACTOR_F2,
-                    _TEST_CFF_H,
-                    _TEST_CFF_H_TILDE,
-                    _TEST_CFF_E,
-                    _TEST_CFF_E_TILDE,
-                    _TEST_VERBOSE) + calculate_c_0_interference_coefficient(
-                    0,
-                    -0.5,
-                    1.0,
-                    _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
-                    _TEST_X_BJORKEN,
-                    _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
-                    _TEST_EPSILON,
-                    _TEST_LEPTON_ENERGY_FRACTION,
-                    _TEST_SKEWNESS,
-                    _TEST_T_PRIME,
-                    _TEST_K_TILDE,
-                    _TEST_SHORTHAND_K,
-                    _TEST_DIRAC_FORM_FACTOR_F1,
-                    _TEST_PAULI_FORM_FACTOR_F2,
-                    _TEST_CFF_H,
-                    _TEST_CFF_H_TILDE,
-                    _TEST_CFF_E,
-                    _TEST_CFF_E_TILDE,
-                    _TEST_VERBOSE)), 
-                0.)
-        
+        self.assertAlmostEqual(
+            Decimal("0.5") * (calculate_c_0_interference_coefficient(
+                0,
+                Decimal("0.5"),
+                1.0,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SKEWNESS,
+                _TEST_T_PRIME,
+                _TEST_K_TILDE,
+                _TEST_SHORTHAND_K,
+                _TEST_DIRAC_FORM_FACTOR_F1,
+                _TEST_PAULI_FORM_FACTOR_F2,
+                _TEST_CFF_H,
+                _TEST_CFF_H_TILDE,
+                _TEST_CFF_E,
+                _TEST_CFF_E_TILDE,
+                _TEST_VERBOSE) + calculate_c_0_interference_coefficient(
+                0,
+                -Decimal("0.5"),
+                1.0,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SKEWNESS,
+                _TEST_T_PRIME,
+                _TEST_K_TILDE,
+                _TEST_SHORTHAND_K,
+                _TEST_DIRAC_FORM_FACTOR_F1,
+                _TEST_PAULI_FORM_FACTOR_F2,
+                _TEST_CFF_H,
+                _TEST_CFF_H_TILDE,
+                _TEST_CFF_E,
+                _TEST_CFF_E_TILDE,
+                _TEST_VERBOSE)), 
+            0.)
+
+    def test_calculate_c_0_interference_coefficient_plus_beam_lp_target(self):
+        """
+        # Title: `test_calculate_c_0_interference_coefficient_plus_beam_lp_target`
+
+        ## Description: Test the function `calculate_c_0_interference_coefficient`.
+        Here, we test for the longitudinally-polarized target and (+) beam helicity configuration.
+        """
         print(f"> Now testing c0I for the (+) beam and LP target:")
-        with self.subTest():
-            self.assertAlmostEqual(
-                calculate_c_0_interference_coefficient(
-                    0,
-                    0.5,
-                    1.0,
-                    _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
-                    _TEST_X_BJORKEN,
-                    _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
-                    _TEST_EPSILON,
-                    _TEST_LEPTON_ENERGY_FRACTION,
-                    _TEST_SKEWNESS,
-                    _TEST_T_PRIME,
-                    _TEST_K_TILDE,
-                    _TEST_SHORTHAND_K,
-                    _TEST_DIRAC_FORM_FACTOR_F1,
-                    _TEST_PAULI_FORM_FACTOR_F2,
-                    _TEST_CFF_H,
-                    _TEST_CFF_H_TILDE,
-                    _TEST_CFF_E,
-                    _TEST_CFF_E_TILDE,
-                    _TEST_VERBOSE),
-                0.10348803802959823)
-        
+        self.assertAlmostEqual(
+            calculate_c_0_interference_coefficient(
+                0,
+                Decimal("0.5"),
+                1.0,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SKEWNESS,
+                _TEST_T_PRIME,
+                _TEST_K_TILDE,
+                _TEST_SHORTHAND_K,
+                _TEST_DIRAC_FORM_FACTOR_F1,
+                _TEST_PAULI_FORM_FACTOR_F2,
+                _TEST_CFF_H,
+                _TEST_CFF_H_TILDE,
+                _TEST_CFF_E,
+                _TEST_CFF_E_TILDE,
+                _TEST_VERBOSE),
+            0.10348803802959823)
+    
+    def test_calculate_c_0_interference_coefficient_minus_beam_lp_target(self):
+        """
+        # Title: `test_calculate_c_0_interference_coefficient_minus_beam_lp_target`
+
+        ## Description: Test the function `calculate_c_0_interference_coefficient`.
+        Here, we test for the longitudinally-polarized target and (-) beam helicity configuration.
+        """
         print(f"> Now testing c0I for the (-) beam and LP target:")
-        with self.subTest():
-            self.assertAlmostEqual(
-                calculate_c_0_interference_coefficient(
-                    0,
-                    -0.5,
-                    1.0,
-                    _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
-                    _TEST_X_BJORKEN,
-                    _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
-                    _TEST_EPSILON,
-                    _TEST_LEPTON_ENERGY_FRACTION,
-                    _TEST_SKEWNESS,
-                    _TEST_T_PRIME,
-                    _TEST_K_TILDE,
-                    _TEST_SHORTHAND_K,
-                    _TEST_DIRAC_FORM_FACTOR_F1,
-                    _TEST_PAULI_FORM_FACTOR_F2,
-                    _TEST_CFF_H,
-                    _TEST_CFF_H_TILDE,
-                    _TEST_CFF_E,
-                    _TEST_CFF_E_TILDE,
-                    _TEST_VERBOSE),
-                -0.10348803802959823)
+        self.assertAlmostEqual(
+            calculate_c_0_interference_coefficient(
+                0,
+                -Decimal("0.5"),
+                1.0,
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SKEWNESS,
+                _TEST_T_PRIME,
+                _TEST_K_TILDE,
+                _TEST_SHORTHAND_K,
+                _TEST_DIRAC_FORM_FACTOR_F1,
+                _TEST_PAULI_FORM_FACTOR_F2,
+                _TEST_CFF_H,
+                _TEST_CFF_H_TILDE,
+                _TEST_CFF_E,
+                _TEST_CFF_E_TILDE,
+                _TEST_VERBOSE),
+            -0.10348803802959823)
         
     def test_calculate_c_1_interference_coefficient(self):
         """
@@ -263,7 +293,7 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
         self.assertAlmostEqual(
             calculate_c_1_interference_coefficient(
                 1,
-                0.5,
+                Decimal("0.5"),
                 1.0,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
@@ -304,7 +334,7 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
         self.assertAlmostEqual(
             calculate_c_2_interference_coefficient(
                 2,
-                0.5,
+                Decimal("0.5"),
                 1.0,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
@@ -345,7 +375,7 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
         self.assertAlmostEqual(
             calculate_s_1_interference_coefficient(
                 1,
-                0.5,
+                Decimal("0.5"),
                 1.0,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
@@ -386,7 +416,7 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
         self.assertAlmostEqual(
             calculate_s_2_interference_coefficient(
                 2,
-                0.5,
+                Decimal("0.5"),
                 1.0,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
@@ -427,7 +457,7 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
         self.assertAlmostEqual(
             calculate_s_3_interference_coefficient(
                 3,
-                0.5,
+                Decimal("0.5"),
                 1.0,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,

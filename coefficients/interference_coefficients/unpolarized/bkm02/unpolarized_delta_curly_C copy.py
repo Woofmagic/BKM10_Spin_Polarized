@@ -39,13 +39,13 @@ def calculate_delta_curly_C_unpolarized_interference(
     try:
 
         # (1): Calculate the recurrent quantity:
-        x_Bjorken_appearance = x_Bjorken / (2. - x_Bjorken)
+        x_Bjorken_appearance = x_Bjorken / (Decimal("2.") - x_Bjorken)
 
         # (2): Calculate the term in the curly brackets:
         curly_brackets_term = x_Bjorken_appearance * (compton_form_factor_h + compton_form_factor_e) + compton_form_factor_h_tilde
 
         # (2): Go for the entire thing:
-        delta_c_I_unpolarized = -1. * x_Bjorken_appearance * (Pauli_form_factor_F2 + Dirac_form_factor_F1) * curly_brackets_term
+        delta_c_I_unpolarized = Decimal("-1.0") * x_Bjorken_appearance * (Pauli_form_factor_F2 + Dirac_form_factor_F1) * curly_brackets_term
 
         if verbose:
             print(f"> Computed coefficient delta_c_I_unpolarized to be: {delta_c_I_unpolarized}")
@@ -55,4 +55,4 @@ def calculate_delta_curly_C_unpolarized_interference(
     
     except Exception as E:
         print(f"> Error computing coefficient delta_c_I_unpolarized:\n> {E}")
-        return 0.
+        return Decimal("0.0")

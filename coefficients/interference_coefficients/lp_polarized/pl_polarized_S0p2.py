@@ -18,13 +18,13 @@ def calculate_s_2_zero_plus_longitudinally_polarized(
     try:
 
         # (1): Calculate the annoying quantity sqrt(1 - y - y^{2} epsilon^{2} / 4)
-        root_combination_of_y_and_epsilon = np.sqrt(1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.))
+        root_combination_of_y_and_epsilon = sqrt(Decimal("1.") - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0")))
         
         # (2): Calculate the prefactor:
-        prefactor = 8. * np.sqrt(2.) * target_polarization * shorthand_k * (2. - lepton_energy_fraction_y )/ np.sqrt((1. + epsilon**2)**5)
+        prefactor = Decimal("8. ") * sqrt(Decimal("2.0")) * target_polarization * shorthand_k * (Decimal("2.") - lepton_energy_fraction_y )/ sqrt((Decimal("1.") + epsilon**2)**5)
 
         # (3): Calculate everything:
-        s_2_zero_plus_LP = prefactor * root_combination_of_y_and_epsilon * (1. + (x_Bjorken * squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer))
+        s_2_zero_plus_LP = prefactor * root_combination_of_y_and_epsilon * (Decimal("1.") + (x_Bjorken * squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer))
 
         # (3.1): If verbose, log the output:
         if verbose:
@@ -35,4 +35,4 @@ def calculate_s_2_zero_plus_longitudinally_polarized(
 
     except Exception as ERROR:
         print(f"> Error in calculating s_2_zero_plus_LP for Interference Term:\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

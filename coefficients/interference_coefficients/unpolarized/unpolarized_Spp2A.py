@@ -18,7 +18,7 @@ def calculate_s_2_plus_plus_unpolarized_A(
     try:
 
         # (1): Calculate the recurrent quantity sqrt(1 + epsilon^2):
-        root_one_plus_epsilon_squared = np.sqrt(1. + epsilon**2)
+        root_one_plus_epsilon_squared = sqrt(Decimal("1.") + epsilon**2)
 
         # (2): Calculate the quantity t/Q^{2}:
         t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
@@ -27,16 +27,16 @@ def calculate_s_2_plus_plus_unpolarized_A(
         tPrime_over_Q_squared = t_prime / squared_Q_momentum_transfer
 
         # (4): Calculate a fancy, annoying quantity:
-        fancy_y_stuff = 1. - lepton_energy_fraction_y - epsilon**2 * lepton_energy_fraction_y**2 / 4.
+        fancy_y_stuff = Decimal("1.") - lepton_energy_fraction_y - epsilon**2 * lepton_energy_fraction_y**2 / Decimal("4.0")
 
         # (5): Calculate the last term:
-        last_term = 1. + (4. * (1. - x_Bjorken) * x_Bjorken + epsilon**2) * t_over_Q_squared / (4. - 2. * x_Bjorken + 3. * epsilon**2)
+        last_term = Decimal("1.") + (Decimal("4.") * (Decimal("1.") - x_Bjorken) * x_Bjorken + epsilon**2) * t_over_Q_squared / (Decimal("4.") - Decimal("2.") * x_Bjorken + Decimal("3.") * epsilon**2)
 
         # (6): Calculate the middle term:
-        middle_term = 1. + root_one_plus_epsilon_squared - 2. * x_Bjorken
+        middle_term = Decimal("1.") + root_one_plus_epsilon_squared - Decimal("2.") * x_Bjorken
 
         # (7): Calculate the prefactor:
-        prefactor = -8. * lepton_helicity * fancy_y_stuff * lepton_energy_fraction_y * t_over_Q_squared * tPrime_over_Q_squared / root_one_plus_epsilon_squared**4
+        prefactor = -Decimal("8. ") * lepton_helicity * fancy_y_stuff * lepton_energy_fraction_y * t_over_Q_squared * tPrime_over_Q_squared / root_one_plus_epsilon_squared**4
 
         # (8): Calculate the coefficient
         s_2_plus_plus_unp_A = prefactor * middle_term * last_term
@@ -50,4 +50,4 @@ def calculate_s_2_plus_plus_unpolarized_A(
 
     except Exception as ERROR:
         print(f"> Error in calculating s_2_plus_plus_unp_A for Interference Term:\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

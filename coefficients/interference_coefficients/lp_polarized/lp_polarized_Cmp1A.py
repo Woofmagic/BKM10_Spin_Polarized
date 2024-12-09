@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 try:
     import numpy as np
 except ImportError:
@@ -21,10 +23,10 @@ def calculate_c_1_minus_plus_longitudinally_polarized_A(
         t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
 
         # (2): Calculate the multiplicative part of it:
-        main_part = t_over_Q_squared * (1. - (1. - 2. * x_Bjorken) * t_over_Q_squared)
+        main_part = t_over_Q_squared * (Decimal("1.") - (Decimal("1.") - Decimal("2.") * x_Bjorken) * t_over_Q_squared)
 
         # (3): Calculate the prefactor:
-        prefactor = -16. * lepton_helicity * target_polarization * x_Bjorken * lepton_energy_fraction_y * (2. - lepton_energy_fraction_y) / (1. + epsilon**2)**2.5
+        prefactor = -Decimal("16. ") * lepton_helicity * target_polarization * x_Bjorken * lepton_energy_fraction_y * (Decimal("2.") - lepton_energy_fraction_y) / (Decimal("1.") + epsilon**2)**2.5
 
         # (4): Calculate the coefficient:
         c_1_minus_plus_LP_A = prefactor * main_part
@@ -38,4 +40,4 @@ def calculate_c_1_minus_plus_longitudinally_polarized_A(
 
     except Exception as ERROR:
         print(f"> Error in calculating c_1_minus_plus_LP_A for Interference Term:\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

@@ -1,3 +1,6 @@
+import math
+from decimal import Decimal
+
 try:
     import numpy as np
 except ImportError:
@@ -40,7 +43,7 @@ def calculate_bkm10_cross_section_prefactor(
         numerator = _ELECTROMAGNETIC_FINE_STRUCTURE_CONSTANT**3 * lepton_energy_fraction_y**2 * x_Bjorken
 
         # (2): Calculate the denominator of the prefactor:
-        denominator = 8. * np.pi * squared_Q_momentum_transfer**2 * np.sqrt(1 + epsilon**2)
+        denominator = Decimal("8. ") * Decimal(math.pi) * squared_Q_momentum_transfer**2 * (Decimal("1.") + epsilon**2).sqrt()
 
         # (3): Construct the prefactor:
         prefactor = numerator / denominator

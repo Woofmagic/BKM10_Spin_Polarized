@@ -18,10 +18,10 @@ def calculate_c_1_zero_plus_longitudinally_polarized_V(
     try:
 
         # (1): Calculate the annoying quantity sqrt(1 - y - y^{2} epsilon^{2} / 2)
-        root_combination_of_y_and_epsilon = np.sqrt(1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.))
+        root_combination_of_y_and_epsilon = sqrt(Decimal("1.") - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0")))
 
         # (2): Calculate the "prefactor":
-        prefactor = 8. * np.sqrt(2.) * lepton_helicity * target_polarization  * (2. - lepton_energy_fraction_y) * lepton_energy_fraction_y / (1. + epsilon**2)**2
+        prefactor = Decimal("8. ") * sqrt(Decimal("2.0")) * lepton_helicity * target_polarization  * (Decimal("2.") - lepton_energy_fraction_y) * lepton_energy_fraction_y / (Decimal("1.") + epsilon**2)**2
 
         # (3): Calculate everything:
         c_1_zero_plus_V_LP = prefactor * root_combination_of_y_and_epsilon * squared_hadronic_momentum_transfer_t * k_tilde**2 / squared_Q_momentum_transfer**2
@@ -35,4 +35,4 @@ def calculate_c_1_zero_plus_longitudinally_polarized_V(
 
     except Exception as ERROR:
         print(f"> Error in calculating c_1_zero_plus_V_LP for Interference Term:\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

@@ -44,4 +44,4 @@ def sample_from_numpy_normal_distribution(mean_value: float, standard_deviation:
     
     except Exception as E:
         print(f"> Error in sampling normal distribution:\n> {E}!")
-        return 0.
+        return Decimal("0.0")

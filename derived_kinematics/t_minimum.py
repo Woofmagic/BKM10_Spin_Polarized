@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 try:
     import numpy as np
 except ImportError:
@@ -28,16 +30,16 @@ def calculate_kinematics_t_min(
     try:
 
         # (1): Calculate 1 - x_{B}:
-        one_minus_xb = 1. - x_Bjorken
+        one_minus_xb = Decimal("1.") - x_Bjorken
 
         # (2): Calculate the numerator:
-        numerator = (2. * one_minus_xb * (1. - np.sqrt(1. + epsilon**2))) + epsilon**2
+        numerator = (Decimal("2.") * one_minus_xb * (Decimal("1.") - (Decimal("1.") + epsilon**2).sqrt())) + epsilon**2
 
         # (3): Calculate the denominator:
-        denominator = (4. * x_Bjorken * one_minus_xb) + epsilon**2
+        denominator = (Decimal("4.") * x_Bjorken * one_minus_xb) + epsilon**2
 
         # (4): Obtain the t minimum
-        t_minimum = -1. * squared_Q_momentum_transfer * numerator / denominator
+        t_minimum = Decimal("-1.0") * squared_Q_momentum_transfer * numerator / denominator
 
         # (4.1): If verbose, print the result:
         if verbose:
@@ -48,4 +50,4 @@ def calculate_kinematics_t_min(
 
     except Exception as ERROR:
         print(f"> Error calculating t_minimum: \n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

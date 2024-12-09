@@ -17,7 +17,7 @@ def calculate_c_1_zero_plus_unpolarized(
     try:
 
         # (1): Calculate the recurrent quantity sqrt(1 + epsilon^2):
-        root_one_plus_epsilon_squared = np.sqrt(1. + epsilon**2)
+        root_one_plus_epsilon_squared = sqrt(Decimal("1.") + epsilon**2)
 
         # (2): Calculate the recurrent quantity t/Q^{2}:
         t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
@@ -26,19 +26,19 @@ def calculate_c_1_zero_plus_unpolarized(
         t_prime_over_Q_squared = t_prime / squared_Q_momentum_transfer
 
         # (4): Calculate 1 - x_{B}:
-        one_minus_xb = 1. - x_Bjorken
+        one_minus_xb = Decimal("1.") - x_Bjorken
 
         # (5): Calculate the annoying y quantity:
-        y_quantity = 1. - lepton_energy_fraction_y - (epsilon**2 * lepton_energy_fraction_y**2 / 4.)
+        y_quantity = Decimal("1.") - lepton_energy_fraction_y - (epsilon**2 * lepton_energy_fraction_y**2 / Decimal("4.0"))
 
         # (6): Calculate the first term:
-        first_bracket_term = (2. - lepton_energy_fraction_y)**2 * t_prime_over_Q_squared * (one_minus_xb + (one_minus_xb * x_Bjorken + (epsilon**2 / 4.)) * t_prime_over_Q_squared / root_one_plus_epsilon_squared)
+        first_bracket_term = (Decimal("2.") - lepton_energy_fraction_y)**2 * t_prime_over_Q_squared * (one_minus_xb + (one_minus_xb * x_Bjorken + (epsilon**2 / Decimal("4.0"))) * t_prime_over_Q_squared / root_one_plus_epsilon_squared)
         
         # (7): Calculate the second term:
-        second_bracket_term = y_quantity * (1. - (1. - 2. * x_Bjorken) * t_over_Q_squared) * (epsilon**2 - 2. * (1. + (epsilon**2 / (2. * x_Bjorken))) * x_Bjorken * t_over_Q_squared)
+        second_bracket_term = y_quantity * (Decimal("1.") - (Decimal("1.") - Decimal("2.") * x_Bjorken) * t_over_Q_squared) * (epsilon**2 - Decimal("2.") * (Decimal("1.") + (epsilon**2 / (Decimal("2.") * x_Bjorken))) * x_Bjorken * t_over_Q_squared)
         
         # (8): Calculate part of the prefactor:
-        prefactor = 8. * np.sqrt(2. * y_quantity) / root_one_plus_epsilon_squared**4
+        prefactor = Decimal("8. ") * sqrt(Decimal("2.") * y_quantity) / root_one_plus_epsilon_squared**4
         
         # (9): Calculate the coefficient:
         c_1_zero_plus_unp = prefactor * (first_bracket_term + second_bracket_term)
@@ -52,4 +52,4 @@ def calculate_c_1_zero_plus_unpolarized(
 
     except Exception as ERROR:
         print(f"> Error in calculating c_1_zero_plus_unp for Interference Term:\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

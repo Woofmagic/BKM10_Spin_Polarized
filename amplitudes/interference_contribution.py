@@ -1,4 +1,6 @@
-import matplotlib.pyplot as plt
+from decimal import Decimal
+import math
+from utilities.mathematics.trigonometric import cos, sin
 
 from utilities.plotting.plot_customizer import PlotCustomizer
 
@@ -164,40 +166,7 @@ def calculate_interference_contribution(
     try:
 
         # (1): Calculate the prefactor:
-        prefactor = 1. / (x_Bjorken * lepton_energy_fraction_y**3 * squared_hadronic_momentum_transfer_t * lepton_propagator_p1 * lepton_propagator_p2)
-
-        # (1): Calculate curly C_{unp}^{I}(F):
-        curly_C_longitudinally_polarized_interference = calculate_curly_C_unpolarized_interference(
-            squared_Q_momentum_transfer, 
-            x_Bjorken,
-            squared_hadronic_momentum_transfer_t,
-            Dirac_form_factor_F1,
-            Pauli_form_factor_F2,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            verbose)
-        
-        # (2): Calculate curly C_{unp}^{I, V}(F):
-        curly_C_V_longitudinally_polarized_interference = calculate_curly_C_unpolarized_interference_V(
-            squared_Q_momentum_transfer, 
-            x_Bjorken,
-            squared_hadronic_momentum_transfer_t,
-            Dirac_form_factor_F1,
-            Pauli_form_factor_F2,
-            compton_form_factor_h,
-            compton_form_factor_e,
-            verbose)
-        
-        # (3): Calculate curly C_{LP}^{I, A}(F):
-        curly_C_A_longitudinally_polarized_interference = calculate_curly_C_unpolarized_interference_A(
-            squared_Q_momentum_transfer, 
-            x_Bjorken,
-            squared_hadronic_momentum_transfer_t,
-            Dirac_form_factor_F1,
-            Pauli_form_factor_F2,
-            compton_form_factor_h_tilde,
-            verbose)
+        prefactor = Decimal("1.0") / (x_Bjorken * lepton_energy_fraction_y**3 * squared_hadronic_momentum_transfer_t * lepton_propagator_p1 * lepton_propagator_p2)
 
         # (2): Calculate c_{0}^{I}:
         # c_0_I = 0.
@@ -222,6 +191,8 @@ def calculate_interference_contribution(
             compton_form_factor_e_tilde,
             use_ww,
             verbose)
+        
+        print("c0fuckcocks")
 
         # (3): Calculate c_{1}^{I}:
         # c_1_I = 0.
@@ -247,6 +218,8 @@ def calculate_interference_contribution(
             use_ww,
             verbose)
         
+        print("c1fuckcocks")
+        
         # (4): Calculate c_{2}^{I}:
         # c_2_I = 0.
         c_2_I = calculate_c_2_interference_coefficient(
@@ -270,6 +243,8 @@ def calculate_interference_contribution(
             compton_form_factor_e_tilde,
             use_ww,
             verbose)
+        
+        print("c2fuckcocks")
 
         # (5): Calculate c_{2}^{I}:
         # c_3_I = 0.
@@ -295,6 +270,8 @@ def calculate_interference_contribution(
             use_ww,
             verbose)
         
+        print("c3fuckcocks")
+        
         # (6): Calculate s_{1}^{I}:
         # s_1_I = 0.
         s_1_I = calculate_s_1_interference_coefficient(
@@ -318,6 +295,8 @@ def calculate_interference_contribution(
             compton_form_factor_e_tilde,
             use_ww,
             verbose)
+        
+        print("s1fuckcocks")
 
         # (7): Calculate s_{2}^{I}:
         # s_2_I = 0.
@@ -342,6 +321,8 @@ def calculate_interference_contribution(
             compton_form_factor_e_tilde,
             use_ww,
             verbose)
+        
+        print("s2fuckcocks")
 
         # (8): Calculate s_{3}^{I}:
         # s_3_I = 0.
@@ -367,6 +348,8 @@ def calculate_interference_contribution(
             use_ww,
             verbose)
         
+        print("s3fuckcocks")
+        
         plot_interference_contributions(
             azimuthal_phi,
             convert_to_nb_over_GeV4(c_0_I),
@@ -378,13 +361,13 @@ def calculate_interference_contribution(
             convert_to_nb_over_GeV4(s_3_I))
 
         # (9): Calculate the interference contribution:
-        interference_contribution = prefactor * (c_0_I + 
-            c_1_I * np.cos(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
-            c_2_I * np.cos(2. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
-            c_3_I * np.cos(3. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
-            s_1_I * np.sin(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
-            s_2_I * np.sin(2. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
-            s_3_I * np.sin(3. * (np.pi - convert_degrees_to_radians(azimuthal_phi))))
+        interference_contribution = (prefactor * (c_0_I + 
+            c_1_I * np.array([cos(Decimal("1.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
+            c_2_I * np.array([cos(Decimal("2.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
+            c_3_I * np.array([cos(Decimal("3.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
+            s_1_I * np.array([sin(Decimal("1.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
+            s_2_I * np.array([sin(Decimal("2.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
+            s_3_I * np.array([sin(Decimal("3.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in azimuthal_phi])))
 
         # (9.1): If verbose, print the calculation:
         if verbose:
@@ -395,4 +378,4 @@ def calculate_interference_contribution(
     
     except Exception as ERROR:
         print(f"> Error in calculating the interference_contribution \n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

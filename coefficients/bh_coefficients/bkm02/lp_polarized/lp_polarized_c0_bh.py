@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from statics.masses.particle_masses import _MASS_OF_PROTON_IN_GEV
 
 from utilities.mathematics.polarization import check_polarization_datatype
@@ -64,37 +66,37 @@ def calculate_c_0_longitudinally_polarized_bh(
         sum_of_form_factors = (Dirac_form_factor_F1 + Pauli_form_factor_F2)
 
         # (2): Calculate the frequent appearance of t/4mp
-        t_over_four_mp_squared = squared_hadronic_momentum_transfer_t / (4. * _MASS_OF_PROTON_IN_GEV**2)
+        t_over_four_mp_squared = squared_hadronic_momentum_transfer_t / (Decimal("4.") * _MASS_OF_PROTON_IN_GEV**2)
 
         # (3): Calculate the weighted sum of the F1 and F2:
         weighted_sum_of_form_factors = Dirac_form_factor_F1 + t_over_four_mp_squared * Pauli_form_factor_F2
 
         # (4): Calculate the recurrent appearance of 1 - xb:
-        one_minus_xb = 1. - x_Bjorken
+        one_minus_xb = Decimal("1.") - x_Bjorken
 
         # (5): Calculate the common appearance of delta^{2} / Q^{2} = t / Q^{2}
         t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
 
         # (6): Calculate the derived quantity 1 - t/Q^{2}:
-        one_minus_t_over_Q_squared = 1. - t_over_Q_squared
+        one_minus_t_over_Q_squared = Decimal("1.") - t_over_Q_squared
 
         # (7): Calculate the first term's first bracketed term:
-        first_term_first_bracket = 0.5 * x_Bjorken * (one_minus_t_over_Q_squared) - t_over_four_mp_squared
+        first_term_first_bracket = Decimal("0.5") * x_Bjorken * (one_minus_t_over_Q_squared) - t_over_four_mp_squared
 
         # (8): Calculate the first term's second bracketed term:
-        first_term_second_bracket = 2. - x_Bjorken - (2. * (one_minus_xb)**2 * t_over_Q_squared) + (epsilon**2 * one_minus_t_over_Q_squared) - (x_Bjorken * (1. - 2. * x_Bjorken) * t_over_Q_squared**2)
+        first_term_second_bracket = Decimal("2.") - x_Bjorken - (Decimal("2.") * (one_minus_xb)**2 * t_over_Q_squared) + (epsilon**2 * one_minus_t_over_Q_squared) - (x_Bjorken * (Decimal("1.") - Decimal("2.") * x_Bjorken) * t_over_Q_squared**2)
 
         # (9): Calculate the first term (includes prefactor)
-        first_term = 0.5 * sum_of_form_factors * first_term_first_bracket * first_term_second_bracket
+        first_term = Decimal("0.5") * sum_of_form_factors * first_term_first_bracket * first_term_second_bracket
 
         # (10): Calculate the first bracketed term in the second term:
-        second_term_first_bracket = x_Bjorken**2 * (1. + t_over_Q_squared)**2 / (4. * t_over_four_mp_squared) + ((1. - x_Bjorken) * (1. + x_Bjorken * t_over_Q_squared))
+        second_term_first_bracket = x_Bjorken**2 * (Decimal("1.") + t_over_Q_squared)**2 / (Decimal("4.") * t_over_four_mp_squared) + ((Decimal("1.") - x_Bjorken) * (Decimal("1.") + x_Bjorken * t_over_Q_squared))
 
         # (11): Calculate the second term (including prefactor):
-        second_term = (1. - (1. - x_Bjorken) * t_over_Q_squared) * weighted_sum_of_form_factors * second_term_first_bracket
+        second_term = (Decimal("1.") - (Decimal("1.") - x_Bjorken) * t_over_Q_squared) * weighted_sum_of_form_factors * second_term_first_bracket
 
         # (12): Calculate the overall prefactor:
-        prefactor = 8. * float(lepton_helicity) * float(target_polarization) * x_Bjorken * (2. - lepton_energy_fraction_y) * lepton_energy_fraction_y * np.sqrt(1. + epsilon**2) * sum_of_form_factors / (1. - t_over_four_mp_squared)
+        prefactor = Decimal("8. ") * float(lepton_helicity) * float(target_polarization) * x_Bjorken * (Decimal("2.") - lepton_energy_fraction_y) * lepton_energy_fraction_y * (Decimal("1.") + epsilon**2).sqrt() * sum_of_form_factors / (Decimal("1.") - t_over_four_mp_squared)
 
         # (13): Calculate the entire coefficient:
         c0LP_BH = prefactor * (first_term + second_term)
@@ -108,4 +110,4 @@ def calculate_c_0_longitudinally_polarized_bh(
 
     except Exception as ERROR:
         print(f"> Error in calculating c0LP for BH Amplitude Squared:\n> {ERROR}")
-        return 0.
+        return Decimal("0.0")

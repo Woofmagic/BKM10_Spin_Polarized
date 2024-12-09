@@ -78,6 +78,8 @@ def calculate_c_0_interference_coefficient(
 
         if target_polarization == 0.0:
 
+            print(f"> Target is NOT polarized... Continuing...")
+
             # (1): We compute the first part of the term: C_{++}(n = 0):
             c_plus_plus = calculate_c_0_plus_plus_unpolarized(
                 squared_Q_momentum_transfer,
@@ -136,6 +138,8 @@ def calculate_c_0_interference_coefficient(
 
         elif target_polarization == 1.0:
 
+            print(f"> Target IS polarized... Continuing...")
+
             # (1): We compute the first part of the term: C_{++}(n = 0):
             c_plus_plus = calculate_c_0_plus_plus_longitudinally_polarized(
                 lepton_helicity,
@@ -193,7 +197,6 @@ def calculate_c_0_interference_coefficient(
                 compton_form_factor_e_tilde,
                 verbose)
 
-
             # (4): Calculate the curly C_{0+} contribution - requires both n and the CFFs:
             curly_c_zero_plus = calculate_curly_C_zero_plus_longitudinally_polarized_interference(
                 n_number,
@@ -237,7 +240,7 @@ def calculate_c_0_interference_coefficient(
         # (5): Calculate the entire thing:
         # c_n_interference_coefficient = c_plus_plus * curly_c_plus_plus.real + c_zero_plus * curly_c_zero_plus.real + c_minus_plus * curly_c_minus_plus
         c_0_interference_coefficient = c_plus_plus * curly_c_plus_plus.real + c_zero_plus * curly_c_zero_plus.real
-        
+
         # (): If verbose, print the output:
         if verbose:
             print(f"> Calculated c_0 interference coefficient to be:\n{c_0_interference_coefficient}")
@@ -247,7 +250,7 @@ def calculate_c_0_interference_coefficient(
     
     except Exception as ERROR:
         print(f"> Error in c_0 contribution to the interference term: \n> {ERROR}")
-        return 0.
+        return Decimal("0.0")
     
 def calculate_c_1_interference_coefficient(
     n_number: int,
@@ -464,7 +467,7 @@ def calculate_c_1_interference_coefficient(
     
     except Exception as ERROR:
         print(f"> Error in c_1 contribution to the interference term: \n> {ERROR}")
-        return 0.
+        return Decimal("0.0")
     
 def calculate_c_2_interference_coefficient(
     n_number: int,
@@ -670,7 +673,7 @@ def calculate_c_2_interference_coefficient(
         
         # (5): Calculate the entire thing:
         # c_n_interference_coefficient = c_plus_plus * curly_c_plus_plus.real + c_zero_plus * curly_c_zero_plus.real + c_minus_plus * curly_c_minus_plus
-        c_2_interference_coefficient = (c_plus_plus * curly_c_plus_plus.real) + (c_zero_plus * curly_c_zero_plus.real)
+        c_2_interference_coefficient = ((c_plus_plus * curly_c_plus_plus.real) + (c_zero_plus * curly_c_zero_plus.real))
         
         # (): If verbose, print the output:
         if verbose:
@@ -681,7 +684,7 @@ def calculate_c_2_interference_coefficient(
     
     except Exception as ERROR:
         print(f"> Error in c_2 contribution to the interference term: \n> {ERROR}")
-        return 0.
+        return Decimal("0.0")
     
 def calculate_c_3_interference_coefficient(
     n_number: int,
@@ -879,7 +882,7 @@ def calculate_c_3_interference_coefficient(
         
         # (5): Calculate the entire thing:
         # c_n_interference_coefficient = c_plus_plus * curly_c_plus_plus.real + c_zero_plus * curly_c_zero_plus.real + c_minus_plus * curly_c_minus_plus
-        c_3_interference_coefficient = (c_plus_plus * curly_c_plus_plus.real) + (c_zero_plus * curly_c_zero_plus.real)
+        c_3_interference_coefficient = ((c_plus_plus * curly_c_plus_plus.real) + (c_zero_plus * curly_c_zero_plus.real))
         
         # (): If verbose, print the output:
         if verbose:
@@ -890,4 +893,4 @@ def calculate_c_3_interference_coefficient(
     
     except Exception as ERROR:
         print(f"> Error in c_3 contribution to the interference term: \n> {ERROR}")
-        return 0.
+        return Decimal("0.0")
