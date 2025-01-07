@@ -27,7 +27,7 @@ def calculate_s_2_zero_plus_unpolarized_V(
         y_quantity = sqrt(Decimal("1.") - lepton_energy_fraction_y - (epsilon**2 * lepton_energy_fraction_y**2 / Decimal("4.0")))
 
         # (4): Calculate the prefactor:
-        prefactor = -Decimal("8. ") * sqrt(Decimal("2.0")) * lepton_helicity * y_quantity * shorthand_k * lepton_energy_fraction_y * x_Bjorken * t_over_Q_squared / root_one_plus_epsilon_squared**4
+        prefactor = Decimal("8. ") * sqrt(Decimal("2.0")) * lepton_helicity * y_quantity * shorthand_k * lepton_energy_fraction_y * x_Bjorken * t_over_Q_squared / root_one_plus_epsilon_squared**4
         
         # (5): Calculate the coefficient:
         s_2_zero_plus_unp_V = prefactor * (Decimal("1.") - (Decimal("1.") - Decimal("2.") * x_Bjorken) * t_over_Q_squared)

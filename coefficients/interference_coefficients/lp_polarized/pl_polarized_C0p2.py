@@ -24,7 +24,7 @@ def calculate_c_2_zero_plus_longitudinally_polarized(
         root_combination_of_y_and_epsilon = sqrt(Decimal("1.") - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0")))
 
         # (2): Calculate the "prefactor":
-        prefactor = -Decimal("8. ") * sqrt(Decimal("2.0")) * lepton_helicity * target_polarization * shorthand_k * lepton_energy_fraction_y / (Decimal("1.") + epsilon**2)**2
+        prefactor = Decimal("8. ") * sqrt(Decimal("2.0")) * lepton_helicity * target_polarization * shorthand_k * lepton_energy_fraction_y / (Decimal("1.") + epsilon**2)**2
 
         # (3): Calculate everything:
         c_2_zero_plus_LP = prefactor * root_combination_of_y_and_epsilon * (Decimal("1.") + (x_Bjorken * squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer))

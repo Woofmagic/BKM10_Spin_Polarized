@@ -32,7 +32,7 @@ def calculate_s_2_plus_plus_unpolarized(
         second_bracket_term = (Decimal("2.") * x_Bjorken + epsilon**2) * tPrime_over_Q_squared / (Decimal("2.") * root_one_plus_epsilon_squared)
 
         # (6): Calculate the prefactor:
-        prefactor = -Decimal("4.") * lepton_helicity * fancy_y_stuff * lepton_energy_fraction_y * (Decimal("1.") + root_one_plus_epsilon_squared - Decimal("2.") * x_Bjorken) * tPrime_over_Q_squared/ root_one_plus_epsilon_squared**3
+        prefactor = Decimal("4.") * lepton_helicity * fancy_y_stuff * lepton_energy_fraction_y * (Decimal("1.") + root_one_plus_epsilon_squared - Decimal("2.") * x_Bjorken) * tPrime_over_Q_squared/ root_one_plus_epsilon_squared**3
 
         # (7): Calculate the coefficient
         s_2_plus_plus_unp = prefactor * (first_bracket_term + second_bracket_term)

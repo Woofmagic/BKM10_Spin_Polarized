@@ -42,7 +42,7 @@ def calculate_c_1_plus_plus_unpolarized_A(
         second_bracket_term = Decimal("1.") - Decimal("0.5") * x_Bjorken + 0.25 * (one_minus_2xb + root_one_plus_epsilon_squared) * (Decimal("1.") - t_over_Q_squared) + (Decimal("4.") * x_Bjorken * one_minus_xb + epsilon**2) * t_prime_over_Q_squared / (Decimal("2.") * root_one_plus_epsilon_squared)
 
         # (9): Calculate the prefactor: 
-        prefactor = -Decimal("16. ") * shorthand_k * t_over_Q_squared / root_one_plus_epsilon_squared**4
+        prefactor = Decimal("16. ") * shorthand_k * t_over_Q_squared / root_one_plus_epsilon_squared**4
         
         # (10): The entire thing:
         c_1_plus_plus_A_unp = prefactor * (fancy_y_stuff * first_bracket_term_second_part - (Decimal("2.") - lepton_energy_fraction_y)**2 * second_bracket_term)

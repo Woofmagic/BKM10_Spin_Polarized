@@ -9,6 +9,8 @@ import sys
 
 import numpy as np
 
+from decimal import Decimal
+
 from statics.strings.static_strings import _DIRECTORY_DATA
 
 from statics.strings.static_strings import _ARGPARSE_DESCRIPTION
@@ -45,7 +47,8 @@ def main(
     formalism_version: str,
     lepton_helicity: str,
     target_polarization: str,
-    verbose: bool = False):
+    verbose: bool = False,
+    debugging: bool = False):
 
     # utilities > data_handling > pandas_reading > read_csv_file_with_pandas
     from utilities.data_handling.pandas_reading import read_csv_file_with_pandas
@@ -99,7 +102,7 @@ def main(
         # (6): Obtain the polarizations -- set to 1 for now:
 
         # This is BKM lambda
-        numerical_lepton_polarization = Decimal("0.5") if lepton_helicity == 'positive' else -Decimal("0.5") if lepton_helicity == 'negative' else 0.0
+        numerical_lepton_polarization = Decimal("0.5") if lepton_helicity == 'positive' else Decimal("0.5") if lepton_helicity == 'negative' else 0.0
 
         #This is BKM Lambda:
         numerical_target_polarization = 1.0 if target_polarization == 'polarized' else 0.0

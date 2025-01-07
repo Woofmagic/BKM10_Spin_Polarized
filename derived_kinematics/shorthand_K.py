@@ -17,7 +17,7 @@ def calculate_kinematics_k(
     try:
 
         # (1): Calculate the amazing prefactor:
-        prefactor = sqrt((Decimal("1.") - lepton_energy_fraction_y + (epsilon**2 * lepton_energy_fraction_y**2 / Decimal("4.0"))) / squared_Q_momentum_transfer)
+        prefactor = (((Decimal("1.") - lepton_energy_fraction_y + (epsilon**2 * lepton_energy_fraction_y**2 / Decimal("4.0"))) / squared_Q_momentum_transfer)).sqrt()
 
         # (2): Calculate the remaining part of the term:
         kinematic_k = prefactor * k_tilde

@@ -320,7 +320,7 @@ def calculate_bkm10_cross_section(
         #     compton_form_factor_e_tilde,
         #     use_ww,
         #     verbose) + calculate_dvcs_amplitude_squared(
-        #     -Decimal("0.5"),
+        #     Decimal("0.5"),
         #     target_polarization,
         #     squared_Q_momentum_transfer,
         #     x_Bjorken,
@@ -388,7 +388,7 @@ def calculate_bkm10_cross_section(
                 compton_form_factor_e_tilde,
                 use_ww,
                 verbose) + calculate_interference_contribution(
-                -Decimal("0.5"),
+                Decimal("0.5"),
                 target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,

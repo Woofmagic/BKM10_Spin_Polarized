@@ -28,7 +28,7 @@ def calculate_s_3_minus_plus_longitudinally_polarized_V(
         bracket_term = (Decimal("4.") * one_minus_xb) + t_prime * (Decimal("4.") * one_minus_xb * x_Bjorken + epsilon**2) / (squared_Q_momentum_transfer * root_one_plus_epsilon_squared)
 
         # (4): Calcualte the prefactor:
-        prefactor = -Decimal("4.") * target_polarization * shorthand_k * (Decimal("1.") - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0"))) / root_one_plus_epsilon_squared**5
+        prefactor = Decimal("4.") * target_polarization * shorthand_k * (Decimal("1.") - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0"))) / root_one_plus_epsilon_squared**5
 
         # (5): Calculate the entire thing:
         s_3_plus_plus_LP_V = prefactor * squared_hadronic_momentum_transfer_t * bracket_term / squared_Q_momentum_transfer

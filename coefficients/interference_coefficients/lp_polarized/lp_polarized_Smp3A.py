@@ -27,7 +27,7 @@ def calculate_s_3_minus_plus_longitudinally_polarized_A(
         bracket_term = x_Bjorken * t_over_Q_squared * (Decimal("1.") + root_one_plus_epsilon_squared - t_over_Q_squared * (Decimal("1.") - Decimal("2.") * x_Bjorken - root_one_plus_epsilon_squared))
 
         # (4): Calculate the prefactor:
-        prefactor = -Decimal("8. ") * target_polarization * shorthand_k * (Decimal("1.") - lepton_energy_fraction_y - lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0")) / root_one_plus_epsilon_squared**6
+        prefactor = Decimal("8. ") * target_polarization * shorthand_k * (Decimal("1.") - lepton_energy_fraction_y - lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0")) / root_one_plus_epsilon_squared**6
 
         # (5): Calculate entire coefficient in one:
         s_3_minus_plus_LP_A = prefactor * bracket_term

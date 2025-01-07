@@ -35,7 +35,7 @@ def calculate_s_1_zero_plus_longitudinally_polarized_V(
         second_bracket_term = (Decimal("1.") + t_over_Q_squared) * combination_of_y_and_epsilon * second_bracket_term_long
         
         # (6): Calculate the prefactor:
-        prefactor = -Decimal("8. ") * sqrt(Decimal("2.0")) * target_polarization  * sqrt(combination_of_y_and_epsilon) * t_over_Q_squared / sqrt((Decimal("1.") + epsilon**2)**5)
+        prefactor = Decimal("8. ") * sqrt(Decimal("2.0")) * target_polarization  * sqrt(combination_of_y_and_epsilon) * t_over_Q_squared / sqrt((Decimal("1.") + epsilon**2)**5)
 
         # (7): Calculate everything:
         s_1_zero_plus_V_LP = prefactor * (first_bracket_term + second_bracket_term)

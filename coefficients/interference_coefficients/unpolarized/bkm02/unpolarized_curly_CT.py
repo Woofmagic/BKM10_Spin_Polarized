@@ -45,7 +45,7 @@ def calculate_curly_CT_unpolarized_interference(
         first_term_in_brackets = compton_form_factor_h * (two_minus_x_b * compton_form_factor_e - x_Bjorken * compton_form_factor_e)
 
         # (3): Calculate the second term in the brackets:
-        second_term_in_brackets = -Decimal("2.") * two_minus_x_b * compton_form_factor_h_tilde * (compton_form_factor_h + (squared_hadronic_momentum_transfer_t * compton_form_factor_e / (Decimal("4.") * _MASS_OF_PROTON_IN_GEV**2)))
+        second_term_in_brackets = Decimal("2.") * two_minus_x_b * compton_form_factor_h_tilde * (compton_form_factor_h + (squared_hadronic_momentum_transfer_t * compton_form_factor_e / (Decimal("4.") * _MASS_OF_PROTON_IN_GEV**2)))
 
         # (4): Calculate the third term in the brackets:
         third_term_in_brackets = Decimal("-1.0") * compton_form_factor_e * (two_minus_x_b * compton_form_factor_h - x_Bjorken * compton_form_factor_h_tilde)

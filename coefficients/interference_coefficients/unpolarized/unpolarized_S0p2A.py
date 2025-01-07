@@ -33,7 +33,7 @@ def calculate_s_2_zero_plus_unpolarized_A(
         main_term = Decimal("4.") * one_minus_xb + Decimal("2.") * epsilon**2 + Decimal("4.") * t_over_Q_squared * (Decimal("4.") * x_Bjorken * one_minus_xb + epsilon**2)
         
         # (6): Calculate part of the prefactor:
-        prefactor = -Decimal("2.") * sqrt(Decimal("2.") * y_quantity) * lepton_helicity * shorthand_k * lepton_energy_fraction_y * t_over_Q_squared / root_one_plus_epsilon_squared**4
+        prefactor = Decimal("2.") * sqrt(Decimal("2.") * y_quantity) * lepton_helicity * shorthand_k * lepton_energy_fraction_y * t_over_Q_squared / root_one_plus_epsilon_squared**4
         
         # (7): Calculate the coefficient:
         c_2_zero_plus_unp_A = prefactor * main_term

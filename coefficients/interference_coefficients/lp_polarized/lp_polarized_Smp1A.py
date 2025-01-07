@@ -44,7 +44,7 @@ def calculate_s_1_minus_plus_longitudinally_polarized_A(
         bracket_term = prefactor_first_term * fancy_epsilon_term * main_first_term + prefactor_second_term * main_second_term
 
         # (9): Calculate the prefactor:
-        prefactor = -Decimal("8. ") * target_polarization * shorthand_K * x_Bjorken * t_over_Q_squared / root_one_plus_epsilon_squared**6
+        prefactor = Decimal("8. ") * target_polarization * shorthand_K * x_Bjorken * t_over_Q_squared / root_one_plus_epsilon_squared**6
 
         # (10): Calculate entire coefficient in one:
         s_1_minus_plus_LP_A = prefactor * bracket_term

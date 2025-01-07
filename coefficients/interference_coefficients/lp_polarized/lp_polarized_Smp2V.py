@@ -35,7 +35,7 @@ def calculate_s_2_minus_plus_longitudinally_polarized_V(
         second_bracket_term = Decimal("4.") * k_tilde**2 * (Decimal("1.") - Decimal("2.") * x_Bjorken) / (squared_Q_momentum_transfer * root_one_plus_epsilon_squared)
 
         # (6): Calculate the prefactor:
-        prefactor = -Decimal("4.") * target_polarization * (Decimal("2.") - lepton_energy_fraction_y) * sqrt(Decimal("1.") - lepton_energy_fraction_y - lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0")) / root_one_plus_epsilon_squared**5
+        prefactor = Decimal("4.") * target_polarization * (Decimal("2.") - lepton_energy_fraction_y) * sqrt(Decimal("1.") - lepton_energy_fraction_y - lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0")) / root_one_plus_epsilon_squared**5
 
         # (7): Calculate the coefficient:
         s_2_minus_plus_LP_V = prefactor * t_over_Q_squared * (first_bracket_term + second_bracket_term + third_bracket_term)

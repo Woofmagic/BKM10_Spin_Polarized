@@ -87,7 +87,7 @@ def calculate_c_0_transversely_polarized_bh(
         epsilon_prefactor = (Decimal("1.") - epsilon**2).sqrt() * shorthand_k * sum_of_form_factors / (Decimal("1.") - lepton_energy_fraction_y - (epsilon**2 * lepton_energy_fraction_y**2 / Decimal("4.0"))).sqrt()
 
         # (7): Calculate the rest of the prefactor:
-        remaining_prefactor = -Decimal("8. ") * lepton_helicity * cos(azimuthal_phi) * (Decimal("2.") - lepton_energy_fraction_y) * lepton_energy_fraction_y * (squared_Q_momentum_transfer.sqrt()) / _MASS_OF_PROTON_IN_GEV
+        remaining_prefactor = Decimal("8. ") * lepton_helicity * cos(azimuthal_phi) * (Decimal("2.") - lepton_energy_fraction_y) * lepton_energy_fraction_y * (squared_Q_momentum_transfer.sqrt()) / _MASS_OF_PROTON_IN_GEV
 
         # (8): Piece together all of the factors:
         c0TP_BH = remaining_prefactor * epsilon_prefactor * (first_bracket_term + second_bracket_term)

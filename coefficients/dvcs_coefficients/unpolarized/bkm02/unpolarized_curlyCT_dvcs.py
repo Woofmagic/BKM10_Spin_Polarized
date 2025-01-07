@@ -71,7 +71,7 @@ def calculate_curly_c_unpolarized_dvcs(
         first_bracket_term = compton_form_factor_hT * (two_minus_xB * compton_form_factor_e - x_Bjorken * compton_form_factor_e_tilde )
 
         # (3): Compute the second term in the brackets:
-        second_bracket_term = -Decimal("2.") * two_minus_xB * compton_form_factor_hT_tilde * compton_form_factor_hT_tilde * (compton_form_factor_h + (squared_hadronic_momentum_transfer_t * compton_form_factor_e_tilde / (Decimal("4.") * _MASS_OF_PROTON_IN_GEV**2)))
+        second_bracket_term = Decimal("2.") * two_minus_xB * compton_form_factor_hT_tilde * compton_form_factor_hT_tilde * (compton_form_factor_h + (squared_hadronic_momentum_transfer_t * compton_form_factor_e_tilde / (Decimal("4.") * _MASS_OF_PROTON_IN_GEV**2)))
 
         # (4): Compute the third term in the brackets:
         third_bracket_term = Decimal("-1.0") * compton_form_factor_eT * (two_minus_xB * compton_form_factor_h - x_Bjorken * compton_form_factor_h_tilde)

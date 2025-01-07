@@ -24,7 +24,7 @@ def calculate_s_3_plus_plus_longitudinally_polarized(
         one_plus_root_epsilon_stuff = Decimal("1.") + root_one_plus_epsilon_squared
 
         # (3): Calculate the coefficient
-        prefactor = -Decimal("4.") * target_polarization * shorthand_k * (Decimal("1.") - lepton_energy_fraction_y - lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0")) / root_one_plus_epsilon_squared**6
+        prefactor = Decimal("4.") * target_polarization * shorthand_k * (Decimal("1.") - lepton_energy_fraction_y - lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0")) / root_one_plus_epsilon_squared**6
 
         # (4): Calculate the coefficient:
         s_3_plus_plus_LP = prefactor * (one_plus_root_epsilon_stuff - Decimal("2.") * x_Bjorken) * epsilon**2 * t_prime / (squared_Q_momentum_transfer * one_plus_root_epsilon_stuff)

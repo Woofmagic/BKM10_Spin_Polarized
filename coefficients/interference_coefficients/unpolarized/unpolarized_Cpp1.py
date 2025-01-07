@@ -38,10 +38,10 @@ def calculate_c_1_plus_plus_unpolarized(
         fancy_y_coefficient = Decimal("2.") - Decimal("2.") * lepton_energy_fraction_y + lepton_energy_fraction_y**2 + epsilon**2 * lepton_energy_fraction_y**2 / Decimal("2.0")
 
         # (8): Calculate the entire second term:
-        second_term = -Decimal("4.") * shorthand_k * fancy_y_coefficient * (one_plus_root_epsilon_stuff - epsilon**2) * second_bracket_term / root_one_plus_epsilon_squared**5
+        second_term = Decimal("4.") * shorthand_k * fancy_y_coefficient * (one_plus_root_epsilon_stuff - epsilon**2) * second_bracket_term / root_one_plus_epsilon_squared**5
 
         # (9): Calculate the first term:
-        first_term = -Decimal("16. ") * shorthand_k * (Decimal("1.") - lepton_energy_fraction_y - epsilon**2 * lepton_energy_fraction_y**2 / Decimal("4.0")) * first_bracket_term / root_one_plus_epsilon_squared**5
+        first_term = Decimal("16. ") * shorthand_k * (Decimal("1.") - lepton_energy_fraction_y - epsilon**2 * lepton_energy_fraction_y**2 / Decimal("4.0")) * first_bracket_term / root_one_plus_epsilon_squared**5
 
         # (10): Calculate the coefficient
         c_1_plus_plus_unp = first_term + second_term

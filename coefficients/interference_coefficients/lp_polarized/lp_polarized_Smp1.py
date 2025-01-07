@@ -41,7 +41,7 @@ def calculate_s_1_minus_plus_longitudinally_polarized(
         second_bracket_term_prefactor = Decimal("-1.0") * (Decimal("1.") - lepton_energy_fraction_y - lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0"))
 
         # (8): Calculate entire coefficient in one:
-        s_1_minus_plus_LP = -Decimal("4.") * target_polarization * shorthand_K * (first_bracket_term + second_bracket_term_prefactor * second_bracket_term_outer_part) / root_one_plus_epsilon_squared**6
+        s_1_minus_plus_LP = Decimal("4.") * target_polarization * shorthand_K * (first_bracket_term + second_bracket_term_prefactor * second_bracket_term_outer_part) / root_one_plus_epsilon_squared**6
         
         # (8.1): If verbose, log the output:
         if verbose:

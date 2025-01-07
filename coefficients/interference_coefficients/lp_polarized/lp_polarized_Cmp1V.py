@@ -30,7 +30,7 @@ def calculate_c_1_minus_plus_longitudinally_polarized_V(
         second_term = Decimal("-1.0") * t_over_Q_squared * (Decimal("1.") - epsilon**2 - root_one_plus_epsilon_squared - Decimal("2.") * x_Bjorken * (Decimal("4.") - Decimal("4.") *  x_Bjorken - root_one_plus_epsilon_squared))
 
         # (5): Calculate the prefactor
-        prefactor = -Decimal("4.") * lepton_helicity * target_polarization * lepton_energy_fraction_y * (Decimal("2.") - lepton_energy_fraction_y) * t_over_Q_squared / root_one_plus_epsilon_squared**5
+        prefactor = Decimal("4.") * lepton_helicity * target_polarization * lepton_energy_fraction_y * (Decimal("2.") - lepton_energy_fraction_y) * t_over_Q_squared / root_one_plus_epsilon_squared**5
 
         # (6): Calculate the coefficient:
         c_1_minus_plus_LP_V = prefactor * (first_term + second_term)

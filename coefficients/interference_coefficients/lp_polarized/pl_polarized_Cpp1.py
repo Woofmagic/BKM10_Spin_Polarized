@@ -31,7 +31,7 @@ def calculate_c_1_plus_plus_longitudinally_polarized(
         major_factor = Decimal("1.") - ((squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer) * (Decimal("1.") - Decimal("2.") * x_Bjorken * (one_plus_root_epsilon_stuff + 1.) / one_plus_root_epsilon_minus_epsilon_squared))
 
         # (5): Calculate the prefactor:
-        prefactor = -Decimal("4.") * lepton_helicity * target_polarization * lepton_energy_fraction_y * shorthand_k * (Decimal("2.") - lepton_energy_fraction_y) / root_one_plus_epsilon_squared**5
+        prefactor = Decimal("4.") * lepton_helicity * target_polarization * lepton_energy_fraction_y * shorthand_k * (Decimal("2.") - lepton_energy_fraction_y) / root_one_plus_epsilon_squared**5
 
         # (6): Calculate the entire thing:
         c_1_plus_plus_LP = prefactor * one_plus_root_epsilon_minus_epsilon_squared * major_factor

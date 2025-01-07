@@ -40,7 +40,7 @@ def calculate_c_0_plus_plus_longitudinally_polarized(
         second_bracket_term = second_bracket_term_first_part * second_bracket_term_second_part * second_bracket_term_third_part
 
         # (8): Calculate the prefactor:
-        prefactor = -Decimal("4.") * lepton_helicity * target_polarization * lepton_energy_fraction_y * (Decimal("1.") + root_one_plus_epsilon_squared) / root_one_plus_epsilon_squared**5
+        prefactor = Decimal("4.") * lepton_helicity * target_polarization * lepton_energy_fraction_y * (Decimal("1.") + root_one_plus_epsilon_squared) / root_one_plus_epsilon_squared**5
 
         # (9): Calculate the entire thing:
         c_0_plus_plus_LP = prefactor * (first_bracket_term + second_bracket_term)

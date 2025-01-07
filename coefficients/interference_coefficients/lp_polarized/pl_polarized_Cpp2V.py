@@ -38,7 +38,7 @@ def calculate_c_2_plus_plus_longitudinally_polarized_V(
         third_multiplicative_factor = t_over_Q_squared * (Decimal("4.") - Decimal("2.") * x_Bjorken + Decimal("3.") * epsilon**2)
 
         # (7): Calculate the prefactor:
-        prefactor = -Decimal("2.") * lepton_helicity * target_polarization * lepton_energy_fraction_y * (Decimal("1.") - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0"))) / root_one_plus_epsilon_squared**5
+        prefactor = Decimal("2.") * lepton_helicity * target_polarization * lepton_energy_fraction_y * (Decimal("1.") - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0"))) / root_one_plus_epsilon_squared**5
 
         # (8): Calculate the entire thing:
         c_2_plus_plus_V_LP = prefactor * first_multiplicative_factor * second_multiplicative_factor * third_multiplicative_factor

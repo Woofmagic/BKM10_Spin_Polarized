@@ -44,7 +44,7 @@ def calculate_c_0_plus_plus_unpolarized(
         second_term_in_brackets_second_part =  Decimal("1.") + second_term_in_brackets_second_part_numerator / (two_minus_xb * one_plus_root_epsilon_stuff)
         
         # (10): Calculate the prefactor:
-        prefactor = -Decimal("4.") * two_minus_y * one_plus_root_epsilon_stuff / np.power(root_one_plus_epsilon_squared, 4)
+        prefactor = Decimal("4.") * two_minus_y * one_plus_root_epsilon_stuff / np.power(root_one_plus_epsilon_squared, 4)
 
         # (11): Calculate the coefficient
         c_0_plus_plus_unp = prefactor * (first_term_in_brackets + second_term_in_brackets_first_part * second_term_in_brackets_second_part)

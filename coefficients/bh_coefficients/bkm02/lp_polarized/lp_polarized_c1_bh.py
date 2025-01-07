@@ -86,7 +86,7 @@ def calculate_c_1_longitudinally_polarized_bh(
         second_term = weighted_sum_of_form_factors * second_term_bracket_term
         
         # (8): Calculate the overall prefactor:
-        prefactor = -Decimal("8. ") * float(lepton_helicity) * float(target_polarization) * x_Bjorken * lepton_energy_fraction_y * shorthand_k * (Decimal("1.") + epsilon**2).sqrt() * sum_of_form_factors / (Decimal("1.") - t_over_four_mp_squared)
+        prefactor = Decimal("8. ") * float(lepton_helicity) * float(target_polarization) * x_Bjorken * lepton_energy_fraction_y * shorthand_k * (Decimal("1.") + epsilon**2).sqrt() * sum_of_form_factors / (Decimal("1.") - t_over_four_mp_squared)
 
         # (13): Calculate the entire coefficient:
         c1LP_BH = prefactor * (first_term + second_term)

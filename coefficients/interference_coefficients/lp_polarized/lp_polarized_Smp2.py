@@ -37,7 +37,7 @@ def calculate_s_2_minus_plus_longitudinally_polarized(
         entire_bracket_term = first_bracket_term + second_bracket_term + epsilon**2 * fancy_epsilon_term
 
         # (7): Calculate the prefactor:
-        prefactor = -Decimal("4.") * target_polarization * (Decimal("2.") - lepton_energy_fraction_y) * (Decimal("1.") - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0"))) / root_one_plus_epsilon_squared**6
+        prefactor = Decimal("4.") * target_polarization * (Decimal("2.") - lepton_energy_fraction_y) * (Decimal("1.") - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0"))) / root_one_plus_epsilon_squared**6
 
         # (8): Calculate the coefficient:
         s_2_minus_plus_LP = prefactor * entire_bracket_term

@@ -77,7 +77,7 @@ class TestCurlyCSeriesCoefficients(unittest.TestCase):
                 _TEST_CFF_E_TILDE,
                 _TEST_VERBOSE) + calculate_c_0_interference_coefficient(
                 0,
-                -Decimal("0.5"),
+                Decimal("0.5"),
                 0.0,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
@@ -140,7 +140,7 @@ class TestCurlyCSeriesCoefficients(unittest.TestCase):
         self.assertAlmostEqual(
             calculate_c_0_interference_coefficient(
                 0,
-                -Decimal("0.5"),
+                Decimal("0.5"),
                 0.0,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
@@ -190,7 +190,7 @@ class TestCurlyCSeriesCoefficients(unittest.TestCase):
                 _TEST_CFF_E_TILDE,
                 _TEST_VERBOSE) + calculate_c_0_interference_coefficient(
                 0,
-                -Decimal("0.5"),
+                Decimal("0.5"),
                 1.0,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
@@ -252,7 +252,7 @@ class TestCurlyCSeriesCoefficients(unittest.TestCase):
         self.assertAlmostEqual(
             calculate_c_0_interference_coefficient(
                 0,
-                -Decimal("0.5"),
+                Decimal("0.5"),
                 1.0,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,

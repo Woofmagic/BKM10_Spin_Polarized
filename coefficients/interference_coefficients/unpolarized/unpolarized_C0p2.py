@@ -29,7 +29,7 @@ def calculate_c_2_zero_plus_unpolarized(
         bracket_term = Decimal("1.") + ((Decimal("1.") + epsilon_squared_over_2 / x_Bjorken) / (Decimal("1.") + epsilon_squared_over_2)) * x_Bjorken * squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
 
         # (5): Calculate the prefactor:
-        prefactor = -Decimal("8. ") * sqrt(Decimal("2.") * y_quantity) * shorthand_k * (Decimal("2.") - lepton_energy_fraction_y) / root_one_plus_epsilon_squared**5
+        prefactor = Decimal("8. ") * sqrt(Decimal("2.") * y_quantity) * shorthand_k * (Decimal("2.") - lepton_energy_fraction_y) / root_one_plus_epsilon_squared**5
         
         # (6): Calculate the coefficient:
         c_2_zero_plus_unp = prefactor * (Decimal("1.") + epsilon_squared_over_2) * bracket_term

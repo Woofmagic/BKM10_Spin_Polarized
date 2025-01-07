@@ -24,7 +24,7 @@ def calculate_s_1_zero_plus_unpolarized_A(
         fancy_y_stuff = sqrt(Decimal("1.") - lepton_energy_fraction_y - epsilon**2 * lepton_energy_fraction_y**2 / Decimal("4.0"))
 
         # (3): Calculate the prefactor:
-        prefactor = -Decimal("8. ") * sqrt(Decimal("2.0")) * lepton_helicity * lepton_energy_fraction_y * (Decimal("2.") - lepton_energy_fraction_y) * (Decimal("1.") - Decimal("2.") * x_Bjorken) / one_plus_epsilon_squared_squared
+        prefactor = Decimal("8. ") * sqrt(Decimal("2.0")) * lepton_helicity * lepton_energy_fraction_y * (Decimal("2.") - lepton_energy_fraction_y) * (Decimal("1.") - Decimal("2.") * x_Bjorken) / one_plus_epsilon_squared_squared
 
         # (4): Calculate the coefficient
         s_1_zero_plus_unp_A = prefactor * fancy_y_stuff * squared_hadronic_momentum_transfer_t * shorthand_k**2 / squared_Q_momentum_transfer**2

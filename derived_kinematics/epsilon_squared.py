@@ -4,6 +4,7 @@ from statics.masses.particle_masses import _MASS_OF_PROTON_IN_GEV
 
 try:
     import numpy as np
+    
 except ImportError:
     print("NumPy is not installed. Please install NumPy to use this script.")
     

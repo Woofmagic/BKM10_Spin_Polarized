@@ -27,13 +27,13 @@ def calculate_c_2_minus_plus_longitudinally_polarized(
         first_term = epsilon**2 * (Decimal("1.") + root_one_plus_epsilon_squared)
 
         # (4): Calculate the second term:
-        second_term = -Decimal("2.") * t_over_Q_squared * ((Decimal("1.") - x_Bjorken) * epsilon**2 + x_Bjorken * (Decimal("1.") + root_one_plus_epsilon_squared))
+        second_term = Decimal("2.") * t_over_Q_squared * ((Decimal("1.") - x_Bjorken) * epsilon**2 + x_Bjorken * (Decimal("1.") + root_one_plus_epsilon_squared))
 
         # (5): Calculate the third term:
         third_term = t_over_Q_squared**2 * (Decimal("2.") * x_Bjorken + epsilon**2) * (Decimal("1.") - Decimal("2.") * x_Bjorken - root_one_plus_epsilon_squared)
 
         # (6): Calculate the prefactor:
-        prefactor = -Decimal("2.") * lepton_helicity * target_polarization * lepton_energy_fraction_y * (Decimal("1.") - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0"))) / root_one_plus_epsilon_squared**5
+        prefactor = Decimal("2.") * lepton_helicity * target_polarization * lepton_energy_fraction_y * (Decimal("1.") - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0"))) / root_one_plus_epsilon_squared**5
 
         # (7): Calculate the coefficient:
         c_3_minus_plus_LP = prefactor * (first_term + second_term + third_term)
