@@ -1,7 +1,4 @@
-try:
-    import numpy as np
-except ImportError:
-    print("NumPy is not installed. Please install NumPy to use this script.")
+import numpy as np
 
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_C0p0 import calculate_c_0_zero_plus_longitudinally_polarized
 

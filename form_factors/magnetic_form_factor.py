@@ -1,5 +1,7 @@
 from statics.other.other import _PROTON_MAGNETIC_MOMENT
 
+from decimal import Decimal
+
 def calculate_form_factor_magnetic(
         electric_form_factor: float,
         verbose: bool= True) -> float:

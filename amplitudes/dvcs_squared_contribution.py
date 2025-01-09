@@ -7,10 +7,7 @@ from calculation.plot_results import plot_dvcs_contributions
 # Helper Module | Convert GeV^{-6} to nb/GeV^{4}
 from utilities.mathematics.math_units import convert_to_nb_over_GeV4
 
-try:
-    import numpy as np
-except ImportError:
-    print("NumPy is not installed. Please install NumPy to use this script.")
+import numpy as np
 
 # Helper Modules | Convert Degrees to Radians
 from utilities.mathematics.math_units import convert_degrees_to_radians
@@ -56,8 +53,6 @@ def calculate_dvcs_amplitude_squared(
     use_ww: bool = False,
     verbose: bool = False):
     """
-    # Title: `calculate_dvcs_amplitude_squared`
-
     ## Description:
     We now calculate the DVCS amplitude squared.
 
@@ -145,7 +140,7 @@ def calculate_dvcs_amplitude_squared(
                 compton_form_factor_e_tilde,
                 use_ww,
                 verbose)
-
+            
             # (4): Obtain the first coefficient in the unevaluated sum (sin n = 1 term):
             coefficient_s1_DVCS = calculate_s_1_unpolarized_dvcs(
                 lepton_helicity,
@@ -218,7 +213,7 @@ def calculate_dvcs_amplitude_squared(
                 compton_form_factor_e_tilde,
                 use_ww,
                 verbose)
-            
+
         cross_section_prefactor = calculate_bkm10_cross_section_prefactor(
             squared_Q_momentum_transfer,
             x_Bjorken,
@@ -226,28 +221,28 @@ def calculate_dvcs_amplitude_squared(
             lepton_energy_fraction_y,
             verbose)
 
-        plot_dvcs_contributions(
-            azimuthal_phi,
-            convert_to_nb_over_GeV4(coefficient_c0_DVCS),
-            convert_to_nb_over_GeV4(coefficient_c1_DVCS),
-            convert_to_nb_over_GeV4(coefficient_s1_DVCS))
+        # plot_dvcs_contributions(
+        #     azimuthal_phi,
+        #     convert_to_nb_over_GeV4(coefficient_c0_DVCS),
+        #     convert_to_nb_over_GeV4(coefficient_c1_DVCS),
+        #     convert_to_nb_over_GeV4(coefficient_s1_DVCS))
 
         # (5): Compute the Fourier Mode Expansion:
+        # mode_expansion = (coefficient_c0_DVCS + 
+        #     coefficient_c1_DVCS * np.array([cos(Decimal("1.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) + 
+        #     coefficient_s1_DVCS * np.array([sin(Decimal("1.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]))
         mode_expansion = (coefficient_c0_DVCS + 
-            coefficient_c1_DVCS * np.array([cos(Decimal("1.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) + 
-            coefficient_s1_DVCS * np.array([sin(Decimal("1.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]))
-        
-        # (6): Compute the numerator of the amplitude:
-        numerator = mode_expansion
+            coefficient_c1_DVCS * cos(Decimal("1.0") * (Decimal(math.pi) - convert_degrees_to_radians(azimuthal_phi))) + 
+            coefficient_s1_DVCS * sin(Decimal("1.0") * (Decimal(math.pi) - convert_degrees_to_radians(azimuthal_phi))))
 
-        # (7): The entire amplitude:
-        dvcs_amplitude_squared = numerator / denominator
+        # (6): The entire amplitude:
+        dvcs_amplitude_squared = mode_expansion / denominator
 
-        # (7.1): If verbose, then print the output:
+        # (6.1): If verbose, then print the output:
         if verbose:
             print(f"> Calculated DVCS amplitude squared as: {dvcs_amplitude_squared}")
 
-        # (8): Return the amplitude:
+        # (7): Return the amplitude:
         return dvcs_amplitude_squared
     
     except Exception as ERROR:

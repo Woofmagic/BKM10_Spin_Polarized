@@ -1,10 +1,7 @@
 import math
 from decimal import Decimal
 
-try:
-    import numpy as np
-except ImportError:
-    print("NumPy is not installed. Please install NumPy to use this script.")
+import numpy as np
 
 # Statics | EM Coupling
 from statics.couplings.couplings import _ELECTROMAGNETIC_FINE_STRUCTURE_CONSTANT

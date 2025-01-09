@@ -1,7 +1,6 @@
-try:
-    import numpy as np
-except ImportError:
-    print("NumPy is not installed. Please install NumPy to use this script.")
+import numpy as np
+
+from decimal import Decimal
 
 from statics.masses.particle_masses import _MASS_OF_PROTON_IN_GEV
 
@@ -107,7 +106,7 @@ def calculate_curly_c_longitudinally_polarized_dvcs(
         curly_bracket_term = first_term_CFFs * first_term_prefactor - second_term_CFFs * second_term_prefactor - third_term_CFFs * third_term_prefactor - fourth_term_CFFs * fourth_term_prefactor
         
         # (15): Calculate the prefactor:
-        prefactor = squared_Q_momentum_transfer * sum_Q_squared_xb_t / (sqrt(Decimal("1.") + epsilon**2) * weighted_sum_Q_squared_xb_t**2)
+        prefactor = squared_Q_momentum_transfer * sum_Q_squared_xb_t / ((Decimal("1.") + epsilon**2).sqrt() * weighted_sum_Q_squared_xb_t**2)
 
         # (16): Return the entire thing:
         curlyCDVCS = prefactor * curly_bracket_term

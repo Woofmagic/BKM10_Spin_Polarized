@@ -8,6 +8,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+from utilities.mathematics.complex_variables import ComplexDecimal
+
 from utilities.plotting.plot_customizer import PlotCustomizer
 
 # Helper Module | Convert GeV^{-6} to nb/GeV^{4}
@@ -69,6 +71,8 @@ from amplitudes.interference_contribution import calculate_interference_contribu
 
 def analysis():
     """
+    ## Description:
+    Here, we generate all the comparison plots that we need.
     """
     
     verbose = False
@@ -178,10 +182,10 @@ def analysis():
         # (2.13): Obtain the value of the IMAGINARY part of the CFF E-tilde:
         compton_form_factor_e_tilde_imaginary = kinematic_bin_settings["compton_form_factor_e_tilde_imaginary"]
         
-        compton_form_factor_h = complex(compton_form_factor_h_real, compton_form_factor_h_imaginary)
-        compton_form_factor_h_tilde = complex(compton_form_factor_h_tilde_real, compton_form_factor_h_tilde_imaginary)
-        compton_form_factor_e = complex(compton_form_factor_e_real, compton_form_factor_e_imaginary)
-        compton_form_factor_e_tilde = complex(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary)
+        compton_form_factor_h = ComplexDecimal(compton_form_factor_h_real, compton_form_factor_h_imaginary)
+        compton_form_factor_h_tilde = ComplexDecimal(compton_form_factor_h_tilde_real, compton_form_factor_h_tilde_imaginary)
+        compton_form_factor_e = ComplexDecimal(compton_form_factor_e_real, compton_form_factor_e_imaginary)
+        compton_form_factor_e_tilde = ComplexDecimal(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary)
 
         squared_Q_momentum_transfer = np.array([Decimal(value_of_Q_squared) for _ in range(len(np.arange(0, 361, 1.)))])
 
@@ -191,7 +195,7 @@ def analysis():
 
         lab_kinematics_k = np.array([Decimal(value_of_beam_energy) for _ in range(len(np.arange(0, 361, 1.)))])
 
-        azimuthal_phi = np.array([Decimal(float(i)) for i in range(len(np.arange(0., 361., 1.)))])
+        azimuthal_phi = np.array([Decimal(i) for i in range(len(np.arange(0., 361., 1.)))])
 
         compton_form_factor_h_real = np.array([kinematic_bin_settings["compton_form_factor_h_real"]])
         compton_form_factor_h_imaginary = np.array([kinematic_bin_settings["compton_form_factor_h_imaginary"]])
@@ -336,21 +340,21 @@ def analysis():
         def analyze_dvcs_unp_beam_unp_target():
 
             pure_dvcs_unpolarized_beam_unpolarized_target = cross_section_prefactor * (Decimal("0.5") * 
-                (calculate_dvcs_amplitude_squared(
+                (np.vectorize(calculate_dvcs_amplitude_squared)(
                 Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
                 epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False) +
-                calculate_dvcs_amplitude_squared(
-                Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                np.vectorize(calculate_dvcs_amplitude_squared)(
+                Decimal("-0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
                 epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)))
-            
+
             pure_dvcs_unpolarized_beam_unpolarized_target_ww = cross_section_prefactor * (Decimal("0.5") * 
-                (calculate_dvcs_amplitude_squared(
+                (np.vectorize(calculate_dvcs_amplitude_squared)(
                 Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
                 epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True) +
-                calculate_dvcs_amplitude_squared(
-                Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                np.vectorize(calculate_dvcs_amplitude_squared)(
+                Decimal("-0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
                 epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True)))
-            
+
             jd_mathematica_pure_dvcs_unpolarized_beam_unpolarized_target = pd.read_csv(
                 f'jd_dvcs_unpolarized_beam_unpolarized_target_kinematic_bin_{kinematic_bin_number}_v2.csv',
                 names = ['jd_sigma'])
@@ -378,7 +382,7 @@ def analysis():
             figure_pure_dvcs_unpolarized_beam_unpolarized_target = plt.figure(figsize = (13.5, 10))
 
             axes_pure_dvcs_unpolarized_beam_unpolarized_target = figure_pure_dvcs_unpolarized_beam_unpolarized_target.add_subplot(1, 1, 1)
-            
+
             plot_pure_dvcs_unpolarized_beam_unpolarized_target = PlotCustomizer(
                 axes_pure_dvcs_unpolarized_beam_unpolarized_target,
                 title = r"$E = {} \mathrm{{GeV}}, Q^{{2}} = {} \mathrm{{GeV}}^{{2}}, t = {} \mathrm{{GeV}}^{{2}}, x_{{\mathrm{{B}}}}= {}$".format(
@@ -396,7 +400,7 @@ def analysis():
                 radial_size = 1.3,
                 label = "Dima's BKM 10 Python (no WW)",
                 color = 'blue')
-            
+
             plot_pure_dvcs_unpolarized_beam_unpolarized_target.add_scatter_plot(
                 x_data = azimuthal_phi,
                 y_data = jd_mathematica_pure_dvcs_unpolarized_beam_unpolarized_target,
@@ -450,7 +454,7 @@ def analysis():
                 marker = '+')
             
             plt.savefig(
-                fname = f'compared_pure_dvcs_unpolarized_beam_unpolarized_target_kinematic_bin_{kinematic_bin_number}_v4.png',
+                fname = f'compared_pure_dvcs_unpolarized_beam_unpolarized_target_kinematic_bin_{kinematic_bin_number}_v5.png',
                 dpi = 500)
         
         def analyze_dvcs_plus_beam_unp_target():
@@ -526,7 +530,7 @@ def analysis():
                 color = 'orange')
             
             plt.savefig(
-                fname = f'compared_pure_dvcs_plus_beam_unpolarized_target_kinematic_bin_{kinematic_bin_number}_v4.png',
+                fname = f'compared_pure_dvcs_plus_beam_unpolarized_target_kinematic_bin_{kinematic_bin_number}_v5.png',
                 dpi = 500)
 
         def analyze_dvcs_minus_beam_unp_target():
@@ -649,7 +653,7 @@ def analysis():
                 marker = '+')
 
             plt.savefig(
-                fname = f'compared_pure_interference_unpolarized_beam_unpolarized_target_kinematic_bin_{kinematic_bin_number}_v4.png',
+                fname = f'compared_pure_interference_unpolarized_beam_unpolarized_target_kinematic_bin_{kinematic_bin_number}_v5.png',
                 dpi = 500)
     
         def analyze_interference_plus_beam_unp_target():
@@ -737,23 +741,23 @@ def analysis():
                 marker = '+')
             
             plt.savefig(
-                fname = f'compared_pure_interference_plus_beam_unpolarized_target_kinematic_bin_{kinematic_bin_number}_v4.png',
+                fname = f'compared_pure_interference_plus_beam_unpolarized_target_kinematic_bin_{kinematic_bin_number}_v5.png',
                 dpi = 500)
 
         print("> Beginning analysis of DVCS, unpolarized beam, unpolarized target...")
         analyze_dvcs_unp_beam_unp_target()
 
-        print("> Beginning analysis of DVCS, (+) polarized beam, unpolarized target...")
-        analyze_dvcs_plus_beam_unp_target()
+        # print("> Beginning analysis of DVCS, (+) polarized beam, unpolarized target...")
+        # analyze_dvcs_plus_beam_unp_target()
 
-        print("> Beginning analysis of DVCS, (-) polarized beam, unpolarized target...")
-        analyze_dvcs_minus_beam_unp_target()
+        # print("> Beginning analysis of DVCS, (-) polarized beam, unpolarized target...")
+        # analyze_dvcs_minus_beam_unp_target()
         
-        print("> Beginning analysis of Interference, unpolarized beam, unpolarized target...")
-        analyze_interference_unp_beam_unp_target()
+        # print("> Beginning analysis of Interference, unpolarized beam, unpolarized target...")
+        # analyze_interference_unp_beam_unp_target()
 
-        print("> Beginning analysis of Interference, (+) beam, unpolarized target...")
-        analyze_interference_plus_beam_unp_target()
+        # print("> Beginning analysis of Interference, (+) beam, unpolarized target...")
+        # analyze_interference_plus_beam_unp_target()
     
     # pure_dvcs_minus_beam_unpolarized_target = cross_section_prefactor * calculate_dvcs_amplitude_squared(
     #     Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
@@ -815,7 +819,7 @@ def analysis():
     #     color = 'orange')
     
     # plt.savefig(
-    #     fname = 'compared_pure_dvcs_minus_plus_unpolarized_target_kinematic_bin_1_v4.png',
+    #     fname = 'compared_pure_dvcs_minus_plus_unpolarized_target_kinematic_bin_1_v5.png',
     #     dpi = 500)
 
     # pure_dvcs_unpolarized_beam_lp_target = cross_section_prefactor * (Decimal("0.5") * 
@@ -886,7 +890,7 @@ def analysis():
     #     color = 'orange')
     
     # plt.savefig(
-    #     fname = 'compared_pure_dvcs_unpolarized_beam_lp_target_kinematic_bin_1_v4.png',
+    #     fname = 'compared_pure_dvcs_unpolarized_beam_lp_target_kinematic_bin_1_v5.png',
     #     dpi = 500)
     
     # pure_dvcs_plus_beam_lp_target = cross_section_prefactor * calculate_dvcs_amplitude_squared(
@@ -949,7 +953,7 @@ def analysis():
     #     color = 'orange')
     
     # plt.savefig(
-    #     fname = 'compared_pure_dvcs_plus_beam_lp_target_kinematic_bin_1_v4.png',
+    #     fname = 'compared_pure_dvcs_plus_beam_lp_target_kinematic_bin_1_v5.png',
     #     dpi = 500)
     
     # pure_dvcs_minus_beam_lp_target = cross_section_prefactor * calculate_dvcs_amplitude_squared(
@@ -1012,7 +1016,7 @@ def analysis():
     #     color = 'orange')
     
     # plt.savefig(
-    #     fname = 'compared_pure_dvcs_minus_beam_lp_target_kinematic_bin_1_v4.png',
+    #     fname = 'compared_pure_dvcs_minus_beam_lp_target_kinematic_bin_1_v5.png',
     #     dpi = 500)
     
     # pure_interference_plus_beam_unpolarized_target = cross_section_prefactor * calculate_interference_contribution(Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
@@ -1075,7 +1079,7 @@ def analysis():
     #     color = 'orange')
     
     # plt.savefig(
-    #     fname = 'compared_pure_interference_plus_beam_unpolarized_target_kinematic_bin_1_v4.png',
+    #     fname = 'compared_pure_interference_plus_beam_unpolarized_target_kinematic_bin_1_v5.png',
     #     dpi = 500)
     
     # pure_interference_minus_beam_unpolarized_target = cross_section_prefactor * calculate_interference_contribution(Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
@@ -1138,7 +1142,7 @@ def analysis():
     #     color = 'orange')
     
     # plt.savefig(
-    #     fname = 'compared_pure_interference_minus_beam_unpolarized_target_kinematic_bin_1_v4.png',
+    #     fname = 'compared_pure_interference_minus_beam_unpolarized_target_kinematic_bin_1_v5.png',
     #     dpi = 500)
     
     # pure_interference_unpolarized_beam_lp_target = cross_section_prefactor * (Decimal("0.5") * 
@@ -1259,7 +1263,7 @@ def analysis():
     # #     marker = '*')
     
     # plt.savefig(
-    #     fname = 'compared_pure_interference_unpolarized_beam_lp_target_kinematic_bin_1_v4.png',
+    #     fname = 'compared_pure_interference_unpolarized_beam_lp_target_kinematic_bin_1_v5.png',
     #     dpi = 500)
     
     # pure_interference_plus_beam_lp_target = cross_section_prefactor * calculate_interference_contribution(Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
@@ -1322,7 +1326,7 @@ def analysis():
     #     color = 'orange')
     
     # plt.savefig(
-    #     fname = 'compared_pure_interference_plus_beam_lp_target_kinematic_bin_1_v4.png',
+    #     fname = 'compared_pure_interference_plus_beam_lp_target_kinematic_bin_1_v5.png',
     #     dpi = 500)
     
     # pure_interference_minus_beam_lp_target = cross_section_prefactor * calculate_interference_contribution(Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
@@ -1385,7 +1389,7 @@ def analysis():
     #     color = 'orange')
     
     # plt.savefig(
-    #     fname = 'compared_pure_interference_minus_beam_lp_target_kinematic_bin_1_v4.png',
+    #     fname = 'compared_pure_interference_minus_beam_lp_target_kinematic_bin_1_v5.png',
     #     dpi = 500)
 
 

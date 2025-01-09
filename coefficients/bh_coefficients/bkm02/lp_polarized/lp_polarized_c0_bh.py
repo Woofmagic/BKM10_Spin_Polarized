@@ -4,10 +4,7 @@ from statics.masses.particle_masses import _MASS_OF_PROTON_IN_GEV
 
 from utilities.mathematics.polarization import check_polarization_datatype
 
-try:
-    import numpy as np
-except ImportError:
-    print("NumPy is not installed. Please install NumPy to use this script.")
+import numpy as np
 
 def calculate_c_0_longitudinally_polarized_bh(
     lepton_helicity: float,

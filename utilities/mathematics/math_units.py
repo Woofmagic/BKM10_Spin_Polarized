@@ -1,14 +1,11 @@
 import math
-from decimal import Decimal
 
-try:
-    import numpy as np
-except ImportError:
-    print("NumPy is not installed. Please install NumPy to use this script.")
+from decimal import Decimal
 
 
 def convert_degrees_to_radians(degrees: float) -> float:
     """
+    ## Description:
     Converts a number in degrees (0-360) to radians
     using the standard formula.
     """
@@ -16,8 +13,6 @@ def convert_degrees_to_radians(degrees: float) -> float:
 
 def convert_to_nb_over_GeV4(number: float) -> float:
     """
-    # Title: `convert_to_nb_over_GeV4`
-
     ## Description:
     Convert a number in units of GeV^{-6} to nb/GeV^{4}. For reference,
     the number is 389379 or about 3.9e6 (= 4.0e6), and it is 

@@ -1,11 +1,77 @@
+from decimal import Decimal
+
+class ComplexDecimal:
+    def __init__(self, real: Decimal = Decimal("0.0"), imag: Decimal = Decimal("0.0")):
+        self.real = real
+        self.imag = imag
+
+    def __add__(self, other):
+        if isinstance(other, ComplexDecimal):
+            return ComplexDecimal(self.real + other.real, self.imag + other.imag)
+        if isinstance(other, Decimal):
+            return ComplexDecimal(self.real + other, self.imag)
+        return NotImplemented
+    
+    def __radd__(self, other):
+        return self.__add__(other)
+    
+    def __sub__(self, other):
+        if isinstance(other, ComplexDecimal):
+            return ComplexDecimal(self.real - other.real, self.imag - other.imag)
+        if isinstance(other, Decimal):
+            return ComplexDecimal(self.real - other, self.imag)
+        return NotImplemented
+
+    def __rsub__(self, other):
+        return self.__sub__(other)
+
+    def __mul__(self, other):
+        if isinstance(other, ComplexDecimal):
+            return ComplexDecimal(
+                self.real * other.real - self.imag * other.imag,
+                self.real * other.imag + self.imag * other.real,
+            )
+        if isinstance(other, Decimal):
+            return ComplexDecimal(self.real * other, self.imag * other)
+        return NotImplemented
+    
+    def __rmul__(self, other):
+        return self.__mul__(other)
+
+    def __truediv__(self, other):
+        if isinstance(other, ComplexDecimal):
+            denominator = other.real**2 + other.imag**2
+            return ComplexDecimal(
+                (self.real * other.real + self.imag * other.imag) / denominator,
+                (self.imag * other.real - self.real * other.imag) / denominator,
+            )
+        if isinstance(other, Decimal):
+            return ComplexDecimal(self.real / other, self.imag / other)
+        return NotImplemented
+    
+    def __rtruediv__(self, other):
+        if isinstance(other, Decimal):
+            denominator = self.real**2 + self.imag**2
+            return ComplexDecimal(
+                other * self.real / denominator, -other * self.imag / denominator
+            )
+        return NotImplemented
+    
+    def conjugate(self):
+        return ComplexDecimal(self.real, -self.imag)
+
+    def __repr__(self):
+        return f"({self.real} + {self.imag}i)"
+
+    def __eq__(self, other):
+        return self.real == other.real and self.imag == other.imag
+    
 def two_complex_variable_product(
         z_1_real_part: float,
         z_1_imaginary_part: float,
         z_2_real_part: float,
         z_2_imaginary_part: float) -> complex:
     """
-    # Title: `two_complex_variable_product`
-
     ## Description:
     We take the Real and Imaginary parts of two complex numbers and compute their
     product. A complex number has both a Real and Imaginary part, and we need to

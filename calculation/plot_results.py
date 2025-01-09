@@ -247,7 +247,7 @@ def plot_coefficient_contributions():
         grid = True)
     
     customized_plot.add_bar_plot(
-        x_data = 0.,
+        x_positions = 0.,
         y_data_heights = 0.,
         color = 'blue')
     
@@ -283,5 +283,4 @@ def plot_beam_spin_asymmetry(
     
     plt.show()
 
-    return 
-    customized_plot
+    return customized_plot

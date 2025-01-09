@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 def calculate_form_factor_dirac_f1(
     magnetic_form_factor: float,
     pauli_f2_form_factor: float,

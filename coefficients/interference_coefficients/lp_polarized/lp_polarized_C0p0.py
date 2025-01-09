@@ -1,9 +1,6 @@
 from decimal import Decimal
 
-try:
-    import numpy as np
-except ImportError:
-    print("NumPy is not installed. Please install NumPy to use this script.")
+import numpy as np
 
 def calculate_c_0_zero_plus_longitudinally_polarized(
     lepton_helicity: float,

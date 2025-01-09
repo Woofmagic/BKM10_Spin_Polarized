@@ -1,7 +1,4 @@
-try:
-    import numpy as np
-except ImportError:
-    print("NumPy is not installed. Please install NumPy to use this script.")
+import numpy as np
 
 def calculate_s_2_zero_plus_unpolarized_V(
     lepton_helicity: float,

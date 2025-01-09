@@ -11,10 +11,7 @@ from utilities.mathematics.math_units import convert_to_nb_over_GeV4
 
 from calculation.plot_results import plot_interference_contributions
 
-try:
-    import numpy as np
-except ImportError:
-    print("NumPy is not installed. Please install NumPy to use this script.")
+import numpy as np
 
 # Import helper modules:
 from utilities.mathematics.math_units import convert_degrees_to_radians
@@ -191,8 +188,6 @@ def calculate_interference_contribution(
             compton_form_factor_e_tilde,
             use_ww,
             verbose)
-        
-        print("c0fuckcocks")
 
         # (3): Calculate c_{1}^{I}:
         # c_1_I = 0.
@@ -218,8 +213,6 @@ def calculate_interference_contribution(
             use_ww,
             verbose)
         
-        print("c1fuckcocks")
-        
         # (4): Calculate c_{2}^{I}:
         # c_2_I = 0.
         c_2_I = calculate_c_2_interference_coefficient(
@@ -243,8 +236,6 @@ def calculate_interference_contribution(
             compton_form_factor_e_tilde,
             use_ww,
             verbose)
-        
-        print("c2fuckcocks")
 
         # (5): Calculate c_{2}^{I}:
         # c_3_I = 0.
@@ -270,8 +261,6 @@ def calculate_interference_contribution(
             use_ww,
             verbose)
         
-        print("c3fuckcocks")
-        
         # (6): Calculate s_{1}^{I}:
         # s_1_I = 0.
         s_1_I = calculate_s_1_interference_coefficient(
@@ -295,8 +284,6 @@ def calculate_interference_contribution(
             compton_form_factor_e_tilde,
             use_ww,
             verbose)
-        
-        print("s1fuckcocks")
 
         # (7): Calculate s_{2}^{I}:
         # s_2_I = 0.
@@ -321,8 +308,6 @@ def calculate_interference_contribution(
             compton_form_factor_e_tilde,
             use_ww,
             verbose)
-        
-        print("s2fuckcocks")
 
         # (8): Calculate s_{3}^{I}:
         # s_3_I = 0.
@@ -347,8 +332,6 @@ def calculate_interference_contribution(
             compton_form_factor_e_tilde,
             use_ww,
             verbose)
-        
-        print("s3fuckcocks")
         
         plot_interference_contributions(
             azimuthal_phi,

@@ -1,7 +1,4 @@
-try:
-    import numpy as np
-except ImportError:
-    print("NumPy is not installed. Please install NumPy to use this script.")
+import numpy as np
 
 def calculate_s_3_minus_plus_longitudinally_polarized_A(
     target_polarization: float,

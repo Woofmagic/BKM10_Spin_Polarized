@@ -3,10 +3,7 @@ from decimal import Decimal
 
 from utilities.mathematics.trigonometric import cos, sin
 
-try:
-    import numpy as np
-except ImportError:
-    print("NumPy is not installed. Please install NumPy to use this script.")
+import numpy as np
 
 # Import helper modules:
 from utilities.mathematics.math_units import convert_degrees_to_radians

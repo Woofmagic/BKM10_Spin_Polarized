@@ -1,12 +1,17 @@
+from decimal import Decimal
+
+import numpy as np
 from matplotlib.pyplot import Axes, rc_context
+
+from utilities.mathematics.complex_variables import ComplexDecimal
 
 class PlotCustomizer:
     def __init__(
-            self, 
-            axes: Axes, 
-            title: str = "", 
-            xlabel: str = "", 
-            ylabel: str = "", 
+            self,
+            axes: Axes,
+            title: str = "",
+            xlabel: str = "",
+            ylabel: str = "",
             zlabel: str = "",
             xlim = None,
             ylim = None,
@@ -126,13 +131,24 @@ class PlotCustomizer:
 
         marker: str
         """
+        def convert_to_floats(data):
+
+            if isinstance(data, np.ndarray) and isinstance(data[0], ComplexDecimal):
+                return np.array([float(value.real) for value in data], dtype=float)
+            elif isinstance(data, np.ndarray) and isinstance(data[0], Decimal):
+                return np.array([float(value) for value in data], dtype=float)
+            else:
+                return np.array(data, dtype=float)  # Assume already numeric if not custom type
+
+        x_data_float = convert_to_floats(x_data)
+        y_data_float = convert_to_floats(y_data)
 
         with rc_context(rc = self._custom_rc_params):
 
             # (1): Add the scatter plot:
             self.axes_object.scatter(
-                x_data,
-                y_data,
+                x_data_float,
+                y_data_float,
                 s = radial_size,
                 label = label,
                 color = color,

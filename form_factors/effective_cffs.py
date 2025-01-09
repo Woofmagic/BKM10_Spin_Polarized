@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 def compute_cff_effective(
     skewness_parameter: float,
     compton_form_factor: complex,

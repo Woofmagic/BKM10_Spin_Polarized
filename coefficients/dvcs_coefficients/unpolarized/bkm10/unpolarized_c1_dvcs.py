@@ -1,9 +1,6 @@
 from decimal import Decimal
 
-try:
-    import numpy as np
-except ImportError:
-    print("NumPy is not installed. Please install NumPy to use this script.")
+import numpy as np
 
 from form_factors.effective_cffs import compute_cff_effective
 

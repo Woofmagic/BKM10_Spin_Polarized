@@ -1,10 +1,5 @@
 from decimal import Decimal
 
-try:
-    import numpy as np
-except ImportError:
-    print("NumPy is not installed. Please install NumPy to use this script.")
-
 from form_factors.effective_cffs import compute_cff_effective
 
 from coefficients.dvcs_coefficients.unpolarized.bkm10.unpolarized_curlyC_dvcs import calculate_curly_c_unpolarized_dvcs
