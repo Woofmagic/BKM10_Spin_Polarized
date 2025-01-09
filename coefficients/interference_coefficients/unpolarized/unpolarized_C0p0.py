@@ -14,10 +14,10 @@ def calculate_c_0_zero_plus_unpolarized(
     try:
 
         # (1): Calculate the bracket quantity:
-        bracket_quantity = epsilon**2 + squared_hadronic_momentum_transfer_t * (Decimal("2.") - 6.* x_Bjorken - epsilon**2) / (Decimal("3.") * squared_Q_momentum_transfer)
+        bracket_quantity = epsilon**2 + squared_hadronic_momentum_transfer_t * (2. - 6.* x_Bjorken - epsilon**2) / (3. * squared_Q_momentum_transfer)
         
         # (2): Calculate part of the prefactor:
-        prefactor = 12. * sqrt(Decimal("2.0")) * shorthand_k * (Decimal("2.") - lepton_energy_fraction_y) * sqrt(Decimal("1.") - lepton_energy_fraction_y - (epsilon**2 * lepton_energy_fraction_y**2 / 4)) / np.power(Decimal("1.") + epsilon**2, 2.5)
+        prefactor = 12. * sqrt(2.) * shorthand_k * (2. - lepton_energy_fraction_y) * sqrt(1. - lepton_energy_fraction_y - (epsilon**2 * lepton_energy_fraction_y**2 / 4)) / np.power(1. + epsilon**2, 2.5)
         
         # (3): Calculate the coefficient:
         c_0_zero_plus_unp = prefactor * bracket_quantity
@@ -31,4 +31,4 @@ def calculate_c_0_zero_plus_unpolarized(
 
     except Exception as ERROR:
         print(f"> Error in calculating c_0_zero_plus_unp for Interference Term:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

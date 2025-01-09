@@ -1,7 +1,7 @@
 import math
 from decimal import Decimal
 
-from utilities.mathematics.trigonometric import cos, sin
+
 
 import numpy as np
 
@@ -51,7 +51,7 @@ def calculate_bh_amplitude_squared(
     try:
 
         # (1): Calculate the Prefactor of the Denominator:
-        denominator_prefactor = x_Bjorken**2 * lepton_energy_fraction_y**2 * (Decimal("1.") + epsilon**2)**2 * squared_hadronic_momentum_transfer_t
+        denominator_prefactor = x_Bjorken**2 * lepton_energy_fraction_y**2 * (1. + epsilon**2)**2 * squared_hadronic_momentum_transfer_t
 
         # (2): Calculate the lepton propagator contribution to the denominator:
         denominator_propagators = lepton_propagator_p1 * lepton_propagator_p2
@@ -180,9 +180,9 @@ def calculate_bh_amplitude_squared(
 
         # (5): Compute the Fourier Mode Expansion:
         mode_expansion = (coefficient_c0_BH + (
-            coefficient_c1_BH * np.array([cos(Decimal("1.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
-            coefficient_c2_BH * np.array([cos(Decimal("2.0") * (Decimal(math.pi)- convert_degrees_to_radians(phi))) for phi in azimuthal_phi])+
-            coefficient_s1_BH * np.array([sin(Decimal("1.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in azimuthal_phi])))
+            coefficient_c1_BH * np.array([np.cos(1. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
+            coefficient_c2_BH * np.array([np.cos(2. * (np.pi- convert_degrees_to_radians(phi))) for phi in azimuthal_phi])+
+            coefficient_s1_BH * np.array([np.sin(1. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi])))
 
         # (6): Compute the numerator of the amplitude:
         numerator = mode_expansion
@@ -198,4 +198,4 @@ def calculate_bh_amplitude_squared(
         
     except Exception as E:
         print(f"> Error calculating the BH amplitude squared: {E}")
-        return Decimal("0.0")
+        return 0.

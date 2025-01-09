@@ -37,10 +37,10 @@ def calculate_c_0_zero_plus_longitudinally_polarized(
     try:
 
         # (1): Calculate the annoying quantity sqrt(1 - y - y^{2} epsilon^{2} / 2)
-        root_combination_of_y_and_epsilon = (Decimal("1.") - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0"))).sqrt()
+        root_combination_of_y_and_epsilon = np.sqrt(1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.))
 
         # (2): Calculate the "prefactor":
-        prefactor = Decimal("8. ") * Decimal("2.0").sqrt() * lepton_helicity * target_polarization * shorthand_k * (Decimal("1.") - x_Bjorken) * lepton_energy_fraction_y / (Decimal("1.") + epsilon**2)**2
+        prefactor = 8. * np.sqrt(2.) * lepton_helicity * target_polarization * shorthand_k * (1. - x_Bjorken) * lepton_energy_fraction_y / (1. + epsilon**2)**2
 
         # (3): Calculate everything:
         c_0_zero_plus_LP = prefactor * root_combination_of_y_and_epsilon * squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
@@ -54,4 +54,4 @@ def calculate_c_0_zero_plus_longitudinally_polarized(
 
     except Exception as ERROR:
         print(f"> Error in calculating c_0_zero_plus_LP for Interference Term:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

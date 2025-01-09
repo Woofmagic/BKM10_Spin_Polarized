@@ -51,16 +51,16 @@ def calculate_c_1_unpolarized_bh(
         addition_of_form_factors_squared = (Dirac_form_factor_F1 + Pauli_form_factor_F2)**2
 
         # (2): Calculate the common appearance of a weighted sum of F1 and F2:
-        weighted_combination_of_form_factors = Dirac_form_factor_F1**2 - ((squared_hadronic_momentum_transfer_t / (Decimal("4.") * _MASS_OF_PROTON_IN_GEV**2)) * Pauli_form_factor_F2**2)
+        weighted_combination_of_form_factors = Dirac_form_factor_F1**2 - ((squared_hadronic_momentum_transfer_t / (4. * _MASS_OF_PROTON_IN_GEV**2)) * Pauli_form_factor_F2**2)
         
         # (3):  The first part of the first line:
-        first_line_first_part = ((Decimal("4.") * x_Bjorken**2 * _MASS_OF_PROTON_IN_GEV**2 / squared_hadronic_momentum_transfer_t) - Decimal("2.") * x_Bjorken - epsilon**2) * weighted_combination_of_form_factors
+        first_line_first_part = ((4. * x_Bjorken**2 * _MASS_OF_PROTON_IN_GEV**2 / squared_hadronic_momentum_transfer_t) - 2. * x_Bjorken - epsilon**2) * weighted_combination_of_form_factors
         
         # (4): The first part of the second line:
-        first_line_second_part = Decimal("2.") * x_Bjorken**2 * (Decimal("1.") - (Decimal("1.") - Decimal("2.") * x_Bjorken) * (squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer)) * addition_of_form_factors_squared
+        first_line_second_part = 2. * x_Bjorken**2 * (1. - (1. - 2. * x_Bjorken) * (squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer)) * addition_of_form_factors_squared
 
         # (5): Multiply by the prefactor to obtain c^{(1)}_{BH}
-        c1_unpolarized_BH = Decimal("8. ") * shorthand_k * (Decimal("2.") - lepton_energy_fraction_y) * (first_line_first_part + first_line_second_part)
+        c1_unpolarized_BH = 8. * shorthand_k * (2. - lepton_energy_fraction_y) * (first_line_first_part + first_line_second_part)
         
         # (5.1): If verbose, log the output:
         if verbose:
@@ -71,4 +71,4 @@ def calculate_c_1_unpolarized_bh(
     
     except Exception as ERROR:
         print(f"> Error in computing c1_unpolarized_BH:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

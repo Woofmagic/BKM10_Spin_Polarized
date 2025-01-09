@@ -35,7 +35,7 @@ from coefficients.interference_coefficients.lp_polarized.lp_polarized_Cmp2 impor
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_Cmp2V import calculate_c_2_minus_plus_longitudinally_polarized_V
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_Cmp2A import calculate_c_2_minus_plus_longitudinally_polarized_A
 
-_TEST_LEPTON_POLARIZATION = Decimal("0.5")
+_TEST_LEPTON_POLARIZATION = 0.5
 _TEST_TARGET_POLARIZATION = 1.0
 _TEST_SQUARED_Q_MOMENTUM_TRANSFER = 1.8200000524520876
 _TEST_X_BJORKEN = 0.3429999947547912

@@ -16,19 +16,19 @@ def calculate_c_1_plus_plus_longitudinally_polarized(
     try:
 
         # (1): Calculate the recurrent quantity sqrt(1 + epsilon^2):
-        root_one_plus_epsilon_squared = sqrt(Decimal("1.") + epsilon**2)
+        root_one_plus_epsilon_squared = sqrt(1. + epsilon**2)
 
         # (2): Calculate the recurrent quantity 1 + sqrt(1 + epsilon^2):
-        one_plus_root_epsilon_stuff = Decimal("1.") + root_one_plus_epsilon_squared
+        one_plus_root_epsilon_stuff = 1. + root_one_plus_epsilon_squared
 
         # (3): Calculate the recurrent quantity 1 + sqrt(1 + epsilon^2) - epsilon^2:
         one_plus_root_epsilon_minus_epsilon_squared = one_plus_root_epsilon_stuff - epsilon**2
 
         # (4): Calculate the major term:
-        major_factor = Decimal("1.") - ((squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer) * (Decimal("1.") - Decimal("2.") * x_Bjorken * (one_plus_root_epsilon_stuff + 1.) / one_plus_root_epsilon_minus_epsilon_squared))
+        major_factor = 1. - ((squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer) * (1. - 2. * x_Bjorken * (one_plus_root_epsilon_stuff + 1.) / one_plus_root_epsilon_minus_epsilon_squared))
 
         # (5): Calculate the prefactor:
-        prefactor = Decimal("4.") * lepton_helicity * target_polarization * lepton_energy_fraction_y * shorthand_k * (Decimal("2.") - lepton_energy_fraction_y) / root_one_plus_epsilon_squared**5
+        prefactor = 4. * lepton_helicity * target_polarization * lepton_energy_fraction_y * shorthand_k * (2. - lepton_energy_fraction_y) / root_one_plus_epsilon_squared**5
 
         # (6): Calculate the entire thing:
         c_1_plus_plus_LP = prefactor * one_plus_root_epsilon_minus_epsilon_squared * major_factor
@@ -42,4 +42,4 @@ def calculate_c_1_plus_plus_longitudinally_polarized(
 
     except Exception as ERROR:
         print(f"> Error in calculating c_1_plus_plus_LP for Interference Term:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

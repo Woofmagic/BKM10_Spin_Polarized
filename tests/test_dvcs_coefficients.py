@@ -12,7 +12,7 @@ from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_s1_dvcs impo
 
 from form_factors.effective_cffs import compute_cff_effective
 
-_TEST_LEPTON_POLARIZATION = Decimal("0.5")
+_TEST_LEPTON_POLARIZATION = 0.5
 _TEST_TARGET_POLARIZATION = 1.0
 _TEST_SQUARED_Q_MOMENTUM_TRANSFER = 1.8200000524520876
 _TEST_X_BJORKEN = 0.3429999947547912

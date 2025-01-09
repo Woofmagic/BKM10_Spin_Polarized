@@ -1871,7 +1871,7 @@ Cell[BoxData[
        FormBox["q",
         TraditionalForm], "_"],
       TraditionalForm], "2"], " ", 
-    RowBox[{"sin", "(", "\[Phi]", ")"}]}], 
+    RowBox[{"np.sin", "(", "\[Phi]", ")"}]}], 
    RowBox[{
     RowBox[{"(", 
      RowBox[{
@@ -1936,7 +1936,7 @@ Cell[BoxData[
       SuperscriptBox["\[Gamma]", "2"], "+", "1"}]], " ", "kmag", " ", "\[Nu]",
      " ", "M", " ", "\[Xi]", " ", "ppmag", " ", "s\[Theta]l", " ", 
     "s\[Theta]p", " ", 
-    RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+    RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
     RowBox[{"(", 
      RowBox[{
       RowBox[{
@@ -5885,7 +5885,7 @@ Cell[BoxData[
           SqrtBox[
            RowBox[{
             SuperscriptBox["\[Gamma]", "2"], "+", "1"}]], " ", "\[Nu]", " ", 
-          RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+          RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
           SuperscriptBox[
            RowBox[{
             FormBox["\<\"(\"\>",
@@ -6809,7 +6809,7 @@ Cell[BoxData[
              FormBox["k",
               TraditionalForm], "_"],
             TraditionalForm], "2"], " ", 
-          RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+          RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
           RowBox[{"(", 
            RowBox[{
             FormBox[
@@ -6844,7 +6844,7 @@ Cell[BoxData[
               FormBox["q",
                TraditionalForm], "_"],
              TraditionalForm]}], ")"}], " ", 
-          RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+          RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
           RowBox[{"(", 
            RowBox[{
             FormBox[
@@ -6871,7 +6871,7 @@ Cell[BoxData[
              FormBox["q",
               TraditionalForm], "_"],
             TraditionalForm], "2"], " ", 
-          RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+          RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
           RowBox[{"(", 
            RowBox[{
             FormBox[
@@ -6906,7 +6906,7 @@ Cell[BoxData[
               FormBox["qp",
                TraditionalForm], "_"],
              TraditionalForm]}], ")"}], " ", 
-          RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+          RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
           RowBox[{"(", 
            RowBox[{
             FormBox[
@@ -7569,7 +7569,7 @@ Cell[BoxData[
               FormBox["qp",
                TraditionalForm], "_"],
              TraditionalForm]}], ")"}], " ", 
-          RowBox[{"sin", "(", "\[Phi]", ")"}]}], "-", 
+          RowBox[{"np.sin", "(", "\[Phi]", ")"}]}], "-", 
          RowBox[{
          "2", " ", "kmag", " ", "M", " ", "ppmag", " ", "s\[Theta]l", " ", 
           "s\[Theta]p", " ", 
@@ -7604,7 +7604,7 @@ Cell[BoxData[
               FormBox["qp",
                TraditionalForm], "_"],
              TraditionalForm]}], ")"}], " ", 
-          RowBox[{"sin", "(", "\[Phi]", ")"}]}]}], ")"}]}], ")"}], "/", 
+          RowBox[{"np.sin", "(", "\[Phi]", ")"}]}]}], ")"}]}], ")"}], "/", 
      RowBox[{"(", 
       RowBox[{
        RowBox[{"(", 
@@ -7750,7 +7750,7 @@ Cell[BoxData[
            SuperscriptBox["\[Gamma]", "2"], "+", "1"}]], " ", "kmag", " ", 
          "\[Nu]", " ", "M", " ", "ppmag", " ", "s\[Theta]l", " ", 
          "s\[Theta]p", " ", 
-         RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+         RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
          RowBox[{"(", 
           RowBox[{
            SuperscriptBox[
@@ -7798,7 +7798,7 @@ Cell[BoxData[
           SuperscriptBox["\[Gamma]", "2"], "+", "1"}]], " ", "kmag", " ", 
         "\[Nu]", " ", "M", " ", "ppmag", " ", "s\[Theta]l", " ", "s\[Theta]p",
          " ", 
-        RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+        RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
         RowBox[{"(", 
          RowBox[{
           RowBox[{"-", 
@@ -8961,7 +8961,7 @@ Cell[BoxData[
           SuperscriptBox["\[Gamma]", "2"], "+", "1"}]], " ", "kmag", " ", 
         "\[Nu]", " ", "M", " ", "ppmag", " ", "s\[Theta]l", " ", "s\[Theta]p",
          " ", 
-        RowBox[{"sin", "(", "\[Phi]", ")"}]}], 
+        RowBox[{"np.sin", "(", "\[Phi]", ")"}]}], 
        RowBox[{
         RowBox[{"b", " ", "c"}], "-", 
         RowBox[{"a", " ", "d"}]}]]}], ")"}]}]}], TraditionalForm]], "Output",
@@ -9517,7 +9517,7 @@ Cell[BoxData[
             FormBox["q",
              TraditionalForm], "_"],
            TraditionalForm]}], ")"}], " ", 
-        RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+        RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
         SuperscriptBox[
          RowBox[{
           FormBox["\<\"(\"\>",
@@ -9559,7 +9559,7 @@ Cell[BoxData[
             FormBox["qp",
              TraditionalForm], "_"],
            TraditionalForm]}], ")"}], " ", 
-        RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+        RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
         SuperscriptBox[
          RowBox[{
           FormBox["\<\"(\"\>",
@@ -10232,7 +10232,7 @@ Cell[BoxData[
            TraditionalForm], 
           FormBox["\<\")\"\>",
            TraditionalForm]}], "2"], " ", 
-        RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+        RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
         SuperscriptBox[
          RowBox[{
           FormBox["\<\"(\"\>",
@@ -10288,7 +10288,7 @@ Cell[BoxData[
             FormBox["qp",
              TraditionalForm], "_"],
            TraditionalForm]}], ")"}], " ", 
-        RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+        RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
         SuperscriptBox[
          RowBox[{
           FormBox["\<\"(\"\>",
@@ -10336,7 +10336,7 @@ Cell[BoxData[
            FormBox["q",
             TraditionalForm], "_"],
           TraditionalForm], "2"], " ", 
-        RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+        RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
         SuperscriptBox[
          RowBox[{
           FormBox["\<\"(\"\>",
@@ -10943,7 +10943,7 @@ Cell[BoxData[
            FormBox["q",
             TraditionalForm], "_"],
           TraditionalForm], "2"], " ", 
-        RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+        RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
         RowBox[{"(", 
          RowBox[{
           FormBox[
@@ -10991,7 +10991,7 @@ Cell[BoxData[
            FormBox["qp",
             TraditionalForm], "_"],
           TraditionalForm], "2"], " ", 
-        RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+        RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
         RowBox[{"(", 
          RowBox[{
           FormBox[
@@ -11038,7 +11038,7 @@ Cell[BoxData[
            FormBox["qp",
             TraditionalForm], "_"],
           TraditionalForm], "2"], " ", 
-        RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+        RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
         RowBox[{"(", 
          RowBox[{
           FormBox[
@@ -11085,7 +11085,7 @@ Cell[BoxData[
            FormBox["qp",
             TraditionalForm], "_"],
           TraditionalForm], "2"], " ", 
-        RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+        RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
         RowBox[{"(", 
          RowBox[{
           FormBox[
@@ -12127,7 +12127,7 @@ Cell[BoxData[
            FormBox["qp",
             TraditionalForm], "_"],
           TraditionalForm], "2"], " ", 
-        RowBox[{"sin", "(", "\[Phi]", ")"}]}], "-", 
+        RowBox[{"np.sin", "(", "\[Phi]", ")"}]}], "-", 
        RowBox[{
        "2", " ", "a", " ", "kmag", " ", "M", " ", "ppmag", " ", "s\[Theta]l", 
         " ", "s\[Theta]p", " ", 
@@ -12167,7 +12167,7 @@ Cell[BoxData[
            FormBox["qp",
             TraditionalForm], "_"],
           TraditionalForm], "2"], " ", 
-        RowBox[{"sin", "(", "\[Phi]", ")"}]}], "+", 
+        RowBox[{"np.sin", "(", "\[Phi]", ")"}]}], "+", 
        RowBox[{
        "2", " ", "a", " ", "kmag", " ", "M", " ", "ppmag", " ", "s\[Theta]l", 
         " ", "s\[Theta]p", " ", 
@@ -12214,7 +12214,7 @@ Cell[BoxData[
            FormBox["qp",
             TraditionalForm], "_"],
           TraditionalForm], "2"], " ", 
-        RowBox[{"sin", "(", "\[Phi]", ")"}]}]}], ")"}]}], ")"}], "/", 
+        RowBox[{"np.sin", "(", "\[Phi]", ")"}]}]}], ")"}]}], ")"}], "/", 
    RowBox[{"(", 
     RowBox[{
      RowBox[{"(", 
@@ -12323,7 +12323,7 @@ Cell[BoxData[
        SuperscriptBox["\[Gamma]", "2"], "+", "1"}]], " ", "kmag", " ", 
      "\[Nu]", " ", "M", " ", "ppmag", " ", "s\[Theta]l", " ", "s\[Theta]p", 
      " ", 
-     RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+     RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
      RowBox[{"(", 
       RowBox[{
        RowBox[{
@@ -12500,7 +12500,7 @@ Cell[BoxData[
        SuperscriptBox["\[Gamma]", "2"], "+", "1"}]], " ", "kmag", " ", 
      "\[Nu]", " ", "M", " ", "ppmag", " ", "s\[Theta]l", " ", "s\[Theta]p", 
      " ", "t", " ", 
-     RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+     RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
      RowBox[{"(", 
       RowBox[{
        RowBox[{
@@ -12679,7 +12679,7 @@ Cell[BoxData[
      RowBox[{
       SuperscriptBox["\[Gamma]", "2"], "+", "1"}]], " ", "kmag", " ", "\[Nu]",
      " ", "M", " ", "ppmag", " ", "s\[Theta]l", " ", "s\[Theta]p", " ", 
-    RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+    RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
     RowBox[{"(", 
      RowBox[{
       RowBox[{
@@ -24168,7 +24168,7 @@ Cell[BoxData[
           SuperscriptBox["\[Gamma]", "2"], "+", "1"}]], " ", "kmag", " ", 
         "\[Nu]", " ", "M", " ", "ppmag", " ", "s\[Theta]l", " ", "s\[Theta]p",
          " ", 
-        RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+        RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
         RowBox[{"(", 
          RowBox[{
           RowBox[{"2", " ", 
@@ -25542,7 +25542,7 @@ Cell[BoxData[
           SuperscriptBox["\[Gamma]", "2"], "+", "1"}]], " ", "kmag", " ", 
         "\[Nu]", " ", "M", " ", "ppmag", " ", "s\[Theta]l", " ", "s\[Theta]p",
          " ", 
-        RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+        RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
         RowBox[{"(", 
          RowBox[{
           RowBox[{"2", " ", 
@@ -27543,7 +27543,7 @@ Cell[BoxData[
          SuperscriptBox["\[Gamma]", "2"], "+", "1"}]], " ", "kmag", " ", 
        "\[Nu]", " ", "M", " ", "\[Xi]", " ", "ppmag", " ", "s\[Theta]l", " ", 
        "s\[Theta]p", " ", 
-       RowBox[{"sin", "(", "\[Phi]", ")"}], " ", 
+       RowBox[{"np.sin", "(", "\[Phi]", ")"}], " ", 
        RowBox[{"(", 
         RowBox[{
          RowBox[{
@@ -30853,7 +30853,7 @@ Cell[BoxData[
                     TraditionalForm], "_"],
                     TraditionalForm]}], ")"}]}]}], ")"}]}]}], ")"}]}]}], 
          ")"}]}]}], ")"}], " ", 
-     RowBox[{"sin", "(", "\[Phi]", ")"}]}], ")"}], "/", 
+     RowBox[{"np.sin", "(", "\[Phi]", ")"}]}], ")"}], "/", 
    RowBox[{"(", 
     RowBox[{
      RowBox[{"(", 
@@ -40253,7 +40253,7 @@ numFGA78//vC/wAjC7j6
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -40264,7 +40264,7 @@ numFGA78//vC/wAjC7j6
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -40279,7 +40279,7 @@ numFGA78//vC/wAjC7j6
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
               
                TagBox[
                 GridBox[{{
@@ -40289,7 +40289,7 @@ numFGA78//vC/wAjC7j6
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -40300,7 +40300,7 @@ numFGA78//vC/wAjC7j6
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -40315,7 +40315,7 @@ numFGA78//vC/wAjC7j6
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}}, 
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxDividers -> {"Columns" -> {{None}}, "Rows" -> {{None}}}, 
@@ -40356,7 +40356,7 @@ numFGA78//vC/wAjC7j6
            RowBox[{"LegendLayout", "\[Rule]", 
              RowBox[{"{", 
                RowBox[{"\"Row\"", ",", "2"}], "}"}]}]}], "]"}]& )], 
-     Scaled[{0.85, 0.85}], ImageScaled[{Decimal("0.5"), Decimal("0.5")}],
+     Scaled[{0.85, 0.85}], ImageScaled[{0.5, 0.5}],
      BaseStyle->{FontSize -> Larger},
      FormatType->StandardForm]},
    AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
@@ -40400,7 +40400,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLines->{{0}, {0}},
    GridLinesStyle->Directive[
-     GrayLevel[Decimal("0.5"), 0.4]],
+     GrayLevel[0.5, 0.4]],
    ImagePadding->All,
    ImageSize->Large,
    LabelStyle->{FontFamily -> "Times"},
@@ -40829,7 +40829,7 @@ RGBColor[0., 0., 0.]]\)\!\(\*StyleBox[\"\[Degree]\",FontSize->14,FontWeight->\
 RGBColor[0., 0., 0.]]\)"], None}}, FrameStyle -> GrayLevel[0], 
       FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
       GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-        GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+        GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
       Method -> {
        "DefaultBoundaryStyle" -> Automatic, 
         "DefaultGraphicsInteraction" -> {
@@ -41389,7 +41389,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -41400,7 +41400,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -41415,7 +41415,7 @@ Cell[BoxData[
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
               
                TagBox[
                 GridBox[{{
@@ -41425,7 +41425,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -41436,7 +41436,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -41451,7 +41451,7 @@ Cell[BoxData[
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
               
                TagBox[
                 GridBox[{{
@@ -41461,7 +41461,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -41472,7 +41472,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -41487,7 +41487,7 @@ Cell[BoxData[
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}}, 
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxDividers -> {"Columns" -> {{None}}, "Rows" -> {{None}}}, 
@@ -41536,7 +41536,7 @@ Cell[BoxData[
            RowBox[{"LegendLayout", "\[Rule]", 
              RowBox[{"{", 
                RowBox[{"\"Row\"", ",", "3"}], "}"}]}]}], "]"}]& )], 
-     Scaled[{0.85, 0.85}], ImageScaled[{Decimal("0.5"), Decimal("0.5")}],
+     Scaled[{0.85, 0.85}], ImageScaled[{0.5, 0.5}],
      BaseStyle->{FontSize -> Larger},
      FormatType->StandardForm]},
    AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
@@ -41581,7 +41581,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLines->{{0}, {0}},
    GridLinesStyle->Directive[
-     GrayLevel[Decimal("0.5"), 0.4]],
+     GrayLevel[0.5, 0.4]],
    ImagePadding->All,
    ImageSize->{567.4999999999981, Automatic},
    LabelStyle->{FontFamily -> "Times"},
@@ -41706,7 +41706,7 @@ RGBColor[0., 0., 0.]]\)\!\(\*StyleBox[\"\[Degree]\",FontSize->14,FontWeight->\
 RGBColor[0., 0., 0.]]\)"], None}}, FrameStyle -> GrayLevel[0], 
       FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
       GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-        GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+        GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
       Method -> {
        "DefaultBoundaryStyle" -> Automatic, 
         "DefaultGraphicsInteraction" -> {
@@ -42369,22 +42369,22 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -42395,7 +42395,7 @@ Cell[BoxData[
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
               
                TagBox[
                 GridBox[{{
@@ -42405,7 +42405,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -42416,7 +42416,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -42431,7 +42431,7 @@ Cell[BoxData[
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
               
                TagBox[
                 GridBox[{{
@@ -42441,7 +42441,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -42452,7 +42452,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -42467,7 +42467,7 @@ Cell[BoxData[
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
               
                TagBox[
                 GridBox[{{
@@ -42477,22 +42477,22 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")]], {
+                    RGBColor[0.5, 0, 0.5]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")]], {}}}, AspectRatio -> Full, 
+                    RGBColor[0.5, 0, 0.5]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -42503,7 +42503,7 @@ Cell[BoxData[
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}}, 
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxDividers -> {"Columns" -> {{None}}, "Rows" -> {{None}}}, 
@@ -42525,7 +42525,7 @@ Cell[BoxData[
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
-                   TemplateBox[<|"color" -> RGBColor[1, Decimal("0.5"), 0]|>, 
+                   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -42548,7 +42548,7 @@ Cell[BoxData[
                    RowBox[{"Opacity", "[", "1.`", "]"}], ",", 
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
-                   TemplateBox[<|"color" -> RGBColor[Decimal("0.5"), 0, Decimal("0.5")]|>, 
+                   TemplateBox[<|"color" -> RGBColor[0.5, 0, 0.5]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}]}], "}"}], ",", 
            RowBox[{"{", 
              RowBox[{#, ",", #2, ",", #3, ",", #4}], "}"}], ",", 
@@ -42559,7 +42559,7 @@ Cell[BoxData[
            RowBox[{"LegendLayout", "\[Rule]", 
              RowBox[{"{", 
                RowBox[{"\"Row\"", ",", "4"}], "}"}]}]}], "]"}]& )], 
-     Scaled[{0.85, 0.85}], ImageScaled[{Decimal("0.5"), Decimal("0.5")}],
+     Scaled[{0.85, 0.85}], ImageScaled[{0.5, 0.5}],
      BaseStyle->{FontSize -> Larger},
      FormatType->StandardForm]},
    AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
@@ -42604,7 +42604,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLines->{{0}, {0}},
    GridLinesStyle->Directive[
-     GrayLevel[Decimal("0.5"), 0.4]],
+     GrayLevel[0.5, 0.4]],
    ImagePadding->All,
    ImageSize->{731.666666666666, Automatic},
    LabelStyle->{FontFamily -> "Times"},
@@ -42724,7 +42724,7 @@ RGBColor[0., 0., 0.]]\)\!\(\*StyleBox[\"\[Degree]\",FontSize->14,FontWeight->\
 RGBColor[0., 0., 0.]]\)"], None}}, FrameStyle -> GrayLevel[0], 
       FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
       GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-        GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+        GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
       Method -> {
        "DefaultBoundaryStyle" -> Automatic, 
         "DefaultGraphicsInteraction" -> {
@@ -42793,7 +42793,7 @@ StyleBox[\"2\",FontSize->9,FontWeight->\"Normal\",FontColor->RGBColor[0., 0., \
          Opacity[1.], 
          CapForm["Butt"], 
          AbsoluteThickness[1.6], 
-         RGBColor[1, Decimal("0.5"), 0]], 
+         RGBColor[1, 0.5, 0]], 
         Directive[
          Opacity[1.], 
          CapForm["Butt"], 
@@ -42808,7 +42808,7 @@ StyleBox[\"2\",FontSize->9,FontWeight->\"Normal\",FontColor->RGBColor[0., 0., \
          Opacity[1.], 
          CapForm["Butt"], 
          AbsoluteThickness[1.6], 
-         RGBColor[Decimal("0.5"), 0, Decimal("0.5")]]}, {
+         RGBColor[0.5, 0, 0.5]]}, {
        "Ji(\[Alpha]=1,\[Beta]=1/2)", "UVa(\[Alpha]=\[Beta]=1)", 
         "BKM10(\[Alpha]=\[Beta]=1/2)", "BMP(\[Alpha]=0,\[Beta]=100)"}, 
        LegendMarkers -> None, LabelStyle -> {FontFamily -> "Times"}, 

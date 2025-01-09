@@ -14,13 +14,13 @@ def calculate_curly_C_longitudinally_polarized_interference_V(
         t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
 
         # (2): Calculate a fancy quantity:
-        ratio_of_xb_to_more_xb = x_Bjorken / (Decimal("2.") - x_Bjorken + x_Bjorken * t_over_Q_squared)
+        ratio_of_xb_to_more_xb = x_Bjorken / (2. - x_Bjorken + x_Bjorken * t_over_Q_squared)
 
         # (3): Calculate the sum of form factors:
         sum_of_form_factors = Dirac_form_factor_F1 + Pauli_form_factor_F2
 
         # (4): Calculate the entire thing:
-        curly_C_V_longitudinally_polarized_interference = ratio_of_xb_to_more_xb * sum_of_form_factors * (compton_form_factor_h_real_part + (x_Bjorken * (Decimal("1.") - t_over_Q_squared) * compton_form_factor_e_real_part / Decimal("2.0")))
+        curly_C_V_longitudinally_polarized_interference = ratio_of_xb_to_more_xb * sum_of_form_factors * (compton_form_factor_h_real_part + (x_Bjorken * (1. - t_over_Q_squared) * compton_form_factor_e_real_part / 2.))
 
         # (4.1): If verbose, log the output:
         if verbose:
@@ -31,4 +31,4 @@ def calculate_curly_C_longitudinally_polarized_interference_V(
 
     except Exception as ERROR:
         print(f"> Error in calculating the curly C LP V contribution amplitude squared\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

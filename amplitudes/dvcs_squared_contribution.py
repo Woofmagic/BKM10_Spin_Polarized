@@ -1,6 +1,6 @@
 from decimal import Decimal
 import math
-from utilities.mathematics.trigonometric import cos, sin
+
 
 from calculation.plot_results import plot_dvcs_contributions
 
@@ -141,7 +141,7 @@ def calculate_dvcs_amplitude_squared(
                 use_ww,
                 verbose)
             
-            # (4): Obtain the first coefficient in the unevaluated sum (sin n = 1 term):
+            # (4): Obtain the first coefficient in the unevaluated sum (np.sin n = 1 term):
             coefficient_s1_DVCS = calculate_s_1_unpolarized_dvcs(
                 lepton_helicity,
                 squared_Q_momentum_transfer,
@@ -197,7 +197,7 @@ def calculate_dvcs_amplitude_squared(
                 use_ww,
                 verbose)
 
-            # (4): Obtain the first coefficient in the unevaluated sum (sin n = 1 term):
+            # (4): Obtain the first coefficient in the unevaluated sum (np.sin n = 1 term):
             coefficient_s1_DVCS = calculate_s_1_longitudinally_polarized_dvcs(
                 target_polarization,
                 squared_Q_momentum_transfer,
@@ -229,11 +229,11 @@ def calculate_dvcs_amplitude_squared(
 
         # (5): Compute the Fourier Mode Expansion:
         # mode_expansion = (coefficient_c0_DVCS + 
-        #     coefficient_c1_DVCS * np.array([cos(Decimal("1.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) + 
-        #     coefficient_s1_DVCS * np.array([sin(Decimal("1.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]))
+        #     coefficient_c1_DVCS * np.array([np.cos(1. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) + 
+        #     coefficient_s1_DVCS * np.array([np.sin(1. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]))
         mode_expansion = (coefficient_c0_DVCS + 
-            coefficient_c1_DVCS * cos(Decimal("1.0") * (Decimal(math.pi) - convert_degrees_to_radians(azimuthal_phi))) + 
-            coefficient_s1_DVCS * sin(Decimal("1.0") * (Decimal(math.pi) - convert_degrees_to_radians(azimuthal_phi))))
+            coefficient_c1_DVCS * np.cos(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) + 
+            coefficient_s1_DVCS * np.sin(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))))
 
         # (6): The entire amplitude:
         dvcs_amplitude_squared = mode_expansion / denominator
@@ -247,4 +247,4 @@ def calculate_dvcs_amplitude_squared(
     
     except Exception as ERROR:
         print(f"> Error in calculating the DVCS amplitude squared\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

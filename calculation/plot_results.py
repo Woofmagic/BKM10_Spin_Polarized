@@ -1,6 +1,6 @@
 from decimal import Decimal
 import math
-from utilities.mathematics.trigonometric import cos, sin
+
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -39,14 +39,14 @@ def plot_dvcs_contributions(
         
     DVCS_coefficients_plot.add_line_plot(
         x_data = lab_azimuthal_phi,
-        y_data = c1DVCS_amplitude_contribution * np.array([cos(Decimal("1.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in lab_azimuthal_phi]),
-        label = r"$c_{1} \cos(\pi - \phi)$",
+        y_data = c1DVCS_amplitude_contribution * np.array([np.cos(1. * (np.pi - convert_degrees_to_radians(phi))) for phi in lab_azimuthal_phi]),
+        label = r"$c_{1} \np.cos(\pi - \phi)$",
         color = 'orange')
     
     DVCS_coefficients_plot.add_line_plot(
         x_data = lab_azimuthal_phi,
-        y_data = s1DVCS_amplitude_contribution * np.array([sin(Decimal("1.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in lab_azimuthal_phi]),
-        label = r"$s_{1} \sin(\pi - \phi)$",
+        y_data = s1DVCS_amplitude_contribution * np.array([np.sin(1. * (np.pi - convert_degrees_to_radians(phi))) for phi in lab_azimuthal_phi]),
+        label = r"$s_{1} \np.sin(\pi - \phi)$",
         color = 'yellow')
     
     DVCS_coefficients_contributions = PlotCustomizer(
@@ -100,38 +100,38 @@ def plot_interference_contributions(
         
     interference_coefficients_plot.add_line_plot(
         x_data = lab_azimuthal_phi,
-        y_data = c1Interference_amplitude_contribution * np.array([cos(Decimal("1.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in lab_azimuthal_phi]),
-        label = r"$c_{1} \cos(\pi - \phi)$",
+        y_data = c1Interference_amplitude_contribution * np.array([np.cos(1. * (np.pi - convert_degrees_to_radians(phi))) for phi in lab_azimuthal_phi]),
+        label = r"$c_{1} \np.cos(\pi - \phi)$",
         color = 'orange')
     
     interference_coefficients_plot.add_line_plot(
             x_data = lab_azimuthal_phi,
-            y_data = c2Interference_amplitude_contribution * np.array([cos(Decimal("2.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in lab_azimuthal_phi]),
-            label = r"$c_{2} \cos(2 (\pi - \phi))$",
+            y_data = c2Interference_amplitude_contribution * np.array([np.cos(2. * (np.pi - convert_degrees_to_radians(phi))) for phi in lab_azimuthal_phi]),
+            label = r"$c_{2} \np.cos(2 (\pi - \phi))$",
             color = 'yellow')
         
     interference_coefficients_plot.add_line_plot(
         x_data = lab_azimuthal_phi,
-        y_data = c3Interference_amplitude_contribution * np.array([cos(Decimal("3.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in lab_azimuthal_phi]),
-        label = r"$c_{3} \cos(3 (\pi - \phi))$",
+        y_data = c3Interference_amplitude_contribution * np.array([np.cos(3. * (np.pi - convert_degrees_to_radians(phi))) for phi in lab_azimuthal_phi]),
+        label = r"$c_{3} \np.cos(3 (\pi - \phi))$",
         color = 'green')
     
     interference_coefficients_plot.add_line_plot(
         x_data = lab_azimuthal_phi,
-        y_data = s1Interference_amplitude_contribution * np.sin(Decimal(math.pi) - convert_degrees_to_radians(lab_azimuthal_phi)),
-        label = r"$s_{1} \sin(\pi - \phi)$",
+        y_data = s1Interference_amplitude_contribution * np.np.sin(np.pi - convert_degrees_to_radians(lab_azimuthal_phi)),
+        label = r"$s_{1} \np.sin(\pi - \phi)$",
         color = 'cyan')
     
     interference_coefficients_plot.add_line_plot(
         x_data = lab_azimuthal_phi,
-        y_data = s2Interference_amplitude_contribution * np.sin(Decimal("2.") * (Decimal(math.pi) - convert_degrees_to_radians(lab_azimuthal_phi))),
-        label = r"$s_{2} \sin(2 (\pi - \phi))$",
+        y_data = s2Interference_amplitude_contribution * np.np.sin(2. * (np.pi - convert_degrees_to_radians(lab_azimuthal_phi))),
+        label = r"$s_{2} \np.sin(2 (\pi - \phi))$",
         color = 'blue')
         
     interference_coefficients_plot.add_line_plot(
         x_data = lab_azimuthal_phi,
-        y_data = s3Interference_amplitude_contribution * np.sin(Decimal("3.") * (Decimal(math.pi) - convert_degrees_to_radians(lab_azimuthal_phi))),
-        label = r"$s_{3} \sin(3 ( \pi - \phi ))$",
+        y_data = s3Interference_amplitude_contribution * np.np.sin(3. * (np.pi - convert_degrees_to_radians(lab_azimuthal_phi))),
+        label = r"$s_{3} \np.sin(3 ( \pi - \phi ))$",
         color = 'purple')
     
     interference_coefficients_contributions = PlotCustomizer(

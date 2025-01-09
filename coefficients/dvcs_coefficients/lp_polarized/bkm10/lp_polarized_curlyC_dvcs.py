@@ -67,7 +67,7 @@ def calculate_curly_c_longitudinally_polarized_dvcs(
         sum_Q_squared_xb_t = squared_Q_momentum_transfer + x_Bjorken * squared_hadronic_momentum_transfer_t
 
         # (2): Calculate 2 - x_{B}:
-        two_minus_xb = Decimal("2.") - x_Bjorken
+        two_minus_xb = 2. - x_Bjorken
 
         # (3) Calculuate (2 - x_{B}) * Q^{2} + x_{B} t:
         weighted_sum_Q_squared_xb_t = two_minus_xb * squared_Q_momentum_transfer + x_Bjorken * squared_hadronic_momentum_transfer_t
@@ -85,19 +85,19 @@ def calculate_curly_c_longitudinally_polarized_dvcs(
         fourth_term_CFFs = compton_form_factor_e * compton_form_factor_e_tilde_conjugate + compton_form_factor_e_tilde * compton_form_factor_e_conjugate
 
         # (8): Calculate the first term's prefactor:
-        first_term_prefactor = Decimal("4.") * (Decimal("1.") - x_Bjorken + (epsilon**2 * ((Decimal("3.")  - Decimal("2.") * x_Bjorken) * squared_Q_momentum_transfer + squared_hadronic_momentum_transfer_t)) / (Decimal("4.") * sum_Q_squared_xb_t))
+        first_term_prefactor = 4. * (1. - x_Bjorken + (epsilon**2 * ((3.  - 2. * x_Bjorken) * squared_Q_momentum_transfer + squared_hadronic_momentum_transfer_t)) / (4. * sum_Q_squared_xb_t))
 
         # (9): Calculate the second term's prefactor:
-        second_term_prefactor = x_Bjorken**2 * (squared_Q_momentum_transfer - (x_Bjorken * squared_hadronic_momentum_transfer_t * (Decimal("1.") - Decimal("2.") * x_Bjorken))) / sum_Q_squared_xb_t
+        second_term_prefactor = x_Bjorken**2 * (squared_Q_momentum_transfer - (x_Bjorken * squared_hadronic_momentum_transfer_t * (1. - 2. * x_Bjorken))) / sum_Q_squared_xb_t
 
         # (10): Calculate the third term's prefactor:
-        third_term_prefactor = x_Bjorken * ((Decimal("4.") * (Decimal("1.") - x_Bjorken) * sum_Q_squared_xb_t * squared_hadronic_momentum_transfer_t) + (epsilon**2 * (squared_Q_momentum_transfer + squared_hadronic_momentum_transfer_t)**2)) / (Decimal("2.") * squared_Q_momentum_transfer * sum_Q_squared_xb_t)
+        third_term_prefactor = x_Bjorken * ((4. * (1. - x_Bjorken) * sum_Q_squared_xb_t * squared_hadronic_momentum_transfer_t) + (epsilon**2 * (squared_Q_momentum_transfer + squared_hadronic_momentum_transfer_t)**2)) / (2. * squared_Q_momentum_transfer * sum_Q_squared_xb_t)
 
         # (11): Calculate the first part of the fourth term's perfactor:
         fourth_term_prefactor_first_part = weighted_sum_Q_squared_xb_t / sum_Q_squared_xb_t
         
         # (12): Calculate the second part of the fourth term's perfactor:
-        fourth_term_prefactor_second_part = (x_Bjorken**2 * (squared_Q_momentum_transfer + squared_hadronic_momentum_transfer_t)**2 / (Decimal("2.") * squared_Q_momentum_transfer * weighted_sum_Q_squared_xb_t)) + (squared_hadronic_momentum_transfer_t / (Decimal("4.") * _MASS_OF_PROTON_IN_GEV**2))
+        fourth_term_prefactor_second_part = (x_Bjorken**2 * (squared_Q_momentum_transfer + squared_hadronic_momentum_transfer_t)**2 / (2. * squared_Q_momentum_transfer * weighted_sum_Q_squared_xb_t)) + (squared_hadronic_momentum_transfer_t / (4. * _MASS_OF_PROTON_IN_GEV**2))
         
         # (13): Finish the fourth-term prefactor
         fourth_term_prefactor = x_Bjorken * fourth_term_prefactor_first_part * fourth_term_prefactor_second_part
@@ -106,7 +106,7 @@ def calculate_curly_c_longitudinally_polarized_dvcs(
         curly_bracket_term = first_term_CFFs * first_term_prefactor - second_term_CFFs * second_term_prefactor - third_term_CFFs * third_term_prefactor - fourth_term_CFFs * fourth_term_prefactor
         
         # (15): Calculate the prefactor:
-        prefactor = squared_Q_momentum_transfer * sum_Q_squared_xb_t / ((Decimal("1.") + epsilon**2).sqrt() * weighted_sum_Q_squared_xb_t**2)
+        prefactor = squared_Q_momentum_transfer * sum_Q_squared_xb_t / (np.sqrt(1. + epsilon**2) * weighted_sum_Q_squared_xb_t**2)
 
         # (16): Return the entire thing:
         curlyCDVCS = prefactor * curly_bracket_term
@@ -120,5 +120,5 @@ def calculate_curly_c_longitudinally_polarized_dvcs(
 
     except Exception as ERROR:
         print(f"> Error in calculating curlyCDVCS for DVCS Amplitude Squared:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.
     

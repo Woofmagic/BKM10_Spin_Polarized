@@ -25,7 +25,7 @@ def calculate_c_2_unpolarized_dvcs(
     try:
 
         # (1): Calculate the prefactor of the coefficient:
-        coefficient_prefactor = Decimal("-1.0") * squared_Q_momentum_transfer * shorthand_k**2 / (_MASS_OF_PROTON_IN_GEV**2 * (Decimal("2.") - x_Bjorken))
+        coefficient_prefactor = -1. * squared_Q_momentum_transfer * shorthand_k**2 / (_MASS_OF_PROTON_IN_GEV**2 * (2. - x_Bjorken))
 
         # (2): Calculate the insane coefficient with the Form Factors:
         insane_coefficient = calculate_dvcs_coefficient_T_unpolarized_form_factors(
@@ -51,4 +51,4 @@ def calculate_c_2_unpolarized_dvcs(
     
     except Exception as E:
         print(f"> Error in computing c2_dvcs_unpolarized_coefficient:\n> {E}")
-        return Decimal("0.0")
+        return 0.

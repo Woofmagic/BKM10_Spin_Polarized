@@ -16,13 +16,13 @@ def calculate_s_3_plus_plus_longitudinally_polarized_V(
     try:
 
         # (1): Calculate the recurrent quantity sqrt(1 + epsilon^2):
-        root_one_plus_epsilon_squared = sqrt(Decimal("1.") + epsilon**2)
+        root_one_plus_epsilon_squared = sqrt(1. + epsilon**2)
 
         # (2): Calculate the main contribution:
-        multiplicative_contribution = squared_hadronic_momentum_transfer_t * t_prime * (Decimal("4.") * (Decimal("1.") - x_Bjorken) * x_Bjorken + epsilon**2) / squared_Q_momentum_transfer**2
+        multiplicative_contribution = squared_hadronic_momentum_transfer_t * t_prime * (4. * (1. - x_Bjorken) * x_Bjorken + epsilon**2) / squared_Q_momentum_transfer**2
 
         # (3): Calculate the coefficient
-        prefactor = Decimal("4.") * target_polarization * shorthand_k * (Decimal("1.") - lepton_energy_fraction_y - lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0")) / root_one_plus_epsilon_squared**6
+        prefactor = 4. * target_polarization * shorthand_k * (1. - lepton_energy_fraction_y - lepton_energy_fraction_y**2 * epsilon**2 / 4.) / root_one_plus_epsilon_squared**6
 
         # (4): Calculate the coefficient:
         s_3_plus_plus_V_LP = prefactor * multiplicative_contribution

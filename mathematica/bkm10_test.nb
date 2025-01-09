@@ -4542,7 +4542,7 @@ Cell[BoxData[{
    "y", ",", "tP"}], "]"}], "\[IndentingNewLine]", 
  RowBox[{"SunpPP2", "[", 
   RowBox[{
-   RowBox[{"-", "Decimal("0.5")"}], ",", "1.82", ",", "0.34", ",", "0.4729356100497334", 
+   RowBox[{"-", "0.5"}], ",", "1.82", ",", "0.34", ",", "0.4729356100497334", 
    ",", "0.4960961235592845", ",", 
    RowBox[{"-", "0.0344817552708476"}]}], "]"}]}], "Input",
  CellChangeTimes->{{3.942500575680908*^9, 3.942500623907835*^9}, {
@@ -5553,7 +5553,7 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"CLPPP0", "[", 
   RowBox[{
-  "Decimal("0.5")", ",", "1.0", ",", "qSquared", ",", "xB", ",", "t", ",", "\[Epsilon]", 
+  "0.5", ",", "1.0", ",", "qSquared", ",", "xB", ",", "t", ",", "\[Epsilon]", 
    ",", "y", ",", "kT"}], "]"}]], "Input",
  CellChangeTimes->{{3.9349665040532703`*^9, 3.934966504108952*^9}, {
   3.9349665966724997`*^9, 3.9349665986485186`*^9}, {3.934966682328723*^9, 
@@ -21496,9 +21496,9 @@ Cell[BoxData[
         "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(0\)], \
 \(DVCS\)]\)\>\"", ",", "\[IndentingNewLine]", 
          "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(1\)], \(DVCS\)]\) \
-cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
+np.cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
          "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(1\)], \(DVCS\)]\) \
-sin(\[Pi]-\[Phi])\>\""}], "\[IndentingNewLine]", "}"}], "\[IndentingNewLine]",
+np.sin(\[Pi]-\[Phi])\>\""}], "\[IndentingNewLine]", "}"}], "\[IndentingNewLine]",
         "]"}], ",", "\[IndentingNewLine]", 
       RowBox[{"{", 
        RowBox[{"0.85", ",", "0.75"}], "}"}]}], "\[IndentingNewLine]", "]"}]}],
@@ -21743,9 +21743,9 @@ DvY=
       "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(0\\)], \
 \\(DVCS\\)]\\)\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(1\\)], \\(DVCS\\)]\
-\\) cos(\[Pi]-\[Phi])\"", 
+\\) np.cos(\[Pi]-\[Phi])\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(s\\), \\(1\\)], \\(DVCS\\)]\
-\\) sin(\[Pi]-\[Phi])\""},
+\\) np.sin(\[Pi]-\[Phi])\""},
       "LineLegend",
       DisplayFunction->(FormBox[
         StyleBox[
@@ -21761,7 +21761,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -21772,7 +21772,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -21787,22 +21787,22 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -21813,7 +21813,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -21824,7 +21824,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -21840,7 +21840,7 @@ DvY=
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -21869,7 +21869,7 @@ DvY=
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
-                   TemplateBox[<|"color" -> RGBColor[1, Decimal("0.5"), 0]|>, 
+                   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -21886,7 +21886,7 @@ DvY=
              RowBox[{"{", 
                RowBox[{"FontFamily", "\[Rule]", "\"Times\""}], "}"}]}], ",", 
            RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}]}], "]"}]& )], 
-     Scaled[{0.85, 0.75}], ImageScaled[{Decimal("0.5"), Decimal("0.5")}],
+     Scaled[{0.85, 0.75}], ImageScaled[{0.5, 0.5}],
      BaseStyle->{FontSize -> Larger},
      FormatType->StandardForm]},
    AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
@@ -21931,7 +21931,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLines->{{0}, {0}},
    GridLinesStyle->Directive[
-     GrayLevel[Decimal("0.5"), 0.4]],
+     GrayLevel[0.5, 0.4]],
    ImagePadding->All,
    ImageSize->{559.1666666666667, Automatic},
    LabelStyle->{FontFamily -> "Times"},
@@ -22102,7 +22102,7 @@ RGBColor[0., 0., 0.]]\)\!\(\*StyleBox[\"\[Degree]\",FontSize->14,FontWeight->\
 RGBColor[0., 0., 0.]]\)"], None}}, FrameStyle -> Automatic, 
       FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
       GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-        GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+        GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
       Method -> {
        "DefaultBoundaryStyle" -> Automatic, 
         "DefaultGraphicsInteraction" -> {
@@ -22174,16 +22174,16 @@ StyleBox[\"2\",FontSize->9,FontWeight->\"Normal\",FontColor->RGBColor[0., 0., \
          Opacity[1.], 
          CapForm["Butt"], 
          AbsoluteThickness[1.6], 
-         RGBColor[1, Decimal("0.5"), 0]], 
+         RGBColor[1, 0.5, 0]], 
         Directive[
          Opacity[1.], 
          CapForm["Butt"], 
          AbsoluteThickness[1.6], 
          RGBColor[1, 1, 0]]}, {
        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(0\)], \(DVCS\)]\)", 
-        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(1\)], \(DVCS\)]\) cos(\
+        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(1\)], \(DVCS\)]\) np.cos(\
 \[Pi]-\[Phi])", 
-        "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(1\)], \(DVCS\)]\) sin(\
+        "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(1\)], \(DVCS\)]\) np.sin(\
 \[Pi]-\[Phi])"}, LegendMarkers -> None, LabelStyle -> {FontFamily -> "Times"},
         LegendLayout -> "Column"]], {0.85, 0.75}, Identity]]& ],
   AutoDelete->True,
@@ -22329,9 +22329,9 @@ Cell[BoxData[
         "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(0, LP\)], \(DVCS\)]\)\
 \>\"", ",", "\[IndentingNewLine]", 
          "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(1, LP\)], \
-\(DVCS\)]\) cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
+\(DVCS\)]\) np.cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
          "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(1, LP\)], \
-\(DVCS\)]\) sin(\[Pi]-\[Phi])\>\""}], "\[IndentingNewLine]", "}"}], 
+\(DVCS\)]\) np.sin(\[Pi]-\[Phi])\>\""}], "\[IndentingNewLine]", "}"}], 
        "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
       RowBox[{"{", 
        RowBox[{"0.85", ",", "0.75"}], "}"}]}], "\[IndentingNewLine]", "]"}]}],
@@ -22565,9 +22565,9 @@ Dk7oQ/BPBMwP5RWTgPOTLG2WL5+C4HvtKqoMvI3gG1qv9P6tKAnnAwDdxLFt
       "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(0, LP\\)], \
 \\(DVCS\\)]\\)\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(1, LP\\)], \\(DVCS\
-\\)]\\) cos(\[Pi]-\[Phi])\"", 
+\\)]\\) np.cos(\[Pi]-\[Phi])\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(s\\), \\(1, LP\\)], \\(DVCS\
-\\)]\\) sin(\[Pi]-\[Phi])\""},
+\\)]\\) np.sin(\[Pi]-\[Phi])\""},
       "LineLegend",
       DisplayFunction->(FormBox[
         StyleBox[
@@ -22583,7 +22583,7 @@ Dk7oQ/BPBMwP5RWTgPOTLG2WL5+C4HvtKqoMvI3gG1qv9P6tKAnnAwDdxLFt
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -22594,7 +22594,7 @@ Dk7oQ/BPBMwP5RWTgPOTLG2WL5+C4HvtKqoMvI3gG1qv9P6tKAnnAwDdxLFt
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -22609,22 +22609,22 @@ Dk7oQ/BPBMwP5RWTgPOTLG2WL5+C4HvtKqoMvI3gG1qv9P6tKAnnAwDdxLFt
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -22635,7 +22635,7 @@ Dk7oQ/BPBMwP5RWTgPOTLG2WL5+C4HvtKqoMvI3gG1qv9P6tKAnnAwDdxLFt
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -22646,7 +22646,7 @@ Dk7oQ/BPBMwP5RWTgPOTLG2WL5+C4HvtKqoMvI3gG1qv9P6tKAnnAwDdxLFt
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -22662,7 +22662,7 @@ Dk7oQ/BPBMwP5RWTgPOTLG2WL5+C4HvtKqoMvI3gG1qv9P6tKAnnAwDdxLFt
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -22692,7 +22692,7 @@ Dk7oQ/BPBMwP5RWTgPOTLG2WL5+C4HvtKqoMvI3gG1qv9P6tKAnnAwDdxLFt
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
-                   TemplateBox[<|"color" -> RGBColor[1, Decimal("0.5"), 0]|>, 
+                   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -22708,7 +22708,7 @@ Dk7oQ/BPBMwP5RWTgPOTLG2WL5+C4HvtKqoMvI3gG1qv9P6tKAnnAwDdxLFt
              RowBox[{"{", 
                RowBox[{"FontFamily", "\[Rule]", "\"Times\""}], "}"}]}], ",", 
            RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}]}], "]"}]& )], 
-     Scaled[{0.85, 0.75}], ImageScaled[{Decimal("0.5"), Decimal("0.5")}],
+     Scaled[{0.85, 0.75}], ImageScaled[{0.5, 0.5}],
      BaseStyle->{FontSize -> Larger},
      FormatType->StandardForm]},
    AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
@@ -22753,7 +22753,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLines->{{0}, {0}},
    GridLinesStyle->Directive[
-     GrayLevel[Decimal("0.5"), 0.4]],
+     GrayLevel[0.5, 0.4]],
    ImagePadding->All,
    LabelStyle->{FontFamily -> "Times"},
    Method->{
@@ -22920,7 +22920,7 @@ RGBColor[0., 0., 0.]]\)\!\(\*StyleBox[\"\[Degree]\",FontSize->14,FontWeight->\
 RGBColor[0., 0., 0.]]\)"], None}}, FrameStyle -> Automatic, 
       FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
       GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-        GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+        GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
       Method -> {
        "DefaultBoundaryStyle" -> Automatic, 
         "DefaultGraphicsInteraction" -> {
@@ -22993,7 +22993,7 @@ StyleBox[\"2\",FontSize->9,FontWeight->\"Normal\",FontColor->RGBColor[0., 0., \
          Opacity[1.], 
          CapForm["Butt"], 
          AbsoluteThickness[1.6], 
-         RGBColor[1, Decimal("0.5"), 0]], 
+         RGBColor[1, 0.5, 0]], 
         Directive[
          Opacity[1.], 
          CapForm["Butt"], 
@@ -23001,9 +23001,9 @@ StyleBox[\"2\",FontSize->9,FontWeight->\"Normal\",FontColor->RGBColor[0., 0., \
          RGBColor[1, 1, 0]]}, {
        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(0, LP\)], \(DVCS\)]\)", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(1, LP\)], \(DVCS\)]\) \
-cos(\[Pi]-\[Phi])", 
+np.cos(\[Pi]-\[Phi])", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(1, LP\)], \(DVCS\)]\) \
-sin(\[Pi]-\[Phi])"}, LegendMarkers -> None, 
+np.sin(\[Pi]-\[Phi])"}, LegendMarkers -> None, 
        LabelStyle -> {FontFamily -> "Times"}, LegendLayout -> "Column"]], {
      0.85, 0.75}, Identity]]& ],
   AutoDelete->True,
@@ -23631,7 +23631,7 @@ PWEF0XIssFu40rMHWzWC8adJgQXOHNk1//v/YLNBzq7F1Sz4//8X/g95kJ/6
   FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
   GridLines->{None, None},
   GridLinesStyle->Directive[
-    GrayLevel[Decimal("0.5"), 0.4]],
+    GrayLevel[0.5, 0.4]],
   ImagePadding->All,
   Method->{
    "DefaultBoundaryStyle" -> Automatic, 
@@ -24274,7 +24274,7 @@ bikL/v9+4X86k/hR
   FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
   GridLines->{None, None},
   GridLinesStyle->Directive[
-    GrayLevel[Decimal("0.5"), 0.4]],
+    GrayLevel[0.5, 0.4]],
   ImagePadding->All,
   Method->{
    "DefaultBoundaryStyle" -> Automatic, 
@@ -25036,7 +25036,7 @@ PWEF0XIssFu40rMHWzWC8adJgQXOHNk1//v/YLNBzq7F1Sz4//8X/g95kJ/6
   FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
   GridLines->{None, None},
   GridLinesStyle->Directive[
-    GrayLevel[Decimal("0.5"), 0.4]],
+    GrayLevel[0.5, 0.4]],
   ImagePadding->All,
   Method->{
    "DefaultBoundaryStyle" -> Automatic, 
@@ -25632,7 +25632,7 @@ bikL/v9+4X86k/hR
   FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
   GridLines->{None, None},
   GridLinesStyle->Directive[
-    GrayLevel[Decimal("0.5"), 0.4]],
+    GrayLevel[0.5, 0.4]],
   ImagePadding->All,
   Method->{
    "DefaultBoundaryStyle" -> Automatic, 
@@ -27321,7 +27321,7 @@ DvY=
      FrameLabel -> {{None, None}, {None, None}}, FrameStyle -> Automatic, 
      FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
      GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-       GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+       GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
      Method -> {
       "DefaultBoundaryStyle" -> Automatic, 
        "DefaultGraphicsInteraction" -> {
@@ -27378,7 +27378,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.9, 0.36, 0.054], 
                     CapForm["Butt"], 
@@ -27389,7 +27389,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.9, 0.36, 0.054], 
                     CapForm["Butt"], 
@@ -27404,7 +27404,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.365248, 0.427802, 0.758297], 
                     CapForm["Butt"], 
@@ -27415,7 +27415,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.365248, 0.427802, 0.758297], 
                     CapForm["Butt"], 
@@ -27430,7 +27430,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.945109, 0.593901, 0.], 
                     CapForm["Butt"], 
@@ -27441,7 +27441,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.945109, 0.593901, 0.], 
                     CapForm["Butt"], 
@@ -27456,7 +27456,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.645957, 0.253192, 0.685109], 
                     CapForm["Butt"], 
@@ -27467,7 +27467,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.645957, 0.253192, 0.685109], 
                     CapForm["Butt"], 
@@ -27482,7 +27482,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.285821, 0.56, 0.450773], 
                     CapForm["Butt"], 
@@ -27493,7 +27493,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.285821, 0.56, 0.450773], 
                     CapForm["Butt"], 
@@ -27508,7 +27508,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.7, 0.336, 0.], 
                     CapForm["Butt"], 
@@ -27519,7 +27519,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.7, 0.336, 0.], 
                     CapForm["Butt"], 
@@ -27535,7 +27535,7 @@ DvY=
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -27804,7 +27804,7 @@ Cell[BoxData[
      FrameLabel -> {{None, None}, {None, None}}, FrameStyle -> Automatic, 
      FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
      GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-       GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+       GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
      Method -> {
       "DefaultBoundaryStyle" -> Automatic, 
        "DefaultGraphicsInteraction" -> {
@@ -27864,7 +27864,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.9, 0.36, 0.054], 
                     CapForm["Butt"], 
@@ -27875,7 +27875,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.9, 0.36, 0.054], 
                     CapForm["Butt"], 
@@ -27890,7 +27890,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.365248, 0.427802, 0.758297], 
                     CapForm["Butt"], 
@@ -27901,7 +27901,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.365248, 0.427802, 0.758297], 
                     CapForm["Butt"], 
@@ -27916,7 +27916,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.945109, 0.593901, 0.], 
                     CapForm["Butt"], 
@@ -27927,7 +27927,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.945109, 0.593901, 0.], 
                     CapForm["Butt"], 
@@ -27942,7 +27942,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.645957, 0.253192, 0.685109], 
                     CapForm["Butt"], 
@@ -27953,7 +27953,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.645957, 0.253192, 0.685109], 
                     CapForm["Butt"], 
@@ -27968,7 +27968,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.285821, 0.56, 0.450773], 
                     CapForm["Butt"], 
@@ -27979,7 +27979,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.285821, 0.56, 0.450773], 
                     CapForm["Butt"], 
@@ -27994,7 +27994,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.7, 0.336, 0.], 
                     CapForm["Butt"], 
@@ -28005,7 +28005,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.7, 0.336, 0.], 
                     CapForm["Butt"], 
@@ -28020,7 +28020,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.491486, 0.345109, 0.8], 
                     CapForm["Butt"], 
@@ -28031,7 +28031,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.491486, 0.345109, 0.8], 
                     CapForm["Butt"], 
@@ -28047,7 +28047,7 @@ Cell[BoxData[
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -28316,7 +28316,7 @@ Cell[BoxData[
      FrameLabel -> {{None, None}, {None, None}}, FrameStyle -> Automatic, 
      FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
      GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-       GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+       GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
      Method -> {
       "DefaultBoundaryStyle" -> Automatic, 
        "DefaultGraphicsInteraction" -> {
@@ -28377,7 +28377,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.9, 0.36, 0.054], 
                     CapForm["Butt"], 
@@ -28388,7 +28388,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.9, 0.36, 0.054], 
                     CapForm["Butt"], 
@@ -28403,7 +28403,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.365248, 0.427802, 0.758297], 
                     CapForm["Butt"], 
@@ -28414,7 +28414,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.365248, 0.427802, 0.758297], 
                     CapForm["Butt"], 
@@ -28429,7 +28429,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.945109, 0.593901, 0.], 
                     CapForm["Butt"], 
@@ -28440,7 +28440,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.945109, 0.593901, 0.], 
                     CapForm["Butt"], 
@@ -28455,7 +28455,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.645957, 0.253192, 0.685109], 
                     CapForm["Butt"], 
@@ -28466,7 +28466,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.645957, 0.253192, 0.685109], 
                     CapForm["Butt"], 
@@ -28481,7 +28481,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.285821, 0.56, 0.450773], 
                     CapForm["Butt"], 
@@ -28492,7 +28492,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.285821, 0.56, 0.450773], 
                     CapForm["Butt"], 
@@ -28507,7 +28507,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.7, 0.336, 0.], 
                     CapForm["Butt"], 
@@ -28518,7 +28518,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.7, 0.336, 0.], 
                     CapForm["Butt"], 
@@ -28534,7 +28534,7 @@ Cell[BoxData[
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -28853,19 +28853,19 @@ Cell[BoxData[
          "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(0, LP\)], \(\
 \[ScriptCapitalI]\)]\)\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(1, LP\)], \(\
-\[ScriptCapitalI]\)]\) cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
+\[ScriptCapitalI]\)]\) np.cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(2, LP\)], \(\
-\[ScriptCapitalI]\)]\) cos(2 (\[Pi]-\[Phi]))\>\"", ",", 
+\[ScriptCapitalI]\)]\) np.cos(2 (\[Pi]-\[Phi]))\>\"", ",", 
           "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(3, LP\)], \(\
-\[ScriptCapitalI]\)]\) cos(3(\[Pi]-\[Phi]))\>\"", ",", "\[IndentingNewLine]", 
+\[ScriptCapitalI]\)]\) np.cos(3(\[Pi]-\[Phi]))\>\"", ",", "\[IndentingNewLine]", 
           
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(1, LP\)], \(\
-\[ScriptCapitalI]\)]\) cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
+\[ScriptCapitalI]\)]\) np.cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(2, LP\)], \(\
-\[ScriptCapitalI]\)]\) cos(2(\[Pi]-\[Phi]))\>\"", ",", "\[IndentingNewLine]", 
+\[ScriptCapitalI]\)]\) np.cos(2(\[Pi]-\[Phi]))\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(3, LP\)], \(\
-\[ScriptCapitalI]\)]\) sin(3(\[Pi]-\[Phi]))\>\""}], "\[IndentingNewLine]", 
+\[ScriptCapitalI]\)]\) np.sin(3(\[Pi]-\[Phi]))\>\""}], "\[IndentingNewLine]", 
          "}"}], "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
        RowBox[{"{", 
         RowBox[{"0.85", ",", "0.75"}], "}"}]}], "\[IndentingNewLine]", 
@@ -28895,15 +28895,15 @@ Cell[BoxData[
       "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(0, LP\\)], \\(\
 \[ScriptCapitalI]\\)]\\)\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(1, LP\\)], \\(\
-\[ScriptCapitalI]\\)]\\) cos(\[Pi]-\[Phi])\"", 
+\[ScriptCapitalI]\\)]\\) np.cos(\[Pi]-\[Phi])\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(2, LP\\)], \\(\
-\[ScriptCapitalI]\\)]\\) cos(2 (\[Pi]-\[Phi]))\"", 
+\[ScriptCapitalI]\\)]\\) np.cos(2 (\[Pi]-\[Phi]))\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(3, LP\\)], \\(\
-\[ScriptCapitalI]\\)]\\) cos(3(\[Pi]-\[Phi]))\"", 
+\[ScriptCapitalI]\\)]\\) np.cos(3(\[Pi]-\[Phi]))\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(s\\), \\(1, LP\\)], \\(\
-\[ScriptCapitalI]\\)]\\) cos(\[Pi]-\[Phi])\"", 
+\[ScriptCapitalI]\\)]\\) np.cos(\[Pi]-\[Phi])\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(s\\), \\(2, LP\\)], \\(\
-\[ScriptCapitalI]\\)]\\) cos(2(\[Pi]-\[Phi]))\""},
+\[ScriptCapitalI]\\)]\\) np.cos(2(\[Pi]-\[Phi]))\""},
       "LineLegend",
       DisplayFunction->(FormBox[
         StyleBox[
@@ -28919,7 +28919,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -28930,7 +28930,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -28945,22 +28945,22 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -28971,7 +28971,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -28982,7 +28982,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -28997,7 +28997,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -29008,7 +29008,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -29023,7 +29023,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -29034,7 +29034,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -29049,7 +29049,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -29060,7 +29060,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -29076,7 +29076,7 @@ Cell[BoxData[
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -29106,7 +29106,7 @@ Cell[BoxData[
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
-                   TemplateBox[<|"color" -> RGBColor[1, Decimal("0.5"), 0]|>, 
+                   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -29148,7 +29148,7 @@ Cell[BoxData[
              RowBox[{"{", 
                RowBox[{"FontFamily", "\[Rule]", "\"Times\""}], "}"}]}], ",", 
            RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}]}], "]"}]& )], 
-     Scaled[{0.85, 0.75}], ImageScaled[{Decimal("0.5"), Decimal("0.5")}],
+     Scaled[{0.85, 0.75}], ImageScaled[{0.5, 0.5}],
      BaseStyle->{FontSize -> Larger},
      FormatType->StandardForm]},
    AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
@@ -29162,7 +29162,7 @@ Cell[BoxData[
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLines->{{0}, {0}},
    GridLinesStyle->Directive[
-     GrayLevel[Decimal("0.5"), 0.4]],
+     GrayLevel[0.5, 0.4]],
    ImagePadding->All,
    ImageSize->{460.31249999999915`, Automatic},
    LabelStyle->{FontFamily -> "Times"},
@@ -29210,7 +29210,7 @@ Cell[BoxData[
       FrameLabel -> {{None, None}, {None, None}}, FrameStyle -> Automatic, 
       FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
       GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-        GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+        GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
       Method -> {
        "DefaultBoundaryStyle" -> Automatic, 
         "DefaultGraphicsInteraction" -> {
@@ -29244,7 +29244,7 @@ Cell[BoxData[
          Opacity[1.], 
          CapForm["Butt"], 
          AbsoluteThickness[1.6], 
-         RGBColor[1, Decimal("0.5"), 0]], 
+         RGBColor[1, 0.5, 0]], 
         Directive[
          Opacity[1.], 
          CapForm["Butt"], 
@@ -29268,15 +29268,15 @@ Cell[BoxData[
        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(0, LP\)], \(\
 \[ScriptCapitalI]\)]\)", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(1, LP\)], \(\
-\[ScriptCapitalI]\)]\) cos(\[Pi]-\[Phi])", 
+\[ScriptCapitalI]\)]\) np.cos(\[Pi]-\[Phi])", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(2, LP\)], \(\
-\[ScriptCapitalI]\)]\) cos(2 (\[Pi]-\[Phi]))", 
+\[ScriptCapitalI]\)]\) np.cos(2 (\[Pi]-\[Phi]))", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(3, LP\)], \(\
-\[ScriptCapitalI]\)]\) cos(3(\[Pi]-\[Phi]))", 
+\[ScriptCapitalI]\)]\) np.cos(3(\[Pi]-\[Phi]))", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(1, LP\)], \(\
-\[ScriptCapitalI]\)]\) cos(\[Pi]-\[Phi])", 
+\[ScriptCapitalI]\)]\) np.cos(\[Pi]-\[Phi])", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(2, LP\)], \(\
-\[ScriptCapitalI]\)]\) cos(2(\[Pi]-\[Phi]))"}, LegendMarkers -> None, 
+\[ScriptCapitalI]\)]\) np.cos(2(\[Pi]-\[Phi]))"}, LegendMarkers -> None, 
        LabelStyle -> {FontFamily -> "Times"}, LegendLayout -> "Column"]], {
      0.85, 0.75}, Identity]]& ],
   AutoDelete->True,
@@ -29477,7 +29477,7 @@ Cell[BoxData[
      FrameLabel -> {{None, None}, {None, None}}, FrameStyle -> Automatic, 
      FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
      GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-       GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+       GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
      Method -> {
       "DefaultBoundaryStyle" -> Automatic, 
        "DefaultGraphicsInteraction" -> {
@@ -29537,7 +29537,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.9, 0.36, 0.054], 
                     CapForm["Butt"], 
@@ -29548,7 +29548,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.9, 0.36, 0.054], 
                     CapForm["Butt"], 
@@ -29563,7 +29563,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.365248, 0.427802, 0.758297], 
                     CapForm["Butt"], 
@@ -29574,7 +29574,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.365248, 0.427802, 0.758297], 
                     CapForm["Butt"], 
@@ -29589,7 +29589,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.945109, 0.593901, 0.], 
                     CapForm["Butt"], 
@@ -29600,7 +29600,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.945109, 0.593901, 0.], 
                     CapForm["Butt"], 
@@ -29615,7 +29615,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.645957, 0.253192, 0.685109], 
                     CapForm["Butt"], 
@@ -29626,7 +29626,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.645957, 0.253192, 0.685109], 
                     CapForm["Butt"], 
@@ -29641,7 +29641,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.285821, 0.56, 0.450773], 
                     CapForm["Butt"], 
@@ -29652,7 +29652,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.285821, 0.56, 0.450773], 
                     CapForm["Butt"], 
@@ -29667,7 +29667,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.7, 0.336, 0.], 
                     CapForm["Butt"], 
@@ -29678,7 +29678,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.7, 0.336, 0.], 
                     CapForm["Butt"], 
@@ -29693,7 +29693,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.491486, 0.345109, 0.8], 
                     CapForm["Butt"], 
@@ -29704,7 +29704,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     RGBColor[0.491486, 0.345109, 0.8], 
                     CapForm["Butt"], 
@@ -29720,7 +29720,7 @@ Cell[BoxData[
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -29989,18 +29989,18 @@ Cell[BoxData[
          "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(0, LP\)], \(\
 \[ScriptCapitalI]\)]\)\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(1, LP\)], \(\
-\[ScriptCapitalI]\)]\) cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
+\[ScriptCapitalI]\)]\) np.cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(2, LP\)], \(\
-\[ScriptCapitalI]\)]\) cos(2 (\[Pi]-\[Phi]))\>\"", ",", 
+\[ScriptCapitalI]\)]\) np.cos(2 (\[Pi]-\[Phi]))\>\"", ",", 
           "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(3, LP\)], \(\
-\[ScriptCapitalI]\)]\) cos(3(\[Pi]-\[Phi]))\>\"", ",", "\[IndentingNewLine]", 
+\[ScriptCapitalI]\)]\) np.cos(3(\[Pi]-\[Phi]))\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(1, LP\)], \(\
-\[ScriptCapitalI]\)]\) cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
+\[ScriptCapitalI]\)]\) np.cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(2, LP\)], \(\
-\[ScriptCapitalI]\)]\) cos(2(\[Pi]-\[Phi]))\>\"", ",", "\[IndentingNewLine]", 
+\[ScriptCapitalI]\)]\) np.cos(2(\[Pi]-\[Phi]))\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(3, LP\)], \(\
-\[ScriptCapitalI]\)]\) sin(3(\[Pi]-\[Phi]))\>\""}], "\[IndentingNewLine]", 
+\[ScriptCapitalI]\)]\) np.sin(3(\[Pi]-\[Phi]))\>\""}], "\[IndentingNewLine]", 
          "}"}], "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
        RowBox[{"{", 
         RowBox[{"0.85", ",", "0.75"}], "}"}]}], "\[IndentingNewLine]", 
@@ -30028,15 +30028,15 @@ Cell[BoxData[
       "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(0, LP\\)], \\(\
 \[ScriptCapitalI]\\)]\\)\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(1, LP\\)], \\(\
-\[ScriptCapitalI]\\)]\\) cos(\[Pi]-\[Phi])\"", 
+\[ScriptCapitalI]\\)]\\) np.cos(\[Pi]-\[Phi])\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(2, LP\\)], \\(\
-\[ScriptCapitalI]\\)]\\) cos(2 (\[Pi]-\[Phi]))\"", 
+\[ScriptCapitalI]\\)]\\) np.cos(2 (\[Pi]-\[Phi]))\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(3, LP\\)], \\(\
-\[ScriptCapitalI]\\)]\\) cos(3(\[Pi]-\[Phi]))\"", 
+\[ScriptCapitalI]\\)]\\) np.cos(3(\[Pi]-\[Phi]))\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(s\\), \\(1, LP\\)], \\(\
-\[ScriptCapitalI]\\)]\\) cos(\[Pi]-\[Phi])\"", 
+\[ScriptCapitalI]\\)]\\) np.cos(\[Pi]-\[Phi])\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(s\\), \\(2, LP\\)], \\(\
-\[ScriptCapitalI]\\)]\\) cos(2(\[Pi]-\[Phi]))\""},
+\[ScriptCapitalI]\\)]\\) np.cos(2(\[Pi]-\[Phi]))\""},
       "LineLegend",
       DisplayFunction->(FormBox[
         StyleBox[
@@ -30052,7 +30052,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -30063,7 +30063,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -30078,22 +30078,22 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -30104,7 +30104,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -30115,7 +30115,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -30130,7 +30130,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -30141,7 +30141,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -30156,7 +30156,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -30167,7 +30167,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -30182,7 +30182,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -30193,7 +30193,7 @@ Cell[BoxData[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -30209,7 +30209,7 @@ Cell[BoxData[
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -30239,7 +30239,7 @@ Cell[BoxData[
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
-                   TemplateBox[<|"color" -> RGBColor[1, Decimal("0.5"), 0]|>, 
+                   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -30281,7 +30281,7 @@ Cell[BoxData[
              RowBox[{"{", 
                RowBox[{"FontFamily", "\[Rule]", "\"Times\""}], "}"}]}], ",", 
            RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}]}], "]"}]& )], 
-     Scaled[{0.85, 0.75}], ImageScaled[{Decimal("0.5"), Decimal("0.5")}],
+     Scaled[{0.85, 0.75}], ImageScaled[{0.5, 0.5}],
      BaseStyle->{FontSize -> Larger},
      FormatType->StandardForm]},
    AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
@@ -30295,7 +30295,7 @@ Cell[BoxData[
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLines->{{0}, {0}},
    GridLinesStyle->Directive[
-     GrayLevel[Decimal("0.5"), 0.4]],
+     GrayLevel[0.5, 0.4]],
    ImagePadding->All,
    ImageSize->{540.9374999999975, Automatic},
    LabelStyle->{FontFamily -> "Times"},
@@ -30343,7 +30343,7 @@ Cell[BoxData[
       FrameLabel -> {{None, None}, {None, None}}, FrameStyle -> Automatic, 
       FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
       GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-        GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+        GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
       Method -> {
        "DefaultBoundaryStyle" -> Automatic, 
         "DefaultGraphicsInteraction" -> {
@@ -30377,7 +30377,7 @@ Cell[BoxData[
          Opacity[1.], 
          CapForm["Butt"], 
          AbsoluteThickness[1.6], 
-         RGBColor[1, Decimal("0.5"), 0]], 
+         RGBColor[1, 0.5, 0]], 
         Directive[
          Opacity[1.], 
          CapForm["Butt"], 
@@ -30401,15 +30401,15 @@ Cell[BoxData[
        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(0, LP\)], \(\
 \[ScriptCapitalI]\)]\)", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(1, LP\)], \(\
-\[ScriptCapitalI]\)]\) cos(\[Pi]-\[Phi])", 
+\[ScriptCapitalI]\)]\) np.cos(\[Pi]-\[Phi])", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(2, LP\)], \(\
-\[ScriptCapitalI]\)]\) cos(2 (\[Pi]-\[Phi]))", 
+\[ScriptCapitalI]\)]\) np.cos(2 (\[Pi]-\[Phi]))", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(3, LP\)], \(\
-\[ScriptCapitalI]\)]\) cos(3(\[Pi]-\[Phi]))", 
+\[ScriptCapitalI]\)]\) np.cos(3(\[Pi]-\[Phi]))", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(1, LP\)], \(\
-\[ScriptCapitalI]\)]\) cos(\[Pi]-\[Phi])", 
+\[ScriptCapitalI]\)]\) np.cos(\[Pi]-\[Phi])", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(2, LP\)], \(\
-\[ScriptCapitalI]\)]\) cos(2(\[Pi]-\[Phi]))"}, LegendMarkers -> None, 
+\[ScriptCapitalI]\)]\) np.cos(2(\[Pi]-\[Phi]))"}, LegendMarkers -> None, 
        LabelStyle -> {FontFamily -> "Times"}, LegendLayout -> "Column"]], {
      0.85, 0.75}, Identity]]& ],
   AutoDelete->True,
@@ -30829,7 +30829,7 @@ Cell[BoxData[
              Opacity[1.], 
              CapForm["Butt"], 
              AbsoluteThickness[1.6], 
-             RGBColor[1, Decimal("0.5"), 0]], 
+             RGBColor[1, 0.5, 0]], 
             LineBox[CompressedData["
 1:eJw12Xc81e8XAHDbvRcN695rZJVZlGRkPMeIUDKiYVTKCAmJirhcK0lGizIa
 KEVJQjK/lJYkFUlJdhIRReV3/PH7677er9e995mfc57zfOTcD9p7cHFwcMRz
@@ -31246,7 +31246,7 @@ jdVoAV5yqEJKFj7dWz49fx4vWtJa80VGFhKiIu1N5s/b93mIL5eVhXFulvn8
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Line[CompressedData["
 1:eJw12Xc81e8XAHDbvRcN695rZJVZlGRkPMeIUDKiYVTKCAmJirhcK0lGizIa
 KEVJQjK/lJYkFUlJdhIRReV3/PH7677er9e995mfc57zfOTcD9p7cHFwcMRz
@@ -31672,7 +31672,7 @@ jdVoAV5yqEJKFj7dWz49fx4vWtJa80VGFhKiIu1N5s/b93mIL5eVhXFulvn8
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]]}, 
+               RGBColor[1, 0.5, 0]]}, 
             "HighlightLabelingFunctions" -> <|"CoordinatesToolOptions" -> ({
                 Identity[
                  Part[#, 1]], 
@@ -31706,7 +31706,7 @@ jdVoAV5yqEJKFj7dWz49fx4vWtJa80VGFhKiIu1N5s/b93mIL5eVhXFulvn8
               Opacity[1.], 
               CapForm["Butt"], 
               AbsoluteThickness[1.6], 
-              RGBColor[1, Decimal("0.5"), 0]]}, 
+              RGBColor[1, 0.5, 0]]}, 
            "HighlightLabelingFunctions" -> <|"CoordinatesToolOptions" -> ({
                Identity[
                 Part[#, 1]], 
@@ -31724,7 +31724,7 @@ jdVoAV5yqEJKFj7dWz49fx4vWtJa80VGFhKiIu1N5s/b93mIL5eVhXFulvn8
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Line[CompressedData["
 1:eJw12Xc81e8XAHDbvRcN695rZJVZlGRkPMeIUDKiYVTKCAmJirhcK0lGizIa
 KEVJQjK/lJYkFUlJdhIRReV3/PH7677er9e995mfc57zfOTcD9p7cHFwcMRz
@@ -32150,7 +32150,7 @@ jdVoAV5yqEJKFj7dWz49fx4vWtJa80VGFhKiIu1N5s/b93mIL5eVhXFulvn8
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]]}, 
+            RGBColor[1, 0.5, 0]]}, 
          "HighlightLabelingFunctions" -> <|"CoordinatesToolOptions" -> ({
              Identity[
               Part[#, 1]], 
@@ -32208,7 +32208,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
      FrameStyle -> Automatic, 
      FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
      GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-       GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+       GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
      Method -> {
       "DefaultBoundaryStyle" -> Automatic, 
        "DefaultGraphicsInteraction" -> {
@@ -32271,7 +32271,7 @@ FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -32282,7 +32282,7 @@ FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -32297,22 +32297,22 @@ FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -32323,7 +32323,7 @@ FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -32334,7 +32334,7 @@ FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -32349,7 +32349,7 @@ FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -32360,7 +32360,7 @@ FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -32376,7 +32376,7 @@ FontColor->RGBColor[0., 0., \
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -32405,7 +32405,7 @@ FontColor->RGBColor[0., 0., \
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
-                   TemplateBox[<|"color" -> RGBColor[1, Decimal("0.5"), 0]|>, 
+                   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -32869,7 +32869,7 @@ ixcWfZCc4swBVzkm7Nm7m/YJW7njbGG8AhMMHlmw2rE1Y+iL9YpMKFzf2PO/
              Opacity[1.], 
              CapForm["Butt"], 
              AbsoluteThickness[1.6], 
-             RGBColor[1, Decimal("0.5"), 0]], 
+             RGBColor[1, 0.5, 0]], 
             LineBox[CompressedData["
 1:eJw12nk8lM8fAHC3XUfZde2KyBGpVI7cZqgolcqdK0kIiV3ZdXf4uipJpVKi
 nOmQO8Qg5KoUOZJIklTuex2/8cfvH17vF888+8wz8znmtZtczpmf5mBjY8vD
@@ -33604,7 +33604,7 @@ ixcWfZCc4swBVzkm7Nm7m/YJW7njbGG8AhMMHlmw2rE1Y+iL9YpMKFzf2PO/
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Line[CompressedData["
 1:eJw12nk8lM8fAHC3XUfZde2KyBGpVI7cZqgolcqdK0kIiV3ZdXf4uipJpVKi
 nOmQO8Qg5KoUOZJIklTuex2/8cfvH17vF888+8wz8znmtZtczpmf5mBjY8vD
@@ -34201,7 +34201,7 @@ Cs4K7D5kTTCR9Oqpg6S0FEQ2d7x5oMNEcu3RJQkrpcD9wHnp3dgKsZKLDaul
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Directive[
                Opacity[1.], 
                CapForm["Butt"], 
@@ -34240,7 +34240,7 @@ Cs4K7D5kTTCR9Oqpg6S0FEQ2d7x5oMNEcu3RJQkrpcD9wHnp3dgKsZKLDaul
               Opacity[1.], 
               CapForm["Butt"], 
               AbsoluteThickness[1.6], 
-              RGBColor[1, Decimal("0.5"), 0]], 
+              RGBColor[1, 0.5, 0]], 
              Directive[
               Opacity[1.], 
               CapForm["Butt"], 
@@ -34410,7 +34410,7 @@ ixcWfZCc4swBVzkm7Nm7m/YJW7njbGG8AhMMHlmw2rE1Y+iL9YpMKFzf2PO/
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Line[CompressedData["
 1:eJw12nk8lM8fAHC3XUfZde2KyBGpVI7cZqgolcqdK0kIiV3ZdXf4uipJpVKi
 nOmQO8Qg5KoUOZJIklTuex2/8cfvH17vF888+8wz8znmtZtczpmf5mBjY8vD
@@ -35007,7 +35007,7 @@ Cs4K7D5kTTCR9Oqpg6S0FEQ2d7x5oMNEcu3RJQkrpcD9wHnp3dgKsZKLDaul
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Directive[
             Opacity[1.], 
             CapForm["Butt"], 
@@ -35070,7 +35070,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
      FrameStyle -> Automatic, 
      FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
      GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-       GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+       GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
      Method -> {
       "DefaultBoundaryStyle" -> Automatic, 
        "DefaultGraphicsInteraction" -> {
@@ -35132,7 +35132,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -35143,7 +35143,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -35158,22 +35158,22 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -35184,7 +35184,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -35195,7 +35195,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -35210,7 +35210,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -35221,7 +35221,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -35237,7 +35237,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -35266,7 +35266,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
-                   TemplateBox[<|"color" -> RGBColor[1, Decimal("0.5"), 0]|>, 
+                   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -35931,7 +35931,7 @@ rEK8zLxo3bQaB////4X/A3nC4fE=
              Opacity[1.], 
              CapForm["Butt"], 
              AbsoluteThickness[1.6], 
-             RGBColor[1, Decimal("0.5"), 0]], 
+             RGBColor[1, 0.5, 0]], 
             LineBox[CompressedData["
 1:eJw12Xc81e8XAHDbvRcN695rZJVZlGRkPMeIUDKiYVTKCAmJirhcK0lGizIa
 KEVJQjK/lJYkFUlJdhIRReV3/PH7677er9e995mfc57zfOTcD9p7cHFwcMRz
@@ -36491,7 +36491,7 @@ rEK8zLxo3bQaB////4X/A3nC4fE=
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Line[CompressedData["
 1:eJw12Xc81e8XAHDbvRcN695rZJVZlGRkPMeIUDKiYVTKCAmJirhcK0lGizIa
 KEVJQjK/lJYkFUlJdhIRReV3/PH7677er9e995mfc57zfOTcD9p7cHFwcMRz
@@ -36921,7 +36921,7 @@ yYY5FXn8//cL/wezMIN7
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Directive[
                Opacity[1.], 
                CapForm["Butt"], 
@@ -36960,7 +36960,7 @@ yYY5FXn8//cL/wezMIN7
               Opacity[1.], 
               CapForm["Butt"], 
               AbsoluteThickness[1.6], 
-              RGBColor[1, Decimal("0.5"), 0]], 
+              RGBColor[1, 0.5, 0]], 
              Directive[
               Opacity[1.], 
               CapForm["Butt"], 
@@ -37122,7 +37122,7 @@ rEK8zLxo3bQaB////4X/A3nC4fE=
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Line[CompressedData["
 1:eJw12Xc81e8XAHDbvRcN695rZJVZlGRkPMeIUDKiYVTKCAmJirhcK0lGizIa
 KEVJQjK/lJYkFUlJdhIRReV3/PH7677er9e995mfc57zfOTcD9p7cHFwcMRz
@@ -37552,7 +37552,7 @@ yYY5FXn8//cL/wezMIN7
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Directive[
             Opacity[1.], 
             CapForm["Butt"], 
@@ -37615,7 +37615,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
      FrameStyle -> Automatic, 
      FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
      GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-       GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+       GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
      Method -> {
       "DefaultBoundaryStyle" -> Automatic, 
        "DefaultGraphicsInteraction" -> {
@@ -37678,7 +37678,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -37689,7 +37689,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -37704,22 +37704,22 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -37730,7 +37730,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -37741,7 +37741,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -37756,7 +37756,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -37767,7 +37767,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -37783,7 +37783,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -37812,7 +37812,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
-                   TemplateBox[<|"color" -> RGBColor[1, Decimal("0.5"), 0]|>, 
+                   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -38234,7 +38234,7 @@ znivyhPdfxvEUQn2730774T/DwFFxq8=
              Opacity[1.], 
              CapForm["Butt"], 
              AbsoluteThickness[1.6], 
-             RGBColor[1, Decimal("0.5"), 0]], 
+             RGBColor[1, 0.5, 0]], 
             LineBox[CompressedData["
 1:eJwV2Xdcjd8fAPAkqaRy73Nve4lQGkp8aXxOKWlfJKElKxntoYnGvTck0ZCG
 0RItTRonlIykRErSlOZtSir6Pb+/7uv9eu6555zPOOd5va68s9u+E9xcXFxJ
@@ -38853,7 +38853,7 @@ znivyhPdfxvEUQn2730774T/DwFFxq8=
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Line[CompressedData["
 1:eJwV2Xdcjd8fAPAkqaRy73Nve4lQGkp8aXxOKWlfJKElKxntoYnGvTck0ZCG
 0RItTRonlIykRErSlOZtSir6Pb+/7uv9eu6555zPOOd5va68s9u+E9xcXFxJ
@@ -39328,7 +39328,7 @@ UgerxEgs1shJopAXfoekFrWxluFt238Kkqitb9h42Fgb/w/M51+k
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Directive[
                Opacity[1.], 
                CapForm["Butt"], 
@@ -39368,7 +39368,7 @@ UgerxEgs1shJopAXfoekFrWxluFt238Kkqitb9h42Fgb/w/M51+k
               Opacity[1.], 
               CapForm["Butt"], 
               AbsoluteThickness[1.6], 
-              RGBColor[1, Decimal("0.5"), 0]], 
+              RGBColor[1, 0.5, 0]], 
              Directive[
               Opacity[1.], 
               CapForm["Butt"], 
@@ -39545,7 +39545,7 @@ znivyhPdfxvEUQn2730774T/DwFFxq8=
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Line[CompressedData["
 1:eJwV2Xdcjd8fAPAkqaRy73Nve4lQGkp8aXxOKWlfJKElKxntoYnGvTck0ZCG
 0RItTRonlIykRErSlOZtSir6Pb+/7uv9eu6555zPOOd5va68s9u+E9xcXFxJ
@@ -40019,7 +40019,7 @@ UgerxEgs1shJopAXfoekFrWxluFt238Kkqitb9h42Fgb/w/M51+k
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Directive[
             Opacity[1.], 
             CapForm["Butt"], 
@@ -40082,7 +40082,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
      FrameStyle -> Automatic, 
      FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
      GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-       GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+       GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
      Method -> {
       "DefaultBoundaryStyle" -> Automatic, 
        "DefaultGraphicsInteraction" -> {
@@ -40146,7 +40146,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -40157,7 +40157,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -40172,22 +40172,22 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -40198,7 +40198,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -40209,7 +40209,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -40224,7 +40224,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -40235,7 +40235,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -40251,7 +40251,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -40280,7 +40280,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
-                   TemplateBox[<|"color" -> RGBColor[1, Decimal("0.5"), 0]|>, 
+                   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -40630,7 +40630,7 @@ Kbb/7z0nWC0/bX9qtQzqs4rW6m53gnUdlx7Gr5FBtiI33KpmnUA1Wupvo7wM
              Opacity[1.], 
              CapForm["Butt"], 
              AbsoluteThickness[1.6], 
-             RGBColor[1, Decimal("0.5"), 0]], 
+             RGBColor[1, 0.5, 0]], 
             LineBox[CompressedData["
 1:eJwV1mk8VV8XB3Bzxsq95xpSxqIQSv4qsnakSUmTVETJdMgcmadjqCSkyEyl
 olRkKLKVlEooc4gk8zyWxHOeV/fzfXPOvmv91tpH5pzTESsONja2BHY2tv//
@@ -41244,7 +41244,7 @@ Kbb/7z0nWC0/bX9qtQzqs4rW6m53gnUdlx7Gr5FBtiI33KpmnUA1Wupvo7wM
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Line[CompressedData["
 1:eJwV1mk8VV8XB3Bzxsq95xpSxqIQSv4qsnakSUmTVETJdMgcmadjqCSkyEyl
 olRkKLKVlEooc4gk8zyWxHOeV/fzfXPOvmv91tpH5pzTESsONja2BHY2tv//
@@ -41711,7 +41711,7 @@ eeiwbedDsz8bxJCv5MUIQo4O/wPnnOe3
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Directive[
                Opacity[1.], 
                CapForm["Butt"], 
@@ -41750,7 +41750,7 @@ eeiwbedDsz8bxJCv5MUIQo4O/wPnnOe3
               Opacity[1.], 
               CapForm["Butt"], 
               AbsoluteThickness[1.6], 
-              RGBColor[1, Decimal("0.5"), 0]], 
+              RGBColor[1, 0.5, 0]], 
              Directive[
               Opacity[1.], 
               CapForm["Butt"], 
@@ -41930,7 +41930,7 @@ Kbb/7z0nWC0/bX9qtQzqs4rW6m53gnUdlx7Gr5FBtiI33KpmnUA1Wupvo7wM
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Line[CompressedData["
 1:eJwV1mk8VV8XB3Bzxsq95xpSxqIQSv4qsnakSUmTVETJdMgcmadjqCSkyEyl
 olRkKLKVlEooc4gk8zyWxHOeV/fzfXPOvmv91tpH5pzTESsONja2BHY2tv//
@@ -42396,7 +42396,7 @@ eeiwbedDsz8bxJCv5MUIQo4O/wPnnOe3
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Directive[
             Opacity[1.], 
             CapForm["Butt"], 
@@ -42457,7 +42457,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
      FrameStyle -> Automatic, 
      FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
      GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-       GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+       GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
      Method -> {
       "DefaultBoundaryStyle" -> Automatic, 
        "DefaultGraphicsInteraction" -> {
@@ -42517,7 +42517,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -42528,7 +42528,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -42543,22 +42543,22 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -42569,7 +42569,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -42580,7 +42580,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -42595,7 +42595,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -42606,7 +42606,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -42622,7 +42622,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -42651,7 +42651,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
-                   TemplateBox[<|"color" -> RGBColor[1, Decimal("0.5"), 0]|>, 
+                   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -43073,7 +43073,7 @@ rEK8zLxo3bQaB////4X/A3nC4fE=
              Opacity[1.], 
              CapForm["Butt"], 
              AbsoluteThickness[1.6], 
-             RGBColor[1, Decimal("0.5"), 0]], 
+             RGBColor[1, 0.5, 0]], 
             LineBox[CompressedData["
 1:eJw12Xc81e8XAHDbvRcN695rZJVZlGRkPMeIUDKiYVTKCAmJirhcK0lGizIa
 KEVJQjK/lJYkFUlJdhIRReV3/PH7677er9e995mfc57zfOTcD9p7cHFwcMRz
@@ -43633,7 +43633,7 @@ rEK8zLxo3bQaB////4X/A3nC4fE=
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Line[CompressedData["
 1:eJw12Xc81e8XAHDbvRcN695rZJVZlGRkPMeIUDKiYVTKCAmJirhcK0lGizIa
 KEVJQjK/lJYkFUlJdhIRReV3/PH7677er9e995mfc57zfOTcD9p7cHFwcMRz
@@ -44063,7 +44063,7 @@ yYY5FXn8//cL/wezMIN7
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Directive[
                Opacity[1.], 
                CapForm["Butt"], 
@@ -44102,7 +44102,7 @@ yYY5FXn8//cL/wezMIN7
               Opacity[1.], 
               CapForm["Butt"], 
               AbsoluteThickness[1.6], 
-              RGBColor[1, Decimal("0.5"), 0]], 
+              RGBColor[1, 0.5, 0]], 
              Directive[
               Opacity[1.], 
               CapForm["Butt"], 
@@ -44264,7 +44264,7 @@ rEK8zLxo3bQaB////4X/A3nC4fE=
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Line[CompressedData["
 1:eJw12Xc81e8XAHDbvRcN695rZJVZlGRkPMeIUDKiYVTKCAmJirhcK0lGizIa
 KEVJQjK/lJYkFUlJdhIRReV3/PH7677er9e995mfc57zfOTcD9p7cHFwcMRz
@@ -44694,7 +44694,7 @@ yYY5FXn8//cL/wezMIN7
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Directive[
             Opacity[1.], 
             CapForm["Butt"], 
@@ -44757,7 +44757,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
      FrameStyle -> Automatic, 
      FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
      GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-       GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+       GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
      Method -> {
       "DefaultBoundaryStyle" -> Automatic, 
        "DefaultGraphicsInteraction" -> {
@@ -44820,7 +44820,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -44831,7 +44831,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -44846,22 +44846,22 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -44872,7 +44872,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -44883,7 +44883,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -44898,7 +44898,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -44909,7 +44909,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -44925,7 +44925,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -44954,7 +44954,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
-                   TemplateBox[<|"color" -> RGBColor[1, Decimal("0.5"), 0]|>, 
+                   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -45374,7 +45374,7 @@ UKknVibF5+vXSqIVHc8e9bV74i2690xn5STR8yaDZ3Xznvh/dyrWKw==
              Opacity[1.], 
              CapForm["Butt"], 
              AbsoluteThickness[1.6], 
-             RGBColor[1, Decimal("0.5"), 0]], 
+             RGBColor[1, 0.5, 0]], 
             LineBox[CompressedData["
 1:eJwV2Xc8ld8fAHCrQilxn4ukjMpOVhH1OdnbpUIkJRqSPUpG9r31TRIqGZlF
 Ucgo41RoWlklkSRJ1r0XWdXv+f11X+/Xc15nfMZ57n1dKVdvW3cuDg6OZE4O
@@ -45985,7 +45985,7 @@ UKknVibF5+vXSqIVHc8e9bV74i2690xn5STR8yaDZ3Xznvh/dyrWKw==
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Line[CompressedData["
 1:eJwV2Xc8ld8fAHCrQilxn4ukjMpOVhH1OdnbpUIkJRqSPUpG9r31TRIqGZlF
 Ucgo41RoWlklkSRJ1r0XWdXv+f11X+/Xc15nfMZ57n1dKVdvW3cuDg6OZE4O
@@ -46452,7 +46452,7 @@ fANevpJH37uchhTpmugAvw5Wbj9ZlqZAQ/VL7p4Ur9XBaxNl/zWspCG3tlH1
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Directive[
                Opacity[1.], 
                CapForm["Butt"], 
@@ -46492,7 +46492,7 @@ fANevpJH37uchhTpmugAvw5Wbj9ZlqZAQ/VL7p4Ur9XBaxNl/zWspCG3tlH1
               Opacity[1.], 
               CapForm["Butt"], 
               AbsoluteThickness[1.6], 
-              RGBColor[1, Decimal("0.5"), 0]], 
+              RGBColor[1, 0.5, 0]], 
              Directive[
               Opacity[1.], 
               CapForm["Butt"], 
@@ -46669,7 +46669,7 @@ UKknVibF5+vXSqIVHc8e9bV74i2690xn5STR8yaDZ3Xznvh/dyrWKw==
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Line[CompressedData["
 1:eJwV2Xc8ld8fAHCrQilxn4ukjMpOVhH1OdnbpUIkJRqSPUpG9r31TRIqGZlF
 Ucgo41RoWlklkSRJ1r0XWdXv+f11X+/Xc15nfMZ57n1dKVdvW3cuDg6OZE4O
@@ -47135,7 +47135,7 @@ fANevpJH37uchhTpmugAvw5Wbj9ZlqZAQ/VL7p4Ur9XBaxNl/zWspCG3tlH1
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Directive[
             Opacity[1.], 
             CapForm["Butt"], 
@@ -47198,7 +47198,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
      FrameStyle -> Automatic, 
      FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
      GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-       GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+       GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
      Method -> {
       "DefaultBoundaryStyle" -> Automatic, 
        "DefaultGraphicsInteraction" -> {
@@ -47262,7 +47262,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -47273,7 +47273,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -47288,22 +47288,22 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -47314,7 +47314,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -47325,7 +47325,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -47340,7 +47340,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -47351,7 +47351,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -47367,7 +47367,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -47396,7 +47396,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
-                   TemplateBox[<|"color" -> RGBColor[1, Decimal("0.5"), 0]|>, 
+                   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -47747,7 +47747,7 @@ kENxbLlHB/y9QNvors1fJTlkFZK2P8zMC/4HOWyOcQ==
              Opacity[1.], 
              CapForm["Butt"], 
              AbsoluteThickness[1.6], 
-             RGBColor[1, Decimal("0.5"), 0]], 
+             RGBColor[1, 0.5, 0]], 
             LineBox[CompressedData["
 1:eJwVlnk4VO8bxi0VKWWZM4wWS7Y2lZJEPW9KkmQp0UZ2M8mSfSnLnNAmFElk
 Cy2WUBTlLUuWJGUtKcpWCDNjCV/9zu+vuT7Xmet9nvt+n/s5R97WzcxBgI+P
@@ -48359,7 +48359,7 @@ kENxbLlHB/y9QNvors1fJTlkFZK2P8zMC/4HOWyOcQ==
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Line[CompressedData["
 1:eJwVlnk4VO8bxi0VKWWZM4wWS7Y2lZJEPW9KkmQp0UZ2M8mSfSnLnNAmFElk
 Cy2WUBTlLUuWJGUtKcpWCDNjCV/9zu+vuT7Xmet9nvt+n/s5R97WzcxBgI+P
@@ -48825,7 +48825,7 @@ KMiHAfINl/JjZKQQu1nxq/ABBiiFS/yrXiOFsgTLleKAAVt1s81m10qh7YkT
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Directive[
                Opacity[1.], 
                CapForm["Butt"], 
@@ -48864,7 +48864,7 @@ KMiHAfINl/JjZKQQu1nxq/ABBiiFS/yrXiOFsgTLleKAAVt1s81m10qh7YkT
               Opacity[1.], 
               CapForm["Butt"], 
               AbsoluteThickness[1.6], 
-              RGBColor[1, Decimal("0.5"), 0]], 
+              RGBColor[1, 0.5, 0]], 
              Directive[
               Opacity[1.], 
               CapForm["Butt"], 
@@ -49043,7 +49043,7 @@ kENxbLlHB/y9QNvors1fJTlkFZK2P8zMC/4HOWyOcQ==
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Line[CompressedData["
 1:eJwVlnk4VO8bxi0VKWWZM4wWS7Y2lZJEPW9KkmQp0UZ2M8mSfSnLnNAmFElk
 Cy2WUBTlLUuWJGUtKcpWCDNjCV/9zu+vuT7Xmet9nvt+n/s5R97WzcxBgI+P
@@ -49508,7 +49508,7 @@ KMiHAfINl/JjZKQQu1nxq/ABBiiFS/yrXiOFsgTLleKAAVt1s81m10qh7YkT
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Directive[
             Opacity[1.], 
             CapForm["Butt"], 
@@ -49569,7 +49569,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
      FrameStyle -> Automatic, 
      FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
      GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-       GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+       GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
      Method -> {
       "DefaultBoundaryStyle" -> Automatic, 
        "DefaultGraphicsInteraction" -> {
@@ -49629,7 +49629,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -49640,7 +49640,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -49655,22 +49655,22 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -49681,7 +49681,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -49692,7 +49692,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -49707,7 +49707,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -49718,7 +49718,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -49734,7 +49734,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -49763,7 +49763,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
-                   TemplateBox[<|"color" -> RGBColor[1, Decimal("0.5"), 0]|>, 
+                   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -50145,7 +50145,7 @@ vdL7tyKCDwDklxkE
              Opacity[1.], 
              CapForm["Butt"], 
              AbsoluteThickness[1.6], 
-             RGBColor[1, Decimal("0.5"), 0]], 
+             RGBColor[1, 0.5, 0]], 
             LineBox[CompressedData["
 1:eJxTTMoPSmViYGDwBmIQzbyf69xj00Y7BihQfbnPWm5yvD2M/2uDfsrNSflw
 /lORjB/bJtXD+bfcWg4tndQP51+Nn6Q+d9J8OD8oR/LWjEnr7UtSorWmXz24
@@ -50262,7 +50262,7 @@ vdL7tyKCDwDklxkE
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Line[CompressedData["
 1:eJxTTMoPSmViYGDwBmIQzbyf69xj00Y7BihQfbnPWm5yvD2M/2uDfsrNSflw
 /lORjB/bJtXD+bfcWg4tndQP51+Nn6Q+d9J8OD8oR/LWjEnr7UtSorWmXz24
@@ -50360,7 +50360,7 @@ Ko/gG1qv9P6tiOADAChmDao=
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Directive[
                Opacity[1.], 
                CapForm["Butt"], 
@@ -50401,7 +50401,7 @@ Ko/gG1qv9P6tiOADAChmDao=
               Opacity[1.], 
               CapForm["Butt"], 
               AbsoluteThickness[1.6], 
-              RGBColor[1, Decimal("0.5"), 0]], 
+              RGBColor[1, 0.5, 0]], 
              Directive[
               Opacity[1.], 
               CapForm["Butt"], 
@@ -50454,7 +50454,7 @@ vdL7tyKCDwDklxkE
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Line[CompressedData["
 1:eJxTTMoPSmViYGDwBmIQzbyf69xj00Y7BihQfbnPWm5yvD2M/2uDfsrNSflw
 /lORjB/bJtXD+bfcWg4tndQP51+Nn6Q+d9J8OD8oR/LWjEnr7UtSorWmXz24
@@ -50552,7 +50552,7 @@ Ko/gG1qv9P6tiOADAChmDao=
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Directive[
             Opacity[1.], 
             CapForm["Butt"], 
@@ -50616,7 +50616,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
      FrameStyle -> Automatic, 
      FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
      GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-       GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+       GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
      Method -> {
       "DefaultBoundaryStyle" -> Automatic, 
        "DefaultGraphicsInteraction" -> {
@@ -50681,7 +50681,7 @@ FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -50692,7 +50692,7 @@ FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -50707,22 +50707,22 @@ FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -50733,7 +50733,7 @@ FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -50744,7 +50744,7 @@ FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -50759,7 +50759,7 @@ FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -50770,7 +50770,7 @@ FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -50786,7 +50786,7 @@ FontColor->RGBColor[0., 0., \
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -50815,7 +50815,7 @@ FontColor->RGBColor[0., 0., \
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
-                   TemplateBox[<|"color" -> RGBColor[1, Decimal("0.5"), 0]|>, 
+                   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -51286,7 +51286,7 @@ H2VU7oA=
              Opacity[1.], 
              CapForm["Butt"], 
              AbsoluteThickness[1.6], 
-             RGBColor[1, Decimal("0.5"), 0]], 
+             RGBColor[1, 0.5, 0]], 
             LineBox[CompressedData["
 1:eJwt2Xk01N//B3BStlQ07xlUtohSWiyF6HVTZAktkmRLkZAtJFmSNcvMOx/J
 UpLKkp2yJVeLSgltyBJFyDpjiSR+7+85v7/mPM7MvM773vt6vu6cMzL27kcc
@@ -51896,7 +51896,7 @@ H2VU7oA=
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Line[CompressedData["
 1:eJwt2Xk01N//B3BStlQ07xlUtohSWiyF6HVTZAktkmRLkZAtJFmSNcvMOx/J
 UpLKkp2yJVeLSgltyBJFyDpjiSR+7+85v7/mPM7MvM773vt6vu6cMzL27kcc
@@ -52360,7 +52360,7 @@ yjwrgdd8uZQTIyOF4mdKpPWuiOCN4cy/VaukUPdZ7Hr+ytTLzdpZxrNyFP//
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Directive[
                Opacity[1.], 
                CapForm["Butt"], 
@@ -52399,7 +52399,7 @@ yjwrgdd8uZQTIyOF4mdKpPWuiOCN4cy/VaukUPdZ7Hr+ytTLzdpZxrNyFP//
               Opacity[1.], 
               CapForm["Butt"], 
               AbsoluteThickness[1.6], 
-              RGBColor[1, Decimal("0.5"), 0]], 
+              RGBColor[1, 0.5, 0]], 
              Directive[
               Opacity[1.], 
               CapForm["Butt"], 
@@ -52578,7 +52578,7 @@ H2VU7oA=
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Line[CompressedData["
 1:eJwt2Xk01N//B3BStlQ07xlUtohSWiyF6HVTZAktkmRLkZAtJFmSNcvMOx/J
 UpLKkp2yJVeLSgltyBJFyDpjiSR+7+85v7/mPM7MvM773vt6vu6cMzL27kcc
@@ -53041,7 +53041,7 @@ yjwrgdd8uZQTIyOF4mdKpPWuiOCN4cy/VaukUPdZ7Hr+ytTLzdpZxrNyFP//
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Directive[
             Opacity[1.], 
             CapForm["Butt"], 
@@ -53104,7 +53104,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
      FrameStyle -> Automatic, 
      FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
      GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-       GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+       GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
      Method -> {
       "DefaultBoundaryStyle" -> Automatic, 
        "DefaultGraphicsInteraction" -> {
@@ -53167,7 +53167,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -53178,7 +53178,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -53193,22 +53193,22 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -53219,7 +53219,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -53230,7 +53230,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -53245,7 +53245,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -53256,7 +53256,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -53272,7 +53272,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -53301,7 +53301,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
-                   TemplateBox[<|"color" -> RGBColor[1, Decimal("0.5"), 0]|>, 
+                   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -53705,7 +53705,7 @@ YfNhGl4VJztdv0QeoRzjfP9hQay9Kd9iUoXE////w6r/Dz/Z6mU=
              Opacity[1.], 
              CapForm["Butt"], 
              AbsoluteThickness[1.6], 
-             RGBColor[1, Decimal("0.5"), 0]], 
+             RGBColor[1, 0.5, 0]], 
             LineBox[CompressedData["
 1:eJwt2Xk0VO//AHBStlQ0dwaVLaKUFmkhej8pshStkoQUspQlKbJmDTNz85FQ
 SSo7WUoSHi1KJbQhS1SSrDOWSOj3fM/5/TXnde6973Of570895xRsnff5zBL
@@ -54313,7 +54313,7 @@ YfNhGl4VJztdv0QeoRzjfP9hQay9Kd9iUoXE////w6r/Dz/Z6mU=
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Line[CompressedData["
 1:eJwt2Xk0VO//AHBStlQ0dwaVLaKUFmkhej8pshStkoQUspQlKbJmDTNz85FQ
 SSo7WUoSHi1KJbQhS1SSrDOWSOj3fM/5/TXnde6973Of570895xRsnff5zBL
@@ -54775,7 +54775,7 @@ sSJS6k+FEr3+pzzbdHPbi9XGmdazKjT///+S0v8B5LaldA==
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Directive[
                Opacity[1.], 
                CapForm["Butt"], 
@@ -54814,7 +54814,7 @@ sSJS6k+FEr3+pzzbdHPbi9XGmdazKjT///+S0v8B5LaldA==
               Opacity[1.], 
               CapForm["Butt"], 
               AbsoluteThickness[1.6], 
-              RGBColor[1, Decimal("0.5"), 0]], 
+              RGBColor[1, 0.5, 0]], 
              Directive[
               Opacity[1.], 
               CapForm["Butt"], 
@@ -54992,7 +54992,7 @@ YfNhGl4VJztdv0QeoRzjfP9hQay9Kd9iUoXE////w6r/Dz/Z6mU=
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Line[CompressedData["
 1:eJwt2Xk0VO//AHBStlQ0dwaVLaKUFmkhej8pshStkoQUspQlKbJmDTNz85FQ
 SSo7WUoSHi1KJbQhS1SSrDOWSOj3fM/5/TXnde6973Of570895xRsnff5zBL
@@ -55454,7 +55454,7 @@ sSJS6k+FEr3+pzzbdHPbi9XGmdazKjT///+S0v8B5LaldA==
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Directive[
             Opacity[1.], 
             CapForm["Butt"], 
@@ -55515,7 +55515,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
      FrameStyle -> Automatic, 
      FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
      GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-       GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+       GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
      Method -> {
       "DefaultBoundaryStyle" -> Automatic, 
        "DefaultGraphicsInteraction" -> {
@@ -55576,7 +55576,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -55587,7 +55587,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -55602,22 +55602,22 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -55628,7 +55628,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -55639,7 +55639,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -55654,7 +55654,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -55665,7 +55665,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -55681,7 +55681,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -55710,7 +55710,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
-                   TemplateBox[<|"color" -> RGBColor[1, Decimal("0.5"), 0]|>, 
+                   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -56153,7 +56153,7 @@ dw==
              Opacity[1.], 
              CapForm["Butt"], 
              AbsoluteThickness[1.6], 
-             RGBColor[1, Decimal("0.5"), 0]], 
+             RGBColor[1, 0.5, 0]], 
             LineBox[CompressedData["
 1:eJw12Hk41N/3AHD7LMwYxMwUJVqkkmSpLPc0ydpXlihrUpYkIWlT6pOkqOwi
 W4slUgkha0IqSUiWFIoSiZKE8jv++P01z+t55rn3fe/7vO895yx2OWjpKsDH
@@ -56691,7 +56691,7 @@ dw==
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Line[CompressedData["
 1:eJw12Hk41N/3AHD7LMwYxMwUJVqkkmSpLPc0ydpXlihrUpYkIWlT6pOkqOwi
 W4slUgkha0IqSUiWFIoSiZKE8jv++P01z+t55rn3fe/7vO895yx2OWjpKsDH
@@ -57100,7 +57100,7 @@ WSshAXmlQwPR6C2at43mZCXg//fL/wP9OFNV
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Directive[
                Opacity[1.], 
                CapForm["Butt"], 
@@ -57139,7 +57139,7 @@ WSshAXmlQwPR6C2at43mZCXg//fL/wP9OFNV
               Opacity[1.], 
               CapForm["Butt"], 
               AbsoluteThickness[1.6], 
-              RGBColor[1, Decimal("0.5"), 0]], 
+              RGBColor[1, 0.5, 0]], 
              Directive[
               Opacity[1.], 
               CapForm["Butt"], 
@@ -57300,7 +57300,7 @@ dw==
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Line[CompressedData["
 1:eJw12Hk41N/3AHD7LMwYxMwUJVqkkmSpLPc0ydpXlihrUpYkIWlT6pOkqOwi
 W4slUgkha0IqSUiWFIoSiZKE8jv++P01z+t55rn3fe/7vO895yx2OWjpKsDH
@@ -57709,7 +57709,7 @@ WSshAXmlQwPR6C2at43mZCXg//fL/wP9OFNV
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Directive[
             Opacity[1.], 
             CapForm["Butt"], 
@@ -57772,7 +57772,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
      FrameStyle -> Automatic, 
      FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
      GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-       GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+       GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
      Method -> {
       "DefaultBoundaryStyle" -> Automatic, 
        "DefaultGraphicsInteraction" -> {
@@ -57833,7 +57833,7 @@ RGBColor[0., 0., 0.]]]\\)\"", TraditionalForm], PlotRange ->
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -57844,7 +57844,7 @@ RGBColor[0., 0., 0.]]]\\)\"", TraditionalForm], PlotRange ->
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -57859,22 +57859,22 @@ RGBColor[0., 0., 0.]]]\\)\"", TraditionalForm], PlotRange ->
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -57885,7 +57885,7 @@ RGBColor[0., 0., 0.]]]\\)\"", TraditionalForm], PlotRange ->
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -57896,7 +57896,7 @@ RGBColor[0., 0., 0.]]]\\)\"", TraditionalForm], PlotRange ->
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -57911,7 +57911,7 @@ RGBColor[0., 0., 0.]]]\\)\"", TraditionalForm], PlotRange ->
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -57922,7 +57922,7 @@ RGBColor[0., 0., 0.]]]\\)\"", TraditionalForm], PlotRange ->
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -57938,7 +57938,7 @@ RGBColor[0., 0., 0.]]]\\)\"", TraditionalForm], PlotRange ->
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -57967,7 +57967,7 @@ RGBColor[0., 0., 0.]]]\\)\"", TraditionalForm], PlotRange ->
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
-                   TemplateBox[<|"color" -> RGBColor[1, Decimal("0.5"), 0]|>, 
+                   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -58401,7 +58401,7 @@ Y0EwZ5q/kkPIoqXXbhSuWBwM8wXhTDlbFoFF7qodusHAPunEXCUrixSdTz6y
              Opacity[1.], 
              CapForm["Butt"], 
              AbsoluteThickness[1.6], 
-             RGBColor[1, Decimal("0.5"), 0]], 
+             RGBColor[1, 0.5, 0]], 
             LineBox[CompressedData["
 1:eJwV1nk8FO8fAHBRclXszjoq0l2OlJIUPk8lyllSulhRfYVcSbkVYQdhd5AU
 USFJSqSSBxG5UkSuyH3fdOc3v7/29X69Zj6zz+eaWWntZHqWn4+P7/48Pr7/
@@ -59015,7 +59015,7 @@ Y0EwZ5q/kkPIoqXXbhSuWBwM8wXhTDlbFoFF7qodusHAPunEXCUrixSdTz6y
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Line[CompressedData["
 1:eJwV1nk8FO8fAHBRclXszjoq0l2OlJIUPk8lyllSulhRfYVcSbkVYQdhd5AU
 USFJSqSSBxG5UkSuyH3fdOc3v7/29X69Zj6zz+eaWWntZHqWn4+P7/48Pr7/
@@ -59485,7 +59485,7 @@ Fg==
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Directive[
                Opacity[1.], 
                CapForm["Butt"], 
@@ -59524,7 +59524,7 @@ Fg==
               Opacity[1.], 
               CapForm["Butt"], 
               AbsoluteThickness[1.6], 
-              RGBColor[1, Decimal("0.5"), 0]], 
+              RGBColor[1, 0.5, 0]], 
              Directive[
               Opacity[1.], 
               CapForm["Butt"], 
@@ -59701,7 +59701,7 @@ Y0EwZ5q/kkPIoqXXbhSuWBwM8wXhTDlbFoFF7qodusHAPunEXCUrixSdTz6y
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Line[CompressedData["
 1:eJwV1nk8FO8fAHBRclXszjoq0l2OlJIUPk8lyllSulhRfYVcSbkVYQdhd5AU
 USFJSqSSBxG5UkSuyH3fdOc3v7/29X69Zj6zz+eaWWntZHqWn4+P7/48Pr7/
@@ -60170,7 +60170,7 @@ Fg==
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Directive[
             Opacity[1.], 
             CapForm["Butt"], 
@@ -60233,7 +60233,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
      FrameStyle -> Automatic, 
      FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
      GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-       GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+       GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
      Method -> {
       "DefaultBoundaryStyle" -> Automatic, 
        "DefaultGraphicsInteraction" -> {
@@ -60297,7 +60297,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -60308,7 +60308,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -60323,22 +60323,22 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -60349,7 +60349,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -60360,7 +60360,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -60375,7 +60375,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -60386,7 +60386,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -60402,7 +60402,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -60431,7 +60431,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
-                   TemplateBox[<|"color" -> RGBColor[1, Decimal("0.5"), 0]|>, 
+                   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -60779,7 +60779,7 @@ sccfFDrCS9gyUoh/oSlydtEflCMkFhplpdCDmJLg7woBoLbr1sE/8lKo6635
              Opacity[1.], 
              CapForm["Butt"], 
              AbsoluteThickness[1.6], 
-             RGBColor[1, Decimal("0.5"), 0]], 
+             RGBColor[1, 0.5, 0]], 
             LineBox[CompressedData["
 1:eJwVlnc8lt8bx6UUUuG+H6tIoYWk0KLrVEpoSigzqaSykiIjm7vM56YkIxUa
 lOyMI6UykjIzsveWFfn63b+/ntf7dT+vc65zfT7X55x15jY6Fzk5ODieLuLg
@@ -61394,7 +61394,7 @@ sccfFDrCS9gyUoh/oSlydtEflCMkFhplpdCDmJLg7woBoLbr1sE/8lKo6635
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Line[CompressedData["
 1:eJwVlnc8lt8bx6UUUuG+H6tIoYWk0KLrVEpoSigzqaSykiIjm7vM56YkIxUa
 lOyMI6UykjIzsveWFfn63b+/ntf7dT+vc65zfT7X55x15jY6Fzk5ODieLuLg
@@ -61864,7 +61864,7 @@ mC95riYwmbykbp80E/11M+S+MDGFOfN01TAaE00HRxamh5iC8Dw48ZrORP7X
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Directive[
                Opacity[1.], 
                CapForm["Butt"], 
@@ -61903,7 +61903,7 @@ mC95riYwmbykbp80E/11M+S+MDGFOfN01TAaE00HRxamh5iC8Dw48ZrORP7X
               Opacity[1.], 
               CapForm["Butt"], 
               AbsoluteThickness[1.6], 
-              RGBColor[1, Decimal("0.5"), 0]], 
+              RGBColor[1, 0.5, 0]], 
              Directive[
               Opacity[1.], 
               CapForm["Butt"], 
@@ -62081,7 +62081,7 @@ sccfFDrCS9gyUoh/oSlydtEflCMkFhplpdCDmJLg7woBoLbr1sE/8lKo6635
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Line[CompressedData["
 1:eJwVlnc8lt8bx6UUUuG+H6tIoYWk0KLrVEpoSigzqaSykiIjm7vM56YkIxUa
 lOyMI6UykjIzsveWFfn63b+/ntf7dT+vc65zfT7X55x15jY6Fzk5ODieLuLg
@@ -62550,7 +62550,7 @@ mC95riYwmbykbp80E/11M+S+MDGFOfN01TAaE00HRxamh5iC8Dw48ZrORP7X
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Directive[
             Opacity[1.], 
             CapForm["Butt"], 
@@ -62611,7 +62611,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
      FrameStyle -> Automatic, 
      FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
      GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-       GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+       GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
      Method -> {
       "DefaultBoundaryStyle" -> Automatic, 
        "DefaultGraphicsInteraction" -> {
@@ -62672,7 +62672,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -62683,7 +62683,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -62698,22 +62698,22 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -62724,7 +62724,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -62735,7 +62735,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -62750,7 +62750,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -62761,7 +62761,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -62777,7 +62777,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -62806,7 +62806,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
-                   TemplateBox[<|"color" -> RGBColor[1, Decimal("0.5"), 0]|>, 
+                   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -63230,7 +63230,7 @@ Z7sRr9bJ3jGrwIb//7/wP0Bw2Mg=
              Opacity[1.], 
              CapForm["Butt"], 
              AbsoluteThickness[1.6], 
-             RGBColor[1, Decimal("0.5"), 0]], 
+             RGBColor[1, 0.5, 0]], 
             LineBox[CompressedData["
 1:eJw12Hk0Ve/3B3DjnbjXNd57iwoNUkklkuHsZNZXhlLGSkRIqDSJ+iRDVGaR
 MZlTCZkdCakkRSIpQzRJlEoov+2P3193vdZd65zznLXP8+z9lnc+bOUqwMfH
@@ -63769,7 +63769,7 @@ Z7sRr9bJ3jGrwIb//7/wP0Bw2Mg=
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Line[CompressedData["
 1:eJw12Hk0Ve/3B3DjnbjXNd57iwoNUkklkuHsZNZXhlLGSkRIqDSJ+iRDVGaR
 MZlTCZkdCakkRSIpQzRJlEoov+2P3193vdZd65zznLXP8+z9lnc+bOUqwMfH
@@ -64179,7 +64179,7 @@ cl6+Xlwc8suG30Sjt2rcNp6TFof/vy//D+YHDd8=
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Directive[
                Opacity[1.], 
                CapForm["Butt"], 
@@ -64218,7 +64218,7 @@ cl6+Xlwc8suG30Sjt2rcNp6TFof/vy//D+YHDd8=
               Opacity[1.], 
               CapForm["Butt"], 
               AbsoluteThickness[1.6], 
-              RGBColor[1, Decimal("0.5"), 0]], 
+              RGBColor[1, 0.5, 0]], 
              Directive[
               Opacity[1.], 
               CapForm["Butt"], 
@@ -64379,7 +64379,7 @@ Z7sRr9bJ3jGrwIb//7/wP0Bw2Mg=
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Line[CompressedData["
 1:eJw12Hk0Ve/3B3DjnbjXNd57iwoNUkklkuHsZNZXhlLGSkRIqDSJ+iRDVGaR
 MZlTCZkdCakkRSIpQzRJlEoov+2P3193vdZd65zznLXP8+z9lnc+bOUqwMfH
@@ -64789,7 +64789,7 @@ cl6+Xlwc8suG30Sjt2rcNp6TFof/vy//D+YHDd8=
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Directive[
             Opacity[1.], 
             CapForm["Butt"], 
@@ -64852,7 +64852,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
      FrameStyle -> Automatic, 
      FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
      GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-       GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+       GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
      Method -> {
       "DefaultBoundaryStyle" -> Automatic, 
        "DefaultGraphicsInteraction" -> {
@@ -64913,7 +64913,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -64924,7 +64924,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -64939,22 +64939,22 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -64965,7 +64965,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -64976,7 +64976,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -64991,7 +64991,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -65002,7 +65002,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -65018,7 +65018,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -65047,7 +65047,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
-                   TemplateBox[<|"color" -> RGBColor[1, Decimal("0.5"), 0]|>, 
+                   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -65484,7 +65484,7 @@ vE0sL/w/HVc8Hg==
              Opacity[1.], 
              CapForm["Butt"], 
              AbsoluteThickness[1.6], 
-             RGBColor[1, Decimal("0.5"), 0]], 
+             RGBColor[1, 0.5, 0]], 
             LineBox[CompressedData["
 1:eJwVl3k4VO0bxy2FRIk5g6RQksoaieR+kggtWsRbiSwlyZIt+84Y+8xQiYis
 haJSiccrVCrZU15JhLIzdvI7v7/m+lzznOt7L9/7fs6RtnY+ZcfFwcGRysnB
@@ -66099,7 +66099,7 @@ vE0sL/w/HVc8Hg==
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Line[CompressedData["
 1:eJwVl3k4VO0bxy2FRIk5g6RQksoaieR+kggtWsRbiSwlyZIt+84Y+8xQiYis
 haJSiccrVCrZU15JhLIzdvI7v7/m+lzznOt7L9/7fs6RtnY+ZcfFwcGRysnB
@@ -66566,7 +66566,7 @@ SwfmPLGUDNvxqJQkMvxaa2Hf5Inl2s+UpqyTRD7+g1SXTE+sGC/+t1GGdFJT
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Directive[
                Opacity[1.], 
                CapForm["Butt"], 
@@ -66605,7 +66605,7 @@ SwfmPLGUDNvxqJQkMvxaa2Hf5Inl2s+UpqyTRD7+g1SXTE+sGC/+t1GGdFJT
               Opacity[1.], 
               CapForm["Butt"], 
               AbsoluteThickness[1.6], 
-              RGBColor[1, Decimal("0.5"), 0]], 
+              RGBColor[1, 0.5, 0]], 
              Directive[
               Opacity[1.], 
               CapForm["Butt"], 
@@ -66785,7 +66785,7 @@ vE0sL/w/HVc8Hg==
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Line[CompressedData["
 1:eJwVl3k4VO0bxy2FRIk5g6RQksoaieR+kggtWsRbiSwlyZIt+84Y+8xQiYis
 haJSiccrVCrZU15JhLIzdvI7v7/m+lzznOt7L9/7fs6RtnY+ZcfFwcGRysnB
@@ -67252,7 +67252,7 @@ SwfmPLGUDNvxqJQkMvxaa2Hf5Inl2s+UpqyTRD7+g1SXTE+sGC/+t1GGdFJT
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Directive[
             Opacity[1.], 
             CapForm["Butt"], 
@@ -67315,7 +67315,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
      FrameStyle -> Automatic, 
      FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
      GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-       GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+       GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
      Method -> {
       "DefaultBoundaryStyle" -> Automatic, 
        "DefaultGraphicsInteraction" -> {
@@ -67379,7 +67379,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -67390,7 +67390,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -67405,22 +67405,22 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -67431,7 +67431,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -67442,7 +67442,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -67457,7 +67457,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -67468,7 +67468,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -67484,7 +67484,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -67513,7 +67513,7 @@ RGBColor[0., 0., 0.]]],FontWeight->\\\"Normal\\\",FontColor->RGBColor[0., 0., \
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
-                   TemplateBox[<|"color" -> RGBColor[1, Decimal("0.5"), 0]|>, 
+                   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -67863,7 +67863,7 @@ iNczpOdqFGXR4ezj+x+4BuJNO/IPclfKogxP/rAmw0D8PyHYGuw=
              Opacity[1.], 
              CapForm["Butt"], 
              AbsoluteThickness[1.6], 
-             RGBColor[1, Decimal("0.5"), 0]], 
+             RGBColor[1, 0.5, 0]], 
             LineBox[CompressedData["
 1:eJwVlnk8lF8bxi0VabPMM6hEWhSylELRfdKKQiRSUggpe4hkXyf7DJVsKUtC
 oiyR4ydaJBSKpj0hEsYMQnnP+9d8vp95nue6l+u+z1lt62Z6RoCPjy+dn4/v
@@ -68477,7 +68477,7 @@ iNczpOdqFGXR4ezj+x+4BuJNO/IPclfKogxP/rAmw0D8PyHYGuw=
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Line[CompressedData["
 1:eJwVlnk8lF8bxi0VabPMM6hEWhSylELRfdKKQiRSUggpe4hkXyf7DJVsKUtC
 oiyR4ydaJBSKpj0hEsYMQnnP+9d8vp95nue6l+u+z1lt62Z6RoCPjy+dn4/v
@@ -68945,7 +68945,7 @@ kNCLr/5uBiZ4q/ojo1kZKbTLfsymR9gE/w8uey+z
                Opacity[1.], 
                CapForm["Butt"], 
                AbsoluteThickness[1.6], 
-               RGBColor[1, Decimal("0.5"), 0]], 
+               RGBColor[1, 0.5, 0]], 
               Directive[
                Opacity[1.], 
                CapForm["Butt"], 
@@ -68984,7 +68984,7 @@ kNCLr/5uBiZ4q/ojo1kZKbTLfsymR9gE/w8uey+z
               Opacity[1.], 
               CapForm["Butt"], 
               AbsoluteThickness[1.6], 
-              RGBColor[1, Decimal("0.5"), 0]], 
+              RGBColor[1, 0.5, 0]], 
              Directive[
               Opacity[1.], 
               CapForm["Butt"], 
@@ -69163,7 +69163,7 @@ iNczpOdqFGXR4ezj+x+4BuJNO/IPclfKogxP/rAmw0D8PyHYGuw=
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Line[CompressedData["
 1:eJwVlnk8lF8bxi0VabPMM6hEWhSylELRfdKKQiRSUggpe4hkXyf7DJVsKUtC
 oiyR4ydaJBSKpj0hEsYMQnnP+9d8vp95nue6l+u+z1lt62Z6RoCPjy+dn4/v
@@ -69630,7 +69630,7 @@ kNCLr/5uBiZ4q/ojo1kZKbTLfsymR9gE/w8uey+z
             Opacity[1.], 
             CapForm["Butt"], 
             AbsoluteThickness[1.6], 
-            RGBColor[1, Decimal("0.5"), 0]], 
+            RGBColor[1, 0.5, 0]], 
            Directive[
             Opacity[1.], 
             CapForm["Butt"], 
@@ -69691,7 +69691,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", HoldForm], TraditionalForm], None}},
      FrameStyle -> Automatic, 
      FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
      GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-       GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+       GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
      Method -> {
       "DefaultBoundaryStyle" -> Automatic, 
        "DefaultGraphicsInteraction" -> {
@@ -69752,7 +69752,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -69763,7 +69763,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -69778,22 +69778,22 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 12.5}, {20, 12.5}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 12.5}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.18000000000000002`] -> 
@@ -69804,7 +69804,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -69815,7 +69815,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -69830,7 +69830,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -69841,7 +69841,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -69857,7 +69857,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
                   GridBoxSpacings -> {
-                  "Columns" -> {{Decimal("0.5")}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxItemSize -> {
@@ -69886,7 +69886,7 @@ WW) (kinematic bin 2)\""}, "LineLegend", DisplayFunction -> (FormBox[
                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}], ",", 
                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
                    
-                   TemplateBox[<|"color" -> RGBColor[1, Decimal("0.5"), 0]|>, 
+                   TemplateBox[<|"color" -> RGBColor[1, 0.5, 0]|>, 
                     "RGBColorSwatchTemplate"]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -74337,7 +74337,7 @@ Cell[BoxData[
 \\(\\(0\\)\\(+\\)\\)]\\)(n=2)\"", TraditionalForm], 0}}, None}},
   GridLines->{None, Automatic},
   GridLinesStyle->Directive[
-    GrayLevel[0.4, Decimal("0.5")], 
+    GrayLevel[0.4, 0.5], 
     AbsoluteThickness[1], 
     AbsoluteDashing[{1, 2}]],
   ImageSize->Large,

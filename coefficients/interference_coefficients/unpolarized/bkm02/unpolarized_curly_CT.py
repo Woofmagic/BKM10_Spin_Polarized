@@ -39,16 +39,16 @@ def calculate_curly_CT_unpolarized_interference(
     try:
 
         # (1): Calculate the recurrent quantity:
-        two_minus_x_b = Decimal("2.") - x_Bjorken
+        two_minus_x_b = 2. - x_Bjorken
 
         # (2): Calculate the first term in the brackets:
         first_term_in_brackets = compton_form_factor_h * (two_minus_x_b * compton_form_factor_e - x_Bjorken * compton_form_factor_e)
 
         # (3): Calculate the second term in the brackets:
-        second_term_in_brackets = Decimal("2.") * two_minus_x_b * compton_form_factor_h_tilde * (compton_form_factor_h + (squared_hadronic_momentum_transfer_t * compton_form_factor_e / (Decimal("4.") * _MASS_OF_PROTON_IN_GEV**2)))
+        second_term_in_brackets = 2. * two_minus_x_b * compton_form_factor_h_tilde * (compton_form_factor_h + (squared_hadronic_momentum_transfer_t * compton_form_factor_e / (4. * _MASS_OF_PROTON_IN_GEV**2)))
 
         # (4): Calculate the third term in the brackets:
-        third_term_in_brackets = Decimal("-1.0") * compton_form_factor_e * (two_minus_x_b * compton_form_factor_h - x_Bjorken * compton_form_factor_h_tilde)
+        third_term_in_brackets = -1. * compton_form_factor_e * (two_minus_x_b * compton_form_factor_h - x_Bjorken * compton_form_factor_h_tilde)
 
         # (5): Calculate the fourth term in the brackets:
         fourth_term_in_brackets = compton_form_factor_e * (x_Bjorken * (compton_form_factor_h + compton_form_factor_e) - two_minus_x_b * compton_form_factor_h_tilde)

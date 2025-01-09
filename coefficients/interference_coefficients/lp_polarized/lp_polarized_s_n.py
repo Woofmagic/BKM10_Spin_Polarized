@@ -220,7 +220,7 @@ def calculate_s_1_interference_coefficient(
     
     except Exception as ERROR:
         print(f"> Error in s_1_interference_coefficient contribution to the interference term: \n> {ERROR}")
-        return Decimal("0.0")
+        return 0.
     
 def calculate_s_2_interference_coefficient(
     n_number: int,
@@ -429,7 +429,7 @@ def calculate_s_2_interference_coefficient(
     
     except Exception as ERROR:
         print(f"> Error in s_2_interference_coefficient contribution to the interference term: \n> {ERROR}")
-        return Decimal("0.0")
+        return 0.
     
 def calculate_s_3_interference_coefficient(
     n_number: int,
@@ -616,4 +616,4 @@ def calculate_s_3_interference_coefficient(
     
     except Exception as ERROR:
         print(f"> Error in s_3_interference_coefficient contribution to the interference term: \n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

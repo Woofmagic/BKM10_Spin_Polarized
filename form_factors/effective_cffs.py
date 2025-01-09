@@ -34,9 +34,9 @@ def compute_cff_effective(
 
         # (1): Do the calculation in one line:
         if use_ww:
-            cff_effective = Decimal("2.") * compton_form_factor / (Decimal("1.") + skewness_parameter)
+            cff_effective = 2. * compton_form_factor / (1. + skewness_parameter)
         else:
-            cff_effective = Decimal("2.") * skewness_parameter * compton_form_factor / (Decimal("1.") + skewness_parameter)
+            cff_effective = 2. * skewness_parameter * compton_form_factor / (1. + skewness_parameter)
 
         # (1.1): If verbose, log the output:
         if verbose:
@@ -47,7 +47,7 @@ def compute_cff_effective(
 
     except Exception as ERROR:
         print(f"> Error in calculating F_effective:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.
     
 def compute_cff_transverse(
     compton_form_factor: float,

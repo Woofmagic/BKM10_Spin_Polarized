@@ -18,16 +18,16 @@ def calculate_c_2_zero_plus_longitudinally_polarized_A(
     try:
 
         # (1): Calculate the annoying quantity sqrt(1 - y - y^{2} epsilon^{2} / 2)
-        root_combination_of_y_and_epsilon = sqrt(Decimal("1.") - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0")))
+        root_combination_of_y_and_epsilon = sqrt(1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.))
 
         # (2): Calculate the "prefactor":
-        prefactor = Decimal("8. ") * sqrt(Decimal("2.0")) * lepton_helicity * target_polarization * shorthand_k * lepton_energy_fraction_y / (Decimal("1.") + epsilon**2)**2
+        prefactor = 8. * sqrt(2.) * lepton_helicity * target_polarization * shorthand_k * lepton_energy_fraction_y / (1. + epsilon**2)**2
 
         # (3): Calculate t/Q^{2}:
         t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
         
         # (4): Calculate everything:
-        c_2_zero_plus_A_LP = prefactor * root_combination_of_y_and_epsilon * x_Bjorken * t_over_Q_squared * (Decimal("1.") + squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer)
+        c_2_zero_plus_A_LP = prefactor * root_combination_of_y_and_epsilon * x_Bjorken * t_over_Q_squared * (1. + squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer)
 
         # (4.1): If verbose, log the output:
         if verbose:

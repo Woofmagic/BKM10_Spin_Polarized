@@ -250,7 +250,7 @@ def calculate_c_0_interference_coefficient(
     
     except Exception as ERROR:
         print(f"> Error in c_0 contribution to the interference term: \n> {ERROR}")
-        return Decimal("0.0")
+        return 0.
     
 def calculate_c_1_interference_coefficient(
     n_number: int,
@@ -467,7 +467,7 @@ def calculate_c_1_interference_coefficient(
     
     except Exception as ERROR:
         print(f"> Error in c_1 contribution to the interference term: \n> {ERROR}")
-        return Decimal("0.0")
+        return 0.
     
 def calculate_c_2_interference_coefficient(
     n_number: int,
@@ -684,7 +684,7 @@ def calculate_c_2_interference_coefficient(
     
     except Exception as ERROR:
         print(f"> Error in c_2 contribution to the interference term: \n> {ERROR}")
-        return Decimal("0.0")
+        return 0.
     
 def calculate_c_3_interference_coefficient(
     n_number: int,
@@ -893,4 +893,4 @@ def calculate_c_3_interference_coefficient(
     
     except Exception as ERROR:
         print(f"> Error in c_3 contribution to the interference term: \n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

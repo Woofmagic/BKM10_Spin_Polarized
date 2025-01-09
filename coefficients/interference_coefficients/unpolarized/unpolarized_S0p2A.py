@@ -15,22 +15,22 @@ def calculate_s_2_zero_plus_unpolarized_A(
     try:
 
         # (1): Calculate the recurrent quantity sqrt(1 + epsilon^2):
-        root_one_plus_epsilon_squared = sqrt(Decimal("1.") + epsilon**2)
+        root_one_plus_epsilon_squared = sqrt(1. + epsilon**2)
 
         # (2): Calculate the recurrent quantity t/Q^{2}:
         t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
 
         # (3): Calculate 1 - x_{B}:
-        one_minus_xb = Decimal("1.") - x_Bjorken
+        one_minus_xb = 1. - x_Bjorken
 
         # (4): Calculate the annoying y quantity:
-        y_quantity = Decimal("1.") - lepton_energy_fraction_y - (epsilon**2 * lepton_energy_fraction_y**2 / Decimal("4.0"))
+        y_quantity = 1. - lepton_energy_fraction_y - (epsilon**2 * lepton_energy_fraction_y**2 / 4.)
 
         # (5): Calculate the main term:
-        main_term = Decimal("4.") * one_minus_xb + Decimal("2.") * epsilon**2 + Decimal("4.") * t_over_Q_squared * (Decimal("4.") * x_Bjorken * one_minus_xb + epsilon**2)
+        main_term = 4. * one_minus_xb + 2. * epsilon**2 + 4. * t_over_Q_squared * (4. * x_Bjorken * one_minus_xb + epsilon**2)
         
         # (6): Calculate part of the prefactor:
-        prefactor = Decimal("2.") * sqrt(Decimal("2.") * y_quantity) * lepton_helicity * shorthand_k * lepton_energy_fraction_y * t_over_Q_squared / root_one_plus_epsilon_squared**4
+        prefactor = 2. * sqrt(2. * y_quantity) * lepton_helicity * shorthand_k * lepton_energy_fraction_y * t_over_Q_squared / root_one_plus_epsilon_squared**4
         
         # (7): Calculate the coefficient:
         c_2_zero_plus_unp_A = prefactor * main_term
@@ -44,4 +44,4 @@ def calculate_s_2_zero_plus_unpolarized_A(
 
     except Exception as ERROR:
         print(f"> Error in calculating c_2_zero_plus_unp_A for Interference Term:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

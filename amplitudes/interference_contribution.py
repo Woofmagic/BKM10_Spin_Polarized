@@ -1,6 +1,6 @@
 from decimal import Decimal
 import math
-from utilities.mathematics.trigonometric import cos, sin
+
 
 from utilities.plotting.plot_customizer import PlotCustomizer
 
@@ -163,7 +163,7 @@ def calculate_interference_contribution(
     try:
 
         # (1): Calculate the prefactor:
-        prefactor = Decimal("1.0") / (x_Bjorken * lepton_energy_fraction_y**3 * squared_hadronic_momentum_transfer_t * lepton_propagator_p1 * lepton_propagator_p2)
+        prefactor = 1. / (x_Bjorken * lepton_energy_fraction_y**3 * squared_hadronic_momentum_transfer_t * lepton_propagator_p1 * lepton_propagator_p2)
 
         # (2): Calculate c_{0}^{I}:
         # c_0_I = 0.
@@ -345,12 +345,12 @@ def calculate_interference_contribution(
 
         # (9): Calculate the interference contribution:
         interference_contribution = (prefactor * (c_0_I + 
-            c_1_I * np.array([cos(Decimal("1.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
-            c_2_I * np.array([cos(Decimal("2.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
-            c_3_I * np.array([cos(Decimal("3.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
-            s_1_I * np.array([sin(Decimal("1.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
-            s_2_I * np.array([sin(Decimal("2.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
-            s_3_I * np.array([sin(Decimal("3.0") * (Decimal(math.pi) - convert_degrees_to_radians(phi))) for phi in azimuthal_phi])))
+            c_1_I * np.array([np.cos(1. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
+            c_2_I * np.array([np.cos(2. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
+            c_3_I * np.array([np.cos(3. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
+            s_1_I * np.array([np.sin(1. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
+            s_2_I * np.array([np.sin(2. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
+            s_3_I * np.array([np.sin(3. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi])))
 
         # (9.1): If verbose, print the calculation:
         if verbose:
@@ -361,4 +361,4 @@ def calculate_interference_contribution(
     
     except Exception as ERROR:
         print(f"> Error in calculating the interference_contribution \n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

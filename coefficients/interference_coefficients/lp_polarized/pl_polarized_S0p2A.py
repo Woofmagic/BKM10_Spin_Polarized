@@ -15,16 +15,16 @@ def calculate_s_2_zero_plus_longitudinally_polarized_A(
     try:
 
         # (1): Calculate the annoying quantity sqrt(1 - y - y^{2} epsilon^{2} / 4)
-        root_combination_of_y_and_epsilon = sqrt(Decimal("1.") - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0")))
+        root_combination_of_y_and_epsilon = sqrt(1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.))
 
         # (2): Calculate t/Q^{2}:
         t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
         
         # (3): Calculate the prefactor:
-        prefactor = Decimal("8. ") * sqrt(Decimal("2.0")) * target_polarization  * shorthand_k * (Decimal("2.") - lepton_energy_fraction_y) * x_Bjorken * t_over_Q_squared / sqrt((Decimal("1.") + epsilon**2)**5)
+        prefactor = 8. * sqrt(2.) * target_polarization  * shorthand_k * (2. - lepton_energy_fraction_y) * x_Bjorken * t_over_Q_squared / sqrt((1. + epsilon**2)**5)
 
         # (4): Calculate everything:
-        s_2_zero_plus_A_LP = prefactor * root_combination_of_y_and_epsilon * (Decimal("1.") + t_over_Q_squared)
+        s_2_zero_plus_A_LP = prefactor * root_combination_of_y_and_epsilon * (1. + t_over_Q_squared)
 
         # (4.1): If verbose, log the output:
         if verbose:
@@ -35,4 +35,4 @@ def calculate_s_2_zero_plus_longitudinally_polarized_A(
 
     except Exception as ERROR:
         print(f"> Error in calculating s_2_zero_plus_A_LP for Interference Term:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

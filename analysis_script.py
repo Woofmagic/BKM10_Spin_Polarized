@@ -74,71 +74,39 @@ def analysis():
     ## Description:
     Here, we generate all the comparison plots that we need.
     """
-    
+
     verbose = False
 
     kinematics_and_cff_settings = [
         {
-            "value_of_beam_energy": Decimal("5.75"),
-            "value_of_Q_squared": Decimal("1.82"),
-            "value_of_hadron_recoil": Decimal("-0.17"),
-            "value_of_x_Bjorken": Decimal("0.34"),
-            "compton_form_factor_h_real": Decimal("-0.897"),
-            "compton_form_factor_h_imaginary": Decimal("2.421"),
-            "compton_form_factor_h_tilde_real": Decimal("2.444"),
-            "compton_form_factor_h_tilde_imaginary": Decimal("1.131"),
-            "compton_form_factor_e_real": Decimal("-0.541"),
-            "compton_form_factor_e_imaginary": Decimal("0.903"),
-            "compton_form_factor_e_tilde_real": Decimal("2.207"),
-            "compton_form_factor_e_tilde_imaginary": Decimal("5.383")
+            "value_of_beam_energy": 5.75,
+            "value_of_Q_squared": 1.82,
+            "value_of_hadron_recoil": -0.17,
+            "value_of_x_Bjorken": 0.34,
+            "compton_form_factor_h_real": -0.897,
+            "compton_form_factor_h_imaginary": 2.421,
+            "compton_form_factor_h_tilde_real": 2.444,
+            "compton_form_factor_h_tilde_imaginary": 1.131,
+            "compton_form_factor_e_real": -0.541,
+            "compton_form_factor_e_imaginary": 0.903,
+            "compton_form_factor_e_tilde_real": 2.207,
+            "compton_form_factor_e_tilde_imaginary": 5.383
         },
         {
-            "value_of_beam_energy": Decimal("10.59"),
-            "value_of_Q_squared": Decimal("4.55"),
-            "value_of_hadron_recoil": Decimal("-0.26"),
-            "value_of_x_Bjorken": Decimal("0.37"),
-            "compton_form_factor_h_real": Decimal("-0.884"),
-            "compton_form_factor_h_imaginary": Decimal("1.851"),
-            "compton_form_factor_h_tilde_real": Decimal("3.118"),
-            "compton_form_factor_h_tilde_imaginary": Decimal("0.911"),
-            "compton_form_factor_e_real": Decimal("-0.424"),
-            "compton_form_factor_e_imaginary": Decimal("0.649"),
-            "compton_form_factor_e_tilde_real": Decimal("2.900"),
-            "compton_form_factor_e_tilde_imaginary": Decimal("3.915")
+            "value_of_beam_energy": 10.59,
+            "value_of_Q_squared": 4.55,
+            "value_of_hadron_recoil": -0.26,
+            "value_of_x_Bjorken": 0.37,
+            "compton_form_factor_h_real": -0.884,
+            "compton_form_factor_h_imaginary": 1.851,
+            "compton_form_factor_h_tilde_real": 3.118,
+            "compton_form_factor_h_tilde_imaginary": 0.911,
+            "compton_form_factor_e_real": -0.424,
+            "compton_form_factor_e_imaginary": 0.649,
+            "compton_form_factor_e_tilde_real": 2.900,
+            "compton_form_factor_e_tilde_imaginary": 3.915
         }
     ]
-
-
-    # kinematics_and_cff_settings = [
-    #     {
-    #         "value_of_beam_energy": 5.75,
-    #         "value_of_Q_squared": 1.82,
-    #         "value_of_hadron_recoil": -0.17,
-    #         "value_of_x_Bjorken": 0.34,
-    #         "compton_form_factor_h_real": -0.897,
-    #         "compton_form_factor_h_imaginary": 2.421,
-    #         "compton_form_factor_h_tilde_real": 2.444,
-    #         "compton_form_factor_h_tilde_imaginary": 1.131,
-    #         "compton_form_factor_e_real": -0.541,
-    #         "compton_form_factor_e_imaginary": 0.903,
-    #         "compton_form_factor_e_tilde_real": 2.207,
-    #         "compton_form_factor_e_tilde_imaginary": 5.383
-    #     },
-    #     {
-    #         "value_of_beam_energy": 10.59,
-    #         "value_of_Q_squared": 4.55,
-    #         "value_of_hadron_recoil": -0.26,
-    #         "value_of_x_Bjorken": 0.37,
-    #         "compton_form_factor_h_real": -0.884,
-    #         "compton_form_factor_h_imaginary": 1.851,
-    #         "compton_form_factor_h_tilde_real": 3.118,
-    #         "compton_form_factor_h_tilde_imaginary": 0.911,
-    #         "compton_form_factor_e_real": -0.424,
-    #         "compton_form_factor_e_imaginary": 0.649,
-    #         "compton_form_factor_e_tilde_real": 2.900,
-    #         "compton_form_factor_e_tilde_imaginary": 3.915
-    #     }
-    # ]
 
     # (2): Iterate over all the testing conditions:
     for kinematic_bin_index, kinematic_bin_settings in enumerate(kinematics_and_cff_settings):
@@ -182,20 +150,20 @@ def analysis():
         # (2.13): Obtain the value of the IMAGINARY part of the CFF E-tilde:
         compton_form_factor_e_tilde_imaginary = kinematic_bin_settings["compton_form_factor_e_tilde_imaginary"]
         
-        compton_form_factor_h = ComplexDecimal(compton_form_factor_h_real, compton_form_factor_h_imaginary)
-        compton_form_factor_h_tilde = ComplexDecimal(compton_form_factor_h_tilde_real, compton_form_factor_h_tilde_imaginary)
-        compton_form_factor_e = ComplexDecimal(compton_form_factor_e_real, compton_form_factor_e_imaginary)
-        compton_form_factor_e_tilde = ComplexDecimal(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary)
+        compton_form_factor_h = complex(compton_form_factor_h_real, compton_form_factor_h_imaginary)
+        compton_form_factor_h_tilde = complex(compton_form_factor_h_tilde_real, compton_form_factor_h_tilde_imaginary)
+        compton_form_factor_e = complex(compton_form_factor_e_real, compton_form_factor_e_imaginary)
+        compton_form_factor_e_tilde = complex(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary)
 
-        squared_Q_momentum_transfer = np.array([Decimal(value_of_Q_squared) for _ in range(len(np.arange(0, 361, 1.)))])
+        squared_Q_momentum_transfer = np.array([value_of_Q_squared for _ in range(len(np.arange(0, 361, 1.)))])
 
-        x_Bjorken = np.array([Decimal(value_of_x_Bjorken) for _ in range(len(np.arange(0, 361, 1.)))])
+        x_Bjorken = np.array([value_of_x_Bjorken for _ in range(len(np.arange(0, 361, 1.)))])
 
-        squared_hadronic_momentum_transfer_t = np.array([Decimal(value_of_hadron_recoil) for _ in range(len(np.arange(0, 361, 1.)))])
+        squared_hadronic_momentum_transfer_t = np.array([value_of_hadron_recoil for _ in range(len(np.arange(0, 361, 1.)))])
 
-        lab_kinematics_k = np.array([Decimal(value_of_beam_energy) for _ in range(len(np.arange(0, 361, 1.)))])
+        lab_kinematics_k = np.array([value_of_beam_energy for _ in range(len(np.arange(0, 361, 1.)))])
 
-        azimuthal_phi = np.array([Decimal(i) for i in range(len(np.arange(0., 361., 1.)))])
+        azimuthal_phi = np.array([phi for phi in range(len(np.arange(0., 361., 1.)))])
 
         compton_form_factor_h_real = np.array([kinematic_bin_settings["compton_form_factor_h_real"]])
         compton_form_factor_h_imaginary = np.array([kinematic_bin_settings["compton_form_factor_h_imaginary"]])
@@ -232,40 +200,40 @@ def analysis():
         # compton_form_factor_e_tilde_imaginary = [kinematic_bin_settings["compton_form_factor_e_tilde_imaginary"]]
 
         # (2.X): Calculate Epsilon:
-        epsilon = np.vectorize(calculate_kinematics_epsilon)(
+        epsilon = calculate_kinematics_epsilon(
             squared_Q_momentum_transfer,
             x_Bjorken,
             verbose)
 
         # (2.X): Calculate the Lepton Energy Fraction:
-        lepton_energy_fraction_y = np.vectorize(calculate_kinematics_lepton_energy_fraction_y)(
+        lepton_energy_fraction_y = calculate_kinematics_lepton_energy_fraction_y(
             squared_Q_momentum_transfer,
             lab_kinematics_k,
             epsilon,
             verbose)
 
         # (2.X): Calculate the Skewness Parameter:
-        skewness_parameter = np.vectorize(calculate_kinematics_skewness_parameter)(
+        skewness_parameter = calculate_kinematics_skewness_parameter(
             squared_Q_momentum_transfer,
             x_Bjorken,
             squared_hadronic_momentum_transfer_t,
             verbose)
 
         # (2.X): Calculate t_minimum
-        squared_hadronic_momentum_transfer_t_minimum = np.vectorize(calculate_kinematics_t_min)(
+        squared_hadronic_momentum_transfer_t_minimum = calculate_kinematics_t_min(
             squared_Q_momentum_transfer,
             x_Bjorken,
             epsilon,
             verbose)
 
         # (2.X): Calculate t_prime:
-        t_prime = np.vectorize(calculate_kinematics_t_prime)(
+        t_prime = calculate_kinematics_t_prime(
             squared_hadronic_momentum_transfer_t,
             squared_hadronic_momentum_transfer_t_minimum,
             verbose)
 
         # (2.X): Calculate K_tilde:
-        k_tilde = np.vectorize(calculate_kinematics_k_tilde)(
+        k_tilde = calculate_kinematics_k_tilde(
             squared_Q_momentum_transfer,
             x_Bjorken,
             lepton_energy_fraction_y,
@@ -275,7 +243,7 @@ def analysis():
             verbose)
 
         # (2.X): Calculate K Squared:
-        shorthand_k = np.vectorize(calculate_kinematics_k)(
+        shorthand_k = calculate_kinematics_k(
             squared_Q_momentum_transfer,
             lepton_energy_fraction_y,
             epsilon,
@@ -283,7 +251,7 @@ def analysis():
             verbose)
 
         # (2.X): Calculate k_dot_delta:
-        k_dot_delta = np.vectorize(calculate_k_dot_delta)(
+        k_dot_delta = calculate_k_dot_delta(
             squared_Q_momentum_transfer,
             x_Bjorken,
             squared_hadronic_momentum_transfer_t,
@@ -294,43 +262,43 @@ def analysis():
             verbose)
 
         # (2.X): Calculate Lepton Propagator 1:
-        lepton_propagator_p1 = np.vectorize(calculate_lepton_propagator_p1)(
+        lepton_propagator_p1 = calculate_lepton_propagator_p1(
             squared_Q_momentum_transfer,
             k_dot_delta,
             verbose)
         
         # (2.X): Calculate Lepton Propagator 2:
-        lepton_propagator_p2 = np.vectorize(calculate_lepton_propagator_p2)(
+        lepton_propagator_p2 = calculate_lepton_propagator_p2(
             squared_Q_momentum_transfer,
             squared_hadronic_momentum_transfer_t,
             k_dot_delta,
             verbose)
         
         # (2.X): Calculate the Electric Form Factor
-        electric_form_factor = np.vectorize(calculate_form_factor_electric)(
+        electric_form_factor = calculate_form_factor_electric(
             squared_hadronic_momentum_transfer_t, 
             verbose)
 
         # (2.X): Calculate the Magnetic Form Factor
-        magnetic_form_factor = np.vectorize(calculate_form_factor_magnetic)(
+        magnetic_form_factor = calculate_form_factor_magnetic(
             electric_form_factor, 
             verbose) 
 
         # (2.X): Calculate the Pauli Form Factor, F2:
-        Pauli_form_factor_F2 = np.vectorize(calculate_form_factor_pauli_f2)(
+        Pauli_form_factor_F2 = calculate_form_factor_pauli_f2(
             squared_hadronic_momentum_transfer_t,
             electric_form_factor,
             magnetic_form_factor,
             verbose)
 
         # (2.X): Calculate the Dirac Form Factor, F1:
-        Dirac_form_factor_F1 = np.vectorize(calculate_form_factor_dirac_f1)(
+        Dirac_form_factor_F1 = calculate_form_factor_dirac_f1(
             magnetic_form_factor,
             Pauli_form_factor_F2,
             verbose)
 
         # (2.X): Calculate the cross-section prefactor:
-        cross_section_prefactor = np.vectorize(calculate_bkm10_cross_section_prefactor)(
+        cross_section_prefactor = calculate_bkm10_cross_section_prefactor(
             squared_Q_momentum_transfer,
             x_Bjorken,
             epsilon,
@@ -339,20 +307,20 @@ def analysis():
 
         def analyze_dvcs_unp_beam_unp_target():
 
-            pure_dvcs_unpolarized_beam_unpolarized_target = cross_section_prefactor * (Decimal("0.5") * 
-                (np.vectorize(calculate_dvcs_amplitude_squared)(
-                Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+            pure_dvcs_unpolarized_beam_unpolarized_target = cross_section_prefactor * (0.5 *
+                (calculate_dvcs_amplitude_squared(
+                0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
                 epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False) +
-                np.vectorize(calculate_dvcs_amplitude_squared)(
-                Decimal("-0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                calculate_dvcs_amplitude_squared(
+                -0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
                 epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)))
 
-            pure_dvcs_unpolarized_beam_unpolarized_target_ww = cross_section_prefactor * (Decimal("0.5") * 
-                (np.vectorize(calculate_dvcs_amplitude_squared)(
-                Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+            pure_dvcs_unpolarized_beam_unpolarized_target_ww = cross_section_prefactor * (0.5 * 
+                (calculate_dvcs_amplitude_squared(
+                0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
                 epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True) +
-                np.vectorize(calculate_dvcs_amplitude_squared)(
-                Decimal("-0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                calculate_dvcs_amplitude_squared(
+                -0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
                 epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True)))
 
             jd_mathematica_pure_dvcs_unpolarized_beam_unpolarized_target = pd.read_csv(
@@ -460,11 +428,11 @@ def analysis():
         def analyze_dvcs_plus_beam_unp_target():
 
             pure_dvcs_plus_beam_unpolarized_target = (cross_section_prefactor * calculate_dvcs_amplitude_squared(
-                +Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                +0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
                 epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False))
             
             pure_dvcs_plus_beam_unpolarized_target_ww = (cross_section_prefactor * calculate_dvcs_amplitude_squared(
-                +Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                +0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
                 epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True))
             
             jd_mathematica_pure_dvcs_plus_beam_unpolarized_target = pd.read_csv(
@@ -538,19 +506,19 @@ def analysis():
 
         def analyze_interference_unp_beam_unp_target():
                 
-            pure_interference_unpolarized_beam_unpolarized_target = (cross_section_prefactor * (Decimal("0.5") * 
-                (calculate_interference_contribution(Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+            pure_interference_unpolarized_beam_unpolarized_target = (cross_section_prefactor * (0.5 * 
+                (calculate_interference_contribution(0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
                 epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
                 Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False) +
-                calculate_interference_contribution(Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                calculate_interference_contribution(0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
                 epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
                 Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False))))
             
-            pure_interference_unpolarized_beam_unpolarized_target_ww = (cross_section_prefactor * (Decimal("0.5") * 
-                (calculate_interference_contribution(Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+            pure_interference_unpolarized_beam_unpolarized_target_ww = (cross_section_prefactor * (0.5 * 
+                (calculate_interference_contribution(0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
                 epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
                 Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True) +
-                calculate_interference_contribution(Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                calculate_interference_contribution(0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
                 epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
                 Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True))))
             
@@ -658,11 +626,11 @@ def analysis():
     
         def analyze_interference_plus_beam_unp_target():
             
-            pure_interference_plus_beam_unpolarized_target = (cross_section_prefactor * calculate_interference_contribution(Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+            pure_interference_plus_beam_unpolarized_target = (cross_section_prefactor * calculate_interference_contribution(0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
                 epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
                 Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False))
             
-            pure_interference_plus_beam_unpolarized_target_ww = (cross_section_prefactor * calculate_interference_contribution(Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+            pure_interference_plus_beam_unpolarized_target_ww = (cross_section_prefactor * calculate_interference_contribution(0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
                 epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
                 Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True))
             
@@ -747,8 +715,8 @@ def analysis():
         print("> Beginning analysis of DVCS, unpolarized beam, unpolarized target...")
         analyze_dvcs_unp_beam_unp_target()
 
-        # print("> Beginning analysis of DVCS, (+) polarized beam, unpolarized target...")
-        # analyze_dvcs_plus_beam_unp_target()
+        print("> Beginning analysis of DVCS, (+) polarized beam, unpolarized target...")
+        analyze_dvcs_plus_beam_unp_target()
 
         # print("> Beginning analysis of DVCS, (-) polarized beam, unpolarized target...")
         # analyze_dvcs_minus_beam_unp_target()
@@ -760,10 +728,10 @@ def analysis():
         # analyze_interference_plus_beam_unp_target()
     
     # pure_dvcs_minus_beam_unpolarized_target = cross_section_prefactor * calculate_dvcs_amplitude_squared(
-    #     Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+    #     0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
     #     epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)
     # pure_dvcs_minus_beam_unpolarized_target_ww = cross_section_prefactor * calculate_dvcs_amplitude_squared(
-    #     Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+    #     0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
     #     epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True)
     
     # jd_mathematica_pure_dvcs_minus_beam_unpolarized_target = pd.read_csv('jd_dvcs_minus_beam_unpolarized_target_kinematic_bin_1_v2.csv', names = ['jd_sigma'])
@@ -822,19 +790,19 @@ def analysis():
     #     fname = 'compared_pure_dvcs_minus_plus_unpolarized_target_kinematic_bin_1_v5.png',
     #     dpi = 500)
 
-    # pure_dvcs_unpolarized_beam_lp_target = cross_section_prefactor * (Decimal("0.5") * 
+    # pure_dvcs_unpolarized_beam_lp_target = cross_section_prefactor * (0.5 * 
     #     (calculate_dvcs_amplitude_squared(
-    #     Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+    #     0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
     #     epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False) +
     #     calculate_dvcs_amplitude_squared(
-    #     Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+    #     0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
     #     epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)))
-    # pure_dvcs_unpolarized_beam_lp_target_ww = cross_section_prefactor * (Decimal("0.5") * 
+    # pure_dvcs_unpolarized_beam_lp_target_ww = cross_section_prefactor * (0.5 * 
     #     (calculate_dvcs_amplitude_squared(
-    #     Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+    #     0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
     #     epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True) +
     #     calculate_dvcs_amplitude_squared(
-    #     Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+    #     0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
     #     epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True)))
 
     # jd_mathematica_pure_dvcs_unpolarized_beam_lp_target = pd.read_csv('jd_dvcs_unpolarized_beam_lp_target_kinematic_bin_1_v2.csv', names = ['jd_sigma'])
@@ -894,10 +862,10 @@ def analysis():
     #     dpi = 500)
     
     # pure_dvcs_plus_beam_lp_target = cross_section_prefactor * calculate_dvcs_amplitude_squared(
-    #     Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+    #     0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
     #     epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)
     # pure_dvcs_plus_beam_lp_target_ww = cross_section_prefactor * calculate_dvcs_amplitude_squared(
-    #     Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+    #     0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
     #     epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False) 
     
     # jd_mathematica_pure_dvcs_plus_beam_lp_target = pd.read_csv('jd_dvcs_plus_beam_lp_target_kinematic_bin_1_v2.csv', names = ['jd_sigma'])
@@ -957,10 +925,10 @@ def analysis():
     #     dpi = 500)
     
     # pure_dvcs_minus_beam_lp_target = cross_section_prefactor * calculate_dvcs_amplitude_squared(
-    #     Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+    #     0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
     #     epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)
     # pure_dvcs_minus_beam_lp_target_ww = cross_section_prefactor * calculate_dvcs_amplitude_squared(
-    #     Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+    #     0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
     #     epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True) 
 
     # jd_mathematica_pure_dvcs_minus_beam_lp_target = pd.read_csv('jd_dvcs_minus_beam_lp_target_kinematic_bin_1_v2.csv', names = ['jd_sigma'])
@@ -1019,10 +987,10 @@ def analysis():
     #     fname = 'compared_pure_dvcs_minus_beam_lp_target_kinematic_bin_1_v5.png',
     #     dpi = 500)
     
-    # pure_interference_plus_beam_unpolarized_target = cross_section_prefactor * calculate_interference_contribution(Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+    # pure_interference_plus_beam_unpolarized_target = cross_section_prefactor * calculate_interference_contribution(0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
     #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
     #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)
-    # pure_interference_plus_beam_unpolarized_target_ww = cross_section_prefactor * calculate_interference_contribution(Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+    # pure_interference_plus_beam_unpolarized_target_ww = cross_section_prefactor * calculate_interference_contribution(0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
     #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
     #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True)
     
@@ -1082,10 +1050,10 @@ def analysis():
     #     fname = 'compared_pure_interference_plus_beam_unpolarized_target_kinematic_bin_1_v5.png',
     #     dpi = 500)
     
-    # pure_interference_minus_beam_unpolarized_target = cross_section_prefactor * calculate_interference_contribution(Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+    # pure_interference_minus_beam_unpolarized_target = cross_section_prefactor * calculate_interference_contribution(0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
     #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
     #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)
-    # pure_interference_minus_beam_unpolarized_target_ww = cross_section_prefactor * calculate_interference_contribution(Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+    # pure_interference_minus_beam_unpolarized_target_ww = cross_section_prefactor * calculate_interference_contribution(0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
     #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
     #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True)
     
@@ -1145,18 +1113,18 @@ def analysis():
     #     fname = 'compared_pure_interference_minus_beam_unpolarized_target_kinematic_bin_1_v5.png',
     #     dpi = 500)
     
-    # pure_interference_unpolarized_beam_lp_target = cross_section_prefactor * (Decimal("0.5") * 
-    #     (calculate_interference_contribution(Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+    # pure_interference_unpolarized_beam_lp_target = cross_section_prefactor * (0.5 * 
+    #     (calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
     #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
     #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False) +
-    #     calculate_interference_contribution(Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+    #     calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
     #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
     #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)))
-    # pure_interference_unpolarized_beam_lp_target_ww = cross_section_prefactor * (Decimal("0.5") * 
-    #     (calculate_interference_contribution(Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+    # pure_interference_unpolarized_beam_lp_target_ww = cross_section_prefactor * (0.5 * 
+    #     (calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
     #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
     #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True) +
-    #     calculate_interference_contribution(Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+    #     calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
     #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
     #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True)))
     
@@ -1266,10 +1234,10 @@ def analysis():
     #     fname = 'compared_pure_interference_unpolarized_beam_lp_target_kinematic_bin_1_v5.png',
     #     dpi = 500)
     
-    # pure_interference_plus_beam_lp_target = cross_section_prefactor * calculate_interference_contribution(Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+    # pure_interference_plus_beam_lp_target = cross_section_prefactor * calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
     #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
     #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)
-    # pure_interference_plus_beam_lp_target_ww = cross_section_prefactor * calculate_interference_contribution(Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+    # pure_interference_plus_beam_lp_target_ww = cross_section_prefactor * calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
     #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
     #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True)
     
@@ -1329,10 +1297,10 @@ def analysis():
     #     fname = 'compared_pure_interference_plus_beam_lp_target_kinematic_bin_1_v5.png',
     #     dpi = 500)
     
-    # pure_interference_minus_beam_lp_target = cross_section_prefactor * calculate_interference_contribution(Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+    # pure_interference_minus_beam_lp_target = cross_section_prefactor * calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
     #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
     #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)
-    # pure_interference_minus_beam_lp_target_ww = cross_section_prefactor * calculate_interference_contribution(Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+    # pure_interference_minus_beam_lp_target_ww = cross_section_prefactor * calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
     #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
     #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True)
     
@@ -1402,48 +1370,48 @@ if __name__ == "__main__":
         print(f"> Error running the analysis script: {ERROR}")
         sys.exit(0)
 
-# pure_bh_unpolarized_beam_unpolarized_target = (Decimal("0.5") * (
-# calculate_bh_amplitude_squared(Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi, epsilon,
+# pure_bh_unpolarized_beam_unpolarized_target = (0.5 * (
+# calculate_bh_amplitude_squared(0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi, epsilon,
 #     lepton_energy_fraction_y, shorthand_k, lepton_propagator_p1, lepton_propagator_p2, Dirac_form_factor_F1, Pauli_form_factor_F2, verbose) + 
 # calculate_bh_amplitude_squared(
-#     Decimal("0.5"), 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi, epsilon,
+#     0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi, epsilon,
 #     lepton_energy_fraction_y, shorthand_k, lepton_propagator_p1, lepton_propagator_p2, Dirac_form_factor_F1, Pauli_form_factor_F2, verbose)))
 
 # # jd_mathematica_pure_bh_unpolarized_beam_unpolarized_target = pd.read_csv('jd_interference_bh_beam_unpolarized_target_kinematic_bin_1_v2.csv', names = ['jd_sigma'])
 # # ji_mathematica_pure_bh_unpolarized_beam_unpolarized_target = pd.read_csv('ji_interference_bh_beam_unpolarized_target_kinematic_bin_1_v2.csv', names = ['ji_sigma'])
 
 # pure_bh_plus_beam_unpolarized_target = calculate_bh_amplitude_squared(
-#     Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi, epsilon,
+#     0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi, epsilon,
 #     lepton_energy_fraction_y, shorthand_k, lepton_propagator_p1, lepton_propagator_p2, Dirac_form_factor_F1, Pauli_form_factor_F2, verbose)
 
 # # jd_mathematica_pure_bh_plus_beam_unpolarized_target = pd.read_csv('jd_bh_plus_beam_unpolarized_target_kinematic_bin_1_v2.csv', names = ['jd_sigma'])
 # # ji_mathematica_pure_bh_plus_beam_unpolarized_target = pd.read_csv('ji_bh_plus_beam_unpolarized_target_kinematic_bin_1_v2.csv', names = ['ji_sigma'])
 
 # pure_bh_minus_beam_unpolarized_target = calculate_bh_amplitude_squared(
-#     Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi, epsilon,
+#     0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi, epsilon,
 #     lepton_energy_fraction_y, shorthand_k, lepton_propagator_p1, lepton_propagator_p2, Dirac_form_factor_F1, Pauli_form_factor_F2, verbose)
 
 # # jd_mathematica_pure_bh_minus_beam_unpolarized_target = pd.read_csv('jd_bh_minus_beam_unpolarized_target_kinematic_bin_1_v2.csv', names = ['jd_sigma'])
 # # ji_mathematica_pure_bh_minus_beam_unpolarized_target = pd.read_csv('ji_bh_minus_beam_unpolarized_target_kinematic_bin_1_v2.csv', names = ['ji_sigma'])
 
-# pure_bh_unpolarized_beam_lp_target = (Decimal("0.5") * (
-# calculate_bh_amplitude_squared(Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi, epsilon,
+# pure_bh_unpolarized_beam_lp_target = (0.5 * (
+# calculate_bh_amplitude_squared(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi, epsilon,
 #     lepton_energy_fraction_y, shorthand_k, lepton_propagator_p1, lepton_propagator_p2, Dirac_form_factor_F1, Pauli_form_factor_F2, verbose) + 
 # calculate_bh_amplitude_squared(
-#     Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi, epsilon,
+#     0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi, epsilon,
 #     lepton_energy_fraction_y, shorthand_k, lepton_propagator_p1, lepton_propagator_p2, Dirac_form_factor_F1, Pauli_form_factor_F2, verbose)))
 
 # # jd_mathematica_pure_bh_unpolarized_beam_lp_target = pd.read_csv('jd_bh_unpolarized_beam_lp_target_kinematic_bin_1_v2.csv', names = ['jd_sigma'])
 # # ji_mathematica_pure_bh_unpolarized_beam_lp_target = pd.read_csv('ji_bh_unpolarized_beam_lp_target_kinematic_bin_1_v2.csv', names = ['ji_sigma'])
 
-# pure_bh_plus_beam_unpolarized_target = calculate_bh_amplitude_squared(Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi, epsilon,
+# pure_bh_plus_beam_unpolarized_target = calculate_bh_amplitude_squared(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi, epsilon,
 #     lepton_energy_fraction_y, shorthand_k, lepton_propagator_p1, lepton_propagator_p2, Dirac_form_factor_F1, Pauli_form_factor_F2, verbose)
 
 # # jd_mathematica_pure_bh_plus_beam_lp_target = pd.read_csv('jd_bh_plus_beam_lp_target_kinematic_bin_1_v2.csv', names = ['jd_sigma'])
 # # ji_mathematica_pure_bh_plus_beam_lp_target = pd.read_csv('ji_bh_plus_beam_lp_target_kinematic_bin_1_v2.csv', names = ['ji_sigma'])
 
 # pure_bh_minus_beam_lp_target = calculate_bh_amplitude_squared(
-#     Decimal("0.5"), 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi, epsilon,
+#     0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi, epsilon,
 #     lepton_energy_fraction_y, shorthand_k, lepton_propagator_p1, lepton_propagator_p2, Dirac_form_factor_F1, Pauli_form_factor_F2, verbose)
 
 # # jd_mathematica_pure_bh_minus_beam_lp_target = pd.read_csv('jd_bh_plus_minus_lp_target_kinematic_bin_1_v2.csv', names = ['jd_sigma'])

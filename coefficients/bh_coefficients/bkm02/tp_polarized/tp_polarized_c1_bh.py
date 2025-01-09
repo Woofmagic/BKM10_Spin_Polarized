@@ -1,5 +1,5 @@
 from decimal import Decimal
-from utilities.mathematics.trigonometric import cos
+
 
 from statics.masses.particle_masses import _MASS_OF_PROTON_IN_GEV
 
@@ -63,25 +63,25 @@ def calculate_c_1_transversely_polarized_bh(
     try:
         
         # (1): Calculate the common appearance of 1 - y - e^{2} y^{2} / 4
-        combination_of_y_and_epsilon = Decimal("1.") - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0"))
+        combination_of_y_and_epsilon = 1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.)
 
         # (2): Calculate the frequent appearance of xb * (1 - t/Q^{2})
-        xB_times_t_over_Q_squared = x_Bjorken * (Decimal("1.") - squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer)
+        xB_times_t_over_Q_squared = x_Bjorken * (1. - squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer)
 
         # (3): Calculate the first part of the first term in the brackets:
-        first_part_first_bracket_term = xB_times_t_over_Q_squared * Dirac_form_factor_F1 + squared_hadronic_momentum_transfer_t * Pauli_form_factor_F2 / (Decimal("4.") * _MASS_OF_PROTON_IN_GEV**2)
+        first_part_first_bracket_term = xB_times_t_over_Q_squared * Dirac_form_factor_F1 + squared_hadronic_momentum_transfer_t * Pauli_form_factor_F2 / (4. * _MASS_OF_PROTON_IN_GEV**2)
 
         # (4): Calculate the second bracket term:
-        second_bracket_term = (Decimal("1.") + epsilon**2) * xB_times_t_over_Q_squared * (Dirac_form_factor_F1 + (squared_hadronic_momentum_transfer_t * Pauli_form_factor_F2 / (Decimal("4.") * _MASS_OF_PROTON_IN_GEV**2)))
+        second_bracket_term = (1. + epsilon**2) * xB_times_t_over_Q_squared * (Dirac_form_factor_F1 + (squared_hadronic_momentum_transfer_t * Pauli_form_factor_F2 / (4. * _MASS_OF_PROTON_IN_GEV**2)))
 
         # (5): Calculate the entire bracket term in one fell swoop:
-        bracket_term = Decimal("2.") * shorthand_k**2 * squared_Q_momentum_transfer * first_part_first_bracket_term / (squared_hadronic_momentum_transfer_t * combination_of_y_and_epsilon) + second_bracket_term
+        bracket_term = 2. * shorthand_k**2 * squared_Q_momentum_transfer * first_part_first_bracket_term / (squared_hadronic_momentum_transfer_t * combination_of_y_and_epsilon) + second_bracket_term
 
         # (6): Calculate the first part of the prefactor:
-        first_part_prefactor = - Decimal("16. ") * lepton_helicity * cos(azimuthal_phi) * x_Bjorken * lepton_energy_fraction_y * sqrt(combination_of_y_and_epsilon)
+        first_part_prefactor = - 16. * lepton_helicity * np.cos(azimuthal_phi) * x_Bjorken * lepton_energy_fraction_y * sqrt(combination_of_y_and_epsilon)
 
         # (7): Piece together all of the factors:
-        c1TP_BH = first_part_prefactor * _MASS_OF_PROTON_IN_GEV * sqrt(Decimal("1.") + epsilon**2) * (Dirac_form_factor_F1 + Pauli_form_factor_F2) * bracket_term / sqrt(squared_Q_momentum_transfer)
+        c1TP_BH = first_part_prefactor * _MASS_OF_PROTON_IN_GEV * sqrt(1. + epsilon**2) * (Dirac_form_factor_F1 + Pauli_form_factor_F2) * bracket_term / sqrt(squared_Q_momentum_transfer)
 
         # (7.1): If verbose, log the output:
         if verbose:
@@ -92,4 +92,4 @@ def calculate_c_1_transversely_polarized_bh(
 
     except Exception as ERROR:
         print(f"> Error in calculating c1TP_BH for BH Amplitude Squared:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

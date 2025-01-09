@@ -24,7 +24,7 @@ def calculate_c_0_longitudinally_polarized_dvcs(
     try:
         
         # (1): Calculate the prefactor
-        prefactor = Decimal("2.") * lepton_helicity * target_polarization * lepton_energy_fraction_y * (Decimal("2.") - lepton_energy_fraction_y) / sqrt(Decimal("1.") + epsilon**2)
+        prefactor = 2. * lepton_helicity * target_polarization * lepton_energy_fraction_y * (2. - lepton_energy_fraction_y) / sqrt(1. + epsilon**2)
 
         # (2): Calculate the Curly C contribution:
         curlyC_lp_contribution = calculate_curly_c_longitudinally_polarized_dvcs(
@@ -54,4 +54,4 @@ def calculate_c_0_longitudinally_polarized_dvcs(
 
     except Exception as ERROR:
         print(f"> Error in calculating c0LP for DVCS Amplitude Squared:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

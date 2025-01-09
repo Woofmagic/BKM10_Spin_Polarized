@@ -38,4 +38,4 @@ def calculate_kinematics_t_prime(
 
     except Exception as ERROR:
         print(f"> Error calculating t_prime:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

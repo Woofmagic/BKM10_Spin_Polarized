@@ -25,16 +25,16 @@ class PlotCustomizer:
             'mathtext.fontset': 'dejavusans', # https://matplotlib.org/stable/gallery/text_labels_and_annotations/mathtext_fontfamily_example.html
             'xtick.direction': 'in',
             'xtick.major.size': 5,
-            'xtick.major.width': Decimal("0.5"),
+            'xtick.major.width': 0.5,
             'xtick.minor.size': 2.5,
-            'xtick.minor.width': Decimal("0.5"),
+            'xtick.minor.width': 0.5,
             'xtick.minor.visible': True,
             'xtick.top': True,
             'ytick.direction': 'in',
             'ytick.major.size': 5,
-            'ytick.major.width': Decimal("0.5"),
+            'ytick.major.width': 0.5,
             'ytick.minor.size': 2.5,
-            'ytick.minor.width': Decimal("0.5"),
+            'ytick.minor.width': 0.5,
             'ytick.minor.visible': True,
             'ytick.right': True,
         }
@@ -131,24 +131,13 @@ class PlotCustomizer:
 
         marker: str
         """
-        def convert_to_floats(data):
-
-            if isinstance(data, np.ndarray) and isinstance(data[0], ComplexDecimal):
-                return np.array([float(value.real) for value in data], dtype=float)
-            elif isinstance(data, np.ndarray) and isinstance(data[0], Decimal):
-                return np.array([float(value) for value in data], dtype=float)
-            else:
-                return np.array(data, dtype=float)  # Assume already numeric if not custom type
-
-        x_data_float = convert_to_floats(x_data)
-        y_data_float = convert_to_floats(y_data)
 
         with rc_context(rc = self._custom_rc_params):
 
             # (1): Add the scatter plot:
             self.axes_object.scatter(
-                x_data_float,
-                y_data_float,
+                x_data,
+                y_data,
                 s = radial_size,
                 label = label,
                 color = color,
@@ -200,7 +189,7 @@ class PlotCustomizer:
                 linestyle = '', 
                 markersize = 1.0,
                 ecolor = 'black',
-                elinewidth = Decimal("0.5"),
+                elinewidth = 0.5,
                 capsize = 1)
 
             if label:

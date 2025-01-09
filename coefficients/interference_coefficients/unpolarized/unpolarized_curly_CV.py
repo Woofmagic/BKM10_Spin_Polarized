@@ -14,7 +14,7 @@ def calculate_curly_C_unpolarized_interference_V(
         cff_term = compton_form_factor_h_real_part + compton_form_factor_e_real_part
 
         # (2): Calculate the next term:
-        second_term = x_Bjorken * (Dirac_form_factor_F1 + Pauli_form_factor_F2) / (Decimal("2.") - x_Bjorken + (x_Bjorken * squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer))
+        second_term = x_Bjorken * (Dirac_form_factor_F1 + Pauli_form_factor_F2) / (2. - x_Bjorken + (x_Bjorken * squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer))
 
         # (3): Add them together:
         curly_C_unpolarized_interference_V = cff_term * second_term
@@ -28,4 +28,4 @@ def calculate_curly_C_unpolarized_interference_V(
 
     except Exception as ERROR:
         print(f"> Error in calculating the Curly C interference V unpolarized target: \n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

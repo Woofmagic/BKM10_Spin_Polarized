@@ -303,8 +303,8 @@ def calculate_bkm10_cross_section(
             if verbose:
                 print(f"> Now evaluating unpolarized DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
 
-        #     dvcs_amplitude_squared = Decimal("0.5") * (calculate_dvcs_amplitude_squared(
-        #     Decimal("0.5"),
+        #     dvcs_amplitude_squared = 0.5 * (calculate_dvcs_amplitude_squared(
+        #     0.5,
         #     target_polarization,
         #     squared_Q_momentum_transfer,
         #     x_Bjorken,
@@ -320,7 +320,7 @@ def calculate_bkm10_cross_section(
         #     compton_form_factor_e_tilde,
         #     use_ww,
         #     verbose) + calculate_dvcs_amplitude_squared(
-        #     Decimal("0.5"),
+        #     0.5,
         #     target_polarization,
         #     squared_Q_momentum_transfer,
         #     x_Bjorken,
@@ -365,8 +365,8 @@ def calculate_bkm10_cross_section(
 
         if lepton_helicity == 0.0: 
 
-            interference_contribution = Decimal("0.5") * (calculate_interference_contribution(
-                Decimal("0.5"),
+            interference_contribution = 0.5 * (calculate_interference_contribution(
+                0.5,
                 target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
@@ -388,7 +388,7 @@ def calculate_bkm10_cross_section(
                 compton_form_factor_e_tilde,
                 use_ww,
                 verbose) + calculate_interference_contribution(
-                Decimal("0.5"),
+                0.5,
                 target_polarization,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
@@ -472,5 +472,5 @@ def calculate_bkm10_cross_section(
 
     except Exception as ERROR:
         print(f"> Error in calculating the entire cross section:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.
     

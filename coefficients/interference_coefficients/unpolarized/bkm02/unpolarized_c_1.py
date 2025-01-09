@@ -39,7 +39,7 @@ def calculate_c_1_unpolarized(
     try:
         
         # (1): Calculate the first recurrent quantity:
-        coefficient_prefactor = - Decimal("8. ") * kinematic_k * (Decimal("2.") - Decimal("2.") * lepton_energy_fraction_y + lepton_energy_fraction_y**2)
+        coefficient_prefactor = - 8. * kinematic_k * (2. - 2. * lepton_energy_fraction_y + lepton_energy_fraction_y**2)
 
         # (2): Calculate the Re{...} brackets:
         coefficient_c_I_unpolarized = calculate_interference_coefficient_unpolarized(
@@ -63,4 +63,4 @@ def calculate_c_1_unpolarized(
 
     except Exception as E:
         print(f"> Error calculating interference coefficient c_1_I_unpolarized:\n> {E}")
-        return Decimal("0.0")
+        return 0.

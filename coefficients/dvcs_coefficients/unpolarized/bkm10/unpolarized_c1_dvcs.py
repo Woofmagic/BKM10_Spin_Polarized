@@ -26,7 +26,7 @@ def calculate_c_1_unpolarized_dvcs(
     try:
 
         # (1): Calculate the first term's prefactor:
-        prefactor = Decimal("8. ") * shorthand_k * (Decimal("2.") - lepton_energy_fraction_y) / ((Decimal("2.") - x_Bjorken) * (Decimal("1.") + epsilon**2))
+        prefactor = 8. * shorthand_k * (2. - lepton_energy_fraction_y) / ((2. - x_Bjorken) * (1. + epsilon**2))
         
         # (2): Calculate the second terms' Curly C contribution:
         curlyC_unp_DVCS = calculate_curly_c_unpolarized_dvcs(
@@ -54,4 +54,4 @@ def calculate_c_1_unpolarized_dvcs(
     
     except Exception as E:
         print(f"> Error in computing c1_dvcs_unpolarized_coefficient:\n> {E}")
-        return Decimal("0.0")
+        return 0.

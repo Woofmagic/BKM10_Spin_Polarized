@@ -30,10 +30,10 @@ def calculate_form_factor_electric(
     try:
         
         # (1): Calculate the mysterious denominator:
-        denominator = Decimal("1.") - (squared_hadronic_momentum_transfer_t / _ELECTRIC_FORM_FACTOR_CONSTANT)
+        denominator = 1. - (squared_hadronic_momentum_transfer_t / _ELECTRIC_FORM_FACTOR_CONSTANT)
 
         # (2): Calculate the F_{E}:
-        form_factor_electric = Decimal("1.0") / (denominator**2)
+        form_factor_electric = 1. / (denominator**2)
 
         if verbose:
             print(f"> Calculated electric form factor as: {form_factor_electric}")
@@ -42,4 +42,4 @@ def calculate_form_factor_electric(
 
     except Exception as ERROR:
         print(f"> Error in calculating electric form factor:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

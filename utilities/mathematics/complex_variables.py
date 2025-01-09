@@ -1,7 +1,7 @@
 from decimal import Decimal
 
 class ComplexDecimal:
-    def __init__(self, real: Decimal = Decimal("0.0"), imag: Decimal = Decimal("0.0")):
+    def __init__(self, real: Decimal = 0., imag: Decimal = 0.):
         self.real = real
         self.imag = imag
 

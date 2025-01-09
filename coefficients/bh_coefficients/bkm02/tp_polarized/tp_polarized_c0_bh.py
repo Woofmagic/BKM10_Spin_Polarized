@@ -1,6 +1,6 @@
 from decimal import Decimal
 
-from utilities.mathematics.trigonometric import cos
+
 
 from statics.masses.particle_masses import _MASS_OF_PROTON_IN_GEV
 
@@ -69,22 +69,22 @@ def calculate_c_0_transversely_polarized_bh(
         sum_of_form_factors = (Dirac_form_factor_F1 + Pauli_form_factor_F2)
 
         # (2): Calculate the frequent appearance of 1 - t/Q^{2}
-        t_over_Q_squared = Decimal("1.") - squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
+        t_over_Q_squared = 1. - squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
 
         # (3): Calculate the first term in the brackets:
         first_bracket_term = x_Bjorken**3 * _MASS_OF_PROTON_IN_GEV**2 * t_over_Q_squared * sum_of_form_factors / squared_Q_momentum_transfer
 
         # (4): Calculate the second part of the second bracket term:
-        second_part_second_bracket_term = x_Bjorken**2 * _MASS_OF_PROTON_IN_GEV**2 * t_over_Q_squared * Dirac_form_factor_F1 / squared_hadronic_momentum_transfer_t + x_Bjorken * Pauli_form_factor_F2 / Decimal("2.0")
+        second_part_second_bracket_term = x_Bjorken**2 * _MASS_OF_PROTON_IN_GEV**2 * t_over_Q_squared * Dirac_form_factor_F1 / squared_hadronic_momentum_transfer_t + x_Bjorken * Pauli_form_factor_F2 / 2.
 
         # (5): Calculate the second bracket term by multiplying a prefactor to the "second part" of it above:
-        second_bracket_term = (Decimal("1.") - (Decimal("1.") - x_Bjorken) * squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer) *  second_part_second_bracket_term
+        second_bracket_term = (1. - (1. - x_Bjorken) * squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer) *  second_part_second_bracket_term
 
         # (6): Calculate crazy prefactor thing:
-        epsilon_prefactor = (Decimal("1.") - epsilon**2).sqrt() * shorthand_k * sum_of_form_factors / (Decimal("1.") - lepton_energy_fraction_y - (epsilon**2 * lepton_energy_fraction_y**2 / Decimal("4.0"))).sqrt()
+        epsilon_prefactor = np.sqrt(1. - epsilon**2) * shorthand_k * sum_of_form_factors / np.sqrt(1. - lepton_energy_fraction_y - (epsilon**2 * lepton_energy_fraction_y**2 / 4.))
 
         # (7): Calculate the rest of the prefactor:
-        remaining_prefactor = Decimal("8. ") * lepton_helicity * cos(azimuthal_phi) * (Decimal("2.") - lepton_energy_fraction_y) * lepton_energy_fraction_y * (squared_Q_momentum_transfer.sqrt()) / _MASS_OF_PROTON_IN_GEV
+        remaining_prefactor = 8. * lepton_helicity * np.cos(azimuthal_phi) * (2. - lepton_energy_fraction_y) * lepton_energy_fraction_y * (np.sqrt(squared_Q_momentum_transfer)) / _MASS_OF_PROTON_IN_GEV
 
         # (8): Piece together all of the factors:
         c0TP_BH = remaining_prefactor * epsilon_prefactor * (first_bracket_term + second_bracket_term)
@@ -98,4 +98,4 @@ def calculate_c_0_transversely_polarized_bh(
 
     except Exception as ERROR:
         print(f"> Error in calculating c0TP_BH for BH Amplitude Squared:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.
