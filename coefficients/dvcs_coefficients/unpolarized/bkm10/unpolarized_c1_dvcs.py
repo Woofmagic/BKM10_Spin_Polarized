@@ -7,11 +7,11 @@ from form_factors.effective_cffs import compute_cff_effective
 from coefficients.dvcs_coefficients.unpolarized.bkm10.unpolarized_curlyC_dvcs import calculate_curly_c_unpolarized_dvcs
 
 def calculate_c_1_unpolarized_dvcs(
-    squared_Q_momentum_transfer: float, 
-    x_Bjorken: float, 
+    squared_Q_momentum_transfer: float,
+    x_Bjorken: float,
     squared_hadronic_momentum_transfer_t: float,
     epsilon: float,
-    lepton_energy_fraction_y: float, 
+    lepton_energy_fraction_y: float,
     skewness_parameter: float,
     shorthand_k: float,
     compton_form_factor_h: complex,
@@ -43,6 +43,8 @@ def calculate_c_1_unpolarized_dvcs(
             compton_form_factor_e.conjugate(),
             compton_form_factor_e_tilde.conjugate(),
         ).real
+
+        print(curlyC_unp_DVCS)
 
         # (3): Calculate the entire coefficient:
         c1_dvcs_unpolarized_coefficient = prefactor * curlyC_unp_DVCS

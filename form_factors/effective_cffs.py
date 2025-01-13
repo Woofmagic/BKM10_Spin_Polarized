@@ -36,7 +36,7 @@ def compute_cff_effective(
         if use_ww:
             cff_effective = 2. * compton_form_factor / (1. + skewness_parameter)
         else:
-            cff_effective = 2. * skewness_parameter * compton_form_factor / (1. + skewness_parameter)
+            cff_effective = -2. * skewness_parameter * compton_form_factor / (1. + skewness_parameter)
 
         # (1.1): If verbose, log the output:
         if verbose:

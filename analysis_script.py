@@ -307,21 +307,25 @@ def analysis():
 
         def analyze_dvcs_unp_beam_unp_target():
 
-            pure_dvcs_unpolarized_beam_unpolarized_target = cross_section_prefactor * (0.5 *
+            print("> Now analyzing unpolarized beam unpolarized target DVC without WW")
+
+            pure_dvcs_unpolarized_beam_unpolarized_target = (cross_section_prefactor * (0.5 *
                 (calculate_dvcs_amplitude_squared(
                 0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
                 epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False) +
                 calculate_dvcs_amplitude_squared(
                 -0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-                epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)))
+                epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False))))
 
-            pure_dvcs_unpolarized_beam_unpolarized_target_ww = cross_section_prefactor * (0.5 * 
+            print("> Now analyzing unpolarized beam unpolarized target DVC with WW")
+            
+            pure_dvcs_unpolarized_beam_unpolarized_target_ww = (cross_section_prefactor * (0.5 * 
                 (calculate_dvcs_amplitude_squared(
                 0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
                 epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True) +
                 calculate_dvcs_amplitude_squared(
                 -0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-                epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True)))
+                epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True))))
 
             jd_mathematica_pure_dvcs_unpolarized_beam_unpolarized_target = pd.read_csv(
                 f'jd_dvcs_unpolarized_beam_unpolarized_target_kinematic_bin_{kinematic_bin_number}_v2.csv',

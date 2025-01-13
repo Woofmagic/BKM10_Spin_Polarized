@@ -4,7 +4,7 @@ from statics.masses.particle_masses import _MASS_OF_PROTON_IN_GEV
 
 from utilities.mathematics.complex_variables import two_complex_variable_product
 
-def calculate_curly_c_unpolarized_dvcs(
+def calculate_curly_c_unpolarized_dvcs_bkm02(
     squared_Q_momentum_transfer: float, 
     x_Bjorken: float, 
     squared_hadronic_momentum_transfer_t: float,

@@ -140,7 +140,7 @@ def calculate_dvcs_amplitude_squared(
                 compton_form_factor_e_tilde,
                 use_ww,
                 verbose)
-            
+
             # (4): Obtain the first coefficient in the unevaluated sum (np.sin n = 1 term):
             coefficient_s1_DVCS = calculate_s_1_unpolarized_dvcs(
                 lepton_helicity,
@@ -157,7 +157,7 @@ def calculate_dvcs_amplitude_squared(
                 compton_form_factor_e_tilde,
                 use_ww,
                 verbose)
-            
+
         elif target_polarization != 0.0:
 
             if verbose:
