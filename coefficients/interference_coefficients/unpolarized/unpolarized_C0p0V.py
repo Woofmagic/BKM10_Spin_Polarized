@@ -20,7 +20,7 @@ def calculate_c_0_zero_plus_unpolarized_V(
         main_part = x_Bjorken * t_over_Q_squared * (1. - (1. - 2. * x_Bjorken) * t_over_Q_squared)
 
         # (3): Calculate the prefactor:
-        prefactor = 24. * sqrt(2.) * shorthand_k * (2. - lepton_energy_fraction_y) * sqrt(1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.)) / (1. + epsilon**2)**2.5
+        prefactor = 24. * np.sqrt(2.) * shorthand_k * (2. - lepton_energy_fraction_y) * np.sqrt(1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.)) / (1. + epsilon**2)**2.5
 
         # (4): Stitch together the coefficient:
         c_0_zero_plus_V_unp = prefactor * main_part

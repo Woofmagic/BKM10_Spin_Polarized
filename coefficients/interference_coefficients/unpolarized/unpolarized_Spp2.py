@@ -14,7 +14,7 @@ def calculate_s_2_plus_plus_unpolarized(
     try:
 
         # (1): Calculate the recurrent quantity sqrt(1 + epsilon^2):
-        root_one_plus_epsilon_squared = sqrt(1. + epsilon**2)
+        root_one_plus_epsilon_squared = np.sqrt(1. + epsilon**2)
 
         # (2): Calculate the quantity t'/Q^{2}:
         tPrime_over_Q_squared = t_prime / squared_Q_momentum_transfer

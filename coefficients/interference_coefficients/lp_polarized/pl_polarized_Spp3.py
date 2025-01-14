@@ -15,7 +15,7 @@ def calculate_s_3_plus_plus_longitudinally_polarized(
     try:
 
         # (1): Calculate the recurrent quantity sqrt(1 + epsilon^2):
-        root_one_plus_epsilon_squared = sqrt(1. + epsilon**2)
+        root_one_plus_epsilon_squared = np.sqrt(1. + epsilon**2)
 
         # (2): Calculate 1 + sqrt(1 + epsilon^2):
         one_plus_root_epsilon_stuff = 1. + root_one_plus_epsilon_squared

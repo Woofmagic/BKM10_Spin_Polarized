@@ -261,16 +261,6 @@ def calculate_s_2_interference_coefficient(
                 lepton_energy_fraction_y,
                 t_prime,
                 verbose)
-            
-            print("Checking input")
-            print(lepton_helicity)
-            print(squared_Q_momentum_transfer[0])
-            print(x_Bjorken[0])
-            print(epsilon[0])
-            print(lepton_energy_fraction_y[0])
-            print(t_prime[0])
-            
-            print(f"> S++ 2 is equal to: {s_plus_plus}")
 
             # (2): The second part of the term is S_{0+}(n = 2):
             s_zero_plus = calculate_s_2_zero_plus_unpolarized(
@@ -282,8 +272,6 @@ def calculate_s_2_interference_coefficient(
                 lepton_energy_fraction_y,
                 shorthand_k,
                 verbose)
-            
-            print(f"> S0+ 2 is equal to: {s_zero_plus}")
 
             # (3): Calculate the curly S_{++} contribution - requires both n and the CFFs:
             curly_s_plus_plus = calculate_curly_S_plus_plus_unpolarized_interference(

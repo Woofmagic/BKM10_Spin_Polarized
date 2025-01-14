@@ -18,7 +18,7 @@ def calculate_s_2_plus_plus_longitudinally_polarized_V(
     try:
 
         # (1): Calculate the recurrent quantity sqrt(1 + epsilon^2):
-        root_one_plus_epsilon_squared = sqrt(1. + epsilon**2)
+        root_one_plus_epsilon_squared = np.sqrt(1. + epsilon**2)
 
         # (2): Calculate the first contribution to the bracket term:
         bracket_term_second_term = (3.  - root_one_plus_epsilon_squared - (2. * x_Bjorken) + (epsilon**2 / x_Bjorken)) * x_Bjorken * t_prime / squared_Q_momentum_transfer

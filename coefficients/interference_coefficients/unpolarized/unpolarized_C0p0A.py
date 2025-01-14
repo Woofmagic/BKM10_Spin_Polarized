@@ -23,7 +23,7 @@ def calculate_c_0_zero_plus_unpolarized_A(
         brackets_term = 1. - t_over_Q_squared * (2. - 12. * x_Bjorken * (1. - x_Bjorken) - epsilon**2) / fancy_xb_epsilon_term
 
         # (4): Calculate the prefactor:
-        prefactor = 4. * sqrt(2.) * shorthand_k * (2. - lepton_energy_fraction_y) * sqrt(1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.)) / np.power(1. + epsilon**2, 2.5)
+        prefactor = 4. * np.sqrt(2.) * shorthand_k * (2. - lepton_energy_fraction_y) * np.sqrt(1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.)) / np.power(1. + epsilon**2, 2.5)
 
         # (5): Stitch together the coefficient:
         c_0_zero_plus_A_unp = prefactor * t_over_Q_squared * fancy_xb_epsilon_term * brackets_term

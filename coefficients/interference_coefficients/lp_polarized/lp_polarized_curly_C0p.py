@@ -39,7 +39,7 @@ def calculate_curly_C_zero_plus_longitudinally_polarized_interference(
     try:
 
         # (1): Calculate the prefactor: Ktilde / (2 - xb) * sqrt(2 / Q^{2})
-        prefactor = sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)
+        prefactor = np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)
 
         # (2): Calculate curly C_{LP}^{I}(F):
         curly_C_longitudinally_polarized_interference = calculate_curly_C_longitudinally_polarized_interference(

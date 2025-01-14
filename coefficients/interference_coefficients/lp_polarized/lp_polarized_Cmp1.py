@@ -18,7 +18,7 @@ def calculate_c_1_minus_plus_longitudinally_polarized(
     try:
 
         # (1): Calculate the recurrent quantity sqrt(1 + epsilon^2):
-        root_one_plus_epsilon_squared = sqrt(1. + epsilon**2)
+        root_one_plus_epsilon_squared = np.sqrt(1. + epsilon**2)
 
         # (2): Calculate modulated epsilon term:
         fancy_epsilon_term = 1. - epsilon**2 - root_one_plus_epsilon_squared

@@ -18,7 +18,7 @@ def calculate_s_2_plus_plus_longitudinally_polarized_A(
     try:
 
         # (1): Calculate the recurrent quantity sqrt(1 + epsilon^2):
-        root_one_plus_epsilon_squared = sqrt(1. + epsilon**2)
+        root_one_plus_epsilon_squared = np.sqrt(1. + epsilon**2)
 
         # (2): Calculate the first contribution to the bracket term:
         bracket_term_first_term = (1. + root_one_plus_epsilon_squared - 2. * x_Bjorken) * (1. - ((1. - 2. * x_Bjorken) * squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer)) * t_prime / squared_Q_momentum_transfer

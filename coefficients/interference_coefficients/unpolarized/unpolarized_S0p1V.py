@@ -26,7 +26,7 @@ def calculate_s_1_zero_plus_unpolarized_V(
         bracket_term = 4. * (1. - 2. * x_Bjorken) * t_over_Q_squared * (1. + x_Bjorken * t_over_Q_squared) + epsilon**2 * (1. + t_over_Q_squared)**2
 
         # (5): Calculate the prefactor:
-        prefactor = 4. * sqrt(2. * fancy_y_stuff) * lepton_helicity * lepton_energy_fraction_y * (2. - lepton_energy_fraction_y) * x_Bjorken * t_over_Q_squared / one_plus_epsilon_squared_squared
+        prefactor = 4. * np.sqrt(2. * fancy_y_stuff) * lepton_helicity * lepton_energy_fraction_y * (2. - lepton_energy_fraction_y) * x_Bjorken * t_over_Q_squared / one_plus_epsilon_squared_squared
 
         # (6): Calculate the coefficient
         s_1_zero_plus_unp_V = prefactor * bracket_term

@@ -17,7 +17,7 @@ def calculate_c_0_zero_plus_unpolarized(
         bracket_quantity = epsilon**2 + squared_hadronic_momentum_transfer_t * (2. - 6.* x_Bjorken - epsilon**2) / (3. * squared_Q_momentum_transfer)
         
         # (2): Calculate part of the prefactor:
-        prefactor = 12. * sqrt(2.) * shorthand_k * (2. - lepton_energy_fraction_y) * sqrt(1. - lepton_energy_fraction_y - (epsilon**2 * lepton_energy_fraction_y**2 / 4)) / np.power(1. + epsilon**2, 2.5)
+        prefactor = 12. * np.sqrt(2.) * shorthand_k * (2. - lepton_energy_fraction_y) * np.sqrt(1. - lepton_energy_fraction_y - (epsilon**2 * lepton_energy_fraction_y**2 / 4)) / np.power(1. + epsilon**2, 2.5)
         
         # (3): Calculate the coefficient:
         c_0_zero_plus_unp = prefactor * bracket_quantity

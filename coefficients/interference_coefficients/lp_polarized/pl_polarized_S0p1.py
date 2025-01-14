@@ -27,7 +27,7 @@ def calculate_s_1_zero_plus_longitudinally_polarized(
         second_bracket_term = (1. + t_over_Q_squared) * combination_of_y_and_epsilon * (2. * x_Bjorken * t_over_Q_squared - (epsilon**2 * (1. - t_over_Q_squared)))
         
         # (5): Calculate the prefactor:
-        prefactor = 8. * sqrt(2.) * target_polarization  * sqrt(combination_of_y_and_epsilon) / sqrt((1. + epsilon**2)**5)
+        prefactor = 8. * np.sqrt(2.) * target_polarization  * np.sqrt(combination_of_y_and_epsilon) / np.sqrt((1. + epsilon**2)**5)
 
         # (6): Calculate everything:
         s_1_zero_plus_LP = prefactor * (first_bracket_term + second_bracket_term)

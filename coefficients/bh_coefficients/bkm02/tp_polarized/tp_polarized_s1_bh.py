@@ -60,13 +60,13 @@ def calculate_s_1_transversely_polarized_bh(
     try:
         
         # (1): Calculate the first part of the three pieces:
-        first_third = sqrt(1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.)) * _MASS_OF_PROTON_IN_GEV * np.power(1. + epsilon**2, 1.5) / sqrt(squared_Q_momentum_transfer)
+        first_third = np.sqrt(1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.)) * _MASS_OF_PROTON_IN_GEV * np.power(1. + epsilon**2, 1.5) / np.sqrt(squared_Q_momentum_transfer)
 
         # (2): Calculate  the second third with the Fs:
         second_third = (1. - squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer) * (Dirac_form_factor_F1 + Pauli_form_factor_F2) * (Dirac_form_factor_F1 + (squared_hadronic_momentum_transfer_t * Pauli_form_factor_F2 / (4. * _MASS_OF_PROTON_IN_GEV**2)))
 
         # (3): Calculate the whole thing:
-        s1TP_BH = 16. * lepton_helicity * np.np.sin(azimuthal_phi) * lepton_energy_fraction_y * x_Bjorken**2 * first_third * second_third
+        s1TP_BH = 16. * lepton_helicity * np.sin(azimuthal_phi) * lepton_energy_fraction_y * x_Bjorken**2 * first_third * second_third
 
         # (3.1): If verbose, log the output:
         if verbose:

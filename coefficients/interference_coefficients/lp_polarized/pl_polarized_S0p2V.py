@@ -15,10 +15,10 @@ def calculate_s_2_zero_plus_longitudinally_polarized_V(
     try:
 
         # (1): Calculate the annoying quantity sqrt(1 - y - y^{2} epsilon^{2} / 4)
-        root_combination_of_y_and_epsilon = sqrt(1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.))
+        root_combination_of_y_and_epsilon = np.sqrt(1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.))
         
         # (2): Calculate the prefactor:
-        prefactor = 8. * sqrt(2.) * target_polarization * shorthand_k * (2. - lepton_energy_fraction_y) * squared_hadronic_momentum_transfer_t / (sqrt((1. + epsilon**2)**5) * squared_Q_momentum_transfer)
+        prefactor = 8. * np.sqrt(2.) * target_polarization * shorthand_k * (2. - lepton_energy_fraction_y) * squared_hadronic_momentum_transfer_t / (np.sqrt((1. + epsilon**2)**5) * squared_Q_momentum_transfer)
 
         # (3): Calculate everything:
         s_2_zero_plus_V_LP = prefactor * (1. - x_Bjorken) * root_combination_of_y_and_epsilon

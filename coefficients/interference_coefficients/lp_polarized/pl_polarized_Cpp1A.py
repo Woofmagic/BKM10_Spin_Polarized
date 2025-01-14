@@ -22,7 +22,7 @@ def calculate_c_1_plus_plus_longitudinally_polarized_A(
         major_factor = x_Bjorken * t_over_Q_squared * (1. - (1. - 2. * x_Bjorken) * t_over_Q_squared)
 
         # (3): Calculate the prefactor:
-        prefactor = 16. * lepton_helicity * target_polarization * shorthand_k * lepton_energy_fraction_y * (2. - lepton_energy_fraction_y) / sqrt(1. + epsilon**2)**5
+        prefactor = 16. * lepton_helicity * target_polarization * shorthand_k * lepton_energy_fraction_y * (2. - lepton_energy_fraction_y) / np.sqrt(1. + epsilon**2)**5
 
         # (4): Calculate the entire thing:
         c_1_plus_plus_A_LP = prefactor * major_factor

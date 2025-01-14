@@ -1,6 +1,3 @@
-from decimal import Decimal
-
-
 from statics.masses.particle_masses import _MASS_OF_PROTON_IN_GEV
 
 from utilities.mathematics.polarization import check_polarization_datatype
@@ -78,10 +75,10 @@ def calculate_c_1_transversely_polarized_bh(
         bracket_term = 2. * shorthand_k**2 * squared_Q_momentum_transfer * first_part_first_bracket_term / (squared_hadronic_momentum_transfer_t * combination_of_y_and_epsilon) + second_bracket_term
 
         # (6): Calculate the first part of the prefactor:
-        first_part_prefactor = - 16. * lepton_helicity * np.cos(azimuthal_phi) * x_Bjorken * lepton_energy_fraction_y * sqrt(combination_of_y_and_epsilon)
+        first_part_prefactor = - 16. * lepton_helicity * np.cos(azimuthal_phi) * x_Bjorken * lepton_energy_fraction_y * np.sqrt(combination_of_y_and_epsilon)
 
         # (7): Piece together all of the factors:
-        c1TP_BH = first_part_prefactor * _MASS_OF_PROTON_IN_GEV * sqrt(1. + epsilon**2) * (Dirac_form_factor_F1 + Pauli_form_factor_F2) * bracket_term / sqrt(squared_Q_momentum_transfer)
+        c1TP_BH = first_part_prefactor * _MASS_OF_PROTON_IN_GEV * np.sqrt(1. + epsilon**2) * (Dirac_form_factor_F1 + Pauli_form_factor_F2) * bracket_term / np.sqrt(squared_Q_momentum_transfer)
 
         # (7.1): If verbose, log the output:
         if verbose:
