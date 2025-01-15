@@ -51,7 +51,7 @@ def calculate_curly_C_plus_plus_unpolarized_interference(
         
         # (2): Calculate curly C_{unp}^{I, V}(F):
         curly_C_V_unpolarized_interference = calculate_curly_C_unpolarized_interference_V(
-            squared_Q_momentum_transfer, 
+            squared_Q_momentum_transfer,
             x_Bjorken,
             squared_hadronic_momentum_transfer_t,
             Dirac_form_factor_F1,
@@ -141,7 +141,7 @@ def calculate_curly_C_plus_plus_unpolarized_interference(
                 t_prime,
                 shorthand_k,
                 verbose)
-
+            
             # (5): Perform the calculation:
             curly_C_plus_plus_unpolarized_interference = (curly_C_unpolarized_interference
             + (c_V_plus_plus_contribution * curly_C_V_unpolarized_interference / c_plus_plus_contribution)

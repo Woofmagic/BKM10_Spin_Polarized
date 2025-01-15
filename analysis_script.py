@@ -296,7 +296,7 @@ def analysis():
             magnetic_form_factor,
             Pauli_form_factor_F2,
             verbose)
-
+        
         # (2.X): Calculate the cross-section prefactor:
         cross_section_prefactor = calculate_bkm10_cross_section_prefactor(
             squared_Q_momentum_transfer,
@@ -575,6 +575,14 @@ def analysis():
                 dpi = 500)
 
         def analyze_interference_unp_beam_unp_target():
+
+            pure_interference_unpolarized_beam_unpolarized_target_ww = (cross_section_prefactor * (0.5 *
+                (calculate_interference_contribution(0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
+                Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True) +
+                calculate_interference_contribution(-0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
+                Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True))))
                 
             pure_interference_unpolarized_beam_unpolarized_target = (cross_section_prefactor * (0.5 *
                 (calculate_interference_contribution(0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
@@ -583,14 +591,6 @@ def analysis():
                 calculate_interference_contribution(-0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
                 epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
                 Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False))))
-            
-            pure_interference_unpolarized_beam_unpolarized_target_ww = (cross_section_prefactor * (0.5 *
-                (calculate_interference_contribution(0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-                epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
-                Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True) +
-                calculate_interference_contribution(-0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-                epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
-                Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True))))
             
             jd_mathematica_pure_interference_unpolarized_beam_unpolarized_target = pd.read_csv(
                     f'jd_interference_unpolarized_beam_unpolarized_target_kinematic_bin_{kinematic_bin_number}_v2.csv',
@@ -623,7 +623,7 @@ def analysis():
             plot_pure_interference_unpolarized_beam_unpolarized_target = PlotCustomizer(
                 axes_pure_interference_unpolarized_beam_unpolarized_target,
                 title = r"$E = {} \mathrm{{GeV}}, Q^{{2}} = {} \mathrm{{GeV}}^{{2}}, t = {} \mathrm{{GeV}}^{{2}}, x_{{\mathrm{{B}}}}= {}$".format(
-                    round(value_of_beam_energy, 5), 
+                    round(value_of_beam_energy, 5),
                     round(value_of_Q_squared, 5),
                     round(value_of_hadron_recoil, 5),
                     round(value_of_x_Bjorken, 5)),
@@ -782,14 +782,14 @@ def analysis():
                 fname = f'compared_pure_interference_plus_beam_unpolarized_target_kinematic_bin_{kinematic_bin_number}_v5.png',
                 dpi = 500)
 
-        print("> Beginning analysis of DVCS, unpolarized beam, unpolarized target...")
-        analyze_dvcs_unp_beam_unp_target()
+        # print("> Beginning analysis of DVCS, unpolarized beam, unpolarized target...")
+        # analyze_dvcs_unp_beam_unp_target()
 
-        print("> Beginning analysis of DVCS, (+) polarized beam, unpolarized target...")
-        analyze_dvcs_plus_beam_unp_target()
+        # print("> Beginning analysis of DVCS, (+) polarized beam, unpolarized target...")
+        # analyze_dvcs_plus_beam_unp_target()
 
-        print("> Beginning analysis of DVCS, (-) polarized beam, unpolarized target...")
-        analyze_dvcs_minus_beam_unp_target()
+        # print("> Beginning analysis of DVCS, (-) polarized beam, unpolarized target...")
+        # analyze_dvcs_minus_beam_unp_target()
         
         print("> Beginning analysis of Interference, unpolarized beam, unpolarized target...")
         analyze_interference_unp_beam_unp_target()

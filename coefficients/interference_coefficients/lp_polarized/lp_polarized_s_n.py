@@ -59,11 +59,13 @@ def calculate_s_1_interference_coefficient(
                 lepton_helicity,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
-                squared_hadronic_momentum_transfer_t,
                 epsilon,
                 lepton_energy_fraction_y,
+                t_prime,
                 shorthand_k,
                 verbose)
+            
+            print(f"> S(n = 1)++: {s_plus_plus[0]}")
 
             # (2): The second part of the term is S_{0+}(n = 1):
             s_zero_plus = calculate_s_1_zero_plus_unpolarized(
@@ -73,6 +75,8 @@ def calculate_s_1_interference_coefficient(
                 lepton_energy_fraction_y,
                 k_tilde,
                 verbose)
+            
+            print(f"> S(n = 1)0+: {s_zero_plus[0]}")
 
             # (3): Calculate the curly S_{++} contribution - requires both n and the CFFs:
             curly_s_plus_plus = calculate_curly_S_plus_plus_unpolarized_interference(
@@ -126,6 +130,8 @@ def calculate_s_1_interference_coefficient(
                 lepton_energy_fraction_y,
                 shorthand_k,
                 verbose)
+            
+            print(f"> S(n = 1)0+: {s_plus_plus[0]}")
 
             # (2): The second part of the term is S_{0+}(n = 1):
             s_zero_plus = calculate_s_1_zero_plus_longitudinally_polarized(
@@ -137,6 +143,8 @@ def calculate_s_1_interference_coefficient(
                 lepton_energy_fraction_y,
                 k_tilde,
                 verbose)
+            
+            print(f"> S(n = 1)0+: {s_zero_plus[0]}")
             
             # (3): The second part of the term is S_{-+}(n = 1):
             s_minus_plus = calculate_s_1_minus_plus_longitudinally_polarized(
@@ -591,9 +599,6 @@ def calculate_s_3_interference_coefficient(
         # (5): Calculate the entire thing:
         # s_3_interference_coefficient = s_plus_plus * curly_s_plus_plus.imag + s_zero_plus * curly_s_zero_plus.imag + s_minus_plus * curly_s_minus_plus.imag
         s_3_interference_coefficient = ((s_plus_plus * curly_s_plus_plus.imag) + (s_zero_plus * curly_s_zero_plus.imag))
-
-        print("IS THIS SHIT 0?")
-        print(s_3_interference_coefficient)
 
         # (): If verbose, print the output:
         if verbose:

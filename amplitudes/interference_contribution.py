@@ -188,7 +188,7 @@ def calculate_interference_contribution(
             compton_form_factor_e_tilde,
             use_ww,
             verbose)
-
+        
         # (3): Calculate c_{1}^{I}:
         # c_1_I = 0.
         c_1_I = calculate_c_1_interference_coefficient(
@@ -332,6 +332,14 @@ def calculate_interference_contribution(
             compton_form_factor_e_tilde,
             use_ww,
             verbose)
+        
+        print(f"> c0: {c_0_I[0]}")
+        print(f"> c1: {c_1_I[0]}")
+        print(f"> c2: {c_2_I[0]}")
+        print(f"> c3: {c_3_I[0]}")
+        print(f"> s1: {s_1_I[0]}")
+        print(f"> s2: {s_2_I[0]}")
+        print(f"> s3: {s_3_I[0]}")
         
         plot_interference_contributions(
             azimuthal_phi,

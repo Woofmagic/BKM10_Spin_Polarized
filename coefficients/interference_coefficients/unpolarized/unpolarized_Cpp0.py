@@ -1,8 +1,8 @@
 import numpy as np
 
 def calculate_c_0_plus_plus_unpolarized(
-    squared_Q_momentum_transfer: float, 
-    x_Bjorken: float, 
+    squared_Q_momentum_transfer: float,
+    x_Bjorken: float,
     squared_hadronic_momentum_transfer_t: float,
     epsilon: float,
     lepton_energy_fraction_y: float,
@@ -29,7 +29,7 @@ def calculate_c_0_plus_plus_unpolarized(
         two_minus_y = 2. - lepton_energy_fraction_y
 
         # (6): Calculate the first term in the brackets:
-        first_term_in_brackets = k_tilde**2 * two_minus_y**2 / (squared_Q_momentum_transfer ** root_one_plus_epsilon_squared)
+        first_term_in_brackets = k_tilde**2 * two_minus_y**2 / (squared_Q_momentum_transfer * root_one_plus_epsilon_squared)
 
         # (7): Calculate the first part of the second term in brackets:
         second_term_in_brackets_first_part = t_over_Q_squared * two_minus_xb * (1. - lepton_energy_fraction_y - (epsilon**2 * lepton_energy_fraction_y**2 / 4.))
@@ -41,7 +41,7 @@ def calculate_c_0_plus_plus_unpolarized(
         second_term_in_brackets_second_part =  1. + second_term_in_brackets_second_part_numerator / (two_minus_xb * one_plus_root_epsilon_stuff)
         
         # (10): Calculate the prefactor:
-        prefactor = 4. * two_minus_y * one_plus_root_epsilon_stuff / np.power(root_one_plus_epsilon_squared, 4)
+        prefactor = -4. * two_minus_y * one_plus_root_epsilon_stuff / np.power(root_one_plus_epsilon_squared, 4)
 
         # (11): Calculate the coefficient
         c_0_plus_plus_unp = prefactor * (first_term_in_brackets + second_term_in_brackets_first_part * second_term_in_brackets_second_part)
