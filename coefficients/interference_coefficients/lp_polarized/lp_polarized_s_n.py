@@ -96,6 +96,8 @@ def calculate_s_1_interference_coefficient(
                 compton_form_factor_h_tilde,
                 compton_form_factor_e,
                 verbose)
+            
+            print(f"> curly S++: {curly_s_plus_plus[0]}")
 
             # (4): Calculate the curly S_{0+} contribution - requires both n and the CFFs:
             curly_s_zero_plus = calculate_curly_S_zero_plus_unpolarized_interference(
@@ -115,6 +117,8 @@ def calculate_s_1_interference_coefficient(
                 compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde, use_ww),
                 compute_cff_effective(skewness_parameter, compton_form_factor_e, use_ww),
                 verbose)
+            
+            print(f"> curly S0+: {curly_s_zero_plus[0]}")
 
         elif target_polarization == 1.0:
 
@@ -131,7 +135,7 @@ def calculate_s_1_interference_coefficient(
                 shorthand_k,
                 verbose)
             
-            print(f"> S(n = 1)0+: {s_plus_plus[0]}")
+            print(f"> S(n = 1)++: {s_plus_plus[0]}")
 
             # (2): The second part of the term is S_{0+}(n = 1):
             s_zero_plus = calculate_s_1_zero_plus_longitudinally_polarized(
@@ -269,6 +273,8 @@ def calculate_s_2_interference_coefficient(
                 lepton_energy_fraction_y,
                 t_prime,
                 verbose)
+            
+            print(f"> S(n = 2)++: {s_plus_plus[0]}")
 
             # (2): The second part of the term is S_{0+}(n = 2):
             s_zero_plus = calculate_s_2_zero_plus_unpolarized(
@@ -280,6 +286,8 @@ def calculate_s_2_interference_coefficient(
                 lepton_energy_fraction_y,
                 shorthand_k,
                 verbose)
+            
+            print(f"> S(n = 2)0+: {s_zero_plus[0]}")
 
             # (3): Calculate the curly S_{++} contribution - requires both n and the CFFs:
             curly_s_plus_plus = calculate_curly_S_plus_plus_unpolarized_interference(
@@ -299,6 +307,8 @@ def calculate_s_2_interference_coefficient(
                 compton_form_factor_h_tilde,
                 compton_form_factor_e,
                 verbose)
+            
+            print(f"> Curly S++: {curly_s_plus_plus[0]}")
 
             # (4): Calculate the curly S_{0+} contribution - requires both n and the CFFs:
             curly_s_zero_plus = calculate_curly_S_zero_plus_unpolarized_interference(
@@ -318,6 +328,8 @@ def calculate_s_2_interference_coefficient(
                 compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde, use_ww),
                 compute_cff_effective(skewness_parameter, compton_form_factor_e, use_ww),
                 verbose)
+            
+            print(f"> Curly S0+: {curly_s_zero_plus[0]}")
 
         elif target_polarization == 1.0:
 

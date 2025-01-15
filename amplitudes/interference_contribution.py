@@ -339,7 +339,7 @@ def calculate_interference_contribution(
         print(f"> c3: {c_3_I[0]}")
         print(f"> s1: {s_1_I[0]}")
         print(f"> s2: {s_2_I[0]}")
-        print(f"> s3: {s_3_I[0]}")
+        print(f"> s3: {s_3_I}")
         
         plot_interference_contributions(
             azimuthal_phi,
@@ -352,13 +352,21 @@ def calculate_interference_contribution(
             convert_to_nb_over_GeV4(s_3_I))
 
         # (9): Calculate the interference contribution:
-        interference_contribution = (prefactor * (c_0_I + 
-            c_1_I * np.array([np.cos(1. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
-            c_2_I * np.array([np.cos(2. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
-            c_3_I * np.array([np.cos(3. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
-            s_1_I * np.array([np.sin(1. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
-            s_2_I * np.array([np.sin(2. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
-            s_3_I * np.array([np.sin(3. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi])))
+        # interference_contribution = (prefactor * (c_0_I +
+        #     c_1_I * np.array([np.cos(1. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
+        #     c_2_I * np.array([np.cos(2. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
+        #     c_3_I * np.array([np.cos(3. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
+        #     s_1_I * np.array([np.sin(1. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
+        #     s_2_I * np.array([np.sin(2. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
+        #     s_3_I * np.array([np.sin(3. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi])))
+
+        interference_contribution = (prefactor * (c_0_I +
+            c_1_I * np.cos(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
+            c_2_I * np.cos(2. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
+            c_3_I * np.cos(3. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
+            s_1_I * np.sin(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
+            s_2_I * np.sin(2. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
+            s_3_I * np.sin(3. * (np.pi - convert_degrees_to_radians(azimuthal_phi)))))
 
         # (9.1): If verbose, print the calculation:
         if verbose:

@@ -36,7 +36,7 @@ def calculate_s_2_plus_plus_unpolarized(
         
         # (7.1): If verbose, log the output:
         if verbose:
-            print(f"> Calculated s_2_plus_plus_unp to be: {s_2_plus_plus_unp}")
+            print(f"> Calculated s_2_plus_plus_unp to be:\n{s_2_plus_plus_unp}")
 
         # (6): Return the coefficient:
         return s_2_plus_plus_unp
