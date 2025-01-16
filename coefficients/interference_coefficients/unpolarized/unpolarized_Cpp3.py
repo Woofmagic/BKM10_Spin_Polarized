@@ -33,7 +33,7 @@ def calculate_c_3_plus_plus_unpolarized(
         
         # (6.1): If verbose, log the output:
         if verbose:
-            print(f"> Calculated c_3_plus_plus_unp to be: {c_3_plus_plus_unp}")
+            print(f"> Calculated c_3_plus_plus_unp to be:\n{c_3_plus_plus_unp}")
 
         # (7): Return the coefficient:
         return c_3_plus_plus_unp
