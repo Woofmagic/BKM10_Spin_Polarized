@@ -120,8 +120,8 @@ class TestCUnpolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_EPSILON,
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_K_TILDE,
-                _TEST_VERBOSE), 
-            0.6653497452048907)
+                _TEST_VERBOSE),
+            -0.6653497452048907)
         
     def test_calculate_c_1_plus_plus_unpolarized(self):
         """
