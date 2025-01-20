@@ -281,7 +281,7 @@ def analysis():
 
         # (2.X): Calculate the Magnetic Form Factor
         magnetic_form_factor = calculate_form_factor_magnetic(
-            electric_form_factor, 
+            electric_form_factor,
             verbose) 
 
         # (2.X): Calculate the Pauli Form Factor, F2:
@@ -782,20 +782,20 @@ def analysis():
                 fname = f'compared_pure_interference_plus_beam_unpolarized_target_kinematic_bin_{kinematic_bin_number}_v6.png',
                 dpi = 500)
 
-        # print("> Beginning analysis of DVCS, unpolarized beam, unpolarized target...")
-        # analyze_dvcs_unp_beam_unp_target()
+        print("> Beginning analysis of DVCS, unpolarized beam, unpolarized target...")
+        analyze_dvcs_unp_beam_unp_target()
 
-        # print("> Beginning analysis of DVCS, (+) polarized beam, unpolarized target...")
-        # analyze_dvcs_plus_beam_unp_target()
+        print("> Beginning analysis of DVCS, (+) polarized beam, unpolarized target...")
+        analyze_dvcs_plus_beam_unp_target()
 
-        # print("> Beginning analysis of DVCS, (-) polarized beam, unpolarized target...")
-        # analyze_dvcs_minus_beam_unp_target()
+        print("> Beginning analysis of DVCS, (-) polarized beam, unpolarized target...")
+        analyze_dvcs_minus_beam_unp_target()
         
         print("> Beginning analysis of Interference, unpolarized beam, unpolarized target...")
         analyze_interference_unp_beam_unp_target()
 
-        # print("> Beginning analysis of Interference, (+) beam, unpolarized target...")
-        # analyze_interference_plus_beam_unp_target()
+        print("> Beginning analysis of Interference, (+) beam, unpolarized target...")
+        analyze_interference_plus_beam_unp_target()
 
     # pure_dvcs_unpolarized_beam_lp_target = cross_section_prefactor * (0.5 * 
     #     (calculate_dvcs_amplitude_squared(

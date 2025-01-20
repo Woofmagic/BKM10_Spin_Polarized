@@ -1,5 +1,3 @@
-from decimal import Decimal
-import math
 
 
 from utilities.plotting.plot_customizer import PlotCustomizer
@@ -13,33 +11,58 @@ from calculation.plot_results import plot_interference_contributions
 
 import numpy as np
 
+from form_factors.effective_cffs import compute_cff_effective
+
 # Import helper modules:
 from utilities.mathematics.math_units import convert_degrees_to_radians
 
-# Coefficient | c_{0}^{I}
-from coefficients.interference_coefficients.lp_polarized.lp_polarized_c_n import calculate_c_0_interference_coefficient
+from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp0 import calculate_c_0_plus_plus_unpolarized
+from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp0V import calculate_c_0_plus_plus_unpolarized_V
+from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp0A import calculate_c_0_plus_plus_unpolarized_A
 
-# Coefficient | c_{1}^{I}
-from coefficients.interference_coefficients.lp_polarized.lp_polarized_c_n import calculate_c_1_interference_coefficient
-
-# Coefficient | c_{2}^{I}
-from coefficients.interference_coefficients.lp_polarized.lp_polarized_c_n import calculate_c_2_interference_coefficient
-
-# Coefficient | c_{3}^{I}
-from coefficients.interference_coefficients.lp_polarized.lp_polarized_c_n import calculate_c_3_interference_coefficient
-
-# Coefficient | s_{1}^{I}
-from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_1_interference_coefficient
-
-# Coefficient | s_{2}^{I}
-from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_2_interference_coefficient
-
-# Coefficient | s_{3}^{I}
-from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_3_interference_coefficient
+from coefficients.interference_coefficients.unpolarized.unpolarized_C0p0 import calculate_c_0_zero_plus_unpolarized
+from coefficients.interference_coefficients.unpolarized.unpolarized_C0p0V import calculate_c_0_zero_plus_unpolarized_V
+from coefficients.interference_coefficients.unpolarized.unpolarized_C0p0A import calculate_c_0_zero_plus_unpolarized_A
 
 from coefficients.interference_coefficients.unpolarized.unpolarized_curly_C import calculate_curly_C_unpolarized_interference
 from coefficients.interference_coefficients.unpolarized.unpolarized_curly_CV import calculate_curly_C_unpolarized_interference_V
 from coefficients.interference_coefficients.unpolarized.unpolarized_curly_CA import calculate_curly_C_unpolarized_interference_A
+
+from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp1 import calculate_c_1_plus_plus_unpolarized
+from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp1V import calculate_c_1_plus_plus_unpolarized_V
+from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp1A import calculate_c_1_plus_plus_unpolarized_A
+
+from coefficients.interference_coefficients.unpolarized.unpolarized_C0p1 import calculate_c_1_zero_plus_unpolarized
+from coefficients.interference_coefficients.unpolarized.unpolarized_C0p1V import calculate_c_1_zero_plus_unpolarized_V
+from coefficients.interference_coefficients.unpolarized.unpolarized_C0p1A import calculate_c_1_zero_plus_unpolarized_A
+
+from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp2 import calculate_c_2_plus_plus_unpolarized
+from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp2V import calculate_c_2_plus_plus_unpolarized_V
+from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp2A import calculate_c_2_plus_plus_unpolarized_A
+
+from coefficients.interference_coefficients.unpolarized.unpolarized_C0p2 import calculate_c_2_zero_plus_unpolarized
+from coefficients.interference_coefficients.unpolarized.unpolarized_C0p2V import calculate_c_2_zero_plus_unpolarized_V
+from coefficients.interference_coefficients.unpolarized.unpolarized_C0p2A import calculate_c_2_zero_plus_unpolarized_A
+
+from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp3 import calculate_c_3_plus_plus_unpolarized
+from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp3V import calculate_c_3_plus_plus_unpolarized_V
+from coefficients.interference_coefficients.unpolarized.unpolarized_Cpp3A import calculate_c_3_plus_plus_unpolarized_A
+
+from coefficients.interference_coefficients.unpolarized.unpolarized_Spp1 import calculate_s_1_plus_plus_unpolarized
+from coefficients.interference_coefficients.unpolarized.unpolarized_Spp1V import calculate_s_1_plus_plus_unpolarized_V
+from coefficients.interference_coefficients.unpolarized.unpolarized_Spp1A import calculate_s_1_plus_plus_unpolarized_A
+
+from coefficients.interference_coefficients.unpolarized.unpolarized_S0p1 import calculate_s_1_zero_plus_unpolarized
+from coefficients.interference_coefficients.unpolarized.unpolarized_S0p1V import calculate_s_1_zero_plus_unpolarized_V
+from coefficients.interference_coefficients.unpolarized.unpolarized_S0p1A import calculate_s_1_zero_plus_unpolarized_A
+
+from coefficients.interference_coefficients.unpolarized.unpolarized_Spp2 import calculate_s_2_plus_plus_unpolarized
+from coefficients.interference_coefficients.unpolarized.unpolarized_Spp2V import calculate_s_2_plus_plus_unpolarized_V
+from coefficients.interference_coefficients.unpolarized.unpolarized_Spp2A import calculate_s_2_plus_plus_unpolarized_A
+
+from coefficients.interference_coefficients.unpolarized.unpolarized_S0p2 import calculate_s_2_zero_plus_unpolarized
+from coefficients.interference_coefficients.unpolarized.unpolarized_S0p2V import calculate_s_2_zero_plus_unpolarized_V
+from coefficients.interference_coefficients.unpolarized.unpolarized_S0p2A import calculate_s_2_zero_plus_unpolarized_A
 
 def calculate_interference_contribution(
     lepton_helicity: float,
@@ -65,8 +88,6 @@ def calculate_interference_contribution(
     use_ww: bool = False,
     verbose: bool = False) -> float:
     """
-    # Title: `calculate_interference_contribution`
-
     ## Description:
     We calculated the BKM10-predicted contribution of the interference between
     the BH and DVCS process.
@@ -165,208 +186,486 @@ def calculate_interference_contribution(
         # (1): Calculate the prefactor:
         prefactor = 1. / (x_Bjorken * lepton_energy_fraction_y**3 * squared_hadronic_momentum_transfer_t * lepton_propagator_p1 * lepton_propagator_p2)
 
-        # (2): Calculate c_{0}^{I}:
-        # c_0_I = 0.
-        c_0_I = calculate_c_0_interference_coefficient(
-            0,
-            lepton_helicity,
-            target_polarization,
-            squared_Q_momentum_transfer,
-            x_Bjorken,
-            squared_hadronic_momentum_transfer_t,
-            epsilon,
-            lepton_energy_fraction_y,
-            skewness_parameter,
-            t_prime,
-            k_tilde,
-            shorthand_k,
-            Dirac_form_factor_F1,
-            Pauli_form_factor_F2,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
-            use_ww,
-            verbose)
-        
-        # (3): Calculate c_{1}^{I}:
-        # c_1_I = 0.
-        c_1_I = calculate_c_1_interference_coefficient(
-            1,
-            lepton_helicity,
-            target_polarization,
-            squared_Q_momentum_transfer,
-            x_Bjorken,
-            squared_hadronic_momentum_transfer_t,
-            epsilon,
-            lepton_energy_fraction_y,
-            skewness_parameter,
-            t_prime,
-            k_tilde,
-            shorthand_k,
-            Dirac_form_factor_F1,
-            Pauli_form_factor_F2,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
-            use_ww,
-            verbose)
-        
-        # (4): Calculate c_{2}^{I}:
-        # c_2_I = 0.
-        c_2_I = calculate_c_2_interference_coefficient(
-            2,
-            lepton_helicity,
-            target_polarization,
-            squared_Q_momentum_transfer,
-            x_Bjorken,
-            squared_hadronic_momentum_transfer_t,
-            epsilon,
-            lepton_energy_fraction_y,
-            skewness_parameter,
-            t_prime,
-            k_tilde,
-            shorthand_k,
-            Dirac_form_factor_F1,
-            Pauli_form_factor_F2,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
-            use_ww,
-            verbose)
+        # (2): Initialize the Fourier coefficients:
+        c_0_interference_coefficient = 0.
+        c_1_interference_coefficient = 0.
+        c_2_interference_coefficient = 0.
+        c_3_interference_coefficient = 0.
+        s_1_interference_coefficient = 0.
+        s_2_interference_coefficient = 0.
+        s_3_interference_coefficient = 0.
 
-        # (5): Calculate c_{2}^{I}:
-        # c_3_I = 0.
-        c_3_I = calculate_c_3_interference_coefficient(
-            3,
-            lepton_helicity,
-            target_polarization,
-            squared_Q_momentum_transfer,
-            x_Bjorken,
-            squared_hadronic_momentum_transfer_t,
-            epsilon,
-            lepton_energy_fraction_y,
-            skewness_parameter,
-            t_prime,
-            k_tilde,
-            shorthand_k,
-            Dirac_form_factor_F1,
-            Pauli_form_factor_F2,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
-            use_ww,
-            verbose)
-        
-        # (6): Calculate s_{1}^{I}:
-        # s_1_I = 0.
-        s_1_I = calculate_s_1_interference_coefficient(
-            1,
-            lepton_helicity,
-            target_polarization,
-            squared_Q_momentum_transfer,
-            x_Bjorken,
-            squared_hadronic_momentum_transfer_t,
-            epsilon,
-            lepton_energy_fraction_y,
-            skewness_parameter,
-            t_prime,
-            k_tilde,
-            shorthand_k,
-            Dirac_form_factor_F1,
-            Pauli_form_factor_F2,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
-            use_ww,
-            verbose)
+        if target_polarization == 0.:
 
-        # (7): Calculate s_{2}^{I}:
-        # s_2_I = 0.
-        s_2_I = calculate_s_2_interference_coefficient(
-            2,
-            lepton_helicity,
-            target_polarization,
-            squared_Q_momentum_transfer,
-            x_Bjorken,
-            squared_hadronic_momentum_transfer_t,
-            epsilon,
-            lepton_energy_fraction_y,
-            skewness_parameter,
-            t_prime,
-            k_tilde,
-            shorthand_k,
-            Dirac_form_factor_F1,
-            Pauli_form_factor_F2,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
-            use_ww,
-            verbose)
+            C0_pp_unpolarized = calculate_c_0_plus_plus_unpolarized(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                k_tilde,
+                verbose)
 
-        # (8): Calculate s_{3}^{I}:
-        # s_3_I = 0.
-        s_3_I = calculate_s_3_interference_coefficient(
-            3,
-            lepton_helicity,
-            target_polarization,
-            squared_Q_momentum_transfer,
-            x_Bjorken,
-            squared_hadronic_momentum_transfer_t,
-            epsilon,
-            lepton_energy_fraction_y,
-            skewness_parameter,
-            t_prime,
-            k_tilde,
-            shorthand_k,
-            Dirac_form_factor_F1,
-            Pauli_form_factor_F2,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
-            use_ww,
-            verbose)
+            C0V_pp_unpolarized = calculate_c_0_plus_plus_unpolarized_V(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                k_tilde,
+                verbose)
+
+            C0A_pp_unpolarized = calculate_c_0_plus_plus_unpolarized_A(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                k_tilde,
+                verbose)
+
+            C0_0p_unpolarized = calculate_c_0_zero_plus_unpolarized(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                verbose)
+
+            C0V_0p_unpolarized = calculate_c_0_zero_plus_unpolarized_V(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                verbose)
+
+            C0A_0p_unpolarized = calculate_c_0_zero_plus_unpolarized_A(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                verbose)
+
+            curly_C_unpolarized_interference_for_pp = calculate_curly_C_unpolarized_interference(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                Dirac_form_factor_F1,
+                Pauli_form_factor_F2,
+                compton_form_factor_h,
+                compton_form_factor_h_tilde,
+                compton_form_factor_e,
+                verbose)
+
+            curly_C_V_unpolarized_interference_for_pp = calculate_curly_C_unpolarized_interference_V(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                Dirac_form_factor_F1,
+                Pauli_form_factor_F2,
+                compton_form_factor_h,
+                compton_form_factor_e,
+                verbose)
+
+            curly_C_A_unpolarized_interference_for_pp = calculate_curly_C_unpolarized_interference_A(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                Dirac_form_factor_F1,
+                Pauli_form_factor_F2,
+                compton_form_factor_h_tilde,
+                verbose)
+
+            curly_C_unpolarized_interference_for_0p = calculate_curly_C_unpolarized_interference(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                Dirac_form_factor_F1,
+                Pauli_form_factor_F2,
+                compute_cff_effective(skewness_parameter, compton_form_factor_h, use_ww),
+                compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde, use_ww),
+                compute_cff_effective(skewness_parameter, compton_form_factor_e, use_ww),
+                verbose)
+
+            curly_C_V_unpolarized_interference_for_0p = calculate_curly_C_unpolarized_interference_V(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                Dirac_form_factor_F1,
+                Pauli_form_factor_F2,
+                compute_cff_effective(skewness_parameter, compton_form_factor_h, use_ww),
+                compute_cff_effective(skewness_parameter, compton_form_factor_e, use_ww),
+                verbose)
+
+            curly_C_A_unpolarized_interference_for_0p = calculate_curly_C_unpolarized_interference_A(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                Dirac_form_factor_F1,
+                Pauli_form_factor_F2,
+                compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde, use_ww),
+                verbose)
+
+            curly_C_0_pp_int =  (curly_C_unpolarized_interference_for_pp
+                        + (C0V_pp_unpolarized * curly_C_V_unpolarized_interference_for_pp / C0_pp_unpolarized)
+                        + (C0A_pp_unpolarized * curly_C_A_unpolarized_interference_for_pp / C0_pp_unpolarized))
+
+            curly_C_0_0p_int =  ((np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)) * (curly_C_unpolarized_interference_for_0p
+                        + (C0V_0p_unpolarized * curly_C_V_unpolarized_interference_for_0p / C0_0p_unpolarized)
+                        + (C0A_0p_unpolarized * curly_C_A_unpolarized_interference_for_0p / C0_0p_unpolarized)))
+
+            C1_pp_unpolarized = calculate_c_1_plus_plus_unpolarized(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                verbose)
+
+            C1V_pp_unpolarized = calculate_c_1_plus_plus_unpolarized_V(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                t_prime,
+                shorthand_k,
+                verbose)
+
+            C1A_pp_unpolarized = calculate_c_1_plus_plus_unpolarized_A(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                t_prime,
+                shorthand_k,
+                verbose)
+
+            C1_0p_unpolarized = calculate_c_1_zero_plus_unpolarized(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                t_prime,
+                verbose)
+
+            C1V_0p_unpolarized = calculate_c_1_zero_plus_unpolarized_V(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                k_tilde,
+                verbose)
+
+            C1A_0p_unpolarized = calculate_c_1_zero_plus_unpolarized_A(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                k_tilde,
+                verbose)
+
+            C2_pp_unpolarized = calculate_c_2_plus_plus_unpolarized(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                t_prime,
+                k_tilde,
+                verbose)
+
+            C2V_pp_unpolarized = calculate_c_2_plus_plus_unpolarized_V(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                t_prime,
+                k_tilde,
+                verbose)
+
+            C2A_pp_unpolarized = calculate_c_2_plus_plus_unpolarized_A(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                t_prime,
+                k_tilde,
+                verbose)
+
+            C2_0p_unpolarized = calculate_c_2_zero_plus_unpolarized(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                verbose)
+
+            C2V_0p_unpolarized = calculate_c_2_zero_plus_unpolarized_V(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                verbose)
+
+            C2A_0p_unpolarized = calculate_c_2_zero_plus_unpolarized_A(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                t_prime,
+                shorthand_k,
+                verbose)
+
+            C3_pp_unpolarized = calculate_c_3_plus_plus_unpolarized(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                verbose)
+
+            C3V_pp_unpolarized = calculate_c_3_plus_plus_unpolarized_V(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                verbose)
+
+            C3A_pp_unpolarized = calculate_c_3_plus_plus_unpolarized_A(
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                t_prime,
+                shorthand_k,
+                verbose)
+
+            C3_0p_unpolarized = 0.
+
+            C3V_0p_unpolarized = 0.
+
+            C3A_0p_unpolarized = 0.
+
+            S1_pp_unpolarized = calculate_s_1_plus_plus_unpolarized(
+                lepton_helicity,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                epsilon,
+                lepton_energy_fraction_y,
+                t_prime,
+                shorthand_k,
+                verbose)
+
+            S1V_pp_unpolarized = calculate_s_1_plus_plus_unpolarized_V(
+                lepton_helicity,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                verbose)
+
+            S1A_pp_unpolarized = calculate_s_1_plus_plus_unpolarized_A(
+                lepton_helicity,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                t_prime,
+                shorthand_k,
+                verbose)
+
+            S1_0p_unpolarized = calculate_s_1_zero_plus_unpolarized(
+                lepton_helicity,
+                squared_Q_momentum_transfer,
+                epsilon,
+                lepton_energy_fraction_y,
+                k_tilde,
+                verbose)
+
+            S1V_0p_unpolarized = calculate_s_1_zero_plus_unpolarized_V(
+                lepton_helicity,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                verbose)
+
+            S1A_0p_unpolarized = calculate_s_1_zero_plus_unpolarized_A(
+                lepton_helicity,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                verbose)
+
+            S2_pp_unpolarized = calculate_s_2_plus_plus_unpolarized(
+                lepton_helicity,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                epsilon,
+                lepton_energy_fraction_y,
+                t_prime,
+                verbose)
+
+            S2V_pp_unpolarized = calculate_s_2_plus_plus_unpolarized_V(
+                lepton_helicity,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                verbose)
+
+            S2A_pp_unpolarized = calculate_s_2_plus_plus_unpolarized_A(
+                lepton_helicity,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                t_prime,
+                verbose)
+
+            S2_0p_unpolarized = calculate_s_2_zero_plus_unpolarized(
+                lepton_helicity,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                verbose)
+
+            S2V_0p_unpolarized = calculate_s_2_zero_plus_unpolarized_V(
+                lepton_helicity,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                verbose)
+
+            S2A_0p_unpolarized = calculate_s_2_zero_plus_unpolarized_A(
+                lepton_helicity,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                verbose)
+            
+            curly_C_1_pp_int =  (curly_C_unpolarized_interference_for_pp
+                        + (C1V_pp_unpolarized * curly_C_V_unpolarized_interference_for_pp / C1_pp_unpolarized)
+                        + (C1A_pp_unpolarized * curly_C_A_unpolarized_interference_for_pp / C1_pp_unpolarized))
+
+            curly_C_1_0p_int =  ((np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)) * (curly_C_unpolarized_interference_for_0p
+                        + (C1V_0p_unpolarized * curly_C_V_unpolarized_interference_for_0p / C1_0p_unpolarized)
+                        + (C1A_0p_unpolarized * curly_C_A_unpolarized_interference_for_0p / C1_0p_unpolarized)))
+            
+            curly_C_2_pp_int =  (curly_C_unpolarized_interference_for_pp
+                        + (C2V_pp_unpolarized * curly_C_V_unpolarized_interference_for_pp / C2_pp_unpolarized)
+                        + (C2A_pp_unpolarized * curly_C_A_unpolarized_interference_for_pp / C2_pp_unpolarized))
+
+            curly_C_2_0p_int =  ((np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)) * (curly_C_unpolarized_interference_for_0p
+                        + (C2V_0p_unpolarized * curly_C_V_unpolarized_interference_for_0p / C2_0p_unpolarized)
+                        + (C2A_0p_unpolarized * curly_C_A_unpolarized_interference_for_0p / C2_0p_unpolarized)))
+            
+            curly_C_3_pp_int =  (curly_C_unpolarized_interference_for_pp
+                        + (C3V_pp_unpolarized * curly_C_V_unpolarized_interference_for_pp / C3_pp_unpolarized)
+                        + (C3A_pp_unpolarized * curly_C_A_unpolarized_interference_for_pp / C3_pp_unpolarized))
+
+            curly_C_3_0p_int =  ((np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)) * (curly_C_unpolarized_interference_for_0p))
+
+            curly_S_1_pp_int =  (curly_C_unpolarized_interference_for_pp
+                        + (S1V_pp_unpolarized * curly_C_V_unpolarized_interference_for_pp / S1_pp_unpolarized)
+                        + (S1A_pp_unpolarized * curly_C_A_unpolarized_interference_for_pp / S1_pp_unpolarized))
+
+            curly_S_1_0p_int =  ((np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)) * (curly_C_unpolarized_interference_for_0p
+                        + (S1V_0p_unpolarized * curly_C_V_unpolarized_interference_for_0p / S1_0p_unpolarized)
+                        + (S1A_0p_unpolarized * curly_C_A_unpolarized_interference_for_0p / S1_0p_unpolarized)))
+
+            curly_S_2_pp_int =  (curly_C_unpolarized_interference_for_pp
+                        + (S2V_pp_unpolarized * curly_C_V_unpolarized_interference_for_pp / S2_pp_unpolarized)
+                        + (S2A_pp_unpolarized * curly_C_A_unpolarized_interference_for_pp / S2_pp_unpolarized))
+
+            curly_S_2_0p_int =  ((np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)) * (curly_C_unpolarized_interference_for_0p
+                        + (S2V_0p_unpolarized * curly_C_V_unpolarized_interference_for_0p / S2_0p_unpolarized)
+                        + (S2A_0p_unpolarized * curly_C_A_unpolarized_interference_for_0p / S2_0p_unpolarized)))
+            
+            c_0_interference_coefficient = C0_pp_unpolarized * curly_C_0_pp_int.real + C0_0p_unpolarized * curly_C_0_0p_int.real
+            c_1_interference_coefficient = C1_pp_unpolarized * curly_C_1_pp_int.real + C1_0p_unpolarized * curly_C_1_0p_int.real
+            c_2_interference_coefficient = C2_pp_unpolarized * curly_C_2_pp_int.real + C2_0p_unpolarized * curly_C_2_0p_int.real
+            c_3_interference_coefficient = C3_pp_unpolarized * curly_C_3_pp_int.real + C3_0p_unpolarized * curly_C_3_0p_int.real
+            s_1_interference_coefficient = S1_pp_unpolarized * curly_S_1_pp_int.imag + S1_0p_unpolarized * curly_S_1_0p_int.imag
+            s_2_interference_coefficient = S2_pp_unpolarized * curly_S_2_pp_int.imag + S2_0p_unpolarized * curly_S_2_0p_int.imag
+            s_3_interference_coefficient = 0.
+            
+        else:
+            pass
         
-        print(f"> c0: {c_0_I[0]}")
-        print(f"> c1: {c_1_I[0]}")
-        print(f"> c2: {c_2_I[0]}")
-        print(f"> c3: {c_3_I[0]}")
-        print(f"> s1: {s_1_I[0]}")
-        print(f"> s2: {s_2_I[0]}")
-        print(f"> s3: {s_3_I}")
+        print(f"> c0: {c_0_interference_coefficient[0]}")
+        print(f"> c1: {c_1_interference_coefficient[0]}")
+        print(f"> c2: {c_2_interference_coefficient[0]}")
+        print(f"> c3: {c_3_interference_coefficient[0]}")
+        print(f"> s1: {s_1_interference_coefficient[0]}")
+        print(f"> s2: {s_2_interference_coefficient[0]}")
+        print(f"> s3: {s_3_interference_coefficient}")
         
         plot_interference_contributions(
             azimuthal_phi,
-            convert_to_nb_over_GeV4(c_0_I),
-            convert_to_nb_over_GeV4(c_1_I),
-            convert_to_nb_over_GeV4(c_2_I),
-            convert_to_nb_over_GeV4(c_3_I),
-            convert_to_nb_over_GeV4(s_1_I),
-            convert_to_nb_over_GeV4(s_2_I),
-            convert_to_nb_over_GeV4(s_3_I))
+            convert_to_nb_over_GeV4(c_0_interference_coefficient),
+            convert_to_nb_over_GeV4(c_1_interference_coefficient),
+            convert_to_nb_over_GeV4(c_2_interference_coefficient),
+            convert_to_nb_over_GeV4(c_3_interference_coefficient),
+            convert_to_nb_over_GeV4(s_1_interference_coefficient),
+            convert_to_nb_over_GeV4(s_2_interference_coefficient),
+            convert_to_nb_over_GeV4(s_3_interference_coefficient))
 
         # (9): Calculate the interference contribution:
-        # interference_contribution = (prefactor * (c_0_I +
-        #     c_1_I * np.array([np.cos(1. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
-        #     c_2_I * np.array([np.cos(2. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
-        #     c_3_I * np.array([np.cos(3. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
-        #     s_1_I * np.array([np.sin(1. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
-        #     s_2_I * np.array([np.sin(2. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
-        #     s_3_I * np.array([np.sin(3. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi])))
+        # interference_contribution = (prefactor * (c_0_interference_coefficient +
+        #     c_1_interference_coefficient * np.array([np.cos(1. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
+        #     c_2_interference_coefficient * np.array([np.cos(2. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
+        #     c_3_interference_coefficient * np.array([np.cos(3. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
+        #     s_1_interference_coefficient * np.array([np.sin(1. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
+        #     s_2_interference_coefficient * np.array([np.sin(2. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) +
+        #     s_3_interference_coefficient * np.array([np.sin(3. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi])))
 
-        interference_contribution = (prefactor * (c_0_I +
-            c_1_I * np.cos(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
-            c_2_I * np.cos(2. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
-            c_3_I * np.cos(3. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
-            s_1_I * np.sin(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
-            s_2_I * np.sin(2. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
-            s_3_I * np.sin(3. * (np.pi - convert_degrees_to_radians(azimuthal_phi)))))
+        interference_contribution = (prefactor * (c_0_interference_coefficient +
+            c_1_interference_coefficient * np.cos(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
+            c_2_interference_coefficient * np.cos(2. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
+            c_3_interference_coefficient * np.cos(3. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
+            s_1_interference_coefficient * np.sin(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
+            s_2_interference_coefficient * np.sin(2. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
+            s_3_interference_coefficient * np.sin(3. * (np.pi - convert_degrees_to_radians(azimuthal_phi)))))
 
         # (9.1): If verbose, print the calculation:
         if verbose:
