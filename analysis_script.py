@@ -111,6 +111,8 @@ def analysis():
     # (2): Iterate over all the testing conditions:
     for kinematic_bin_index, kinematic_bin_settings in enumerate(kinematics_and_cff_settings):
 
+        print(f"> Now iterating over Kinematic Bin Setting #{kinematic_bin_index + 1}")
+
         # (2.1): Define a bin number by adding 1 to an index value; classic Python:
         kinematic_bin_number = kinematic_bin_index + 1
         
@@ -576,7 +578,7 @@ def analysis():
 
         def analyze_interference_unp_beam_unp_target():
 
-            pure_interference_unpolarized_beam_unpolarized_target_ww = (cross_section_prefactor * (0.5 *
+            pure_interference_unpolarized_beam_unpolarized_target_ww = -(cross_section_prefactor * (0.5 *
                 (calculate_interference_contribution(0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
                 epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
                 Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True) +
@@ -584,7 +586,7 @@ def analysis():
                 epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
                 Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True))))
                 
-            pure_interference_unpolarized_beam_unpolarized_target = (cross_section_prefactor * (0.5 *
+            pure_interference_unpolarized_beam_unpolarized_target = -(cross_section_prefactor * (0.5 *
                 (calculate_interference_contribution(0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
                 epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
                 Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False) +
@@ -710,7 +712,7 @@ def analysis():
                 
             jd_mathematica_pure_interference_plus_beam_unpolarized_target_ww = pd.read_csv(
                 f'jd_interference_plus_beam_unpolarized_target_ww_kinematic_bin_{kinematic_bin_number}_v3.csv',
-                names = ['jd_sigma_ww'])
+                names = ['jd_sigma_ww']) 
             
             ji_mathematica_pure_interference_plus_beam_unpolarized_target = pd.read_csv(
                 f'ji_interference_plus_beam_unpolarized_target_kinematic_bin_{kinematic_bin_number}_v3.csv',
@@ -727,7 +729,7 @@ def analysis():
             plot_pure_interference_plus_beam_unpolarized_target = PlotCustomizer(
                 axes_pure_interference_plus_beam_unpolarized_target,
                 title = r"$E = {} \mathrm{{GeV}}, Q^{{2}} = {} \mathrm{{GeV}}^{{2}}, t = {} \mathrm{{GeV}}^{{2}}, x_{{\mathrm{{B}}}}= {}$".format(
-                    round(value_of_beam_energy, 5), 
+                    round(value_of_beam_energy, 5),
                     round(value_of_Q_squared, 5),
                     round(value_of_hadron_recoil, 5),
                     round(value_of_x_Bjorken, 5)),
@@ -782,592 +784,616 @@ def analysis():
                 fname = f'compared_pure_interference_plus_beam_unpolarized_target_kinematic_bin_{kinematic_bin_number}_v6.png',
                 dpi = 500)
 
-        print("> Beginning analysis of DVCS, unpolarized beam, unpolarized target...")
-        analyze_dvcs_unp_beam_unp_target()
+        def analyze_dvcs_unp_beam_polarized_target():
 
-        print("> Beginning analysis of DVCS, (+) polarized beam, unpolarized target...")
-        analyze_dvcs_plus_beam_unp_target()
+            pure_dvcs_unpolarized_beam_lp_target = cross_section_prefactor * (0.5 * 
+                (calculate_dvcs_amplitude_squared(
+                0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False) +
+                calculate_dvcs_amplitude_squared(
+                -0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)))
+            pure_dvcs_unpolarized_beam_lp_target_ww = cross_section_prefactor * (0.5 * 
+                (calculate_dvcs_amplitude_squared(
+                0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True) +
+                calculate_dvcs_amplitude_squared(
+                -0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True)))
 
-        print("> Beginning analysis of DVCS, (-) polarized beam, unpolarized target...")
-        analyze_dvcs_minus_beam_unp_target()
+            jd_mathematica_pure_dvcs_unpolarized_beam_lp_target = pd.read_csv('jd_dvcs_unpolarized_beam_lp_target_kinematic_bin_1_v3.csv', names = ['jd_sigma'])
+            jd_mathematica_pure_dvcs_unpolarized_beam_lp_target_ww = pd.read_csv('jd_dvcs_unpolarized_beam_lp_target_ww_kinematic_bin_1_v3.csv', names = ['jd_sigma_ww'])
+            ji_mathematica_pure_dvcs_unpolarized_beam_lp_target = pd.read_csv('ji_dvcs_unpolarized_beam_lp_target_kinematic_bin_1_v3.csv', names = ['ji_sigma'])
+            
+            figure_pure_dvcs_unpolarized_beam_lp_target = plt.figure(figsize = (13.5, 10))
+            axes_pure_dvcs_unpolarized_beam_lp_target = figure_pure_dvcs_unpolarized_beam_lp_target.add_subplot(1, 1, 1)
+            plot_pure_dvcs_unpolarized_beam_lp_target = PlotCustomizer(
+                axes_pure_dvcs_unpolarized_beam_lp_target,
+                title = r"$E = {} \mathrm{{GeV}}, Q^{{2}} = {} \mathrm{{GeV}}^{{2}}, t = {} \mathrm{{GeV}}^{{2}}, x_{{\mathrm{{B}}}}= {}$".format(
+                    round(value_of_beam_energy, 5), 
+                    round(value_of_Q_squared, 5),
+                    round(value_of_hadron_recoil, 5),
+                    round(value_of_x_Bjorken, 5)),
+                xlabel = r"$\phi \left[ \mathrm{{deg}} \right]$",
+                ylabel = r"$d^{4} \sigma^{{DVCS}}_{{\mathrm{{LU}}}} \left[ \mathrm{{nb}} / \mathrm{{GeV}}^{4} \right]$",
+                grid = True)
+            
+            plot_pure_dvcs_unpolarized_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = convert_to_nb_over_GeV4(pure_dvcs_unpolarized_beam_lp_target),
+                radial_size = 1.3,
+                label = "Dima's BKM 10 Python (no WW)",
+                color = 'blue')
+            
+            plot_pure_dvcs_unpolarized_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = jd_mathematica_pure_dvcs_unpolarized_beam_lp_target,
+                radial_size = 1.3,
+                label = "Dima's BKM10 Mathematica (no WW)",
+                color = 'red')
+            
+            plot_pure_dvcs_unpolarized_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = ji_mathematica_pure_dvcs_unpolarized_beam_lp_target,
+                radial_size = 1.3,
+                label = "Ji's Covariant Formalism with Dima's Mathematica",
+                color = 'green')
+            
+            plot_pure_dvcs_unpolarized_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = convert_to_nb_over_GeV4(pure_dvcs_unpolarized_beam_lp_target_ww),
+                radial_size = 1.3,
+                label = "Dima's BKM 10 Python (WW)",
+                color = 'purple')
+            
+            plot_pure_dvcs_unpolarized_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = jd_mathematica_pure_dvcs_unpolarized_beam_lp_target_ww,
+                radial_size = 1.3,
+                label = "Dima's BKM10 Mathematica (WW)",
+                color = 'orange')
+            
+            plt.savefig(
+                fname = 'compared_pure_dvcs_unpolarized_beam_lp_target_kinematic_bin_1_v6.png',
+                dpi = 500)
+            
+        def analyze_dvcs_plus_beam_polarized_target():
+
+            pure_dvcs_plus_beam_lp_target = cross_section_prefactor * calculate_dvcs_amplitude_squared(
+                0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)
+            
+            pure_dvcs_plus_beam_lp_target_ww = cross_section_prefactor * calculate_dvcs_amplitude_squared(
+                0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False) 
+            
+            jd_mathematica_pure_dvcs_plus_beam_lp_target = pd.read_csv('jd_dvcs_plus_beam_lp_target_kinematic_bin_1_v3.csv', names = ['jd_sigma'])
+            jd_mathematica_pure_dvcs_plus_beam_lp_target_ww = pd.read_csv('jd_dvcs_plus_beam_lp_target_ww_kinematic_bin_1_v3.csv', names = ['jd_sigma_ww'])
+            ji_mathematica_pure_dvcs_plus_beam_lp_target = pd.read_csv('ji_dvcs_plus_beam_lp_target_kinematic_bin_1_v3.csv', names = ['ji_sigma'])
+
+            figure_pure_dvcs_plus_beam_lp_target = plt.figure(figsize = (13.5, 10))
+            axes_pure_dvcs_plus_beam_lp_target = figure_pure_dvcs_plus_beam_lp_target.add_subplot(1, 1, 1)
+            plot_pure_dvcs_plus_beam_lp_target = PlotCustomizer(
+                axes_pure_dvcs_plus_beam_lp_target,
+                title = r"$E = {} \mathrm{{GeV}}, Q^{{2}} = {} \mathrm{{GeV}}^{{2}}, t = {} \mathrm{{GeV}}^{{2}}, x_{{\mathrm{{B}}}}= {}$".format(
+                    round(value_of_beam_energy, 5), 
+                    round(value_of_Q_squared, 5),
+                    round(value_of_hadron_recoil, 5),
+                    round(value_of_x_Bjorken, 5)),
+                xlabel = r"$\phi \left[ \mathrm{{deg}} \right]$",
+                ylabel = r"$d^{4} \sigma^{{DVCS}}_{{\mathrm{{L+}}}} \left[ \mathrm{{nb}} / \mathrm{{GeV}}^{4} \right]$",
+                grid = True)
+            
+            plot_pure_dvcs_plus_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = convert_to_nb_over_GeV4(pure_dvcs_plus_beam_lp_target),
+                radial_size = 1.3,
+                label = "Dima's BKM 10 Python (no WW)",
+                color = 'blue')
+            
+            plot_pure_dvcs_plus_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = jd_mathematica_pure_dvcs_plus_beam_lp_target,
+                radial_size = 1.3,
+                label = "Dima's BKM10 Mathematica (no WW)",
+                color = 'red')
+            
+            plot_pure_dvcs_plus_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = ji_mathematica_pure_dvcs_plus_beam_lp_target,
+                radial_size = 1.3,
+                label = "Ji's Covariant Formalism with Dima's Mathematica",
+                color = 'green')
+            
+            plot_pure_dvcs_plus_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = convert_to_nb_over_GeV4(pure_dvcs_plus_beam_lp_target_ww),
+                radial_size = 1.3,
+                label = "Dima's BKM 10 Python (WW)",
+                color = 'purple')
+            
+            plot_pure_dvcs_plus_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = jd_mathematica_pure_dvcs_plus_beam_lp_target_ww,
+                radial_size = 1.3,
+                label = "Dima's BKM10 Mathematica (WW)",
+                color = 'orange')
+            
+            plt.savefig(
+                fname = 'compared_pure_dvcs_plus_beam_lp_target_kinematic_bin_1_v6.png',
+                dpi = 500)
+            
+        def analyze_dvcs_minus_beam_polarized_target():
+            
+            pure_dvcs_minus_beam_lp_target = cross_section_prefactor * calculate_dvcs_amplitude_squared(
+                -0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)
+            
+            pure_dvcs_minus_beam_lp_target_ww = cross_section_prefactor * calculate_dvcs_amplitude_squared(
+                -0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True) 
+
+            jd_mathematica_pure_dvcs_minus_beam_lp_target = pd.read_csv('jd_dvcs_minus_beam_lp_target_kinematic_bin_1_v3.csv', names = ['jd_sigma'])
+            jd_mathematica_pure_dvcs_minus_beam_lp_target_ww = pd.read_csv('jd_dvcs_minus_beam_lp_target_ww_kinematic_bin_1_v3.csv', names = ['jd_sigma_ww'])
+            ji_mathematica_pure_dvcs_minus_beam_lp_target = pd.read_csv('ji_dvcs_minus_beam_lp_target_kinematic_bin_1_v3.csv', names = ['ji_sigma'])
+
+            figure_pure_dvcs_minus_beam_lp_target = plt.figure(figsize = (13.5, 10))
+            axes_pure_dvcs_minus_beam_lp_target = figure_pure_dvcs_minus_beam_lp_target.add_subplot(1, 1, 1)
+            plot_pure_dvcs_minus_beam_lp_target = PlotCustomizer(
+                axes_pure_dvcs_minus_beam_lp_target,
+                title = r"$E = {} \mathrm{{GeV}}, Q^{{2}} = {} \mathrm{{GeV}}^{{2}}, t = {} \mathrm{{GeV}}^{{2}}, x_{{\mathrm{{B}}}}= {}$".format(
+                    round(value_of_beam_energy, 5), 
+                    round(value_of_Q_squared, 5),
+                    round(value_of_hadron_recoil, 5),
+                    round(value_of_x_Bjorken, 5)),
+                xlabel = r"$\phi \left[ \mathrm{{deg}} \right]$",
+                ylabel = r"$d^{4} \sigma^{{DVCS}}_{{\mathrm{{L-}}}} \left[ \mathrm{{nb}} / \mathrm{{GeV}}^{4} \right]$",
+                grid = True)
+            
+            plot_pure_dvcs_minus_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = convert_to_nb_over_GeV4(pure_dvcs_minus_beam_lp_target),
+                radial_size = 1.3,
+                label = "Dima's BKM 10 Python (no WW)",
+                color = 'blue')
+            
+            plot_pure_dvcs_minus_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = jd_mathematica_pure_dvcs_minus_beam_lp_target,
+                radial_size = 1.3,
+                label = "Dima's BKM10 Mathematica (no WW)",
+                color = 'red')
+            
+            plot_pure_dvcs_minus_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = ji_mathematica_pure_dvcs_minus_beam_lp_target,
+                radial_size = 1.3,
+                label = "Ji's Covariant Formalism with Dima's Mathematica",
+                color = 'green')
+            
+            plot_pure_dvcs_minus_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = convert_to_nb_over_GeV4(pure_dvcs_minus_beam_lp_target_ww),
+                radial_size = 1.3,
+                label = "Dima's BKM 10 Python (WW)",
+                color = 'purple')
+            
+            plot_pure_dvcs_minus_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = jd_mathematica_pure_dvcs_minus_beam_lp_target_ww,
+                radial_size = 1.3,
+                label = "Dima's BKM10 Mathematica (WW)",
+                color = 'orange')
+            
+            plt.savefig(
+                fname = 'compared_pure_dvcs_minus_beam_lp_target_kinematic_bin_1_v6.png',
+                dpi = 500)
+            
+        def analyze_interference_plus_beam_unpolarized_target():
+            
+                pure_interference_plus_beam_unpolarized_target = cross_section_prefactor * calculate_interference_contribution(0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                    epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
+                    Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)
+                
+                pure_interference_plus_beam_unpolarized_target_ww = cross_section_prefactor * calculate_interference_contribution(0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                    epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
+                    Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True)
+                
+                jd_mathematica_pure_interference_plus_beam_unpolarized_target = pd.read_csv('jd_interference_plus_beam_unpolarized_target_kinematic_bin_1_v3.csv', names = ['jd_sigma'])
+                jd_mathematica_pure_interference_plus_beam_unpolarized_target_ww = pd.read_csv('jd_interference_plus_beam_unpolarized_target_ww_kinematic_bin_1_v3.csv', names = ['jd_sigma_ww'])
+                ji_mathematica_pure_interference_plus_beam_unpolarized_target = pd.read_csv('ji_interference_plus_beam_unpolarized_target_kinematic_bin_1_v3.csv', names = ['ji_sigma'])
+
+                figure_pure_interference_plus_beam_unpolarized_target = plt.figure(figsize = (13.5, 10))
+                axes_pure_interference_plus_beam_unpolarized_target = figure_pure_interference_plus_beam_unpolarized_target.add_subplot(1, 1, 1)
+                plot_pure_interference_plus_beam_unpolarized_target = PlotCustomizer(
+                    axes_pure_interference_plus_beam_unpolarized_target,
+                    title = r"$E = {} \mathrm{{GeV}}, Q^{{2}} = {} \mathrm{{GeV}}^{{2}}, t = {} \mathrm{{GeV}}^{{2}}, x_{{\mathrm{{B}}}}= {}$".format(
+                        round(value_of_beam_energy, 5), 
+                        round(value_of_Q_squared, 5),
+                        round(value_of_hadron_recoil, 5),
+                        round(value_of_x_Bjorken, 5)),
+                    xlabel = r"$\phi \left[ \mathrm{{deg}} \right]$",
+                    ylabel = r"$d^{4} \sigma^{{I}}_{{\mathrm{{UU}}}} \left[ \mathrm{{nb}} / \mathrm{{GeV}}^{4} \right]$",
+                    grid = True)
+                
+                plot_pure_interference_plus_beam_unpolarized_target.add_scatter_plot(
+                    x_data = azimuthal_phi,
+                    y_data = convert_to_nb_over_GeV4(pure_interference_plus_beam_unpolarized_target),
+                    radial_size = 1.3,
+                    label = "Dima's BKM 10 Python (no WW)",
+                    color = 'blue')
+                
+                plot_pure_interference_plus_beam_unpolarized_target.add_scatter_plot(
+                    x_data = azimuthal_phi,
+                    y_data = jd_mathematica_pure_interference_plus_beam_unpolarized_target,
+                    radial_size = 1.3,
+                    label = "Dima's BKM10 Mathematica (no WW)",
+                    color = 'red')
+                
+                plot_pure_interference_plus_beam_unpolarized_target.add_scatter_plot(
+                    x_data = azimuthal_phi,
+                    y_data = ji_mathematica_pure_interference_plus_beam_unpolarized_target,
+                    radial_size = 1.3,
+                    label = "Ji's Covariant Formalism with Dima's Mathematica",
+                    color = 'green')
+                
+                plot_pure_interference_plus_beam_unpolarized_target.add_scatter_plot(
+                    x_data = azimuthal_phi,
+                    y_data = convert_to_nb_over_GeV4(pure_interference_plus_beam_unpolarized_target_ww),
+                    radial_size = 1.3,
+                    label = "Dima's BKM 10 Python (WW)",
+                    color = 'purple')
+                
+                plot_pure_interference_plus_beam_unpolarized_target.add_scatter_plot(
+                    x_data = azimuthal_phi,
+                    y_data = jd_mathematica_pure_interference_plus_beam_unpolarized_target_ww,
+                    radial_size = 1.3,
+                    label = "Dima's BKM10 Mathematica (WW)",
+                    color = 'orange')
+                
+                plt.savefig(
+                    fname = 'compared_pure_interference_plus_beam_unpolarized_target_kinematic_bin_1_v6.png',
+                    dpi = 500)
+                
+        def analyze_interference_minus_beam_unpolarized_target():
+
+            pure_interference_minus_beam_unpolarized_target = cross_section_prefactor * calculate_interference_contribution(-0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
+                Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)
+            
+            pure_interference_minus_beam_unpolarized_target_ww = cross_section_prefactor * calculate_interference_contribution(-0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
+                Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True)
+            
+            jd_mathematica_pure_interference_minus_beam_unpolarized_target = pd.read_csv('jd_interference_minus_beam_unpolarized_target_kinematic_bin_1_v3.csv', names = ['jd_sigma'])
+            jd_mathematica_pure_interference_minus_beam_unpolarized_target_ww = pd.read_csv('jd_interference_minus_beam_unpolarized_target_ww_kinematic_bin_1_v3.csv', names = ['jd_sigma_ww'])
+            ji_mathematica_pure_interference_minus_beam_unpolarized_target = pd.read_csv('ji_interference_minus_beam_unpolarized_target_kinematic_bin_1_v3.csv', names = ['ji_sigma'])
+            
+            figure_pure_interference_minus_beam_unpolarized_target = plt.figure(figsize = (13.5, 10))
+            axes_pure_interference_minus_beam_unpolarized_target = figure_pure_interference_minus_beam_unpolarized_target.add_subplot(1, 1, 1)
+            plot_pure_interference_minus_beam_unpolarized_target = PlotCustomizer(
+                axes_pure_interference_minus_beam_unpolarized_target,
+                title = r"$E = {} \mathrm{{GeV}}, Q^{{2}} = {} \mathrm{{GeV}}^{{2}}, t = {} \mathrm{{GeV}}^{{2}}, x_{{\mathrm{{B}}}}= {}$".format(
+                    round(value_of_beam_energy, 5), 
+                    round(value_of_Q_squared, 5),
+                    round(value_of_hadron_recoil, 5),
+                    round(value_of_x_Bjorken, 5)),
+                xlabel = r"$\phi \left[ \mathrm{{deg}} \right]$",
+                ylabel = r"$d^{4} \sigma^{{I}}_{{\mathrm{{UU}}}} \left[ \mathrm{{nb}} / \mathrm{{GeV}}^{4} \right]$",
+                grid = True)
+            
+            plot_pure_interference_minus_beam_unpolarized_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = convert_to_nb_over_GeV4(pure_interference_minus_beam_unpolarized_target),
+                radial_size = 1.3,
+                label = "Dima's BKM 10 Python (no WW)",
+                color = 'blue')
+            
+            plot_pure_interference_minus_beam_unpolarized_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = jd_mathematica_pure_interference_minus_beam_unpolarized_target,
+                radial_size = 1.3,
+                label = "Dima's BKM10 Mathematica (no WW)",
+                color = 'red')
+            
+            plot_pure_interference_minus_beam_unpolarized_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = ji_mathematica_pure_interference_minus_beam_unpolarized_target,
+                radial_size = 1.3,
+                label = "Ji's Covariant Formalism with Dima's Mathematica",
+                color = 'green')
+            
+            plot_pure_interference_minus_beam_unpolarized_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = convert_to_nb_over_GeV4(pure_interference_minus_beam_unpolarized_target_ww),
+                radial_size = 1.3,
+                label = "Dima's BKM 10 Python (WW)",
+                color = 'purple')
+            
+            plot_pure_interference_minus_beam_unpolarized_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = jd_mathematica_pure_interference_minus_beam_unpolarized_target_ww,
+                radial_size = 1.3,
+                label = "Dima's BKM10 Mathematica (WW)",
+                color = 'orange')
+            
+            plt.savefig(
+                fname = 'compared_pure_interference_minus_beam_unpolarized_target_kinematic_bin_1_v6.png',
+                dpi = 500)
+
+        def analyze_interference_unpolarized_beam_polarized_target():
+
+            pure_interference_unpolarized_beam_lp_target = cross_section_prefactor * (0.5 * 
+                (calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
+                Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False) +
+                calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
+                Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)))
+            
+            pure_interference_unpolarized_beam_lp_target_ww = cross_section_prefactor * (0.5 * 
+                (calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
+                Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True) +
+                calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
+                Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True)))
+            
+            jd_mathematica_pure_interference_unpolarized_beam_lp_target = pd.read_csv('jd_interference_unpolarized_beam_lp_target_kinematic_bin_1_v3.csv', names = ['jd_sigma'])
+            jd_mathematica_pure_interference_unpolarized_beam_lp_target_ww = pd.read_csv('jd_interference_unpolarized_beam_lp_target_ww_kinematic_bin_1_v3.csv', names = ['jd_sigma_ww'])
+            ji_mathematica_pure_interference_unpolarized_beam_lp_target = pd.read_csv('ji_interference_unpolarized_beam_lp_target_kinematic_bin_1_v3.csv', names = ['ji_sigma'])
+
+            figure_pure_interference_unpolarized_beam_lp_target = plt.figure(figsize = (13.5, 10))
+            axes_pure_interference_unpolarized_beam_lp_target = figure_pure_interference_unpolarized_beam_lp_target.add_subplot(1, 1, 1)
+            plot_pure_interference_unpolarized_beam_lp_target = PlotCustomizer(
+                axes_pure_interference_unpolarized_beam_lp_target,
+                title = r"$E = {} \mathrm{{GeV}}, Q^{{2}} = {} \mathrm{{GeV}}^{{2}}, t = {} \mathrm{{GeV}}^{{2}}, x_{{\mathrm{{B}}}}= {}$".format(
+                    round(value_of_beam_energy, 5), 
+                    round(value_of_Q_squared, 5),
+                    round(value_of_hadron_recoil, 5),
+                    round(value_of_x_Bjorken, 5)),
+                xlabel = r"$\phi \left[ \mathrm{{deg}} \right]$",
+                ylabel = r"$d^{4} \sigma^{{I}}_{{\mathrm{{UU}}}} \left[ \mathrm{{nb}} / \mathrm{{GeV}}^{4} \right]$",
+                grid = True)
+            
+            plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = convert_to_nb_over_GeV4(pure_interference_unpolarized_beam_lp_target),
+                radial_size = 1.3,
+                label = "Dima's BKM 10 Python (no WW)",
+                color = 'blue')
+            
+            plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = jd_mathematica_pure_interference_unpolarized_beam_lp_target,
+                radial_size = 1.3,
+                label = "Dima's BKM10 Mathematica (no WW)",
+                color = 'red')
+            
+            plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = ji_mathematica_pure_interference_unpolarized_beam_lp_target,
+                radial_size = 1.3,
+                label = "Ji's Covariant Formalism with Dima's Mathematica",
+                color = 'green')
+            
+            plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = convert_to_nb_over_GeV4(pure_interference_unpolarized_beam_lp_target_ww),
+                radial_size = 1.3,
+                label = "Dima's BKM 10 Python (WW)",
+                color = 'purple')
+            
+            plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = jd_mathematica_pure_interference_unpolarized_beam_lp_target_ww,
+                radial_size = 1.3,
+                label = "Dima's BKM10 Mathematica (WW)",
+                color = 'orange')
+            
+            plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
+                x_data = np.array([0., 50.31660231660232, 100.35521235521236, 150.11583011583014, 200.98841698841696, 249.91505791505787, 299.95366795366795, 350.2702702702703, 359.72200772200773, 25.019305019305037, 75.33590733590734, 126.48648648648651, 176.2471042471042, 227.39768339768344, 277.1583011583012, 330.5328185328185]),
+                y_data = np.array([0.00007220216606498159, 0.011624548736462088, 0.01326113116726835, 0.006089049338146808, -0.004404332129963899, -0.012442839951865223, -0.012683513838748498, -0.002478941034897715, 0.000024067388688327196, 0.006714801444043319, 0.013838748495788204, 0.010324909747292423, 0.0007942238267147975, -0.009410348977135984, -0.01383874849578821, -0.0075330926594464505]),
+                radial_size = 11.5,
+                label = "Ji's Covariant Formalism",
+                color = 'cyan',
+                marker = "x")
+            
+            plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
+                x_data = np.array([0., 50.31660231660232, 100.07722007722005, 150.11583011583014, 200.98841698841696, 249.35907335907334, 299.95366795366795, 350.2702702702703, 359.72200772200773, 25.019305019305037, 75.33590733590734, 126.76447876447878, 176.2471042471042, 227.95366795366797, 277.1583011583012, 330.5328185328185]),
+                y_data = np.array([0.00007220216606498159, 0.011624548736462088, 0.01326113116726835, 0.006089049338146808, -0.004404332129963899, -0.012250300842358609, -0.012683513838748498, -0.002478941034897715, 0.000024067388688327196, 0.006714801444043319, 0.013838748495788204, 0.010132370637785802, 0.0007942238267147975, -0.009362214199759328, -0.01383874849578821, -0.0075330926594464505]),
+                radial_size = 11.5,
+                label = "Ji's BKM 10(WW)",
+                color = 'maroon',
+                marker = '+')
+            
+            plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
+                x_data = np.array([0.5607476635513796, 51.58878504672895, 98.97196261682242, 151.40186915887847, 198.22429906542058, 249.81308411214948, 300.8411214953271, 348.22429906542055, 360., 25.79439252336447, 73.73831775700933, 123.08411214953269, 173.83177570093454, 226.5420560747663, 279.53271028037375, 326.0747663551402]),
+                y_data = np.array([0.0000968523002421312, 0.014274616195272306, 0.011671710626265038, 0.004165657357499901, -0.0027350690347519094, -0.01042272036647104, -0.014660008502064262, -0.004793180414897196, -0.00008474576271187001, 0.009674131933771087, 0.014395681570574966, 0.008463478180744458, 0.0008363595366766563, -0.0068512917950424735, -0.013752018187294284, -0.01175443949480034]),
+                radial_size = 11.5,
+                label = "Ji's Lightcone Formalism",
+                color = 'gray',
+                marker = "d")
+            
+            plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
+                x_data = np.array([0.5607476635513796, 50.186915887850446, 100.09345794392522, 149.99999999999997, 199.62616822429905, 250.0934579439252, 299.99999999999994, 350.46728971962614, 360., 24.95327102803736, 75.70093457943925, 125.04672897196261, 174.9532710280374, 225.4205607476635, 275.0467289719626, 325.5140186915888, 325.5140186915888]),
+                y_data = np.array([0.0000968523002421312, 0.015230024213075056, 0.012324455205811134, 0.004334140435835354, -0.0028087167070217946, -0.010859564164648911, -0.015762711864406784, -0.004140435835351088, -0.00008474576271187001, 0.010084745762711865, 0.015169491525423722, 0.008389830508474576, 0.0008232445520581153, -0.006743341404358354, -0.014309927360774816, -0.012615012106537534, -0.012615012106537534]),
+                radial_size = 11.5,
+                label = "Ji's BKM 10 (no WW)",
+                color = 'gold',
+                marker = '*')
+            
+            # BELOW IS FOR KINEMATIC BIN 2
+
+            # plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
+            #     x_data = np.array([0.2767102229054543, 51.468101460415056, 99.89239046887012, 150.5303612605688, 201.72175249807842, 252.63643351268252, 299.67717140661034, 348.65488086087623, 360., 26.01076095311298, 74.98847040737895, 128.11683320522673, 175.71099154496542, 225.5188316679477, 277.2636433512683, 324.85780169100696]),
+            #     y_data = np.array([0.000004878048780487506, 0.0013560975609756098, 0.0010878048780487803, 0.0003902439024390245, -0.0002975609756097565, -0.0009853658536585366, -0.0013951219512195127, -0.00043414634146341467, -0.000014634146341463818, 0.0009219512195121952, 0.0013414634146341467, 0.0007170731707317076, 0.0000536585365853656, -0.0006097560975609753, -0.0012878048780487806, -0.0011463414634146347]),
+            #     radial_size = 11.5,
+            #     label = "Ji's Lightcone Formalism",
+            #     color = 'gray',
+            #     marker = "d")
+            
+            # plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
+            #     x_data = np.array([0.2767102229054543, 50.36126056879324, 100.16910069177557, 150.5303612605688, 199.7847809377402, 250.14604150653344, 300.23059185242124, 350.0384319754035, 360., 24.903920061491167, 75.2651806302844, 125.34973097617215, 175.1575710991545, 224.41199077632595, 275.3266717909301, 325.1345119139124]),
+            #     y_data = np.array([0.000004878048780487506, 0.0013804878048780489, 0.001102439024390244, 0.00039512195121951224, -0.0002682926829268293, -0.000965853658536586, -0.001419512195121952, -0.00039512195121951257, -0.000014634146341463818, 0.000902439024390244, 0.0013707317073170734, 0.0007463414634146341, 0.00006341463414634148, -0.000604878048780488, -0.0012829268292682927, -0.00115609756097561]),
+            #     radial_size = 11.5,
+            #     label = "Ji's BKM 10 (no WW)",
+            #     color = 'gold',
+            #     marker = '*')
+            
+            plt.savefig(
+                fname = 'compared_pure_interference_unpolarized_beam_lp_target_kinematic_bin_1_v6.png',
+                dpi = 500)
+            
+        def analyze_interference_plus_beam_polarized_target():
+
+            pure_interference_plus_beam_lp_target = cross_section_prefactor * calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
+                Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)
+            
+            pure_interference_plus_beam_lp_target_ww = cross_section_prefactor * calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
+                Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True)
+            
+            jd_mathematica_pure_interference_plus_beam_lp_target = pd.read_csv('jd_interference_plus_beam_lp_target_kinematic_bin_1_v3.csv', names = ['jd_sigma'])
+            jd_mathematica_pure_interference_plus_beam_lp_target_ww = pd.read_csv('jd_interference_plus_beam_lp_target_ww_kinematic_bin_1_v3.csv', names = ['jd_sigma_ww'])
+            ji_mathematica_pure_interference_plus_beam_lp_target = pd.read_csv('ji_interference_plus_beam_lp_target_kinematic_bin_1_v3.csv', names = ['ji_sigma'])
+
+            figure_pure_interference_plus_beam_lp_target = plt.figure(figsize = (13.5, 10))
+            axes_pure_interference_plus_beam_lp_target = figure_pure_interference_plus_beam_lp_target.add_subplot(1, 1, 1)
+            plot_pure_interference_plus_beam_lp_target = PlotCustomizer(
+                axes_pure_interference_plus_beam_lp_target,
+                title = r"$E = {} \mathrm{{GeV}}, Q^{{2}} = {} \mathrm{{GeV}}^{{2}}, t = {} \mathrm{{GeV}}^{{2}}, x_{{\mathrm{{B}}}}= {}$".format(
+                    round(value_of_beam_energy, 5), 
+                    round(value_of_Q_squared, 5),
+                    round(value_of_hadron_recoil, 5),
+                    round(value_of_x_Bjorken, 5)),
+                xlabel = r"$\phi \left[ \mathrm{{deg}} \right]$",
+                ylabel = r"$d^{4} \sigma^{{I}}_{{\mathrm{{UU}}}} \left[ \mathrm{{nb}} / \mathrm{{GeV}}^{4} \right]$",
+                grid = True)
+            
+            plot_pure_interference_plus_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = convert_to_nb_over_GeV4(pure_interference_plus_beam_lp_target),
+                radial_size = 1.3,
+                label = "Dima's BKM 10 Python (no WW)",
+                color = 'blue')
+            
+            plot_pure_interference_plus_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = jd_mathematica_pure_interference_plus_beam_lp_target,
+                radial_size = 1.3,
+                label = "Dima's BKM10 Mathematica (no WW)",
+                color = 'red')
+            
+            plot_pure_interference_plus_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = ji_mathematica_pure_interference_plus_beam_lp_target,
+                radial_size = 1.3,
+                label = "Ji's Covariant Formalism with Dima's Mathematica",
+                color = 'green')
+            
+            plot_pure_interference_plus_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = convert_to_nb_over_GeV4(pure_interference_plus_beam_lp_target_ww),
+                radial_size = 1.3,
+                label = "Dima's BKM 10 Python (WW)",
+                color = 'purple')
+            
+            plot_pure_interference_plus_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = jd_mathematica_pure_interference_plus_beam_lp_target_ww,
+                radial_size = 1.3,
+                label = "Dima's BKM10 Mathematica (WW)",
+                color = 'orange')
+            
+            plt.savefig(
+                fname = 'compared_pure_interference_plus_beam_lp_target_kinematic_bin_1_v6.png',
+                dpi = 500)
+            
+            pure_interference_minus_beam_lp_target = cross_section_prefactor * calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
+                Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)
+            pure_interference_minus_beam_lp_target_ww = cross_section_prefactor * calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
+                Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True)
+            
+            jd_mathematica_pure_interference_minus_beam_lp_target = pd.read_csv('jd_interference_minus_beam_lp_target_kinematic_bin_1_v3.csv', names = ['jd_sigma'])
+            jd_mathematica_pure_interference_minus_beam_lp_target_ww = pd.read_csv('jd_interference_minus_beam_lp_target_ww_kinematic_bin_1_v3.csv', names = ['jd_sigma_ww'])
+            ji_mathematica_pure_interference_minus_beam_lp_target = pd.read_csv('ji_interference_minus_beam_lp_target_kinematic_bin_1_v3.csv', names = ['ji_sigma'])
+
+            figure_pure_interference_minus_beam_lp_target = plt.figure(figsize = (13.5, 10))
+            axes_pure_interference_minus_beam_lp_target = figure_pure_interference_minus_beam_lp_target.add_subplot(1, 1, 1)
+            plot_pure_interference_minus_beam_lp_target = PlotCustomizer(
+                axes_pure_interference_minus_beam_lp_target,
+                title = r"$E = {} \mathrm{{GeV}}, Q^{{2}} = {} \mathrm{{GeV}}^{{2}}, t = {} \mathrm{{GeV}}^{{2}}, x_{{\mathrm{{B}}}}= {}$".format(
+                    round(value_of_beam_energy, 5), 
+                    round(value_of_Q_squared, 5),
+                    round(value_of_hadron_recoil, 5),
+                    round(value_of_x_Bjorken, 5)),
+                xlabel = r"$\phi \left[ \mathrm{{deg}} \right]$",
+                ylabel = r"$d^{4} \sigma^{{I}}_{{\mathrm{{UU}}}} \left[ \mathrm{{nb}} / \mathrm{{GeV}}^{4} \right]$",
+                grid = True)
+            
+            plot_pure_interference_minus_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = convert_to_nb_over_GeV4(pure_interference_minus_beam_lp_target),
+                radial_size = 1.3,
+                label = "Dima's BKM 10 Python (no WW)",
+                color = 'blue')
+            
+            plot_pure_interference_minus_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = jd_mathematica_pure_interference_minus_beam_lp_target,
+                radial_size = 1.3,
+                label = "Dima's BKM10 Mathematica (no WW)",
+                color = 'red')
+            
+            plot_pure_interference_minus_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = ji_mathematica_pure_interference_minus_beam_lp_target,
+                radial_size = 1.3,
+                label = "Ji's Covariant Formalism with Dima's Mathematica",
+                color = 'green')
+            
+            plot_pure_interference_minus_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = convert_to_nb_over_GeV4(pure_interference_minus_beam_lp_target_ww),
+                radial_size = 1.3,
+                label = "Dima's BKM 10 Python (WW)",
+                color = 'purple')
+            
+            plot_pure_interference_minus_beam_lp_target.add_scatter_plot(
+                x_data = azimuthal_phi,
+                y_data = jd_mathematica_pure_interference_minus_beam_lp_target_ww,
+                radial_size = 1.3,
+                label = "Dima's BKM10 Mathematica (WW)",
+                color = 'orange')
+            
+            plt.savefig(
+                fname = 'compared_pure_interference_minus_beam_lp_target_kinematic_bin_1_v6.png',
+                dpi = 500)
+
+        # print("> Beginning analysis of DVCS, unpolarized beam, unpolarized target...")
+        # analyze_dvcs_unp_beam_unp_target()
+
+        # print("> Beginning analysis of DVCS, (+) polarized beam, unpolarized target...")
+        # analyze_dvcs_plus_beam_unp_target()
+
+        # print("> Beginning analysis of DVCS, (-) polarized beam, unpolarized target...")
+        # analyze_dvcs_minus_beam_unp_target()
         
-        print("> Beginning analysis of Interference, unpolarized beam, unpolarized target...")
-        analyze_interference_unp_beam_unp_target()
+        # print("> Beginning analysis of Interference, unpolarized beam, unpolarized target...")
+        # analyze_interference_unp_beam_unp_target()
 
-        print("> Beginning analysis of Interference, (+) beam, unpolarized target...")
-        analyze_interference_plus_beam_unp_target()
+        # print("> Beginning analysis of Interference, (+) beam, unpolarized target...")
+        # analyze_interference_plus_beam_unp_target()
 
-    # pure_dvcs_unpolarized_beam_lp_target = cross_section_prefactor * (0.5 * 
-    #     (calculate_dvcs_amplitude_squared(
-    #     0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-    #     epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False) +
-    #     calculate_dvcs_amplitude_squared(
-    #     0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-    #     epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)))
-    # pure_dvcs_unpolarized_beam_lp_target_ww = cross_section_prefactor * (0.5 * 
-    #     (calculate_dvcs_amplitude_squared(
-    #     0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-    #     epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True) +
-    #     calculate_dvcs_amplitude_squared(
-    #     0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-    #     epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True)))
+        # print("> Beginning analysis of DVCS, unpolarized beam, longitudinally-polarized target...")
+        # analyze_dvcs_unp_beam_polarized_target()
 
-    # jd_mathematica_pure_dvcs_unpolarized_beam_lp_target = pd.read_csv('jd_dvcs_unpolarized_beam_lp_target_kinematic_bin_1_v3.csv', names = ['jd_sigma'])
-    # jd_mathematica_pure_dvcs_unpolarized_beam_lp_target_ww = pd.read_csv('jd_dvcs_unpolarized_beam_lp_target_ww_kinematic_bin_1_v3.csv', names = ['jd_sigma_ww'])
-    # ji_mathematica_pure_dvcs_unpolarized_beam_lp_target = pd.read_csv('ji_dvcs_unpolarized_beam_lp_target_kinematic_bin_1_v3.csv', names = ['ji_sigma'])
-    
-    # figure_pure_dvcs_unpolarized_beam_lp_target = plt.figure(figsize = (13.5, 10))
-    # axes_pure_dvcs_unpolarized_beam_lp_target = figure_pure_dvcs_unpolarized_beam_lp_target.add_subplot(1, 1, 1)
-    # plot_pure_dvcs_unpolarized_beam_lp_target = PlotCustomizer(
-    #     axes_pure_dvcs_unpolarized_beam_lp_target,
-    #     title = r"$E = {} \mathrm{{GeV}}, Q^{{2}} = {} \mathrm{{GeV}}^{{2}}, t = {} \mathrm{{GeV}}^{{2}}, x_{{\mathrm{{B}}}}= {}$".format(
-    #         round(value_of_beam_energy, 5), 
-    #         round(value_of_Q_squared, 5),
-    #         round(value_of_hadron_recoil, 5),
-    #         round(value_of_x_Bjorken, 5)),
-    #     xlabel = r"$\phi \left[ \mathrm{{deg}} \right]$",
-    #     ylabel = r"$d^{4} \sigma^{{DVCS}}_{{\mathrm{{LU}}}} \left[ \mathrm{{nb}} / \mathrm{{GeV}}^{4} \right]$",
-    #     grid = True)
-    
-    # plot_pure_dvcs_unpolarized_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = convert_to_nb_over_GeV4(pure_dvcs_unpolarized_beam_lp_target),
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM 10 Python (no WW)",
-    #     color = 'blue')
-    
-    # plot_pure_dvcs_unpolarized_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = jd_mathematica_pure_dvcs_unpolarized_beam_lp_target,
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM10 Mathematica (no WW)",
-    #     color = 'red')
-    
-    # plot_pure_dvcs_unpolarized_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = ji_mathematica_pure_dvcs_unpolarized_beam_lp_target,
-    #     radial_size = 1.3,
-    #     label = "Ji's Covariant Formalism with Dima's Mathematica",
-    #     color = 'green')
-    
-    # plot_pure_dvcs_unpolarized_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = convert_to_nb_over_GeV4(pure_dvcs_unpolarized_beam_lp_target_ww),
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM 10 Python (WW)",
-    #     color = 'purple')
-    
-    # plot_pure_dvcs_unpolarized_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = jd_mathematica_pure_dvcs_unpolarized_beam_lp_target_ww,
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM10 Mathematica (WW)",
-    #     color = 'orange')
-    
-    # plt.savefig(
-    #     fname = 'compared_pure_dvcs_unpolarized_beam_lp_target_kinematic_bin_1_v6.png',
-    #     dpi = 500)
-    
-    # pure_dvcs_plus_beam_lp_target = cross_section_prefactor * calculate_dvcs_amplitude_squared(
-    #     0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-    #     epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)
-    # pure_dvcs_plus_beam_lp_target_ww = cross_section_prefactor * calculate_dvcs_amplitude_squared(
-    #     0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-    #     epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False) 
-    
-    # jd_mathematica_pure_dvcs_plus_beam_lp_target = pd.read_csv('jd_dvcs_plus_beam_lp_target_kinematic_bin_1_v3.csv', names = ['jd_sigma'])
-    # jd_mathematica_pure_dvcs_plus_beam_lp_target_ww = pd.read_csv('jd_dvcs_plus_beam_lp_target_ww_kinematic_bin_1_v3.csv', names = ['jd_sigma_ww'])
-    # ji_mathematica_pure_dvcs_plus_beam_lp_target = pd.read_csv('ji_dvcs_plus_beam_lp_target_kinematic_bin_1_v3.csv', names = ['ji_sigma'])
-
-    # figure_pure_dvcs_plus_beam_lp_target = plt.figure(figsize = (13.5, 10))
-    # axes_pure_dvcs_plus_beam_lp_target = figure_pure_dvcs_plus_beam_lp_target.add_subplot(1, 1, 1)
-    # plot_pure_dvcs_plus_beam_lp_target = PlotCustomizer(
-    #     axes_pure_dvcs_plus_beam_lp_target,
-    #     title = r"$E = {} \mathrm{{GeV}}, Q^{{2}} = {} \mathrm{{GeV}}^{{2}}, t = {} \mathrm{{GeV}}^{{2}}, x_{{\mathrm{{B}}}}= {}$".format(
-    #         round(value_of_beam_energy, 5), 
-    #         round(value_of_Q_squared, 5),
-    #         round(value_of_hadron_recoil, 5),
-    #         round(value_of_x_Bjorken, 5)),
-    #     xlabel = r"$\phi \left[ \mathrm{{deg}} \right]$",
-    #     ylabel = r"$d^{4} \sigma^{{DVCS}}_{{\mathrm{{L+}}}} \left[ \mathrm{{nb}} / \mathrm{{GeV}}^{4} \right]$",
-    #     grid = True)
-    
-    # plot_pure_dvcs_plus_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = convert_to_nb_over_GeV4(pure_dvcs_plus_beam_lp_target),
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM 10 Python (no WW)",
-    #     color = 'blue')
-    
-    # plot_pure_dvcs_plus_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = jd_mathematica_pure_dvcs_plus_beam_lp_target,
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM10 Mathematica (no WW)",
-    #     color = 'red')
-    
-    # plot_pure_dvcs_plus_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = ji_mathematica_pure_dvcs_plus_beam_lp_target,
-    #     radial_size = 1.3,
-    #     label = "Ji's Covariant Formalism with Dima's Mathematica",
-    #     color = 'green')
-    
-    # plot_pure_dvcs_plus_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = convert_to_nb_over_GeV4(pure_dvcs_plus_beam_lp_target_ww),
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM 10 Python (WW)",
-    #     color = 'purple')
-    
-    # plot_pure_dvcs_plus_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = jd_mathematica_pure_dvcs_plus_beam_lp_target_ww,
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM10 Mathematica (WW)",
-    #     color = 'orange')
-    
-    # plt.savefig(
-    #     fname = 'compared_pure_dvcs_plus_beam_lp_target_kinematic_bin_1_v6.png',
-    #     dpi = 500)
-    
-    # pure_dvcs_minus_beam_lp_target = cross_section_prefactor * calculate_dvcs_amplitude_squared(
-    #     0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-    #     epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)
-    # pure_dvcs_minus_beam_lp_target_ww = cross_section_prefactor * calculate_dvcs_amplitude_squared(
-    #     0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-    #     epsilon, lepton_energy_fraction_y, skewness_parameter, shorthand_k, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True) 
-
-    # jd_mathematica_pure_dvcs_minus_beam_lp_target = pd.read_csv('jd_dvcs_minus_beam_lp_target_kinematic_bin_1_v3.csv', names = ['jd_sigma'])
-    # jd_mathematica_pure_dvcs_minus_beam_lp_target_ww = pd.read_csv('jd_dvcs_minus_beam_lp_target_ww_kinematic_bin_1_v3.csv', names = ['jd_sigma_ww'])
-    # ji_mathematica_pure_dvcs_minus_beam_lp_target = pd.read_csv('ji_dvcs_minus_beam_lp_target_kinematic_bin_1_v3.csv', names = ['ji_sigma'])
-
-    # figure_pure_dvcs_minus_beam_lp_target = plt.figure(figsize = (13.5, 10))
-    # axes_pure_dvcs_minus_beam_lp_target = figure_pure_dvcs_minus_beam_lp_target.add_subplot(1, 1, 1)
-    # plot_pure_dvcs_minus_beam_lp_target = PlotCustomizer(
-    #     axes_pure_dvcs_minus_beam_lp_target,
-    #     title = r"$E = {} \mathrm{{GeV}}, Q^{{2}} = {} \mathrm{{GeV}}^{{2}}, t = {} \mathrm{{GeV}}^{{2}}, x_{{\mathrm{{B}}}}= {}$".format(
-    #         round(value_of_beam_energy, 5), 
-    #         round(value_of_Q_squared, 5),
-    #         round(value_of_hadron_recoil, 5),
-    #         round(value_of_x_Bjorken, 5)),
-    #     xlabel = r"$\phi \left[ \mathrm{{deg}} \right]$",
-    #     ylabel = r"$d^{4} \sigma^{{DVCS}}_{{\mathrm{{L-}}}} \left[ \mathrm{{nb}} / \mathrm{{GeV}}^{4} \right]$",
-    #     grid = True)
-    
-    # plot_pure_dvcs_minus_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = convert_to_nb_over_GeV4(pure_dvcs_minus_beam_lp_target),
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM 10 Python (no WW)",
-    #     color = 'blue')
-    
-    # plot_pure_dvcs_minus_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = jd_mathematica_pure_dvcs_minus_beam_lp_target,
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM10 Mathematica (no WW)",
-    #     color = 'red')
-    
-    # plot_pure_dvcs_minus_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = ji_mathematica_pure_dvcs_minus_beam_lp_target,
-    #     radial_size = 1.3,
-    #     label = "Ji's Covariant Formalism with Dima's Mathematica",
-    #     color = 'green')
-    
-    # plot_pure_dvcs_minus_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = convert_to_nb_over_GeV4(pure_dvcs_minus_beam_lp_target_ww),
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM 10 Python (WW)",
-    #     color = 'purple')
-    
-    # plot_pure_dvcs_minus_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = jd_mathematica_pure_dvcs_minus_beam_lp_target_ww,
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM10 Mathematica (WW)",
-    #     color = 'orange')
-    
-    # plt.savefig(
-    #     fname = 'compared_pure_dvcs_minus_beam_lp_target_kinematic_bin_1_v6.png',
-    #     dpi = 500)
-    
-    # pure_interference_plus_beam_unpolarized_target = cross_section_prefactor * calculate_interference_contribution(0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-    #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
-    #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)
-    # pure_interference_plus_beam_unpolarized_target_ww = cross_section_prefactor * calculate_interference_contribution(0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-    #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
-    #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True)
-    
-    # jd_mathematica_pure_interference_plus_beam_unpolarized_target = pd.read_csv('jd_interference_plus_beam_unpolarized_target_kinematic_bin_1_v3.csv', names = ['jd_sigma'])
-    # jd_mathematica_pure_interference_plus_beam_unpolarized_target_ww = pd.read_csv('jd_interference_plus_beam_unpolarized_target_ww_kinematic_bin_1_v3.csv', names = ['jd_sigma_ww'])
-    # ji_mathematica_pure_interference_plus_beam_unpolarized_target = pd.read_csv('ji_interference_plus_beam_unpolarized_target_kinematic_bin_1_v3.csv', names = ['ji_sigma'])
-
-    # figure_pure_interference_plus_beam_unpolarized_target = plt.figure(figsize = (13.5, 10))
-    # axes_pure_interference_plus_beam_unpolarized_target = figure_pure_interference_plus_beam_unpolarized_target.add_subplot(1, 1, 1)
-    # plot_pure_interference_plus_beam_unpolarized_target = PlotCustomizer(
-    #     axes_pure_interference_plus_beam_unpolarized_target,
-    #     title = r"$E = {} \mathrm{{GeV}}, Q^{{2}} = {} \mathrm{{GeV}}^{{2}}, t = {} \mathrm{{GeV}}^{{2}}, x_{{\mathrm{{B}}}}= {}$".format(
-    #         round(value_of_beam_energy, 5), 
-    #         round(value_of_Q_squared, 5),
-    #         round(value_of_hadron_recoil, 5),
-    #         round(value_of_x_Bjorken, 5)),
-    #     xlabel = r"$\phi \left[ \mathrm{{deg}} \right]$",
-    #     ylabel = r"$d^{4} \sigma^{{I}}_{{\mathrm{{UU}}}} \left[ \mathrm{{nb}} / \mathrm{{GeV}}^{4} \right]$",
-    #     grid = True)
-    
-    # plot_pure_interference_plus_beam_unpolarized_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = convert_to_nb_over_GeV4(pure_interference_plus_beam_unpolarized_target),
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM 10 Python (no WW)",
-    #     color = 'blue')
-    
-    # plot_pure_interference_plus_beam_unpolarized_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = jd_mathematica_pure_interference_plus_beam_unpolarized_target,
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM10 Mathematica (no WW)",
-    #     color = 'red')
-    
-    # plot_pure_interference_plus_beam_unpolarized_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = ji_mathematica_pure_interference_plus_beam_unpolarized_target,
-    #     radial_size = 1.3,
-    #     label = "Ji's Covariant Formalism with Dima's Mathematica",
-    #     color = 'green')
-    
-    # plot_pure_interference_plus_beam_unpolarized_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = convert_to_nb_over_GeV4(pure_interference_plus_beam_unpolarized_target_ww),
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM 10 Python (WW)",
-    #     color = 'purple')
-    
-    # plot_pure_interference_plus_beam_unpolarized_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = jd_mathematica_pure_interference_plus_beam_unpolarized_target_ww,
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM10 Mathematica (WW)",
-    #     color = 'orange')
-    
-    # plt.savefig(
-    #     fname = 'compared_pure_interference_plus_beam_unpolarized_target_kinematic_bin_1_v6.png',
-    #     dpi = 500)
-    
-    # pure_interference_minus_beam_unpolarized_target = cross_section_prefactor * calculate_interference_contribution(0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-    #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
-    #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)
-    # pure_interference_minus_beam_unpolarized_target_ww = cross_section_prefactor * calculate_interference_contribution(0.5, 0.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-    #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
-    #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True)
-    
-    # jd_mathematica_pure_interference_minus_beam_unpolarized_target = pd.read_csv('jd_interference_minus_beam_unpolarized_target_kinematic_bin_1_v3.csv', names = ['jd_sigma'])
-    # jd_mathematica_pure_interference_minus_beam_unpolarized_target_ww = pd.read_csv('jd_interference_minus_beam_unpolarized_target_ww_kinematic_bin_1_v3.csv', names = ['jd_sigma_ww'])
-    # ji_mathematica_pure_interference_minus_beam_unpolarized_target = pd.read_csv('ji_interference_minus_beam_unpolarized_target_kinematic_bin_1_v3.csv', names = ['ji_sigma'])
-    
-    # figure_pure_interference_minus_beam_unpolarized_target = plt.figure(figsize = (13.5, 10))
-    # axes_pure_interference_minus_beam_unpolarized_target = figure_pure_interference_minus_beam_unpolarized_target.add_subplot(1, 1, 1)
-    # plot_pure_interference_minus_beam_unpolarized_target = PlotCustomizer(
-    #     axes_pure_interference_minus_beam_unpolarized_target,
-    #     title = r"$E = {} \mathrm{{GeV}}, Q^{{2}} = {} \mathrm{{GeV}}^{{2}}, t = {} \mathrm{{GeV}}^{{2}}, x_{{\mathrm{{B}}}}= {}$".format(
-    #         round(value_of_beam_energy, 5), 
-    #         round(value_of_Q_squared, 5),
-    #         round(value_of_hadron_recoil, 5),
-    #         round(value_of_x_Bjorken, 5)),
-    #     xlabel = r"$\phi \left[ \mathrm{{deg}} \right]$",
-    #     ylabel = r"$d^{4} \sigma^{{I}}_{{\mathrm{{UU}}}} \left[ \mathrm{{nb}} / \mathrm{{GeV}}^{4} \right]$",
-    #     grid = True)
-    
-    # plot_pure_interference_minus_beam_unpolarized_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = convert_to_nb_over_GeV4(pure_interference_minus_beam_unpolarized_target),
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM 10 Python (no WW)",
-    #     color = 'blue')
-    
-    # plot_pure_interference_minus_beam_unpolarized_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = jd_mathematica_pure_interference_minus_beam_unpolarized_target,
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM10 Mathematica (no WW)",
-    #     color = 'red')
-    
-    # plot_pure_interference_minus_beam_unpolarized_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = ji_mathematica_pure_interference_minus_beam_unpolarized_target,
-    #     radial_size = 1.3,
-    #     label = "Ji's Covariant Formalism with Dima's Mathematica",
-    #     color = 'green')
-    
-    # plot_pure_interference_minus_beam_unpolarized_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = convert_to_nb_over_GeV4(pure_interference_minus_beam_unpolarized_target_ww),
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM 10 Python (WW)",
-    #     color = 'purple')
-    
-    # plot_pure_interference_minus_beam_unpolarized_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = jd_mathematica_pure_interference_minus_beam_unpolarized_target_ww,
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM10 Mathematica (WW)",
-    #     color = 'orange')
-    
-    # plt.savefig(
-    #     fname = 'compared_pure_interference_minus_beam_unpolarized_target_kinematic_bin_1_v6.png',
-    #     dpi = 500)
-    
-    # pure_interference_unpolarized_beam_lp_target = cross_section_prefactor * (0.5 * 
-    #     (calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-    #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
-    #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False) +
-    #     calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-    #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
-    #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)))
-    # pure_interference_unpolarized_beam_lp_target_ww = cross_section_prefactor * (0.5 * 
-    #     (calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-    #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
-    #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True) +
-    #     calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-    #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
-    #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True)))
-    
-    # jd_mathematica_pure_interference_unpolarized_beam_lp_target = pd.read_csv('jd_interference_unpolarized_beam_lp_target_kinematic_bin_1_v3.csv', names = ['jd_sigma'])
-    # jd_mathematica_pure_interference_unpolarized_beam_lp_target_ww = pd.read_csv('jd_interference_unpolarized_beam_lp_target_ww_kinematic_bin_1_v3.csv', names = ['jd_sigma_ww'])
-    # ji_mathematica_pure_interference_unpolarized_beam_lp_target = pd.read_csv('ji_interference_unpolarized_beam_lp_target_kinematic_bin_1_v3.csv', names = ['ji_sigma'])
-
-    # figure_pure_interference_unpolarized_beam_lp_target = plt.figure(figsize = (13.5, 10))
-    # axes_pure_interference_unpolarized_beam_lp_target = figure_pure_interference_unpolarized_beam_lp_target.add_subplot(1, 1, 1)
-    # plot_pure_interference_unpolarized_beam_lp_target = PlotCustomizer(
-    #     axes_pure_interference_unpolarized_beam_lp_target,
-    #     title = r"$E = {} \mathrm{{GeV}}, Q^{{2}} = {} \mathrm{{GeV}}^{{2}}, t = {} \mathrm{{GeV}}^{{2}}, x_{{\mathrm{{B}}}}= {}$".format(
-    #         round(value_of_beam_energy, 5), 
-    #         round(value_of_Q_squared, 5),
-    #         round(value_of_hadron_recoil, 5),
-    #         round(value_of_x_Bjorken, 5)),
-    #     xlabel = r"$\phi \left[ \mathrm{{deg}} \right]$",
-    #     ylabel = r"$d^{4} \sigma^{{I}}_{{\mathrm{{UU}}}} \left[ \mathrm{{nb}} / \mathrm{{GeV}}^{4} \right]$",
-    #     grid = True)
-    
-    # plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = convert_to_nb_over_GeV4(pure_interference_unpolarized_beam_lp_target),
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM 10 Python (no WW)",
-    #     color = 'blue')
-    
-    # plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = jd_mathematica_pure_interference_unpolarized_beam_lp_target,
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM10 Mathematica (no WW)",
-    #     color = 'red')
-    
-    # plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = ji_mathematica_pure_interference_unpolarized_beam_lp_target,
-    #     radial_size = 1.3,
-    #     label = "Ji's Covariant Formalism with Dima's Mathematica",
-    #     color = 'green')
-    
-    # plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = convert_to_nb_over_GeV4(pure_interference_unpolarized_beam_lp_target_ww),
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM 10 Python (WW)",
-    #     color = 'purple')
-    
-    # plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = jd_mathematica_pure_interference_unpolarized_beam_lp_target_ww,
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM10 Mathematica (WW)",
-    #     color = 'orange')
-    
-    # plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
-    #     x_data = np.array([0., 50.31660231660232, 100.35521235521236, 150.11583011583014, 200.98841698841696, 249.91505791505787, 299.95366795366795, 350.2702702702703, 359.72200772200773, 25.019305019305037, 75.33590733590734, 126.48648648648651, 176.2471042471042, 227.39768339768344, 277.1583011583012, 330.5328185328185]),
-    #     y_data = np.array([0.00007220216606498159, 0.011624548736462088, 0.01326113116726835, 0.006089049338146808, -0.004404332129963899, -0.012442839951865223, -0.012683513838748498, -0.002478941034897715, 0.000024067388688327196, 0.006714801444043319, 0.013838748495788204, 0.010324909747292423, 0.0007942238267147975, -0.009410348977135984, -0.01383874849578821, -0.0075330926594464505]),
-    #     radial_size = 11.5,
-    #     label = "Ji's Covariant Formalism",
-    #     color = 'cyan',
-    #     marker = "x")
-    
-    # plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
-    #     x_data = np.array([0., 50.31660231660232, 100.07722007722005, 150.11583011583014, 200.98841698841696, 249.35907335907334, 299.95366795366795, 350.2702702702703, 359.72200772200773, 25.019305019305037, 75.33590733590734, 126.76447876447878, 176.2471042471042, 227.95366795366797, 277.1583011583012, 330.5328185328185]),
-    #     y_data = np.array([0.00007220216606498159, 0.011624548736462088, 0.01326113116726835, 0.006089049338146808, -0.004404332129963899, -0.012250300842358609, -0.012683513838748498, -0.002478941034897715, 0.000024067388688327196, 0.006714801444043319, 0.013838748495788204, 0.010132370637785802, 0.0007942238267147975, -0.009362214199759328, -0.01383874849578821, -0.0075330926594464505]),
-    #     radial_size = 11.5,
-    #     label = "Ji's BKM 10(WW)",
-    #     color = 'maroon',
-    #     marker = '+')
-    
-    # plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
-    #     x_data = np.array([0.5607476635513796, 51.58878504672895, 98.97196261682242, 151.40186915887847, 198.22429906542058, 249.81308411214948, 300.8411214953271, 348.22429906542055, 360., 25.79439252336447, 73.73831775700933, 123.08411214953269, 173.83177570093454, 226.5420560747663, 279.53271028037375, 326.0747663551402]),
-    #     y_data = np.array([0.0000968523002421312, 0.014274616195272306, 0.011671710626265038, 0.004165657357499901, -0.0027350690347519094, -0.01042272036647104, -0.014660008502064262, -0.004793180414897196, -0.00008474576271187001, 0.009674131933771087, 0.014395681570574966, 0.008463478180744458, 0.0008363595366766563, -0.0068512917950424735, -0.013752018187294284, -0.01175443949480034]),
-    #     radial_size = 11.5,
-    #     label = "Ji's Lightcone Formalism",
-    #     color = 'gray',
-    #     marker = "d")
-    
-    # plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
-    #     x_data = np.array([0.5607476635513796, 50.186915887850446, 100.09345794392522, 149.99999999999997, 199.62616822429905, 250.0934579439252, 299.99999999999994, 350.46728971962614, 360., 24.95327102803736, 75.70093457943925, 125.04672897196261, 174.9532710280374, 225.4205607476635, 275.0467289719626, 325.5140186915888, 325.5140186915888]),
-    #     y_data = np.array([0.0000968523002421312, 0.015230024213075056, 0.012324455205811134, 0.004334140435835354, -0.0028087167070217946, -0.010859564164648911, -0.015762711864406784, -0.004140435835351088, -0.00008474576271187001, 0.010084745762711865, 0.015169491525423722, 0.008389830508474576, 0.0008232445520581153, -0.006743341404358354, -0.014309927360774816, -0.012615012106537534, -0.012615012106537534]),
-    #     radial_size = 11.5,
-    #     label = "Ji's BKM 10 (no WW)",
-    #     color = 'gold',
-    #     marker = '*')
-    
-    # # BELOW IS FOR KINEMATIC BIN 2
-
-    # # plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
-    # #     x_data = np.array([0.2767102229054543, 51.468101460415056, 99.89239046887012, 150.5303612605688, 201.72175249807842, 252.63643351268252, 299.67717140661034, 348.65488086087623, 360., 26.01076095311298, 74.98847040737895, 128.11683320522673, 175.71099154496542, 225.5188316679477, 277.2636433512683, 324.85780169100696]),
-    # #     y_data = np.array([0.000004878048780487506, 0.0013560975609756098, 0.0010878048780487803, 0.0003902439024390245, -0.0002975609756097565, -0.0009853658536585366, -0.0013951219512195127, -0.00043414634146341467, -0.000014634146341463818, 0.0009219512195121952, 0.0013414634146341467, 0.0007170731707317076, 0.0000536585365853656, -0.0006097560975609753, -0.0012878048780487806, -0.0011463414634146347]),
-    # #     radial_size = 11.5,
-    # #     label = "Ji's Lightcone Formalism",
-    # #     color = 'gray',
-    # #     marker = "d")
-    
-    # # plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
-    # #     x_data = np.array([0.2767102229054543, 50.36126056879324, 100.16910069177557, 150.5303612605688, 199.7847809377402, 250.14604150653344, 300.23059185242124, 350.0384319754035, 360., 24.903920061491167, 75.2651806302844, 125.34973097617215, 175.1575710991545, 224.41199077632595, 275.3266717909301, 325.1345119139124]),
-    # #     y_data = np.array([0.000004878048780487506, 0.0013804878048780489, 0.001102439024390244, 0.00039512195121951224, -0.0002682926829268293, -0.000965853658536586, -0.001419512195121952, -0.00039512195121951257, -0.000014634146341463818, 0.000902439024390244, 0.0013707317073170734, 0.0007463414634146341, 0.00006341463414634148, -0.000604878048780488, -0.0012829268292682927, -0.00115609756097561]),
-    # #     radial_size = 11.5,
-    # #     label = "Ji's BKM 10 (no WW)",
-    # #     color = 'gold',
-    # #     marker = '*')
-    
-    # plt.savefig(
-    #     fname = 'compared_pure_interference_unpolarized_beam_lp_target_kinematic_bin_1_v6.png',
-    #     dpi = 500)
-    
-    # pure_interference_plus_beam_lp_target = cross_section_prefactor * calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-    #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
-    #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)
-    # pure_interference_plus_beam_lp_target_ww = cross_section_prefactor * calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-    #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
-    #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True)
-    
-    # jd_mathematica_pure_interference_plus_beam_lp_target = pd.read_csv('jd_interference_plus_beam_lp_target_kinematic_bin_1_v3.csv', names = ['jd_sigma'])
-    # jd_mathematica_pure_interference_plus_beam_lp_target_ww = pd.read_csv('jd_interference_plus_beam_lp_target_ww_kinematic_bin_1_v3.csv', names = ['jd_sigma_ww'])
-    # ji_mathematica_pure_interference_plus_beam_lp_target = pd.read_csv('ji_interference_plus_beam_lp_target_kinematic_bin_1_v3.csv', names = ['ji_sigma'])
-
-    # figure_pure_interference_plus_beam_lp_target = plt.figure(figsize = (13.5, 10))
-    # axes_pure_interference_plus_beam_lp_target = figure_pure_interference_plus_beam_lp_target.add_subplot(1, 1, 1)
-    # plot_pure_interference_plus_beam_lp_target = PlotCustomizer(
-    #     axes_pure_interference_plus_beam_lp_target,
-    #     title = r"$E = {} \mathrm{{GeV}}, Q^{{2}} = {} \mathrm{{GeV}}^{{2}}, t = {} \mathrm{{GeV}}^{{2}}, x_{{\mathrm{{B}}}}= {}$".format(
-    #         round(value_of_beam_energy, 5), 
-    #         round(value_of_Q_squared, 5),
-    #         round(value_of_hadron_recoil, 5),
-    #         round(value_of_x_Bjorken, 5)),
-    #     xlabel = r"$\phi \left[ \mathrm{{deg}} \right]$",
-    #     ylabel = r"$d^{4} \sigma^{{I}}_{{\mathrm{{UU}}}} \left[ \mathrm{{nb}} / \mathrm{{GeV}}^{4} \right]$",
-    #     grid = True)
-    
-    # plot_pure_interference_plus_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = convert_to_nb_over_GeV4(pure_interference_plus_beam_lp_target),
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM 10 Python (no WW)",
-    #     color = 'blue')
-    
-    # plot_pure_interference_plus_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = jd_mathematica_pure_interference_plus_beam_lp_target,
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM10 Mathematica (no WW)",
-    #     color = 'red')
-    
-    # plot_pure_interference_plus_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = ji_mathematica_pure_interference_plus_beam_lp_target,
-    #     radial_size = 1.3,
-    #     label = "Ji's Covariant Formalism with Dima's Mathematica",
-    #     color = 'green')
-    
-    # plot_pure_interference_plus_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = convert_to_nb_over_GeV4(pure_interference_plus_beam_lp_target_ww),
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM 10 Python (WW)",
-    #     color = 'purple')
-    
-    # plot_pure_interference_plus_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = jd_mathematica_pure_interference_plus_beam_lp_target_ww,
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM10 Mathematica (WW)",
-    #     color = 'orange')
-    
-    # plt.savefig(
-    #     fname = 'compared_pure_interference_plus_beam_lp_target_kinematic_bin_1_v6.png',
-    #     dpi = 500)
-    
-    # pure_interference_minus_beam_lp_target = cross_section_prefactor * calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-    #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
-    #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False)
-    # pure_interference_minus_beam_lp_target_ww = cross_section_prefactor * calculate_interference_contribution(0.5, 1.0, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-    #     epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
-    #     Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True)
-    
-    # jd_mathematica_pure_interference_minus_beam_lp_target = pd.read_csv('jd_interference_minus_beam_lp_target_kinematic_bin_1_v3.csv', names = ['jd_sigma'])
-    # jd_mathematica_pure_interference_minus_beam_lp_target_ww = pd.read_csv('jd_interference_minus_beam_lp_target_ww_kinematic_bin_1_v3.csv', names = ['jd_sigma_ww'])
-    # ji_mathematica_pure_interference_minus_beam_lp_target = pd.read_csv('ji_interference_minus_beam_lp_target_kinematic_bin_1_v3.csv', names = ['ji_sigma'])
-
-    # figure_pure_interference_minus_beam_lp_target = plt.figure(figsize = (13.5, 10))
-    # axes_pure_interference_minus_beam_lp_target = figure_pure_interference_minus_beam_lp_target.add_subplot(1, 1, 1)
-    # plot_pure_interference_minus_beam_lp_target = PlotCustomizer(
-    #     axes_pure_interference_minus_beam_lp_target,
-    #     title = r"$E = {} \mathrm{{GeV}}, Q^{{2}} = {} \mathrm{{GeV}}^{{2}}, t = {} \mathrm{{GeV}}^{{2}}, x_{{\mathrm{{B}}}}= {}$".format(
-    #         round(value_of_beam_energy, 5), 
-    #         round(value_of_Q_squared, 5),
-    #         round(value_of_hadron_recoil, 5),
-    #         round(value_of_x_Bjorken, 5)),
-    #     xlabel = r"$\phi \left[ \mathrm{{deg}} \right]$",
-    #     ylabel = r"$d^{4} \sigma^{{I}}_{{\mathrm{{UU}}}} \left[ \mathrm{{nb}} / \mathrm{{GeV}}^{4} \right]$",
-    #     grid = True)
-    
-    # plot_pure_interference_minus_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = convert_to_nb_over_GeV4(pure_interference_minus_beam_lp_target),
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM 10 Python (no WW)",
-    #     color = 'blue')
-    
-    # plot_pure_interference_minus_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = jd_mathematica_pure_interference_minus_beam_lp_target,
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM10 Mathematica (no WW)",
-    #     color = 'red')
-    
-    # plot_pure_interference_minus_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = ji_mathematica_pure_interference_minus_beam_lp_target,
-    #     radial_size = 1.3,
-    #     label = "Ji's Covariant Formalism with Dima's Mathematica",
-    #     color = 'green')
-    
-    # plot_pure_interference_minus_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = convert_to_nb_over_GeV4(pure_interference_minus_beam_lp_target_ww),
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM 10 Python (WW)",
-    #     color = 'purple')
-    
-    # plot_pure_interference_minus_beam_lp_target.add_scatter_plot(
-    #     x_data = azimuthal_phi,
-    #     y_data = jd_mathematica_pure_interference_minus_beam_lp_target_ww,
-    #     radial_size = 1.3,
-    #     label = "Dima's BKM10 Mathematica (WW)",
-    #     color = 'orange')
-    
-    # plt.savefig(
-    #     fname = 'compared_pure_interference_minus_beam_lp_target_kinematic_bin_1_v6.png',
-    #     dpi = 500)
-
-
+        #  print("> Beginning analysis of Interference, unpolarized beam, longitudinally-polarized target...")
+        analyze_interference_unpolarized_beam_polarized_target()
 
 if __name__ == "__main__":
 
