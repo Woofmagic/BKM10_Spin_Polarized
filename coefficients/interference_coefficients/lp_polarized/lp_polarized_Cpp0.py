@@ -31,13 +31,14 @@ def calculate_c_0_plus_plus_longitudinally_polarized(
         second_bracket_term_second_part = x_Bjorken * t_over_Q_squared - (epsilon**2 * (1. - t_over_Q_squared) / 2.)
 
         # (6): Calculate the third part of the second term in brackets:
-        second_bracket_term_third_part = 1. + t_over_Q_squared * (root_one_plus_epsilon_squared - 1. + 2. * x_Bjorken / (1. + root_one_plus_epsilon_squared))
+        second_bracket_term_third_part = 1. + t_over_Q_squared * ((root_one_plus_epsilon_squared - 1. + 2. * x_Bjorken) / (1. + root_one_plus_epsilon_squared))
 
         # (7): Stitch together the second bracket term:
         second_bracket_term = second_bracket_term_first_part * second_bracket_term_second_part * second_bracket_term_third_part
 
+
         # (8): Calculate the prefactor:
-        prefactor = 4. * lepton_helicity * target_polarization * lepton_energy_fraction_y * (1. + root_one_plus_epsilon_squared) / root_one_plus_epsilon_squared**5
+        prefactor = -4. * lepton_helicity * target_polarization * lepton_energy_fraction_y * (1. + root_one_plus_epsilon_squared) / root_one_plus_epsilon_squared**5
 
         # (9): Calculate the entire thing:
         c_0_plus_plus_LP = prefactor * (first_bracket_term + second_bracket_term)
