@@ -28,15 +28,15 @@ def calculate_c_0_plus_plus_longitudinally_polarized_A(
 
         # (4): Calculate the first term in the brackets: 
         first_bracket_term = 2. * (2. - lepton_energy_fraction_y)**2 * k_tilde**2 / squared_Q_momentum_transfer
-
+        
         # (5): Calculate the first part of the second term in brackets:
-        second_bracket_term_first_part = 1. - lepton_energy_fraction_y + (epsilon**2 * lepton_energy_fraction_y**2 / 4.)
+        second_bracket_term_first_part = 1. - lepton_energy_fraction_y - (epsilon**2 * lepton_energy_fraction_y**2 / 4.)
 
         # (6): Calculate the second part of the second term in brackets:
         second_bracket_term_second_part = 1. - (1. - 2. * x_Bjorken) * t_over_Q_squared
 
         # (7): Calculate the third part of the second term in brackets:
-        second_bracket_term_third_part = 1. + (t_over_Q_squared * (4. * (1. - x_Bjorken) * x_Bjorken + epsilon**2) / (4. - 2. * x_Bjorken + 3. * epsilon**2))
+        second_bracket_term_third_part = 1. + (t_over_Q_squared * (root_one_plus_epsilon_squared - 1. + 2. * x_Bjorken) / one_plus_root_epsilon_stuff)
 
         # (8): Stitch together the second bracket term:
         second_bracket_term = second_bracket_term_first_part * one_plus_root_epsilon_stuff * second_bracket_term_second_part * second_bracket_term_third_part
