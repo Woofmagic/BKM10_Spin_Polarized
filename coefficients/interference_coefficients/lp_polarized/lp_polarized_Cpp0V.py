@@ -24,11 +24,11 @@ def calculate_c_0_plus_plus_longitudinally_polarized_V(
         # (3): Calculate the recurrent quantity 1 + sqrt(1 + epsilon^2):
         one_plus_root_epsilon_stuff = 1. + root_one_plus_epsilon_squared
 
-        # (4): Calculate the first term in the brackets: 
+            # (4): Calculate the first term in the brackets:
         first_bracket_term = (2. - lepton_energy_fraction_y)**2 * (one_plus_root_epsilon_stuff - 2. * x_Bjorken) * k_tilde**2 / (squared_Q_momentum_transfer * one_plus_root_epsilon_stuff)
-
+        
         # (5): Calculate the first part of the second term in brackets:
-        second_bracket_term_first_part = 1. - lepton_energy_fraction_y + (epsilon**2 * lepton_energy_fraction_y**2 / 4.)
+        second_bracket_term_first_part = 1. - lepton_energy_fraction_y - (epsilon**2 * lepton_energy_fraction_y**2 / 4.)
 
         # (6): Calculate the second part of the second term in brackets:
         second_bracket_term_second_part = 2. - x_Bjorken + 3. * epsilon**2 / 2
