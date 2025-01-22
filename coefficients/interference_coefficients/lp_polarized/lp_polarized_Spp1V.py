@@ -1,5 +1,3 @@
-from decimal import Decimal
-
 import numpy as np
 
 def calculate_s_1_plus_plus_longitudinally_polarized_V(
@@ -30,7 +28,7 @@ def calculate_s_1_plus_plus_longitudinally_polarized_V(
         t_prime_over_Q_squared = t_prime / squared_Q_momentum_transfer
 
         # (5): Calculate epsilon^{2} y^{2} / 4
-        epsilon_y_over_2_squared = ep_squared**2 * lepton_energy_fraction_y**2 / 4.
+        epsilon_y_over_2_squared = ep_squared * lepton_energy_fraction_y**2 / 4.
 
         # (6): Calculate the first bracket term:
         first_bracket_term = 1. - (t_prime_over_Q_squared * ((1. - 2. * x_Bjorken) * (1. - 2. * x_Bjorken + root_one_plus_epsilon_squared)) / (2. * root_one_plus_epsilon_squared**2))
@@ -40,7 +38,7 @@ def calculate_s_1_plus_plus_longitudinally_polarized_V(
 
         # (8): Calculate the numerator of the second term in brackets
         second_bracket_term_numerator = 1. - root_one_plus_epsilon_squared + (ep_squared / 2.) - (2. * x_Bjorken * (3. * (1. - x_Bjorken) - root_one_plus_epsilon_squared))
-
+        
         # (9): Calculate the denominator of the second term in brackets
         second_bracket_term_denominator = 4. - (x_Bjorken * (root_one_plus_epsilon_squared + 3.)) + (5. * ep_squared / 2.)
 
