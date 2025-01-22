@@ -1069,7 +1069,7 @@ def calculate_interference_contribution(
                 epsilon,
                 lepton_energy_fraction_y,
                 t_prime,
-                k_tilde,
+                shorthand_k,
                 verbose)
 
             S3V_pp_lp_polarized = calculate_s_3_plus_plus_longitudinally_polarized_V(
@@ -1080,7 +1080,7 @@ def calculate_interference_contribution(
                 epsilon,
                 lepton_energy_fraction_y,
                 t_prime,
-                k_tilde,
+                shorthand_k,
                 verbose)
 
             S3A_pp_lp_polarized = calculate_s_3_plus_plus_longitudinally_polarized_A(
