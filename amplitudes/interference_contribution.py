@@ -678,7 +678,7 @@ def calculate_interference_contribution(
             
         else:
 
-            curly_C_unpolarized_interference_for_pp = calculate_curly_C_longitudinally_polarized_interference(
+            curly_C_lp_polarized_interference_for_pp = calculate_curly_C_longitudinally_polarized_interference(
                 squared_Q_momentum_transfer,
                 x_Bjorken,
                 squared_hadronic_momentum_transfer_t,
@@ -689,8 +689,10 @@ def calculate_interference_contribution(
                 compton_form_factor_e,
                 compton_form_factor_e_tilde,
                 verbose)
+            
+            print(f"> Curly C++LP: {curly_C_lp_polarized_interference_for_pp[0]}")
 
-            curly_C_V_unpolarized_interference_for_pp = calculate_curly_C_longitudinally_polarized_interference_V(
+            curly_C_V_lp_polarized_interference_for_pp = calculate_curly_C_longitudinally_polarized_interference_V(
                 squared_Q_momentum_transfer,
                 x_Bjorken,
                 squared_hadronic_momentum_transfer_t,
@@ -699,8 +701,10 @@ def calculate_interference_contribution(
                 compton_form_factor_h,
                 compton_form_factor_e,
                 verbose)
+            
+            print(f"> Curly C++VLP: {curly_C_V_lp_polarized_interference_for_pp[0]}")
 
-            curly_C_A_unpolarized_interference_for_pp = calculate_curly_C_longitudinally_polarized_interference_A(
+            curly_C_A_lp_polarized_interference_for_pp = calculate_curly_C_longitudinally_polarized_interference_A(
                 squared_Q_momentum_transfer,
                 x_Bjorken,
                 squared_hadronic_momentum_transfer_t,
@@ -709,8 +713,10 @@ def calculate_interference_contribution(
                 compton_form_factor_h_tilde,
                 compton_form_factor_e_tilde,
                 verbose)
+            
+            print(f"> Curly C++ALP: {curly_C_A_lp_polarized_interference_for_pp[0]}")
 
-            curly_C_unpolarized_interference_for_0p = calculate_curly_C_longitudinally_polarized_interference(
+            curly_C_lp_polarized_interference_for_0p = calculate_curly_C_longitudinally_polarized_interference(
                 squared_Q_momentum_transfer,
                 x_Bjorken,
                 squared_hadronic_momentum_transfer_t,
@@ -722,7 +728,9 @@ def calculate_interference_contribution(
                 compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde, use_ww),
                 verbose)
 
-            curly_C_V_unpolarized_interference_for_0p = calculate_curly_C_longitudinally_polarized_interference_V(
+            print(f"> Curly C0+LP: {curly_C_lp_polarized_interference_for_0p[0]}")
+
+            curly_C_V_lp_polarized_interference_for_0p = calculate_curly_C_longitudinally_polarized_interference_V(
                 squared_Q_momentum_transfer,
                 x_Bjorken,
                 squared_hadronic_momentum_transfer_t,
@@ -731,8 +739,10 @@ def calculate_interference_contribution(
                 compute_cff_effective(skewness_parameter, compton_form_factor_h, use_ww),
                 compute_cff_effective(skewness_parameter, compton_form_factor_e, use_ww),
                 verbose)
+            
+            print(f"> Curly C0+VLP: {curly_C_V_lp_polarized_interference_for_0p[0]}")
 
-            curly_C_A_unpolarized_interference_for_0p = calculate_curly_C_longitudinally_polarized_interference_A(
+            curly_C_A_lp_polarized_interference_for_0p = calculate_curly_C_longitudinally_polarized_interference_A(
                 squared_Q_momentum_transfer,
                 x_Bjorken,
                 squared_hadronic_momentum_transfer_t,
@@ -742,6 +752,16 @@ def calculate_interference_contribution(
                 compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde, use_ww),
                 verbose)
             
+            print(f"> Curly C0+ALP: {curly_C_A_lp_polarized_interference_for_0p[0]}")
+            
+            print(lepton_helicity)
+            print(target_polarization)
+            print(squared_Q_momentum_transfer[0])
+            print(x_Bjorken[0])
+            print(squared_hadronic_momentum_transfer_t[0])
+            print(epsilon[0])
+            print(lepton_energy_fraction_y[0])
+            print(k_tilde[0])
             C0_pp_lp_polarized = calculate_c_0_plus_plus_longitudinally_polarized(
                 lepton_helicity,
                 target_polarization,
@@ -805,7 +825,7 @@ def calculate_interference_contribution(
                 shorthand_k,
                 verbose)
             
-            print(f"> C0+(n=0): {C0V_0p_lp_polarized[0]}")
+            print(f"> C0V+(n=0): {C0V_0p_lp_polarized[0]}")
 
             C0A_0p_lp_polarized = calculate_c_0_zero_plus_longitudinally_polarized_A(
                 lepton_helicity,
@@ -818,7 +838,7 @@ def calculate_interference_contribution(
                 shorthand_k,
                 verbose)
             
-            print(f"> C0+(n=0): {C0A_0p_lp_polarized[0]}")
+            print(f"> C0A+(n=0): {C0A_0p_lp_polarized[0]}")
             
             C1_pp_lp_polarized = calculate_c_1_plus_plus_longitudinally_polarized(
                 lepton_helicity,
@@ -1100,57 +1120,57 @@ def calculate_interference_contribution(
             
             S3A_0p_lp_polarized = 0.
             
-            curly_C_0_pp_int =  (curly_C_unpolarized_interference_for_pp
-                        + (C0V_pp_lp_polarized * curly_C_V_unpolarized_interference_for_pp / C0_pp_lp_polarized)
-                        + (C0A_pp_lp_polarized * curly_C_A_unpolarized_interference_for_pp / C0_pp_lp_polarized))
+            curly_C_0_pp_int =  (curly_C_lp_polarized_interference_for_pp
+                        + (C0V_pp_lp_polarized * curly_C_V_lp_polarized_interference_for_pp / C0_pp_lp_polarized)
+                        + (C0A_pp_lp_polarized * curly_C_A_lp_polarized_interference_for_pp / C0_pp_lp_polarized))
 
-            curly_C_0_0p_int =  ((np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)) * (curly_C_unpolarized_interference_for_0p
-                        + (C0V_0p_lp_polarized * curly_C_V_unpolarized_interference_for_0p / C0_0p_lp_polarized)
-                        + (C0A_0p_lp_polarized * curly_C_A_unpolarized_interference_for_0p / C0_0p_lp_polarized)))
+            curly_C_0_0p_int =  ((np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)) * (curly_C_lp_polarized_interference_for_0p
+                        + (C0V_0p_lp_polarized * curly_C_V_lp_polarized_interference_for_0p / C0_0p_lp_polarized)
+                        + (C0A_0p_lp_polarized * curly_C_A_lp_polarized_interference_for_0p / C0_0p_lp_polarized)))
             
-            curly_C_1_pp_int =  (curly_C_unpolarized_interference_for_pp
-                        + (C1V_pp_lp_polarized * curly_C_V_unpolarized_interference_for_pp / C1_pp_lp_polarized)
-                        + (C1A_pp_lp_polarized * curly_C_A_unpolarized_interference_for_pp / C1_pp_lp_polarized))
+            curly_C_1_pp_int =  (curly_C_lp_polarized_interference_for_pp
+                        + (C1V_pp_lp_polarized * curly_C_V_lp_polarized_interference_for_pp / C1_pp_lp_polarized)
+                        + (C1A_pp_lp_polarized * curly_C_A_lp_polarized_interference_for_pp / C1_pp_lp_polarized))
 
-            curly_C_1_0p_int =  ((np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)) * (curly_C_unpolarized_interference_for_0p
-                        + (C1V_0p_lp_polarized * curly_C_V_unpolarized_interference_for_0p / C1_0p_lp_polarized)
-                        + (C1A_0p_lp_polarized * curly_C_A_unpolarized_interference_for_0p / C1_0p_lp_polarized)))
+            curly_C_1_0p_int =  ((np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)) * (curly_C_lp_polarized_interference_for_0p
+                        + (C1V_0p_lp_polarized * curly_C_V_lp_polarized_interference_for_0p / C1_0p_lp_polarized)
+                        + (C1A_0p_lp_polarized * curly_C_A_lp_polarized_interference_for_0p / C1_0p_lp_polarized)))
             
-            curly_C_2_pp_int =  (curly_C_unpolarized_interference_for_pp
-                        + (C2V_pp_lp_polarized * curly_C_V_unpolarized_interference_for_pp / C2_pp_lp_polarized)
-                        + (C2A_pp_lp_polarized * curly_C_A_unpolarized_interference_for_pp / C2_pp_lp_polarized))
+            curly_C_2_pp_int =  (curly_C_lp_polarized_interference_for_pp
+                        + (C2V_pp_lp_polarized * curly_C_V_lp_polarized_interference_for_pp / C2_pp_lp_polarized)
+                        + (C2A_pp_lp_polarized * curly_C_A_lp_polarized_interference_for_pp / C2_pp_lp_polarized))
 
-            curly_C_2_0p_int =  ((np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)) * (curly_C_unpolarized_interference_for_0p
-                        + (C2V_0p_lp_polarized * curly_C_V_unpolarized_interference_for_0p / C2_0p_lp_polarized)
-                        + (C2A_0p_lp_polarized * curly_C_A_unpolarized_interference_for_0p / C2_0p_lp_polarized)))
+            curly_C_2_0p_int =  ((np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)) * (curly_C_lp_polarized_interference_for_0p
+                        + (C2V_0p_lp_polarized * curly_C_V_lp_polarized_interference_for_0p / C2_0p_lp_polarized)
+                        + (C2A_0p_lp_polarized * curly_C_A_lp_polarized_interference_for_0p / C2_0p_lp_polarized)))
             
             curly_C_3_pp_int = 0.
 
             curly_C_3_0p_int = 0.
 
-            curly_S_1_pp_int =  (curly_C_unpolarized_interference_for_pp
-                        + (S1V_pp_lp_polarized * curly_C_V_unpolarized_interference_for_pp / S1_pp_lp_polarized)
-                        + (S1A_pp_lp_polarized * curly_C_A_unpolarized_interference_for_pp / S1_pp_lp_polarized))
+            curly_S_1_pp_int =  (curly_C_lp_polarized_interference_for_pp
+                        + (S1V_pp_lp_polarized * curly_C_V_lp_polarized_interference_for_pp / S1_pp_lp_polarized)
+                        + (S1A_pp_lp_polarized * curly_C_A_lp_polarized_interference_for_pp / S1_pp_lp_polarized))
 
-            curly_S_1_0p_int =  ((np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)) * (curly_C_unpolarized_interference_for_0p
-                        + (S1V_0p_lp_polarized * curly_C_V_unpolarized_interference_for_0p / S1_0p_lp_polarized)
-                        + (S1A_0p_lp_polarized * curly_C_A_unpolarized_interference_for_0p / S1_0p_lp_polarized)))
+            curly_S_1_0p_int =  ((np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)) * (curly_C_lp_polarized_interference_for_0p
+                        + (S1V_0p_lp_polarized * curly_C_V_lp_polarized_interference_for_0p / S1_0p_lp_polarized)
+                        + (S1A_0p_lp_polarized * curly_C_A_lp_polarized_interference_for_0p / S1_0p_lp_polarized)))
 
-            curly_S_2_pp_int =  (curly_C_unpolarized_interference_for_pp
-                        + (S2V_pp_lp_polarized * curly_C_V_unpolarized_interference_for_pp / S2_pp_lp_polarized)
-                        + (S2A_pp_lp_polarized * curly_C_A_unpolarized_interference_for_pp / S2_pp_lp_polarized))
+            curly_S_2_pp_int =  (curly_C_lp_polarized_interference_for_pp
+                        + (S2V_pp_lp_polarized * curly_C_V_lp_polarized_interference_for_pp / S2_pp_lp_polarized)
+                        + (S2A_pp_lp_polarized * curly_C_A_lp_polarized_interference_for_pp / S2_pp_lp_polarized))
 
-            curly_S_2_0p_int =  ((np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)) * (curly_C_unpolarized_interference_for_0p
-                        + (S2V_0p_lp_polarized * curly_C_V_unpolarized_interference_for_0p / S2_0p_lp_polarized)
-                        + (S2A_0p_lp_polarized * curly_C_A_unpolarized_interference_for_0p / S2_0p_lp_polarized)))
+            curly_S_2_0p_int =  ((np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)) * (curly_C_lp_polarized_interference_for_0p
+                        + (S2V_0p_lp_polarized * curly_C_V_lp_polarized_interference_for_0p / S2_0p_lp_polarized)
+                        + (S2A_0p_lp_polarized * curly_C_A_lp_polarized_interference_for_0p / S2_0p_lp_polarized)))
             
-            curly_S_3_pp_int =  (curly_C_unpolarized_interference_for_pp
-                        + (S3V_pp_lp_polarized * curly_C_V_unpolarized_interference_for_pp / S3_pp_lp_polarized)
-                        + (S3A_pp_lp_polarized * curly_C_A_unpolarized_interference_for_pp / S3_pp_lp_polarized))
+            curly_S_3_pp_int =  (curly_C_lp_polarized_interference_for_pp
+                        + (S3V_pp_lp_polarized * curly_C_V_lp_polarized_interference_for_pp / S3_pp_lp_polarized)
+                        + (S3A_pp_lp_polarized * curly_C_A_lp_polarized_interference_for_pp / S3_pp_lp_polarized))
 
-            curly_S_3_0p_int =  ((np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)) * (curly_C_unpolarized_interference_for_0p
-                        + (S3V_0p_lp_polarized * curly_C_V_unpolarized_interference_for_0p / S3_0p_lp_polarized)
-                        + (S3A_0p_lp_polarized * curly_C_A_unpolarized_interference_for_0p / S3_0p_lp_polarized)))
+            curly_S_3_0p_int =  ((np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)) * (curly_C_lp_polarized_interference_for_0p
+            + 0.
+            + 0.))
             
             c_0_interference_coefficient = C0_pp_lp_polarized * curly_C_0_pp_int.real + C0_0p_lp_polarized * curly_C_0_0p_int.real
             c_1_interference_coefficient = C1_pp_lp_polarized * curly_C_1_pp_int.real + C1_0p_lp_polarized * curly_C_1_0p_int.real
@@ -1158,15 +1178,15 @@ def calculate_interference_contribution(
             c_3_interference_coefficient = 0.
             s_1_interference_coefficient = S1_pp_lp_polarized * curly_S_1_pp_int.imag + S1_0p_lp_polarized * curly_S_1_0p_int.imag
             s_2_interference_coefficient = S2_pp_lp_polarized * curly_S_2_pp_int.imag + S2_0p_lp_polarized * curly_S_2_0p_int.imag
-            s_3_interference_coefficient = S3_pp_lp_polarized * curly_S_2_pp_int.imag + S2_0p_lp_polarized * curly_S_3_0p_int.imag
+            s_3_interference_coefficient = S3_pp_lp_polarized * curly_S_3_pp_int.imag + S3_0p_lp_polarized * curly_S_3_0p_int.imag
         
         print(f"> c0: {c_0_interference_coefficient[0]}")
         print(f"> c1: {c_1_interference_coefficient[0]}")
         print(f"> c2: {c_2_interference_coefficient[0]}")
-        print(f"> c3: {c_3_interference_coefficient[0]}")
+        print(f"> c3: {c_3_interference_coefficient}")
         print(f"> s1: {s_1_interference_coefficient[0]}")
         print(f"> s2: {s_2_interference_coefficient[0]}")
-        print(f"> s3: {s_3_interference_coefficient}")
+        print(f"> s3: {s_3_interference_coefficient[0]}")
         
         plot_interference_contributions(
             azimuthal_phi,

@@ -6,8 +6,6 @@ def compute_cff_effective(
     use_ww: bool = False,
     verbose: bool = False) -> complex:
     """
-    # Title: `compute_cff_effective`
-    
     ## Description:
     The CFF_{effective} is not actually easy to compute, but
     we are going to pretend it is and compute it as below. (All
