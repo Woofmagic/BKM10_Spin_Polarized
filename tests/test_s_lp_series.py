@@ -32,16 +32,18 @@ from coefficients.interference_coefficients.lp_polarized.lp_polarized_Smp3 impor
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_Smp3V import calculate_s_3_minus_plus_longitudinally_polarized_V
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_Smp3A import calculate_s_3_minus_plus_longitudinally_polarized_A
 
-_TEST_LEPTON_POLARIZATION = 1.0
+_TEST_LEPTON_POLARIZATION = 0.5
 _TEST_TARGET_POLARIZATION = 1.0
-_TEST_SQUARED_Q_MOMENTUM_TRANSFER = 1.8200000524520876
-_TEST_X_BJORKEN = 0.3429999947547912
-_TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER = -0.1720000058412552
-_TEST_EPSILON = 0.477109
-_TEST_LEPTON_ENERGY_FRACTION = 0.491757
-_TEST_K_TILDE = 0.157396
-_TEST_SHORTHAND_K = 0.0842939
-_TEST_T_PRIME = -0.0337889
+
+_TEST_SQUARED_Q_MOMENTUM_TRANSFER = 1.82
+_TEST_X_BJORKEN = 0.34
+_TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER = -0.17
+
+_TEST_EPSILON = 0.47293561004973345
+_TEST_LEPTON_ENERGY_FRACTION = 0.49609612355928445
+_TEST_K_TILDE = 0.1592415651944438
+_TEST_SHORTHAND_K = 0.08492693191323883
+_TEST_T_PRIME = -0.034481755270847486
 
 _TEST_VERBOSE = False
 
@@ -49,8 +51,6 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
 
     def test_calculate_s_1_plus_plus_longitudinally_polarized(self):
         """
-        # Title: `calculate_s_1_plus_plus_longitudinally_polarized`
-
         ## Description: Test the function `calculate_s_1_plus_plus_longitudinally_polarized`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{++}^{LP}(n = 1)$.
         We call it "SLPPP1" for S (series) LP (longitudinally polarized [target]) PP (++) 1 (n = 1).
@@ -73,13 +73,11 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_EPSILON,
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_SHORTHAND_K,
-                _TEST_VERBOSE), 
-            0.645538)
+                _TEST_VERBOSE),
+            0.6506323386753146)
         
     def test_calculate_s_1_plus_plus_longitudinally_polarized_V(self):
         """
-        # Title: `test_calculate_s_1_plus_plus_longitudinally_polarized_V`
-
         ## Description: Test the function `calculate_s_1_plus_plus_longitudinally_polarized_V`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{++}^{LP, V}(n = 1)$.
         We call it "SLPPP1" for S (series) LP (longitudinally polarized [target]) V (vector) PP (++) 1 (n = 1).
@@ -103,13 +101,11 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_T_PRIME,
                 _TEST_SHORTHAND_K,
-                _TEST_VERBOSE), 
-            -0.107439)
+                _TEST_VERBOSE),
+            -0.10726649931526153)
         
     def test_calculate_s_1_plus_plus_longitudinally_polarized_A(self):
         """
-        # Title: `test_calculate_s_1_plus_plus_longitudinally_polarized_A`
-
         ## Description: Test the function `calculate_s_1_plus_plus_longitudinally_polarized_A`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{++}^{LP, A}(n = 1)$.
         We call it "SLPPP1" for S (series) LP (longitudinally polarized [target]) A (axial vector) PP (++) 1 (n = 1).
@@ -133,12 +129,10 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            -0.0243094)
+            -0.02402970822511508)
         
     def test_calculate_s_2_plus_plus_longitudinally_polarized(self):
         """
-        # Title: `test_calculate_s_2_plus_plus_longitudinally_polarized`
-
         ## Description: Test the function `calculate_s_2_plus_plus_longitudinally_polarized`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{++}^{LP}(n = 2)$.
         We call it "SLPPP2" for S (series) LP (longitudinally polarized [target]) PP (++) 2 (n = 2).
@@ -163,15 +157,13 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_T_PRIME,
                 _TEST_K_TILDE,
                 _TEST_VERBOSE), 
-            0.0048104884071469)
+            0.005027011370588231)
         
     def test_calculate_s_2_plus_plus_longitudinally_polarized_V(self):
         """
-        # Title: `test_calculate_s_2_plus_plus_longitudinally_polarized_V`
-
         ## Description: Test the function `calculate_s_2_plus_plus_longitudinally_polarized_V`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{++}^{LP, V}(n = 2)$.
-        We call it "SLPPP1" for S (series) LP (longitudinally polarized [target]) V (vector) PP (++) 2 (n = 2).
+        We call it "SLPPP2" for S (series) LP (longitudinally polarized [target]) V (vector) PP (++) 2 (n = 2).
 
         ## Arguments:
         None
@@ -193,12 +185,10 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_T_PRIME,
                 _TEST_K_TILDE,
                 _TEST_VERBOSE), 
-            -0.0046153430454031)
+            -0.004685318215068245)
         
     def test_calculate_s_2_plus_plus_longitudinally_polarized_A(self):
         """
-        # Title: `test_calculate_s_2_plus_plus_longitudinally_polarized_A`
-
         ## Description: Test the function `calculate_s_2_plus_plus_longitudinally_polarized_A`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{++}^{LP, A}(n = 2)$.
         We call it "SLPPP1" for S (series) LP (longitudinally polarized [target]) A (axial vector) PP (++) 2 (n = 2).
@@ -223,12 +213,10 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_T_PRIME,
                 _TEST_K_TILDE,
                 _TEST_VERBOSE), 
-            -0.0047273060125334)
+            -0.004723867344658563)
         
     def test_calculate_s_3_plus_plus_longitudinally_polarized(self):
         """
-        # Title: `calculate_s_3_plus_plus_longitudinally_polarized`
-
         ## Description: Test the function `calculate_s_3_plus_plus_longitudinally_polarized`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{++}^{LP}(n = 3)$.
         We call it "SLPPP3" for S (series) LP (longitudinally polarized [target]) PP (++) 3 (n = 3).
@@ -252,12 +240,10 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_T_PRIME,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            0.00025690082629607)
+            0.00026075873525180664)
         
     def test_calculate_s_3_plus_plus_longitudinally_polarized_V(self):
         """
-        # Title: `test_calculate_s_3_plus_plus_longitudinally_polarized_V`
-
         ## Description: Test the function `calculate_s_3_plus_plus_longitudinally_polarized_V`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{++}^{LP, V}(n = 3)$.
         We call it "SLPPP3" for S (series) LP (longitudinally polarized [target]) V (vector) PP (++) 3 (n = 3).
@@ -282,12 +268,10 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_T_PRIME,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            0.00017851247673089)
+            0.00018031899045680918)
         
     def test_calculate_s_3_plus_plus_longitudinally_polarized_A(self):
         """
-        # Title: `test_calculate_s_3_plus_plus_longitudinally_polarized_A`
-
         ## Description: Test the function `calculate_s_3_plus_plus_longitudinally_polarized_A`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{++}^{LP, A}(n = 3)$.
         We call it "SLPPP3" for S (series) LP (longitudinally polarized [target]) A (axial vector) PP (++) 3 (n = 3).
@@ -312,7 +296,7 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_T_PRIME,
                 _TEST_K_TILDE,
                 _TEST_VERBOSE), 
-            0.00015423393697809)
+            -0.00015596240529592618)
         
     def test_calculate_s_1_zero_plus_longitudinally_polarized(self):
         """
