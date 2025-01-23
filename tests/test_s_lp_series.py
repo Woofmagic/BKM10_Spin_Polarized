@@ -300,8 +300,6 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
         
     def test_calculate_s_1_zero_plus_longitudinally_polarized(self):
         """
-        # Title: `test_calculate_s_1_zero_plus_longitudinally_polarized`
-
         ## Description: Test the function `calculate_s_1_zero_plus_longitudinally_polarized`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{0+}^{LP}(n = 1)$.
         We call it "SLP0P1" for S (series) LP (longitudinally polarized [target]) 0P (0+) 1 (n = 1).
@@ -325,12 +323,10 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_K_TILDE,
                 _TEST_VERBOSE), 
-            -0.52226678511777)
+            -0.5039450463995288)
         
     def test_calculate_s_1_zero_plus_longitudinally_polarized_V(self):
         """
-        # Title: `test_calculate_s_1_zero_plus_longitudinally_polarized_V`
-
         ## Description: Test the function `calculate_s_1_zero_plus_longitudinally_polarized_V`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{0+}^{LP, V}(n = 1)$.
         We call it "SLPV0PP1" for S (series) LP (longitudinally polarized [target]) V (vector) 0P (0+) 1 (n = 1).
@@ -354,12 +350,10 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_K_TILDE,
                 _TEST_VERBOSE), 
-            0.79822543528701)
+            0.7854264271656682)
         
     def test_calculate_s_1_zero_plus_longitudinally_polarized_A(self):
         """
-        # Title: `test_calculate_s_1_zero_plus_longitudinally_polarized_A`
-
         ## Description: Test the function `calculate_s_1_zero_plus_longitudinally_polarized_A`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{0+}^{LP, A}(n = 1)$.
         We call it "SLPA0PP1" for S (series) LP (longitudinally polarized [target]) A (axial vector) 0P (0+) 1 (n = 1).
@@ -382,7 +376,7 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_EPSILON,
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_VERBOSE), 
-            0.14240509455834)
+            0.1390012629209379)
         
     def test_calculate_s_2_zero_plus_longitudinally_polarized(self):
         """
@@ -411,12 +405,10 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            0.58609108135492)
+            0.5913658012508738)
         
     def test_calculate_s_2_zero_plus_longitudinally_polarized_V(self):
         """
-        # Title: `test_calculate_s_2_zero_plus_longitudinally_polarized_V`
-
         ## Description: Test the function `calculate_s_2_zero_plus_longitudinally_polarized_V`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{0+}^{LP, V}(n = 2)$.
         We call it "SLPV0P2" for S (series) LP (longitudinally polarized [target]) V (vector) 0P (0+) 2 (n = 2).
@@ -440,12 +432,10 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            0.037609589418397)
+            0.03765250419949383)
         
     def test_calculate_s_2_zero_plus_longitudinally_polarized_A(self):
         """
-        # Title: `test_calculate_s_2_zero_plus_longitudinally_polarized_A`
-
         ## Description: Test the function `calculate_s_2_zero_plus_longitudinally_polarized_V`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{0+}^{LP, A}(n = 2)$.
         We call it "SLPA0P2" for S (series) LP (longitudinally polarized [target]) A (axial vector) 0P (0+) 2 (n = 2).
@@ -469,12 +459,10 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            0.017779238335062)
+            0.01758496075251086)
         
     def test_calculate_s_1_minus_plus_longitudinally_polarized(self):
         """
-        # Title: `test_calculate_s_1_minus_plus_longitudinally_polarized`
-
         ## Description: Test the function `calculate_s_1_minus_plus_longitudinally_polarized`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{-+}^{LP}(n = 1)$.
         We call it "SLPPP1" for S (series) LP (longitudinally polarized [target]) MP (-+) 1 (n = 1).
@@ -498,12 +486,10 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            -0.15053635153596)
+            -0.14931622510598674)
         
     def test_calculate_s_1_minus_plus_longitudinally_polarized_V(self):
         """
-        # Title: `test_calculate_s_1_minus_plus_longitudinally_polarized_V`
-
         ## Description: Test the function `calculate_s_1_minus_plus_longitudinally_polarized_V`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{-+}^{LP, V}(n = 1)$.
         We call it "SLPVPP1" for S (series) LP (longitudinally polarized [target]) V (vector) MP (-+) 1 (n = 1).
@@ -527,12 +513,10 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            0.13509164613432)
+            0.13504773274759457)
         
     def test_calculate_s_1_minus_plus_longitudinally_polarized_A(self):
         """
-        # Title: `test_calculate_s_1_minus_plus_longitudinally_polarized_A`
-
         ## Description: Test the function `calculate_s_1_minus_plus_longitudinally_polarized_A`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{-+}^{LP, A}(n = 1)$.
         We call it "SLPVPP1" for S (series) LP (longitudinally polarized [target]) A (axial vector) MP (-+) 1 (n = 1).
@@ -556,12 +540,10 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            0.045267549381737)
+            0.04487481613130569)
         
     def test_calculate_s_2_minus_plus_longitudinally_polarized(self):
         """
-        # Title: `test_calculate_s_2_minus_plus_longitudinally_polarized`
-
         ## Description: Test the function `calculate_s_2_minus_plus_longitudinally_polarized`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{-+}^{LP}(n = 2)$.
         We call it "SLPPP2" for S (series) LP (longitudinally polarized [target]) MP (-+) 2 (n = 2).
@@ -584,12 +566,10 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_EPSILON,
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_VERBOSE), 
-            -0.42338955042822)
+            -0.41079723883282815)
         
     def test_calculate_s_2_minus_plus_longitudinally_polarized_V(self):
         """
-        # Title: `test_calculate_s_2_minus_plus_longitudinally_polarized_V`
-
         ## Description: Test the function `calculate_s_2_minus_plus_longitudinally_polarized_V`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{-+}^{LP,V}(n = 2)$.
         We call it "SLPVPP2" for S (series) LP (longitudinally polarized [target]) V (vector) MP (-+) 2 (n = 2).
@@ -613,12 +593,10 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_K_TILDE,
                 _TEST_VERBOSE), 
-            0.87645317970911)
+            0.867716264246389)
         
     def test_calculate_s_2_minus_plus_longitudinally_polarized_A(self):
         """
-        # Title: `test_calculate_s_2_minus_plus_longitudinally_polarized_A`
-
         ## Description: Test the function `calculate_s_2_minus_plus_longitudinally_polarized_A`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{-+}^{LP,V}(n = 2)$.
         We call it "SLPVPP2" for S (series) LP (longitudinally polarized [target]) A (axial vector) MP (-+) 2 (n = 2).
@@ -642,12 +620,10 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_K_TILDE,
                 _TEST_VERBOSE), 
-            0.11404596503142)
+            0.11161525184623891)
         
     def test_calculate_s_3_minus_plus_longitudinally_polarized(self):
         """
-        # Title: `test_calculate_s_3_minus_plus_longitudinally_polarized`
-
         ## Description: Test the function `calculate_s_3_minus_plus_longitudinally_polarized`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{-+}^{LP}(n = 3)$.
         We call it "SLPPP3" for S (series) LP (longitudinally polarized [target]) MP (-+) 3 (n = 3).
@@ -671,12 +647,10 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            0.39628257057683)
+            0.3993157878684341)
         
     def test_calculate_s_3_minus_plus_longitudinally_polarized_V(self):
         """
-        # Title: `test_calculate_s_3_minus_plus_longitudinally_polarized_V`
-
         ## Description: Test the function `calculate_s_3_minus_plus_longitudinally_polarized_V`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{-+}^{LP,V}(n = 3)$.
         We call it "SLPVPP3" for S (series) LP (longitudinally polarized [target]) V (vector) MP (-+) 3 (n = 3).
@@ -701,12 +675,10 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_T_PRIME,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            0.025263273062887)
+            0.025256570479441767)
         
     def test_calculate_s_3_minus_plus_longitudinally_polarized_A(self):
         """
-        # Title: `test_calculate_s_3_minus_plus_longitudinally_polarized_A`
-
         ## Description: Test the function `calculate_s_3_minus_plus_longitudinally_polarized_A`.
         Remember, that function corresponds to the BKM10 coefficient called $S_{-+}^{LP,A}(n = 3)$.
         We call it "SLPAPP3" for S (series) LP (longitudinally polarized [target]) A (axial vector) MP (-+) 3 (n = 3).
@@ -730,4 +702,4 @@ class TestSLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            0.012187607425918)
+            0.012042156958818566)
