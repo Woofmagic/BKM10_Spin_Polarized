@@ -37,14 +37,16 @@ from coefficients.interference_coefficients.lp_polarized.lp_polarized_Cmp2A impo
 
 _TEST_LEPTON_POLARIZATION = 0.5
 _TEST_TARGET_POLARIZATION = 1.0
-_TEST_SQUARED_Q_MOMENTUM_TRANSFER = 1.8200000524520876
-_TEST_X_BJORKEN = 0.3429999947547912
-_TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER = -0.1720000058412552
-_TEST_EPSILON = 0.4771085571437671
-_TEST_LEPTON_ENERGY_FRACTION = 0.4917571121010006
-_TEST_K_TILDE = 0.1573963123403191
-_TEST_SHORTHAND_K = 0.0842939
-_TEST_T_PRIME = -0.0337889
+
+_TEST_SQUARED_Q_MOMENTUM_TRANSFER = 1.82
+_TEST_X_BJORKEN = 0.34
+_TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER = -0.17
+
+_TEST_EPSILON = 0.47293561004973345
+_TEST_LEPTON_ENERGY_FRACTION = 0.49609612355928445
+_TEST_K_TILDE = 0.1592415651944438
+_TEST_SHORTHAND_K = 0.08492693191323883
+_TEST_T_PRIME = -0.034481755270847486
 
 _TEST_VERBOSE = False
 
@@ -52,8 +54,6 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
 
     def test_calculate_c_0_plus_plus_longitudinally_polarized(self):
         """
-        # Title: `test_calculate_c_0_plus_plus_longitudinally_polarized`
-
         ## Description: Test the function `calculate_c_0_plus_plus_longitudinally_polarized`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{LP}(n = 0)$.
         We call it "CLPPP0" for C (series) LP (longitudinally polarized [target]) PP (++) 0 (n = 0).
@@ -78,12 +78,10 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_K_TILDE,
                 _TEST_VERBOSE), 
-            0.059679594433325746)
+            0.057338590283762814)
         
     def test_calculate_c_0_plus_plus_longitudinally_polarized_V(self):
         """
-        # Title: `calculate_c_0_plus_plus_longitudinally_polarized_V`
-
         ## Description: Test the function `calculate_c_0_plus_plus_longitudinally_polarized_V`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{LP, V}(n = 0)$.
         We call it "CLPVPP0" for C (series) LP (longitudinally polarized [target]) V (vector) PP (++) 0 (n = 0).
@@ -107,13 +105,11 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_EPSILON,
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_K_TILDE,
-                _TEST_VERBOSE), 
-            -0.22257983433145)
+                _TEST_VERBOSE),
+            -0.11083877974118175)
         
     def test_calculate_c_0_plus_plus_longitudinally_polarized_A(self):
         """
-        # Title: `calculate_c_0_plus_plus_longitudinally_polarized_A`
-
         ## Description: Test the function `calculate_c_0_plus_plus_longitudinally_polarized_A`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{LP, A}(n = 0)$.
         We call it "CLPVPP0" for C (series) LP (longitudinally polarized [target]) A (axial-vector) PP (++) 0 (n = 0).
@@ -138,12 +134,10 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_K_TILDE,
                 _TEST_VERBOSE), 
-            -0.041889300265988)
+            -0.020719510401278708)
         
     def test_calculate_c_1_plus_plus_longitudinally_polarized(self):
         """
-        # Title: `test_calculate_c_1_plus_plus_longitudinally_polarized`
-
         ## Description: Test the function `calculate_c_1_plus_plus_longitudinally_polarized`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{LP}(n = 1)$.
         We call it "CLPPP1" for C (series) LP (longitudinally polarized [target]) PP (++) 0 (n = 1).
@@ -168,12 +162,10 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            -0.27804613812563)
+            -0.1423854729987041)
         
     def test_calculate_c_1_plus_plus_longitudinally_polarized_V(self):
         """
-        # Title: `test_calculate_c_1_plus_plus_longitudinally_polarized_V`
-
         ## Description: Test the function `calculate_c_1_plus_plus_longitudinally_polarized_V`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{LP, V}(n = 1)$.
         We call it "CLPVPP1" for C (series) LP (longitudinally polarized [target]) V (vector) PP (++) 0 (n = 1).
@@ -199,13 +191,11 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_T_PRIME,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            -0.075783256772997)
+            -0.03826898637315565)
         
     def test_calculate_c_1_plus_plus_longitudinally_polarized_A(self):
         
         """
-        # Title: `test_calculate_c_1_plus_plus_longitudinally_polarized_A`
-
         ## Description: Test the function `calculate_c_1_plus_plus_longitudinally_polarized_A`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{LP, A}(n = 1)$.
         We call it "CLPAPP1" for C (series) LP (longitudinally polarized [target]) A (axial vector) PP (++) 0 (n = 1).
@@ -230,13 +220,10 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_SHORTHAND_K,
                 _TEST_VERBOSE), 
-            -0.019994852134866)
+            -0.010009435464345648)
         
     def test_calculate_c_2_plus_plus_longitudinally_polarized(self):
-        
         """
-        # Title: `test_calculate_c_2_plus_plus_longitudinally_polarized`
-
         ## Description: Test the function `calculate_c_2_plus_plus_longitudinally_polarized`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{LP}(n = 2)$.
         We call it "CLPPP2" for C (series) LP (longitudinally polarized [target]) PP (++) 2 (n = 2).
@@ -260,13 +247,10 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_EPSILON,
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_VERBOSE), 
-            0.0024140921642499)
+            0.0012220373655056997)
         
     def test_calculate_c_2_plus_plus_longitudinally_polarized_V(self):
-        
         """
-        # Title: `test_calculate_c_2_plus_plus_longitudinally_polarized_V`
-
         ## Description: Test the function `calculate_c_2_plus_plus_longitudinally_polarized_V`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{LP, V}(n = 2)$.
         We call it "CLPVPP2" for C (series) LP (longitudinally polarized [target]) V (vector) PP (++) 2 (n = 2).
@@ -290,7 +274,7 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_EPSILON,
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_VERBOSE), 
-            -0.0028267427682111)
+            -0.0014399130108895203)
         
     def test_calculate_c_2_plus_plus_longitudinally_polarized_A(self):
         
