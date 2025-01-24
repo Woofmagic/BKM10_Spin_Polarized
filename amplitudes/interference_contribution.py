@@ -851,6 +851,8 @@ def calculate_interference_contribution(
                 shorthand_k,
                 verbose)
 
+            print(f"> C++(n=1): {C1_pp_lp_polarized[0]}")
+
             C1V_pp_lp_polarized = calculate_c_1_plus_plus_longitudinally_polarized_V(
                 lepton_helicity,
                 target_polarization,
@@ -862,6 +864,8 @@ def calculate_interference_contribution(
                 t_prime,
                 shorthand_k,
                 verbose)
+            
+            print(f"> CV++(n=1): {C1V_pp_lp_polarized[0]}")
 
             C1A_pp_lp_polarized = calculate_c_1_plus_plus_longitudinally_polarized_A(
                 lepton_helicity,
@@ -873,6 +877,8 @@ def calculate_interference_contribution(
                 lepton_energy_fraction_y,
                 shorthand_k,
                 verbose)
+            
+            print(f"> CA++(n=1): {C1A_pp_lp_polarized[0]}")
 
             C1_0p_lp_polarized = calculate_c_1_zero_plus_longitudinally_polarized(
                 lepton_helicity,
@@ -883,6 +889,8 @@ def calculate_interference_contribution(
                 k_tilde,
                 shorthand_k,
                 verbose)
+            
+            print(f"> C0+(n=1): {C1_0p_lp_polarized[0]}")
 
             C1V_0p_lp_polarized = calculate_c_1_zero_plus_longitudinally_polarized_V(
                 lepton_helicity,
@@ -894,7 +902,11 @@ def calculate_interference_contribution(
                 k_tilde,
                 verbose)
             
+            print(f"> C0+V(n=1): {C1_0p_lp_polarized[0]}")
+            
             C1A_0p_lp_polarized = 0.
+
+            print(f"> C0+A(n=1): {C1A_0p_lp_polarized}")
 
             C2_pp_lp_polarized = calculate_c_2_plus_plus_longitudinally_polarized(
                 lepton_helicity,
@@ -905,6 +917,8 @@ def calculate_interference_contribution(
                 epsilon,
                 lepton_energy_fraction_y,
                 verbose)
+            
+            print(f"> C++(n=2): {C2_pp_lp_polarized[0]}")
 
             C2V_pp_lp_polarized = calculate_c_2_plus_plus_longitudinally_polarized_V(
                 lepton_helicity,
@@ -915,6 +929,8 @@ def calculate_interference_contribution(
                 epsilon,
                 lepton_energy_fraction_y,
                 verbose)
+            
+            print(f"> CV++(n=2): {C2V_pp_lp_polarized[0]}")
 
             C2A_pp_lp_polarized = calculate_c_2_plus_plus_longitudinally_polarized_A(
                 lepton_helicity,
@@ -925,6 +941,8 @@ def calculate_interference_contribution(
                 epsilon,
                 lepton_energy_fraction_y,
                 verbose)
+            
+            print(f"> CA++(n=2): {C2A_pp_lp_polarized[0]}")
 
             C2_0p_lp_polarized = calculate_c_2_zero_plus_longitudinally_polarized(
                 lepton_helicity,
@@ -937,6 +955,8 @@ def calculate_interference_contribution(
                 shorthand_k,
                 verbose)
 
+            print(f"> C0+(n=2): {C2_0p_lp_polarized[0]}")
+
             C2V_0p_lp_polarized = calculate_c_2_zero_plus_longitudinally_polarized_V(
                 lepton_helicity,
                 target_polarization,
@@ -947,6 +967,8 @@ def calculate_interference_contribution(
                 lepton_energy_fraction_y,
                 shorthand_k,
                 verbose)
+            
+            print(f"> C0+V(n=2): {C2V_0p_lp_polarized[0]}")
 
             C2A_0p_lp_polarized = calculate_c_2_zero_plus_longitudinally_polarized_A(
                 lepton_helicity,
@@ -958,6 +980,8 @@ def calculate_interference_contribution(
                 lepton_energy_fraction_y,
                 shorthand_k,
                 verbose)
+            
+            print(f"> C0+A(n=2): {C2A_0p_lp_polarized[0]}")
             
             S1_pp_lp_polarized = calculate_s_1_plus_plus_longitudinally_polarized(
                 target_polarization,
@@ -1216,3 +1240,4 @@ def calculate_interference_contribution(
     except Exception as ERROR:
         print(f"> Error in calculating the interference_contribution \n> {ERROR}")
         return 0.
+    
