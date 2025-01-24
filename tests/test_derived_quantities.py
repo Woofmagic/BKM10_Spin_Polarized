@@ -21,6 +21,7 @@ from amplitudes.cross_section_prefactor import calculate_bkm10_cross_section_pre
 _TEST_LEPTON_POLARIZATION = 0.5
 _TEST_TARGET_POLARIZATION = 1.0
 
+_TEST_LAB_KINEMATICS_K = 5.75
 _TEST_SQUARED_Q_MOMENTUM_TRANSFER = 1.82
 _TEST_X_BJORKEN = 0.34
 _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER = -0.17
@@ -54,3 +55,134 @@ class TestDerivedKinematics(unittest.TestCase):
                 _TEST_X_BJORKEN,
                 _TEST_VERBOSE), 
             0.47293561004973345)
+        
+    def test_calculate_kinematics_lepton_energy_fraction(self):
+        """
+        ## Description: Test the calculation of y, lepton energy
+        fraction.
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_kinematics_lepton_energy_fraction_y(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_LAB_KINEMATICS_K,
+                _TEST_EPSILON,
+                _TEST_VERBOSE), 
+            0.49609612355928445)
+        
+    def test_calculate_skewness(self):
+        """
+        ## Description: Test the computation of the skewness
+        parameter.
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_kinematics_skewness_parameter(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_VERBOSE), 
+            0.19906188837146524)
+        
+    def test_calculate_t_minimum(self):
+        """
+        ## Description: Test the computation of t_min.
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_kinematics_t_min(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_EPSILON,
+                _TEST_VERBOSE), 
+            -0.13551824472915253)
+        
+    def test_calculate_t_prime(self):
+        """
+        ## Description: Test the computation of t prime.
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_kinematics_t_prime(
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                -0.13551824472915253,
+                _TEST_VERBOSE), 
+            -0.034481755270847486)
+        
+    def test_calculate_k_tilde(self):
+        """
+        ## Description: Test the computation of K tilde.
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_kinematics_k_tilde(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                -0.13551824472915253,
+                _TEST_VERBOSE),
+            0.1592415651944438)
+        
+    def test_calculate_k_shorthand(self):
+        """
+        ## Description: Test the computation of K.
+
+        ## Arguments:
+        None
+
+        ## Returns:
+        None
+
+        ## Examples:
+        None
+        """
+        self.assertAlmostEqual(
+            calculate_kinematics_k(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_EPSILON,
+                _TEST_K_TILDE,
+                _TEST_VERBOSE), 
+            0.08492693191323883)
