@@ -902,7 +902,7 @@ def calculate_interference_contribution(
                 k_tilde,
                 verbose)
             
-            print(f"> C0+V(n=1): {C1_0p_lp_polarized[0]}")
+            print(f"> C0+V(n=1): {C1V_0p_lp_polarized[0]}")
             
             C1A_0p_lp_polarized = 0.
 
@@ -992,6 +992,8 @@ def calculate_interference_contribution(
                 lepton_energy_fraction_y,
                 shorthand_k,
                 verbose)
+            
+            print(f"> S++(n=1): {S1_pp_lp_polarized[0]}")
 
             S1V_pp_lp_polarized = calculate_s_1_plus_plus_longitudinally_polarized_V(
                 target_polarization,
@@ -1003,6 +1005,8 @@ def calculate_interference_contribution(
                 t_prime,
                 shorthand_k,
                 verbose)
+            
+            print(f"> S++V(n=1): {S1V_pp_lp_polarized[0]}")
 
             S1A_pp_lp_polarized = calculate_s_1_plus_plus_longitudinally_polarized_A(
                 target_polarization,
@@ -1013,6 +1017,8 @@ def calculate_interference_contribution(
                 lepton_energy_fraction_y,
                 shorthand_k,
                 verbose)
+            
+            print(f"> S++A(n=1): {S1A_pp_lp_polarized[0]}")
 
             S1_0p_lp_polarized = calculate_s_1_zero_plus_longitudinally_polarized(
                 target_polarization,
@@ -1023,6 +1029,8 @@ def calculate_interference_contribution(
                 lepton_energy_fraction_y,
                 k_tilde,
                 verbose)
+            
+            print(f"> S0+(n=1): {S1_0p_lp_polarized[0]}")
 
             S1V_0p_lp_polarized = calculate_s_1_zero_plus_longitudinally_polarized_V(
                 target_polarization,
@@ -1034,6 +1042,8 @@ def calculate_interference_contribution(
                 k_tilde,
                 verbose)
             
+            print(f"> S0+V(n=1): {S1V_0p_lp_polarized[0]}")
+            
             S1A_0p_lp_polarized = calculate_s_1_zero_plus_longitudinally_polarized_A(
                 target_polarization,
                 squared_Q_momentum_transfer,
@@ -1042,6 +1052,8 @@ def calculate_interference_contribution(
                 epsilon,
                 lepton_energy_fraction_y,
                 verbose)
+            
+            print(f"> S0+A(n=1): {S1A_0p_lp_polarized[0]}")
 
             S2_pp_lp_polarized = calculate_s_2_plus_plus_longitudinally_polarized(
                 target_polarization,
@@ -1053,6 +1065,8 @@ def calculate_interference_contribution(
                 t_prime,
                 k_tilde,
                 verbose)
+            
+            print(f"> S++(n=2): {S2_pp_lp_polarized[0]}")
 
             S2V_pp_lp_polarized = calculate_s_2_plus_plus_longitudinally_polarized_V(
                 target_polarization,
@@ -1064,6 +1078,8 @@ def calculate_interference_contribution(
                 t_prime,
                 k_tilde,
                 verbose)
+            
+            print(f"> S++V(n=2): {S2V_pp_lp_polarized[0]}")
 
             S2A_pp_lp_polarized = calculate_s_2_plus_plus_longitudinally_polarized_A(
                 target_polarization,
@@ -1075,6 +1091,8 @@ def calculate_interference_contribution(
                 t_prime,
                 k_tilde,
                 verbose)
+            
+            print(f"> S++A(n=2): {S2A_pp_lp_polarized[0]}")
 
             S2_0p_lp_polarized = calculate_s_2_zero_plus_longitudinally_polarized(
                 target_polarization,
@@ -1085,6 +1103,8 @@ def calculate_interference_contribution(
                 lepton_energy_fraction_y,
                 shorthand_k,
                 verbose)
+            
+            print(f"> S0+(n=2): {S2_0p_lp_polarized[0]}")
 
             S2V_0p_lp_polarized = calculate_s_2_zero_plus_longitudinally_polarized_V(
                 target_polarization,
@@ -1096,6 +1116,8 @@ def calculate_interference_contribution(
                 shorthand_k,
                 verbose)
             
+            print(f"> S0+V(n=2): {S2V_0p_lp_polarized[0]}")
+            
             S2A_0p_lp_polarized = calculate_s_2_zero_plus_longitudinally_polarized_A(
                 target_polarization,
                 squared_Q_momentum_transfer,
@@ -1106,6 +1128,8 @@ def calculate_interference_contribution(
                 shorthand_k,
                 verbose)
             
+            print(f"> S0+A(n=2): {S2A_0p_lp_polarized[0]}")
+            
             S3_pp_lp_polarized = calculate_s_3_plus_plus_longitudinally_polarized(
                 target_polarization,
                 squared_Q_momentum_transfer,
@@ -1115,6 +1139,8 @@ def calculate_interference_contribution(
                 t_prime,
                 shorthand_k,
                 verbose)
+            
+            print(f"> S++(n=3): {S3_pp_lp_polarized[0]}")
 
             S3V_pp_lp_polarized = calculate_s_3_plus_plus_longitudinally_polarized_V(
                 target_polarization,
@@ -1126,6 +1152,8 @@ def calculate_interference_contribution(
                 t_prime,
                 shorthand_k,
                 verbose)
+            
+            print(f"> S++V(n=3): {S3V_pp_lp_polarized[0]}")
 
             S3A_pp_lp_polarized = calculate_s_3_plus_plus_longitudinally_polarized_A(
                 target_polarization,
@@ -1135,8 +1163,10 @@ def calculate_interference_contribution(
                 epsilon,
                 lepton_energy_fraction_y,
                 t_prime,
-                k_tilde,
+                shorthand_k,
                 verbose)
+            
+            print(f"> S++A(n=3): {S3A_pp_lp_polarized[0]}")
 
             S3_0p_lp_polarized = 0.
 
@@ -1240,4 +1270,5 @@ def calculate_interference_contribution(
     except Exception as ERROR:
         print(f"> Error in calculating the interference_contribution \n> {ERROR}")
         return 0.
+    
     

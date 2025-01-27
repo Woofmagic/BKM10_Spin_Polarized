@@ -18,21 +18,48 @@ from form_factors.dirac_form_factor import calculate_form_factor_dirac_f1
 
 from amplitudes.cross_section_prefactor import calculate_bkm10_cross_section_prefactor
 
-_TEST_LEPTON_POLARIZATION = 0.5
-_TEST_TARGET_POLARIZATION = 1.0
-
-_TEST_LAB_KINEMATICS_K = 5.75
-_TEST_SQUARED_Q_MOMENTUM_TRANSFER = 1.82
-_TEST_X_BJORKEN = 0.34
-_TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER = -0.17
-
-_TEST_EPSILON = 0.47293561004973345
-_TEST_LEPTON_ENERGY_FRACTION = 0.49609612355928445
-_TEST_K_TILDE = 0.1592415651944438
-_TEST_SHORTHAND_K = 0.08492693191323883
-_TEST_T_PRIME = -0.034481755270847486
-
 _TEST_VERBOSE = False
+
+_TEST_CASES = [
+    {
+        "lab_kinematics_k": 5.75,
+        "squared_q_momentum_transfer": 1.82,
+        "x_bjorken": 0.34,
+        "squared_hadronic_momentum_transfer": -0.17,
+        "epsilon": 0.47293561004973345,
+        "lepton_energy_fraction": 0.49609612355928445,
+        "skewness": 0.19906188837146524,
+        "t_minimum": -0.13551824472915253,
+        "t_prime": -0.034481755270847486,
+        "k_tilde": 0.1592415651944438,
+        "expected_epsilon": 0.47293561004973345,
+        "expected_lepton_energy_fraction": 0.49609612355928445,
+        "expected_skewness": 0.19906188837146524,
+        "expected_t_minimum": -0.13551824472915253,
+        "expected_t_prime": -0.034481755270847486,
+        "expected_k_tilde": 0.1592415651944438,
+        "expected_shorthand_k": 0.08492693191323883,
+    },
+    {
+        "lab_kinematics_k": 10.59,
+        "squared_q_momentum_transfer": 4.55,
+        "x_bjorken": 0.37,
+        "squared_hadronic_momentum_transfer": -0.26,
+        "epsilon": 0.3255028672427054,
+        "lepton_energy_fraction": 0.6188065752739715,
+        "skewness": 0.2234061445569171,
+        "t_minimum": -0.17914464172739256,
+        "t_prime": -0.08085535827260745,
+        "k_tilde": 0.2322551942737076,
+        "expected_epsilon": 0.3255028672427054,
+        "expected_lepton_energy_fraction": 0.6188065752739715,
+        "expected_skewness": 0.2234061445569171,
+        "expected_t_minimum": -0.17914464172739256,
+        "expected_t_prime": -0.08085535827260745,
+        "expected_k_tilde": 0.2322551942737076,
+        "expected_shorthand_k": 0.06811374886346015,
+    }
+]
 
 class TestDerivedKinematics(unittest.TestCase):
 
@@ -49,12 +76,16 @@ class TestDerivedKinematics(unittest.TestCase):
         ## Examples:
         None
         """
-        self.assertAlmostEqual(
-            calculate_kinematics_epsilon(
-                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
-                _TEST_X_BJORKEN,
-                _TEST_VERBOSE), 
-            0.47293561004973345)
+        for case in _TEST_CASES:
+            with self.subTest(case = case):
+                self.assertAlmostEqual(
+                    calculate_kinematics_epsilon(
+                        case["squared_q_momentum_transfer"],
+                        case["x_bjorken"],
+                        _TEST_VERBOSE
+                    ),
+                    case["expected_epsilon"]
+                )
         
     def test_calculate_kinematics_lepton_energy_fraction(self):
         """
@@ -70,13 +101,15 @@ class TestDerivedKinematics(unittest.TestCase):
         ## Examples:
         None
         """
-        self.assertAlmostEqual(
-            calculate_kinematics_lepton_energy_fraction_y(
-                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
-                _TEST_LAB_KINEMATICS_K,
-                _TEST_EPSILON,
-                _TEST_VERBOSE), 
-            0.49609612355928445)
+        for case in _TEST_CASES:
+            with self.subTest(case = case):
+                self.assertAlmostEqual(
+                    calculate_kinematics_lepton_energy_fraction_y(
+                        case["squared_q_momentum_transfer"],
+                        case["lab_kinematics_k"],
+                        case["epsilon"],
+                        _TEST_VERBOSE),
+                case["expected_lepton_energy_fraction"])
         
     def test_calculate_skewness(self):
         """
@@ -92,13 +125,15 @@ class TestDerivedKinematics(unittest.TestCase):
         ## Examples:
         None
         """
-        self.assertAlmostEqual(
-            calculate_kinematics_skewness_parameter(
-                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
-                _TEST_X_BJORKEN,
-                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
-                _TEST_VERBOSE), 
-            0.19906188837146524)
+        for case in _TEST_CASES:
+            with self.subTest(case = case):
+                self.assertAlmostEqual(
+                    calculate_kinematics_skewness_parameter(
+                        case["squared_q_momentum_transfer"],
+                        case["x_bjorken"],
+                        case["squared_hadronic_momentum_transfer"],
+                        _TEST_VERBOSE), 
+                    case["skewness"])
         
     def test_calculate_t_minimum(self):
         """
@@ -113,13 +148,15 @@ class TestDerivedKinematics(unittest.TestCase):
         ## Examples:
         None
         """
-        self.assertAlmostEqual(
-            calculate_kinematics_t_min(
-                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
-                _TEST_X_BJORKEN,
-                _TEST_EPSILON,
-                _TEST_VERBOSE), 
-            -0.13551824472915253)
+        for case in _TEST_CASES:
+            with self.subTest(case = case):
+                self.assertAlmostEqual(
+                    calculate_kinematics_t_min(
+                        case["squared_q_momentum_transfer"],
+                        case["x_bjorken"],
+                        case["epsilon"],
+                        _TEST_VERBOSE),
+                    case["expected_t_minimum"])
         
     def test_calculate_t_prime(self):
         """
@@ -134,12 +171,14 @@ class TestDerivedKinematics(unittest.TestCase):
         ## Examples:
         None
         """
-        self.assertAlmostEqual(
-            calculate_kinematics_t_prime(
-                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
-                -0.13551824472915253,
-                _TEST_VERBOSE), 
-            -0.034481755270847486)
+        for case in _TEST_CASES:
+            with self.subTest(case = case):
+                self.assertAlmostEqual(
+                    calculate_kinematics_t_prime(
+                        case["squared_hadronic_momentum_transfer"],
+                        case["t_minimum"],
+                        _TEST_VERBOSE),
+                    case["expected_t_prime"])
         
     def test_calculate_k_tilde(self):
         """
@@ -154,16 +193,18 @@ class TestDerivedKinematics(unittest.TestCase):
         ## Examples:
         None
         """
-        self.assertAlmostEqual(
-            calculate_kinematics_k_tilde(
-                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
-                _TEST_X_BJORKEN,
-                _TEST_LEPTON_ENERGY_FRACTION,
-                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
-                _TEST_EPSILON,
-                -0.13551824472915253,
-                _TEST_VERBOSE),
-            0.1592415651944438)
+        for case in _TEST_CASES:
+            with self.subTest(case = case):
+                self.assertAlmostEqual(
+                    calculate_kinematics_k_tilde(
+                        case["squared_q_momentum_transfer"],
+                        case["x_bjorken"],
+                        case["lepton_energy_fraction"],
+                        case["squared_hadronic_momentum_transfer"],
+                        case["epsilon"],
+                        case["t_minimum"],
+                        _TEST_VERBOSE),
+                    case["expected_k_tilde"])
         
     def test_calculate_k_shorthand(self):
         """
@@ -178,11 +219,13 @@ class TestDerivedKinematics(unittest.TestCase):
         ## Examples:
         None
         """
-        self.assertAlmostEqual(
-            calculate_kinematics_k(
-                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
-                _TEST_LEPTON_ENERGY_FRACTION,
-                _TEST_EPSILON,
-                _TEST_K_TILDE,
-                _TEST_VERBOSE), 
-            0.08492693191323883)
+        for case in _TEST_CASES:
+            with self.subTest(case = case):
+                self.assertAlmostEqual(
+                    calculate_kinematics_k(
+                        case["squared_q_momentum_transfer"],
+                        case["lepton_energy_fraction"],
+                        case["epsilon"],
+                        case["k_tilde"],
+                        _TEST_VERBOSE), 
+                    case["expected_shorthand_k"])

@@ -13,7 +13,7 @@ _TEST_K_TILDE = 0.157396
 _TEST_SHORTHAND_K = 0.0842939
 _TEST_T_PRIME = -0.0337889
 
-_TEST_SKEWNESS = 0.20115437410625
+_TEST_SKEWNESS = 0.19906188837146524
 
 _TEST_ELECTRIC_FORM_FACTOR_FE = 0.648238
 _TEST_MAGNETIC_FORM_FACTOR_FG = 1.81043
@@ -49,11 +49,11 @@ class TestFormFactors(unittest.TestCase):
         ## Examples:
         None
         """
-        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_H, _TEST_VERBOSE), 0.30043677559359)
-        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_H_TILDE ,_TEST_VERBOSE), -0.81858135958833)
-        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_E, _TEST_VERBOSE), 0.18119988360773)
-        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_E_TILDE, _TEST_VERBOSE), -0.30244638613268)
-        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_IMAGINARY_H, _TEST_VERBOSE), -0.81087785252182)
-        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_IMAGINARY_H_TILDE ,_TEST_VERBOSE), -0.378811586618)
-        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_IMAGINARY_E, _TEST_VERBOSE), -0.73920174329437)
-        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_IMAGINARY_E_TILDE, _TEST_VERBOSE), -1.8029555886514)
+        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_H, _TEST_VERBOSE), 0.29783035488137793)
+        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_H_TILDE ,_TEST_VERBOSE), -0.8114798075028848)
+        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_E, _TEST_VERBOSE), 0.17962789519601502)
+        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_E_TILDE, _TEST_VERBOSE), -0.7327888441730223)
+        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_IMAGINARY_H, _TEST_VERBOSE), -0.8038431317366954)
+        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_IMAGINARY_H_TILDE ,_TEST_VERBOSE), -0.37552523006782434)
+        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_IMAGINARY_E, _TEST_VERBOSE), -0.2998225311682099)
+        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_IMAGINARY_E_TILDE, _TEST_VERBOSE), -1.787314158669406)
