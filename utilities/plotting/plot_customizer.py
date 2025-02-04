@@ -170,7 +170,7 @@ class PlotCustomizer:
 
         label: str
 
-        color: str |
+        color: str
 
         marker: str
         """
@@ -186,7 +186,7 @@ class PlotCustomizer:
                 label = label,
                 color = color,
                 marker = marker,
-                linestyle = '', 
+                linestyle = '',
                 markersize = 1.0,
                 ecolor = 'black',
                 elinewidth = 0.5,
@@ -200,7 +200,11 @@ class PlotCustomizer:
         with rc_context(rc = self._custom_rc_params):
 
             # (1): Add the bar plot:
-            self.axes_object.bar(x_positions, y_data_heights, label = label, color = color)
+            self.axes_object.bar(
+                x = x_positions,
+                height = y_data_heights,
+                label = label,
+                color = color)
 
             if label:
                 self.axes_object.legend()

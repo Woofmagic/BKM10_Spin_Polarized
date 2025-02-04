@@ -109,7 +109,7 @@ def calculate_dvcs_amplitude_squared(
             if verbose:
                 print(f"> Now evaluating LP target DVCS amplitude squared because target polarization was set to: {target_polarization}")
 
-                # (2): Obtain the first coefficient in the sum:
+            # (2): Obtain the first coefficient in the sum:
             coefficient_c0_DVCS = calculate_c_0_unpolarized_dvcs(
                 squared_Q_momentum_transfer,
                 x_Bjorken,
@@ -214,25 +214,19 @@ def calculate_dvcs_amplitude_squared(
                 use_ww,
                 verbose)
 
-        cross_section_prefactor = calculate_bkm10_cross_section_prefactor(
-            squared_Q_momentum_transfer,
-            x_Bjorken,
-            epsilon,
-            lepton_energy_fraction_y,
-            verbose)
+        print(coefficient_c0_DVCS[0])
+        print(coefficient_c1_DVCS[0])
+        print(coefficient_s1_DVCS[0])
 
-        # plot_dvcs_contributions(
-        #     azimuthal_phi,
-        #     convert_to_nb_over_GeV4(coefficient_c0_DVCS),
-        #     convert_to_nb_over_GeV4(coefficient_c1_DVCS),
-        #     convert_to_nb_over_GeV4(coefficient_s1_DVCS))
+        plot_dvcs_contributions(
+            azimuthal_phi,
+            convert_to_nb_over_GeV4(coefficient_c0_DVCS),
+            convert_to_nb_over_GeV4(coefficient_c1_DVCS),
+            convert_to_nb_over_GeV4(coefficient_s1_DVCS))
 
         # (5): Compute the Fourier Mode Expansion:
-        # mode_expansion = (coefficient_c0_DVCS + 
-        #     coefficient_c1_DVCS * np.array([np.cos(1. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]) + 
-        #     coefficient_s1_DVCS * np.array([np.sin(1. * (np.pi - convert_degrees_to_radians(phi))) for phi in azimuthal_phi]))
-        mode_expansion = (coefficient_c0_DVCS + 
-            coefficient_c1_DVCS * np.cos(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) + 
+        mode_expansion = (coefficient_c0_DVCS +
+            coefficient_c1_DVCS * np.cos(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
             coefficient_s1_DVCS * np.sin(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))))
 
         # (6): The entire amplitude:

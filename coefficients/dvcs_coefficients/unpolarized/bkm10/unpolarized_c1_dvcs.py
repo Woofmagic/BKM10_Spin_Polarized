@@ -27,7 +27,7 @@ def calculate_c_1_unpolarized_dvcs(
 
         # (1): Calculate the first term's prefactor:
         prefactor = 8. * shorthand_k * (2. - lepton_energy_fraction_y) / ((2. - x_Bjorken) * (1. + epsilon**2))
-        
+
         # (2): Calculate the second terms' Curly C contribution:
         curlyC_unp_DVCS = calculate_curly_c_unpolarized_dvcs(
             squared_Q_momentum_transfer,
@@ -41,11 +41,10 @@ def calculate_c_1_unpolarized_dvcs(
             compton_form_factor_h.conjugate(),
             compton_form_factor_h_tilde.conjugate(),
             compton_form_factor_e.conjugate(),
-            compton_form_factor_e_tilde.conjugate(),
-        ).real
-
+            compton_form_factor_e_tilde.conjugate())
+        
         # (3): Calculate the entire coefficient:
-        c1_dvcs_unpolarized_coefficient = prefactor * curlyC_unp_DVCS
+        c1_dvcs_unpolarized_coefficient = prefactor * curlyC_unp_DVCS.real
         
         if verbose:
             print(f"> Calculated c1_dvcs_unpolarized_coefficient to be: {c1_dvcs_unpolarized_coefficient}")

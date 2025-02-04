@@ -145,9 +145,9 @@ def main(
         calculate_bkm10_cross_section(
             numerical_lepton_polarization,
             numerical_target_polarization,
-            np.array([1.8200000524520876 for i in range(len(np.arange(0, 361, 1.)))]),
-            np.array([0.3429999947547912 for i in range(len(np.arange(0, 361, 1.)))]),
-            np.array([-0.1720000058412552 for i in range(len(np.arange(0, 361, 1.)))]),
+            np.array([1.82 for i in range(len(np.arange(0, 361, 1.)))]),
+            np.array([0.34 for i in range(len(np.arange(0, 361, 1.)))]),
+            np.array([-0.17 for i in range(len(np.arange(0, 361, 1.)))]),
             np.array([5.75 for i in range(len(np.arange(0, 361, 1.)))]),
             np.arange(0, 361, 1.),
             complex(compton_form_factor_h_real, compton_form_factor_h_imaginary),

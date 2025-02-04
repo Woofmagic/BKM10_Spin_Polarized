@@ -1234,13 +1234,13 @@ def calculate_interference_contribution(
             s_2_interference_coefficient = S2_pp_lp_polarized * curly_S_2_pp_int.imag + S2_0p_lp_polarized * curly_S_2_0p_int.imag
             s_3_interference_coefficient = S3_pp_lp_polarized * curly_S_3_pp_int.imag + S3_0p_lp_polarized * curly_S_3_0p_int.imag
         
-        print(f"> c0: {c_0_interference_coefficient[0]}")
-        print(f"> c1: {c_1_interference_coefficient[0]}")
-        print(f"> c2: {c_2_interference_coefficient[0]}")
-        print(f"> c3: {c_3_interference_coefficient}")
-        print(f"> s1: {s_1_interference_coefficient[0]}")
-        print(f"> s2: {s_2_interference_coefficient[0]}")
-        print(f"> s3: {s_3_interference_coefficient[0]}")
+        # print(f"> c0: {c_0_interference_coefficient[0]}")
+        # print(f"> c1: {c_1_interference_coefficient[0]}")
+        # print(f"> c2: {c_2_interference_coefficient[0]}")
+        # print(f"> c3: {c_3_interference_coefficient}")
+        # print(f"> s1: {s_1_interference_coefficient[0]}")
+        # print(f"> s2: {s_2_interference_coefficient[0]}")
+        # print(f"> s3: {s_3_interference_coefficient[0]}")
         
         plot_interference_contributions(
             azimuthal_phi,

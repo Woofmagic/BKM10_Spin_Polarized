@@ -50,15 +50,6 @@ class TestCUnpolarizedSeriesCoefficients(unittest.TestCase):
         ## Description: Test the function `calculate_c_0_plus_plus_unpolarized`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{unp}(n = 0)$.
         We call it "CunpPP0" for C (series) unp (unpolarized [target]) PP (++) 0 (n = 0).
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
         """
         self.assertAlmostEqual(
             calculate_c_0_plus_plus_unpolarized(
@@ -76,15 +67,6 @@ class TestCUnpolarizedSeriesCoefficients(unittest.TestCase):
         ## Description: Test the function `calculate_c_0_plus_plus_unpolarized_V`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{unp}(n = 0)$.
         We call it "CunpVPP0" for C (series) unp (unpolarized [target]) V (vector) PP (++) 0 (n = 0).
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
         """
         self.assertAlmostEqual(
             calculate_c_0_plus_plus_unpolarized_V(
@@ -101,16 +83,7 @@ class TestCUnpolarizedSeriesCoefficients(unittest.TestCase):
         """
         ## Description: Test the function `calculate_c_0_plus_plus_unpolarized_A`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{unp}(n = 0)$.
-        We call it "CunpVPP0" for C (series) unp (unpolarized [target]) A (axial vector) PP (++) 0 (n = 0).
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
+        We call it "CunpAPP0" for C (series) unp (unpolarized [target]) A (axial vector) PP (++) 0 (n = 0).
         """
         self.assertAlmostEqual(
             calculate_c_0_plus_plus_unpolarized_A(
@@ -127,15 +100,7 @@ class TestCUnpolarizedSeriesCoefficients(unittest.TestCase):
         """
         ## Description: Test the function `calculate_c_1_plus_plus_unpolarized`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{unp}(n = 1)$.
-        We call it "CunpPP1" for C (series) unp (unpolarized [target]) PP (++) 1 (n = 1).
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
+        We call it "CunpPP1" for C (series) unp (unpolarized [target]) PP (++) 1 (n = 1).amples:
         None
         """
         self.assertAlmostEqual(
@@ -151,8 +116,6 @@ class TestCUnpolarizedSeriesCoefficients(unittest.TestCase):
 
     def test_calculate_c_1_plus_plus_unpolarized_V(self):
         """
-        # Title: `test_calculate_c_1_plus_plus_unpolarized_V`
-
         ## Description: Test the function `calculate_c_1_plus_plus_unpolarized_V`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{unp}(n = 1)$.
         We call it "CunpVPP1" for C (series) unp (unpolarized [target]) V (vector) PP (++) 1 (n = 1).

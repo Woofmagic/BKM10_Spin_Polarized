@@ -55,17 +55,8 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
     def test_calculate_c_0_plus_plus_longitudinally_polarized(self):
         """
         ## Description: Test the function `calculate_c_0_plus_plus_longitudinally_polarized`.
-        Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{LP}(n = 0)$.
+        Test the coefficient called: $C_{++}^{LP}(n = 0)$.
         We call it "CLPPP0" for C (series) LP (longitudinally polarized [target]) PP (++) 0 (n = 0).
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
         """
         self.assertAlmostEqual(
             calculate_c_0_plus_plus_longitudinally_polarized(

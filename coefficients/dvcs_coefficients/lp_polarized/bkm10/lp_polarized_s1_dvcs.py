@@ -27,7 +27,7 @@ def calculate_s_1_longitudinally_polarized_dvcs(
     try:
         
         # (1): Calculate the prefactor
-        prefactor = 8. * target_polarization * shorthand_k * (2. - lepton_energy_fraction_y) / ((2. - x_Bjorken) * (1. + epsilon**2))
+        prefactor = -8. * target_polarization * shorthand_k * (2. - lepton_energy_fraction_y) / ((2. - x_Bjorken) * (1. + epsilon**2))
         
         # (3): Return the entire thing:
         s1LP_DVCS = prefactor * calculate_curly_c_longitudinally_polarized_dvcs(

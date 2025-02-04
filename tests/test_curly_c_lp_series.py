@@ -185,6 +185,8 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
         ## Examples:
         None
         """
+        
+        # (1): First, evaluate it with normal CFFs:
         self.assertAlmostEqual(
             calculate_curly_C_longitudinally_polarized_interference(
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
@@ -198,6 +200,36 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_CFF_E_TILDE,
                 _TEST_VERBOSE),
             complex(1.5144078323497445, 1.7888998121367863))
+        
+        # (2): Now, we evaluate it with F_{eff} with WW = Off:
+        self.assertAlmostEqual(
+            calculate_curly_C_longitudinally_polarized_interference(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_DIRAC_FORM_FACTOR_F1,
+                _TEST_PAULI_FORM_FACTOR_F2,
+                compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_H, False),
+                compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_H_TILDE, False),
+                compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_E, False),
+                compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_E_TILDE, False),
+                _TEST_VERBOSE),
+            complex(-0.5028278953666251, -0.5939672975428422 ))
+        
+        # (3): Now, we evaluate it with F_{eff} with WW = On:
+        self.assertAlmostEqual(
+            calculate_curly_C_longitudinally_polarized_interference(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_DIRAC_FORM_FACTOR_F1,
+                _TEST_PAULI_FORM_FACTOR_F2,
+                compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_H, True),
+                compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_H_TILDE, True),
+                compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_E, True),
+                compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_E_TILDE, True),
+                _TEST_VERBOSE),
+            complex(2.525987769332864, 2.9838323267307305))
     
     def test_calculate_curly_C_longitudinally_polarized_interference_V(self):
         """
@@ -214,6 +246,8 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
         ## Examples:
         None
         """
+
+        # (1): First, evaluate it with normal CFFs:
         self.assertAlmostEqual(
             calculate_curly_C_longitudinally_polarized_interference_V(
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
@@ -225,6 +259,32 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_CFF_E,
                 _TEST_VERBOSE),
             complex(-0.3788358951249188, 0.9831471548237565))
+        
+        # (2): Now, we evaluate it with F_{eff} with WW = Off:
+        self.assertAlmostEqual(
+            calculate_curly_C_longitudinally_polarized_interference_V(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_DIRAC_FORM_FACTOR_F1,
+                _TEST_PAULI_FORM_FACTOR_F2,
+                compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_H, False),
+                compute_cff_effective(_TEST_SKEWNESS,_TEST_CFF_E, False),
+                _TEST_VERBOSE),
+            complex(0.12578464781143706, -0.3264337413843661))
+        
+        # (3): Now, we evaluate it with F_{eff} with WW = On:
+        self.assertAlmostEqual(
+            calculate_curly_C_longitudinally_polarized_interference_V(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_DIRAC_FORM_FACTOR_F1,
+                _TEST_PAULI_FORM_FACTOR_F2,
+                compute_cff_effective(_TEST_SKEWNESS,_TEST_CFF_H, True),
+                compute_cff_effective(_TEST_SKEWNESS,_TEST_CFF_E, True),
+                _TEST_VERBOSE),
+            complex(-0.6318871424384005, 1.6398605682631469))
         
     def test_calculate_curly_C_longitudinally_polarized_interference_A(self):
         """
@@ -241,6 +301,8 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
         ## Examples:
         None
         """
+        
+        # (1): First, evaluate it with normal CFFs:
         self.assertAlmostEqual(
             calculate_curly_C_longitudinally_polarized_interference_A(
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
@@ -252,3 +314,29 @@ class TestCurlyCLongitudinallyPolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_CFF_E_TILDE,
                 _TEST_VERBOSE), 
             complex(1.3759089266214655, 0.9183117895068561))
+        
+        # (2): Now, we evaluate it with F_{eff} with WW = Off:
+        self.assertAlmostEqual(
+            calculate_curly_C_longitudinally_polarized_interference_A(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_DIRAC_FORM_FACTOR_F1,
+                _TEST_PAULI_FORM_FACTOR_F2,
+                compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_H_TILDE, False),
+                compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_E_TILDE, False),
+                _TEST_VERBOSE),
+            complex(-0.4568421894092831, -0.30490649516229673))
+        
+        # (3): Now, we evaluate it with F_{eff} with WW = On:
+        self.assertAlmostEqual(
+            calculate_curly_C_longitudinally_polarized_interference_A(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_DIRAC_FORM_FACTOR_F1,
+                _TEST_PAULI_FORM_FACTOR_F2,
+                compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_H_TILDE, True),
+                compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_E_TILDE, True),
+                _TEST_VERBOSE), 
+            complex(2.2949756638336485, 1.5317170838514154))

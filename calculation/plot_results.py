@@ -40,18 +40,18 @@ def plot_dvcs_contributions(
     DVCS_coefficients_plot.add_line_plot(
         x_data = lab_azimuthal_phi,
         y_data = c1DVCS_amplitude_contribution * np.array([np.cos(1. * (np.pi - convert_degrees_to_radians(phi))) for phi in lab_azimuthal_phi]),
-        label = r"$c_{1} \np.cos(\pi - \phi)$",
+        label = r"$c_{1} \cos(\pi - \phi)$",
         color = 'orange')
     
     DVCS_coefficients_plot.add_line_plot(
         x_data = lab_azimuthal_phi,
         y_data = s1DVCS_amplitude_contribution * np.array([np.sin(1. * (np.pi - convert_degrees_to_radians(phi))) for phi in lab_azimuthal_phi]),
-        label = r"$s_{1} \np.sin(\pi - \phi)$",
+        label = r"$s_{1} \sin(\pi - \phi)$",
         color = 'yellow')
     
     DVCS_coefficients_contributions = PlotCustomizer(
             DVCS_coefficient_bar_graph,
-            title = "DVCS Coefficients",
+            title = "DVCS Coefficient Contributions",
             xlabel = "Fourier Coefficients",
             ylabel = r"$\mathrm{{nb}} / \mathrm{{GeV}}^{4}",
             grid = True)
@@ -63,7 +63,7 @@ def plot_dvcs_contributions(
             c1DVCS_amplitude_contribution[0],
             s1DVCS_amplitude_contribution[0]
             ]),
-            color = ['red', 'orange', 'yellow'])
+        color = ['red', 'orange', 'yellow'])
     
     plt.savefig('dvcs_coefficient_contributions_v1.png')
 
@@ -119,7 +119,7 @@ def plot_interference_contributions(
     interference_coefficients_plot.add_line_plot(
         x_data = lab_azimuthal_phi,
         y_data = s1Interference_amplitude_contribution * np.sin(np.pi - convert_degrees_to_radians(lab_azimuthal_phi)),
-        label = r"$s_{1} \in(\pi - \phi)$",
+        label = r"$s_{1} \sin(\pi - \phi)$",
         color = 'cyan')
     
     interference_coefficients_plot.add_line_plot(
@@ -138,7 +138,7 @@ def plot_interference_contributions(
             interference_coefficient_bar_graph,
             title = "Interference Coefficients",
             xlabel = "Fourier Coefficients",
-            ylabel = r"$\mathrm{{nb}} / \mathrm{{GeV}}^{4}",
+            ylabel = r"$ \frac{ \text{{nb}} }{ \text{{GeV}}^{4} }",
             grid = True)
     
     interference_coefficients_contributions.add_bar_plot(
@@ -155,7 +155,6 @@ def plot_interference_contributions(
             color = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'])
     
     plt.savefig('interference_coefficient_contributions_v1.png')
-
 
 
 def plot_cross_section(
