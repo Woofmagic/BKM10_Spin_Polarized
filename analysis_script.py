@@ -1344,6 +1344,11 @@ def analysis():
                 epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
                 Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False))))
             
+            # (3): Ji' s Fig. (5.a) (kin. set. #1) and (5.b) (kin. set #2) in [2109.10373] has BKM10 *without* the WW relations applied (red curve):
+            lcd_desmos_bkm_interference_unpolarized_beam_lp_target = pd.read_csv(
+                f'lcd_interference_unpolarized_beam_unpolarized_lp_kinematic_bin_{kinematic_bin_number}.csv',
+                delimiter = ',')
+            
             jd_mathematica_pure_interference_unpolarized_beam_lp_target = pd.read_csv(
                 f'jd_interference_unpolarized_beam_lp_target_kinematic_bin_{kinematic_bin_number}.csv',
                 names = ['jd_sigma'])
@@ -1399,6 +1404,14 @@ def analysis():
                 color = 'red')
             
             plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
+                x_data = lcd_desmos_bkm_interference_unpolarized_beam_lp_target['azimuthal_phi'],
+                y_data = lcd_desmos_bkm_interference_unpolarized_beam_lp_target['cross_section'],
+                radial_size = 11.5,
+                label = "Liliet's Desmos BKM 10 (WW)",
+                color = 'dodgerblue',
+                marker = '8')
+            
+            plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
                 x_data = azimuthal_phi,
                 y_data = ji_mathematica_pure_interference_unpolarized_beam_lp_target,
                 radial_size = 1.3,
@@ -1419,48 +1432,6 @@ def analysis():
                 radial_size = 1.3,
                 label = "JD's BKM10 Mathematica (WW)",
                 color = 'orange')
-            
-            # plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
-            #     x_data = ji_paper_cov_pure_interference_unpolarized_beam_lp_target['azimuthal_phi'],
-            #     y_data = ji_paper_cov_pure_interference_unpolarized_beam_lp_target['cross_section'],
-            #     radial_size = 11.5,
-            #     label = "Ji's Formalism Plot (WW)",
-            #     color = 'cyan',
-            #     marker = "x")
-            
-            # plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
-            #     x_data = ji_paper_bkm_ww_pure_interference_unpolarized_beam_lp_target['azimuthal_phi'],
-            #     y_data = ji_paper_bkm_ww_pure_interference_unpolarized_beam_lp_target['cross_section'],
-            #     radial_size = 11.5,
-            #     label = "Ji's Paper with BKM 10 (WW)",
-            #     color = 'maroon',
-            #     marker = '+')
-            
-            # plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
-            #     x_data = np.array([0.5607476635513796, 51.58878504672895, 98.97196261682242, 151.40186915887847, 198.22429906542058, 249.81308411214948, 300.8411214953271, 348.22429906542055, 360., 25.79439252336447, 73.73831775700933, 123.08411214953269, 173.83177570093454, 226.5420560747663, 279.53271028037375, 326.0747663551402]),
-            #     y_data = np.array([0.0000968523002421312, 0.014274616195272306, 0.011671710626265038, 0.004165657357499901, -0.0027350690347519094, -0.01042272036647104, -0.014660008502064262, -0.004793180414897196, -0.00008474576271187001, 0.009674131933771087, 0.014395681570574966, 0.008463478180744458, 0.0008363595366766563, -0.0068512917950424735, -0.013752018187294284, -0.01175443949480034]),
-            #     radial_size = 11.5,
-            #     label = "Ji's Lightcone Formalism",
-            #     color = 'gray',
-            #     marker = "d")
-            
-            # plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
-            #     x_data = ji_paper_bkm_pure_interference_unpolarized_beam_lp_target['azimuthal_phi'],
-            #     y_data = ji_paper_bkm_pure_interference_unpolarized_beam_lp_target['cross_section'],
-            #     radial_size = 11.5,
-            #     label = "Ji's Paper with BKM 10 (no WW)",
-            #     color = 'gold',
-            #     marker = '*')
-            
-            # BELOW IS FOR KINEMATIC BIN 2
-
-            # plot_pure_interference_unpolarized_beam_lp_target.add_scatter_plot(
-            #     x_data = np.array([0.2767102229054543, 51.468101460415056, 99.89239046887012, 150.5303612605688, 201.72175249807842, 252.63643351268252, 299.67717140661034, 348.65488086087623, 360., 26.01076095311298, 74.98847040737895, 128.11683320522673, 175.71099154496542, 225.5188316679477, 277.2636433512683, 324.85780169100696]),
-            #     y_data = np.array([0.000004878048780487506, 0.0013560975609756098, 0.0010878048780487803, 0.0003902439024390245, -0.0002975609756097565, -0.0009853658536585366, -0.0013951219512195127, -0.00043414634146341467, -0.000014634146341463818, 0.0009219512195121952, 0.0013414634146341467, 0.0007170731707317076, 0.0000536585365853656, -0.0006097560975609753, -0.0012878048780487806, -0.0011463414634146347]),
-            #     radial_size = 11.5,
-            #     label = "Ji's Lightcone Formalism",
-            #     color = 'gray',
-            #     marker = "d")
             
             plt.savefig(
                 fname = f'compared_pure_interference_unpolarized_beam_lp_target_kinematic_bin_{kinematic_bin_number}.png',
@@ -1647,14 +1618,14 @@ def analysis():
         # print("> Beginning analysis of Interference, unpolarized beam, unpolarized target...")
         # analyze_interference_unpolarized_beam_unpolarized_target()
 
-        print("> Beginning analysis of Interference, (+) beam, unpolarized target...")
-        analyze_interference_plus_beam_unpolarized_target()
+        # print("> Beginning analysis of Interference, (+) beam, unpolarized target...")
+        # analyze_interference_plus_beam_unpolarized_target()
 
         # print("> Beginning analysis of Interference, (-) beam, unpolarized target...")
         # analyze_interference_minus_beam_unpolarized_target()
 
-        # print("> Beginning analysis of Interference, unpolarized beam, longitudinally-polarized target...")
-        # analyze_interference_unpolarized_beam_polarized_target()
+        print("> Beginning analysis of Interference, unpolarized beam, longitudinally-polarized target...")
+        analyze_interference_unpolarized_beam_polarized_target()
 
         # print("> Beginning analysis of Interference, (+) beam, longitudinally-polarized target...")
         # analyze_interference_plus_beam_polarized_target()
