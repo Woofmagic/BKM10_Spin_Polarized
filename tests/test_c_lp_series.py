@@ -76,15 +76,6 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
         ## Description: Test the function `calculate_c_0_plus_plus_longitudinally_polarized_V`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{LP, V}(n = 0)$.
         We call it "CLPVPP0" for C (series) LP (longitudinally polarized [target]) V (vector) PP (++) 0 (n = 0).
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
         """
         self.assertAlmostEqual(
             calculate_c_0_plus_plus_longitudinally_polarized_V(
@@ -104,15 +95,6 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
         ## Description: Test the function `calculate_c_0_plus_plus_longitudinally_polarized_A`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{LP, A}(n = 0)$.
         We call it "CLPVPP0" for C (series) LP (longitudinally polarized [target]) A (axial-vector) PP (++) 0 (n = 0).
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
         """
         self.assertAlmostEqual(
             calculate_c_0_plus_plus_longitudinally_polarized_A(
@@ -124,7 +106,7 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_EPSILON,
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_K_TILDE,
-                _TEST_VERBOSE), 
+                _TEST_VERBOSE),
             -0.020719510401278708)
         
     def test_calculate_c_1_plus_plus_longitudinally_polarized(self):
@@ -132,15 +114,6 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
         ## Description: Test the function `calculate_c_1_plus_plus_longitudinally_polarized`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{LP}(n = 1)$.
         We call it "CLPPP1" for C (series) LP (longitudinally polarized [target]) PP (++) 0 (n = 1).
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
         """
         self.assertAlmostEqual(
             calculate_c_1_plus_plus_longitudinally_polarized(
@@ -160,15 +133,6 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
         ## Description: Test the function `calculate_c_1_plus_plus_longitudinally_polarized_V`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{LP, V}(n = 1)$.
         We call it "CLPVPP1" for C (series) LP (longitudinally polarized [target]) V (vector) PP (++) 0 (n = 1).
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
         """
         self.assertAlmostEqual(
             calculate_c_1_plus_plus_longitudinally_polarized_V(
@@ -190,15 +154,6 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
         ## Description: Test the function `calculate_c_1_plus_plus_longitudinally_polarized_A`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{LP, A}(n = 1)$.
         We call it "CLPAPP1" for C (series) LP (longitudinally polarized [target]) A (axial vector) PP (++) 0 (n = 1).
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
         """
         self.assertAlmostEqual(
             calculate_c_1_plus_plus_longitudinally_polarized_A(
@@ -210,7 +165,7 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
                 _TEST_EPSILON,
                 _TEST_LEPTON_ENERGY_FRACTION,
                 _TEST_SHORTHAND_K,
-                _TEST_VERBOSE), 
+                _TEST_VERBOSE),
             -0.010009435464345648)
         
     def test_calculate_c_2_plus_plus_longitudinally_polarized(self):
@@ -245,15 +200,6 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
         ## Description: Test the function `calculate_c_2_plus_plus_longitudinally_polarized_V`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{LP, V}(n = 2)$.
         We call it "CLPVPP2" for C (series) LP (longitudinally polarized [target]) V (vector) PP (++) 2 (n = 2).
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
         """
         self.assertAlmostEqual(
             calculate_c_2_plus_plus_longitudinally_polarized_V(
@@ -272,15 +218,6 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
         ## Description: Test the function `calculate_c_2_plus_plus_longitudinally_polarized_A`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{++}^{LP, A}(n = 2)$.
         We call it "CLPAPP2" for C (series) LP (longitudinally polarized [target]) A (axial vector) PP (++) 2 (n = 2).
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
         """
         self.assertAlmostEqual(
             calculate_c_2_plus_plus_longitudinally_polarized_A(
@@ -297,17 +234,8 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
     def test_calculate_c_0_zero_plus_longitudinally_polarized(self):
         """
         ## Description: Test the function `calculate_c_0_zero_plus_longitudinally_polarized`.
-        Remember, that function corresponds to the BKM10 coefficient called $C_{0+}^{LP}(n = 0)$.
+        Remember, that function corresponds to the BKM10 coefficient is called $C_{0+}^{LP}(n = 0)$.
         We call it "CLP0P0" for C (series) LP (longitudinally polarized [target]) 0P (0+) 0 (n = 0).
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
         """
         self.assertAlmostEqual(
             calculate_c_0_zero_plus_longitudinally_polarized(
@@ -384,15 +312,6 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
         ## Description: Test the function `calculate_c_1_zero_plus_longitudinally_polarized`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{0+}^{LP}(n = 1)$.
         We call it "CLP0P1" for C (series) LP (longitudinally polarized [target]) 0P (0+) 1 (n = 1).
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
         """
         self.assertAlmostEqual(
             calculate_c_1_zero_plus_longitudinally_polarized(
@@ -438,15 +357,6 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
         ## Description: Test the function `calculate_c_2_zero_plus_longitudinally_polarized`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{0+}^{LP}(n = 2)$.
         We call it "CLP0P2" for C (series) LP (longitudinally polarized [target]) 0P (0+) 2 (n = 2).
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
         """
         self.assertAlmostEqual(
             calculate_c_2_zero_plus_longitudinally_polarized(
@@ -466,15 +376,6 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
         ## Description: Test the function `calculate_c_2_zero_plus_longitudinally_polarized_V`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{0+}^{LP,V}(n = 2)$.
         We call it "CLPV0P2" for C (series) LP (longitudinally polarized [target]) V (vector) 0P (0+) 2 (n = 2).
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
         """
         self.assertAlmostEqual(
             calculate_c_2_zero_plus_longitudinally_polarized_V(
@@ -494,15 +395,6 @@ class TestCLPSeriesCoefficients(unittest.TestCase):
         ## Description: Test the function `calculate_c_2_zero_plus_longitudinally_polarized_A`.
         Remember, that function corresponds to the BKM10 coefficient called $C_{0+}^{LP,A}(n = 2)$.
         We call it "CLPA0P2" for C (series) LP (longitudinally polarized [target]) A (axial vector) 0P (0+) 2 (n = 2).
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
         """
         self.assertAlmostEqual(
             calculate_c_2_zero_plus_longitudinally_polarized_A(

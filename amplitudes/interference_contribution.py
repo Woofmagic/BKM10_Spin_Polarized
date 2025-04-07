@@ -675,6 +675,71 @@ def calculate_interference_contribution(
             s_1_interference_coefficient = S1_pp_unpolarized * curly_S_1_pp_int.imag + S1_0p_unpolarized * curly_S_1_0p_int.imag
             s_2_interference_coefficient = S2_pp_unpolarized * curly_S_2_pp_int.imag + S2_0p_unpolarized * curly_S_2_0p_int.imag
             s_3_interference_coefficient = 0.
+
+            # print(f"> Curly CI++: {curly_C_unpolarized_interference_for_pp[0]}")
+            # print(f"> Curly CIV++: {curly_C_V_unpolarized_interference_for_pp[0]}")
+            # print(f"> Curly CIA++: {curly_C_A_unpolarized_interference_for_pp[0]}")
+            # print(f"> Curly CI0+: {curly_C_unpolarized_interference_for_0p[0]}")
+            # print(f"> Curly CIV0+: {curly_C_V_unpolarized_interference_for_0p[0]}")
+            # print(f"> Curly CIA0+: {curly_C_A_unpolarized_interference_for_0p[0]}")
+            
+            # print(f"> C++(n=0): {C0_pp_unpolarized[0]}")
+            # print(f"> C++V(n=0): {C0V_pp_unpolarized[0]}")
+            # print(f"> C++A(n=0): {C0A_pp_unpolarized[0]}")
+
+            # print(f"> C0+(n=0): {C0_0p_unpolarized[0]}")
+            # print(f"> C0+V(n=0): {C0V_0p_unpolarized[0]}")
+            # print(f"> C0+A(n=0): {C0A_0p_unpolarized[0]}")
+
+            # print(f"> C++(n=1): {C1_pp_unpolarized[0]}")
+            # print(f"> C++V(n=1): {C1V_pp_unpolarized[0]}")
+            # print(f"> C++A(n=1): {C1A_pp_unpolarized[0]}")
+
+            # print(f"> C0+(n=1): {C1_0p_unpolarized[0]}")
+            # print(f"> C0+V(n=1): {C1V_0p_unpolarized[0]}")
+            # print(f"> C0+A(n=1): {C1A_0p_unpolarized[0]}")
+
+            # print(f"> C++(n=2): {C2_pp_unpolarized[0]}")
+            # print(f"> C++V(n=2): {C2V_pp_unpolarized[0]}")
+            # print(f"> C++A(n=2): {C2A_pp_unpolarized[0]}")
+
+            # print(f"> C0+(n=2): {C2_0p_unpolarized[0]}")
+            # print(f"> C0+V(n=2): {C2V_0p_unpolarized[0]}")
+            # print(f"> C0+A(n=2): {C2A_0p_unpolarized[0]}")
+
+            # print(f"> C++(n=3): {C3_pp_unpolarized[0]}")
+            # print(f"> C++V(n=3): {C3V_pp_unpolarized[0]}")
+            # print(f"> C++A(n=3): {C3A_pp_unpolarized[0]}")
+
+            # print(f"> S++(n=1): {S1_pp_unpolarized[0]}")
+            # print(f"> S++V(n=1): {S1V_pp_unpolarized[0]}")
+            # print(f"> S++A(n=1): {S1A_pp_unpolarized[0]}")
+
+            # print(f"> S0+(n=1): {S1_0p_unpolarized[0]}")
+            # print(f"> S0+V(n=1): {S1V_0p_unpolarized[0]}")
+            # print(f"> S0+A(n=1): {S1A_0p_unpolarized[0]}")
+
+            # print(f"> S++(n=2): {S2_pp_unpolarized[0]}")
+            # print(f"> S++V(n=2): {S2V_pp_unpolarized[0]}")
+            # print(f"> S++A(n=2): {S2A_pp_unpolarized[0]}")
+
+            # print(f"> S0+(n=2): {S2_0p_unpolarized[0]}")
+            # print(f"> S0+V(n=2): {S2V_0p_unpolarized[0]}")
+            # print(f"> S0+A(n=2): {S2A_0p_unpolarized[0]}")
+
+            # print(f"> Curly C++(n = 0|F): {curly_C_0_pp_int[0]}")
+            # print(f"> Curly C0+(n = 0|F): {curly_C_0_0p_int[0]}")
+            # print(f"> Curly C++(n = 1|F): {curly_C_1_pp_int[0]}")
+            # print(f"> Curly C0+(n = 1|F): {curly_C_1_0p_int[0]}")
+            # print(f"> Curly C++(n = 2|F): {curly_C_2_pp_int[0]}")
+            # print(f"> Curly C0+(n = 2|F): {curly_C_2_0p_int[0]}")
+            # print(f"> Curly C++(n = 3|F): {curly_C_3_pp_int[0]}")
+            # print(f"> Curly C0+(n = 3|F): {curly_C_3_0p_int[0]}")
+
+            # print(f"> Curly S++(n = 1|F): {curly_S_1_pp_int[0]}")
+            # print(f"> Curly S0+(n = 1|F): {curly_S_1_0p_int[0]}")
+            # print(f"> Curly S++(n = 2|F): {curly_S_2_pp_int[0]}")
+            # print(f"> Curly S0+(n = 2|F): {curly_S_2_0p_int[0]}")
             
         else:
 
@@ -689,8 +754,6 @@ def calculate_interference_contribution(
                 compton_form_factor_e,
                 compton_form_factor_e_tilde,
                 verbose)
-            
-            print(f"> Curly C++LP: {curly_C_lp_polarized_interference_for_pp[0]}")
 
             curly_C_V_lp_polarized_interference_for_pp = calculate_curly_C_longitudinally_polarized_interference_V(
                 squared_Q_momentum_transfer,
@@ -701,8 +764,6 @@ def calculate_interference_contribution(
                 compton_form_factor_h,
                 compton_form_factor_e,
                 verbose)
-            
-            print(f"> Curly C++VLP: {curly_C_V_lp_polarized_interference_for_pp[0]}")
 
             curly_C_A_lp_polarized_interference_for_pp = calculate_curly_C_longitudinally_polarized_interference_A(
                 squared_Q_momentum_transfer,
@@ -713,8 +774,6 @@ def calculate_interference_contribution(
                 compton_form_factor_h_tilde,
                 compton_form_factor_e_tilde,
                 verbose)
-            
-            print(f"> Curly C++ALP: {curly_C_A_lp_polarized_interference_for_pp[0]}")
 
             curly_C_lp_polarized_interference_for_0p = calculate_curly_C_longitudinally_polarized_interference(
                 squared_Q_momentum_transfer,
@@ -728,8 +787,6 @@ def calculate_interference_contribution(
                 compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde, use_ww),
                 verbose)
 
-            print(f"> Curly C0+LP: {curly_C_lp_polarized_interference_for_0p[0]}")
-
             curly_C_V_lp_polarized_interference_for_0p = calculate_curly_C_longitudinally_polarized_interference_V(
                 squared_Q_momentum_transfer,
                 x_Bjorken,
@@ -739,8 +796,6 @@ def calculate_interference_contribution(
                 compute_cff_effective(skewness_parameter, compton_form_factor_h, use_ww),
                 compute_cff_effective(skewness_parameter, compton_form_factor_e, use_ww),
                 verbose)
-            
-            print(f"> Curly C0+VLP: {curly_C_V_lp_polarized_interference_for_0p[0]}")
 
             curly_C_A_lp_polarized_interference_for_0p = calculate_curly_C_longitudinally_polarized_interference_A(
                 squared_Q_momentum_transfer,
@@ -752,16 +807,6 @@ def calculate_interference_contribution(
                 compute_cff_effective(skewness_parameter, compton_form_factor_e_tilde, use_ww),
                 verbose)
             
-            print(f"> Curly C0+ALP: {curly_C_A_lp_polarized_interference_for_0p[0]}")
-            
-            print(lepton_helicity)
-            print(target_polarization)
-            print(squared_Q_momentum_transfer[0])
-            print(x_Bjorken[0])
-            print(squared_hadronic_momentum_transfer_t[0])
-            print(epsilon[0])
-            print(lepton_energy_fraction_y[0])
-            print(k_tilde[0])
             C0_pp_lp_polarized = calculate_c_0_plus_plus_longitudinally_polarized(
                 lepton_helicity,
                 target_polarization,
@@ -772,8 +817,6 @@ def calculate_interference_contribution(
                 lepton_energy_fraction_y,
                 k_tilde,
                 verbose)
-            
-            print(f"> C++(n=0): {C0_pp_lp_polarized[0]}")
 
             C0V_pp_lp_polarized = calculate_c_0_plus_plus_longitudinally_polarized_V(
                 lepton_helicity,
@@ -785,8 +828,6 @@ def calculate_interference_contribution(
                 lepton_energy_fraction_y,
                 k_tilde,
                 verbose)
-            
-            print(f"> CV++(n=0): {C0V_pp_lp_polarized[0]}")
 
             C0A_pp_lp_polarized = calculate_c_0_plus_plus_longitudinally_polarized_A(
                 lepton_helicity,
@@ -798,8 +839,6 @@ def calculate_interference_contribution(
                 lepton_energy_fraction_y,
                 k_tilde,
                 verbose)
-            
-            print(f"> CA++(n=0): {C0A_pp_lp_polarized[0]}")
 
             C0_0p_lp_polarized = calculate_c_0_zero_plus_longitudinally_polarized(
                 lepton_helicity,
@@ -811,8 +850,6 @@ def calculate_interference_contribution(
                 lepton_energy_fraction_y,
                 shorthand_k,
                 verbose)
-            
-            print(f"> C0+(n=0): {C0_0p_lp_polarized[0]}")
 
             C0V_0p_lp_polarized = calculate_c_0_zero_plus_longitudinally_polarized_V(
                 lepton_helicity,
@@ -824,8 +861,6 @@ def calculate_interference_contribution(
                 lepton_energy_fraction_y,
                 shorthand_k,
                 verbose)
-            
-            print(f"> C0V+(n=0): {C0V_0p_lp_polarized[0]}")
 
             C0A_0p_lp_polarized = calculate_c_0_zero_plus_longitudinally_polarized_A(
                 lepton_helicity,
@@ -838,8 +873,6 @@ def calculate_interference_contribution(
                 shorthand_k,
                 verbose)
             
-            print(f"> C0A+(n=0): {C0A_0p_lp_polarized[0]}")
-            
             C1_pp_lp_polarized = calculate_c_1_plus_plus_longitudinally_polarized(
                 lepton_helicity,
                 target_polarization,
@@ -850,8 +883,6 @@ def calculate_interference_contribution(
                 lepton_energy_fraction_y,
                 shorthand_k,
                 verbose)
-
-            print(f"> C++(n=1): {C1_pp_lp_polarized[0]}")
 
             C1V_pp_lp_polarized = calculate_c_1_plus_plus_longitudinally_polarized_V(
                 lepton_helicity,
@@ -864,8 +895,6 @@ def calculate_interference_contribution(
                 t_prime,
                 shorthand_k,
                 verbose)
-            
-            print(f"> CV++(n=1): {C1V_pp_lp_polarized[0]}")
 
             C1A_pp_lp_polarized = calculate_c_1_plus_plus_longitudinally_polarized_A(
                 lepton_helicity,
@@ -877,8 +906,6 @@ def calculate_interference_contribution(
                 lepton_energy_fraction_y,
                 shorthand_k,
                 verbose)
-            
-            print(f"> CA++(n=1): {C1A_pp_lp_polarized[0]}")
 
             C1_0p_lp_polarized = calculate_c_1_zero_plus_longitudinally_polarized(
                 lepton_helicity,
@@ -889,8 +916,6 @@ def calculate_interference_contribution(
                 k_tilde,
                 shorthand_k,
                 verbose)
-            
-            print(f"> C0+(n=1): {C1_0p_lp_polarized[0]}")
 
             C1V_0p_lp_polarized = calculate_c_1_zero_plus_longitudinally_polarized_V(
                 lepton_helicity,
@@ -902,11 +927,7 @@ def calculate_interference_contribution(
                 k_tilde,
                 verbose)
             
-            print(f"> C0+V(n=1): {C1V_0p_lp_polarized[0]}")
-            
             C1A_0p_lp_polarized = 0.
-
-            print(f"> C0+A(n=1): {C1A_0p_lp_polarized}")
 
             C2_pp_lp_polarized = calculate_c_2_plus_plus_longitudinally_polarized(
                 lepton_helicity,
@@ -917,8 +938,6 @@ def calculate_interference_contribution(
                 epsilon,
                 lepton_energy_fraction_y,
                 verbose)
-            
-            print(f"> C++(n=2): {C2_pp_lp_polarized[0]}")
 
             C2V_pp_lp_polarized = calculate_c_2_plus_plus_longitudinally_polarized_V(
                 lepton_helicity,
@@ -929,8 +948,6 @@ def calculate_interference_contribution(
                 epsilon,
                 lepton_energy_fraction_y,
                 verbose)
-            
-            print(f"> CV++(n=2): {C2V_pp_lp_polarized[0]}")
 
             C2A_pp_lp_polarized = calculate_c_2_plus_plus_longitudinally_polarized_A(
                 lepton_helicity,
@@ -941,8 +958,6 @@ def calculate_interference_contribution(
                 epsilon,
                 lepton_energy_fraction_y,
                 verbose)
-            
-            print(f"> CA++(n=2): {C2A_pp_lp_polarized[0]}")
 
             C2_0p_lp_polarized = calculate_c_2_zero_plus_longitudinally_polarized(
                 lepton_helicity,
@@ -955,8 +970,6 @@ def calculate_interference_contribution(
                 shorthand_k,
                 verbose)
 
-            print(f"> C0+(n=2): {C2_0p_lp_polarized[0]}")
-
             C2V_0p_lp_polarized = calculate_c_2_zero_plus_longitudinally_polarized_V(
                 lepton_helicity,
                 target_polarization,
@@ -967,8 +980,6 @@ def calculate_interference_contribution(
                 lepton_energy_fraction_y,
                 shorthand_k,
                 verbose)
-            
-            print(f"> C0+V(n=2): {C2V_0p_lp_polarized[0]}")
 
             C2A_0p_lp_polarized = calculate_c_2_zero_plus_longitudinally_polarized_A(
                 lepton_helicity,
@@ -981,8 +992,6 @@ def calculate_interference_contribution(
                 shorthand_k,
                 verbose)
             
-            print(f"> C0+A(n=2): {C2A_0p_lp_polarized[0]}")
-            
             S1_pp_lp_polarized = calculate_s_1_plus_plus_longitudinally_polarized(
                 target_polarization,
                 squared_Q_momentum_transfer,
@@ -992,8 +1001,6 @@ def calculate_interference_contribution(
                 lepton_energy_fraction_y,
                 shorthand_k,
                 verbose)
-            
-            print(f"> S++(n=1): {S1_pp_lp_polarized[0]}")
 
             S1V_pp_lp_polarized = calculate_s_1_plus_plus_longitudinally_polarized_V(
                 target_polarization,
@@ -1005,8 +1012,6 @@ def calculate_interference_contribution(
                 t_prime,
                 shorthand_k,
                 verbose)
-            
-            print(f"> S++V(n=1): {S1V_pp_lp_polarized[0]}")
 
             S1A_pp_lp_polarized = calculate_s_1_plus_plus_longitudinally_polarized_A(
                 target_polarization,
@@ -1017,8 +1022,6 @@ def calculate_interference_contribution(
                 lepton_energy_fraction_y,
                 shorthand_k,
                 verbose)
-            
-            print(f"> S++A(n=1): {S1A_pp_lp_polarized[0]}")
 
             S1_0p_lp_polarized = calculate_s_1_zero_plus_longitudinally_polarized(
                 target_polarization,
@@ -1030,8 +1033,6 @@ def calculate_interference_contribution(
                 k_tilde,
                 verbose)
             
-            print(f"> S0+(n=1): {S1_0p_lp_polarized[0]}")
-
             S1V_0p_lp_polarized = calculate_s_1_zero_plus_longitudinally_polarized_V(
                 target_polarization,
                 squared_Q_momentum_transfer,
@@ -1042,8 +1043,6 @@ def calculate_interference_contribution(
                 k_tilde,
                 verbose)
             
-            print(f"> S0+V(n=1): {S1V_0p_lp_polarized[0]}")
-            
             S1A_0p_lp_polarized = calculate_s_1_zero_plus_longitudinally_polarized_A(
                 target_polarization,
                 squared_Q_momentum_transfer,
@@ -1052,8 +1051,6 @@ def calculate_interference_contribution(
                 epsilon,
                 lepton_energy_fraction_y,
                 verbose)
-            
-            print(f"> S0+A(n=1): {S1A_0p_lp_polarized[0]}")
 
             S2_pp_lp_polarized = calculate_s_2_plus_plus_longitudinally_polarized(
                 target_polarization,
@@ -1065,8 +1062,6 @@ def calculate_interference_contribution(
                 t_prime,
                 k_tilde,
                 verbose)
-            
-            print(f"> S++(n=2): {S2_pp_lp_polarized[0]}")
 
             S2V_pp_lp_polarized = calculate_s_2_plus_plus_longitudinally_polarized_V(
                 target_polarization,
@@ -1078,8 +1073,6 @@ def calculate_interference_contribution(
                 t_prime,
                 k_tilde,
                 verbose)
-            
-            print(f"> S++V(n=2): {S2V_pp_lp_polarized[0]}")
 
             S2A_pp_lp_polarized = calculate_s_2_plus_plus_longitudinally_polarized_A(
                 target_polarization,
@@ -1091,8 +1084,6 @@ def calculate_interference_contribution(
                 t_prime,
                 k_tilde,
                 verbose)
-            
-            print(f"> S++A(n=2): {S2A_pp_lp_polarized[0]}")
 
             S2_0p_lp_polarized = calculate_s_2_zero_plus_longitudinally_polarized(
                 target_polarization,
@@ -1103,8 +1094,6 @@ def calculate_interference_contribution(
                 lepton_energy_fraction_y,
                 shorthand_k,
                 verbose)
-            
-            print(f"> S0+(n=2): {S2_0p_lp_polarized[0]}")
 
             S2V_0p_lp_polarized = calculate_s_2_zero_plus_longitudinally_polarized_V(
                 target_polarization,
@@ -1116,8 +1105,6 @@ def calculate_interference_contribution(
                 shorthand_k,
                 verbose)
             
-            print(f"> S0+V(n=2): {S2V_0p_lp_polarized[0]}")
-            
             S2A_0p_lp_polarized = calculate_s_2_zero_plus_longitudinally_polarized_A(
                 target_polarization,
                 squared_Q_momentum_transfer,
@@ -1128,8 +1115,6 @@ def calculate_interference_contribution(
                 shorthand_k,
                 verbose)
             
-            print(f"> S0+A(n=2): {S2A_0p_lp_polarized[0]}")
-            
             S3_pp_lp_polarized = calculate_s_3_plus_plus_longitudinally_polarized(
                 target_polarization,
                 squared_Q_momentum_transfer,
@@ -1139,8 +1124,6 @@ def calculate_interference_contribution(
                 t_prime,
                 shorthand_k,
                 verbose)
-            
-            print(f"> S++(n=3): {S3_pp_lp_polarized[0]}")
 
             S3V_pp_lp_polarized = calculate_s_3_plus_plus_longitudinally_polarized_V(
                 target_polarization,
@@ -1152,8 +1135,6 @@ def calculate_interference_contribution(
                 t_prime,
                 shorthand_k,
                 verbose)
-            
-            print(f"> S++V(n=3): {S3V_pp_lp_polarized[0]}")
 
             S3A_pp_lp_polarized = calculate_s_3_plus_plus_longitudinally_polarized_A(
                 target_polarization,
@@ -1165,8 +1146,6 @@ def calculate_interference_contribution(
                 t_prime,
                 shorthand_k,
                 verbose)
-            
-            print(f"> S++A(n=3): {S3A_pp_lp_polarized[0]}")
 
             S3_0p_lp_polarized = 0.
 
@@ -1225,6 +1204,71 @@ def calculate_interference_contribution(
             curly_S_3_0p_int =  ((np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)) * (curly_C_lp_polarized_interference_for_0p
             + 0.
             + 0.))
+
+            # print(f"> Curly C++LP: {curly_C_lp_polarized_interference_for_pp[0]}")
+            # print(f"> Curly C++VLP: {curly_C_V_lp_polarized_interference_for_pp[0]}")
+            # print(f"> Curly C++ALP: {curly_C_A_lp_polarized_interference_for_pp[0]}")    
+            # print(f"> Curly C0+LP: {curly_C_lp_polarized_interference_for_0p[0]}")
+            # print(f"> Curly C0+VLP: {curly_C_V_lp_polarized_interference_for_0p[0]}")
+            # print(f"> Curly C0+ALP: {curly_C_A_lp_polarized_interference_for_0p[0]}")
+            
+            # print(f"> C++(n=0): {C0_pp_lp_polarized[0]}")
+            # print(f"> CV++(n=0): {C0V_pp_lp_polarized[0]}")
+            # print(f"> CA++(n=0): {C0A_pp_lp_polarized[0]}")
+            
+            # print(f"> C0+(n=0): {C0_0p_lp_polarized[0]}")
+            # print(f"> C0V+(n=0): {C0V_0p_lp_polarized[0]}")
+            # print(f"> C0A+(n=0): {C0A_0p_lp_polarized[0]}")
+            
+            # print(f"> C++(n=1): {C1_pp_lp_polarized[0]}")
+            # print(f"> CV++(n=1): {C1V_pp_lp_polarized[0]}")
+            # print(f"> CA++(n=1): {C1A_pp_lp_polarized[0]}")
+            
+            # print(f"> C0+(n=1): {C1_0p_lp_polarized[0]}")
+            # print(f"> C0+V(n=1): {C1V_0p_lp_polarized[0]}")
+            # print(f"> C0+A(n=1): {C1A_0p_lp_polarized}")
+            
+            # print(f"> C++(n=2): {C2_pp_lp_polarized[0]}")
+            # print(f"> CV++(n=2): {C2V_pp_lp_polarized[0]}")
+            # print(f"> CA++(n=2): {C2A_pp_lp_polarized[0]}")
+            
+            # print(f"> C0+(n=2): {C2_0p_lp_polarized[0]}")
+            # print(f"> C0+V(n=2): {C2V_0p_lp_polarized[0]}")
+            # print(f"> C0+A(n=2): {C2A_0p_lp_polarized[0]}")
+            
+            # print(f"> S++(n=1): {S1_pp_lp_polarized[0]}")
+            # print(f"> S++V(n=1): {S1V_pp_lp_polarized[0]}")
+            # print(f"> S++A(n=1): {S1A_pp_lp_polarized[0]}")
+
+            # print(f"> S0+(n=1): {S1_0p_lp_polarized[0]}")
+            # print(f"> S0+V(n=1): {S1V_0p_lp_polarized[0]}")
+            # print(f"> S0+A(n=1): {S1A_0p_lp_polarized[0]}")
+            
+            # print(f"> S++(n=2): {S2_pp_lp_polarized[0]}")
+            # print(f"> S++V(n=2): {S2V_pp_lp_polarized[0]}")
+            # print(f"> S++A(n=2): {S2A_pp_lp_polarized[0]}")
+            
+            # print(f"> S0+(n=2): {S2_0p_lp_polarized[0]}")            
+            # print(f"> S0+V(n=2): {S2V_0p_lp_polarized[0]}")
+            # print(f"> S0+A(n=2): {S2A_0p_lp_polarized[0]}")
+
+            # print(f"> S++(n=3): {S3_pp_lp_polarized[0]}")
+            # print(f"> S++V(n=3): {S3V_pp_lp_polarized[0]}")
+            # print(f"> S++A(n=3): {S3A_pp_lp_polarized[0]}")
+
+            # print(f"> Curly C++(n = 0|F): {curly_C_0_pp_int[0]}")
+            # print(f"> Curly C0+(n = 0|F): {curly_C_0_0p_int[0]}")
+            # print(f"> Curly C++(n = 1|F): {curly_C_1_pp_int[0]}")
+            # print(f"> Curly C0+(n = 1|F): {curly_C_1_0p_int[0]}")
+            # print(f"> Curly C++(n = 2|F): {curly_C_2_pp_int[0]}")
+            # print(f"> Curly C0+(n = 2|F): {curly_C_2_0p_int[0]}")
+
+            # print(f"> Curly S++(n = 1|F): {curly_S_1_pp_int[0]}")
+            # print(f"> Curly S0+(n = 1|F): {curly_S_1_0p_int[0]}")
+            # print(f"> Curly S++(n = 2|F): {curly_S_2_pp_int[0]}")
+            # print(f"> Curly S0+(n = 2|F): {curly_S_2_0p_int[0]}")
+            # print(f"> Curly S++(n = 3|F): {curly_S_3_pp_int[0]}")
+            # print(f"> Curly S0+(n = 3|F): {curly_S_3_0p_int[0]}")
             
             c_0_interference_coefficient = C0_pp_lp_polarized * curly_C_0_pp_int.real + C0_0p_lp_polarized * curly_C_0_0p_int.real
             c_1_interference_coefficient = C1_pp_lp_polarized * curly_C_1_pp_int.real + C1_0p_lp_polarized * curly_C_1_0p_int.real
@@ -1237,10 +1281,10 @@ def calculate_interference_contribution(
         # print(f"> c0: {c_0_interference_coefficient[0]}")
         # print(f"> c1: {c_1_interference_coefficient[0]}")
         # print(f"> c2: {c_2_interference_coefficient[0]}")
-        # print(f"> c3: {c_3_interference_coefficient}")
+        # print(f"> c3: {c_3_interference_coefficient[0]}")
         # print(f"> s1: {s_1_interference_coefficient[0]}")
         # print(f"> s2: {s_2_interference_coefficient[0]}")
-        # print(f"> s3: {s_3_interference_coefficient[0]}")
+        # print(f"> s3: {s_3_interference_coefficient}")
         
         plot_interference_contributions(
             azimuthal_phi,
@@ -1252,7 +1296,8 @@ def calculate_interference_contribution(
             convert_to_nb_over_GeV4(s_2_interference_coefficient),
             convert_to_nb_over_GeV4(s_3_interference_coefficient))
 
-        interference_contribution = (prefactor * (c_0_interference_coefficient +
+        interference_contribution = (prefactor * (
+            c_0_interference_coefficient +
             c_1_interference_coefficient * np.cos(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
             c_2_interference_coefficient * np.cos(2. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
             c_3_interference_coefficient * np.cos(3. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +

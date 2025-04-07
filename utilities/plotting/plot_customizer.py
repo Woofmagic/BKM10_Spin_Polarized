@@ -20,9 +20,12 @@ class PlotCustomizer:
         
         self._custom_rc_params = {
             'text.usetex': True,
-            'font.family': 'serif, sans-serif',
-            'font.size': 11.,
-            'mathtext.fontset': 'dejavusans', # https://matplotlib.org/stable/gallery/text_labels_and_annotations/mathtext_fontfamily_example.html
+            'font.family': 'serif',
+            'font.serif': ['Times', 'Palatino', 'New Century Schoolbook', 'Bookman', 'Computer Modern Roman'],
+            'font.size': 14.,
+            'pgf.rcfonts': False,  # Ensure it respects font settings
+            'text.latex.preamble': r'\usepackage{lmodern}',
+            # 'mathtext.fontset': 'dejavusans', # https://matplotlib.org/stable/gallery/text_labels_and_annotations/mathtext_fontfamily_example.html
             'xtick.direction': 'in',
             'xtick.major.size': 5,
             'xtick.major.width': 0.5,

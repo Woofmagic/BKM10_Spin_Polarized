@@ -9,28 +9,28 @@ import numpy as np
 from utilities.mathematics.math_units import convert_degrees_to_radians
 
 # c_{0, unp}^{BH}
-from coefficients.bh_coefficients.bkm02.unpolarized.unpolarized_c0_bh import calculate_c_0_unpolarized_bh
+from coefficients.bh_coefficients.unpolarized.unpolarized_c0_bh import calculate_c_0_unpolarized_bh
 
 # c_{1, unp}^{BH}
-from coefficients.bh_coefficients.bkm02.unpolarized.unpolarized_c1_bh import calculate_c_1_unpolarized_bh
+from coefficients.bh_coefficients.unpolarized.unpolarized_c1_bh import calculate_c_1_unpolarized_bh
 
 # c_{2, unp}^{BH}
-from coefficients.bh_coefficients.bkm02.unpolarized.unpolarized_c2_bh import calculate_c_2_unpolarized_bh
+from coefficients.bh_coefficients.unpolarized.unpolarized_c2_bh import calculate_c_2_unpolarized_bh
 
 # c_{0, LP}^{BH}
-from coefficients.bh_coefficients.bkm02.lp_polarized.lp_polarized_c0_bh import calculate_c_0_longitudinally_polarized_bh
+from coefficients.bh_coefficients.lp_polarized.lp_polarized_c0_bh import calculate_c_0_longitudinally_polarized_bh
 
 # c_{1, LP}^{BH}
-from coefficients.bh_coefficients.bkm02.lp_polarized.lp_polarized_c1_bh import calculate_c_1_longitudinally_polarized_bh
+from coefficients.bh_coefficients.lp_polarized.lp_polarized_c1_bh import calculate_c_1_longitudinally_polarized_bh
 
 # c_{0, unp}^{BH}
-from coefficients.bh_coefficients.bkm02.tp_polarized.tp_polarized_c0_bh import calculate_c_0_transversely_polarized_bh
+from coefficients.bh_coefficients.tp_polarized.tp_polarized_c0_bh import calculate_c_0_transversely_polarized_bh
 
 # c_{1, unp}^{BH}
-from coefficients.bh_coefficients.bkm02.tp_polarized.tp_polarized_c1_bh import calculate_c_1_transversely_polarized_bh
+from coefficients.bh_coefficients.tp_polarized.tp_polarized_c1_bh import calculate_c_1_transversely_polarized_bh
 
 # c_{2, unp}^{BH}
-from coefficients.bh_coefficients.bkm02.tp_polarized.tp_polarized_s1_bh import calculate_s_1_transversely_polarized_bh
+from coefficients.bh_coefficients.tp_polarized.tp_polarized_s1_bh import calculate_s_1_transversely_polarized_bh
 
 def calculate_bh_amplitude_squared(
     lepton_helicity: float,
