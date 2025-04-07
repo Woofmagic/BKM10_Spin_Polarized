@@ -1346,7 +1346,7 @@ def analysis():
             
             # (3): Ji' s Fig. (5.a) (kin. set. #1) and (5.b) (kin. set #2) in [2109.10373] has BKM10 *without* the WW relations applied (red curve):
             lcd_desmos_bkm_interference_unpolarized_beam_lp_target = pd.read_csv(
-                f'lcd_interference_unpolarized_beam_unpolarized_lp_kinematic_bin_{kinematic_bin_number}.csv',
+                f'lcd_interference_unpolarized_beam_lp_target_kinematic_bin_{kinematic_bin_number}.csv',
                 delimiter = ',')
             
             jd_mathematica_pure_interference_unpolarized_beam_lp_target = pd.read_csv(
