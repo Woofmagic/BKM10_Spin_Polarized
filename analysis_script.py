@@ -1441,13 +1441,18 @@ def analysis():
             
         def analyze_interference_plus_beam_polarized_target():
 
+            pure_interference_plus_beam_lp_target_ww = (cross_section_prefactor * calculate_interference_contribution(1.0, 0.5, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+                epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
+                Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True))
+            
             pure_interference_plus_beam_lp_target = (cross_section_prefactor * calculate_interference_contribution(1.0, 0.5, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
                 epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
                 Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, False))
             
-            pure_interference_plus_beam_lp_target_ww = (cross_section_prefactor * calculate_interference_contribution(1.0, 0.5, squared_Q_momentum_transfer, x_Bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
-                epsilon, lepton_energy_fraction_y, skewness_parameter, t_prime, k_tilde, shorthand_k,lepton_propagator_p1, lepton_propagator_p2,
-                Dirac_form_factor_F1, Pauli_form_factor_F2, compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, True))
+            # (3): Ji' s Fig. (5.a) (kin. set. #1) and (5.b) (kin. set #2) in [2109.10373] has BKM10 *without* the WW relations applied (red curve):
+            lcd_desmos_bkm_interference_plus_beam_lp_target = pd.read_csv(
+                f'lcd_interference_plus_beam_lp_target_kinematic_bin_{kinematic_bin_number}.csv',
+                delimiter = ',')
             
             jd_mathematica_pure_interference_plus_beam_lp_target = pd.read_csv(
                 f'jd_interference_plus_beam_lp_target_kinematic_bin_{kinematic_bin_number}.csv',
@@ -1488,6 +1493,14 @@ def analysis():
                 radial_size = 1.3,
                 label = "JD's BKM10 Mathematica (no WW)",
                 color = 'red')
+            
+            plot_pure_interference_plus_beam_lp_target.add_scatter_plot(
+                x_data = lcd_desmos_bkm_interference_plus_beam_lp_target['azimuthal_phi'],
+                y_data = lcd_desmos_bkm_interference_plus_beam_lp_target['cross_section'],
+                radial_size = 11.5,
+                label = "Liliet's Desmos BKM 10 (WW)",
+                color = 'dodgerblue',
+                marker = '8')
             
             plot_pure_interference_plus_beam_lp_target.add_scatter_plot(
                 x_data = azimuthal_phi,
@@ -1624,11 +1637,11 @@ def analysis():
         # print("> Beginning analysis of Interference, (-) beam, unpolarized target...")
         # analyze_interference_minus_beam_unpolarized_target()
 
-        print("> Beginning analysis of Interference, unpolarized beam, longitudinally-polarized target...")
-        analyze_interference_unpolarized_beam_polarized_target()
+        # print("> Beginning analysis of Interference, unpolarized beam, longitudinally-polarized target...")
+        # analyze_interference_unpolarized_beam_polarized_target()
 
-        # print("> Beginning analysis of Interference, (+) beam, longitudinally-polarized target...")
-        # analyze_interference_plus_beam_polarized_target()
+        print("> Beginning analysis of Interference, (+) beam, longitudinally-polarized target...")
+        analyze_interference_plus_beam_polarized_target()
 
         # print("> Beginning analysis of Interference, (-) beam, longitudinally-polarized target...")
         # analyze_interference_minus_beam_polarized_target()
