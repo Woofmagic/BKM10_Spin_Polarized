@@ -1,3 +1,1 @@
-from decimal import Decimal
-
 _ELECTROMAGNETIC_FINE_STRUCTURE_CONSTANT = (1. / 137.035999177)
