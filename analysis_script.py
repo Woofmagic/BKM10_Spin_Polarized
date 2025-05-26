@@ -105,7 +105,8 @@ def analysis():
     # (2): Iterate over all the testing conditions:
     for kinematic_bin_index, kinematic_bin_settings in enumerate(kinematics_and_cff_settings):
 
-        print(f"> Now iterating over Kinematic Bin Setting #{kinematic_bin_index + 1}")
+        if verbose:
+            print(f"> Now iterating over Kinematic Bin Setting #{kinematic_bin_index + 1}")
 
         # (2.1): Define a bin number by adding 1 to an index value; classic Python:
         kinematic_bin_number = kinematic_bin_index + 1
@@ -122,66 +123,92 @@ def analysis():
         # (2.5): Obtain the value of k via dictionary keys:
         value_of_beam_energy = kinematic_bin_settings["value_of_beam_energy"]
 
-        # (2.6): Obtain the value of the REAL part of the CFF H:
+        # (2.6): Obtain the value of the REAL part of the CFF H with the dictionary `kinematic_bin_settings`:
         compton_form_factor_h_real = kinematic_bin_settings["compton_form_factor_h_real"]
 
-        # (2.7): Obtain the value of the IMAGINARY part of the CFF H:
+        # (2.7): Obtain the value of the IMAGINARY part of the CFF H with the dictionary `kinematic_bin_settings`:
         compton_form_factor_h_imaginary = kinematic_bin_settings["compton_form_factor_h_imaginary"]
 
-        # (2.8): Obtain the value of the REAL part of the CFF E:
+        # (2.8): Obtain the value of the REAL part of the CFF E with the dictionary `kinematic_bin_settings`:
         compton_form_factor_e_real = kinematic_bin_settings["compton_form_factor_e_real"]
 
-        # (2.9): Obtain the value of the IMAGINARY part of the CFF E:
+        # (2.9): Obtain the value of the IMAGINARY part of the CFF E with the dictionary `kinematic_bin_settings`:
         compton_form_factor_e_imaginary = kinematic_bin_settings["compton_form_factor_e_imaginary"]
 
-        # (2.10): Obtain the value of the REAL part of the CFF H-tilde:
+        # (2.10): Obtain the value of the REAL part of the CFF H-tilde with the dictionary `kinematic_bin_settings`:
         compton_form_factor_h_tilde_real = kinematic_bin_settings["compton_form_factor_h_tilde_real"]
 
-        # (2.11): Obtain the value of the IMAGINARY part of the CFF H-tilde:
+        # (2.11): Obtain the value of the IMAGINARY part of the CFF H-tilde with the dictionary `kinematic_bin_settings`:
         compton_form_factor_h_tilde_imaginary = kinematic_bin_settings["compton_form_factor_h_tilde_imaginary"]
 
-        # (2.12): Obtain the value of the REAL part of the CFF E-tilde:
+        # (2.12): Obtain the value of the REAL part of the CFF E-tilde with the dictionary `kinematic_bin_settings`:
         compton_form_factor_e_tilde_real = kinematic_bin_settings["compton_form_factor_e_tilde_real"]
 
-        # (2.13): Obtain the value of the IMAGINARY part of the CFF E-tilde:
+        # (2.13): Obtain the value of the IMAGINARY part of the CFF E-tilde with the dictionary `kinematic_bin_settings`:
         compton_form_factor_e_tilde_imaginary = kinematic_bin_settings["compton_form_factor_e_tilde_imaginary"]
         
+        # (X): Cast to a complex type the H CFF function at the given kinematic settings:
         compton_form_factor_h = complex(compton_form_factor_h_real, compton_form_factor_h_imaginary)
+
+        # (X): Cast to a complex type the Htilde CFF function at the given kinematic settings:
         compton_form_factor_h_tilde = complex(compton_form_factor_h_tilde_real, compton_form_factor_h_tilde_imaginary)
+
+        # (X): Cast to a complex type the E CFF function at the given kinematic settings:
         compton_form_factor_e = complex(compton_form_factor_e_real, compton_form_factor_e_imaginary)
+
+        # (X): Cast to a complex type the Etilde CFF function at the given kinematic settings:
         compton_form_factor_e_tilde = complex(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary)
 
+        # (X): Want to do element-wise operations, so iterate it our for Q^{2}:
         squared_Q_momentum_transfer = np.array([value_of_Q_squared for _ in range(len(np.arange(0, 361, 1.)))])
 
+        # (X): Want to do element-wise operations, so iterate it our for x_{B}:
         x_Bjorken = np.array([value_of_x_Bjorken for _ in range(len(np.arange(0, 361, 1.)))])
 
+        # (X): Want to do element-wise operations, so iterate for t:
         squared_hadronic_momentum_transfer_t = np.array([value_of_hadron_recoil for _ in range(len(np.arange(0, 361, 1.)))])
 
+        # (X): Want to do element-wise operations, so iterate it for the beam energy (k):
         lab_kinematics_k = np.array([value_of_beam_energy for _ in range(len(np.arange(0, 361, 1.)))])
-
+        
+        # (X): This is the *crucial line* --- it says that the azimuthal phi is really why we need element-wise operations:
         azimuthal_phi = np.array([phi for phi in range(len(np.arange(0., 361., 1.)))])
 
+        # (X): Cast the Re[H] number to an NumPy array:
         compton_form_factor_h_real = np.array([kinematic_bin_settings["compton_form_factor_h_real"]])
+
+        # (X): Cast the Im[H] number to an NumPy array:
         compton_form_factor_h_imaginary = np.array([kinematic_bin_settings["compton_form_factor_h_imaginary"]])
 
+        # (X): Cast the Re[Htilde] number to an NumPy array:
         compton_form_factor_h_tilde_real = np.array([kinematic_bin_settings["compton_form_factor_h_tilde_real"]])
+
+        # (X): Cast the Im[Htilde] number to an NumPy array:
         compton_form_factor_h_tilde_imaginary = np.array([kinematic_bin_settings["compton_form_factor_h_tilde_imaginary"]])
 
+        # (X): Cast the Re[E] number to an NumPy array:
         compton_form_factor_e_real = np.array([kinematic_bin_settings["compton_form_factor_e_real"]])
+
+        # (X): Cast the Im[E] number to an NumPy array:
         compton_form_factor_e_imaginary = np.array([kinematic_bin_settings["compton_form_factor_e_imaginary"]])
 
+        # (X): Cast the Re[Etilde] number to an NumPy array:
         compton_form_factor_e_tilde_real = np.array([kinematic_bin_settings["compton_form_factor_e_tilde_real"]])
+
+        # (X): Cast the Im[Etilde] number to an NumPy array:
         compton_form_factor_e_tilde_imaginary = np.array([kinematic_bin_settings["compton_form_factor_e_tilde_imaginary"]])
 
         # (2.X): Calculate Epsilon:
-        epsilon = 0.472935565613
+        # - the value commented out comes from a Desmos comparison
+        # epsilon = 0.472935565613
         epsilon = calculate_kinematics_epsilon(
             squared_Q_momentum_transfer,
             x_Bjorken,
             verbose)
 
         # (2.X): Calculate the Lepton Energy Fraction:
-        lepton_energy_fraction_y = 0.496096170172
+        # - the value commented out comes from a Desmos comparison
+        # lepton_energy_fraction_y = 0.496096170172
         lepton_energy_fraction_y = calculate_kinematics_lepton_energy_fraction_y(
             squared_Q_momentum_transfer,
             lab_kinematics_k,
@@ -189,15 +216,17 @@ def analysis():
             verbose)
         
         # (2.X): Calculate the Skewness Parameter:
-        skewness_parameter = 0.199061888371
+        # - the value commented out comes from a Desmos comparison
+        # skewness_parameter = 0.199061888371
         skewness_parameter = calculate_kinematics_skewness_parameter(
             squared_Q_momentum_transfer,
             x_Bjorken,
             squared_hadronic_momentum_transfer_t,
             verbose)
 
-        # (2.X): Calculate t_minimum
-        squared_hadronic_momentum_transfer_t_minimum = -0.13551822229
+        # (2.X): Calculate t_minimum:
+        # - the value commented out comes from a Desmos comparison
+        # squared_hadronic_momentum_transfer_t_minimum = -0.13551822229
         squared_hadronic_momentum_transfer_t_minimum = calculate_kinematics_t_min(
             squared_Q_momentum_transfer,
             x_Bjorken,
@@ -205,13 +234,16 @@ def analysis():
             verbose)
 
         # (2.X): Calculate t_prime:
+        # - t_prime is determined by t and t_min, so we don't need a hard-coded value
+        # - from Desmos to run this simple function
         t_prime = calculate_kinematics_t_prime(
             squared_hadronic_momentum_transfer_t,
             squared_hadronic_momentum_transfer_t_minimum,
             verbose)
 
         # (2.X): Calculate K_tilde:
-        k_tilde = 0.153827372074
+        # - the value commented out comes from a Desmos comparison
+        # k_tilde = 0.153827372074
         k_tilde = calculate_kinematics_k_tilde(
             squared_Q_momentum_transfer,
             x_Bjorken,
@@ -222,7 +254,8 @@ def analysis():
             verbose)
         
         # (2.X): Calculate K:
-        shorthand_k = 0.0820394232521
+        # - the value commented out comes from a Desmos comparison
+        # shorthand_k = 0.0820394232521
         shorthand_k = calculate_kinematics_k(
             squared_Q_momentum_transfer,
             lepton_energy_fraction_y,
@@ -231,6 +264,8 @@ def analysis():
             verbose)
 
         # (2.X): Calculate k_dot_delta:
+        # - again, this value is derived from earlier ones and
+        # - will be consistent whether calculated in Python or Desmos
         k_dot_delta = calculate_k_dot_delta(
             squared_Q_momentum_transfer,
             x_Bjorken,
@@ -265,7 +300,8 @@ def analysis():
             verbose) 
 
         # (2.X): Calculate the Pauli Form Factor, F2:
-        Pauli_form_factor_F2 = 1.0986689028
+        # - the value commented out comes from a Desmos comparison
+        # Pauli_form_factor_F2 = 1.0986689028
         Pauli_form_factor_F2 = calculate_form_factor_pauli_f2(
             squared_hadronic_momentum_transfer_t,
             electric_form_factor,
@@ -273,14 +309,16 @@ def analysis():
             verbose)
 
         # (2.X): Calculate the Dirac Form Factor, F1:
-        Dirac_form_factor_F1 = 0.68565636208
+        # - the value commented out comes from a Desmos comparison
+        # Dirac_form_factor_F1 = 0.68565636208
         Dirac_form_factor_F1 = calculate_form_factor_dirac_f1(
             magnetic_form_factor,
             Pauli_form_factor_F2,
             verbose)
         
         # (2.X): Calculate the cross-section prefactor:
-        cross_section_prefactor = 3.5309551538e-10
+        # - the value commented out comes from a Desmos comparison
+        # cross_section_prefactor = 3.5309551538e-10
         cross_section_prefactor = calculate_bkm10_cross_section_prefactor(
             squared_Q_momentum_transfer,
             x_Bjorken,
