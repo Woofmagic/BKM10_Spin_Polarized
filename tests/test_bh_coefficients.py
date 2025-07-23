@@ -1,3 +1,11 @@
+"""
+A testing script for the BH (Bethe-Heitler) coefficients, both unpolarized and unpolarized.
+
+Notes:
+    (1): all tests in this script passed on 2025/07/23.
+    (2): TP (transversely-polarized) coefficients not yet implemented.
+"""
+
 import unittest
 
 from coefficients.bh_coefficients.unpolarized.unpolarized_c0_bh import calculate_c_0_unpolarized_bh
@@ -7,8 +15,8 @@ from coefficients.bh_coefficients.unpolarized.unpolarized_c2_bh import calculate
 from coefficients.bh_coefficients.lp_polarized.lp_polarized_c0_bh import calculate_c_0_longitudinally_polarized_bh
 from coefficients.bh_coefficients.lp_polarized.lp_polarized_c1_bh import calculate_c_1_longitudinally_polarized_bh
 
-_TEST_LEPTON_POLARIZATION = 0.5
-_TEST_TARGET_POLARIZATION = 1.0
+_TEST_LEPTON_POLARIZATION = 1.0
+_TEST_TARGET_POLARIZATION = 0.5
 
 _TEST_SQUARED_Q_MOMENTUM_TRANSFER = 1.82
 _TEST_X_BJORKEN = 0.34
@@ -111,7 +119,7 @@ class TestBHCoefficients(unittest.TestCase):
                 _TEST_DIRAC_FORM_FACTOR_F1,
                 _TEST_PAULI_FORM_FACTOR_F2,
                 _TEST_VERBOSE),
-            -1.0718559129262486)
+            1.0209385078703184)
 
     def test_calculate_c1_BH_longitudinally_polarized(self):
         """
@@ -131,4 +139,4 @@ class TestBHCoefficients(unittest.TestCase):
                 _TEST_DIRAC_FORM_FACTOR_F1,
                 _TEST_PAULI_FORM_FACTOR_F2,
                 _TEST_VERBOSE),
-            -0.03281299774352729)
+            -0.04922677820072388)

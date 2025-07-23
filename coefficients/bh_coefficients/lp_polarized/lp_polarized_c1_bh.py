@@ -19,44 +19,30 @@ def calculate_c_1_longitudinally_polarized_bh(
     Pauli_form_factor_F2: float, 
     verbose: bool = False) -> float:
     """
-    Description
-    --------------
+    ## Description
     Equation (39) of the BKM02 Formalism.
 
-    Parameters
-    --------------
-    lepton_helicity: (float)
+    ## Arguments:
+        - lepton_helicity: (float)
+        - target_polarization: (float)
+        - squared_Q_momentum_transfer: (float)
+        - x_Bjorken: (float)
+        - squared_hadronic_momentum_transfer_t: (float)
+        - epsilon: (float)
+        - lepton_energy_fraction_y: (float)
+        - shorthand_K: (float)
+        - Dirac_form_factor_F1: (float)
+        - Pauli_form_factor_F2: (float)
+        - verbose: (bool)
+            Debugging console output.
 
-    target_polarization: (float)
-
-    squared_Q_momentum_transfer: (float)
-
-    x_Bjorken: (float)
-
-    squared_hadronic_momentum_transfer_t: (float)
-
-    epsilon: (float)
-
-    lepton_energy_fraction_y: (float)
-
-    shorthand_K: (float)
-
-    Dirac_form_factor_F1: (float)
-
-    Pauli_form_factor_F2: (float)
-
-    verbose: (bool)
-        Debugging console output.
-
-    Notes
-    --------------
+    ## Notes
     (1): This coefficient is in Equation (39) from
         the BKM02 Formalism, available here:
         https://arxiv.org/pdf/hep-ph/0112108.pdf
     """
 
     if (check_polarization_datatype(lepton_helicity) or check_polarization_datatype(target_polarization)) is False:
-
         raise ValueError("> Received unacceptable polarization type.")
     
     try:
@@ -77,13 +63,13 @@ def calculate_c_1_longitudinally_polarized_bh(
         first_term = ((2. * t_over_four_mp_squared) - (x_Bjorken * (1. - t_over_Q_squared))) * ((1. - x_Bjorken + (x_Bjorken * t_over_Q_squared))) * sum_of_form_factors
 
         # (6): Calculate the second term's bracketed quantity:
-        second_term_bracket_term = 1. + x_Bjorken - ((3.  - 2. * x_Bjorken) * (1. + x_Bjorken * t_over_Q_squared)) - (x_Bjorken**2 * (1. + t_over_Q_squared**2) / t_over_four_mp_squared)
+        second_term_bracket_term = 1. + x_Bjorken - ((3. - 2. * x_Bjorken) * (1. + x_Bjorken * t_over_Q_squared)) - (x_Bjorken**2 * (1. + t_over_Q_squared**2) / t_over_four_mp_squared)
         
         # (7): Calculate the second term in entirety:
         second_term = weighted_sum_of_form_factors * second_term_bracket_term
         
         # (8): Calculate the overall prefactor:
-        prefactor = 8. * float(lepton_helicity) * float(target_polarization) * x_Bjorken * lepton_energy_fraction_y * shorthand_k * np.sqrt(1. + epsilon**2) * sum_of_form_factors / (1. - t_over_four_mp_squared)
+        prefactor = -8. * lepton_helicity * target_polarization * x_Bjorken * lepton_energy_fraction_y * shorthand_k * np.sqrt(1. + epsilon**2) * sum_of_form_factors / (1. - t_over_four_mp_squared)
 
         # (13): Calculate the entire coefficient:
         c1LP_BH = prefactor * (first_term + second_term)

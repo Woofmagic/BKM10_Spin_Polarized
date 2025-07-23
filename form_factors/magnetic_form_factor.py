@@ -4,7 +4,7 @@ from decimal import Decimal
 
 def calculate_form_factor_magnetic(
         electric_form_factor: float,
-        verbose: bool= True) -> float:
+        verbose: bool = False) -> float:
     """
     Description
     --------------

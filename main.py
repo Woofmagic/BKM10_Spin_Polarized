@@ -9,6 +9,8 @@ import sys
 
 import numpy as np
 
+import matplotlib.pyplot as plt
+
 from decimal import Decimal
 
 from statics.strings.static_strings import _DIRECTORY_DATA
@@ -101,26 +103,42 @@ def main(
 
         # (6): Obtain the polarizations -- set to 1 for now:
 
-        # This is BKM lambda
-        numerical_lepton_polarization = 0.5 if lepton_helicity == 'positive' else 0.5 if lepton_helicity == 'negative' else 0.0
+        # (X): Dynamically determine the correct float based on the string argument for lepton helicity:
+        numerical_lepton_polarization = 1.0 if lepton_helicity == 'positive' else -1.0 if lepton_helicity == 'negative' else 0.0
 
-        #This is BKM Lambda:
-        numerical_target_polarization = 1.0 if target_polarization == 'polarized' else 0.0
+        # (X): Same as above except for target polarization:
+        numerical_target_polarization = 0.5 if target_polarization == 'polarized' else 0.0
 
-        print(f"> Obtained lepton helicity to be: {numerical_lepton_polarization}")
-        print(f"> Obtained target polarization to be: {numerical_target_polarization}")
+        if verbose:
+            print(f"> Obtained lepton helicity to be: {numerical_lepton_polarization}")
+
+        if verbose:
+            print(f"> Obtained target polarization to be: {numerical_target_polarization}")
 
         # (7): Obtain the values of the CFFs:
+        
+        # (X.1): Re[H]:
         compton_form_factor_h_real = -0.897
+
+        # (X.2): Im[H]:
         compton_form_factor_h_imaginary = 2.421
 
+        # (X.3): Re[Ht]:
         compton_form_factor_h_tilde_real = 2.444
+
+        # (X.4): Im[Ht]:
         compton_form_factor_h_tilde_imaginary = 1.131
 
+        # (X.5): Re[E]:
         compton_form_factor_e_real = -0.541
+
+        # (X.6): Im[E]:
         compton_form_factor_e_imaginary = 0.903
 
+        # (X.7): Re[Et]:
         compton_form_factor_e_tilde_real = 2.207
+
+        # (X.8): Im[Et]:
         compton_form_factor_e_tilde_imaginary = 5.383
 
         # (8): Attempt to calculate the BKM10 Cross Section:
@@ -142,7 +160,7 @@ def main(
         #     compton_form_factor_e_tilde_imaginary,
         #     verbose)
 
-        calculate_bkm10_cross_section(
+        computed_cross_sections = calculate_bkm10_cross_section(
             numerical_lepton_polarization,
             numerical_target_polarization,
             np.array([1.82 for i in range(len(np.arange(0, 361, 1.)))]),
@@ -154,7 +172,16 @@ def main(
             complex(compton_form_factor_h_tilde_real, compton_form_factor_h_tilde_imaginary),
             complex(compton_form_factor_e_real, compton_form_factor_e_imaginary),
             complex(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary),
+            True,
             verbose)
+
+        plt.figure(figsize = (8, 5))
+        plt.plot(np.arange(0, 361, 1.), computed_cross_sections, marker = ".", linestyle = "none", color = "red", alpha = 0.65)
+        plt.xlabel(r"Azimuthal Angle $\phi$ ($\deg$)")
+        plt.ylabel(r"Differential Cross Section ($nb/GeV^{4}$)")
+        plt.title(r"Cross Section vs. $\phi$ with Fixed Kinematics")
+        plt.grid(True)
+        plt.savefig("cross_section_plot_v1.png", format = "png", dpi = 400)
 
     except KeyboardInterrupt:
 
@@ -192,7 +219,7 @@ if __name__ == "__main__":
         default = '10',
         help = _ARGPARSE_ARGUMENT_DESCRIPTION_FORMALISM_VERSION)
     
-    # (5): Ask, but don't enforce BKM Formalism:
+    # (5): Ask, but don't enforce lepton helicity parameter:
     parser.add_argument(
         '-lep-helicity',
         _ARGPARSE_ARGUMENT_LEPTON_HELICITY,
@@ -202,7 +229,7 @@ if __name__ == "__main__":
         choices = ['positive','none', 'negative'],
         help = _ARGPARSE_ARGUMENT_DESCRIPTION_LEPTON_HELICITY)
     
-    # (5): Ask, but don't enforce BKM Formalism:
+    # (5): Ask, but don't enforce target polarization parameter:
     parser.add_argument(
         '-target-polar',
         _ARGPARSE_ARGUMENT_TARGET_POLARIZATION,
@@ -212,7 +239,7 @@ if __name__ == "__main__":
         choices = ['polarized', 'unpolarized'],
         help = _ARGPARSE_ARGUMENT_DESCRIPTION_TARGET_POLARIZATION)
     
-    # (5): Ask, but don't enforce debugging verbosity:
+    # (6): Ask, but don't enforce verbose output:
     parser.add_argument(
         '-v',
         _ARGPARSE_ARGUMENT_VERBOSE,
@@ -221,10 +248,10 @@ if __name__ == "__main__":
         default = False,
         help = _ARGPARSE_ARGUMENT_DESCRIPTION_VERBOSE)
     
-    # (5): Parse the arguments:
+    # (7): Parse the arguments:
     arguments = parser.parse_args()
 
-    # (6): Run main() with the arguments
+    # (8): Run main() with the arguments
     main(
         kinematics_dataframe_path = arguments.input_datafile,
         kinematic_set_number = arguments.kinematic_set,

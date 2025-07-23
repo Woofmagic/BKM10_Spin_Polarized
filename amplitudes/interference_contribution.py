@@ -1284,7 +1284,7 @@ def calculate_interference_contribution(
         print(f"> c3: {c_3_interference_coefficient}")
         print(f"> s1: {s_1_interference_coefficient[0]}")
         print(f"> s2: {s_2_interference_coefficient[0]}")
-        print(f"> s3: {s_3_interference_coefficient[0]}")
+        # print(f"> s3: {s_3_interference_coefficient[0]}")
         
         plot_interference_contributions(
             azimuthal_phi,

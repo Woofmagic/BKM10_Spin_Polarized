@@ -4,14 +4,14 @@ def calculate_curly_C_unpolarized_interference_V(
     squared_hadronic_momentum_transfer_t: float,
     Dirac_form_factor_F1: float,
     Pauli_form_factor_F2: float,
-    compton_form_factor_h_real_part: float,
-    compton_form_factor_e_real_part: float,
+    compton_form_factor_h: float,
+    compton_form_factor_e: float,
     verbose: bool = False) -> float:
 
     try:
 
         # (1): Calculate the first two terms: weighted CFFs:
-        cff_term = compton_form_factor_h_real_part + compton_form_factor_e_real_part
+        cff_term = compton_form_factor_h + compton_form_factor_e
 
         # (2): Calculate the next term:
         second_term = x_Bjorken * (Dirac_form_factor_F1 + Pauli_form_factor_F2) / (2. - x_Bjorken + (x_Bjorken * squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer))
