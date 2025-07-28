@@ -75,7 +75,7 @@ class TestBHCoefficients(unittest.TestCase):
     def test_calculate_c2_BH_unpolarized(self):
         """
         ## Description: Test c_{2, unp}^{BH}
-        This is the first coefficient in the BH mode expansion.
+        This is the a coefficient in the BH mode expansion.
         """
         self.assertAlmostEqual(
             calculate_c_2_unpolarized_bh(
@@ -87,10 +87,28 @@ class TestBHCoefficients(unittest.TestCase):
                 _TEST_VERBOSE),
             -0.03281299774352729)
         
+    def test_calculate_s1_BH_unpolarized(self):
+        """
+        ## Description: Test s_{1, unp}^{BH}
+        This is a coefficient in the BH mode expansion.
+        """
+        self.assertAlmostEqual(
+            calculate_c_1_unpolarized_bh(
+                _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
+                _TEST_X_BJORKEN,
+                _TEST_SQUARED_HADRONIC_MOMENTUM_TRANSFER,
+                _TEST_EPSILON,
+                _TEST_LEPTON_ENERGY_FRACTION,
+                _TEST_SHORTHAND_K,
+                _TEST_DIRAC_FORM_FACTOR_F1,
+                _TEST_PAULI_FORM_FACTOR_F2,
+                _TEST_VERBOSE),
+            -1.0718559129262486)
+        
     def test_calculate_c0_BH_longitudinally_polarized(self):
         """
         ## Description: Test c_{0, LP}^{BH}
-        This is the first coefficient in the BH mode expansion for LP target.
+        This is the a coefficient in the BH mode expansion for LP target.
         """
         self.assertAlmostEqual(
             calculate_c_0_longitudinally_polarized_bh(

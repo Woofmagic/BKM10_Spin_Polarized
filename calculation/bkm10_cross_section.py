@@ -150,8 +150,6 @@ def calculate_bkm10_cross_section(
             The four-fold differential cross section.
 
     ## Notes:
-
-    ## Examples:
     """
 
     try:
@@ -264,32 +262,73 @@ def calculate_bkm10_cross_section(
         
         # (16): Compute the BH Amplitude Squared
         bh_amplitude_squared = 0.
-        # bh_amplitude_squared = calculate_bh_amplitude_squared(
-        #     lepton_helicity,
-        #     target_polarization,
-        #     squared_Q_momentum_transfer,
-        #     x_Bjorken,
-        #     squared_hadronic_momentum_transfer_t,
-        #     azimuthal_phi,
-        #     epsilon,
-        #     lepton_energy_fraction_y,
-        #     shorthand_k,
-        #     lepton_propagator_p1,
-        #     lepton_propagator_p2,
-        #     Dirac_form_factor_F1,
-        #     Pauli_form_factor_F2,
-        #     verbose)
-
-        # (17): Compute the DVCS Amplitude Squared
-        dvcs_amplitude_squared = 0.
 
         if lepton_helicity == 0.0:
 
             if verbose:
                 print(f"> Now evaluating unpolarized DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
+            
+            bh_amplitude_squared = (0.5 * (calculate_bh_amplitude_squared(
+                1.0,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                azimuthal_phi,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                lepton_propagator_p1,
+                lepton_propagator_p2,
+                Dirac_form_factor_F1,
+                Pauli_form_factor_F2,
+                verbose) + calculate_bh_amplitude_squared(
+                -1.0,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                azimuthal_phi,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                lepton_propagator_p1,
+                lepton_propagator_p2,
+                Dirac_form_factor_F1,
+                Pauli_form_factor_F2,
+                verbose)))
 
-        #     dvcs_amplitude_squared = 0.5 * (calculate_dvcs_amplitude_squared(
-        #     0.5,
+        else:
+
+            if verbose:
+                print(f"> Now evaluating polarized DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
+
+            bh_amplitude_squared = calculate_bh_amplitude_squared(
+                lepton_helicity,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                azimuthal_phi,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                lepton_propagator_p1,
+                lepton_propagator_p2,
+                Dirac_form_factor_F1,
+                Pauli_form_factor_F2,
+                verbose)
+
+        # (17): Compute the DVCS Amplitude Squared
+        dvcs_amplitude_squared = 0.
+
+        # if lepton_helicity == 0.0:
+
+        #     if verbose:
+        #         print(f"> Now evaluating unpolarized DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
+
+        #     dvcs_amplitude_squared = (0.5 * (calculate_dvcs_amplitude_squared(
+        #     1.0,
         #     target_polarization,
         #     squared_Q_momentum_transfer,
         #     x_Bjorken,
@@ -305,7 +344,7 @@ def calculate_bkm10_cross_section(
         #     compton_form_factor_e_tilde,
         #     use_ww,
         #     verbose) + calculate_dvcs_amplitude_squared(
-        #     0.5,
+        #     1.0,
         #     target_polarization,
         #     squared_Q_momentum_transfer,
         #     x_Bjorken,
@@ -320,7 +359,7 @@ def calculate_bkm10_cross_section(
         #     compton_form_factor_e,
         #     compton_form_factor_e_tilde,
         #     use_ww,
-        #     verbose))
+        #     verbose)))
 
         # else:
 
