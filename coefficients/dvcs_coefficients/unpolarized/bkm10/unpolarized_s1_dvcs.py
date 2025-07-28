@@ -45,8 +45,6 @@ def calculate_s_1_unpolarized_dvcs(
             compton_form_factor_e_tilde.conjugate(),
         )
 
-        print(curlyC_unp_DVCS[0])
-
         # (3): Calculate the entire coefficient:
         s1_dvcs_unpolarized_coefficient = prefactor * curlyC_unp_DVCS.imag
         

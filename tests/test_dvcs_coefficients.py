@@ -1,3 +1,11 @@
+"""
+## Description:
+A testing script for the pure DVCS (Deeply-virtual Compton scattering) coefficients, both unpolarized and unpolarized.
+
+## Notes:
+    (1): all tests in this script passed on 2025/07/23.
+"""
+
 import unittest
 
 from coefficients.dvcs_coefficients.unpolarized.bkm10.unpolarized_curlyC_dvcs import calculate_curly_c_unpolarized_dvcs
@@ -12,8 +20,8 @@ from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_s1_dvcs impo
 
 from form_factors.effective_cffs import compute_cff_effective
 
-_TEST_LEPTON_POLARIZATION = 0.5
-_TEST_TARGET_POLARIZATION = 1.0
+_TEST_LEPTON_POLARIZATION = 1.0
+_TEST_TARGET_POLARIZATION = 0.5
 
 _TEST_SQUARED_Q_MOMENTUM_TRANSFER = 1.82
 _TEST_X_BJORKEN = 0.34
@@ -24,8 +32,6 @@ _TEST_LEPTON_ENERGY_FRACTION = 0.49609612355928445
 _TEST_K_TILDE = 0.1592415651944438
 _TEST_SHORTHAND_K = 0.08492693191323883
 _TEST_T_PRIME = -0.034481755270847486
-
-_TEST_VERBOSE = False
 
 _TEST_SKEWNESS = 0.19906188837146524
 
@@ -50,7 +56,8 @@ class TestDVCSCoefficients(unittest.TestCase):
 
     def test_calculate_curly_c_unpolarized_dvcs_normal_cffs(self):
         """
-        ## Description: Test curlyC(F, F*)
+        ## Description:
+        Test curlyC(F, F*)
         This is curly C DVCS for the unpolarized case. Please note what is being passed in as arguments!
         Notice that we're evaluating CurlyC(F, F*), not any effective stuff!
         """
@@ -73,7 +80,8 @@ class TestDVCSCoefficients(unittest.TestCase):
 
     def test_calculate_curly_c_unpolarized_dvcs_effective_cffs_ww_off(self):
         """
-        ## Description: Test curlyC(F_eff, F*_eff) *without* the WW Relations!
+        ## Description:
+        Test curlyC(F_eff, F*_eff) *without* the WW Relations!
         This is curly C DVCS for the unpolarized case. Please note what is being passed in as arguments!
         Notice that we're evaluating CurlyC(Feff, Feff*).
         """
@@ -91,12 +99,13 @@ class TestDVCSCoefficients(unittest.TestCase):
                 compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_H_TILDE.conjugate(), use_ww = False),
                 compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_E.conjugate(), use_ww = False),
                 compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_E_TILDE.conjugate(), use_ww = False),
-                _TEST_VERBOSE), 
+                _TEST_VERBOSE),
             complex(1.485875835353519, 7.91929098021258e-20))
         
     def test_calculate_curly_c_unpolarized_dvcs_effective_cffs_ww_on(self):
         """
-        ## Description: Test curlyC(F_eff, F*_eff) *using* the WW Relations!
+        ## Description:
+        Test curlyC(F_eff, F*_eff) *using* the WW Relations!
         This is curly C DVCS for the unpolarized case. Please note what is being passed in as arguments!
         Notice that we're evaluating CurlyC(Feff, Feff*).
         """
@@ -119,7 +128,8 @@ class TestDVCSCoefficients(unittest.TestCase):
 
     def test_calculate_curly_c_unpolarized_dvcs_mixed_cffs_ww_off(self):
         """
-        ## Description: Test curlyC(F_eff, F*) *without* the WW Relations!
+        ## Description:
+        Test curlyC(F_eff, F*) *without* the WW Relations!
         This is curly C DVCS for the unpolarized case. Please note what is being passed in as arguments!
         Notice that we're evaluating CurlyC(Feff, F*).
 
@@ -151,8 +161,9 @@ class TestDVCSCoefficients(unittest.TestCase):
         
     def test_calculate_curly_c_unpolarized_dvcs_mixed_cffs_ww_on(self):
         """
-        ## Description: Test curlyC(F_eff, F*) *using* the WW Relations!
-        This is curly C DVCS for the unpolarized case. Please note what is being passed in as arguments!
+        ## Description:
+        Test curlyC(F_eff, F*) *using* the WW Relations!
+        This is curly C VCS for the unpolarized case. Please note what is being passed in as arguments!
         Notice that we're evaluating CurlyC(Feff, F*).
 
         ## Arguments:
@@ -183,7 +194,8 @@ class TestDVCSCoefficients(unittest.TestCase):
         
     def test_calculate_c_0_unpolarized_dvcs_no_ww(self):
         """
-        ## Description: Testing c_{0, unp}^{DVCS} *without* WW relations.
+        ## Description:
+        Testing c_{0, unp}^{DVCS} *without* WW relations.
         This is the first c coefficient that enters into the DVCS mode expansions, c_{0, unp}^{DVCS}.
         """
         self.assertAlmostEqual(
@@ -205,7 +217,8 @@ class TestDVCSCoefficients(unittest.TestCase):
         
     def test_calculate_c_0_unpolarized_dvcs_ww_on(self):
         """
-        ## Description: Testing c_{0, unp}^{DVCS} *using* WW relations.
+        ## Description:
+        Testing c_{0, unp}^{DVCS} *using* WW relations.
         This is the first c coefficient that enters into the DVCS mode expansions, c_{0, unp}^{DVCS}.
         """
         self.assertAlmostEqual(
@@ -227,7 +240,8 @@ class TestDVCSCoefficients(unittest.TestCase):
         
     def test_calculate_c_1_unpolarized_dvcs_no_ww(self):
         """
-        ## Description: Testing c_{1, unp}^{DVCS} *without* the WW relations.
+        ## Description:
+        Testing c_{1, unp}^{DVCS} *without* the WW relations.
         This is the second c coefficient that enters into the DVCS mode expansions, c_{1, unp}^{DVCS}.
         """
         self.assertAlmostEqual(
@@ -249,7 +263,8 @@ class TestDVCSCoefficients(unittest.TestCase):
         
     def test_calculate_c_1_unpolarized_dvcs_ww_on(self):
         """
-        ## Description: Testing c_{1, unp}^{DVCS} *using* the WW relations.
+        ## Description:
+        Testing c_{1, unp}^{DVCS} *using* the WW relations.
         This is the second c coefficient that enters into the DVCS mode expansions, c_{1, unp}^{DVCS}.
         """
         self.assertAlmostEqual(
@@ -271,7 +286,8 @@ class TestDVCSCoefficients(unittest.TestCase):
     
     def test_calculate_s_1_unpolarized_dvcs_no_ww(self):
         """
-        ## Description: Testing s_{1, unp}^{DVCS} *without* the WW relations.
+        ## Description:
+        Testing s_{1, unp}^{DVCS} *without* the WW relations.
         This is the first s coefficient that enters into the DVCS mode expansions, s_{1, unp}^{DVCS}.
         """
         self.assertAlmostEqual(
@@ -294,7 +310,8 @@ class TestDVCSCoefficients(unittest.TestCase):
         
     def test_calculate_s_1_unpolarized_dvcs_ww_on(self):
         """
-        ## Description: Testing s_{1, unp}^{DVCS} *using* the WW relations.
+        ## Description:
+        Testing s_{1, unp}^{DVCS} *using* the WW relations.
         This is the first s coefficient that enters into the DVCS mode expansions, s_{1, unp}^{DVCS}.
         """
         self.assertAlmostEqual(
@@ -317,7 +334,8 @@ class TestDVCSCoefficients(unittest.TestCase):
 
     def test_calculate_curly_c_longitudinally_polarized_dvcs_normal_cffs(self):
         """
-        ## Description: Test curlyC_{LP}}(F, F^{*})
+        ## Description:
+        Test curlyC_{LP}}(F, F^{*})
         This is curly C DVCS for the LP case. Please note what is being passed in as arguments!
         Notice that we're evaluating CurlyC(F, F*), not any effective stuff!
         """
@@ -340,7 +358,8 @@ class TestDVCSCoefficients(unittest.TestCase):
     
     def test_calculate_curly_c_longitudinally_polarized_dvcs_effective_cffs_no_ww(self):
         """
-        ## Description: Test curlyC_{LP}}(F_{eff}, F^{*}) *without* the WW relations.
+        ## Description:
+        Test curlyC_{LP}}(F_{eff}, F^{*}) *without* the WW relations.
         This is curly C DVCS for the LP case. Please note what is being passed in as arguments!
         Notice that we're evaluating CurlyC(F_{eff}, F*), so there's an asymmetry there!
         """
@@ -363,7 +382,8 @@ class TestDVCSCoefficients(unittest.TestCase):
         
     def test_calculate_curly_c_longitudinally_polarized_dvcs_effective_cffs_ww_on(self):
         """
-        ## Description: Test curlyC_{LP}}(F_{eff}, F^{*}) *using* the WW relations.
+        ## Description:
+        Test curlyC_{LP}}(F_{eff}, F^{*}) *using* the WW relations.
         This is curly C DVCS for the LP case. Please note what is being passed in as arguments!
         Notice that we're evaluating CurlyC(F_{eff}, F*), so there's an asymmetry there!
         """
@@ -386,7 +406,8 @@ class TestDVCSCoefficients(unittest.TestCase):
     
     def test_calculate_c_0_longitudinally_polarized_dvcs_no_ww(self):
         """
-        ## Description: Test the function that computes c_{0, LP}^{DVCS} *without* WW relations.
+        ## Description:
+        Test the function that computes c_{0, LP}^{DVCS} *without* WW relations.
         This is the first c coefficient that enters into the DVCS mode expansions, c_{0, LP}^{DVCS}.
 
         ## Arguments:
@@ -417,7 +438,8 @@ class TestDVCSCoefficients(unittest.TestCase):
         
     def test_calculate_c_0_longitudinally_polarized_dvcs_ww_on(self):
         """
-        ## Description: Test the function that computes c_{0, LP}^{DVCS} *using* the WW relations.
+        ## Description:
+        Test the function that computes c_{0, LP}^{DVCS} *using* the WW relations.
         This is the first c coefficient that enters into the DVCS mode expansions, c_{0, LP}^{DVCS}.
 
         ## Arguments:
@@ -448,7 +470,8 @@ class TestDVCSCoefficients(unittest.TestCase):
     
     def test_calculate_c_1_longitudinally_polarized_dvcs_no_ww(self):
         """
-        ## Description: Test the function computing c_{1, LP}^{DVCS} *without* WW relations.
+        ## Description:
+        Test the function computing c_{1, LP}^{DVCS} *without* WW relations.
         This is the second c coefficient that enters into the DVCS mode expansions, c_{1, LP}^{DVCS}.
         """
         self.assertAlmostEqual(
@@ -472,7 +495,8 @@ class TestDVCSCoefficients(unittest.TestCase):
         
     def test_calculate_c_1_longitudinally_polarized_dvcs_ww_on(self):
         """
-        ## Description: Test the function computing c_{1, LP}^{DVCS} *using* the WW relations.
+        ## Description:
+        Test the function computing c_{1, LP}^{DVCS} *using* the WW relations.
         This is the second c coefficient that enters into the DVCS mode expansions, c_{1, LP}^{DVCS}.
 
         ## Arguments:
@@ -505,7 +529,8 @@ class TestDVCSCoefficients(unittest.TestCase):
     
     def test_calculate_s_1_longitudinally_polarized_dvcs_no_ww(self):
         """
-        ## Description: Test the function computing s_{1, LP}^{DVCS} *without* the WW relations.
+        ## Description:
+        Test the function computing s_{1, LP}^{DVCS} *without* the WW relations.
         This is the third coefficient (first s-coefficient) that enters into the DVCS mode expansions, s_{1, LP}^{DVCS}
         """
         self.assertAlmostEqual(
@@ -528,7 +553,8 @@ class TestDVCSCoefficients(unittest.TestCase):
         
     def test_calculate_s_1_longitudinally_polarized_dvcs_ww_on(self):
         """
-        ## Description: Test the function computing s_{1, LP}^{DVCS} *using* the WW relations.
+        ## Description:
+        Test the function computing s_{1, LP}^{DVCS} *using* the WW relations.
         This is the third coefficient (first s-coefficient) that enters into the DVCS mode expansions, s_{1, LP}^{DVCS}
         """
         self.assertAlmostEqual(
