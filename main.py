@@ -1,3 +1,10 @@
+"""
+This script is the main one that executes the major analysis program that
+we wrote. It is designed to take in kinematic settings and some CFF data and
+return what the four-fold differential cross-section ought to be according to
+the BKM10 formalism.
+"""
+
 # Native Library | argparse
 import argparse
 
@@ -7,11 +14,17 @@ import os
 # Native Library | sys
 import sys
 
+# 3rd Party Library | NumPy
 import numpy as np
 
+# 3rd Party Library | Matplotlib
 import matplotlib.pyplot as plt
 
-from decimal import Decimal
+# utilities > data_handling > pandas_reading > read_csv_file_with_pandas
+from utilities.data_handling.pandas_reading import read_csv_file_with_pandas
+
+# utilities > directories > find_directory
+from utilities.directories.searching_directories import find_directory
 
 from statics.strings.static_strings import _DIRECTORY_DATA
 
@@ -51,12 +64,6 @@ def main(
     target_polarization: str,
     verbose: bool = False,
     debugging: bool = False):
-
-    # utilities > data_handling > pandas_reading > read_csv_file_with_pandas
-    from utilities.data_handling.pandas_reading import read_csv_file_with_pandas
-
-    # utilities > directories > find_directory
-    from utilities.directories.searching_directories import find_directory
 
     try:
         
@@ -174,9 +181,18 @@ def main(
             complex(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary),
             True,
             verbose)
+        
+        print(computed_cross_sections)
 
         plt.figure(figsize = (8, 5))
-        plt.plot(np.arange(0, 361, 1.), computed_cross_sections, marker = ".", linestyle = "none", color = "red", alpha = 0.65)
+        plt.plot(
+            np.arange(0, 361, 1.),
+            computed_cross_sections,
+            marker = ".",
+            linestyle = "none",
+            color = "red",
+            alpha = 0.65)
+        
         plt.xlabel(r"Azimuthal Angle $\phi$ ($\deg$)")
         plt.ylabel(r"Differential Cross Section ($nb/GeV^{4}$)")
         plt.title(r"Cross Section vs. $\phi$ with Fixed Kinematics")

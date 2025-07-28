@@ -376,7 +376,7 @@ def calculate_bkm10_cross_section(
                 compton_form_factor_e,
                 compton_form_factor_e_tilde,
                 use_ww,
-                verbose) + 
+                verbose) +
                 calculate_interference_contribution(
                 -1.0,
                 target_polarization,
