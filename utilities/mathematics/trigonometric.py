@@ -1,16 +1,16 @@
 from decimal import getcontext
 
-def cos(x):
+def np.cos(x):
     """Return the cosine of x as measured in radians.
 
     The Taylor series approximation works best for a small value of x.
     For larger values, first compute x = x % (2 * pi).
 
-    >>> print(cos(Decimal('Decimal("0.5")')))
+    >>> print(np.cos(Decimal('0.5')))
     0.8775825618903727161162815826
-    >>> print(cos(Decimal("0.5")))
+    >>> print(np.cos(0.5))
     0.87758256189
-    >>> print(cos(Decimal("0.5")+0j))
+    >>> print(np.cos(0.5+0j))
     (0.87758256189+0j)
 
     """
@@ -27,17 +27,17 @@ def cos(x):
     return +s
 
 
-def sin(x):
+def np.sin(x):
     """Return the sine of x as measured in radians.
 
     The Taylor series approximation works best for a small value of x.
     For larger values, first compute x = x % (2 * pi).
 
-    >>> print(sin(Decimal('Decimal("0.5")')))
+    >>> print(np.sin(Decimal('0.5')))
     0.4794255386042030002732879352
-    >>> print(sin(Decimal("0.5")))
+    >>> print(np.sin(0.5))
     0.479425538604
-    >>> print(sin(Decimal("0.5")+0j))
+    >>> print(np.sin(0.5+0j))
     (0.479425538604+0j)
 
     """

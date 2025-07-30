@@ -24,7 +24,7 @@ def calculate_lepton_propagator_p1(
     --------------
     """
     try:
-        p1_propagator = Decimal("1.") + (Decimal("2.") * (k_dot_delta / squared_Q_momentum_transfer))
+        p1_propagator = 1. + (2. * (k_dot_delta / squared_Q_momentum_transfer))
         
         if verbose:
             print(f"> Computed the P1 propagator to be:\n{p1_propagator}")
@@ -33,4 +33,4 @@ def calculate_lepton_propagator_p1(
     
     except Exception as E:
         print(f"> Error in computing p1 propagator:\n> {E}")
-        return Decimal("0.0")
+        return 0.

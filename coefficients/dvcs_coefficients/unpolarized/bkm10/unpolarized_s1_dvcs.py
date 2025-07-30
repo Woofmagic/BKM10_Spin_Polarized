@@ -27,7 +27,7 @@ def calculate_s_1_unpolarized_dvcs(
     try:
 
         # (1): Calculate the first term's prefactor:
-        prefactor = Decimal("8. ") * shorthand_k * lepton_helicity * lepton_energy_fraction_y * (Decimal("1.") + epsilon**2).sqrt() / ((Decimal("2.") - x_Bjorken) * (Decimal("1.") + epsilon**2))
+        prefactor = -8. * shorthand_k * lepton_helicity * lepton_energy_fraction_y * np.sqrt(1. + epsilon**2) / ((2. - x_Bjorken) * (1. + epsilon**2))
 
         # (2): Calculate the second terms' Curly C contribution:
         curlyC_unp_DVCS = calculate_curly_c_unpolarized_dvcs(
@@ -43,10 +43,10 @@ def calculate_s_1_unpolarized_dvcs(
             compton_form_factor_h_tilde.conjugate(),
             compton_form_factor_e.conjugate(),
             compton_form_factor_e_tilde.conjugate(),
-        ).imag
+        )
 
         # (3): Calculate the entire coefficient:
-        s1_dvcs_unpolarized_coefficient = prefactor * curlyC_unp_DVCS
+        s1_dvcs_unpolarized_coefficient = prefactor * curlyC_unp_DVCS.imag
         
         if verbose:
             print(f"> Calculated s1_dvcs_unpolarized_coefficient to be: {s1_dvcs_unpolarized_coefficient}")
@@ -55,4 +55,4 @@ def calculate_s_1_unpolarized_dvcs(
     
     except Exception as E:
         print(f"> Error in computing s1_dvcs_unpolarized_coefficient:\n> {E}")
-        return Decimal("0.0")
+        return 0.

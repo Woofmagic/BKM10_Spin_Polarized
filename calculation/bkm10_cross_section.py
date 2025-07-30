@@ -1,19 +1,16 @@
-
-
-##################
-# HELPER MODULES #
-##################
+"""
+This module contains the *major function* that computes the entire four-fold
+differential cross-section according to the BKM10 formulation.
+"""
 
 # Helper Module | Convert GeV^{-6} to nb/GeV^{4}
 from utilities.mathematics.math_units import convert_to_nb_over_GeV4
 
 from calculation.plot_results import plot_cross_section
-from calculation.plot_results import plot_beam_spin_asymmetry
-from calculation.plot_results import plot_coefficient_contributions
 
-######################
-# DERIVED KINEMATICS #
-######################
+from calculation.plot_results import plot_beam_spin_asymmetry
+
+from calculation.plot_results import plot_coefficient_contributions
 
 # Derived Kinematics | Epsilon | ε
 from derived_kinematics.epsilon import calculate_kinematics_epsilon
@@ -36,7 +33,7 @@ from derived_kinematics.k_tilde import calculate_kinematics_k_tilde
 # Derived Kinematics | K | K
 from derived_kinematics.shorthand_K import calculate_kinematics_k
 
-# Derived Kinematics | k dot Delta | k ⋅ Δ 
+# Derived Kinematics | k dot Delta | k ⋅ Δ
 from derived_kinematics.k_dot_delta import calculate_k_dot_delta
 
 # Derived Kinematics | Lepton Propagator P1 | P_{1}(φ)
@@ -44,10 +41,6 @@ from derived_kinematics.lepton_propagator_p1 import calculate_lepton_propagator_
 
 # Derived Kinematics | Lepton Propagator P2 | P_{1}(φ)
 from derived_kinematics.lepton_propagator_p2 import calculate_lepton_propagator_p2
-
-################
-# FORM FACTORS #
-################
 
 # Form Factors | Electric Form Factor | F_{E}
 from form_factors.electric_form_factor import calculate_form_factor_electric
@@ -61,10 +54,6 @@ from form_factors.pauli_form_factor import calculate_form_factor_pauli_f2
 # Form Factors | Dirac Form Factor | F_{1}
 from form_factors.dirac_form_factor import calculate_form_factor_dirac_f1
 
-###########################
-# AMPLITUDE CONTRIBUTIONS #
-###########################
-
 # Amplitude Contributions | BKM10 Prefactor
 from amplitudes.cross_section_prefactor import calculate_bkm10_cross_section_prefactor
 
@@ -77,12 +66,10 @@ from amplitudes.dvcs_squared_contribution import calculate_dvcs_amplitude_square
 # Amplitude Contributions | Interference | I
 from amplitudes.interference_contribution import calculate_interference_contribution
 
-import numpy as np
-
 def calculate_bkm10_cross_section(
     lepton_helicity: float,
     target_polarization: float,
-    squared_Q_momentum_transfer: float, 
+    squared_Q_momentum_transfer: float,
     x_Bjorken: float,
     squared_hadronic_momentum_transfer_t: float,
     lab_kinematics_k: float,
@@ -94,8 +81,6 @@ def calculate_bkm10_cross_section(
     use_ww: bool = False,
     verbose: bool = False) -> float:
     """
-    # Title: `calculate_bkm10_cross_section`
-
     ## Description:
     Numerically evaluates the four-fold cross-section for the electroproduction
     of photons.
@@ -160,13 +145,11 @@ def calculate_bkm10_cross_section(
 
     ## Returns:
     
-        bkm10_cross_section_in_nb_GeV4: (float)
+        bkm10_cross_section_in_nb_gev4: (float)
 
             The four-fold differential cross section.
 
     ## Notes:
-
-    ## Examples:
     """
 
     try:
@@ -242,19 +225,19 @@ def calculate_bkm10_cross_section(
         # (10): Calculate Lepton Propagator 2:
         lepton_propagator_p2 = calculate_lepton_propagator_p2(
             squared_Q_momentum_transfer,
-            squared_hadronic_momentum_transfer_t,
+            squared_hadronic_momentum_transfer_t, 
             k_dot_delta,
             verbose)
         
         # (11): Calculate the Electric Form Factor
         electric_form_factor = calculate_form_factor_electric(
-            squared_hadronic_momentum_transfer_t, 
+            squared_hadronic_momentum_transfer_t,
             verbose)
 
         # (12): Calculate the Magnetic Form Factor
         magnetic_form_factor = calculate_form_factor_magnetic(
-            electric_form_factor, 
-            verbose) 
+            electric_form_factor,
+            verbose)
 
         # (13): Calculate the Pauli Form Factor, F2:
         Pauli_form_factor_F2 = calculate_form_factor_pauli_f2(
@@ -279,140 +262,188 @@ def calculate_bkm10_cross_section(
         
         # (16): Compute the BH Amplitude Squared
         bh_amplitude_squared = 0.
-        # bh_amplitude_squared = calculate_bh_amplitude_squared(
-        #     lepton_helicity,
-        #     target_polarization,
-        #     squared_Q_momentum_transfer,
-        #     x_Bjorken,
-        #     squared_hadronic_momentum_transfer_t,
-        #     azimuthal_phi,
-        #     epsilon,
-        #     lepton_energy_fraction_y,
-        #     shorthand_k,
-        #     lepton_propagator_p1,
-        #     lepton_propagator_p2,
-        #     Dirac_form_factor_F1,
-        #     Pauli_form_factor_F2,
-        #     verbose)
+
+        if lepton_helicity == 0.0:
+
+            if verbose:
+                print(f"> Now evaluating unpolarized DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
+            
+            bh_amplitude_squared = (0.5 * (calculate_bh_amplitude_squared(
+                1.0,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                azimuthal_phi,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                lepton_propagator_p1,
+                lepton_propagator_p2,
+                Dirac_form_factor_F1,
+                Pauli_form_factor_F2,
+                verbose) + calculate_bh_amplitude_squared(
+                -1.0,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                azimuthal_phi,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                lepton_propagator_p1,
+                lepton_propagator_p2,
+                Dirac_form_factor_F1,
+                Pauli_form_factor_F2,
+                verbose)))
+
+        else:
+
+            if verbose:
+                print(f"> Now evaluating polarized DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
+
+            bh_amplitude_squared = calculate_bh_amplitude_squared(
+                lepton_helicity,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                azimuthal_phi,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                lepton_propagator_p1,
+                lepton_propagator_p2,
+                Dirac_form_factor_F1,
+                Pauli_form_factor_F2,
+                verbose)
 
         # (17): Compute the DVCS Amplitude Squared
         dvcs_amplitude_squared = 0.
 
-        if lepton_helicity == 0.0: 
+        if lepton_helicity == 0.0:
 
             if verbose:
                 print(f"> Now evaluating unpolarized DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
 
-        #     dvcs_amplitude_squared = Decimal("0.5") * (calculate_dvcs_amplitude_squared(
-        #     Decimal("0.5"),
-        #     target_polarization,
-        #     squared_Q_momentum_transfer,
-        #     x_Bjorken,
-        #     squared_hadronic_momentum_transfer_t,
-        #     azimuthal_phi,
-        #     epsilon,
-        #     lepton_energy_fraction_y,
-        #     skewness_parameter,
-        #     shorthand_k,
-        #     compton_form_factor_h,
-        #     compton_form_factor_h_tilde,
-        #     compton_form_factor_e,
-        #     compton_form_factor_e_tilde,
-        #     use_ww,
-        #     verbose) + calculate_dvcs_amplitude_squared(
-        #     Decimal("0.5"),
-        #     target_polarization,
-        #     squared_Q_momentum_transfer,
-        #     x_Bjorken,
-        #     squared_hadronic_momentum_transfer_t,
-        #     azimuthal_phi,
-        #     epsilon,
-        #     lepton_energy_fraction_y,
-        #     skewness_parameter,
-        #     shorthand_k,
-        #     compton_form_factor_h,
-        #     compton_form_factor_h_tilde,
-        #     compton_form_factor_e,
-        #     compton_form_factor_e_tilde,
-        #     use_ww,
-        #     verbose))
-
-        # else:
-
-        #     if verbose:
-        #         print(f"> Now evaluating polarized DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
-
-        #     dvcs_amplitude_squared = calculate_dvcs_amplitude_squared(
-        #     lepton_helicity,
-        #     target_polarization,
-        #     squared_Q_momentum_transfer,
-        #     x_Bjorken,
-        #     squared_hadronic_momentum_transfer_t,
-        #     azimuthal_phi,
-        #     epsilon,
-        #     lepton_energy_fraction_y,
-        #     skewness_parameter,
-        #     shorthand_k,
-        #     compton_form_factor_h,
-        #     compton_form_factor_h_tilde,
-        #     compton_form_factor_e,
-        #     compton_form_factor_e_tilde,
-        #     use_ww,
-        #     verbose)
-
-        # (18): Compute the BH Amplitude Squared
-        interference_contribution = 0.
-
-        if lepton_helicity == 0.0: 
-
-            interference_contribution = Decimal("0.5") * (calculate_interference_contribution(
-                Decimal("0.5"),
-                target_polarization,
-                squared_Q_momentum_transfer,
-                x_Bjorken,
-                squared_hadronic_momentum_transfer_t,
-                azimuthal_phi,
-                epsilon,
-                lepton_energy_fraction_y,
-                skewness_parameter,
-                t_prime,
-                k_tilde,
-                shorthand_k,
-                lepton_propagator_p1,
-                lepton_propagator_p2,
-                Dirac_form_factor_F1,
-                Pauli_form_factor_F2,
-                compton_form_factor_h,
-                compton_form_factor_h_tilde,
-                compton_form_factor_e,
-                compton_form_factor_e_tilde,
-                use_ww,
-                verbose) + calculate_interference_contribution(
-                Decimal("0.5"),
-                target_polarization,
-                squared_Q_momentum_transfer,
-                x_Bjorken,
-                squared_hadronic_momentum_transfer_t,
-                azimuthal_phi,
-                epsilon,
-                lepton_energy_fraction_y,
-                skewness_parameter,
-                t_prime,
-                k_tilde,
-                shorthand_k,
-                lepton_propagator_p1,
-                lepton_propagator_p2,
-                Dirac_form_factor_F1,
-                Pauli_form_factor_F2,
-                compton_form_factor_h,
-                compton_form_factor_h_tilde,
-                compton_form_factor_e,
-                compton_form_factor_e_tilde,
-                use_ww,
-                verbose))
+            dvcs_amplitude_squared = (0.5 * (calculate_dvcs_amplitude_squared(
+            1.0,
+            target_polarization,
+            squared_Q_momentum_transfer,
+            x_Bjorken,
+            squared_hadronic_momentum_transfer_t,
+            azimuthal_phi,
+            epsilon,
+            lepton_energy_fraction_y,
+            skewness_parameter,
+            shorthand_k,
+            compton_form_factor_h,
+            compton_form_factor_h_tilde,
+            compton_form_factor_e,
+            compton_form_factor_e_tilde,
+            use_ww,
+            verbose) + calculate_dvcs_amplitude_squared(
+            1.0,
+            target_polarization,
+            squared_Q_momentum_transfer,
+            x_Bjorken,
+            squared_hadronic_momentum_transfer_t,
+            azimuthal_phi,
+            epsilon,
+            lepton_energy_fraction_y,
+            skewness_parameter,
+            shorthand_k,
+            compton_form_factor_h,
+            compton_form_factor_h_tilde,
+            compton_form_factor_e,
+            compton_form_factor_e_tilde,
+            use_ww,
+            verbose)))
 
         else:
 
+            if verbose:
+                print(f"> Now evaluating polarized DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
+
+            dvcs_amplitude_squared = calculate_dvcs_amplitude_squared(
+            lepton_helicity,
+            target_polarization,
+            squared_Q_momentum_transfer,
+            x_Bjorken,
+            squared_hadronic_momentum_transfer_t,
+            azimuthal_phi,
+            epsilon,
+            lepton_energy_fraction_y,
+            skewness_parameter,
+            shorthand_k,
+            compton_form_factor_h,
+            compton_form_factor_h_tilde,
+            compton_form_factor_e,
+            compton_form_factor_e_tilde,
+            use_ww,
+            verbose)
+
+        # (18): Compute the interference piece:
+        interference_contribution = 0.
+
+        # (X): If the lepton beam is unpolarized on the whole...
+        if lepton_helicity == 0.0:
+
+            # (X): ... compute 0/5 * (sigma(+1) + sigma(-1)), the coherent-averaged
+            # | cross section:
+            interference_contribution = (0.5 * (
+                calculate_interference_contribution(
+                1.0,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                azimuthal_phi,
+                epsilon,
+                lepton_energy_fraction_y,
+                skewness_parameter,
+                t_prime,
+                k_tilde,
+                shorthand_k,
+                lepton_propagator_p1,
+                lepton_propagator_p2,
+                Dirac_form_factor_F1,
+                Pauli_form_factor_F2,
+                compton_form_factor_h,
+                compton_form_factor_h_tilde,
+                compton_form_factor_e,
+                compton_form_factor_e_tilde,
+                use_ww,
+                verbose) +
+                calculate_interference_contribution(
+                -1.0,
+                target_polarization,
+                squared_Q_momentum_transfer,
+                x_Bjorken,
+                squared_hadronic_momentum_transfer_t,
+                azimuthal_phi,
+                epsilon,
+                lepton_energy_fraction_y,
+                skewness_parameter,
+                t_prime,
+                k_tilde,
+                shorthand_k,
+                lepton_propagator_p1,
+                lepton_propagator_p2,
+                Dirac_form_factor_F1,
+                Pauli_form_factor_F2,
+                compton_form_factor_h,
+                compton_form_factor_h_tilde,
+                compton_form_factor_e,
+                compton_form_factor_e_tilde,
+                use_ww,
+                verbose)))
+
+        # (X): If the beam has a particular polarization...
+        else:
+
+            # (X): ... then run the standard function to compute the cross-section:
             interference_contribution = calculate_interference_contribution(
                 lepton_helicity,
                 target_polarization,
@@ -437,7 +468,7 @@ def calculate_bkm10_cross_section(
                 use_ww,
                 verbose)
 
-        # (18): Calculate the total cross section
+        # (18): Calculate the total cross section:
         bkm10_cross_section = cross_section_prefactor * (bh_amplitude_squared + dvcs_amplitude_squared + interference_contribution)
 
         # (18.1): If verbose, print the output:
@@ -445,11 +476,11 @@ def calculate_bkm10_cross_section(
             print(f"> Calculated BKM10 differential cross section longitudinally polarized target to be:\n{bkm10_cross_section}")
 
         # (19): Convert to nb/GeV^{4}:
-        bkm10_cross_section_in_nb_GeV4 = convert_to_nb_over_GeV4(bkm10_cross_section)
+        bkm10_cross_section_in_nb_gev4 = convert_to_nb_over_GeV4(bkm10_cross_section)
         
         # (19.1): If verbose, print the conversion:
         if verbose:
-            print(f"> Converted BKM10 differential cross section to {bkm10_cross_section_in_nb_GeV4} nb/GeV4")
+            print(f"> Converted BKM10 differential cross section to {bkm10_cross_section_in_nb_gev4} nb/GeV4")
 
         # plot_cross_section(
         #     lab_azimuthal_phi = azimuthal_phi,
@@ -457,7 +488,7 @@ def calculate_bkm10_cross_section(
         #     value_of_Q_squared = np.array(squared_Q_momentum_transfer)[0],
         #     value_of_hadron_recoil = np.array(squared_hadronic_momentum_transfer_t)[0], 
         #     value_of_x_Bjorken = np.array(x_Bjorken)[0],
-        #     calculated_cross_section = bkm10_cross_section_in_nb_GeV4)
+        #     calculated_cross_section = bkm10_cross_section_in_nb_gev4)
         
         # plot_beam_spin_asymmetry(
         #     lab_azimuthal_phi = azimuthal_phi,
@@ -468,9 +499,9 @@ def calculate_bkm10_cross_section(
         #     bsa_data = (beam_spin_asymmetry))
 
         # (20): Return the cross section.
-        return bkm10_cross_section_in_nb_GeV4
+        return bkm10_cross_section_in_nb_gev4
 
     except Exception as ERROR:
         print(f"> Error in calculating the entire cross section:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.
     

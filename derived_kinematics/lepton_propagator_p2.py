@@ -25,7 +25,7 @@ def calculate_lepton_propagator_p2(
     --------------
     """
     try:
-        p2_propagator = (Decimal("2.") * (k_dot_delta / squared_Q_momentum_transfer)) + (squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer)
+        p2_propagator = (-2. * (k_dot_delta / squared_Q_momentum_transfer)) + (squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer)
         
         if verbose:
             print(f"> Computed the P2 propagator to be:\n{p2_propagator}")
@@ -34,4 +34,4 @@ def calculate_lepton_propagator_p2(
     
     except Exception as E:
         print(f"> Error in computing p2 propagator:\n> {E}")
-        return Decimal("0.0")
+        return 0.

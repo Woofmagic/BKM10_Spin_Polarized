@@ -25,7 +25,7 @@ def calculate_c_1_unpolarized_dvcs(
     try:
 
         # (1): Calculate the prefactor of the coefficient:
-        coefficient_prefactor = Decimal("8. ") * shorthand_k * (Decimal("2.") - lepton_energy_fraction_y)
+        coefficient_prefactor = 8. * shorthand_k * (2. - lepton_energy_fraction_y)
 
         # (2): Calculate the insane coefficient with the Form Factors:
         insane_coefficient = calculate_dvcs_coefficient_unpolarized_form_factors(
@@ -47,4 +47,4 @@ def calculate_c_1_unpolarized_dvcs(
     
     except Exception as E:
         print(f"> Error in computing c2_unpolarized_BH:\n> {E}")
-        return Decimal("0.0")
+        return 0.

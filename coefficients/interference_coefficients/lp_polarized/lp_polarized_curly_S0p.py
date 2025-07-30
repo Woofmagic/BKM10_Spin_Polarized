@@ -6,13 +6,13 @@ from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_CLP 
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_CLPV import calculate_curly_C_longitudinally_polarized_interference_V
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_CLPA import calculate_curly_C_longitudinally_polarized_interference_A
 
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_S0p1 import calculate_s_1_zero_plus_longitudinally_polarized
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_S0p1V import calculate_s_1_zero_plus_longitudinally_polarized_V
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_S0p1A import calculate_s_1_zero_plus_longitudinally_polarized_A
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_S0p1 import calculate_s_1_zero_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_S0p1V import calculate_s_1_zero_plus_longitudinally_polarized_V
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_S0p1A import calculate_s_1_zero_plus_longitudinally_polarized_A
 
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_S0p2 import calculate_s_2_zero_plus_longitudinally_polarized
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_S0p2V import calculate_s_2_zero_plus_longitudinally_polarized_V
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_S0p2A import calculate_s_2_zero_plus_longitudinally_polarized_A
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_S0p2 import calculate_s_2_zero_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_S0p2V import calculate_s_2_zero_plus_longitudinally_polarized_V
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_S0p2A import calculate_s_2_zero_plus_longitudinally_polarized_A
 
 
 def calculate_curly_S_zero_plus_longitudinally_polarized_interference(
@@ -36,7 +36,7 @@ def calculate_curly_S_zero_plus_longitudinally_polarized_interference(
     try:
 
         # (1): Calculate the prefactor: Ktilde/ (2 - xb) * sqrt(2 / Q^{2})
-        prefactor = sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (Decimal("2.") - x_Bjorken)
+        prefactor = np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)
 
         # (2): Calculate curly C_{LP}^{I}(F):
         curly_C_longitudinally_polarized_interference = calculate_curly_C_longitudinally_polarized_interference(
@@ -167,6 +167,6 @@ def calculate_curly_S_zero_plus_longitudinally_polarized_interference(
 
     except Exception as ERROR:
         print(f"> Error in calculating the curly S0+ LP entire contribution amplitude squared\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.
     
     

@@ -8,7 +8,7 @@ from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_2_interference_coefficient
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_s_n import calculate_s_3_interference_coefficient
 
-_TEST_LEPTON_POLARIZATION = Decimal("0.5")
+_TEST_LEPTON_POLARIZATION = 0.5
 _TEST_TARGET_POLARIZATION = 1.0
 
 _TEST_USE_WW = False
@@ -26,6 +26,7 @@ _TEST_SKEWNESS = 0.20115437410625225
 
 _TEST_ELECTRIC_FORM_FACTOR_FE = 0.6482376115457034
 _TEST_MAGNETIC_FORM_FACTOR_FG = 1.8104286920947112
+
 _TEST_DIRAC_FORM_FACTOR_F1 = 0.7023600720564278
 _TEST_PAULI_FORM_FACTOR_F2 = 1.1080686200382834
 
@@ -56,9 +57,9 @@ class TestCurlyCSeriesCoefficients(unittest.TestCase):
         """
         print(f"> Now testing c0I for the unpolarized beam and unpolarized target:")
         self.assertAlmostEqual(
-            Decimal("0.5") * (calculate_c_0_interference_coefficient(
+            0.5 * (calculate_c_0_interference_coefficient(
                 0,
-                Decimal("0.5"),
+                0.5,
                 0.0,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
@@ -77,7 +78,7 @@ class TestCurlyCSeriesCoefficients(unittest.TestCase):
                 _TEST_CFF_E_TILDE,
                 _TEST_VERBOSE) + calculate_c_0_interference_coefficient(
                 0,
-                Decimal("0.5"),
+                0.5,
                 0.0,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
@@ -108,7 +109,7 @@ class TestCurlyCSeriesCoefficients(unittest.TestCase):
         self.assertAlmostEqual(
             calculate_c_0_interference_coefficient(
                 0,
-                Decimal("0.5"),
+                0.5,
                 0.0,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
@@ -140,7 +141,7 @@ class TestCurlyCSeriesCoefficients(unittest.TestCase):
         self.assertAlmostEqual(
             calculate_c_0_interference_coefficient(
                 0,
-                Decimal("0.5"),
+                0.5,
                 0.0,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
@@ -169,9 +170,9 @@ class TestCurlyCSeriesCoefficients(unittest.TestCase):
         """
         print(f"> Now testing c0I for the unpolarized beam and LP target:")
         self.assertAlmostEqual(
-            Decimal("0.5") * (calculate_c_0_interference_coefficient(
+            0.5 * (calculate_c_0_interference_coefficient(
                 0,
-                Decimal("0.5"),
+                0.5,
                 1.0,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
@@ -190,7 +191,7 @@ class TestCurlyCSeriesCoefficients(unittest.TestCase):
                 _TEST_CFF_E_TILDE,
                 _TEST_VERBOSE) + calculate_c_0_interference_coefficient(
                 0,
-                Decimal("0.5"),
+                0.5,
                 1.0,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
@@ -221,7 +222,7 @@ class TestCurlyCSeriesCoefficients(unittest.TestCase):
         self.assertAlmostEqual(
             calculate_c_0_interference_coefficient(
                 0,
-                Decimal("0.5"),
+                0.5,
                 1.0,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
@@ -252,7 +253,7 @@ class TestCurlyCSeriesCoefficients(unittest.TestCase):
         self.assertAlmostEqual(
             calculate_c_0_interference_coefficient(
                 0,
-                Decimal("0.5"),
+                0.5,
                 1.0,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
@@ -293,7 +294,7 @@ class TestCurlyCSeriesCoefficients(unittest.TestCase):
         self.assertAlmostEqual(
             calculate_c_1_interference_coefficient(
                 1,
-                Decimal("0.5"),
+                0.5,
                 1.0,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
@@ -334,7 +335,7 @@ class TestCurlyCSeriesCoefficients(unittest.TestCase):
         self.assertAlmostEqual(
             calculate_c_2_interference_coefficient(
                 2,
-                Decimal("0.5"),
+                0.5,
                 1.0,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
@@ -375,7 +376,7 @@ class TestCurlyCSeriesCoefficients(unittest.TestCase):
         self.assertAlmostEqual(
             calculate_s_1_interference_coefficient(
                 1,
-                Decimal("0.5"),
+                0.5,
                 1.0,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
@@ -416,7 +417,7 @@ class TestCurlyCSeriesCoefficients(unittest.TestCase):
         self.assertAlmostEqual(
             calculate_s_2_interference_coefficient(
                 2,
-                Decimal("0.5"),
+                0.5,
                 1.0,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,
@@ -457,7 +458,7 @@ class TestCurlyCSeriesCoefficients(unittest.TestCase):
         self.assertAlmostEqual(
             calculate_s_3_interference_coefficient(
                 3,
-                Decimal("0.5"),
+                0.5,
                 1.0,
                 _TEST_SQUARED_Q_MOMENTUM_TRANSFER,
                 _TEST_X_BJORKEN,

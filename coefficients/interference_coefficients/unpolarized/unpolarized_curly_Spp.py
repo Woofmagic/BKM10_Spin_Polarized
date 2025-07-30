@@ -32,7 +32,7 @@ def calculate_curly_S_plus_plus_unpolarized_interference(
 
         # (1): Calculate curly C_{unp}^{I}(F):
         curly_C_longitudinally_polarized_interference = calculate_curly_C_unpolarized_interference(
-            squared_Q_momentum_transfer, 
+            squared_Q_momentum_transfer,
             x_Bjorken,
             squared_hadronic_momentum_transfer_t,
             Dirac_form_factor_F1,
@@ -44,7 +44,7 @@ def calculate_curly_S_plus_plus_unpolarized_interference(
         
         # (2): Calculate curly C_{unp}^{I, V}(F):
         curly_C_V_longitudinally_polarized_interference = calculate_curly_C_unpolarized_interference_V(
-            squared_Q_momentum_transfer, 
+            squared_Q_momentum_transfer,
             x_Bjorken,
             squared_hadronic_momentum_transfer_t,
             Dirac_form_factor_F1,
@@ -55,7 +55,7 @@ def calculate_curly_S_plus_plus_unpolarized_interference(
         
         # (3): Calculate curly C_{LP}^{I, A}(F):
         curly_C_A_longitudinally_polarized_interference = calculate_curly_C_unpolarized_interference_A(
-            squared_Q_momentum_transfer, 
+            squared_Q_momentum_transfer,
             x_Bjorken,
             squared_hadronic_momentum_transfer_t,
             Dirac_form_factor_F1,
@@ -113,7 +113,16 @@ def calculate_curly_S_plus_plus_unpolarized_interference(
                 shorthand_k,
                 verbose)
             
-            curly_S_longitudinally_polarized_interference = curly_C_longitudinally_polarized_interference + s_V_plus_plus_contribution * curly_C_V_longitudinally_polarized_interference / s_plus_plus_contribution + s_A_plus_plus_contribution * curly_C_A_longitudinally_polarized_interference / s_plus_plus_contribution
+            print(f"> Curly C: {curly_C_longitudinally_polarized_interference[0]}")
+            print(f"> Curly C,V: {curly_C_V_longitudinally_polarized_interference[0]}")
+            print(f"> Curly C,A: {curly_C_A_longitudinally_polarized_interference[0]}")
+            print(f"> Curly S(n=1)pp: {s_plus_plus_contribution[0]}")
+            print(f"> Curly S,V(n=1)pp: {s_V_plus_plus_contribution[0]}")
+            print(f"> Curly S,A(n=1)pp: {s_A_plus_plus_contribution[0]}")
+
+            curly_S_longitudinally_polarized_interference = (curly_C_longitudinally_polarized_interference
+                + (s_V_plus_plus_contribution * curly_C_V_longitudinally_polarized_interference / s_plus_plus_contribution)
+                + (s_A_plus_plus_contribution * curly_C_A_longitudinally_polarized_interference / s_plus_plus_contribution))
 
         elif n_number == 2:
 
@@ -148,7 +157,16 @@ def calculate_curly_S_plus_plus_unpolarized_interference(
                 t_prime,
                 verbose)
             
-            curly_S_longitudinally_polarized_interference = curly_C_longitudinally_polarized_interference + s_V_plus_plus_contribution * curly_C_V_longitudinally_polarized_interference / s_plus_plus_contribution + s_A_plus_plus_contribution * curly_C_A_longitudinally_polarized_interference / s_plus_plus_contribution
+            curly_S_longitudinally_polarized_interference = (curly_C_longitudinally_polarized_interference
+                + (s_V_plus_plus_contribution * curly_C_V_longitudinally_polarized_interference / s_plus_plus_contribution)
+                + (s_A_plus_plus_contribution * curly_C_A_longitudinally_polarized_interference / s_plus_plus_contribution))
+            
+            print(f"> Curly C: {curly_C_longitudinally_polarized_interference[0]}")
+            print(f"> Curly C,V: {curly_C_V_longitudinally_polarized_interference[0]}")
+            print(f"> Curly C,A: {curly_C_A_longitudinally_polarized_interference[0]}")
+            print(f"> Curly S(n=2)pp: {s_plus_plus_contribution[0]}")
+            print(f"> Curly S,V(n=2)pp: {s_V_plus_plus_contribution[0]}")
+            print(f"> Curly S,A(n=2)pp: {s_A_plus_plus_contribution[0]}")
 
         elif n_number == 3:
 

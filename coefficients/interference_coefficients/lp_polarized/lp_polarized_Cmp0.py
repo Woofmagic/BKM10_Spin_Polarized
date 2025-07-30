@@ -18,28 +18,28 @@ def calculate_c_0_minus_plus_longitudinally_polarized(
     try:
 
         # (1): Calculate the recurrent quantity sqrt(1 + epsilon^2):
-        root_one_plus_epsilon_squared = sqrt(Decimal("1.") + epsilon**2)
+        root_one_plus_epsilon_squared = np.sqrt(1. + epsilon**2)
 
         # (2): Calculate t/Q^{2}:
         t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
 
         # (3): Calculate 1 - sqrt(1 + epsilon^2):
-        one_minus_epsilon_stuff = Decimal("1.") - root_one_plus_epsilon_squared
+        one_minus_epsilon_stuff = 1. - root_one_plus_epsilon_squared
 
         # (4): Calculate the first term in brackets:
-        first_bracket_term = k_tilde**2 * (Decimal("2.") - lepton_energy_fraction_y)**2 * one_minus_epsilon_stuff / squared_Q_momentum_transfer
+        first_bracket_term = k_tilde**2 * (2. - lepton_energy_fraction_y)**2 * one_minus_epsilon_stuff / squared_Q_momentum_transfer
 
         # (5): Calculate large parentheses term in second bracket term:
-        second_bracket_term_last_part = one_minus_epsilon_stuff - t_over_Q_squared * (Decimal("1.") - Decimal("2.") * x_Bjorken + root_one_plus_epsilon_squared)
+        second_bracket_term_last_part = one_minus_epsilon_stuff - t_over_Q_squared * (1. - 2. * x_Bjorken + root_one_plus_epsilon_squared)
 
         # (6): Calculate the middle part of the second bracket term:
-        second_bracket_term_middle_part = Decimal("2.") * x_Bjorken * t_over_Q_squared - (Decimal("1.") - t_over_Q_squared) * epsilon**2
+        second_bracket_term_middle_part = 2. * x_Bjorken * t_over_Q_squared - (1. - t_over_Q_squared) * epsilon**2
 
         # (7): Calculate the second bracket term:
-        second_bracket_term = Decimal("0.5") * (Decimal("1.") - lepton_energy_fraction_y - lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0")) * second_bracket_term_middle_part * second_bracket_term_last_part
+        second_bracket_term = 0.5 * (1. - lepton_energy_fraction_y - lepton_energy_fraction_y**2 * epsilon**2 / 4.) * second_bracket_term_middle_part * second_bracket_term_last_part
 
         # (8): Calculate the prefactor:
-        prefactor = Decimal("4.") * lepton_helicity * target_polarization * lepton_energy_fraction_y / root_one_plus_epsilon_squared**5
+        prefactor = 4. * lepton_helicity * target_polarization * lepton_energy_fraction_y / root_one_plus_epsilon_squared**5
         
         # (9): Calculate the coefficient:
         c_0_minus_plus_LP = prefactor * (first_bracket_term + second_bracket_term)
@@ -53,4 +53,4 @@ def calculate_c_0_minus_plus_longitudinally_polarized(
 
     except Exception as ERROR:
         print(f"> Error in calculating c_0_minus_plus_LP for Interference Term:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

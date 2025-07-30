@@ -15,7 +15,7 @@ def calculate_c_2_plus_plus_unpolarized_V(
     try:
 
         # (1): Calculate the recurrent quantity sqrt(1 + epsilon^2):
-        root_one_plus_epsilon_squared = sqrt(Decimal("1.") + epsilon**2)
+        root_one_plus_epsilon_squared = np.sqrt(1. + epsilon**2)
 
         # (2): Calculate the recurrent quantity t/Q^{2}:
         t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
@@ -24,10 +24,10 @@ def calculate_c_2_plus_plus_unpolarized_V(
         t_prime_over_Q_squared = t_prime / squared_Q_momentum_transfer
 
         # (4): Calculate the major term:
-        major_term = (Decimal("4.") * k_tilde**2 / (root_one_plus_epsilon_squared * squared_Q_momentum_transfer)) + Decimal("0.5") * (Decimal("1.") + root_one_plus_epsilon_squared - Decimal("2.") * x_Bjorken) * (Decimal("1.") + t_over_Q_squared) * t_prime_over_Q_squared
+        major_term = (4. * k_tilde**2 / (root_one_plus_epsilon_squared * squared_Q_momentum_transfer)) + 0.5 * (1. + root_one_plus_epsilon_squared - 2. * x_Bjorken) * (1. + t_over_Q_squared) * t_prime_over_Q_squared
 
         # (5): Calculate the prefactor: 
-        prefactor = Decimal("8. ") * (Decimal("2.") - lepton_energy_fraction_y) * (Decimal("1.") - lepton_energy_fraction_y - epsilon**2 * lepton_energy_fraction_y**2 / Decimal("4.0")) * x_Bjorken * t_over_Q_squared / root_one_plus_epsilon_squared**4
+        prefactor = 8. * (2. - lepton_energy_fraction_y) * (1. - lepton_energy_fraction_y - epsilon**2 * lepton_energy_fraction_y**2 / 4.) * x_Bjorken * t_over_Q_squared / root_one_plus_epsilon_squared**4
         
         # (6): The entire thing:
         c_2_plus_plus_V_unp = prefactor * major_term
@@ -41,4 +41,4 @@ def calculate_c_2_plus_plus_unpolarized_V(
 
     except Exception as ERROR:
         print(f"> Error in calculating c_2_plus_plus_V_unp for Interference Term:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

@@ -16,12 +16,12 @@ from coefficients.interference_coefficients.lp_polarized.lp_polarized_Cpp0 impor
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_C0p0 import calculate_c_0_zero_plus_longitudinally_polarized
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_Cmp0 import calculate_c_0_minus_plus_longitudinally_polarized
 
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_Cpp1 import calculate_c_1_plus_plus_longitudinally_polarized
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p1 import calculate_c_1_zero_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_Cpp1 import calculate_c_1_plus_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_C0p1 import calculate_c_1_zero_plus_longitudinally_polarized
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_Cmp1 import calculate_c_1_minus_plus_longitudinally_polarized
 
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_Cpp2 import calculate_c_2_plus_plus_longitudinally_polarized
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p2 import calculate_c_2_zero_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_Cpp2 import calculate_c_2_plus_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_C0p2 import calculate_c_2_zero_plus_longitudinally_polarized
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_Cmp2 import calculate_c_2_minus_plus_longitudinally_polarized
 
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_Cpp import calculate_curly_C_plus_plus_longitudinally_polarized_interference
@@ -250,7 +250,7 @@ def calculate_c_0_interference_coefficient(
     
     except Exception as ERROR:
         print(f"> Error in c_0 contribution to the interference term: \n> {ERROR}")
-        return Decimal("0.0")
+        return 0.
     
 def calculate_c_1_interference_coefficient(
     n_number: int,
@@ -467,7 +467,7 @@ def calculate_c_1_interference_coefficient(
     
     except Exception as ERROR:
         print(f"> Error in c_1 contribution to the interference term: \n> {ERROR}")
-        return Decimal("0.0")
+        return 0.
     
 def calculate_c_2_interference_coefficient(
     n_number: int,
@@ -684,7 +684,7 @@ def calculate_c_2_interference_coefficient(
     
     except Exception as ERROR:
         print(f"> Error in c_2 contribution to the interference term: \n> {ERROR}")
-        return Decimal("0.0")
+        return 0.
     
 def calculate_c_3_interference_coefficient(
     n_number: int,
@@ -893,4 +893,4 @@ def calculate_c_3_interference_coefficient(
     
     except Exception as ERROR:
         print(f"> Error in c_3 contribution to the interference term: \n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

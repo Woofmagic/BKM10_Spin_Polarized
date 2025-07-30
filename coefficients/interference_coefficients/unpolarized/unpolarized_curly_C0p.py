@@ -36,7 +36,7 @@ def calculate_curly_C_zero_plus_unpolarized_interference(
     try:
 
         # (1): Calculate the prefactor: Ktilde / (2 - xb) * sqrt(2 / Q^{2})
-        prefactor = sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (Decimal("2.") - x_Bjorken)
+        prefactor = np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)
 
         # (1): Calculate curly C_{unp}^{I}(F):
         curly_C_unpolarized_interference = calculate_curly_C_unpolarized_interference(
@@ -63,7 +63,7 @@ def calculate_curly_C_zero_plus_unpolarized_interference(
         
         # (3): Calculate curly C_{LP}^{I, A}(F):
         curly_C_A_unpolarized_interference = calculate_curly_C_unpolarized_interference_A(
-            squared_Q_momentum_transfer, 
+            squared_Q_momentum_transfer,
             x_Bjorken,
             squared_hadronic_momentum_transfer_t,
             Dirac_form_factor_F1,
@@ -102,12 +102,12 @@ def calculate_curly_C_zero_plus_unpolarized_interference(
                 epsilon,
                 lepton_energy_fraction_y,
                 shorthand_k,
-                verbose)
+                verbose)    
             
             # (6): Calculate the curly C0+ coefficient:
-            curly_C_zero_plus_unpolarized_interference = prefactor * (curly_C_unpolarized_interference
-            + c_V_zero_plus_contribution * curly_C_V_unpolarized_interference / c_zero_plus_contribution
-            + c_A_zero_plus_contribution * curly_C_A_unpolarized_interference / c_zero_plus_contribution)
+            curly_C_zero_plus_unpolarized_interference = (prefactor * (curly_C_unpolarized_interference
+            + (c_V_zero_plus_contribution * curly_C_V_unpolarized_interference / c_zero_plus_contribution)
+            + (c_A_zero_plus_contribution * curly_C_A_unpolarized_interference / c_zero_plus_contribution)))
 
         elif n_number == 1:
 
@@ -198,4 +198,4 @@ def calculate_curly_C_zero_plus_unpolarized_interference(
 
     except Exception as ERROR:
         print(f"> Error in calculating the curly C0+ LP entire contribution: \n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

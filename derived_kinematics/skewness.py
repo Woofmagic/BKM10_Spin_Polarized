@@ -29,10 +29,10 @@ def calculate_kinematics_skewness_parameter(
     try:
 
         # (1): The Numerator:
-        numerator = (Decimal("1.") + (squared_hadronic_momentum_transfer_t / (Decimal("2.") * squared_Q_momentum_transfer)))
+        numerator = (1. + (squared_hadronic_momentum_transfer_t / (2. * squared_Q_momentum_transfer)))
 
         # (2): The Denominator:
-        denominator = (Decimal("2.") - x_Bjorken + (x_Bjorken * squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer))
+        denominator = (2. - x_Bjorken + (x_Bjorken * squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer))
 
         # (3): Calculate the Skewness Parameter:
         skewness_parameter = x_Bjorken * numerator / denominator
@@ -46,4 +46,4 @@ def calculate_kinematics_skewness_parameter(
     
     except Exception as ERROR:
         print(f"> Error in computing skewness xi:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

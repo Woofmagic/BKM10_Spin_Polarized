@@ -7,15 +7,15 @@ from coefficients.interference_coefficients.unpolarized.unpolarized_S0p2 import 
 from coefficients.interference_coefficients.unpolarized.unpolarized_curly_Spp import calculate_curly_S_plus_plus_unpolarized_interference
 from coefficients.interference_coefficients.unpolarized.unpolarized_curly_S0p import calculate_curly_S_zero_plus_unpolarized_interference
 
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_Spp1 import calculate_s_1_plus_plus_longitudinally_polarized
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_S0p1 import calculate_s_1_zero_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_Spp1 import calculate_s_1_plus_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_S0p1 import calculate_s_1_zero_plus_longitudinally_polarized
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_Smp1 import calculate_s_1_minus_plus_longitudinally_polarized
 
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_Spp2 import calculate_s_2_plus_plus_longitudinally_polarized
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_S0p2 import calculate_s_2_zero_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_Spp2 import calculate_s_2_plus_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_S0p2 import calculate_s_2_zero_plus_longitudinally_polarized
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_Smp2 import calculate_s_2_minus_plus_longitudinally_polarized
 
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_Spp3 import calculate_s_3_plus_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_Spp3 import calculate_s_3_plus_plus_longitudinally_polarized
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_Smp3 import calculate_s_3_minus_plus_longitudinally_polarized
 
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_Spp import calculate_curly_S_plus_plus_longitudinally_polarized_interference
@@ -59,11 +59,13 @@ def calculate_s_1_interference_coefficient(
                 lepton_helicity,
                 squared_Q_momentum_transfer,
                 x_Bjorken,
-                squared_hadronic_momentum_transfer_t,
                 epsilon,
                 lepton_energy_fraction_y,
+                t_prime,
                 shorthand_k,
                 verbose)
+            
+            print(f"> S(n = 1)++: {s_plus_plus[0]}")
 
             # (2): The second part of the term is S_{0+}(n = 1):
             s_zero_plus = calculate_s_1_zero_plus_unpolarized(
@@ -73,6 +75,8 @@ def calculate_s_1_interference_coefficient(
                 lepton_energy_fraction_y,
                 k_tilde,
                 verbose)
+            
+            print(f"> S(n = 1)0+: {s_zero_plus[0]}")
 
             # (3): Calculate the curly S_{++} contribution - requires both n and the CFFs:
             curly_s_plus_plus = calculate_curly_S_plus_plus_unpolarized_interference(
@@ -92,6 +96,8 @@ def calculate_s_1_interference_coefficient(
                 compton_form_factor_h_tilde,
                 compton_form_factor_e,
                 verbose)
+            
+            print(f"> curly S++: {curly_s_plus_plus[0]}")
 
             # (4): Calculate the curly S_{0+} contribution - requires both n and the CFFs:
             curly_s_zero_plus = calculate_curly_S_zero_plus_unpolarized_interference(
@@ -111,6 +117,8 @@ def calculate_s_1_interference_coefficient(
                 compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde, use_ww),
                 compute_cff_effective(skewness_parameter, compton_form_factor_e, use_ww),
                 verbose)
+            
+            print(f"> curly S0+: {curly_s_zero_plus[0]}")
 
         elif target_polarization == 1.0:
 
@@ -126,6 +134,8 @@ def calculate_s_1_interference_coefficient(
                 lepton_energy_fraction_y,
                 shorthand_k,
                 verbose)
+            
+            print(f"> S(n = 1)++: {s_plus_plus[0]}")
 
             # (2): The second part of the term is S_{0+}(n = 1):
             s_zero_plus = calculate_s_1_zero_plus_longitudinally_polarized(
@@ -137,6 +147,8 @@ def calculate_s_1_interference_coefficient(
                 lepton_energy_fraction_y,
                 k_tilde,
                 verbose)
+            
+            print(f"> S(n = 1)0+: {s_zero_plus[0]}")
             
             # (3): The second part of the term is S_{-+}(n = 1):
             s_minus_plus = calculate_s_1_minus_plus_longitudinally_polarized(
@@ -220,7 +232,7 @@ def calculate_s_1_interference_coefficient(
     
     except Exception as ERROR:
         print(f"> Error in s_1_interference_coefficient contribution to the interference term: \n> {ERROR}")
-        return Decimal("0.0")
+        return 0.
     
 def calculate_s_2_interference_coefficient(
     n_number: int,
@@ -262,15 +274,7 @@ def calculate_s_2_interference_coefficient(
                 t_prime,
                 verbose)
             
-            print("Checking input")
-            print(lepton_helicity)
-            print(squared_Q_momentum_transfer[0])
-            print(x_Bjorken[0])
-            print(epsilon[0])
-            print(lepton_energy_fraction_y[0])
-            print(t_prime[0])
-            
-            print(f"> S++ 2 is equal to: {s_plus_plus}")
+            print(f"> S(n = 2)++: {s_plus_plus[0]}")
 
             # (2): The second part of the term is S_{0+}(n = 2):
             s_zero_plus = calculate_s_2_zero_plus_unpolarized(
@@ -283,7 +287,7 @@ def calculate_s_2_interference_coefficient(
                 shorthand_k,
                 verbose)
             
-            print(f"> S0+ 2 is equal to: {s_zero_plus}")
+            print(f"> S(n = 2)0+: {s_zero_plus[0]}")
 
             # (3): Calculate the curly S_{++} contribution - requires both n and the CFFs:
             curly_s_plus_plus = calculate_curly_S_plus_plus_unpolarized_interference(
@@ -303,6 +307,8 @@ def calculate_s_2_interference_coefficient(
                 compton_form_factor_h_tilde,
                 compton_form_factor_e,
                 verbose)
+            
+            print(f"> Curly S++: {curly_s_plus_plus[0]}")
 
             # (4): Calculate the curly S_{0+} contribution - requires both n and the CFFs:
             curly_s_zero_plus = calculate_curly_S_zero_plus_unpolarized_interference(
@@ -322,6 +328,8 @@ def calculate_s_2_interference_coefficient(
                 compute_cff_effective(skewness_parameter, compton_form_factor_h_tilde, use_ww),
                 compute_cff_effective(skewness_parameter, compton_form_factor_e, use_ww),
                 verbose)
+            
+            print(f"> Curly S0+: {curly_s_zero_plus[0]}")
 
         elif target_polarization == 1.0:
 
@@ -429,7 +437,7 @@ def calculate_s_2_interference_coefficient(
     
     except Exception as ERROR:
         print(f"> Error in s_2_interference_coefficient contribution to the interference term: \n> {ERROR}")
-        return Decimal("0.0")
+        return 0.
     
 def calculate_s_3_interference_coefficient(
     n_number: int,
@@ -604,9 +612,6 @@ def calculate_s_3_interference_coefficient(
         # s_3_interference_coefficient = s_plus_plus * curly_s_plus_plus.imag + s_zero_plus * curly_s_zero_plus.imag + s_minus_plus * curly_s_minus_plus.imag
         s_3_interference_coefficient = ((s_plus_plus * curly_s_plus_plus.imag) + (s_zero_plus * curly_s_zero_plus.imag))
 
-        print("IS THIS SHIT 0?")
-        print(s_3_interference_coefficient)
-
         # (): If verbose, print the output:
         if verbose:
             print(f"> Calculated s_3_interference_coefficient interference coefficient to be:\n{s_3_interference_coefficient}")
@@ -616,4 +621,4 @@ def calculate_s_3_interference_coefficient(
     
     except Exception as ERROR:
         print(f"> Error in s_3_interference_coefficient contribution to the interference term: \n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

@@ -17,13 +17,13 @@ def calculate_c_0_zero_plus_unpolarized_A(
         t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
 
         # (2): Calculate the recurrent quantity 8 - 6x_{B} + 5 epsilon^{2}:
-        fancy_xb_epsilon_term = 8. - 6. * x_Bjorken + Decimal("5.") * epsilon**2
+        fancy_xb_epsilon_term = 8. - 6. * x_Bjorken + 5. * epsilon**2
 
         # (3): Compute the bracketed term:
-        brackets_term = Decimal("1.") - t_over_Q_squared * (Decimal("2.") - 12. * x_Bjorken * (Decimal("1.") - x_Bjorken) - epsilon**2) / fancy_xb_epsilon_term
+        brackets_term = 1. - t_over_Q_squared * (2. - 12. * x_Bjorken * (1. - x_Bjorken) - epsilon**2) / fancy_xb_epsilon_term
 
         # (4): Calculate the prefactor:
-        prefactor = Decimal("4.") * sqrt(Decimal("2.0")) * shorthand_k * (Decimal("2.") - lepton_energy_fraction_y) * sqrt(Decimal("1.") - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0"))) / np.power(Decimal("1.") + epsilon**2, 2.5)
+        prefactor = 4. * np.sqrt(2.) * shorthand_k * (2. - lepton_energy_fraction_y) * np.sqrt(1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.)) / np.power(1. + epsilon**2, 2.5)
 
         # (5): Stitch together the coefficient:
         c_0_zero_plus_A_unp = prefactor * t_over_Q_squared * fancy_xb_epsilon_term * brackets_term
@@ -37,4 +37,4 @@ def calculate_c_0_zero_plus_unpolarized_A(
 
     except Exception as ERROR:
         print(f"> Error in calculating c_0_zero_plus_A_unp for Interference Term:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

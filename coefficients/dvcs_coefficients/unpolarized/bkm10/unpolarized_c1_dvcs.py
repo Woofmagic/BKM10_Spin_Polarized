@@ -7,11 +7,11 @@ from form_factors.effective_cffs import compute_cff_effective
 from coefficients.dvcs_coefficients.unpolarized.bkm10.unpolarized_curlyC_dvcs import calculate_curly_c_unpolarized_dvcs
 
 def calculate_c_1_unpolarized_dvcs(
-    squared_Q_momentum_transfer: float, 
-    x_Bjorken: float, 
+    squared_Q_momentum_transfer: float,
+    x_Bjorken: float,
     squared_hadronic_momentum_transfer_t: float,
     epsilon: float,
-    lepton_energy_fraction_y: float, 
+    lepton_energy_fraction_y: float,
     skewness_parameter: float,
     shorthand_k: float,
     compton_form_factor_h: complex,
@@ -26,8 +26,8 @@ def calculate_c_1_unpolarized_dvcs(
     try:
 
         # (1): Calculate the first term's prefactor:
-        prefactor = Decimal("8. ") * shorthand_k * (Decimal("2.") - lepton_energy_fraction_y) / ((Decimal("2.") - x_Bjorken) * (Decimal("1.") + epsilon**2))
-        
+        prefactor = 8. * shorthand_k * (2. - lepton_energy_fraction_y) / ((2. - x_Bjorken) * (1. + epsilon**2))
+
         # (2): Calculate the second terms' Curly C contribution:
         curlyC_unp_DVCS = calculate_curly_c_unpolarized_dvcs(
             squared_Q_momentum_transfer,
@@ -41,11 +41,10 @@ def calculate_c_1_unpolarized_dvcs(
             compton_form_factor_h.conjugate(),
             compton_form_factor_h_tilde.conjugate(),
             compton_form_factor_e.conjugate(),
-            compton_form_factor_e_tilde.conjugate(),
-        ).real
-
+            compton_form_factor_e_tilde.conjugate())
+        
         # (3): Calculate the entire coefficient:
-        c1_dvcs_unpolarized_coefficient = prefactor * curlyC_unp_DVCS
+        c1_dvcs_unpolarized_coefficient = prefactor * curlyC_unp_DVCS.real
         
         if verbose:
             print(f"> Calculated c1_dvcs_unpolarized_coefficient to be: {c1_dvcs_unpolarized_coefficient}")
@@ -54,4 +53,4 @@ def calculate_c_1_unpolarized_dvcs(
     
     except Exception as E:
         print(f"> Error in computing c1_dvcs_unpolarized_coefficient:\n> {E}")
-        return Decimal("0.0")
+        return 0.

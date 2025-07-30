@@ -1,7 +1,5 @@
 from statics.masses.particle_masses import _MASS_OF_PROTON_IN_GEV
 
-from decimal import Decimal
-
 import numpy as np
     
 def calculate_kinematics_epsilon(
@@ -33,7 +31,7 @@ def calculate_kinematics_epsilon(
     try:
 
         # (1): Calculate Epsilon right away:
-        epsilon = (Decimal("2.") * x_Bjorken * _MASS_OF_PROTON_IN_GEV) / squared_Q_momentum_transfer.sqrt()
+        epsilon = (2. * x_Bjorken * _MASS_OF_PROTON_IN_GEV) / np.sqrt(squared_Q_momentum_transfer)
 
         # (1.1): If verbose, print the result:
         if verbose:
@@ -44,4 +42,4 @@ def calculate_kinematics_epsilon(
     
     except Exception as ERROR:
         print(f"> Error in computing kinematic epsilon:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

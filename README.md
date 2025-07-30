@@ -3,7 +3,7 @@ BKM10 four-fold cross section parametrization for a spin-polarized target.
 
 ## About the Program:
 
-To run the program, run `main.py` with the required arguments. We require a 
+To run the program, run `main.py` with the required argument.
 
 ### Arguments:
 
@@ -13,23 +13,25 @@ To run the program, run `main.py` with the required arguments. We require a
 4. `-lep-polar`
 5. `-target-polar`
 
-
 #### Required Arguments:
+
+1. `-d data_file.extension [str]`
+2. `-kin kinematic set [int]`
 
 #### Optional Arguments:
 
-
+1. `-form formalism [str: bkm02 | bkm10]`
+2. `-lep-polar`
+3. `-target-polar`
 
 ### Examples: 
-
 
 ```bash
 python main.py -d basic_model_pseudodata_for_Jlab_kinematics.csv -kin 1 -form 10 -lep-helicity polarized -target-polar polarized
 ```
+## The Four-Fold Differential Cross Section
 
-## The Four-Fold Cross Section
-
-What we are numerically calculating is a four-fold (meaning, we need to do four integrals) cross section. We need to integrate over four variables: $Q^{2}, x_{\text{B}}, t, \phi$. By the way, the first three quantities are called the \textit{kinematics}, and $\phi$ is an azimuthal angle that is measured in a chosen reference frame. However, the function actually requires a bit more detail. It is a function of several different things -- schematically, we express this as:
+What we are numerically calculating is a four-fold (meaning we need to do four integrals) cross section. We need to integrate over four variables: $Q^{2}, x_{\text{B}}, t, \phi$. By the way, the first three quantities are called the \textit{kinematics}, and $\phi$ is an azimuthal angle that is measured in a chosen reference frame. However, the function actually requires a bit more detail. It is a function of several different things -- schematically, we express this as:
 
 $$d^{4}\sigma = d^{4}\sigma ( \lambda, \Lambda ; Q^{2}, x_{\text{B}}, t, \phi ; \{ \mathcal{F} \} ).$$
 

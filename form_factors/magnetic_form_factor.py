@@ -4,7 +4,7 @@ from decimal import Decimal
 
 def calculate_form_factor_magnetic(
         electric_form_factor: float,
-        verbose: bool= True) -> float:
+        verbose: bool = False) -> float:
     """
     Description
     --------------
@@ -40,4 +40,4 @@ def calculate_form_factor_magnetic(
 
     except Exception as ERROR:
         print(f"> Error in calculating magnetic form factor:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

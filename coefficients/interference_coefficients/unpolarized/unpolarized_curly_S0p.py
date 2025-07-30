@@ -10,6 +10,8 @@ from coefficients.interference_coefficients.unpolarized.unpolarized_curly_C impo
 from coefficients.interference_coefficients.unpolarized.unpolarized_curly_CV import calculate_curly_C_unpolarized_interference_V
 from coefficients.interference_coefficients.unpolarized.unpolarized_curly_CA import calculate_curly_C_unpolarized_interference_A
 
+import numpy as np
+
 def calculate_curly_S_zero_plus_unpolarized_interference(
     n_number: int,
     lepton_helicity: float,
@@ -29,9 +31,12 @@ def calculate_curly_S_zero_plus_unpolarized_interference(
     verbose: bool = False) -> float:
 
     try:
+        
+        # (1): Calculate the prefactor: Ktilde / (2 - xb) * sqrt(2 / Q^{2})
+        prefactor = np.sqrt(2. / squared_Q_momentum_transfer) * k_tilde / (2. - x_Bjorken)
 
         # (1): Calculate curly C_{unp}^{I}(F):
-        curly_C_longitudinally_polarized_interference = calculate_curly_C_unpolarized_interference(
+        curly_C_unpolarized_interference = calculate_curly_C_unpolarized_interference(
             squared_Q_momentum_transfer, 
             x_Bjorken,
             squared_hadronic_momentum_transfer_t,
@@ -43,7 +48,7 @@ def calculate_curly_S_zero_plus_unpolarized_interference(
             verbose)
         
         # (2): Calculate curly C_{unp}^{I, V}(F):
-        curly_C_V_longitudinally_polarized_interference = calculate_curly_C_unpolarized_interference_V(
+        curly_C_V_unpolarized_interference = calculate_curly_C_unpolarized_interference_V(
             squared_Q_momentum_transfer, 
             x_Bjorken,
             squared_hadronic_momentum_transfer_t,
@@ -54,7 +59,7 @@ def calculate_curly_S_zero_plus_unpolarized_interference(
             verbose)
         
         # (3): Calculate curly C_{LP}^{I, A}(F):
-        curly_C_A_longitudinally_polarized_interference = calculate_curly_C_unpolarized_interference_A(
+        curly_C_A_unpolarized_interference = calculate_curly_C_unpolarized_interference_A(
             squared_Q_momentum_transfer, 
             x_Bjorken,
             squared_hadronic_momentum_transfer_t,
@@ -75,7 +80,7 @@ def calculate_curly_S_zero_plus_unpolarized_interference(
             # (4.3): Calculate the S_{++}^{A}(0) contribution
             s_A_plus_plus_contribution = 0.
 
-            curly_S_longitudinally_polarized_interference = 0.
+            curly_S_unpolarized_interference = 0.
 
         elif n_number == 1:
 
@@ -109,7 +114,9 @@ def calculate_curly_S_zero_plus_unpolarized_interference(
                 shorthand_k,
                 verbose)
             
-            curly_S_longitudinally_polarized_interference = curly_C_longitudinally_polarized_interference + s_V_plus_plus_contribution * curly_C_V_longitudinally_polarized_interference / s_plus_plus_contribution + s_A_plus_plus_contribution * curly_C_A_longitudinally_polarized_interference / s_plus_plus_contribution
+            curly_S_unpolarized_interference = (prefactor * (curly_C_unpolarized_interference
+                + (s_V_plus_plus_contribution * curly_C_V_unpolarized_interference / s_plus_plus_contribution) 
+                + (s_A_plus_plus_contribution * curly_C_A_unpolarized_interference / s_plus_plus_contribution)))
 
         elif n_number == 2:
 
@@ -146,7 +153,9 @@ def calculate_curly_S_zero_plus_unpolarized_interference(
                 shorthand_k,
                 verbose)
             
-            curly_S_longitudinally_polarized_interference = curly_C_longitudinally_polarized_interference + s_V_plus_plus_contribution * curly_C_V_longitudinally_polarized_interference / s_plus_plus_contribution + s_A_plus_plus_contribution * curly_C_A_longitudinally_polarized_interference / s_plus_plus_contribution
+            curly_S_unpolarized_interference = (prefactor * (curly_C_unpolarized_interference
+                + (s_V_plus_plus_contribution * curly_C_V_unpolarized_interference / s_plus_plus_contribution) 
+                + (s_A_plus_plus_contribution * curly_C_A_unpolarized_interference / s_plus_plus_contribution)))
 
         elif n_number == 3:
 
@@ -159,15 +168,15 @@ def calculate_curly_S_zero_plus_unpolarized_interference(
             # (4.3): Calculate the S_{++}^{A}(3) contribution
             s_A_plus_plus_contribution = 0.
 
-            curly_S_longitudinally_polarized_interference = 0.
+            curly_S_unpolarized_interference = 0.
 
         # (6.1): If verbose, print the calculation:
         if verbose:
-            print(f"> Calculated curly S++ to be:\n{curly_S_longitudinally_polarized_interference}")
+            print(f"> Calculated curly S++ to be:\n{curly_S_unpolarized_interference}")
 
         # (7): Return the output.
-        return curly_S_longitudinally_polarized_interference
+        return curly_S_unpolarized_interference
 
     except Exception as ERROR:
-        print(f"> Error in calculating the curly S LP entire contribution amplitude squared\n> {ERROR}")
-        return 0
+        print(f"> Error in calculating the curly_S_unpolarized_interference:\n> {ERROR}")
+        return 0.

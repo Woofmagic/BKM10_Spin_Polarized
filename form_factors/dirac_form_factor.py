@@ -40,4 +40,4 @@ def calculate_form_factor_dirac_f1(
 
     except Exception as ERROR:
         print(f"> Error in calculating Dirac form factor:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

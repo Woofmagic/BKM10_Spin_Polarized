@@ -1,4 +1,4 @@
-import math
+import numpy as np
 
 from decimal import Decimal
 
@@ -9,7 +9,7 @@ def convert_degrees_to_radians(degrees: float) -> float:
     Converts a number in degrees (0-360) to radians
     using the standard formula.
     """
-    return (degrees * Decimal(math.pi) / Decimal("180."))
+    return (degrees * np.pi / 180.)
 
 def convert_to_nb_over_GeV4(number: float) -> float:
     """
@@ -26,6 +26,6 @@ def convert_to_nb_over_GeV4(number: float) -> float:
 
         1. number_in_nb_over_GeV4 (float)
     """
-    _CONVERSION_FACTOR = Decimal(".389379") * Decimal("1000000")
+    _CONVERSION_FACTOR = .389379 * 1000000.
     number_in_nb_over_GeV4 = _CONVERSION_FACTOR * number
     return number_in_nb_over_GeV4

@@ -15,19 +15,19 @@ def calculate_c_2_minus_plus_longitudinally_polarized_A(
     try:
 
         # (1): Calculate the recurrent quantity sqrt(1 + epsilon^2):
-        root_one_plus_epsilon_squared = sqrt(Decimal("1.") + epsilon**2)
+        root_one_plus_epsilon_squared = np.sqrt(1. + epsilon**2)
 
         # (2): Calculate t/Q^{2}:
         t_over_Q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer
 
         # (3): Calculate the first factor:
-        first_factor = t_over_Q_squared * (Decimal("1.") - (Decimal("1.") - Decimal("2.") * x_Bjorken) * t_over_Q_squared)
+        first_factor = t_over_Q_squared * (1. - (1. - 2. * x_Bjorken) * t_over_Q_squared)
 
         # (4): Calculate the second factor:
-        second_factor = Decimal("1.") + root_one_plus_epsilon_squared - t_over_Q_squared * (Decimal("1.") - root_one_plus_epsilon_squared - Decimal("2.") * x_Bjorken)
+        second_factor = 1. + root_one_plus_epsilon_squared - t_over_Q_squared * (1. - root_one_plus_epsilon_squared - 2. * x_Bjorken)
 
         # (5): Calculate the prefactor:
-        prefactor = Decimal("4.") * lepton_helicity * target_polarization * x_Bjorken * lepton_energy_fraction_y * (Decimal("1.") - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / Decimal("4.0"))) / root_one_plus_epsilon_squared**5
+        prefactor = 4. * lepton_helicity * target_polarization * x_Bjorken * lepton_energy_fraction_y * (1. - lepton_energy_fraction_y - (lepton_energy_fraction_y**2 * epsilon**2 / 4.)) / root_one_plus_epsilon_squared**5
 
         # (6): Calculate the coefficient:
         c_2_minus_plus_LP_A = prefactor * first_factor * second_factor
@@ -41,4 +41,4 @@ def calculate_c_2_minus_plus_longitudinally_polarized_A(
 
     except Exception as ERROR:
         print(f"> Error in calculating c_2_minus_plus_LP_A for Interference Term:\n> {ERROR}")
-        return Decimal("0.0")
+        return 0.

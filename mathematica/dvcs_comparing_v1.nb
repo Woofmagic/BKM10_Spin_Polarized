@@ -4080,7 +4080,7 @@ SjqkOIwuW/p+sEXz9r6F1XT4//eF/wHg5cwE
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -4091,7 +4091,7 @@ SjqkOIwuW/p+sEXz9r6F1XT4//eF/wHg5cwE
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -4105,7 +4105,7 @@ SjqkOIwuW/p+sEXz9r6F1XT4//eF/wHg5cwE
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}}, 
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxDividers -> {"Columns" -> {{None}}, "Rows" -> {{None}}}, 
@@ -4173,7 +4173,7 @@ SjqkOIwuW/p+sEXz9r6F1XT4//eF/wHg5cwE
            RowBox[{"LegendLayout", "\[Rule]", 
              RowBox[{"{", 
                RowBox[{"\"Row\"", ",", "1"}], "}"}]}]}], "]"}]& )], 
-     Scaled[{0.85, 0.7}], ImageScaled[{Decimal("0.5"), Decimal("0.5")}],
+     Scaled[{0.85, 0.7}], ImageScaled[{0.5, 0.5}],
      BaseStyle->{FontSize -> Larger},
      FormatType->StandardForm]},
    AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
@@ -4215,7 +4215,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", TraditionalForm], None}},
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLines->{{0}, {0}},
    GridLinesStyle->Directive[
-     GrayLevel[Decimal("0.5"), 0.4]],
+     GrayLevel[0.5, 0.4]],
    ImagePadding->All,
    ImageSize->{496.5, Automatic},
    LabelStyle->{FontFamily -> "Times"},
@@ -4476,7 +4476,7 @@ RGBColor[0., 0., 0.]]\)\!\(\*StyleBox[\"\[Degree]\",FontSize->14,FontWeight->\
 RGBColor[0., 0., 0.]]\)", None}}, FrameStyle -> Automatic, 
       FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
       GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-        GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+        GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
       Method -> {
        "DefaultBoundaryStyle" -> Automatic, 
         "DefaultGraphicsInteraction" -> {
@@ -4849,7 +4849,7 @@ SjqkOIwuW/p+sEXz9r6F1XT4//eF/wHg5cwE
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -4860,7 +4860,7 @@ SjqkOIwuW/p+sEXz9r6F1XT4//eF/wHg5cwE
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -4874,7 +4874,7 @@ SjqkOIwuW/p+sEXz9r6F1XT4//eF/wHg5cwE
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}}, 
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxDividers -> {"Columns" -> {{None}}, "Rows" -> {{None}}}, 
@@ -4942,7 +4942,7 @@ SjqkOIwuW/p+sEXz9r6F1XT4//eF/wHg5cwE
            RowBox[{"LegendLayout", "\[Rule]", 
              RowBox[{"{", 
                RowBox[{"\"Row\"", ",", "1"}], "}"}]}]}], "]"}]& )], 
-     Scaled[{0.85, 0.7}], ImageScaled[{Decimal("0.5"), Decimal("0.5")}],
+     Scaled[{0.85, 0.7}], ImageScaled[{0.5, 0.5}],
      BaseStyle->{FontSize -> Larger},
      FormatType->StandardForm]},
    AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
@@ -4984,7 +4984,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", TraditionalForm], None}},
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLines->{{0}, {0}},
    GridLinesStyle->Directive[
-     GrayLevel[Decimal("0.5"), 0.4]],
+     GrayLevel[0.5, 0.4]],
    ImagePadding->All,
    ImageSize->{467.25, Automatic},
    LabelStyle->{FontFamily -> "Times"},
@@ -5244,7 +5244,7 @@ RGBColor[0., 0., 0.]]\)\!\(\*StyleBox[\"\[Degree]\",FontSize->14,FontWeight->\
 RGBColor[0., 0., 0.]]\)", None}}, FrameStyle -> Automatic, 
       FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
       GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-        GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+        GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
       Method -> {
        "DefaultBoundaryStyle" -> Automatic, 
         "DefaultGraphicsInteraction" -> {
@@ -5617,7 +5617,7 @@ SjqkOIwuW/p+sEXz9r6F1XT4//eF/wHg5cwE
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -5628,7 +5628,7 @@ SjqkOIwuW/p+sEXz9r6F1XT4//eF/wHg5cwE
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -5642,7 +5642,7 @@ SjqkOIwuW/p+sEXz9r6F1XT4//eF/wHg5cwE
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}}, 
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxDividers -> {"Columns" -> {{None}}, "Rows" -> {{None}}}, 
@@ -5710,7 +5710,7 @@ SjqkOIwuW/p+sEXz9r6F1XT4//eF/wHg5cwE
            RowBox[{"LegendLayout", "\[Rule]", 
              RowBox[{"{", 
                RowBox[{"\"Row\"", ",", "1"}], "}"}]}]}], "]"}]& )], 
-     Scaled[{0.85, 0.7}], ImageScaled[{Decimal("0.5"), Decimal("0.5")}],
+     Scaled[{0.85, 0.7}], ImageScaled[{0.5, 0.5}],
      BaseStyle->{FontSize -> Larger},
      FormatType->StandardForm]},
    AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
@@ -5752,7 +5752,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", TraditionalForm], None}},
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLines->{{0}, {0}},
    GridLinesStyle->Directive[
-     GrayLevel[Decimal("0.5"), 0.4]],
+     GrayLevel[0.5, 0.4]],
    ImagePadding->All,
    ImageSize->{582.75, Automatic},
    LabelStyle->{FontFamily -> "Times"},
@@ -6013,7 +6013,7 @@ RGBColor[0., 0., 0.]]\)\!\(\*StyleBox[\"\[Degree]\",FontSize->14,FontWeight->\
 RGBColor[0., 0., 0.]]\)", None}}, FrameStyle -> Automatic, 
       FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
       GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-        GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+        GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
       Method -> {
        "DefaultBoundaryStyle" -> Automatic, 
         "DefaultGraphicsInteraction" -> {
@@ -6287,7 +6287,7 @@ MK5jYQBtyFP4eBtCm/YkVWYYQVum6K3JeNB7kXLXFRPov69h8cs=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -6298,7 +6298,7 @@ MK5jYQBtyFP4eBtCm/YkVWYYQVum6K3JeNB7kXLXFRPov69h8cs=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -6312,7 +6312,7 @@ MK5jYQBtyFP4eBtCm/YkVWYYQVum6K3JeNB7kXLXFRPov69h8cs=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}}, 
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxDividers -> {"Columns" -> {{None}}, "Rows" -> {{None}}}, 
@@ -6380,7 +6380,7 @@ MK5jYQBtyFP4eBtCm/YkVWYYQVum6K3JeNB7kXLXFRPov69h8cs=
            RowBox[{"LegendLayout", "\[Rule]", 
              RowBox[{"{", 
                RowBox[{"\"Row\"", ",", "1"}], "}"}]}]}], "]"}]& )], 
-     Scaled[{0.85, 0.7}], ImageScaled[{Decimal("0.5"), Decimal("0.5")}],
+     Scaled[{0.85, 0.7}], ImageScaled[{0.5, 0.5}],
      BaseStyle->{FontSize -> Larger},
      FormatType->StandardForm]},
    AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
@@ -6422,7 +6422,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", TraditionalForm], None}},
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLines->{{0}, {0}},
    GridLinesStyle->Directive[
-     GrayLevel[Decimal("0.5"), 0.4]],
+     GrayLevel[0.5, 0.4]],
    ImagePadding->All,
    ImageSize->{634.9999999999999, Automatic},
    LabelStyle->{FontFamily -> "Times"},
@@ -6573,7 +6573,7 @@ RGBColor[0., 0., 0.]]\)\!\(\*StyleBox[\"\[Degree]\",FontSize->14,FontWeight->\
 RGBColor[0., 0., 0.]]\)", None}}, FrameStyle -> Automatic, 
       FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
       GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-        GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+        GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
       Method -> {
        "DefaultBoundaryStyle" -> Automatic, 
         "DefaultGraphicsInteraction" -> {
@@ -6953,13 +6953,13 @@ Cell[BoxData[
          "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(0\)], \
 \(DVCS\)]\)\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(1\)], \
-\(DVCS\)]\)cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
+\(DVCS\)]\)np.cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(2\)], \
-\(DVCS\)]\)cos(2(\[Pi]-\[Phi]))\>\"", ",", "\[IndentingNewLine]", 
+\(DVCS\)]\)np.cos(2(\[Pi]-\[Phi]))\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(1\)], \
-\(DVCS\)]\)sin(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
+\(DVCS\)]\)np.sin(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(2\)], \
-\(DVCS\)]\)sin(2(\[Pi]-\[Phi]))\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+\(DVCS\)]\)np.sin(2(\[Pi]-\[Phi]))\>\""}], "\[IndentingNewLine]", "}"}], ",", 
         "\[IndentingNewLine]", 
         RowBox[{"LegendLayout", "\[Rule]", 
          RowBox[{"{", "\[IndentingNewLine]", 
@@ -7077,7 +7077,7 @@ vfsUB4sonH9Y7Yy9XDeCn8WxjEWRUwzO375AxfbwRAT/nLXN0SBBcTj/R9bs
          "]]},
        Annotation[#, "Charting`Private`Tag$427442#1"]& ], 
       TagBox[
-       {RGBColor[1, Decimal("0.5"), 0], AbsoluteThickness[1.6], Opacity[1.], CapForm[
+       {RGBColor[1, 0.5, 0], AbsoluteThickness[1.6], Opacity[1.], CapForm[
         "Butt"], LineBox[CompressedData["
 1:eJw12Xk4Vd/3OPCzjfcaKsK9yBANUiFzpr2SkuEjQyljUogkVBrI0GAsYxqU
 oYwpShJSziGKCEUikUj1LgmZMt3v+f3x++s+r2ff55y91llrn72fs9L9qK0H
@@ -7256,7 +7256,7 @@ DvY=
          "]]},
        Annotation[#, "Charting`Private`Tag$427442#4"]& ], 
       TagBox[
-       {RGBColor[Decimal("0.5"), 0, Decimal("0.5")], AbsoluteThickness[1.6], Opacity[1.], CapForm[
+       {RGBColor[0.5, 0, 0.5], AbsoluteThickness[1.6], Opacity[1.], CapForm[
         "Butt"], LineBox[CompressedData["
 1:eJxF0H0s1AEYB/Bzd3Gn1N11TnZDiDZsaq3V7U5kQizjWm9Upx+KU+68rCLN
 lE6jdH7JvHapOaxRJq4kLLuFySwiLpEoLW+Zbtd5q7Y8z7N9993nv+8ee0Im
@@ -7280,13 +7280,13 @@ DvY=
       "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(0\\)], \
 \\(DVCS\\)]\\)\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(1\\)], \\(DVCS\\)]\
-\\)cos(\[Pi]-\[Phi])\"", 
+\\)np.cos(\[Pi]-\[Phi])\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(2\\)], \\(DVCS\\)]\
-\\)cos(2(\[Pi]-\[Phi]))\"", 
+\\)np.cos(2(\[Pi]-\[Phi]))\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(s\\), \\(1\\)], \\(DVCS\\)]\
-\\)sin(\[Pi]-\[Phi])\"", 
+\\)np.sin(\[Pi]-\[Phi])\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(s\\), \\(2\\)], \\(DVCS\\)]\
-\\)sin(2(\[Pi]-\[Phi]))\""},
+\\)np.sin(2(\[Pi]-\[Phi]))\""},
       "LineLegend",
       DisplayFunction->(FormBox[
         StyleBox[
@@ -7302,7 +7302,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -7313,7 +7313,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -7327,7 +7327,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -7336,22 +7336,22 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 10}, {20, 10}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 10}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.1] -> Baseline)], #2}}, 
@@ -7361,7 +7361,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -7370,7 +7370,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -7381,7 +7381,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -7395,7 +7395,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -7404,7 +7404,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -7415,7 +7415,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -7429,7 +7429,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -7438,22 +7438,22 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")]], {
+                    RGBColor[0.5, 0, 0.5]], {
                     LineBox[{{0, 10}, {20, 10}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")]], {}}}, AspectRatio -> Full, 
+                    RGBColor[0.5, 0, 0.5]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 10}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.1] -> Baseline)], #5}}, 
@@ -7463,7 +7463,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}}, 
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxDividers -> {"Columns" -> {{None}}, "Rows" -> {{None}}}, 
@@ -7537,7 +7537,7 @@ DvY=
                     RectangleBox[{0, 0}]}, {
                     GrayLevel[0], 
                     RectangleBox[{1, -1}]}, {
-                    RGBColor[1, Decimal("0.5"), 0], 
+                    RGBColor[1, 0.5, 0], 
                     RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> 
@@ -7548,7 +7548,7 @@ DvY=
                     AbsoluteCurrentValue[Magnification]}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
-                    RowBox[{"1", ",", "Decimal("0.5")`", ",", "0"}], "]"}], NumberMarks -> 
+                    RowBox[{"1", ",", "0.5`", ",", "0"}], "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
                     BaselinePosition -> Baseline, DefaultBaseStyle -> {}, 
                     ButtonFunction :> With[{Typeset`box$ = EvaluationBox[]}, 
@@ -7558,7 +7558,7 @@ DvY=
                     SelectionMove[Typeset`box$, All, Expression]; 
                     FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
                     FrontEnd`Private`$ColorSelectorInitialColor = 
-                    RGBColor[1, Decimal("0.5"), 0]; 
+                    RGBColor[1, 0.5, 0]; 
                     FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
                     MathLink`CallFrontEnd[
                     FrontEnd`AttachCell[Typeset`box$, 
@@ -7568,7 +7568,7 @@ DvY=
                     "SelectionDeparture", "ParentChanged", 
                     "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
                     Automatic, Method -> "Preemptive"], 
-                    RGBColor[1, Decimal("0.5"), 0], Editable -> False, Selectable -> 
+                    RGBColor[1, 0.5, 0], Editable -> False, Selectable -> 
                     False]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -7674,7 +7674,7 @@ DvY=
                     RectangleBox[{0, 0}]}, {
                     GrayLevel[0], 
                     RectangleBox[{1, -1}]}, {
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")], 
+                    RGBColor[0.5, 0, 0.5], 
                     RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> 
@@ -7685,7 +7685,7 @@ DvY=
                     AbsoluteCurrentValue[Magnification]}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
-                    RowBox[{"Decimal("0.5")`", ",", "0", ",", "Decimal("0.5")`"}], "]"}], 
+                    RowBox[{"0.5`", ",", "0", ",", "0.5`"}], "]"}], 
                     NumberMarks -> False]], Appearance -> None, 
                     BaseStyle -> {}, BaselinePosition -> Baseline, 
                     DefaultBaseStyle -> {}, ButtonFunction :> 
@@ -7696,7 +7696,7 @@ DvY=
                     SelectionMove[Typeset`box$, All, Expression]; 
                     FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
                     FrontEnd`Private`$ColorSelectorInitialColor = 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")]; 
+                    RGBColor[0.5, 0, 0.5]; 
                     FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
                     MathLink`CallFrontEnd[
                     FrontEnd`AttachCell[Typeset`box$, 
@@ -7706,7 +7706,7 @@ DvY=
                     "SelectionDeparture", "ParentChanged", 
                     "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
                     Automatic, Method -> "Preemptive"], 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")], Editable -> False, Selectable -> 
+                    RGBColor[0.5, 0, 0.5], Editable -> False, Selectable -> 
                     False]}], "]"}]}], "}"}], ",", 
            RowBox[{"{", 
              RowBox[{#, ",", #2, ",", #3, ",", #4, ",", #5}], "}"}], ",", 
@@ -7717,7 +7717,7 @@ DvY=
            RowBox[{"LegendLayout", "\[Rule]", 
              RowBox[{"{", 
                RowBox[{"\"Row\"", ",", "5"}], "}"}]}]}], "]"}]& )], 
-     Scaled[{0.85, 0.7}], ImageScaled[{Decimal("0.5"), Decimal("0.5")}],
+     Scaled[{0.85, 0.7}], ImageScaled[{0.5, 0.5}],
      BaseStyle->{FontSize -> Larger},
      FormatType->StandardForm]},
    AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
@@ -7765,7 +7765,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", TraditionalForm], None}},
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLines->{{0}, {0}},
    GridLinesStyle->Directive[
-     GrayLevel[Decimal("0.5"), 0.4]],
+     GrayLevel[0.5, 0.4]],
    ImagePadding->All,
    ImageSize->{427.5, Automatic},
    LabelStyle->{FontFamily -> "Times"},
@@ -7875,7 +7875,7 @@ vfsUB4sonH9Y7Yy9XDeCn8WxjEWRUwzO375AxfbwRAT/nLXN0SBBcTj/R9bs
            Opacity[1.], 
            CapForm["Butt"], 
            AbsoluteThickness[1.6], 
-           RGBColor[1, Decimal("0.5"), 0]], 
+           RGBColor[1, 0.5, 0]], 
           Line[CompressedData["
 1:eJw12Xk4Vd/3OPCzjfcaKsK9yBANUiFzpr2SkuEjQyljUogkVBrI0GAsYxqU
 oYwpShJSziGKCEUikUj1LgmZMt3v+f3x++s+r2ff55y91llrn72fs9L9qK0H
@@ -8063,7 +8063,7 @@ DvY=
            Opacity[1.], 
            CapForm["Butt"], 
            AbsoluteThickness[1.6], 
-           RGBColor[Decimal("0.5"), 0, Decimal("0.5")]], 
+           RGBColor[0.5, 0, 0.5]], 
           Line[CompressedData["
 1:eJxF0H0s1AEYB/Bzd3Gn1N11TnZDiDZsaq3V7U5kQizjWm9Upx+KU+68rCLN
 lE6jdH7JvHapOaxRJq4kLLuFySwiLpEoLW+Zbtd5q7Y8z7N9993nv+8ee0Im
@@ -8127,7 +8127,7 @@ RGBColor[0., 0., 0.]]\)\!\(\*StyleBox[\"\[Degree]\",FontSize->14,FontWeight->\
 RGBColor[0., 0., 0.]]\)", None}}, FrameStyle -> Automatic, 
       FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
       GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-        GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+        GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
       Method -> {
        "DefaultBoundaryStyle" -> Automatic, 
         "DefaultGraphicsInteraction" -> {
@@ -8203,7 +8203,7 @@ StyleBox[\"2\",FontSize->9,FontWeight->\"Normal\",FontColor->RGBColor[0., 0., \
          Opacity[1.], 
          CapForm["Butt"], 
          AbsoluteThickness[1.6], 
-         RGBColor[1, Decimal("0.5"), 0]], 
+         RGBColor[1, 0.5, 0]], 
         Directive[
          Opacity[1.], 
          CapForm["Butt"], 
@@ -8218,15 +8218,15 @@ StyleBox[\"2\",FontSize->9,FontWeight->\"Normal\",FontColor->RGBColor[0., 0., \
          Opacity[1.], 
          CapForm["Butt"], 
          AbsoluteThickness[1.6], 
-         RGBColor[Decimal("0.5"), 0, Decimal("0.5")]]}, {
+         RGBColor[0.5, 0, 0.5]]}, {
        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(0\)], \(DVCS\)]\)", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(1\)], \
-\(DVCS\)]\)cos(\[Pi]-\[Phi])", 
-        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(2\)], \(DVCS\)]\)cos(2(\
+\(DVCS\)]\)np.cos(\[Pi]-\[Phi])", 
+        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(2\)], \(DVCS\)]\)np.cos(2(\
 \[Pi]-\[Phi]))", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(1\)], \
-\(DVCS\)]\)sin(\[Pi]-\[Phi])", 
-        "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(2\)], \(DVCS\)]\)sin(2(\
+\(DVCS\)]\)np.sin(\[Pi]-\[Phi])", 
+        "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(2\)], \(DVCS\)]\)np.sin(2(\
 \[Pi]-\[Phi]))"}, LegendMarkers -> None, 
        LabelStyle -> {FontFamily -> "Times"}, LegendLayout -> {"Row", 5}]], {
      0.85, 0.7}, Identity]]& ],
@@ -8405,14 +8405,14 @@ Cell[BoxData[
          "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(0\)], \
 \(DVCS\)]\)\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(1\)], \
-\(DVCS\)]\)cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
+\(DVCS\)]\)np.cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(2\)], \
-\(DVCS\)]\)cos(2(\[Pi]-\[Phi]))\>\"", ",", "\[IndentingNewLine]", 
+\(DVCS\)]\)np.cos(2(\[Pi]-\[Phi]))\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(1\)], \
-\(DVCS\)]\)sin(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
+\(DVCS\)]\)np.sin(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
           
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(2\)], \
-\(DVCS\)]\)sin(2(\[Pi]-\[Phi]))\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+\(DVCS\)]\)np.sin(2(\[Pi]-\[Phi]))\>\""}], "\[IndentingNewLine]", "}"}], ",", 
         "\[IndentingNewLine]", 
         RowBox[{"LegendLayout", "\[Rule]", 
          RowBox[{"{", "\[IndentingNewLine]", 
@@ -8526,7 +8526,7 @@ vfsUB4sonH9Y7Yy9XDeCn8WxjEWRUwzO375AxfbwRAT/nLXN0SBBcTj/R9bs
          "]]},
        Annotation[#, "Charting`Private`Tag$497379#1"]& ], 
       TagBox[
-       {RGBColor[1, Decimal("0.5"), 0], AbsoluteThickness[1.6], Opacity[1.], CapForm[
+       {RGBColor[1, 0.5, 0], AbsoluteThickness[1.6], Opacity[1.], CapForm[
         "Butt"], LineBox[CompressedData["
 1:eJw12Xk4Vd/3OPCzjfcaKsK9yBANUiFzpr2SkuEjQyljUogkVBrI0GAsYxqU
 oYwpShJSziGKCEUikUj1LgmZMt3v+f3x++s+r2ff55y91llrn72fs9L9qK0H
@@ -8718,7 +8718,7 @@ QBC1fAH+GvK7KocX/cUfGUBWa54KJBviuzE7qUv7IRlAgbC56mejAbszOSeM
          "]]},
        Annotation[#, "Charting`Private`Tag$497379#4"]& ], 
       TagBox[
-       {RGBColor[Decimal("0.5"), 0, Decimal("0.5")], AbsoluteThickness[1.6], Opacity[1.], CapForm[
+       {RGBColor[0.5, 0, 0.5], AbsoluteThickness[1.6], Opacity[1.], CapForm[
         "Butt"], LineBox[CompressedData["
 1:eJxF0H0s1AEYB/Bzd3Gn1N11TnZDiDZsaq3V7U5kQizjWm9Upx+KU+68rCLN
 lE6jdH7JvHapOaxRJq4kLLuFySwiLpEoLW+Zbtd5q7Y8z7N9993nv+8ee0Im
@@ -8742,13 +8742,13 @@ DvY=
       "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(0\\)], \
 \\(DVCS\\)]\\)\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(1\\)], \\(DVCS\\)]\
-\\)cos(\[Pi]-\[Phi])\"", 
+\\)np.cos(\[Pi]-\[Phi])\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(2\\)], \\(DVCS\\)]\
-\\)cos(2(\[Pi]-\[Phi]))\"", 
+\\)np.cos(2(\[Pi]-\[Phi]))\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(s\\), \\(1\\)], \\(DVCS\\)]\
-\\)sin(\[Pi]-\[Phi])\"", 
+\\)np.sin(\[Pi]-\[Phi])\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(s\\), \\(2\\)], \\(DVCS\\)]\
-\\)sin(2(\[Pi]-\[Phi]))\""},
+\\)np.sin(2(\[Pi]-\[Phi]))\""},
       "LineLegend",
       DisplayFunction->(FormBox[
         StyleBox[
@@ -8764,7 +8764,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -8775,7 +8775,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -8789,7 +8789,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -8798,22 +8798,22 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 10}, {20, 10}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 10}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.1] -> Baseline)], #2}}, 
@@ -8823,7 +8823,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -8832,7 +8832,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -8843,7 +8843,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -8857,7 +8857,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -8866,7 +8866,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -8877,7 +8877,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -8891,7 +8891,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -8900,22 +8900,22 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")]], {
+                    RGBColor[0.5, 0, 0.5]], {
                     LineBox[{{0, 10}, {20, 10}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")]], {}}}, AspectRatio -> Full, 
+                    RGBColor[0.5, 0, 0.5]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 10}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.1] -> Baseline)], #5}}, 
@@ -8925,7 +8925,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}}, 
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxDividers -> {"Columns" -> {{None}}, "Rows" -> {{None}}}, 
@@ -8999,7 +8999,7 @@ DvY=
                     RectangleBox[{0, 0}]}, {
                     GrayLevel[0], 
                     RectangleBox[{1, -1}]}, {
-                    RGBColor[1, Decimal("0.5"), 0], 
+                    RGBColor[1, 0.5, 0], 
                     RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> 
@@ -9010,7 +9010,7 @@ DvY=
                     AbsoluteCurrentValue[Magnification]}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
-                    RowBox[{"1", ",", "Decimal("0.5")`", ",", "0"}], "]"}], NumberMarks -> 
+                    RowBox[{"1", ",", "0.5`", ",", "0"}], "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
                     BaselinePosition -> Baseline, DefaultBaseStyle -> {}, 
                     ButtonFunction :> With[{Typeset`box$ = EvaluationBox[]}, 
@@ -9020,7 +9020,7 @@ DvY=
                     SelectionMove[Typeset`box$, All, Expression]; 
                     FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
                     FrontEnd`Private`$ColorSelectorInitialColor = 
-                    RGBColor[1, Decimal("0.5"), 0]; 
+                    RGBColor[1, 0.5, 0]; 
                     FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
                     MathLink`CallFrontEnd[
                     FrontEnd`AttachCell[Typeset`box$, 
@@ -9030,7 +9030,7 @@ DvY=
                     "SelectionDeparture", "ParentChanged", 
                     "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
                     Automatic, Method -> "Preemptive"], 
-                    RGBColor[1, Decimal("0.5"), 0], Editable -> False, Selectable -> 
+                    RGBColor[1, 0.5, 0], Editable -> False, Selectable -> 
                     False]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -9136,7 +9136,7 @@ DvY=
                     RectangleBox[{0, 0}]}, {
                     GrayLevel[0], 
                     RectangleBox[{1, -1}]}, {
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")], 
+                    RGBColor[0.5, 0, 0.5], 
                     RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> 
@@ -9147,7 +9147,7 @@ DvY=
                     AbsoluteCurrentValue[Magnification]}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
-                    RowBox[{"Decimal("0.5")`", ",", "0", ",", "Decimal("0.5")`"}], "]"}], 
+                    RowBox[{"0.5`", ",", "0", ",", "0.5`"}], "]"}], 
                     NumberMarks -> False]], Appearance -> None, 
                     BaseStyle -> {}, BaselinePosition -> Baseline, 
                     DefaultBaseStyle -> {}, ButtonFunction :> 
@@ -9158,7 +9158,7 @@ DvY=
                     SelectionMove[Typeset`box$, All, Expression]; 
                     FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
                     FrontEnd`Private`$ColorSelectorInitialColor = 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")]; 
+                    RGBColor[0.5, 0, 0.5]; 
                     FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
                     MathLink`CallFrontEnd[
                     FrontEnd`AttachCell[Typeset`box$, 
@@ -9168,7 +9168,7 @@ DvY=
                     "SelectionDeparture", "ParentChanged", 
                     "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
                     Automatic, Method -> "Preemptive"], 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")], Editable -> False, Selectable -> 
+                    RGBColor[0.5, 0, 0.5], Editable -> False, Selectable -> 
                     False]}], "]"}]}], "}"}], ",", 
            RowBox[{"{", 
              RowBox[{#, ",", #2, ",", #3, ",", #4, ",", #5}], "}"}], ",", 
@@ -9179,7 +9179,7 @@ DvY=
            RowBox[{"LegendLayout", "\[Rule]", 
              RowBox[{"{", 
                RowBox[{"\"Row\"", ",", "5"}], "}"}]}]}], "]"}]& )], 
-     Scaled[{0.85, 0.7}], ImageScaled[{Decimal("0.5"), Decimal("0.5")}],
+     Scaled[{0.85, 0.7}], ImageScaled[{0.5, 0.5}],
      BaseStyle->{FontSize -> Larger},
      FormatType->StandardForm]},
    AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
@@ -9227,7 +9227,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", TraditionalForm], None}},
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLines->{{0}, {0}},
    GridLinesStyle->Directive[
-     GrayLevel[Decimal("0.5"), 0.4]],
+     GrayLevel[0.5, 0.4]],
    ImagePadding->All,
    LabelStyle->{FontFamily -> "Times"},
    Method->{
@@ -9336,7 +9336,7 @@ vfsUB4sonH9Y7Yy9XDeCn8WxjEWRUwzO375AxfbwRAT/nLXN0SBBcTj/R9bs
            Opacity[1.], 
            CapForm["Butt"], 
            AbsoluteThickness[1.6], 
-           RGBColor[1, Decimal("0.5"), 0]], 
+           RGBColor[1, 0.5, 0]], 
           Line[CompressedData["
 1:eJw12Xk4Vd/3OPCzjfcaKsK9yBANUiFzpr2SkuEjQyljUogkVBrI0GAsYxqU
 oYwpShJSziGKCEUikUj1LgmZMt3v+f3x++s+r2ff55y91llrn72fs9L9qK0H
@@ -9537,7 +9537,7 @@ QBC1fAH+GvK7KocX/cUfGUBWa54KJBviuzE7qUv7IRlAgbC56mejAbszOSeM
            Opacity[1.], 
            CapForm["Butt"], 
            AbsoluteThickness[1.6], 
-           RGBColor[Decimal("0.5"), 0, Decimal("0.5")]], 
+           RGBColor[0.5, 0, 0.5]], 
           Line[CompressedData["
 1:eJxF0H0s1AEYB/Bzd3Gn1N11TnZDiDZsaq3V7U5kQizjWm9Upx+KU+68rCLN
 lE6jdH7JvHapOaxRJq4kLLuFySwiLpEoLW+Zbtd5q7Y8z7N9993nv+8ee0Im
@@ -9601,7 +9601,7 @@ RGBColor[0., 0., 0.]]\)\!\(\*StyleBox[\"\[Degree]\",FontSize->14,FontWeight->\
 RGBColor[0., 0., 0.]]\)", None}}, FrameStyle -> Automatic, 
       FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
       GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-        GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+        GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
       Method -> {
        "DefaultBoundaryStyle" -> Automatic, 
         "DefaultGraphicsInteraction" -> {
@@ -9676,7 +9676,7 @@ StyleBox[\"2\",FontSize->9,FontWeight->\"Normal\",FontColor->RGBColor[0., 0., \
          Opacity[1.], 
          CapForm["Butt"], 
          AbsoluteThickness[1.6], 
-         RGBColor[1, Decimal("0.5"), 0]], 
+         RGBColor[1, 0.5, 0]], 
         Directive[
          Opacity[1.], 
          CapForm["Butt"], 
@@ -9691,15 +9691,15 @@ StyleBox[\"2\",FontSize->9,FontWeight->\"Normal\",FontColor->RGBColor[0., 0., \
          Opacity[1.], 
          CapForm["Butt"], 
          AbsoluteThickness[1.6], 
-         RGBColor[Decimal("0.5"), 0, Decimal("0.5")]]}, {
+         RGBColor[0.5, 0, 0.5]]}, {
        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(0\)], \(DVCS\)]\)", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(1\)], \
-\(DVCS\)]\)cos(\[Pi]-\[Phi])", 
-        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(2\)], \(DVCS\)]\)cos(2(\
+\(DVCS\)]\)np.cos(\[Pi]-\[Phi])", 
+        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(2\)], \(DVCS\)]\)np.cos(2(\
 \[Pi]-\[Phi]))", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(1\)], \
-\(DVCS\)]\)sin(\[Pi]-\[Phi])", 
-        "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(2\)], \(DVCS\)]\)sin(2(\
+\(DVCS\)]\)np.sin(\[Pi]-\[Phi])", 
+        "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(2\)], \(DVCS\)]\)np.sin(2(\
 \[Pi]-\[Phi]))"}, LegendMarkers -> None, 
        LabelStyle -> {FontFamily -> "Times"}, LegendLayout -> {"Row", 5}]], {
      0.85, 0.7}, Identity]]& ],
@@ -9876,14 +9876,14 @@ Cell[BoxData[
          "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(0\)], \
 \(DVCS\)]\)\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(1\)], \
-\(DVCS\)]\)cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
+\(DVCS\)]\)np.cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(2\)], \
-\(DVCS\)]\)cos(2(\[Pi]-\[Phi]))\>\"", ",", "\[IndentingNewLine]", 
+\(DVCS\)]\)np.cos(2(\[Pi]-\[Phi]))\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(1\)], \
-\(DVCS\)]\)sin(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
+\(DVCS\)]\)np.sin(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
           
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(2\)], \
-\(DVCS\)]\)sin(2(\[Pi]-\[Phi]))\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+\(DVCS\)]\)np.sin(2(\[Pi]-\[Phi]))\>\""}], "\[IndentingNewLine]", "}"}], ",", 
         "\[IndentingNewLine]", 
         RowBox[{"LegendLayout", "\[Rule]", 
          RowBox[{"{", "\[IndentingNewLine]", 
@@ -9996,7 +9996,7 @@ vfsUB4sonH9Y7Yy9XDeCn8WxjEWRUwzO375AxfbwRAT/nLXN0SBBcTj/R9bs
          "]]},
        Annotation[#, "Charting`Private`Tag$532516#1"]& ], 
       TagBox[
-       {RGBColor[1, Decimal("0.5"), 0], AbsoluteThickness[1.6], Opacity[1.], CapForm[
+       {RGBColor[1, 0.5, 0], AbsoluteThickness[1.6], Opacity[1.], CapForm[
         "Butt"], LineBox[CompressedData["
 1:eJw12Xk4Vd/3OPCzjfcaKsK9yBANUiFzpr2SkuEjQyljUogkVBrI0GAsYxqU
 oYwpShJSziGKCEUikUj1LgmZMt3v+f3x++s+r2ff55y91llrn72fs9L9qK0H
@@ -10188,7 +10188,7 @@ QBC1fAH+GvI7KocX/cUfGUBWa54KJBviOzE7qUv7IRlAgbC56mejATvtPyAM
          "]]},
        Annotation[#, "Charting`Private`Tag$532516#4"]& ], 
       TagBox[
-       {RGBColor[Decimal("0.5"), 0, Decimal("0.5")], AbsoluteThickness[1.6], Opacity[1.], CapForm[
+       {RGBColor[0.5, 0, 0.5], AbsoluteThickness[1.6], Opacity[1.], CapForm[
         "Butt"], LineBox[CompressedData["
 1:eJxF0H0s1AEYB/Bzd3Gn1N11TnZDiDZsaq3V7U5kQizjWm9Upx+KU+68rCLN
 lE6jdH7JvHapOaxRJq4kLLuFySwiLpEoLW+Zbtd5q7Y8z7N9993nv+8ee0Im
@@ -10212,13 +10212,13 @@ DvY=
       "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(0\\)], \
 \\(DVCS\\)]\\)\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(1\\)], \\(DVCS\\)]\
-\\)cos(\[Pi]-\[Phi])\"", 
+\\)np.cos(\[Pi]-\[Phi])\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(2\\)], \\(DVCS\\)]\
-\\)cos(2(\[Pi]-\[Phi]))\"", 
+\\)np.cos(2(\[Pi]-\[Phi]))\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(s\\), \\(1\\)], \\(DVCS\\)]\
-\\)sin(\[Pi]-\[Phi])\"", 
+\\)np.sin(\[Pi]-\[Phi])\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(s\\), \\(2\\)], \\(DVCS\\)]\
-\\)sin(2(\[Pi]-\[Phi]))\""},
+\\)np.sin(2(\[Pi]-\[Phi]))\""},
       "LineLegend",
       DisplayFunction->(FormBox[
         StyleBox[
@@ -10234,7 +10234,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -10245,7 +10245,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -10259,7 +10259,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -10268,22 +10268,22 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 10}, {20, 10}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 10}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.1] -> Baseline)], #2}}, 
@@ -10293,7 +10293,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -10302,7 +10302,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -10313,7 +10313,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -10327,7 +10327,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -10336,7 +10336,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -10347,7 +10347,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -10361,7 +10361,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -10370,22 +10370,22 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")]], {
+                    RGBColor[0.5, 0, 0.5]], {
                     LineBox[{{0, 10}, {20, 10}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")]], {}}}, AspectRatio -> Full, 
+                    RGBColor[0.5, 0, 0.5]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 10}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.1] -> Baseline)], #5}}, 
@@ -10395,7 +10395,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}}, 
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxDividers -> {"Columns" -> {{None}}, "Rows" -> {{None}}}, 
@@ -10469,7 +10469,7 @@ DvY=
                     RectangleBox[{0, 0}]}, {
                     GrayLevel[0], 
                     RectangleBox[{1, -1}]}, {
-                    RGBColor[1, Decimal("0.5"), 0], 
+                    RGBColor[1, 0.5, 0], 
                     RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> 
@@ -10480,7 +10480,7 @@ DvY=
                     AbsoluteCurrentValue[Magnification]}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
-                    RowBox[{"1", ",", "Decimal("0.5")`", ",", "0"}], "]"}], NumberMarks -> 
+                    RowBox[{"1", ",", "0.5`", ",", "0"}], "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
                     BaselinePosition -> Baseline, DefaultBaseStyle -> {}, 
                     ButtonFunction :> With[{Typeset`box$ = EvaluationBox[]}, 
@@ -10490,7 +10490,7 @@ DvY=
                     SelectionMove[Typeset`box$, All, Expression]; 
                     FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
                     FrontEnd`Private`$ColorSelectorInitialColor = 
-                    RGBColor[1, Decimal("0.5"), 0]; 
+                    RGBColor[1, 0.5, 0]; 
                     FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
                     MathLink`CallFrontEnd[
                     FrontEnd`AttachCell[Typeset`box$, 
@@ -10500,7 +10500,7 @@ DvY=
                     "SelectionDeparture", "ParentChanged", 
                     "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
                     Automatic, Method -> "Preemptive"], 
-                    RGBColor[1, Decimal("0.5"), 0], Editable -> False, Selectable -> 
+                    RGBColor[1, 0.5, 0], Editable -> False, Selectable -> 
                     False]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -10606,7 +10606,7 @@ DvY=
                     RectangleBox[{0, 0}]}, {
                     GrayLevel[0], 
                     RectangleBox[{1, -1}]}, {
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")], 
+                    RGBColor[0.5, 0, 0.5], 
                     RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> 
@@ -10617,7 +10617,7 @@ DvY=
                     AbsoluteCurrentValue[Magnification]}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
-                    RowBox[{"Decimal("0.5")`", ",", "0", ",", "Decimal("0.5")`"}], "]"}], 
+                    RowBox[{"0.5`", ",", "0", ",", "0.5`"}], "]"}], 
                     NumberMarks -> False]], Appearance -> None, 
                     BaseStyle -> {}, BaselinePosition -> Baseline, 
                     DefaultBaseStyle -> {}, ButtonFunction :> 
@@ -10628,7 +10628,7 @@ DvY=
                     SelectionMove[Typeset`box$, All, Expression]; 
                     FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
                     FrontEnd`Private`$ColorSelectorInitialColor = 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")]; 
+                    RGBColor[0.5, 0, 0.5]; 
                     FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
                     MathLink`CallFrontEnd[
                     FrontEnd`AttachCell[Typeset`box$, 
@@ -10638,7 +10638,7 @@ DvY=
                     "SelectionDeparture", "ParentChanged", 
                     "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
                     Automatic, Method -> "Preemptive"], 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")], Editable -> False, Selectable -> 
+                    RGBColor[0.5, 0, 0.5], Editable -> False, Selectable -> 
                     False]}], "]"}]}], "}"}], ",", 
            RowBox[{"{", 
              RowBox[{#, ",", #2, ",", #3, ",", #4, ",", #5}], "}"}], ",", 
@@ -10649,7 +10649,7 @@ DvY=
            RowBox[{"LegendLayout", "\[Rule]", 
              RowBox[{"{", 
                RowBox[{"\"Row\"", ",", "5"}], "}"}]}]}], "]"}]& )], 
-     Scaled[{0.85, 0.7}], ImageScaled[{Decimal("0.5"), Decimal("0.5")}],
+     Scaled[{0.85, 0.7}], ImageScaled[{0.5, 0.5}],
      BaseStyle->{FontSize -> Larger},
      FormatType->StandardForm]},
    AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
@@ -10697,7 +10697,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", TraditionalForm], None}},
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLines->{{0}, {0}},
    GridLinesStyle->Directive[
-     GrayLevel[Decimal("0.5"), 0.4]],
+     GrayLevel[0.5, 0.4]],
    ImagePadding->All,
    LabelStyle->{FontFamily -> "Times"},
    Method->{
@@ -10806,7 +10806,7 @@ vfsUB4sonH9Y7Yy9XDeCn8WxjEWRUwzO375AxfbwRAT/nLXN0SBBcTj/R9bs
            Opacity[1.], 
            CapForm["Butt"], 
            AbsoluteThickness[1.6], 
-           RGBColor[1, Decimal("0.5"), 0]], 
+           RGBColor[1, 0.5, 0]], 
           Line[CompressedData["
 1:eJw12Xk4Vd/3OPCzjfcaKsK9yBANUiFzpr2SkuEjQyljUogkVBrI0GAsYxqU
 oYwpShJSziGKCEUikUj1LgmZMt3v+f3x++s+r2ff55y91llrn72fs9L9qK0H
@@ -11007,7 +11007,7 @@ QBC1fAH+GvI7KocX/cUfGUBWa54KJBviOzE7qUv7IRlAgbC56mejATvtPyAM
            Opacity[1.], 
            CapForm["Butt"], 
            AbsoluteThickness[1.6], 
-           RGBColor[Decimal("0.5"), 0, Decimal("0.5")]], 
+           RGBColor[0.5, 0, 0.5]], 
           Line[CompressedData["
 1:eJxF0H0s1AEYB/Bzd3Gn1N11TnZDiDZsaq3V7U5kQizjWm9Upx+KU+68rCLN
 lE6jdH7JvHapOaxRJq4kLLuFySwiLpEoLW+Zbtd5q7Y8z7N9993nv+8ee0Im
@@ -11071,7 +11071,7 @@ RGBColor[0., 0., 0.]]\)\!\(\*StyleBox[\"\[Degree]\",FontSize->14,FontWeight->\
 RGBColor[0., 0., 0.]]\)", None}}, FrameStyle -> Automatic, 
       FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
       GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-        GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+        GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
       Method -> {
        "DefaultBoundaryStyle" -> Automatic, 
         "DefaultGraphicsInteraction" -> {
@@ -11146,7 +11146,7 @@ StyleBox[\"2\",FontSize->9,FontWeight->\"Normal\",FontColor->RGBColor[0., 0., \
          Opacity[1.], 
          CapForm["Butt"], 
          AbsoluteThickness[1.6], 
-         RGBColor[1, Decimal("0.5"), 0]], 
+         RGBColor[1, 0.5, 0]], 
         Directive[
          Opacity[1.], 
          CapForm["Butt"], 
@@ -11161,15 +11161,15 @@ StyleBox[\"2\",FontSize->9,FontWeight->\"Normal\",FontColor->RGBColor[0., 0., \
          Opacity[1.], 
          CapForm["Butt"], 
          AbsoluteThickness[1.6], 
-         RGBColor[Decimal("0.5"), 0, Decimal("0.5")]]}, {
+         RGBColor[0.5, 0, 0.5]]}, {
        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(0\)], \(DVCS\)]\)", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(1\)], \
-\(DVCS\)]\)cos(\[Pi]-\[Phi])", 
-        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(2\)], \(DVCS\)]\)cos(2(\
+\(DVCS\)]\)np.cos(\[Pi]-\[Phi])", 
+        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(2\)], \(DVCS\)]\)np.cos(2(\
 \[Pi]-\[Phi]))", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(1\)], \
-\(DVCS\)]\)sin(\[Pi]-\[Phi])", 
-        "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(2\)], \(DVCS\)]\)sin(2(\
+\(DVCS\)]\)np.sin(\[Pi]-\[Phi])", 
+        "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(2\)], \(DVCS\)]\)np.sin(2(\
 \[Pi]-\[Phi]))"}, LegendMarkers -> None, 
        LabelStyle -> {FontFamily -> "Times"}, LegendLayout -> {"Row", 5}]], {
      0.85, 0.7}, Identity]]& ],
@@ -11478,13 +11478,13 @@ Cell[BoxData[
          "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(0\)], \
 \(DVCS\)]\)\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(1\)], \
-\(DVCS\)]\)cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
+\(DVCS\)]\)np.cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(2\)], \
-\(DVCS\)]\)cos(2(\[Pi]-\[Phi]))\>\"", ",", "\[IndentingNewLine]", 
+\(DVCS\)]\)np.cos(2(\[Pi]-\[Phi]))\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(1\)], \
-\(DVCS\)]\)sin(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
+\(DVCS\)]\)np.sin(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(2\)], \
-\(DVCS\)]\)sin(2(\[Pi]-\[Phi]))\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+\(DVCS\)]\)np.sin(2(\[Pi]-\[Phi]))\>\""}], "\[IndentingNewLine]", "}"}], ",", 
         "\[IndentingNewLine]", 
         RowBox[{"LegendLayout", "\[Rule]", 
          RowBox[{"{", "\[IndentingNewLine]", 
@@ -11604,7 +11604,7 @@ DvY=
          "]]},
        Annotation[#, "Charting`Private`Tag$696789#1"]& ], 
       TagBox[
-       {RGBColor[1, Decimal("0.5"), 0], AbsoluteThickness[1.6], Opacity[1.], CapForm[
+       {RGBColor[1, 0.5, 0], AbsoluteThickness[1.6], Opacity[1.], CapForm[
         "Butt"], LineBox[CompressedData["
 1:eJxF0H0s1AEYB/Bzd3Gn1N11TnZDiDZsaq3V7U5kQizjWm9Upx+KU+68rCLN
 lE6jdH7JvHapOaxRJq4kLLuFySwiLpEoLW+Zbtd5q7Y8z7N9993nv+8ee0Im
@@ -11680,7 +11680,7 @@ QOkBNRSxujE8KocX/cUfGUBoKwhT1rohPDE7qUv7IRlACdPXDZdFQTuoXjWj
          "]]},
        Annotation[#, "Charting`Private`Tag$696789#4"]& ], 
       TagBox[
-       {RGBColor[Decimal("0.5"), 0, Decimal("0.5")], AbsoluteThickness[1.6], Opacity[1.], CapForm[
+       {RGBColor[0.5, 0, 0.5], AbsoluteThickness[1.6], Opacity[1.], CapForm[
         "Butt"], LineBox[CompressedData["
 1:eJxF0H0s1AEYB/Bzd3Gn1N11TnZDiDZsaq3V7U5kQizjWm9Upx+KU+68rCLN
 lE6jdH7JvHapOaxRJq4kLLuFySwiLpEoLW+Zbtd5q7Y8z7N9993nv+8ee0Im
@@ -11704,13 +11704,13 @@ DvY=
       "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(0\\)], \
 \\(DVCS\\)]\\)\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(1\\)], \\(DVCS\\)]\
-\\)cos(\[Pi]-\[Phi])\"", 
+\\)np.cos(\[Pi]-\[Phi])\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(2\\)], \\(DVCS\\)]\
-\\)cos(2(\[Pi]-\[Phi]))\"", 
+\\)np.cos(2(\[Pi]-\[Phi]))\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(s\\), \\(1\\)], \\(DVCS\\)]\
-\\)sin(\[Pi]-\[Phi])\"", 
+\\)np.sin(\[Pi]-\[Phi])\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(s\\), \\(2\\)], \\(DVCS\\)]\
-\\)sin(2(\[Pi]-\[Phi]))\""},
+\\)np.sin(2(\[Pi]-\[Phi]))\""},
       "LineLegend",
       DisplayFunction->(FormBox[
         StyleBox[
@@ -11726,7 +11726,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -11737,7 +11737,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -11751,7 +11751,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -11760,22 +11760,22 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 10}, {20, 10}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 10}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.1] -> Baseline)], #2}}, 
@@ -11785,7 +11785,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -11794,7 +11794,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -11805,7 +11805,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -11819,7 +11819,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -11828,7 +11828,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -11839,7 +11839,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -11853,7 +11853,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -11862,22 +11862,22 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")]], {
+                    RGBColor[0.5, 0, 0.5]], {
                     LineBox[{{0, 10}, {20, 10}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")]], {}}}, AspectRatio -> Full, 
+                    RGBColor[0.5, 0, 0.5]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 10}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.1] -> Baseline)], #5}}, 
@@ -11887,7 +11887,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}}, 
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxDividers -> {"Columns" -> {{None}}, "Rows" -> {{None}}}, 
@@ -11961,7 +11961,7 @@ DvY=
                     RectangleBox[{0, 0}]}, {
                     GrayLevel[0], 
                     RectangleBox[{1, -1}]}, {
-                    RGBColor[1, Decimal("0.5"), 0], 
+                    RGBColor[1, 0.5, 0], 
                     RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> 
@@ -11972,7 +11972,7 @@ DvY=
                     AbsoluteCurrentValue[Magnification]}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
-                    RowBox[{"1", ",", "Decimal("0.5")`", ",", "0"}], "]"}], NumberMarks -> 
+                    RowBox[{"1", ",", "0.5`", ",", "0"}], "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
                     BaselinePosition -> Baseline, DefaultBaseStyle -> {}, 
                     ButtonFunction :> With[{Typeset`box$ = EvaluationBox[]}, 
@@ -11982,7 +11982,7 @@ DvY=
                     SelectionMove[Typeset`box$, All, Expression]; 
                     FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
                     FrontEnd`Private`$ColorSelectorInitialColor = 
-                    RGBColor[1, Decimal("0.5"), 0]; 
+                    RGBColor[1, 0.5, 0]; 
                     FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
                     MathLink`CallFrontEnd[
                     FrontEnd`AttachCell[Typeset`box$, 
@@ -11992,7 +11992,7 @@ DvY=
                     "SelectionDeparture", "ParentChanged", 
                     "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
                     Automatic, Method -> "Preemptive"], 
-                    RGBColor[1, Decimal("0.5"), 0], Editable -> False, Selectable -> 
+                    RGBColor[1, 0.5, 0], Editable -> False, Selectable -> 
                     False]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -12098,7 +12098,7 @@ DvY=
                     RectangleBox[{0, 0}]}, {
                     GrayLevel[0], 
                     RectangleBox[{1, -1}]}, {
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")], 
+                    RGBColor[0.5, 0, 0.5], 
                     RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> 
@@ -12109,7 +12109,7 @@ DvY=
                     AbsoluteCurrentValue[Magnification]}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
-                    RowBox[{"Decimal("0.5")`", ",", "0", ",", "Decimal("0.5")`"}], "]"}], 
+                    RowBox[{"0.5`", ",", "0", ",", "0.5`"}], "]"}], 
                     NumberMarks -> False]], Appearance -> None, 
                     BaseStyle -> {}, BaselinePosition -> Baseline, 
                     DefaultBaseStyle -> {}, ButtonFunction :> 
@@ -12120,7 +12120,7 @@ DvY=
                     SelectionMove[Typeset`box$, All, Expression]; 
                     FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
                     FrontEnd`Private`$ColorSelectorInitialColor = 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")]; 
+                    RGBColor[0.5, 0, 0.5]; 
                     FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
                     MathLink`CallFrontEnd[
                     FrontEnd`AttachCell[Typeset`box$, 
@@ -12130,7 +12130,7 @@ DvY=
                     "SelectionDeparture", "ParentChanged", 
                     "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
                     Automatic, Method -> "Preemptive"], 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")], Editable -> False, Selectable -> 
+                    RGBColor[0.5, 0, 0.5], Editable -> False, Selectable -> 
                     False]}], "]"}]}], "}"}], ",", 
            RowBox[{"{", 
              RowBox[{#, ",", #2, ",", #3, ",", #4, ",", #5}], "}"}], ",", 
@@ -12141,7 +12141,7 @@ DvY=
            RowBox[{"LegendLayout", "\[Rule]", 
              RowBox[{"{", 
                RowBox[{"\"Row\"", ",", "5"}], "}"}]}]}], "]"}]& )], 
-     Scaled[{0.85, 0.7}], ImageScaled[{Decimal("0.5"), Decimal("0.5")}],
+     Scaled[{0.85, 0.7}], ImageScaled[{0.5, 0.5}],
      BaseStyle->{FontSize -> Larger},
      FormatType->StandardForm]},
    AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
@@ -12189,7 +12189,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", TraditionalForm], None}},
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLines->{{0}, {0}},
    GridLinesStyle->Directive[
-     GrayLevel[Decimal("0.5"), 0.4]],
+     GrayLevel[0.5, 0.4]],
    ImagePadding->All,
    ImageSize->{598.5, Automatic},
    LabelStyle->{FontFamily -> "Times"},
@@ -12305,7 +12305,7 @@ DvY=
            Opacity[1.], 
            CapForm["Butt"], 
            AbsoluteThickness[1.6], 
-           RGBColor[1, Decimal("0.5"), 0]], 
+           RGBColor[1, 0.5, 0]], 
           Line[CompressedData["
 1:eJxF0H0s1AEYB/Bzd3Gn1N11TnZDiDZsaq3V7U5kQizjWm9Upx+KU+68rCLN
 lE6jdH7JvHapOaxRJq4kLLuFySwiLpEoLW+Zbtd5q7Y8z7N9993nv+8ee0Im
@@ -12390,7 +12390,7 @@ QOkBNRSxujE8KocX/cUfGUBoKwhT1rohPDE7qUv7IRlACdPXDZdFQTuoXjWj
            Opacity[1.], 
            CapForm["Butt"], 
            AbsoluteThickness[1.6], 
-           RGBColor[Decimal("0.5"), 0, Decimal("0.5")]], 
+           RGBColor[0.5, 0, 0.5]], 
           Line[CompressedData["
 1:eJxF0H0s1AEYB/Bzd3Gn1N11TnZDiDZsaq3V7U5kQizjWm9Upx+KU+68rCLN
 lE6jdH7JvHapOaxRJq4kLLuFySwiLpEoLW+Zbtd5q7Y8z7N9993nv+8ee0Im
@@ -12454,7 +12454,7 @@ RGBColor[0., 0., 0.]]\)\!\(\*StyleBox[\"\[Degree]\",FontSize->14,FontWeight->\
 RGBColor[0., 0., 0.]]\)", None}}, FrameStyle -> Automatic, 
       FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
       GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-        GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+        GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
       Method -> {
        "DefaultBoundaryStyle" -> Automatic, 
         "DefaultGraphicsInteraction" -> {
@@ -12531,7 +12531,7 @@ StyleBox[\"2\",FontSize->9,FontWeight->\"Normal\",FontColor->RGBColor[0., 0., \
          Opacity[1.], 
          CapForm["Butt"], 
          AbsoluteThickness[1.6], 
-         RGBColor[1, Decimal("0.5"), 0]], 
+         RGBColor[1, 0.5, 0]], 
         Directive[
          Opacity[1.], 
          CapForm["Butt"], 
@@ -12546,15 +12546,15 @@ StyleBox[\"2\",FontSize->9,FontWeight->\"Normal\",FontColor->RGBColor[0., 0., \
          Opacity[1.], 
          CapForm["Butt"], 
          AbsoluteThickness[1.6], 
-         RGBColor[Decimal("0.5"), 0, Decimal("0.5")]]}, {
+         RGBColor[0.5, 0, 0.5]]}, {
        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(0\)], \(DVCS\)]\)", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(1\)], \
-\(DVCS\)]\)cos(\[Pi]-\[Phi])", 
-        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(2\)], \(DVCS\)]\)cos(2(\
+\(DVCS\)]\)np.cos(\[Pi]-\[Phi])", 
+        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(2\)], \(DVCS\)]\)np.cos(2(\
 \[Pi]-\[Phi]))", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(1\)], \
-\(DVCS\)]\)sin(\[Pi]-\[Phi])", 
-        "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(2\)], \(DVCS\)]\)sin(2(\
+\(DVCS\)]\)np.sin(\[Pi]-\[Phi])", 
+        "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(2\)], \(DVCS\)]\)np.sin(2(\
 \[Pi]-\[Phi]))"}, LegendMarkers -> None, 
        LabelStyle -> {FontFamily -> "Times"}, LegendLayout -> {"Row", 5}]], {
      0.85, 0.7}, Identity]]& ],
@@ -12735,13 +12735,13 @@ Cell[BoxData[
          "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(0\)], \
 \(DVCS\)]\)\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(1\)], \
-\(DVCS\)]\)cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
+\(DVCS\)]\)np.cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(2\)], \
-\(DVCS\)]\)cos(2(\[Pi]-\[Phi]))\>\"", ",", "\[IndentingNewLine]", 
+\(DVCS\)]\)np.cos(2(\[Pi]-\[Phi]))\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(1\)], \
-\(DVCS\)]\)sin(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
+\(DVCS\)]\)np.sin(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(2\)], \
-\(DVCS\)]\)sin(2(\[Pi]-\[Phi]))\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+\(DVCS\)]\)np.sin(2(\[Pi]-\[Phi]))\>\""}], "\[IndentingNewLine]", "}"}], ",", 
         "\[IndentingNewLine]", 
         RowBox[{"LegendLayout", "\[Rule]", 
          RowBox[{"{", "\[IndentingNewLine]", 
@@ -12856,7 +12856,7 @@ Dk7oQ/BPBMwP5RWTgPOTLG2WL5+C4HvtKqoMvI3gG1qv9P6tKAnnAwAcKZTJ
          "]]},
        Annotation[#, "Charting`Private`Tag$725043#1"]& ], 
       TagBox[
-       {RGBColor[1, Decimal("0.5"), 0], AbsoluteThickness[1.6], Opacity[1.], CapForm[
+       {RGBColor[1, 0.5, 0], AbsoluteThickness[1.6], Opacity[1.], CapForm[
         "Butt"], LineBox[CompressedData["
 1:eJw12Xk4Vc//AHDrda+lEO69SooWyVbWssw7LUolJIpE9ohsSZbrHMkSZS+U
 KFmLEpJUI9GHUtZEISlSSgqR9Xe+f/z+Os/rOec8M/Oe97xnznNWO5wyd+bh
@@ -13049,7 +13049,7 @@ QOkBNRSxujE8KocX/cUfGUBoKwhT1rohPDE7qUv7IRlACdPXDZdFQTuoXjWj
          "]]},
        Annotation[#, "Charting`Private`Tag$725043#4"]& ], 
       TagBox[
-       {RGBColor[Decimal("0.5"), 0, Decimal("0.5")], AbsoluteThickness[1.6], Opacity[1.], CapForm[
+       {RGBColor[0.5, 0, 0.5], AbsoluteThickness[1.6], Opacity[1.], CapForm[
         "Butt"], LineBox[CompressedData["
 1:eJxF0H0s1AEYB/Bzd3Gn1N11TnZDiDZsaq3V7U5kQizjWm9Upx+KU+68rCLN
 lE6jdH7JvHapOaxRJq4kLLuFySwiLpEoLW+Zbtd5q7Y8z7N9993nv+8ee0Im
@@ -13073,13 +13073,13 @@ DvY=
       "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(0\\)], \
 \\(DVCS\\)]\\)\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(1\\)], \\(DVCS\\)]\
-\\)cos(\[Pi]-\[Phi])\"", 
+\\)np.cos(\[Pi]-\[Phi])\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(2\\)], \\(DVCS\\)]\
-\\)cos(2(\[Pi]-\[Phi]))\"", 
+\\)np.cos(2(\[Pi]-\[Phi]))\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(s\\), \\(1\\)], \\(DVCS\\)]\
-\\)sin(\[Pi]-\[Phi])\"", 
+\\)np.sin(\[Pi]-\[Phi])\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(s\\), \\(2\\)], \\(DVCS\\)]\
-\\)sin(2(\[Pi]-\[Phi]))\""},
+\\)np.sin(2(\[Pi]-\[Phi]))\""},
       "LineLegend",
       DisplayFunction->(FormBox[
         StyleBox[
@@ -13095,7 +13095,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -13106,7 +13106,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -13120,7 +13120,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -13129,22 +13129,22 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 10}, {20, 10}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 10}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.1] -> Baseline)], #2}}, 
@@ -13154,7 +13154,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -13163,7 +13163,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -13174,7 +13174,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -13188,7 +13188,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -13197,7 +13197,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -13208,7 +13208,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -13222,7 +13222,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -13231,22 +13231,22 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")]], {
+                    RGBColor[0.5, 0, 0.5]], {
                     LineBox[{{0, 10}, {20, 10}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")]], {}}}, AspectRatio -> Full, 
+                    RGBColor[0.5, 0, 0.5]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 10}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.1] -> Baseline)], #5}}, 
@@ -13256,7 +13256,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}}, 
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxDividers -> {"Columns" -> {{None}}, "Rows" -> {{None}}}, 
@@ -13330,7 +13330,7 @@ DvY=
                     RectangleBox[{0, 0}]}, {
                     GrayLevel[0], 
                     RectangleBox[{1, -1}]}, {
-                    RGBColor[1, Decimal("0.5"), 0], 
+                    RGBColor[1, 0.5, 0], 
                     RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> 
@@ -13341,7 +13341,7 @@ DvY=
                     AbsoluteCurrentValue[Magnification]}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
-                    RowBox[{"1", ",", "Decimal("0.5")`", ",", "0"}], "]"}], NumberMarks -> 
+                    RowBox[{"1", ",", "0.5`", ",", "0"}], "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
                     BaselinePosition -> Baseline, DefaultBaseStyle -> {}, 
                     ButtonFunction :> With[{Typeset`box$ = EvaluationBox[]}, 
@@ -13351,7 +13351,7 @@ DvY=
                     SelectionMove[Typeset`box$, All, Expression]; 
                     FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
                     FrontEnd`Private`$ColorSelectorInitialColor = 
-                    RGBColor[1, Decimal("0.5"), 0]; 
+                    RGBColor[1, 0.5, 0]; 
                     FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
                     MathLink`CallFrontEnd[
                     FrontEnd`AttachCell[Typeset`box$, 
@@ -13361,7 +13361,7 @@ DvY=
                     "SelectionDeparture", "ParentChanged", 
                     "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
                     Automatic, Method -> "Preemptive"], 
-                    RGBColor[1, Decimal("0.5"), 0], Editable -> False, Selectable -> 
+                    RGBColor[1, 0.5, 0], Editable -> False, Selectable -> 
                     False]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -13467,7 +13467,7 @@ DvY=
                     RectangleBox[{0, 0}]}, {
                     GrayLevel[0], 
                     RectangleBox[{1, -1}]}, {
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")], 
+                    RGBColor[0.5, 0, 0.5], 
                     RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> 
@@ -13478,7 +13478,7 @@ DvY=
                     AbsoluteCurrentValue[Magnification]}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
-                    RowBox[{"Decimal("0.5")`", ",", "0", ",", "Decimal("0.5")`"}], "]"}], 
+                    RowBox[{"0.5`", ",", "0", ",", "0.5`"}], "]"}], 
                     NumberMarks -> False]], Appearance -> None, 
                     BaseStyle -> {}, BaselinePosition -> Baseline, 
                     DefaultBaseStyle -> {}, ButtonFunction :> 
@@ -13489,7 +13489,7 @@ DvY=
                     SelectionMove[Typeset`box$, All, Expression]; 
                     FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
                     FrontEnd`Private`$ColorSelectorInitialColor = 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")]; 
+                    RGBColor[0.5, 0, 0.5]; 
                     FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
                     MathLink`CallFrontEnd[
                     FrontEnd`AttachCell[Typeset`box$, 
@@ -13499,7 +13499,7 @@ DvY=
                     "SelectionDeparture", "ParentChanged", 
                     "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
                     Automatic, Method -> "Preemptive"], 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")], Editable -> False, Selectable -> 
+                    RGBColor[0.5, 0, 0.5], Editable -> False, Selectable -> 
                     False]}], "]"}]}], "}"}], ",", 
            RowBox[{"{", 
              RowBox[{#, ",", #2, ",", #3, ",", #4, ",", #5}], "}"}], ",", 
@@ -13510,7 +13510,7 @@ DvY=
            RowBox[{"LegendLayout", "\[Rule]", 
              RowBox[{"{", 
                RowBox[{"\"Row\"", ",", "5"}], "}"}]}]}], "]"}]& )], 
-     Scaled[{0.85, 0.7}], ImageScaled[{Decimal("0.5"), Decimal("0.5")}],
+     Scaled[{0.85, 0.7}], ImageScaled[{0.5, 0.5}],
      BaseStyle->{FontSize -> Larger},
      FormatType->StandardForm]},
    AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
@@ -13558,7 +13558,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", TraditionalForm], None}},
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLines->{{0}, {0}},
    GridLinesStyle->Directive[
-     GrayLevel[Decimal("0.5"), 0.4]],
+     GrayLevel[0.5, 0.4]],
    ImagePadding->All,
    LabelStyle->{FontFamily -> "Times"},
    Method->{
@@ -13667,7 +13667,7 @@ Dk7oQ/BPBMwP5RWTgPOTLG2WL5+C4HvtKqoMvI3gG1qv9P6tKAnnAwAcKZTJ
            Opacity[1.], 
            CapForm["Butt"], 
            AbsoluteThickness[1.6], 
-           RGBColor[1, Decimal("0.5"), 0]], 
+           RGBColor[1, 0.5, 0]], 
           Line[CompressedData["
 1:eJw12Xk4Vc//AHDrda+lEO69SooWyVbWssw7LUolJIpE9ohsSZbrHMkSZS+U
 KFmLEpJUI9GHUtZEISlSSgqR9Xe+f/z+Os/rOec8M/Oe97xnznNWO5wyd+bh
@@ -13869,7 +13869,7 @@ QOkBNRSxujE8KocX/cUfGUBoKwhT1rohPDE7qUv7IRlACdPXDZdFQTuoXjWj
            Opacity[1.], 
            CapForm["Butt"], 
            AbsoluteThickness[1.6], 
-           RGBColor[Decimal("0.5"), 0, Decimal("0.5")]], 
+           RGBColor[0.5, 0, 0.5]], 
           Line[CompressedData["
 1:eJxF0H0s1AEYB/Bzd3Gn1N11TnZDiDZsaq3V7U5kQizjWm9Upx+KU+68rCLN
 lE6jdH7JvHapOaxRJq4kLLuFySwiLpEoLW+Zbtd5q7Y8z7N9993nv+8ee0Im
@@ -13933,7 +13933,7 @@ RGBColor[0., 0., 0.]]\)\!\(\*StyleBox[\"\[Degree]\",FontSize->14,FontWeight->\
 RGBColor[0., 0., 0.]]\)", None}}, FrameStyle -> Automatic, 
       FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
       GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-        GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+        GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
       Method -> {
        "DefaultBoundaryStyle" -> Automatic, 
         "DefaultGraphicsInteraction" -> {
@@ -14008,7 +14008,7 @@ StyleBox[\"2\",FontSize->9,FontWeight->\"Normal\",FontColor->RGBColor[0., 0., \
          Opacity[1.], 
          CapForm["Butt"], 
          AbsoluteThickness[1.6], 
-         RGBColor[1, Decimal("0.5"), 0]], 
+         RGBColor[1, 0.5, 0]], 
         Directive[
          Opacity[1.], 
          CapForm["Butt"], 
@@ -14023,15 +14023,15 @@ StyleBox[\"2\",FontSize->9,FontWeight->\"Normal\",FontColor->RGBColor[0., 0., \
          Opacity[1.], 
          CapForm["Butt"], 
          AbsoluteThickness[1.6], 
-         RGBColor[Decimal("0.5"), 0, Decimal("0.5")]]}, {
+         RGBColor[0.5, 0, 0.5]]}, {
        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(0\)], \(DVCS\)]\)", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(1\)], \
-\(DVCS\)]\)cos(\[Pi]-\[Phi])", 
-        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(2\)], \(DVCS\)]\)cos(2(\
+\(DVCS\)]\)np.cos(\[Pi]-\[Phi])", 
+        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(2\)], \(DVCS\)]\)np.cos(2(\
 \[Pi]-\[Phi]))", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(1\)], \
-\(DVCS\)]\)sin(\[Pi]-\[Phi])", 
-        "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(2\)], \(DVCS\)]\)sin(2(\
+\(DVCS\)]\)np.sin(\[Pi]-\[Phi])", 
+        "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(2\)], \(DVCS\)]\)np.sin(2(\
 \[Pi]-\[Phi]))"}, LegendMarkers -> None, 
        LabelStyle -> {FontFamily -> "Times"}, LegendLayout -> {"Row", 5}]], {
      0.85, 0.7}, Identity]]& ],
@@ -14212,13 +14212,13 @@ Cell[BoxData[
          "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(0\)], \
 \(DVCS\)]\)\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(1\)], \
-\(DVCS\)]\)cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
+\(DVCS\)]\)np.cos(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(2\)], \
-\(DVCS\)]\)cos(2(\[Pi]-\[Phi]))\>\"", ",", "\[IndentingNewLine]", 
+\(DVCS\)]\)np.cos(2(\[Pi]-\[Phi]))\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(1\)], \
-\(DVCS\)]\)sin(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
+\(DVCS\)]\)np.sin(\[Pi]-\[Phi])\>\"", ",", "\[IndentingNewLine]", 
           "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(2\)], \
-\(DVCS\)]\)sin(2(\[Pi]-\[Phi]))\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+\(DVCS\)]\)np.sin(2(\[Pi]-\[Phi]))\>\""}], "\[IndentingNewLine]", "}"}], ",", 
         "\[IndentingNewLine]", 
         RowBox[{"LegendLayout", "\[Rule]", 
          RowBox[{"{", "\[IndentingNewLine]", 
@@ -14332,7 +14332,7 @@ HZzQh+CfCJgfyismAecnWdosXz4FwffaVVQZeBvBN7Re6f1bURLOBwCokK7J
          "]]},
        Annotation[#, "Charting`Private`Tag$665246#1"]& ], 
       TagBox[
-       {RGBColor[1, Decimal("0.5"), 0], AbsoluteThickness[1.6], Opacity[1.], CapForm[
+       {RGBColor[1, 0.5, 0], AbsoluteThickness[1.6], Opacity[1.], CapForm[
         "Butt"], LineBox[CompressedData["
 1:eJw12Xk4Vc//AHDrda+lEO69SooWyVbWssw7LUolJIpE9ohsSZbrHMkSZS+U
 KFmLEpJUI9GHUtZEISlSSgqR9Xe+f/z+Os/rOec8M/Oe97xnznNWO5wyd+bh
@@ -14525,7 +14525,7 @@ QOkBNRSxujE8KocX/cUfGUBoKwhT1rohPDE7qUv7IRlACdPXDZdFQTuoXjWj
          "]]},
        Annotation[#, "Charting`Private`Tag$665246#4"]& ], 
       TagBox[
-       {RGBColor[Decimal("0.5"), 0, Decimal("0.5")], AbsoluteThickness[1.6], Opacity[1.], CapForm[
+       {RGBColor[0.5, 0, 0.5], AbsoluteThickness[1.6], Opacity[1.], CapForm[
         "Butt"], LineBox[CompressedData["
 1:eJxF0H0s1AEYB/Bzd3Gn1N11TnZDiDZsaq3V7U5kQizjWm9Upx+KU+68rCLN
 lE6jdH7JvHapOaxRJq4kLLuFySwiLpEoLW+Zbtd5q7Y8z7N9993nv+8ee0Im
@@ -14549,13 +14549,13 @@ DvY=
       "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(0\\)], \
 \\(DVCS\\)]\\)\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(1\\)], \\(DVCS\\)]\
-\\)cos(\[Pi]-\[Phi])\"", 
+\\)np.cos(\[Pi]-\[Phi])\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(c\\), \\(2\\)], \\(DVCS\\)]\
-\\)cos(2(\[Pi]-\[Phi]))\"", 
+\\)np.cos(2(\[Pi]-\[Phi]))\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(s\\), \\(1\\)], \\(DVCS\\)]\
-\\)sin(\[Pi]-\[Phi])\"", 
+\\)np.sin(\[Pi]-\[Phi])\"", 
        "\"\\!\\(\\*SuperscriptBox[SubscriptBox[\\(s\\), \\(2\\)], \\(DVCS\\)]\
-\\)sin(2(\[Pi]-\[Phi]))\""},
+\\)np.sin(2(\[Pi]-\[Phi]))\""},
       "LineLegend",
       DisplayFunction->(FormBox[
         StyleBox[
@@ -14571,7 +14571,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -14582,7 +14582,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -14596,7 +14596,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -14605,22 +14605,22 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {
+                    RGBColor[1, 0.5, 0]], {
                     LineBox[{{0, 10}, {20, 10}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[1, Decimal("0.5"), 0]], {}}}, AspectRatio -> Full, 
+                    RGBColor[1, 0.5, 0]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 10}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.1] -> Baseline)], #2}}, 
@@ -14630,7 +14630,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -14639,7 +14639,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -14650,7 +14650,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -14664,7 +14664,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -14673,7 +14673,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -14684,7 +14684,7 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
@@ -14698,7 +14698,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}, {
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}, {
                TagBox[
                 GridBox[{{
                    GraphicsBox[{{
@@ -14707,22 +14707,22 @@ DvY=
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")]], {
+                    RGBColor[0.5, 0, 0.5]], {
                     LineBox[{{0, 10}, {20, 10}}]}}, {
                     Directive[
                     EdgeForm[
                     Directive[
                     Opacity[0.3], 
                     GrayLevel[0]]], 
-                    PointSize[Decimal("0.5")], 
+                    PointSize[0.5], 
                     Opacity[1.], 
                     CapForm["Butt"], 
                     AbsoluteThickness[1.6], 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")]], {}}}, AspectRatio -> Full, 
+                    RGBColor[0.5, 0, 0.5]], {}}}, AspectRatio -> Full, 
                     ImageSize -> {20, 10}, PlotRangePadding -> None, 
                     ImagePadding -> Automatic, 
                     BaselinePosition -> (Scaled[0.1] -> Baseline)], #5}}, 
@@ -14732,7 +14732,7 @@ DvY=
                  GridBoxDividers -> {
                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
                  GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
-                  GridBoxSpacings -> {"Columns" -> {{0.8, Decimal("0.5")}}}], "Grid"]}}, 
+                  GridBoxSpacings -> {"Columns" -> {{0.8, 0.5}}}], "Grid"]}}, 
              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
              AutoDelete -> False, 
              GridBoxDividers -> {"Columns" -> {{None}}, "Rows" -> {{None}}}, 
@@ -14806,7 +14806,7 @@ DvY=
                     RectangleBox[{0, 0}]}, {
                     GrayLevel[0], 
                     RectangleBox[{1, -1}]}, {
-                    RGBColor[1, Decimal("0.5"), 0], 
+                    RGBColor[1, 0.5, 0], 
                     RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> 
@@ -14817,7 +14817,7 @@ DvY=
                     AbsoluteCurrentValue[Magnification]}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
-                    RowBox[{"1", ",", "Decimal("0.5")`", ",", "0"}], "]"}], NumberMarks -> 
+                    RowBox[{"1", ",", "0.5`", ",", "0"}], "]"}], NumberMarks -> 
                     False]], Appearance -> None, BaseStyle -> {}, 
                     BaselinePosition -> Baseline, DefaultBaseStyle -> {}, 
                     ButtonFunction :> With[{Typeset`box$ = EvaluationBox[]}, 
@@ -14827,7 +14827,7 @@ DvY=
                     SelectionMove[Typeset`box$, All, Expression]; 
                     FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
                     FrontEnd`Private`$ColorSelectorInitialColor = 
-                    RGBColor[1, Decimal("0.5"), 0]; 
+                    RGBColor[1, 0.5, 0]; 
                     FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
                     MathLink`CallFrontEnd[
                     FrontEnd`AttachCell[Typeset`box$, 
@@ -14837,7 +14837,7 @@ DvY=
                     "SelectionDeparture", "ParentChanged", 
                     "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
                     Automatic, Method -> "Preemptive"], 
-                    RGBColor[1, Decimal("0.5"), 0], Editable -> False, Selectable -> 
+                    RGBColor[1, 0.5, 0], Editable -> False, Selectable -> 
                     False]}], "]"}], ",", 
                RowBox[{"Directive", "[", 
                  RowBox[{
@@ -14943,7 +14943,7 @@ DvY=
                     RectangleBox[{0, 0}]}, {
                     GrayLevel[0], 
                     RectangleBox[{1, -1}]}, {
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")], 
+                    RGBColor[0.5, 0, 0.5], 
                     RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
                     "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
                     FrameStyle -> 
@@ -14954,7 +14954,7 @@ DvY=
                     AbsoluteCurrentValue[Magnification]}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
-                    RowBox[{"Decimal("0.5")`", ",", "0", ",", "Decimal("0.5")`"}], "]"}], 
+                    RowBox[{"0.5`", ",", "0", ",", "0.5`"}], "]"}], 
                     NumberMarks -> False]], Appearance -> None, 
                     BaseStyle -> {}, BaselinePosition -> Baseline, 
                     DefaultBaseStyle -> {}, ButtonFunction :> 
@@ -14965,7 +14965,7 @@ DvY=
                     SelectionMove[Typeset`box$, All, Expression]; 
                     FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
                     FrontEnd`Private`$ColorSelectorInitialColor = 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")]; 
+                    RGBColor[0.5, 0, 0.5]; 
                     FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
                     MathLink`CallFrontEnd[
                     FrontEnd`AttachCell[Typeset`box$, 
@@ -14975,7 +14975,7 @@ DvY=
                     "SelectionDeparture", "ParentChanged", 
                     "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
                     Automatic, Method -> "Preemptive"], 
-                    RGBColor[Decimal("0.5"), 0, Decimal("0.5")], Editable -> False, Selectable -> 
+                    RGBColor[0.5, 0, 0.5], Editable -> False, Selectable -> 
                     False]}], "]"}]}], "}"}], ",", 
            RowBox[{"{", 
              RowBox[{#, ",", #2, ",", #3, ",", #4, ",", #5}], "}"}], ",", 
@@ -14986,7 +14986,7 @@ DvY=
            RowBox[{"LegendLayout", "\[Rule]", 
              RowBox[{"{", 
                RowBox[{"\"Row\"", ",", "5"}], "}"}]}]}], "]"}]& )], 
-     Scaled[{0.85, 0.7}], ImageScaled[{Decimal("0.5"), Decimal("0.5")}],
+     Scaled[{0.85, 0.7}], ImageScaled[{0.5, 0.5}],
      BaseStyle->{FontSize -> Larger},
      FormatType->StandardForm]},
    AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
@@ -15034,7 +15034,7 @@ FontColor->RGBColor[0., 0., 0.]]\\)\"", TraditionalForm], None}},
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLines->{{0}, {0}},
    GridLinesStyle->Directive[
-     GrayLevel[Decimal("0.5"), 0.4]],
+     GrayLevel[0.5, 0.4]],
    ImagePadding->All,
    LabelStyle->{FontFamily -> "Times"},
    Method->{
@@ -15143,7 +15143,7 @@ HZzQh+CfCJgfyismAecnWdosXz4FwffaVVQZeBvBN7Re6f1bURLOBwCokK7J
            Opacity[1.], 
            CapForm["Butt"], 
            AbsoluteThickness[1.6], 
-           RGBColor[1, Decimal("0.5"), 0]], 
+           RGBColor[1, 0.5, 0]], 
           Line[CompressedData["
 1:eJw12Xk4Vc//AHDrda+lEO69SooWyVbWssw7LUolJIpE9ohsSZbrHMkSZS+U
 KFmLEpJUI9GHUtZEISlSSgqR9Xe+f/z+Os/rOec8M/Oe97xnznNWO5wyd+bh
@@ -15345,7 +15345,7 @@ QOkBNRSxujE8KocX/cUfGUBoKwhT1rohPDE7qUv7IRlACdPXDZdFQTuoXjWj
            Opacity[1.], 
            CapForm["Butt"], 
            AbsoluteThickness[1.6], 
-           RGBColor[Decimal("0.5"), 0, Decimal("0.5")]], 
+           RGBColor[0.5, 0, 0.5]], 
           Line[CompressedData["
 1:eJxF0H0s1AEYB/Bzd3Gn1N11TnZDiDZsaq3V7U5kQizjWm9Upx+KU+68rCLN
 lE6jdH7JvHapOaxRJq4kLLuFySwiLpEoLW+Zbtd5q7Y8z7N9993nv+8ee0Im
@@ -15409,7 +15409,7 @@ RGBColor[0., 0., 0.]]\)\!\(\*StyleBox[\"\[Degree]\",FontSize->14,FontWeight->\
 RGBColor[0., 0., 0.]]\)", None}}, FrameStyle -> Automatic, 
       FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
       GridLines -> {{0}, {0}}, GridLinesStyle -> Directive[
-        GrayLevel[Decimal("0.5"), 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
+        GrayLevel[0.5, 0.4]], LabelStyle -> {FontFamily -> "Times"}, 
       Method -> {
        "DefaultBoundaryStyle" -> Automatic, 
         "DefaultGraphicsInteraction" -> {
@@ -15484,7 +15484,7 @@ StyleBox[\"2\",FontSize->9,FontWeight->\"Normal\",FontColor->RGBColor[0., 0., \
          Opacity[1.], 
          CapForm["Butt"], 
          AbsoluteThickness[1.6], 
-         RGBColor[1, Decimal("0.5"), 0]], 
+         RGBColor[1, 0.5, 0]], 
         Directive[
          Opacity[1.], 
          CapForm["Butt"], 
@@ -15499,15 +15499,15 @@ StyleBox[\"2\",FontSize->9,FontWeight->\"Normal\",FontColor->RGBColor[0., 0., \
          Opacity[1.], 
          CapForm["Butt"], 
          AbsoluteThickness[1.6], 
-         RGBColor[Decimal("0.5"), 0, Decimal("0.5")]]}, {
+         RGBColor[0.5, 0, 0.5]]}, {
        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(0\)], \(DVCS\)]\)", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(1\)], \
-\(DVCS\)]\)cos(\[Pi]-\[Phi])", 
-        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(2\)], \(DVCS\)]\)cos(2(\
+\(DVCS\)]\)np.cos(\[Pi]-\[Phi])", 
+        "\!\(\*SuperscriptBox[SubscriptBox[\(c\), \(2\)], \(DVCS\)]\)np.cos(2(\
 \[Pi]-\[Phi]))", 
         "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(1\)], \
-\(DVCS\)]\)sin(\[Pi]-\[Phi])", 
-        "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(2\)], \(DVCS\)]\)sin(2(\
+\(DVCS\)]\)np.sin(\[Pi]-\[Phi])", 
+        "\!\(\*SuperscriptBox[SubscriptBox[\(s\), \(2\)], \(DVCS\)]\)np.sin(2(\
 \[Pi]-\[Phi]))"}, LegendMarkers -> None, 
        LabelStyle -> {FontFamily -> "Times"}, LegendLayout -> {"Row", 5}]], {
      0.85, 0.7}, Identity]]& ],

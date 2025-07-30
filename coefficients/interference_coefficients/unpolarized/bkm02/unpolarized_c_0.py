@@ -6,15 +6,15 @@ from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_CLP 
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_CLPV import calculate_curly_C_longitudinally_polarized_interference_V
 from coefficients.interference_coefficients.lp_polarized.lp_polarized_curly_CLPA import calculate_curly_C_longitudinally_polarized_interference_A
 
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p0V import calculate_c_0_zero_plus_longitudinally_polarized_V
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p0A import calculate_c_0_zero_plus_longitudinally_polarized_A
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_C0p0V import calculate_c_0_zero_plus_longitudinally_polarized_V
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_C0p0A import calculate_c_0_zero_plus_longitudinally_polarized_A
 
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p1 import calculate_c_1_zero_plus_longitudinally_polarized
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p1V import calculate_c_1_zero_plus_longitudinally_polarized_V
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_C0p1 import calculate_c_1_zero_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_C0p1V import calculate_c_1_zero_plus_longitudinally_polarized_V
 
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p2 import calculate_c_2_zero_plus_longitudinally_polarized
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p2V import calculate_c_2_zero_plus_longitudinally_polarized_V
-from coefficients.interference_coefficients.lp_polarized.pl_polarized_C0p2A import calculate_c_2_zero_plus_longitudinally_polarized_A
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_C0p2 import calculate_c_2_zero_plus_longitudinally_polarized
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_C0p2V import calculate_c_2_zero_plus_longitudinally_polarized_V
+from coefficients.interference_coefficients.lp_polarized.lp_polarized_C0p2A import calculate_c_2_zero_plus_longitudinally_polarized_A
 
 
 def calculate_c_0_unpolarized(
@@ -39,10 +39,10 @@ def calculate_c_0_unpolarized(
     try:
         
         # (1): Calculate the first recurrent quantity:
-        two_minus_y = Decimal("2.") - lepton_energy_fraction_y
+        two_minus_y = 2. - lepton_energy_fraction_y
 
         # (2): Calculate the second recurrent quantity:
-        one_minus_y = Decimal("1.") - lepton_energy_fraction_y
+        one_minus_y = 1. - lepton_energy_fraction_y
 
         # (3): Calculate the first term in the Re{...} brackets:
         coefficient_c_I_unpolarized = calculate_interference_coefficient_unpolarized(
@@ -70,7 +70,7 @@ def calculate_c_0_unpolarized(
         first_term_in_brackets =  two_minus_y**2 * kinematic_k**2 * coefficient_c_I_unpolarized / one_minus_y
 
         # (6): Calculate the second term in the Re{...} brackets:
-        second_term_in_brackets = squared_hadronic_momentum_transfer_t * one_minus_y * (Decimal("2.") - x_Bjorken) * (coefficient_c_I_unpolarized + coefficient_delta_c_I_unpolarized) / squared_Q_momentum_transfer
+        second_term_in_brackets = squared_hadronic_momentum_transfer_t * one_minus_y * (2. - x_Bjorken) * (coefficient_c_I_unpolarized + coefficient_delta_c_I_unpolarized) / squared_Q_momentum_transfer
 
         # (7): Calculate the prefactor in front of the brackets:
         coefficient_prefactor = -8 * two_minus_y
