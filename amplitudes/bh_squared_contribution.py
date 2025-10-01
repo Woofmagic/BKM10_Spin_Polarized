@@ -1,4 +1,13 @@
+"""
+## Description:
+Contains a script that calculates on the |BH||^{2} contribution to the BKM02/10 formalism parametrization
+of the DVCS cross section.
 
+## Notes:
+1. 2025/09/01: Cleaned some stuff up here.
+"""
+
+# 3rd Party Library | NumPy
 import numpy as np
 
 # Import helper modules:
@@ -47,6 +56,20 @@ def calculate_bh_amplitude_squared(
     ## Description:
     Here, we calculate the squared BH (Bethe-Heitler) amplitude according to the
     BKM02/BKM10 formalism.
+
+    :param float lepton_helicity:
+
+    :param float target_polarization:
+
+    :param float squared_Q_momentum_transfer:
+
+    :param float x_Bjorken:
+
+    :param float squared_hadronic_momentum_transfer_t:
+
+    :param float lab_kinematics_k:
+
+    :param float azimuthal_phi:
     """
     
     try:

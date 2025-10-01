@@ -1,6 +1,10 @@
 """
+## Description:
 This module contains the *major function* that computes the entire four-fold
 differential cross-section according to the BKM10 formulation.
+
+## Notes:
+    1. 2025/09/01: Initiated refactoring with slightly more up-to-date workflow information.
 """
 
 # Helper Module | Convert GeV^{-6} to nb/GeV^{4}
@@ -84,72 +88,40 @@ def calculate_bkm10_cross_section(
     ## Description:
     Numerically evaluates the four-fold cross-section for the electroproduction
     of photons.
-
-    ## Arguments:
     
-        lepton_helicity: (float)
+    :param float lepton_helicity:
 
-        target_polarization: (float)
+    :param float target_polarization:
 
-        squared_Q_momentum_transfer: (float)
+    :param float squared_Q_momentum_transfer:
 
-        x_Bjorken: (float)
+    :param float x_Bjorken:
 
-        squared_hadronic_momentum_transfer_t: (float)
+    :param float squared_hadronic_momentum_transfer_t:
 
-        lab_kinematics_k: (float)
+    :param float lab_kinematics_k:
 
-        azimuthal_phi: (float)
+    :param float azimuthal_phi:
 
-        compton_form_factor_h_real_part: (complex)
+    :param complex compton_form_factor_h:
+        The Compton Form Factor (CFF) called H.
 
-            The real part of the Compton Form Factor (CFF) called H. We will
-            write this as Re[H].
+    :param complex compton_form_factor_h_tilde:
+        The Compton Form Factor (CFF) called Ht (H-tilde)
 
-        compton_form_factor_h_tilde_real_part: (float)
+    :param complex compton_form_factor_e: 
+        The Compton Form Factor (CFF) called E.
 
-            The real part of the Compton Form Factor (CFF) called Ht (H-tilde). We will
-            write this as Re[HT].
+    :param complex compton_form_factor_e_tilde:
+        The Compton Form Factor (CFF) called Et (E-tilde).
 
-        compton_form_factor_e_real_part: (float)
+    :param bool verbose:
 
-            The real part of the Compton Form Factor (CFF) called E. We will
-            write this as Re[E].
-
-        compton_form_factor_e_tilde_real_part: (float)
-
-            The real part of the Compton Form Factor (CFF) called Et (E-tilde). We will
-            write this as Re[Et].
-
-        compton_form_factor_h_imaginary_part: (float)
-
-            The imaginary/complex part of the Compton Form Factor (CFF) called H. We will
-            write this as Re[H].
-
-        compton_form_factor_h_tilde_imaginary_part: (float)
-
-            The imaginary/complex part of the Compton Form Factor (CFF) called Ht (H-tilde). We will
-            write this as Re[HT].
-
-        compton_form_factor_e_imaginary_part: (float)
-
-            The imaginary/complex part of the Compton Form Factor (CFF) called E. We will
-            write this as Re[E].
-
-        compton_form_factor_e_tilde_imaginary_part: (float)
-
-            The imaginary/complex part of the Compton Form Factor (CFF) called Et (E-tilde). We will
-            write this as Re[Et].
-
-        verbose: (bool)
-
-    ## Returns:
-    
-        bkm10_cross_section_in_nb_gev4: (float)
-
-            The four-fold differential cross section.
+    :returns: bkm10_cross_section_in_nb_gev4: (float)
+        The four-fold differential cross section.
 
     ## Notes:
+    None!
     """
 
     try:
@@ -260,14 +232,18 @@ def calculate_bkm10_cross_section(
             lepton_energy_fraction_y,
             verbose)
         
-        # (16): Compute the BH Amplitude Squared
+        # (16): Initialize the BH Amplitude Squared
         bh_amplitude_squared = 0.
 
+        # (X): If the lepton beam is unpolarized on the whole...
         if lepton_helicity == 0.0:
 
+            # (X): ... tell the user what we are doing if verbose...
             if verbose:
                 print(f"> Now evaluating unpolarized DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
             
+            # (X): ... compute 0/5 * (sigma(+1) + sigma(-1)), the coherent-averaged
+            # | cross section for the BH term:
             bh_amplitude_squared = (0.5 * (calculate_bh_amplitude_squared(
                 1.0,
                 target_polarization,
@@ -298,11 +274,14 @@ def calculate_bkm10_cross_section(
                 Pauli_form_factor_F2,
                 verbose)))
 
+        # (X): If the beam has a particular polarization...
         else:
 
+            # (X): ... tell the user what we are doing if verbose...
             if verbose:
                 print(f"> Now evaluating polarized DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
 
+            # (X): ... and then calculate the BH contribution according to that beam configuration:
             bh_amplitude_squared = calculate_bh_amplitude_squared(
                 lepton_helicity,
                 target_polarization,
@@ -319,14 +298,18 @@ def calculate_bkm10_cross_section(
                 Pauli_form_factor_F2,
                 verbose)
 
-        # (17): Compute the DVCS Amplitude Squared
+        # (17): Initialize the DVCS Amplitude Squared
         dvcs_amplitude_squared = 0.
 
+        # (X): If the lepton beam is unpolarized on the whole...
         if lepton_helicity == 0.0:
 
+            # (X): ... tell the user what we are doing if verbose...
             if verbose:
                 print(f"> Now evaluating unpolarized DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
 
+            # (X): ... compute 0/5 * (sigma(+1) + sigma(-1)), the coherent-averaged
+            # | cross section for the DVCS term:
             dvcs_amplitude_squared = (0.5 * (calculate_dvcs_amplitude_squared(
             1.0,
             target_polarization,
@@ -361,11 +344,14 @@ def calculate_bkm10_cross_section(
             use_ww,
             verbose)))
 
+        # (X): If the beam has a particular polarization...
         else:
 
+            # (X): ... tell the user what we are doing if verbose...
             if verbose:
                 print(f"> Now evaluating polarized DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
 
+            # (X): ... and then calculate the DVCS contribution according to that beam configuration:
             dvcs_amplitude_squared = calculate_dvcs_amplitude_squared(
             lepton_helicity,
             target_polarization,
@@ -384,7 +370,7 @@ def calculate_bkm10_cross_section(
             use_ww,
             verbose)
 
-        # (18): Compute the interference piece:
+        # (18): Initialize the interference piece:
         interference_contribution = 0.
 
         # (X): If the lepton beam is unpolarized on the whole...
@@ -478,7 +464,7 @@ def calculate_bkm10_cross_section(
         # (19): Convert to nb/GeV^{4}:
         bkm10_cross_section_in_nb_gev4 = convert_to_nb_over_GeV4(bkm10_cross_section)
         
-        # (19.1): If verbose, print the conversion:
+        # (20): If verbose, print the conversion:
         if verbose:
             print(f"> Converted BKM10 differential cross section to {bkm10_cross_section_in_nb_gev4} nb/GeV4")
 
@@ -486,7 +472,7 @@ def calculate_bkm10_cross_section(
         #     lab_azimuthal_phi = azimuthal_phi,
         #     value_of_beam_energy = np.array(lab_kinematics_k)[0],
         #     value_of_Q_squared = np.array(squared_Q_momentum_transfer)[0],
-        #     value_of_hadron_recoil = np.array(squared_hadronic_momentum_transfer_t)[0], 
+        #     value_of_hadron_recoil = np.array(squared_hadronic_momentum_transfer_t)[0],
         #     value_of_x_Bjorken = np.array(x_Bjorken)[0],
         #     calculated_cross_section = bkm10_cross_section_in_nb_gev4)
         
@@ -494,7 +480,7 @@ def calculate_bkm10_cross_section(
         #     lab_azimuthal_phi = azimuthal_phi,
         #     value_of_beam_energy = np.array(lab_kinematics_k)[0],
         #     value_of_Q_squared = np.array(squared_Q_momentum_transfer)[0],
-        #     value_of_hadron_recoil = np.array(squared_hadronic_momentum_transfer_t)[0], 
+        #     value_of_hadron_recoil = np.array(squared_hadronic_momentum_transfer_t)[0],
         #     value_of_x_Bjorken = np.array(x_Bjorken)[0],
         #     bsa_data = (beam_spin_asymmetry))
 

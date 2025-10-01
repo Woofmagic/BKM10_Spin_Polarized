@@ -1,6 +1,11 @@
-from decimal import Decimal
-import math
+"""
+## Description:
+We compute the |DVCS|^{2} contribution to the BKM02/10 formalism parametrization
+of the DVCS cross section.
 
+## Notes:
+1. 2025/09/01: Removed the `math` and `Decimal` libraries at the top. Not used anymore.
+"""
 
 from calculation.plot_results import plot_dvcs_contributions
 
@@ -38,7 +43,7 @@ from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_s1_dvcs impo
 def calculate_dvcs_amplitude_squared(
     lepton_helicity: float,
     target_polarization: float,
-    squared_Q_momentum_transfer: float, 
+    squared_Q_momentum_transfer: float,
     x_Bjorken: float,
     squared_hadronic_momentum_transfer_t: float,
     azimuthal_phi: float,
@@ -56,47 +61,40 @@ def calculate_dvcs_amplitude_squared(
     ## Description:
     We now calculate the DVCS amplitude squared.
 
-    Parameters
-    --------------
-    lepton_helicity: (int)
+    :param float lepton_helicity:
 
-    target_polarization: (int)
+    :param float target_polarization:
 
-    squared_Q_momentum_transfer: (float)
+    :param float squared_Q_momentum_transfer:
 
-    x_Bjorken: (float)
+    :param float x_Bjorken:
 
-    squared_hadronic_momentum_transfer_t: (float)
+    :param float squared_hadronic_momentum_transfer_t:
 
-    lab_kinematics_k: (float)
+    :param float lab_kinematics_k:
 
-    azimuthal_phi: (float)
+    :param float azimuthal_phi:
 
-    epsilon: (float)
+    :param complex compton_form_factor_h:
+        The Compton Form Factor (CFF) called H.
 
-    lepton_energy_fraction_y: (float)
+    :param complex compton_form_factor_h_tilde:
+        The Compton Form Factor (CFF) called Ht (H-tilde)
 
-    shorthand_k: (float)
+    :param complex compton_form_factor_e: 
+        The Compton Form Factor (CFF) called E.
 
-    compton_form_factor_h: (float)
+    :param complex compton_form_factor_e_tilde:
+        The Compton Form Factor (CFF) called Et (E-tilde).
 
-    compton_form_factor_h_tilde: (float)
+    :param verbose: (bool)
 
-    compton_form_factor_e: float: (float)
+    :returns: bkm10_cross_section_in_nb_gev4: (float)
+        The four-fold differential cross section.
 
-    compton_form_factor_e_tilde: (float)
-
-    verbose: (bool)
-        Debugging console output.
-
-    Function Flow
-    --------------
-
-    Notes
-    --------------
-    (1): The equation for the amplitude squared comes from
-        Eq. (2.27) in the BKM10 Formalism available here:
-        https://arxiv.org/pdf/1005.5209.pdf
+    ## Notes:
+        1. The equation for the amplitude squared comes from Eq. (2.27) in the
+        BKM10 Formalism available here: https://arxiv.org/pdf/1005.5209.pdf
     """
         
     try:

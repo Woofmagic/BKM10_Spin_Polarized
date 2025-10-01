@@ -1,8 +1,13 @@
 """
-This script is the main one that executes the major analysis program that
-we wrote. It is designed to take in kinematic settings and some CFF data and
-return what the four-fold differential cross-section ought to be according to
-the BKM10 formalism.
+## Description:
+This script takes in kinematic settings and CFF data and returns what the 
+four-fold differential cross-section ought to be according to the BKM10 formalism.
+
+## Notes:
+1. The paper for the BKM02 formalism is available here (as of 2025/09/01):
+    https://www.sciencedirect.com/science/article/abs/pii/S055032130200144X
+2. The paper for the BKM10 version is available here (as of2025/09/01):
+    https://journals.aps.org/prd/abstract/10.1103/PhysRevD.82.074010
 """
 
 # Native Library | argparse
@@ -26,34 +31,70 @@ from utilities.data_handling.pandas_reading import read_csv_file_with_pandas
 # utilities > directories > find_directory
 from utilities.directories.searching_directories import find_directory
 
+# static_strings > /data
 from statics.strings.static_strings import _DIRECTORY_DATA
 
+# static_strings > argparse > description:
 from statics.strings.static_strings import _ARGPARSE_DESCRIPTION
 
+# static_strings > argparse > -d:
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_INPUT_DATAFILE
+
+# static_strings > argparse > -kin:
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_KINEMATIC_SET_NUMBER
+
+# static_strings > argparse > -form:
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_FORMALISM_VERSION
+
+# static_strings > argparse > -lep-helicity:
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_LEPTON_HELICITY
+
+# static_strings > argparse > -target-polar:
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_TARGET_POLARIZATION
+
+# static_strings > argparse > -nr:
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_NUMBER_REPLICAS
+
+# static_strings > argparse > -v:
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_VERBOSE
 
+# static_strings > argparse > description for -d:
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_INPUT_DATAFILE
+
+# static_strings > argparse > description for -kin:
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_KINEMATIC_SET_NUMBER
+
+# static_strings > argparse > description for -form:
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_FORMALISM_VERSION
+
+# static_strings > argparse > description for -lep-helicity:
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_LEPTON_HELICITY
+
+# static_strings > argparse > description for -target-polar
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_TARGET_POLARIZATION
-from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_NUMBER_REPLICAS
+
+# static_strings > argparse > description for verbose:
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_VERBOSE
 
-# DataFrame Columns
+# static_strings > "set"
 from statics.strings.static_strings import _COLUMN_NAME_KINEMATIC_SET
-from statics.strings.static_strings import _COLUMN_NAME_X_BJORKEN
-from statics.strings.static_strings import _COLUMN_NAME_Q_SQUARED
-from statics.strings.static_strings import _COLUMN_NAME_T_MOMENTUM_CHANGE
-from statics.strings.static_strings import _COLUMN_NAME_AZIMUTHAL_PHI
+
+# static_strings > "k"
 from statics.strings.static_strings import _COLUMN_NAME_LEPTON_MOMENTUM
 
+# static_strings > "x_b"
+from statics.strings.static_strings import _COLUMN_NAME_X_BJORKEN
+
+# static_strings > "q_squared"
+from statics.strings.static_strings import _COLUMN_NAME_Q_SQUARED
+
+# static_strings > "t"
+from statics.strings.static_strings import _COLUMN_NAME_T_MOMENTUM_CHANGE
+
+# static_strings > "phi"
+from statics.strings.static_strings import _COLUMN_NAME_AZIMUTHAL_PHI
+
+# (X): Function | calculation > bkm10_cross_section:
 from calculation.bkm10_cross_section import calculate_bkm10_cross_section
 
 def main(
@@ -64,6 +105,33 @@ def main(
     target_polarization: str,
     verbose: bool = False,
     debugging: bool = False):
+    """
+    ## Description:
+    The main function that runs computes the entire BKM[`formalism_version`] cross-section according to
+    a `kinematics_dataframe_path` file of kinematic and CFF data within.
+
+    :param str kinematics_dataframe_path:
+
+    :param int kinematics_set_number:
+
+    :param str formalism_version:
+        Either `"bkm10"` or `"bkm02"`. Nothing else! One can compute the cross-section using either the 2002 
+        formulation or the 2010 formulation. By default, this is `"bkm10"`.
+        [NOTE]: Later, we wish to integrate more formalisms out there that parametrize the DVCS cross-section.
+
+    :param str lepton_helicity:
+        (See BKM formalism.) Either `"positive"`, `"negative"`, or `"none"`. Nothing else! Specifies the helicity of the incoming
+        lepton. The strings specifying the polarization are chosen with respect to the coordinate frame chosen in the BKM10 formalism.
+
+    :param str target_polarization:
+        (See BKM formalism.) Either `"polarized"` or `"unpolarized"`. Nothing else! 
+
+    :param bool verbose:
+        If `True`, will print to inform user "where" in the code the program is.
+
+    :param bool debugging:
+        Do not turn this on! It will print *every step and computed piece of data in the code*.
+    """
 
     try:
         
@@ -125,28 +193,28 @@ def main(
         # (7): Obtain the values of the CFFs:
         
         # (X.1): Re[H]:
-        compton_form_factor_h_real = -0.897
+        compton_form_factor_h_real = 11.309
 
         # (X.2): Im[H]:
-        compton_form_factor_h_imaginary = 2.421
+        compton_form_factor_h_imaginary = -0.531
 
         # (X.3): Re[Ht]:
-        compton_form_factor_h_tilde_real = 2.444
+        compton_form_factor_h_tilde_real = -43.876
 
         # (X.4): Im[Ht]:
-        compton_form_factor_h_tilde_imaginary = 1.131
+        compton_form_factor_h_tilde_imaginary = 0.126
 
         # (X.5): Re[E]:
-        compton_form_factor_e_real = -0.541
+        compton_form_factor_e_real = 1.305
 
         # (X.6): Im[E]:
-        compton_form_factor_e_imaginary = 0.903
+        compton_form_factor_e_imaginary = -0.327
 
         # (X.7): Re[Et]:
-        compton_form_factor_e_tilde_real = 2.207
+        compton_form_factor_e_tilde_real = 1.202
 
         # (X.8): Im[Et]:
-        compton_form_factor_e_tilde_imaginary = 5.383
+        compton_form_factor_e_tilde_imaginary = 0.021
 
         # (8): Attempt to calculate the BKM10 Cross Section:
         # calculate_bkm10_cross_section(
@@ -170,10 +238,10 @@ def main(
         computed_cross_sections = calculate_bkm10_cross_section(
             numerical_lepton_polarization,
             numerical_target_polarization,
-            np.array([1.82 for i in range(len(np.arange(0, 361, 1.)))]),
-            np.array([0.34 for i in range(len(np.arange(0, 361, 1.)))]),
-            np.array([-0.17 for i in range(len(np.arange(0, 361, 1.)))]),
-            np.array([5.75 for i in range(len(np.arange(0, 361, 1.)))]),
+            np.array([2.5 for i in range(len(np.arange(0, 361, 1.)))]),
+            np.array([0.5 for i in range(len(np.arange(0, 361, 1.)))]),
+            np.array([-0.6 for i in range(len(np.arange(0, 361, 1.)))]),
+            np.array([5.50 for i in range(len(np.arange(0, 361, 1.)))]),
             np.arange(0, 361, 1.),
             complex(compton_form_factor_h_real, compton_form_factor_h_imaginary),
             complex(compton_form_factor_h_tilde_real, compton_form_factor_h_tilde_imaginary),
@@ -181,8 +249,6 @@ def main(
             complex(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary),
             True,
             verbose)
-        
-        print(computed_cross_sections)
 
         plt.figure(figsize = (8, 5))
         plt.plot(
@@ -267,7 +333,7 @@ if __name__ == "__main__":
     # (7): Parse the arguments:
     arguments = parser.parse_args()
 
-    # (8): Run main() with the arguments
+    # (8): Run main() with the arguments:
     main(
         kinematics_dataframe_path = arguments.input_datafile,
         kinematic_set_number = arguments.kinematic_set,
