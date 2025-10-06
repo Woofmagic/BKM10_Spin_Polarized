@@ -741,7 +741,7 @@ def calculate_interference_contribution(
             # print(f"> Curly S++(n = 2|F): {curly_S_2_pp_int[0]}")
             # print(f"> Curly S0+(n = 2|F): {curly_S_2_0p_int[0]}")
             
-        else:
+        elif target_polarization != 0.0:
 
             curly_C_lp_polarized_interference_for_pp = calculate_curly_C_longitudinally_polarized_interference(
                 squared_Q_momentum_transfer,
@@ -1277,33 +1277,37 @@ def calculate_interference_contribution(
             s_1_interference_coefficient = S1_pp_lp_polarized * curly_S_1_pp_int.imag + S1_0p_lp_polarized * curly_S_1_0p_int.imag
             s_2_interference_coefficient = S2_pp_lp_polarized * curly_S_2_pp_int.imag + S2_0p_lp_polarized * curly_S_2_0p_int.imag
             s_3_interference_coefficient = S3_pp_lp_polarized * curly_S_3_pp_int.imag + S3_0p_lp_polarized * curly_S_3_0p_int.imag
+
+        else:
+
+            raise ValueError("[ERROR]: Unknown value for the target polarization.")
         
-        print(f"> c0: {c_0_interference_coefficient[0]}")
-        print(f"> c1: {c_1_interference_coefficient[0]}")
-        print(f"> c2: {c_2_interference_coefficient[0]}")
-        print(f"> c3: {c_3_interference_coefficient}")
-        print(f"> s1: {s_1_interference_coefficient[0]}")
-        print(f"> s2: {s_2_interference_coefficient[0]}")
+        # print(f"> c0: {c_0_interference_coefficient[0]}")
+        # print(f"> c1: {c_1_interference_coefficient[0]}")
+        # print(f"> c2: {c_2_interference_coefficient[0]}")
+        # print(f"> c3: {c_3_interference_coefficient}")
+        # print(f"> s1: {s_1_interference_coefficient[0]}")
+        # print(f"> s2: {s_2_interference_coefficient[0]}")
         # print(f"> s3: {s_3_interference_coefficient[0]}")
         
-        plot_interference_contributions(
-            azimuthal_phi,
-            convert_to_nb_over_GeV4(c_0_interference_coefficient),
-            convert_to_nb_over_GeV4(c_1_interference_coefficient),
-            convert_to_nb_over_GeV4(c_2_interference_coefficient),
-            convert_to_nb_over_GeV4(c_3_interference_coefficient),
-            convert_to_nb_over_GeV4(s_1_interference_coefficient),
-            convert_to_nb_over_GeV4(s_2_interference_coefficient),
-            convert_to_nb_over_GeV4(s_3_interference_coefficient))
+        # plot_interference_contributions(
+        #     azimuthal_phi,
+        #     convert_to_nb_over_GeV4(c_0_interference_coefficient),
+        #     convert_to_nb_over_GeV4(c_1_interference_coefficient),
+        #     convert_to_nb_over_GeV4(c_2_interference_coefficient),
+        #     convert_to_nb_over_GeV4(c_3_interference_coefficient),
+        #     convert_to_nb_over_GeV4(s_1_interference_coefficient),
+        #     convert_to_nb_over_GeV4(s_2_interference_coefficient),
+        #     convert_to_nb_over_GeV4(s_3_interference_coefficient))
 
         interference_contribution = (prefactor * (
             c_0_interference_coefficient +
-            c_1_interference_coefficient * np.cos(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
-            c_2_interference_coefficient * np.cos(2. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
-            c_3_interference_coefficient * np.cos(3. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
-            s_1_interference_coefficient * np.sin(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
-            s_2_interference_coefficient * np.sin(2. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
-            s_3_interference_coefficient * np.sin(3. * (np.pi - convert_degrees_to_radians(azimuthal_phi)))))
+            c_1_interference_coefficient * np.cos(1. * (np.pi - azimuthal_phi)) +
+            c_2_interference_coefficient * np.cos(2. * (np.pi - azimuthal_phi)) +
+            c_3_interference_coefficient * np.cos(3. * (np.pi - azimuthal_phi)) +
+            s_1_interference_coefficient * np.sin(1. * (np.pi - azimuthal_phi)) +
+            s_2_interference_coefficient * np.sin(2. * (np.pi - azimuthal_phi)) +
+            s_3_interference_coefficient * np.sin(3. * (np.pi - azimuthal_phi))))
 
         # (9.1): If verbose, print the calculation:
         if verbose:

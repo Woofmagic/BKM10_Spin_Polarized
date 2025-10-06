@@ -52,9 +52,6 @@ from statics.strings.static_strings import _ARGPARSE_ARGUMENT_LEPTON_HELICITY
 # static_strings > argparse > -target-polar:
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_TARGET_POLARIZATION
 
-# static_strings > argparse > -nr:
-from statics.strings.static_strings import _ARGPARSE_ARGUMENT_NUMBER_REPLICAS
-
 # static_strings > argparse > -v:
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_VERBOSE
 
@@ -94,6 +91,33 @@ from statics.strings.static_strings import _COLUMN_NAME_T_MOMENTUM_CHANGE
 # static_strings > "phi"
 from statics.strings.static_strings import _COLUMN_NAME_AZIMUTHAL_PHI
 
+# static_strings > Re[H]
+from statics.strings.static_strings import _COLUMN_NAME_CFF_REAL_H
+
+# static_strings > Im[H]
+from statics.strings.static_strings import _COLUMN_NAME_CFF_IMAG_H
+
+# static_strings > Re[E]
+from statics.strings.static_strings import _COLUMN_NAME_CFF_REAL_E
+
+# static_strings > Im[E]
+from statics.strings.static_strings import _COLUMN_NAME_CFF_IMAG_E
+
+# static_strings > Re[Ht]
+from statics.strings.static_strings import _COLUMN_NAME_CFF_REAL_H_TILDE
+
+# static_strings > Im[Ht]
+from statics.strings.static_strings import _COLUMN_NAME_CFF_IMAG_H_TILDE
+
+# static_strings > Re[Et]
+from statics.strings.static_strings import _COLUMN_NAME_CFF_REAL_E_TILDE
+
+# static_strings > Im[ET]
+from statics.strings.static_strings import _COLUMN_NAME_CFF_IMAG_E_TILDE
+
+# static_strings > .png
+from statics.strings.static_strings import _FIGURE_FORMAT_PNG
+
 # (X): Function | calculation > bkm10_cross_section:
 from calculation.bkm10_cross_section import calculate_bkm10_cross_section
 
@@ -104,7 +128,7 @@ def main(
     lepton_helicity: str,
     target_polarization: str,
     verbose: bool = False,
-    debugging: bool = False):
+    debugging: bool = True):
     """
     ## Description:
     The main function that runs computes the entire BKM[`formalism_version`] cross-section according to
@@ -139,44 +163,82 @@ def main(
         possible_data_path = f"{_DIRECTORY_DATA}/{kinematics_dataframe_path}"
 
         if verbose:
-            print(f"> Possible data path is: {possible_data_path}")
+            print(f"[VERBOSE]: Possible data path is: {possible_data_path}")
+
+        if debugging:
+            print(f"[DEBUG]: Possible data path is: {possible_data_path}")
 
         # (2): Now, check if the kinematics is actually there:
         kinematics_dataframe_file_path = find_directory(os.getcwd(), possible_data_path)
 
         if verbose:
-            print(f"> Did we find the filepath for the kinematics? {kinematics_dataframe_file_path}")
+            print(f"[VERBOSE]: Did we find the filepath for the kinematics? {kinematics_dataframe_file_path}")
+
+        if debugging:
+            print(f"[DEBUG]: Did we find the filepath for the kinematics? {kinematics_dataframe_file_path}")
 
         # (3): If the file was there, turn it into a DF with Pandas:
         kinematics_dataframe = read_csv_file_with_pandas(kinematics_dataframe_file_path)
 
         if verbose:
-            print(f"> Did we convert the kinematics file to a Pandas DF? {kinematics_dataframe is not None}")
+            print(f"[VERBOSE]: Did we convert the kinematics file to a Pandas DF? {kinematics_dataframe is not None}")
+
+        if debugging:
+            print(f"[DEBUG]: The kinematics dataframe has been found. Printing:\n {kinematics_dataframe}")
 
         # (4): Partition the DF on a fixed kinematic set:
         fixed_kinematic_set_dataframe = kinematics_dataframe[kinematics_dataframe[_COLUMN_NAME_KINEMATIC_SET] == kinematic_set_number]
 
         if verbose:
-            print(f"> Did we manage to fix to a kinematic range? {fixed_kinematic_set_dataframe is not None}")
+            print(f"[VERBOSE]: Did we manage to fix to a kinematic range? {fixed_kinematic_set_dataframe is not None}")
 
-        # (5): Obtain the range of kinematic quantites:
+        if debugging:
+            print(f"[DEBUG]: Parititioned on a fixed kinematic setting: Printing:\n {fixed_kinematic_set_dataframe}")
 
-        # (5.1): We index the DF with the column named "QQ" or something like that:
-        range_of_Q_squared = fixed_kinematic_set_dataframe[_COLUMN_NAME_Q_SQUARED]
+        # (5): We index the DF with the column named "QQ" or something like that:
+        range_of_q_squared = fixed_kinematic_set_dataframe[_COLUMN_NAME_Q_SQUARED]
+
+        if verbose:
+            print("[VERBOSE]: Successfully obtained a range of Q^2 values.")
+
+        if debugging:
+            print(f"[DEBUG]: Successfully obtained a range of Q^2 values. Printing:\n {range_of_q_squared}")
 
         # (5.2): We obtain the column of the DF named "x_b":
-        range_of_x_Bjorken = fixed_kinematic_set_dataframe[_COLUMN_NAME_X_BJORKEN]
+        range_of_x_bjorken = fixed_kinematic_set_dataframe[_COLUMN_NAME_X_BJORKEN]
+
+        if verbose:
+            print("[VERBOSE]: Successfully obtained a range of x_B values.")
+
+        if debugging:
+            print(f"[DEBUG]: Successfully obtained a range of x_B values. Printing:\n {range_of_x_bjorken}")
 
         # (5.3): We obtain the column of the DF named "t":
         range_of_hadronic_momentum_transfer_t = fixed_kinematic_set_dataframe[_COLUMN_NAME_T_MOMENTUM_CHANGE]
 
+        if verbose:
+            print("[VERBOSE]: Successfully obtained a range of t values.")
+
+        if debugging:
+            print(f"[DEBUG]: Successfully obtained a range of t values. Printing:\n {range_of_hadronic_momentum_transfer_t}")
+
         # (5.4): We obtain the column of the DF named "k":
         range_of_lepton_momentum_k = fixed_kinematic_set_dataframe[_COLUMN_NAME_LEPTON_MOMENTUM]
+
+        if verbose:
+            print("[VERBOSE]: Successfully obtained a range of k values.")
+
+        if debugging:
+            print(f"[DEBUG]: Successfully obtained a range of k values. Printing:\n {range_of_lepton_momentum_k}")
 
         # (5.5): We obtain the column of the DF named "phi_x":
         range_of_lab_azimuthal_phi = fixed_kinematic_set_dataframe[_COLUMN_NAME_AZIMUTHAL_PHI]
 
-        # (6): Obtain the polarizations -- set to 1 for now:
+        if verbose:
+            print("[VERBOSE]: Successfully obtained a range of phi values.")
+
+        if debugging:
+            print(f"[DEBUG]: Successfully obtained a range of phi values. Printing:\n {range_of_lab_azimuthal_phi}")
 
         # (X): Dynamically determine the correct float based on the string argument for lepton helicity:
         numerical_lepton_polarization = 1.0 if lepton_helicity == 'positive' else -1.0 if lepton_helicity == 'negative' else 0.0
@@ -185,92 +247,196 @@ def main(
         numerical_target_polarization = 0.5 if target_polarization == 'polarized' else 0.0
 
         if verbose:
-            print(f"> Obtained lepton helicity to be: {numerical_lepton_polarization}")
+            print(f"[VERBOSE]: Obtained lepton helicity to be: {numerical_lepton_polarization}")
+
+        if debugging:
+            print(f"[DEBUG]: Obtained target polarization to be: {numerical_target_polarization}")
+        
+        # (X.1): Obtain the values of the Re[H]:
+        compton_form_factor_h_real = fixed_kinematic_set_dataframe[_COLUMN_NAME_CFF_REAL_H].iloc[0]
 
         if verbose:
-            print(f"> Obtained target polarization to be: {numerical_target_polarization}")
+            print("[VERBOSE]: Obtained CFF Re[H] value.")
 
-        # (7): Obtain the values of the CFFs:
-        
-        # (X.1): Re[H]:
-        compton_form_factor_h_real = 11.309
+        if debugging:
+            print(f"[DEBUG]: Obtained CFF Re[H] value to be: {compton_form_factor_h_real} ({type(compton_form_factor_h_real)})")
 
-        # (X.2): Im[H]:
-        compton_form_factor_h_imaginary = -0.531
+        # (X.2): Obtain the values of the Im[H]:
+        compton_form_factor_h_imaginary = fixed_kinematic_set_dataframe[_COLUMN_NAME_CFF_IMAG_H].iloc[0]
 
-        # (X.3): Re[Ht]:
-        compton_form_factor_h_tilde_real = -43.876
+        if verbose:
+            print("[VERBOSE]: Obtained CFF Im[H] value.")
 
-        # (X.4): Im[Ht]:
-        compton_form_factor_h_tilde_imaginary = 0.126
+        if debugging:
+            print(f"[DEBUG]: Obtained CFF Im[H] value to be: {compton_form_factor_h_imaginary} ({type(compton_form_factor_h_imaginary)})")
 
-        # (X.5): Re[E]:
-        compton_form_factor_e_real = 1.305
+        # (X.3): Obtain the values of the Re[Ht]:
+        compton_form_factor_h_tilde_real = fixed_kinematic_set_dataframe[_COLUMN_NAME_CFF_REAL_H_TILDE].iloc[0]
 
-        # (X.6): Im[E]:
-        compton_form_factor_e_imaginary = -0.327
+        if verbose:
+            print("[VERBOSE]: Obtained CFF Re[Ht] value.")
 
-        # (X.7): Re[Et]:
-        compton_form_factor_e_tilde_real = 1.202
+        if debugging:
+            print(f"[DEBUG]: Obtained CFF Re[Ht] value to be: {compton_form_factor_h_tilde_real} ({type(compton_form_factor_h_tilde_real)})")
 
-        # (X.8): Im[Et]:
-        compton_form_factor_e_tilde_imaginary = 0.021
+        # (X.4): Obtain the values of the Im[Ht]:
+        compton_form_factor_h_tilde_imaginary = fixed_kinematic_set_dataframe[_COLUMN_NAME_CFF_IMAG_H_TILDE].iloc[0]
+
+        if verbose:
+            print("[VERBOSE]: Obtained CFF Im[H] value.")
+
+        if debugging:
+            print(f"[DEBUG]: CFF Im[H] value to be: {compton_form_factor_h_tilde_imaginary} ({type(compton_form_factor_h_tilde_imaginary)})")
+
+        # (X.5): Obtain the values of the Re[E]:
+        compton_form_factor_e_real = fixed_kinematic_set_dataframe[_COLUMN_NAME_CFF_REAL_E].iloc[0]
+
+        if verbose:
+            print("[VERBOSE]: Obtained CFF Re[E] value.")
+
+        if debugging:
+            print(f"[DEBUG]: Obtained CFF Re[E] value to be: {compton_form_factor_e_real} ({type(compton_form_factor_e_real)})")
+
+        # (X.6): Obtain the values of the Im[E]:
+        compton_form_factor_e_imaginary = fixed_kinematic_set_dataframe[_COLUMN_NAME_CFF_IMAG_E].iloc[0]
+
+        if verbose:
+            print("[VERBOSE]: Obtained CFF Im[H] value.")
+
+        if debugging:
+            print(f"[DEBUG]: Obtained CFF Im[H] value to be: {compton_form_factor_e_imaginary} ({type(compton_form_factor_e_imaginary)})")
+
+        # (X.7): Obtain the values of the Re[Et]:
+        compton_form_factor_e_tilde_real = fixed_kinematic_set_dataframe[_COLUMN_NAME_CFF_REAL_E_TILDE].iloc[0]
+
+        if verbose:
+            print("[VERBOSE]: Obtained CFF Re[Et] value.")
+
+        if debugging:
+            print(f"[DEBUG]: Obtained CFF Re[Et] value to be: {compton_form_factor_e_tilde_real} ({type(compton_form_factor_e_tilde_real)})")
+
+        # (X.8): Obtain the values of the Im[Et]:
+        compton_form_factor_e_tilde_imaginary = fixed_kinematic_set_dataframe[_COLUMN_NAME_CFF_IMAG_E_TILDE].iloc[0]
+
+        if verbose:
+            print("[VERBOSE]: Obtained CFF Im[Et] value.")
+
+        if debugging:
+            print(f"[DEBUG]: Obtained CFF Im[Et] value to be: {compton_form_factor_e_tilde_imaginary} ({type(compton_form_factor_e_tilde_imaginary)})")
+
+        # (X): Obtain a single float for Q^{2}:
+        value_of_q_squared = range_of_q_squared.iloc[0]
+
+        if verbose:
+            print("[VERBOSE]: Obtained single Q^2 value from dataframe.")
+
+        if debugging:
+            print(f"[DEBUG]: Obtained single Q^2 value from dataframe: {value_of_q_squared} ({type(value_of_q_squared)})")
+
+        # (X): Obtain a single float for x_{B}:
+        value_of_x_bjorken = range_of_x_bjorken.iloc[0]
+
+        if verbose:
+            print("[VERBOSE]: Obtained single x_B value from dataframe.")
+
+        if debugging:
+            print(f"[DEBUG]: Obtained single x_B value from dataframe: {value_of_x_bjorken} ({type(value_of_x_bjorken)})")
+
+        # (X): Obtain a single float for t:
+        value_of_t = range_of_hadronic_momentum_transfer_t.iloc[0]
+
+        if verbose:
+            print("[VERBOSE]: Obtained single t value from dataframe.")
+
+        if debugging:
+            print(f"[DEBUG]: Obtained single t value from dataframe: {value_of_t} ({type(value_of_t)})")
+
+        # (X): Obtain a single float for k:
+        value_of_k = range_of_lepton_momentum_k.iloc[0]
+
+        if verbose:
+            print("[VERBOSE]: Obtained single k value from dataframe.")
+
+        if debugging:
+            print(f"[DEBUG]: Obtained single k value from dataframe: {value_of_k} ({type(value_of_k)})")
 
         # (8): Attempt to calculate the BKM10 Cross Section:
-        # calculate_bkm10_cross_section(
-        #     numerical_lepton_polarization,
-        #     numerical_target_polarization,
-        #     range_of_Q_squared,
-        #     range_of_x_Bjorken,
-        #     range_of_hadronic_momentum_transfer_t,
-        #     range_of_lepton_momentum_k,
-        #     range_of_lab_azimuthal_phi,
-        #     compton_form_factor_h_real,
-        #     compton_form_factor_h_tilde_real,
-        #     compton_form_factor_e_real,
-        #     compton_form_factor_e_imaginary,
-        #     compton_form_factor_h_imaginary,
-        #     compton_form_factor_h_tilde_imaginary,
-        #     compton_form_factor_e_imaginary,
-        #     compton_form_factor_e_tilde_imaginary,
-        #     verbose)
-
         computed_cross_sections = calculate_bkm10_cross_section(
             numerical_lepton_polarization,
             numerical_target_polarization,
-            np.array([2.5 for i in range(len(np.arange(0, 361, 1.)))]),
-            np.array([0.5 for i in range(len(np.arange(0, 361, 1.)))]),
-            np.array([-0.6 for i in range(len(np.arange(0, 361, 1.)))]),
-            np.array([5.50 for i in range(len(np.arange(0, 361, 1.)))]),
-            np.arange(0, 361, 1.),
-            complex(compton_form_factor_h_real, compton_form_factor_h_imaginary),
-            complex(compton_form_factor_h_tilde_real, compton_form_factor_h_tilde_imaginary),
+            value_of_q_squared,
+            value_of_x_bjorken,
+            value_of_t,
+            value_of_k,
+            range_of_lab_azimuthal_phi,
+            complex(compton_form_factor_h_real, compton_form_factor_h_tilde_real),
             complex(compton_form_factor_e_real, compton_form_factor_e_imaginary),
+            complex(compton_form_factor_h_imaginary, compton_form_factor_h_tilde_imaginary),
             complex(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary),
-            True,
             verbose)
+        
+        # (X): Coerce kinematic values into a string:
+        title_string = (
+            rf"$Q^2 = {value_of_q_squared:.2f}$ GeV$^2$, "
+            rf"$x_B = {value_of_x_bjorken:.2f}$, "
+            rf"$t = {value_of_t:.2f}$ GeV$^2$, "
+            rf"$k = {value_of_k:.2f}$ GeV")
+        
+        # (X): Obtain the CFF inputs as well to display:
+        cff_string = (
+            rf"$\mathcal{{H}} = {complex(compton_form_factor_h_real, compton_form_factor_h_tilde_real):.3f}$, "
+            rf"$\widetilde{{\mathcal{{H}}}} = {complex(compton_form_factor_e_real, compton_form_factor_e_imaginary):.3f}$, "
+            rf"$\mathcal{{E}} = {complex(compton_form_factor_h_imaginary, compton_form_factor_h_tilde_imaginary):.3f}$, "
+            rf"$\widetilde{{\mathcal{{E}}}} = {complex(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary):.3f}$")
 
-        plt.figure(figsize = (8, 5))
-        plt.plot(
-            np.arange(0, 361, 1.),
+        # (X): Initialize a figure:
+        cross_section_figure = plt.figure(figsize = (8, 5))
+
+        # (X): Add an Axis object to it:
+        cross_section_axis = cross_section_figure.add_subplot(1, 1, 1)
+
+        # (X): Plot the computed cross-section data:
+        cross_section_axis.plot(
+            range_of_lab_azimuthal_phi,
             computed_cross_sections,
             marker = ".",
             linestyle = "none",
             color = "red",
             alpha = 0.65)
         
-        plt.xlabel(r"Azimuthal Angle $\phi$ ($\deg$)")
-        plt.ylabel(r"Differential Cross Section ($nb/GeV^{4}$)")
-        plt.title(r"Cross Section vs. $\phi$ with Fixed Kinematics")
-        plt.grid(True)
-        plt.savefig("cross_section_plot_v1.png", format = "png", dpi = 400)
+        # (X): Set the x-label:
+        cross_section_axis.set_xlabel(r"Azimuthal Angle $\phi$ (radians)")
+
+        # (X): Set the y-label:
+        cross_section_axis.set_ylabel(r"Differential Cross Section ($nb/GeV^{4}$)")
+
+        # (X): Set the title:
+        cross_section_axis.set_title(f"{title_string}\n{cff_string}")
+
+        # (X): Add a grid:
+        cross_section_axis.grid(True)
+
+        # (X): Compute the figure title:
+        figure_title = f"{formalism_version}_cross_section_v1.{_FIGURE_FORMAT_PNG}"
+
+        # (X): Save the figure as PNG:
+        cross_section_figure.savefig(
+            fname = figure_title,
+            format = _FIGURE_FORMAT_PNG,
+            dpi = 400)
+
+        # (X): Close the figure to avoid killing the machine's memory and etc.:
+        plt.close(cross_section_figure)
+
+        # (X): Return the numerical value of the cross section:
+        return computed_cross_sections
 
     except KeyboardInterrupt:
 
-        print("Shutdown requested...exiting")
+        print("[ERROR]: Shutdown requested...exiting")
 
-    sys.exit(0)
-    
+        sys.exit(0)
+   
 if __name__ == "__main__":
     
     # (1): Create an instance of the ArgumentParser

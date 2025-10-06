@@ -55,7 +55,7 @@ def calculate_k_dot_delta(
         prefactor = squared_Q_momentum_transfer / (2. * lepton_energy_fraction_y * (1. + epsilon**2))
 
         # (2): Second term in parentheses: Phi-Dependent Term: 2 K np.cos(\phi)
-        phi_dependence = 2. * kinematic_k * np.cos(np.pi - convert_degrees_to_radians(azimuthal_phi))
+        phi_dependence = 2. * kinematic_k * np.cos(np.pi - azimuthal_phi)
         
         # (3): Prefactor of third term in parentheses: \frac{t}{Q^{2}}
         ratio_delta_to_q_squared = squared_hadronic_momentum_transfer_t / squared_Q_momentum_transfer

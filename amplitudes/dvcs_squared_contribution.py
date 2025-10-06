@@ -211,21 +211,25 @@ def calculate_dvcs_amplitude_squared(
                 compton_form_factor_e_tilde,
                 use_ww,
                 verbose)
+            
+        else:
 
-        print(coefficient_c0_DVCS[0])
-        print(coefficient_c1_DVCS[0])
-        print(coefficient_s1_DVCS[0])
+            raise ValueError("[ERROR]: Unknown value for the target polarization.")
 
-        plot_dvcs_contributions(
-            azimuthal_phi,
-            convert_to_nb_over_GeV4(coefficient_c0_DVCS),
-            convert_to_nb_over_GeV4(coefficient_c1_DVCS),
-            convert_to_nb_over_GeV4(coefficient_s1_DVCS))
+        # print(coefficient_c0_DVCS[0])
+        # print(coefficient_c1_DVCS[0])
+        # print(coefficient_s1_DVCS[0])
+
+        # plot_dvcs_contributions(
+        #     azimuthal_phi,
+        #     convert_to_nb_over_GeV4(coefficient_c0_DVCS),
+        #     convert_to_nb_over_GeV4(coefficient_c1_DVCS),
+        #     convert_to_nb_over_GeV4(coefficient_s1_DVCS))
 
         # (5): Compute the Fourier Mode Expansion:
         mode_expansion = (coefficient_c0_DVCS +
-            coefficient_c1_DVCS * np.cos(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))) +
-            coefficient_s1_DVCS * np.sin(1. * (np.pi - convert_degrees_to_radians(azimuthal_phi))))
+            coefficient_c1_DVCS * np.cos(1. * (np.pi - azimuthal_phi)) +
+            coefficient_s1_DVCS * np.sin(1. * (np.pi - azimuthal_phi)))
 
         # (6): The entire amplitude:
         dvcs_amplitude_squared = mode_expansion / denominator
@@ -238,5 +242,5 @@ def calculate_dvcs_amplitude_squared(
         return dvcs_amplitude_squared
     
     except Exception as ERROR:
-        print(f"> Error in calculating the DVCS amplitude squared\n> {ERROR}")
+        print(f"[ERROR]: Error in calculating the DVCS amplitude squared\n> {ERROR}")
         return 0.
