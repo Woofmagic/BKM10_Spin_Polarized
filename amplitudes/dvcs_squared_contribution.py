@@ -43,8 +43,8 @@ from coefficients.dvcs_coefficients.lp_polarized.bkm10.lp_polarized_s1_dvcs impo
 def calculate_dvcs_amplitude_squared(
     lepton_helicity: float,
     target_polarization: float,
-    squared_Q_momentum_transfer: float,
-    x_Bjorken: float,
+    squared_q_momentum_transfer: float,
+    x_bjorken: float,
     squared_hadronic_momentum_transfer_t: float,
     azimuthal_phi: float,
     epsilon: float,
@@ -61,19 +61,27 @@ def calculate_dvcs_amplitude_squared(
     ## Description:
     We now calculate the DVCS amplitude squared.
 
-    :param float lepton_helicity:
+    :param str lepton_helicity:
+        (See BKM formalism.) Either `"positive"`, `"negative"`, or `"none"`. Nothing else! Specifies the helicity of the incoming
+        lepton. The strings specifying the polarization are chosen with respect to the coordinate frame chosen in the BKM10 formalism.
 
-    :param float target_polarization:
+    :param str target_polarization:
+        (See BKM formalism.) Either `"polarized"` or `"unpolarized"`. Nothing else! 
 
-    :param float squared_Q_momentum_transfer:
+    :param float squared_q_momentum_transfer: 
+        The virtuality of the DVCS photon.
 
-    :param float x_Bjorken:
+    :param float x_bjorken:
+        Partonic momentum fraction of hadron.
 
     :param float squared_hadronic_momentum_transfer_t:
+        Difference between final and initial hadron momentum (Mandelstam t).
 
-    :param float lab_kinematics_k:
+    :param float lab_kinematics_k: 
+        Incident lepton beam energy.
 
-    :param float azimuthal_phi:
+    :param np.ndarray azimuthal_phi: 
+        An *array* of LAB azimuthal angles **in radians, not degrees**.
 
     :param complex compton_form_factor_h:
         The Compton Form Factor (CFF) called H.
@@ -100,7 +108,7 @@ def calculate_dvcs_amplitude_squared(
     try:
 
         # (1): Calculate the Prefactor of the Denominator:
-        denominator = lepton_energy_fraction_y**2 * squared_Q_momentum_transfer
+        denominator = lepton_energy_fraction_y**2 * squared_q_momentum_transfer
 
         if target_polarization == 0.0:
 
@@ -109,8 +117,8 @@ def calculate_dvcs_amplitude_squared(
 
             # (2): Obtain the first coefficient in the sum:
             coefficient_c0_DVCS = calculate_c_0_unpolarized_dvcs(
-                squared_Q_momentum_transfer,
-                x_Bjorken,
+                squared_q_momentum_transfer,
+                x_bjorken,
                 squared_hadronic_momentum_transfer_t,
                 epsilon,
                 lepton_energy_fraction_y,
@@ -125,8 +133,8 @@ def calculate_dvcs_amplitude_squared(
 
             # (3): Obtain the first coefficient in the unevaluated sum (cosine n = 1 term):
             coefficient_c1_DVCS = calculate_c_1_unpolarized_dvcs(
-                squared_Q_momentum_transfer,
-                x_Bjorken,
+                squared_q_momentum_transfer,
+                x_bjorken,
                 squared_hadronic_momentum_transfer_t,
                 epsilon,
                 lepton_energy_fraction_y,
@@ -142,8 +150,8 @@ def calculate_dvcs_amplitude_squared(
             # (4): Obtain the first coefficient in the unevaluated sum (np.sin n = 1 term):
             coefficient_s1_DVCS = calculate_s_1_unpolarized_dvcs(
                 lepton_helicity,
-                squared_Q_momentum_transfer,
-                x_Bjorken,
+                squared_q_momentum_transfer,
+                x_bjorken,
                 squared_hadronic_momentum_transfer_t,
                 epsilon,
                 lepton_energy_fraction_y,
@@ -165,8 +173,8 @@ def calculate_dvcs_amplitude_squared(
             coefficient_c0_DVCS = calculate_c_0_longitudinally_polarized_dvcs(
                 lepton_helicity,
                 target_polarization,
-                squared_Q_momentum_transfer,
-                x_Bjorken,
+                squared_q_momentum_transfer,
+                x_bjorken,
                 squared_hadronic_momentum_transfer_t,
                 epsilon,
                 lepton_energy_fraction_y,
@@ -181,8 +189,8 @@ def calculate_dvcs_amplitude_squared(
             coefficient_c1_DVCS = calculate_c_1_longitudinally_polarized_dvcs(
                 lepton_helicity,
                 target_polarization,
-                squared_Q_momentum_transfer,
-                x_Bjorken,
+                squared_q_momentum_transfer,
+                x_bjorken,
                 squared_hadronic_momentum_transfer_t,
                 epsilon,
                 lepton_energy_fraction_y,
@@ -198,8 +206,8 @@ def calculate_dvcs_amplitude_squared(
             # (4): Obtain the first coefficient in the unevaluated sum (np.sin n = 1 term):
             coefficient_s1_DVCS = calculate_s_1_longitudinally_polarized_dvcs(
                 target_polarization,
-                squared_Q_momentum_transfer,
-                x_Bjorken,
+                squared_q_momentum_transfer,
+                x_bjorken,
                 squared_hadronic_momentum_transfer_t,
                 epsilon,
                 lepton_energy_fraction_y,

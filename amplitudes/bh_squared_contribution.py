@@ -135,7 +135,7 @@ def calculate_bh_amplitude_squared(
         if debugging:
             print(f"[DEBUG]: Computed BH denominator: {denominator} ({type(denominator)})")
 
-        # (4): Initialize the coefficients in the BH mode expansion:
+        # (4): Initialize the c0 BH coefficient in the BH mode expansion:
         coefficient_c0_bh = 0.
 
         if verbose:
@@ -144,6 +144,7 @@ def calculate_bh_amplitude_squared(
         if debugging:
             print(f"[DEBUG]: Initialized BH s1 coefficient: {coefficient_c0_bh} ({type(coefficient_c0_bh)})")
 
+        # (X): Initialize the c1 BH coefficient in the BH mode expansion:
         coefficient_c1_bh = 0.
 
         if verbose:
@@ -152,6 +153,7 @@ def calculate_bh_amplitude_squared(
         if debugging:
             print(f"[DEBUG]: Initialized BH s1 coefficient: {coefficient_c1_bh} ({type(coefficient_c1_bh)})")
 
+        # (4): Initialize the c2 BH coefficient in the BH mode expansion:
         coefficient_c2_bh = 0.
 
         if verbose:
@@ -160,6 +162,7 @@ def calculate_bh_amplitude_squared(
         if debugging:
             print(f"[DEBUG]: Initialized BH s1 coefficient: {coefficient_c2_bh} ({type(coefficient_c2_bh)})")
 
+        # (4): Initialize the s0 BH coefficient in the BH mode expansion:
         coefficient_s1_bh = 0.
 
         if verbose:
@@ -167,7 +170,6 @@ def calculate_bh_amplitude_squared(
 
         if debugging:
             print(f"[DEBUG]: Initialized BH s1 coefficient: {coefficient_s1_bh} ({type(coefficient_s1_bh)})")
-
 
         # (5): Calculate the coefficients based on the target polarization:
         if target_polarization == 0:
