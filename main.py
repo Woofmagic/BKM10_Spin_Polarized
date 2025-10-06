@@ -55,6 +55,9 @@ from statics.strings.static_strings import _ARGPARSE_ARGUMENT_TARGET_POLARIZATIO
 # static_strings > argparse > -v:
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_VERBOSE
 
+# static_strings > argparse > -debug:
+from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DEBUGGING
+
 # static_strings > argparse > description for -d:
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_INPUT_DATAFILE
 
@@ -72,6 +75,9 @@ from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_TARGET
 
 # static_strings > argparse > description for verbose:
 from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_VERBOSE
+
+# static_strings > argparse > description for debugging:
+from statics.strings.static_strings import _ARGPARSE_ARGUMENT_DESCRIPTION_DEBUGGING
 
 # static_strings > "set"
 from statics.strings.static_strings import _COLUMN_NAME_KINEMATIC_SET
@@ -128,7 +134,7 @@ def main(
     lepton_helicity: str,
     target_polarization: str,
     verbose: bool = False,
-    debugging: bool = True):
+    debugging: bool = False):
     """
     ## Description:
     The main function that runs computes the entire BKM[`formalism_version`] cross-section according to
@@ -373,7 +379,8 @@ def main(
             complex(compton_form_factor_e_real, compton_form_factor_e_imaginary),
             complex(compton_form_factor_h_imaginary, compton_form_factor_h_tilde_imaginary),
             complex(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary),
-            verbose)
+            verbose,
+            debugging)
         
         # (X): Coerce kinematic values into a string:
         title_string = (
@@ -496,14 +503,24 @@ if __name__ == "__main__":
         default = False,
         help = _ARGPARSE_ARGUMENT_DESCRIPTION_VERBOSE)
     
-    # (7): Parse the arguments:
+    # (7): Ask, but don't enforce verbose output:
+    parser.add_argument(
+        '-debug',
+        _ARGPARSE_ARGUMENT_DEBUGGING,
+        type = bool,
+        required = False,
+        default = False,
+        help = _ARGPARSE_ARGUMENT_DESCRIPTION_DEBUGGING)
+    
+    # (8): Parse the arguments:
     arguments = parser.parse_args()
 
-    # (8): Run main() with the arguments:
+    # (9): Run main() with the arguments:
     main(
         kinematics_dataframe_path = arguments.input_datafile,
         kinematic_set_number = arguments.kinematic_set,
         formalism_version = arguments.formalism,
         lepton_helicity = arguments.lepton_helicity,
         target_polarization = arguments.target_polarization,
-        verbose = arguments.verbose)
+        verbose = arguments.verbose,
+        debugging = arguments.debugging)

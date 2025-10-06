@@ -40,7 +40,7 @@ from coefficients.bh_coefficients.tp_polarized.tp_polarized_s1_bh import calcula
 def calculate_bh_amplitude_squared(
     lepton_helicity: float,
     target_polarization: float,
-    squared_q_momentum_transfer: float, 
+    squared_q_momentum_transfer: float,
     x_bjorken: float,
     squared_hadronic_momentum_transfer_t: float,
     azimuthal_phi: np.ndarray,

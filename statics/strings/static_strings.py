@@ -57,46 +57,52 @@ _ARGPARSE_ARGUMENT_VERBOSE = '--verbose'
 # (12): argparer's *argument flag* for the datafile:
 _ARGPARSE_ARGUMENT_DESCRIPTION_VERBOSE = 'Enable verbose logging.'
 
-# (13): "Generalized" column name for kinematic set:
+# (13): argparer's *argument flag* for the datafile:
+_ARGPARSE_ARGUMENT_DEBUGGING = '--debugging'
+
+# (14): argparer's *argument flag* for the datafile:
+_ARGPARSE_ARGUMENT_DESCRIPTION_DEBUGGING = 'Enable insane debugging logging (everything gets printed).'
+
+# (15): "Generalized" column name for kinematic set:
 _COLUMN_NAME_KINEMATIC_SET = "set"
 
-# (14): "Generalized" column name for lepton beam energy:
+# (16): "Generalized" column name for lepton beam energy:
 _COLUMN_NAME_LEPTON_MOMENTUM = "k"
 
-# (15): "Generalized" column name for Q^{2}:
+# (17): "Generalized" column name for Q^{2}:
 _COLUMN_NAME_Q_SQUARED = "q_squared"
 
-# (16): "Generalized" column name for t (hadronic momentum transfer):
+# (18): "Generalized" column name for t (hadronic momentum transfer):
 _COLUMN_NAME_T_MOMENTUM_CHANGE = "t"
 
-# (17): "Generalized" column name for x_Bjokren:
+# (19): "Generalized" column name for x_Bjokren:
 _COLUMN_NAME_X_BJORKEN = "x_b"
 
-# (18): "Generalized" column name for azimuthal phi angle:
+# (20): "Generalized" column name for azimuthal phi angle:
 _COLUMN_NAME_AZIMUTHAL_PHI = "phi"
 
-# (19): "Generalized" column name for the real part of the CFF H:
+# (21): "Generalized" column name for the real part of the CFF H:
 _COLUMN_NAME_CFF_REAL_H = "Re[H]"
 
-# (20): "Generalized" column name for the imaginary part of the CFF H:
+# (22): "Generalized" column name for the imaginary part of the CFF H:
 _COLUMN_NAME_CFF_IMAG_H = "Im[H]"
 
-# (21): "Generalized" column name for the real part of the CFF E:
+# (23): "Generalized" column name for the real part of the CFF E:
 _COLUMN_NAME_CFF_REAL_E = "Re[E]"
 
-# (22): "Generalized" column name for the imaginary part of the CFF E:
+# (24): "Generalized" column name for the imaginary part of the CFF E:
 _COLUMN_NAME_CFF_IMAG_E = "Im[E]"
 
-# (23): "Generalized" column name for the real part of the CFF H-tilde:
+# (25): "Generalized" column name for the real part of the CFF H-tilde:
 _COLUMN_NAME_CFF_REAL_H_TILDE = "Re[Ht]"
 
-# (24): "Generalized" column name for the imaginary part of the CFF H-tilde:
+# (26): "Generalized" column name for the imaginary part of the CFF H-tilde:
 _COLUMN_NAME_CFF_IMAG_H_TILDE = "Im[Ht]"
 
-# (25): "Generalized" column name for the real part of the CFF E-tilde:
+# (27): "Generalized" column name for the real part of the CFF E-tilde:
 _COLUMN_NAME_CFF_REAL_E_TILDE = "Re[Et]"
 
-# (26): "Generalized" column name for the imaginary part of the CFF E-tilde:
+# (28): "Generalized" column name for the imaginary part of the CFF E-tilde:
 _COLUMN_NAME_CFF_IMAG_E_TILDE = "Im[Et]"
 
 # TEMPORARY!
