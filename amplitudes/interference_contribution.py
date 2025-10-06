@@ -138,8 +138,6 @@ def calculate_interference_contribution(
     ## Description:
     We calculated the BKM10-predicted contribution of the interference between
     the BH and DVCS process.
-
-    ## Arguments:
     
         lepton_helicity: (float)
 

@@ -467,21 +467,13 @@ def calculate_bkm10_cross_section(
         # (20): If verbose, print the conversion:
         if verbose:
             print(f"> Converted BKM10 differential cross section to {bkm10_cross_section_in_nb_gev4} nb/GeV4")
-
-        # plot_cross_section(
-        #     lab_azimuthal_phi = azimuthal_phi,
-        #     value_of_beam_energy = np.array(lab_kinematics_k)[0],
-        #     value_of_Q_squared = np.array(squared_Q_momentum_transfer)[0],
-        #     value_of_hadron_recoil = np.array(squared_hadronic_momentum_transfer_t)[0],
-        #     value_of_x_Bjorken = np.array(x_Bjorken)[0],
-        #     calculated_cross_section = bkm10_cross_section_in_nb_gev4)
         
         # plot_beam_spin_asymmetry(
         #     lab_azimuthal_phi = azimuthal_phi,
-        #     value_of_beam_energy = np.array(lab_kinematics_k)[0],
-        #     value_of_Q_squared = np.array(squared_Q_momentum_transfer)[0],
-        #     value_of_hadron_recoil = np.array(squared_hadronic_momentum_transfer_t)[0],
-        #     value_of_x_Bjorken = np.array(x_Bjorken)[0],
+        #     value_of_beam_energy = lab_kinematics_k,
+        #     value_of_Q_squared = squared_Q_momentum_transfer,
+        #     value_of_hadron_recoil = squared_hadronic_momentum_transfer_t,
+        #     value_of_x_Bjorken = x_Bjorken,
         #     bsa_data = (beam_spin_asymmetry))
 
         # (20): Return the cross section.
