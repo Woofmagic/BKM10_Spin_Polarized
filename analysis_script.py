@@ -160,19 +160,19 @@ def analysis():
         compton_form_factor_e_tilde = complex(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary)
 
         # (X): Want to do element-wise operations, so iterate it our for Q^{2}:
-        squared_Q_momentum_transfer = np.array([value_of_Q_squared for _ in range(len(np.arange(0, 361, 1.)))])
+        squared_Q_momentum_transfer = np.array([value_of_Q_squared for _ in range(len(np.linspace(0., 2. * np.pi, 361)))])
 
         # (X): Want to do element-wise operations, so iterate it our for x_{B}:
-        x_Bjorken = np.array([value_of_x_Bjorken for _ in range(len(np.arange(0, 361, 1.)))])
+        x_Bjorken = np.array([value_of_x_Bjorken for _ in range(len(np.linspace(0., 2. * np.pi, 361)))])
 
         # (X): Want to do element-wise operations, so iterate for t:
-        squared_hadronic_momentum_transfer_t = np.array([value_of_hadron_recoil for _ in range(len(np.arange(0, 361, 1.)))])
+        squared_hadronic_momentum_transfer_t = np.array([value_of_hadron_recoil for _ in range(len(np.linspace(0., 2. * np.pi, 361)))])
 
         # (X): Want to do element-wise operations, so iterate it for the beam energy (k):
-        lab_kinematics_k = np.array([value_of_beam_energy for _ in range(len(np.arange(0, 361, 1.)))])
+        lab_kinematics_k = np.array([value_of_beam_energy for _ in range(len(np.linspace(0., 2. * np.pi, 361)))])
         
         # (X): This is the *crucial line* --- it says that the azimuthal phi is really why we need element-wise operations:
-        azimuthal_phi = np.array([phi for phi in range(len(np.arange(0., 361., 1.)))])
+        azimuthal_phi = np.array([phi for phi in range(len(np.linspace(0., 2. * np.pi, 361)))])
 
         # (X): Cast the Re[H] number to an NumPy array:
         compton_form_factor_h_real = np.array([kinematic_bin_settings["compton_form_factor_h_real"]])
@@ -1648,41 +1648,41 @@ def analysis():
             
             plt.close()
 
-        # print("> Beginning analysis of DVCS, unpolarized beam, unpolarized target...")
-        # analyze_dvcs_unpolarized_beam_unpolarized_target()
+        print("> Beginning analysis of DVCS, unpolarized beam, unpolarized target...")
+        analyze_dvcs_unpolarized_beam_unpolarized_target()
 
-        # print("> Beginning analysis of DVCS, (+) polarized beam, unpolarized target...")
-        # analyze_dvcs_plus_beam_unpolarized_target()
+        print("> Beginning analysis of DVCS, (+) polarized beam, unpolarized target...")
+        analyze_dvcs_plus_beam_unpolarized_target()
 
-        # print("> Beginning analysis of DVCS, (-) polarized beam, unpolarized target...")
-        # analyze_dvcs_minus_beam_unpolarized_target()
+        print("> Beginning analysis of DVCS, (-) polarized beam, unpolarized target...")
+        analyze_dvcs_minus_beam_unpolarized_target()
 
-        # print("> Beginning analysis of DVCS, unpolarized beam, longitudinally-polarized target...")
-        # analyze_dvcs_unpolarized_beam_polarized_target()
+        print("> Beginning analysis of DVCS, unpolarized beam, longitudinally-polarized target...")
+        analyze_dvcs_unpolarized_beam_polarized_target()
 
-        # print("> Beginning analysis of DVCS, (+) polarized beam, longitudinally-polarized target...")
-        # analyze_dvcs_plus_beam_polarized_target()
+        print("> Beginning analysis of DVCS, (+) polarized beam, longitudinally-polarized target...")
+        analyze_dvcs_plus_beam_polarized_target()
 
-        # print("> Beginning analysis of DVCS, (-) polarized beam, longitudinally-polarized target...")
-        # analyze_dvcs_minus_beam_polarized_target()
+        print("> Beginning analysis of DVCS, (-) polarized beam, longitudinally-polarized target...")
+        analyze_dvcs_minus_beam_polarized_target()
         
-        # print("> Beginning analysis of Interference, unpolarized beam, unpolarized target...")
-        # analyze_interference_unpolarized_beam_unpolarized_target()
+        print("> Beginning analysis of Interference, unpolarized beam, unpolarized target...")
+        analyze_interference_unpolarized_beam_unpolarized_target()
 
-        # print("> Beginning analysis of Interference, (+) beam, unpolarized target...")
-        # analyze_interference_plus_beam_unpolarized_target()
+        print("> Beginning analysis of Interference, (+) beam, unpolarized target...")
+        analyze_interference_plus_beam_unpolarized_target()
 
-        # print("> Beginning analysis of Interference, (-) beam, unpolarized target...")
-        # analyze_interference_minus_beam_unpolarized_target()
+        print("> Beginning analysis of Interference, (-) beam, unpolarized target...")
+        analyze_interference_minus_beam_unpolarized_target()
 
-        # print("> Beginning analysis of Interference, unpolarized beam, longitudinally-polarized target...")
-        # analyze_interference_unpolarized_beam_polarized_target()
+        print("> Beginning analysis of Interference, unpolarized beam, longitudinally-polarized target...")
+        analyze_interference_unpolarized_beam_polarized_target()
 
         print("> Beginning analysis of Interference, (+) beam, longitudinally-polarized target...")
         analyze_interference_plus_beam_polarized_target()
 
-        # print("> Beginning analysis of Interference, (-) beam, longitudinally-polarized target...")
-        # analyze_interference_minus_beam_polarized_target()
+        print("> Beginning analysis of Interference, (-) beam, longitudinally-polarized target...")
+        analyze_interference_minus_beam_polarized_target()
 
 if __name__ == "__main__":
     
