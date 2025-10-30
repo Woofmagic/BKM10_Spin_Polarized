@@ -1,30 +1,23 @@
 from decimal import Decimal
 
 def calculate_kinematics_skewness_parameter(
-    squared_Q_momentum_transfer: float, 
-    x_Bjorken: float, 
-    squared_hadronic_momentum_transfer_t: float, 
+    squared_Q_momentum_transfer: float,
+    x_Bjorken: float,
+    squared_hadronic_momentum_transfer_t: float,
     verbose: bool = False) -> float:
     """
-    Description
-    --------------
-    Calculate the Skewness Parameter
-    x_{i} = x_{B} * (1 + \frac{ t Q^{2} }{ 2 } ) ... FUCK OFF
+    ## Description
+    Calculate the Skewness Parameter.
 
-    Parameters
-    --------------
-    squared_Q_momentum_transfer: (float)
+    :param squared_Q_momentum_transfer float:
         kinematic momentum transfer to the hadron
 
-    x_Bjorken: (float)
+    :param x_Bjorken float:
         kinematic Bjorken X
 
-    verbose: (bool)
+    :param verbose bool:
         Debugging console output.
     
-
-    Notes
-    --------------
     """
     try:
 
@@ -44,6 +37,6 @@ def calculate_kinematics_skewness_parameter(
         # (4): Return Xi:
         return skewness_parameter
     
-    except Exception as ERROR:
-        print(f"> Error in computing skewness xi:\n> {ERROR}")
+    except Exception as error:
+        print(f"> Error in computing skewness xi:\n> {error}")
         return 0.

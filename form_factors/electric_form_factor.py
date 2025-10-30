@@ -6,25 +6,16 @@ def calculate_form_factor_electric(
     squared_hadronic_momentum_transfer_t: float,
     verbose: bool = False) -> float:
     """
-    Description
-    --------------
-    The Electric Form Factor is quite mysterious still...
-    Where the fuck do these numbers come from?
+    Calculate F_{E}.
 
-    Parameters
-    --------------
-    squared_hadronic_momentum_transfer_t: (float)
+    :param squared_hadronic_momentum_transfer_t float:
 
-    verbose: (bool)
+    :param verbose bool:
         Debugging console output.
 
-    Returns
-    --------------
-    form_factor_electric : (float)
-        result of the operation
-    
-    Notes
-    --------------
+    :returns: form_factor_electric
+    :rtype: float
+
     """
     
     try:
@@ -40,6 +31,6 @@ def calculate_form_factor_electric(
 
         return form_factor_electric
 
-    except Exception as ERROR:
-        print(f"> Error in calculating electric form factor:\n> {ERROR}")
+    except Exception as error:
+        print(f"> Error in calculating electric form factor:\n> {error}")
         return 0.

@@ -48,8 +48,6 @@ def calculate_curly_C_plus_plus_longitudinally_polarized_interference(
             compton_form_factor_e_real_part,
             compton_form_factor_e_tilde_real_part)
         
-        print("fuckfuckfzz")
-        
         # (2): Calculate curly C_{LP}^{I, V}(F):
         curly_C_V_longitudinally_polarized_interference = calculate_curly_C_longitudinally_polarized_interference_V(
             squared_Q_momentum_transfer, 
@@ -60,8 +58,6 @@ def calculate_curly_C_plus_plus_longitudinally_polarized_interference(
             compton_form_factor_h_real_part,
             compton_form_factor_e_real_part)
         
-        print("fuckfuckfzzzz")
-        
         # (3): Calculate curly C_{LP}^{I, A}(F):
         curly_C_A_longitudinally_polarized_interference = calculate_curly_C_longitudinally_polarized_interference_A(
             squared_Q_momentum_transfer, 
@@ -71,9 +67,7 @@ def calculate_curly_C_plus_plus_longitudinally_polarized_interference(
             Pauli_form_factor_F2,
             compton_form_factor_h_tilde_real_part,
             compton_form_factor_e_tilde_real_part)
-        
-        print("fuckfuckfzsfafz")
-        
+
         # (4): Split on the integer n:
         if n_number == 0:
 
