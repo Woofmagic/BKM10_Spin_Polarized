@@ -127,6 +127,15 @@ from statics.strings.static_strings import _FIGURE_FORMAT_PNG
 # (X): Function | calculation > bkm10_cross_section:
 from calculation.bkm10_cross_section import calculate_bkm10_cross_section
 
+# (X): Function | calculation > bkm10_bsa:
+from calculation.bkm10_cross_section import calculate_bkm10_bsa
+
+# (X): Function | calculation > bkm10_tsa:
+from calculation.bkm10_cross_section import calculate_bkm10_tsa
+
+# (X): Function | calculation > bkm10_dsa:
+from calculation.bkm10_cross_section import calculate_bkm10_dsa
+
 def main(
     kinematics_dataframe_path: str,
     kinematic_set_number: int,
@@ -365,11 +374,75 @@ def main(
 
         if debugging:
             print(f"[DEBUG]: Obtained single k value from dataframe: {value_of_k} ({type(value_of_k)})")
+            
+        range_of_lab_azimuthal_phi = np.linspace(0., 2.*np.pi, 360)
+        compton_form_factor_h_real = -2.449
+        compton_form_factor_h_imaginary = 3.482
+        compton_form_factor_e_real = 2.217
+        compton_form_factor_e_imaginary = 0.0
+        compton_form_factor_h_tilde_real = 1.409
+        compton_form_factor_h_tilde_imaginary = 1.577
+        compton_form_factor_e_tilde_real = 144.410
+        compton_form_factor_e_tilde_imaginary = 0.0
+        
+        # compton_form_factor_h_real = -0.897
+        # compton_form_factor_h_imaginary = 2.421
+        # compton_form_factor_e_real = -0.541
+        # compton_form_factor_e_imaginary = 0.903
+        # compton_form_factor_h_tilde_real = 2.444
+        # compton_form_factor_h_tilde_imaginary = 1.131
+        # compton_form_factor_e_tilde_real = 2.207
+        # compton_form_factor_e_tilde_imaginary = 5.383
+
 
         # (8): Attempt to calculate the BKM10 Cross Section:
         computed_cross_sections = calculate_bkm10_cross_section(
             numerical_lepton_polarization,
             numerical_target_polarization,
+            value_of_q_squared,
+            value_of_x_bjorken,
+            value_of_t,
+            value_of_k,
+            range_of_lab_azimuthal_phi,
+            complex(compton_form_factor_h_real, compton_form_factor_h_tilde_real),
+            complex(compton_form_factor_e_real, compton_form_factor_e_imaginary),
+            complex(compton_form_factor_h_imaginary, compton_form_factor_h_tilde_imaginary),
+            complex(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary),
+            verbose,
+            debugging)
+        
+        # (X): Compute the BSA:
+        computed_bsa = calculate_bkm10_bsa(
+            numerical_target_polarization,
+            value_of_q_squared,
+            value_of_x_bjorken,
+            value_of_t,
+            value_of_k,
+            range_of_lab_azimuthal_phi,
+            complex(compton_form_factor_h_real, compton_form_factor_h_tilde_real),
+            complex(compton_form_factor_e_real, compton_form_factor_e_imaginary),
+            complex(compton_form_factor_h_imaginary, compton_form_factor_h_tilde_imaginary),
+            complex(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary),
+            verbose,
+            debugging)
+        
+        # # (X): Compute the TSA:
+        # computed_tsa = calculate_bkm10_tsa(
+        #     numerical_lepton_polarization,
+        #     value_of_q_squared,
+        #     value_of_x_bjorken,
+        #     value_of_t,
+        #     value_of_k,
+        #     range_of_lab_azimuthal_phi,
+        #     complex(compton_form_factor_h_real, compton_form_factor_h_tilde_real),
+        #     complex(compton_form_factor_e_real, compton_form_factor_e_imaginary),
+        #     complex(compton_form_factor_h_imaginary, compton_form_factor_h_tilde_imaginary),
+        #     complex(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary),
+        #     verbose,
+        #     debugging)
+        
+        # (X): Compute the DSA:
+        computed_dsa = calculate_bkm10_dsa(
             value_of_q_squared,
             value_of_x_bjorken,
             value_of_t,
@@ -391,15 +464,15 @@ def main(
         
         # (X): Obtain the CFF inputs as well to display:
         cff_string = (
-            rf"$\mathcal{{H}} = {complex(compton_form_factor_h_real, compton_form_factor_h_tilde_real):.3f}$, "
-            rf"$\widetilde{{\mathcal{{H}}}} = {complex(compton_form_factor_e_real, compton_form_factor_e_imaginary):.3f}$, "
-            rf"$\mathcal{{E}} = {complex(compton_form_factor_h_imaginary, compton_form_factor_h_tilde_imaginary):.3f}$, "
+            rf"$\mathcal{{H}} = {complex(compton_form_factor_h_real, compton_form_factor_h_imaginary):.3f}$, "
+            rf"$\widetilde{{\mathcal{{H}}}} = {complex(compton_form_factor_h_tilde_real, compton_form_factor_h_tilde_imaginary):.3f}$, "
+            rf"$\mathcal{{E}} = {complex(compton_form_factor_e_real, compton_form_factor_e_imaginary):.3f}$, "
             rf"$\widetilde{{\mathcal{{E}}}} = {complex(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary):.3f}$")
 
-        # (X): Initialize a figure:
+        # (X): Initialize a figure for the cross-section:
         cross_section_figure = plt.figure(figsize = (8, 5))
 
-        # (X): Add an Axis object to it:
+        # (X): Add an Axis object to the cross-section plot:
         cross_section_axis = cross_section_figure.add_subplot(1, 1, 1)
 
         # (X): Plot the computed cross-section data:
@@ -407,36 +480,151 @@ def main(
             range_of_lab_azimuthal_phi,
             computed_cross_sections,
             marker = ".",
+            markersize = 1.0,
             linestyle = "none",
             color = "red",
             alpha = 0.65)
         
-        # (X): Set the x-label:
+        # (X): Set the x-label of the *cross-section* plot:
         cross_section_axis.set_xlabel(r"Azimuthal Angle $\phi$ (radians)")
 
-        # (X): Set the y-label:
+        # (X): Set the y-label of the *cross-section* plot:
         cross_section_axis.set_ylabel(r"Differential Cross Section ($nb/GeV^{4}$)")
 
-        # (X): Set the title:
+        # (X): Set the title of the *cross-section* plot:
         cross_section_axis.set_title(f"{title_string}\n{cff_string}")
 
-        # (X): Add a grid:
+        # (X): Add a grid to the *cross-section plot:
         cross_section_axis.grid(True)
 
-        # (X): Compute the figure title:
-        figure_title = f"{formalism_version}_cross_section_v1.{_FIGURE_FORMAT_PNG}"
+        # (X): Compute the *cross-section* figure filename:
+        cross_section_figure_filename = f"{formalism_version}_cross_section.{_FIGURE_FORMAT_PNG}"
 
-        # (X): Save the figure as PNG:
+        # (X): Compute the *cross-section* figure filename:
+        bsa_figure_filename = f"{formalism_version}_bsa.{_FIGURE_FORMAT_PNG}"
+
+        # (X): Save the *cross-section* figure as PNG:
         cross_section_figure.savefig(
-            fname = figure_title,
+            fname = cross_section_figure_filename,
+            format = _FIGURE_FORMAT_PNG,
+            dpi = 400)
+        
+        # (X): Close the *cross-section* figure to avoid killing the machine's memory and etc.:
+        plt.close(cross_section_figure)
+
+        # (X): Initialize a figure for the BSA:
+        bsa_figure = plt.figure(figsize = (8, 5))
+
+        # (X): Add an Axis object to the BSA plot:
+        bsa_axis = bsa_figure.add_subplot(1, 1, 1)
+        
+        # (X): Plot the computed BSA data:
+        bsa_axis.plot(
+            range_of_lab_azimuthal_phi,
+            computed_bsa,
+            marker = ".",
+            markersize = 1.0,
+            linestyle = "none",
+            color = "red",
+            alpha = 0.65)
+
+        # (X): Set the x-label of the *BSA* plot:
+        bsa_axis.set_xlabel(r"Azimuthal Angle $\phi$ (radians)")
+        
+        # (X): Set the y-label of the *BSA* plot:
+        bsa_axis.set_ylabel(r"$\frac{d^4\sigma \left( \lambda = +1 \right) - d^4\sigma \left( \lambda = -1 \right)}{d^4\sigma \left( \lambda = +1 \right) + d^4\sigma \left( \lambda = -1 \right)}$ (unitless)",)
+
+        # (X): Set the title of the *BSA* plot:
+        bsa_axis.set_title(f"{title_string}\n{cff_string}")
+        
+        # (X): Add a grid to the *BSA* plot:
+        bsa_axis.grid(True)
+        
+        # (X): Save the *BSA* figure as PNG:
+        bsa_figure.savefig(
+            fname = bsa_figure_filename,
             format = _FIGURE_FORMAT_PNG,
             dpi = 400)
 
-        # (X): Close the figure to avoid killing the machine's memory and etc.:
-        plt.close(cross_section_figure)
+        # (X): Close the *BSA* figure to avoid killing the machine's memory and etc.:
+        plt.close(bsa_figure)
+
+        # # (X): Initialize a figure for the TSA:
+        # tsa_figure = plt.figure(figsize = (8, 5))
+
+        # # (X): Add an Axis object to the TSA plot:
+        # tsa_axis = bsa_figure.add_subplot(1, 1, 1)
+        
+        # # (X): Plot the computed TSA data:
+        # tsa_axis.plot(
+        #     range_of_lab_azimuthal_phi,
+        #     computed_tsa,
+        #     marker = ".",
+        #     markersize = 1.0,
+        #     linestyle = "none",
+        #     color = "red",
+        #     alpha = 0.65)
+
+        # # (X): Set the x-label of the TSA plot:
+        # tsa_axis.set_xlabel(r"Azimuthal Angle $\phi$ (radians)")
+        
+        # # (X): Set the y-label of the TSA plot:
+        # tsa_axis.set_ylabel(r"$\frac{d^4\sigma \left( \Lambda = +1 \right) - d^4\sigma \left( \Lambda = -1 \right)}{d^4\sigma \left( \Lambda = +1 \right) + d^4\sigma \left( \Lambda = -1 \right)}$ (unitless)",)
+
+        # # (X): Set the title of the TSA plot:
+        # tsa_axis.set_title(f"{title_string}\n{cff_string}")
+        
+        # # (X): Add a grid to the TSA plot:
+        # tsa_axis.grid(True)
+        
+        # # (X): Save the TSA figure as PNG:
+        # tsa_figure.savefig(
+        #     fname = bsa_figure_filename,
+        #     format = _FIGURE_FORMAT_PNG,
+        #     dpi = 400)
+
+        # # (X): Close the TSA figure:
+        # plt.close(tsa_figure)
+
+        # (X): Initialize a figure for the DSA:
+        dsa_figure = plt.figure(figsize = (8, 5))
+
+        # (X): Add an Axis object to the DSA plot:
+        dsa_axis = bsa_figure.add_subplot(1, 1, 1)
+        
+        # (X): Plot the computed DSA data:
+        dsa_axis.plot(
+            range_of_lab_azimuthal_phi,
+            computed_dsa,
+            marker = ".",
+            markersize = 1.0,
+            linestyle = "none",
+            color = "red",
+            alpha = 0.65)
+
+        # (X): Set the x-label of the DSA plot:
+        dsa_axis.set_xlabel(r"Azimuthal Angle $\phi$ (radians)")
+        
+        # (X): Set the y-label of the DSA plot:
+        dsa_axis.set_ylabel(r"$\frac{d^4\sigma \left( \Lambda = +1 \right) - d^4\sigma \left( \Lambda = -1 \right)}{d^4\sigma \left( \Lambda = +1 \right) + d^4\sigma \left( \Lambda = -1 \right)}$ (unitless)",)
+
+        # (X): Set the title of the DSA plot:
+        dsa_axis.set_title(f"{title_string}\n{cff_string}")
+        
+        # (X): Add a grid to the DSA plot:
+        dsa_axis.grid(True)
+        
+        # (X): Save the DSA figure as PNG:
+        dsa_figure.savefig(
+            fname = bsa_figure_filename,
+            format = _FIGURE_FORMAT_PNG,
+            dpi = 400)
+
+        # (X): Close the DSA figure:
+        plt.close(dsa_figure)
 
         # (X): Return the numerical value of the cross section:
-        return computed_cross_sections
+        return computed_cross_sections, computed_bsa, computed_dsa
 
     except KeyboardInterrupt:
 

@@ -1,3 +1,13 @@
+"""
+## Description;
+Testing suite for the coefficients $\mathcal{C}^{I}_{\text{unp}}(\mathcal{F})$.
+which come in whenever we evaluate the unpolarized-target cross-section.
+
+# Notes:
+    1. 2026/01/21
+        - All of the derived quantities have passed tests.
+"""
+
 import unittest
 
 from coefficients.interference_coefficients.unpolarized.unpolarized_curly_C import calculate_curly_C_unpolarized_interference
@@ -47,7 +57,8 @@ class TestCurlyCUnpolarizedSeriesCoefficients(unittest.TestCase):
 
     def test_calculate_curly_C_unpolarized_interference_normal_cffs(self):
         """
-        ## Description: Test the function computing C^{I}(F)
+        ## Description:
+        Test the function computing C^{I}(F)
         These Curly Cs don't rely on the helicity flip of the lepton or not, so they
         are easy to test.
         """
@@ -61,12 +72,13 @@ class TestCurlyCUnpolarizedSeriesCoefficients(unittest.TestCase):
                 _TEST_CFF_H,
                 _TEST_CFF_H_TILDE,
                 _TEST_CFF_E,
-                _TEST_VERBOSE), 
+                _TEST_VERBOSE),
             complex(0.266711013189341, 2.1847473098840733))
         
     def test_calculate_curly_C_unpolarized_interference_eff_cffs_ww_off(self):
         """
-        ## Description: Test the function computing C^{I}(F_{eff}) *without* the WW Relations!
+        ## Description:
+        Test the function computing C^{I}(F_{eff}) *without* the WW Relations!
         These Curly Cs don't rely on the helicity flip of the lepton or not, so they
         are easy to test.
         """
@@ -85,7 +97,8 @@ class TestCurlyCUnpolarizedSeriesCoefficients(unittest.TestCase):
         
     def test_calculate_curly_C_unpolarized_interference_eff_cffs_ww_on(self):
         """
-        ## Description: Test the function computing C^{I}(F_{eff}) *using* the WW Relations!
+        ## Description:
+        Test the function computing C^{I}(F_{eff}) *using* the WW Relations!
         These Curly Cs don't rely on the helicity flip of the lepton or not, so they
         are easy to test.
         """
@@ -104,7 +117,8 @@ class TestCurlyCUnpolarizedSeriesCoefficients(unittest.TestCase):
         
     def test_calculate_curly_C_unpolarized_interference_V_normal_cffs(self):
         """
-        ## Description: Test the function computing C^{I,V}(F) 
+        ## Description:
+        Test the function computing C^{I,V}(F) 
         """
         self.assertAlmostEqual(
             calculate_curly_C_unpolarized_interference_V(
@@ -120,7 +134,8 @@ class TestCurlyCUnpolarizedSeriesCoefficients(unittest.TestCase):
         
     def test_calculate_curly_C_unpolarized_interference_V_eff_cffs_ww_off(self):
         """
-        ## Description: Test the function computing C^{I,V}(F) *without* the WW Relations!
+        ## Description:
+        Test the function computing C^{I,V}(F) *without* the WW Relations!
         """
         self.assertAlmostEqual(
             calculate_curly_C_unpolarized_interference_V(
@@ -136,7 +151,8 @@ class TestCurlyCUnpolarizedSeriesCoefficients(unittest.TestCase):
         
     def test_calculate_curly_C_unpolarized_interference_V_eff_cffs_ww_on(self):
         """
-        ## Description: Test the function computing C^{I,V}(F) *using* the WW Relations!
+        ## Description:
+        Test the function computing C^{I,V}(F) *using* the WW Relations!
         """
         self.assertAlmostEqual(
             calculate_curly_C_unpolarized_interference_V(
@@ -152,7 +168,8 @@ class TestCurlyCUnpolarizedSeriesCoefficients(unittest.TestCase):
         
     def test_calculate_curly_C_unpolarized_interference_A_normal_cffs(self):
         """
-        ## Description: Test the function computing C^{I,A}(F)
+        ## Description:
+        Test the function computing C^{I,A}(F)
         """
         self.assertAlmostEqual(
             calculate_curly_C_unpolarized_interference_A(
@@ -167,7 +184,8 @@ class TestCurlyCUnpolarizedSeriesCoefficients(unittest.TestCase):
         
     def test_calculate_curly_C_unpolarized_interference_A_eff_cffs_ww_off(self):
         """
-        ## Description: Test the function computing C^{I,A}(F) *without* the WW Relations!
+        ## Description:
+        Test the function computing C^{I,A}(Feff) *without* the WW Relations!
         """
         self.assertAlmostEqual(
             calculate_curly_C_unpolarized_interference_A(
@@ -182,7 +200,8 @@ class TestCurlyCUnpolarizedSeriesCoefficients(unittest.TestCase):
         
     def test_calculate_curly_C_unpolarized_interference_A_eff_cffs_ww_on(self):
         """
-        ## Description: Test the function computing C^{I,A}(F) *using* the WW Relations!
+        ## Description:
+        Test the function computing C^{I,A}(Feff) *using* the WW Relations!
         """
         self.assertAlmostEqual(
             calculate_curly_C_unpolarized_interference_A(

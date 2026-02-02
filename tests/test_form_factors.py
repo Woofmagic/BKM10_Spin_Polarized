@@ -1,3 +1,13 @@
+"""
+## Description:
+Just need to verify that the effective form factors (F_{eff}) are coming
+out correctly.
+
+## Notes:
+    1. 2026/01/21
+        - All tests pass.
+"""
+
 import unittest
 
 from form_factors.effective_cffs import compute_cff_effective
@@ -32,28 +42,148 @@ _TEST_VERBOSE = False
 
 class TestFormFactors(unittest.TestCase):
 
-    def test_compute_cff_effective(self):
+    def test_effective_cff_real_h(self):
         """
-        # Title: `test_compute_cff_effective`
-
-        ## Description: Test the function `test_compute_cff_effective`.
-        The computation of an effective form factor (FOR THE TIME BEING)
-        is done by simply multiplying its original value 
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
+        ## Description:
+        Test Re[H]'s effective value *without WW relations on*.
         """
-        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_H, _TEST_VERBOSE), 0.29783035488137793)
-        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_H_TILDE ,_TEST_VERBOSE), -0.8114798075028848)
-        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_E, _TEST_VERBOSE), 0.17962789519601502)
-        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_E_TILDE, _TEST_VERBOSE), -0.7327888441730223)
-        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_IMAGINARY_H, _TEST_VERBOSE), -0.8038431317366954)
-        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_IMAGINARY_H_TILDE ,_TEST_VERBOSE), -0.37552523006782434)
-        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_IMAGINARY_E, _TEST_VERBOSE), -0.2998225311682099)
-        self.assertAlmostEqual(compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_IMAGINARY_E_TILDE, _TEST_VERBOSE), -1.787314158669406)
+        self.assertAlmostEqual(
+            compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_H, _TEST_VERBOSE),
+            0.29783035488137793)
+    
+    def test_effective_cff_real_ht(self):
+        """
+        ## Description:
+        Test Re[Ht]'s effective value *without WW relations on*.
+        """
+
+        self.assertAlmostEqual(
+            compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_H_TILDE ,_TEST_VERBOSE),
+            -0.8114798075028848)
+    
+    def test_effective_cff_real_e(self):
+        """
+        ## Description:
+        Test Re[E]'s effective value *without WW relations on*.
+        """
+        self.assertAlmostEqual(
+            compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_E, _TEST_VERBOSE),
+            0.17962789519601502)
+    
+    def test_effective_cff_real_et(self):
+        """
+        ## Description:
+        Test Re[Et]'s effective value *without WW relations on*.
+        """
+        self.assertAlmostEqual(
+            compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_E_TILDE, _TEST_VERBOSE),
+            -0.7327888441730223)
+    
+    def test_effective_cff_imag_h(self):
+        """
+        ## Description:
+        Test Im[H]'s effective value *without WW relations on*.
+        """
+        self.assertAlmostEqual(
+            compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_IMAGINARY_H, _TEST_VERBOSE),
+            -0.8038431317366954)
+    
+    def test_effective_cff_imag_ht(self):
+        """
+        ## Description:
+        Test Im[Ht]'s effective value *without WW relations on*.
+        """
+        self.assertAlmostEqual(
+            compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_IMAGINARY_H_TILDE ,_TEST_VERBOSE),
+            -0.37552523006782434)
+    
+    def test_effective_cff_imag_e(self):
+        """
+        ## Description:
+        Test Im[E]'s effective value *without WW relations on*.
+        """
+        self.assertAlmostEqual(
+            compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_IMAGINARY_E, _TEST_VERBOSE),
+            -0.2998225311682099)
+        
+    def test_effective_cff_imag_et(self):
+        """
+        ## Description:
+        Test Im[Et]'s effective value *without WW relations on*.
+        """
+        self.assertAlmostEqual(
+            compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_IMAGINARY_E_TILDE, _TEST_VERBOSE),
+            -1.787314158669406)
+        
+    def test_effective_cff_real_h_ww(self):
+        """
+        ## Description:
+        Test Re[H]'s effective value *with WW relations on*.
+        """
+        self.assertAlmostEqual(
+            compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_H, True, _TEST_VERBOSE),
+            -1.4961696451186222)
+    
+    def test_effective_cff_real_ht_ww(self):
+        """
+        ## Description:
+        Test Re[Ht]'s effective value *with WW relations on*.
+        """
+
+        self.assertAlmostEqual(
+            compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_H_TILDE, True, _TEST_VERBOSE),
+            4.0765201924971155)
+    
+    def test_effective_cff_real_e_ww(self):
+        """
+        ## Description:
+        Test Re[E]'s effective value *with WW relations on*.
+        """
+        self.assertAlmostEqual(
+            compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_E, True, _TEST_VERBOSE),
+            -0.9023721048039851)
+    
+    def test_effective_cff_real_et_ww(self):
+        """
+        ## Description:
+        Test Re[Et]'s effective value *with WW relations on*.
+        """
+        self.assertAlmostEqual(
+            compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_REAL_E_TILDE, True, _TEST_VERBOSE),
+            3.6812111558269773)
+    
+    def test_effective_cff_imag_h_ww(self):
+        """
+        ## Description:
+        Test Im[H]'s effective value *with WW relations on*.
+        """
+        self.assertAlmostEqual(
+            compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_IMAGINARY_H, True,_TEST_VERBOSE),
+            4.038156868263304)
+    
+    def test_effective_cff_imag_ht_ww(self):
+        """
+        ## Description:
+        Test Im[Ht]'s effective value *with WW relations on*.
+        """
+        self.assertAlmostEqual(
+            compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_IMAGINARY_H_TILDE, True, _TEST_VERBOSE),
+            1.8864747699321758)
+    
+    def test_effective_cff_imag_e_ww(self):
+        """
+        ## Description:
+        Test Im[E]'s effective value *with WW relations on*.
+        """
+        self.assertAlmostEqual(
+            compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_IMAGINARY_E, True, _TEST_VERBOSE),
+            1.5061774688317902)
+        
+    def test_effective_cff_imag_et_ww(self):
+        """
+        ## Description:
+        Test Im[Et]'s effective value *with WW relations on*.
+        """
+        self.assertAlmostEqual(
+            compute_cff_effective(_TEST_SKEWNESS, _TEST_CFF_IMAGINARY_E_TILDE, True,  _TEST_VERBOSE),
+            8.978685841330593)

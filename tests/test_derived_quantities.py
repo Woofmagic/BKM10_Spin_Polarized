@@ -1,3 +1,15 @@
+"""
+## Description:
+Testing suite for basic derived (or sub-) quantites that the BKM10
+formalism uses to evaluate the total cross-section. *If these values
+are incorrect/their tests don't pass, then nothing else will likely 
+match.* This is the highest-level test that must pass.
+
+# Notes:
+    1. 2026/01/21
+        - All of the derived quantities have passed tests.
+"""
+
 import unittest
 
 from derived_kinematics.epsilon import calculate_kinematics_epsilon
@@ -7,9 +19,6 @@ from derived_kinematics.t_minimum import calculate_kinematics_t_min
 from derived_kinematics.t_prime import calculate_kinematics_t_prime
 from derived_kinematics.k_tilde import calculate_kinematics_k_tilde
 from derived_kinematics.shorthand_K import calculate_kinematics_k
-from derived_kinematics.k_dot_delta import calculate_k_dot_delta
-from derived_kinematics.lepton_propagator_p1 import calculate_lepton_propagator_p1
-from derived_kinematics.lepton_propagator_p2 import calculate_lepton_propagator_p2
 
 from form_factors.electric_form_factor import calculate_form_factor_electric
 from form_factors.magnetic_form_factor import calculate_form_factor_magnetic
@@ -65,16 +74,8 @@ class TestDerivedKinematics(unittest.TestCase):
 
     def test_calculate_kinematics_epsilon(self):
         """
-        ## Description: Test the calculation of epsilon.
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
+        ## Description:
+        Test the calculation of epsilon.
         """
         for case in _TEST_CASES:
             with self.subTest(case = case):
@@ -89,17 +90,8 @@ class TestDerivedKinematics(unittest.TestCase):
         
     def test_calculate_kinematics_lepton_energy_fraction(self):
         """
-        ## Description: Test the calculation of y, lepton energy
-        fraction.
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
+        ## Description:
+        Test the calculation of y, lepton energy fraction.
         """
         for case in _TEST_CASES:
             with self.subTest(case = case):
@@ -113,17 +105,8 @@ class TestDerivedKinematics(unittest.TestCase):
         
     def test_calculate_skewness(self):
         """
-        ## Description: Test the computation of the skewness
-        parameter.
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
+        ## Description: 
+        Test the computation of the skewness parameter.
         """
         for case in _TEST_CASES:
             with self.subTest(case = case):
@@ -132,21 +115,13 @@ class TestDerivedKinematics(unittest.TestCase):
                         case["squared_q_momentum_transfer"],
                         case["x_bjorken"],
                         case["squared_hadronic_momentum_transfer"],
-                        _TEST_VERBOSE), 
+                        _TEST_VERBOSE),
                     case["skewness"])
         
     def test_calculate_t_minimum(self):
         """
-        ## Description: Test the computation of t_min.
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
+        ## Description:
+        Test the computation of t_min.
         """
         for case in _TEST_CASES:
             with self.subTest(case = case):
@@ -160,16 +135,8 @@ class TestDerivedKinematics(unittest.TestCase):
         
     def test_calculate_t_prime(self):
         """
-        ## Description: Test the computation of t prime.
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
+        ## Description:
+        Test the computation of t prime.
         """
         for case in _TEST_CASES:
             with self.subTest(case = case):
@@ -182,16 +149,8 @@ class TestDerivedKinematics(unittest.TestCase):
         
     def test_calculate_k_tilde(self):
         """
-        ## Description: Test the computation of K tilde.
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
+        ## Description:
+        Test the computation of K tilde.
         """
         for case in _TEST_CASES:
             with self.subTest(case = case):
@@ -208,16 +167,8 @@ class TestDerivedKinematics(unittest.TestCase):
         
     def test_calculate_k_shorthand(self):
         """
-        ## Description: Test the computation of K.
-
-        ## Arguments:
-        None
-
-        ## Returns:
-        None
-
-        ## Examples:
-        None
+        ## Description:
+        Test the computation of K.
         """
         for case in _TEST_CASES:
             with self.subTest(case = case):
@@ -227,5 +178,5 @@ class TestDerivedKinematics(unittest.TestCase):
                         case["lepton_energy_fraction"],
                         case["epsilon"],
                         case["k_tilde"],
-                        _TEST_VERBOSE), 
+                        _TEST_VERBOSE),
                     case["expected_shorthand_k"])

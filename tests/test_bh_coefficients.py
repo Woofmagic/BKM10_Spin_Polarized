@@ -3,8 +3,12 @@
 A testing script for the BH (Bethe-Heitler) coefficients, both unpolarized and unpolarized.
 
 ## Notes:
-    (1): all tests in this script passed on 2025/07/23.
-    (2): TP (transversely-polarized) coefficients not yet implemented.
+    1. 2025/07/23
+        - All tests in this script passed on.
+    2. 2025/07/23
+        - TP (transversely-polarized) coefficients not yet implemented.
+    3. 2026/01/21
+        - All tests still pass, because of course they do.
 """
 
 import unittest
@@ -29,8 +33,6 @@ _TEST_SHORTHAND_K = 0.08492693191323883
 
 _TEST_DIRAC_FORM_FACTOR_F1 = 0.7049508167585219
 _TEST_PAULI_FORM_FACTOR_F2 = 1.1137103937669304
-
-_TEST_VERBOSE = False
 
 _TEST_VERBOSE = False
 
