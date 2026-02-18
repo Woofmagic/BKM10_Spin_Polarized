@@ -27,6 +27,8 @@ To run the program, run `main.py` with the required arguments.
 
 ### Examples: 
 
+The line below will plot $d^{4}\sigma^{LL}$ as predicted by the BKM10 formalism for the data in the provided `.csv` file for the first kinematic setting.
+
 ```bash
 python main.py -d basic_model_pseudodata_for_Jlab_kinematics.csv -kin 1 -form 10 -lep-helicity polarized -target-polar polarized
 ```
