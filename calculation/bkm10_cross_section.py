@@ -141,8 +141,7 @@ def calculate_bkm10_cross_section(
 
         # (1): Calculate Epsilon:
         epsilon = calculate_kinematics_epsilon(
-            squared_q_momentum_transfer,
-            x_bjorken,
+            squared_q_momentum_transfer, x_bjorken, 
             verbose)
         
         if verbose:
@@ -153,9 +152,7 @@ def calculate_bkm10_cross_section(
 
         # (2): Calculate the Lepton Energy Fraction:
         lepton_energy_fraction_y = calculate_kinematics_lepton_energy_fraction_y(
-            squared_q_momentum_transfer,
-            lab_kinematics_k,
-            epsilon,
+            squared_q_momentum_transfer, lab_kinematics_k, epsilon, 
             verbose)
         
         if verbose:
@@ -166,9 +163,7 @@ def calculate_bkm10_cross_section(
 
         # (3): Calculate the Skewness Parameter:
         skewness_parameter = calculate_kinematics_skewness_parameter(
-            squared_q_momentum_transfer,
-            x_bjorken,
-            squared_hadronic_momentum_transfer_t,
+            squared_q_momentum_transfer, x_bjorken, squared_hadronic_momentum_transfer_t, 
             verbose)
         
         if verbose:
@@ -179,9 +174,7 @@ def calculate_bkm10_cross_section(
 
         # (4): Calculate t_minimum
         squared_hadronic_momentum_transfer_t_minimum = calculate_kinematics_t_min(
-            squared_q_momentum_transfer,
-            x_bjorken,
-            epsilon,
+            squared_q_momentum_transfer, x_bjorken, epsilon, 
             verbose)
         
         if verbose:
@@ -192,8 +185,7 @@ def calculate_bkm10_cross_section(
 
         # (5): Calculate t_prime:
         t_prime = calculate_kinematics_t_prime(
-            squared_hadronic_momentum_transfer_t,
-            squared_hadronic_momentum_transfer_t_minimum,
+            squared_hadronic_momentum_transfer_t, squared_hadronic_momentum_transfer_t_minimum,
             verbose)
         
         if verbose:
@@ -204,12 +196,8 @@ def calculate_bkm10_cross_section(
 
         # (6): Calculate K_tilde:
         k_tilde = calculate_kinematics_k_tilde(
-            squared_q_momentum_transfer,
-            x_bjorken,
-            lepton_energy_fraction_y,
-            squared_hadronic_momentum_transfer_t,
-            epsilon,
-            squared_hadronic_momentum_transfer_t_minimum,
+            squared_q_momentum_transfer, x_bjorken, lepton_energy_fraction_y, squared_hadronic_momentum_transfer_t,
+            epsilon, squared_hadronic_momentum_transfer_t_minimum,
             verbose)
         
         if verbose:
@@ -220,10 +208,8 @@ def calculate_bkm10_cross_section(
 
         # (7): Calculate K Squared:
         shorthand_k = calculate_kinematics_k(
-            squared_q_momentum_transfer,
-            lepton_energy_fraction_y,
-            epsilon,
-            k_tilde,
+            squared_q_momentum_transfer, lepton_energy_fraction_y,
+            epsilon, k_tilde,
             verbose)
         
         if verbose:
@@ -235,13 +221,8 @@ def calculate_bkm10_cross_section(
 
         # (8): Calculate k_dot_delta:
         k_dot_delta = calculate_k_dot_delta(
-            squared_q_momentum_transfer,
-            x_bjorken,
-            squared_hadronic_momentum_transfer_t,
-            azimuthal_phi,
-            epsilon,
-            lepton_energy_fraction_y,
-            shorthand_k,
+            squared_q_momentum_transfer, x_bjorken, squared_hadronic_momentum_transfer_t, azimuthal_phi,
+            epsilon, lepton_energy_fraction_y, shorthand_k,
             verbose)
         
         if verbose:
@@ -264,8 +245,7 @@ def calculate_bkm10_cross_section(
         
         # (10): Calculate Lepton Propagator 2:
         lepton_propagator_p2 = calculate_lepton_propagator_p2(
-            squared_q_momentum_transfer,
-            squared_hadronic_momentum_transfer_t,
+            squared_q_momentum_transfer, squared_hadronic_momentum_transfer_t,
             k_dot_delta,
             verbose)
         
@@ -300,8 +280,7 @@ def calculate_bkm10_cross_section(
         # (13): Calculate the Pauli Form Factor, F2:
         pauli_form_factor_f2 = calculate_form_factor_pauli_f2(
             squared_hadronic_momentum_transfer_t,
-            electric_form_factor,
-            magnetic_form_factor,
+            electric_form_factor, magnetic_form_factor,
             verbose)
         
         if verbose:
@@ -312,8 +291,7 @@ def calculate_bkm10_cross_section(
 
         # (14): Calculate the Dirac Form Factor, F1:
         dirac_form_factor_f1 = calculate_form_factor_dirac_f1(
-            magnetic_form_factor,
-            pauli_form_factor_f2,
+            magnetic_form_factor, pauli_form_factor_f2,
             verbose)
         
         if verbose:
@@ -324,10 +302,8 @@ def calculate_bkm10_cross_section(
 
         # (15): Calculate the cross-section prefactor:
         cross_section_prefactor = calculate_bkm10_cross_section_prefactor(
-            squared_q_momentum_transfer,
-            x_bjorken,
-            epsilon,
-            lepton_energy_fraction_y,
+            squared_q_momentum_transfer, x_bjorken,
+            epsilon, lepton_energy_fraction_y,
             verbose)
         
         if verbose:
@@ -345,17 +321,34 @@ def calculate_bkm10_cross_section(
         if debugging:
             print(f"[DEBUG]: Initialized BH amplitude squared. {bh_amplitude_squared} ({type(bh_amplitude_squared)})")
 
-        # (X): If the lepton beam is unpolarized on the whole...
+        # (17): Initialize the DVCS Amplitude Squared
+        dvcs_amplitude_squared = 0.
+
+        if verbose:
+            print("[VERBOSE]: Initialized DVCS amplitude squared.")
+
+        if debugging:
+            print(f"[DEBUG]: Initialized DVCS amplitude squared. {dvcs_amplitude_squared} ({type(dvcs_amplitude_squared)})")
+
+        # (18): Initialize the interference piece:
+        interference_contribution = 0.
+
+        if verbose:
+            print("[VERBOSE]: Initialized Interference amplitude squared.")
+
+        if debugging:
+            print(f"[DEBUG]: Initialized Interference amplitude squared. {interference_contribution} ({type(interference_contribution)})")
+
+        # (19): If the lepton beam is unpolarized on the whole...
         if lepton_helicity == 0.0:
 
             if verbose:
-                print("[VERBOSE]: Now evaluating unpolarized-beam DVCS amplitude squared.")
+                print("[VERBOSE]: Now evaluating unpolarized-beam BH amplitude squared.")
 
             if debugging:
-                print(f"[DEBUG]: Now evaluating unpolarized-beam DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
+                print(f"[DEBUG]: Now evaluating unpolarized-beam BH amplitude squared because lepton helicity was set to: {lepton_helicity}")
             
-            # (X): ... compute 0/5 * (sigma(+1) + sigma(-1)), the coherent-averaged
-            # | cross section for the BH term:
+            # (19.1): ... compute 0/5 * (sigma(+1) + sigma(-1)), the coherent-averaged cross section for the BH term:
             bh_amplitude_squared = (0.5 * (calculate_bh_amplitude_squared(
                 1.0,
                 target_polarization,
@@ -387,19 +380,17 @@ def calculate_bkm10_cross_section(
                 pauli_form_factor_f2,
                 verbose,
                 debugging)))
-
-        # (X): If the beam has a particular polarization...
-        else:
-
+            
             if verbose:
-                print("[DEBUG]: Now evaluating polarized-beam DVCS amplitude squared.")
+                print("[VERBOSE]: Now evaluating unpolarized-beam DVCS amplitude squared.")
 
             if debugging:
-                print(f"[DEBUG]: Now evaluating polarized-beam DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
+                print(f"[DEBUG]: Now evaluating unpolarized-beam DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
 
-            # (X): ... and then calculate the BH contribution according to that beam configuration:
-            bh_amplitude_squared = calculate_bh_amplitude_squared(
-                lepton_helicity,
+            # (19.2): ... compute 0/5 * (sigma(+1) + sigma(-1)), the coherent-averaged
+            # | cross section for the DVCS term:
+            dvcs_amplitude_squared = (0.5 * (calculate_dvcs_amplitude_squared(
+                1.0,
                 target_polarization,
                 squared_q_momentum_transfer,
                 x_bjorken,
@@ -407,106 +398,30 @@ def calculate_bkm10_cross_section(
                 azimuthal_phi,
                 epsilon,
                 lepton_energy_fraction_y,
+                skewness_parameter,
                 shorthand_k,
-                lepton_propagator_p1,
-                lepton_propagator_p2,
-                dirac_form_factor_f1,
-                pauli_form_factor_f2,
-                verbose)
-
-        # (17): Initialize the DVCS Amplitude Squared
-        dvcs_amplitude_squared = 0.
-
-        if verbose:
-            print("[VERBOSE]: Initialized DVCS amplitude squared.")
-
-        if debugging:
-            print(f"[DEBUG]: Initialized DVCS amplitude squared. {dvcs_amplitude_squared} ({type(dvcs_amplitude_squared)})")
-
-        # (X): If the lepton beam is unpolarized on the whole...
-        if lepton_helicity == 0.0:
-
-            if verbose:
-                print("[VERBOSE]: Now evaluating unpolarized-beam DVCS amplitude squared.")
-
-            if debugging:
-                print(f"[DEBUG]: Now evaluating unpolarized-beam DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
-
-            # (X): ... compute 0/5 * (sigma(+1) + sigma(-1)), the coherent-averaged
-            # | cross section for the DVCS term:
-            dvcs_amplitude_squared = (0.5 * (calculate_dvcs_amplitude_squared(
-            1.0,
-            target_polarization,
-            squared_q_momentum_transfer,
-            x_bjorken,
-            squared_hadronic_momentum_transfer_t,
-            azimuthal_phi,
-            epsilon,
-            lepton_energy_fraction_y,
-            skewness_parameter,
-            shorthand_k,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
-            use_ww,
-            verbose) + calculate_dvcs_amplitude_squared(
-            1.0,
-            target_polarization,
-            squared_q_momentum_transfer,
-            x_bjorken,
-            squared_hadronic_momentum_transfer_t,
-            azimuthal_phi,
-            epsilon,
-            lepton_energy_fraction_y,
-            skewness_parameter,
-            shorthand_k,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
-            use_ww,
-            verbose)))
-
-        # (X): If the beam has a particular polarization...
-        else:
-
-            if verbose:
-                print("[VERBOSE]: Now evaluating polarized-beam DVCS amplitude squared.")
-
-            if debugging:
-                print(f"[DEBUG]: Now evaluating polarized-beam DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
-
-            # (X): ... and then calculate the DVCS contribution according to that beam configuration:
-            dvcs_amplitude_squared = calculate_dvcs_amplitude_squared(
-            lepton_helicity,
-            target_polarization,
-            squared_q_momentum_transfer,
-            x_bjorken,
-            squared_hadronic_momentum_transfer_t,
-            azimuthal_phi,
-            epsilon,
-            lepton_energy_fraction_y,
-            skewness_parameter,
-            shorthand_k,
-            compton_form_factor_h,
-            compton_form_factor_h_tilde,
-            compton_form_factor_e,
-            compton_form_factor_e_tilde,
-            use_ww,
-            verbose)
-
-        # (18): Initialize the interference piece:
-        interference_contribution = 0.
-
-        if verbose:
-            print("[VERBOSE]: Initialized Interference amplitude squared.")
-
-        if debugging:
-            print(f"[DEBUG]: Initialized Interference amplitude squared. {interference_contribution} ({type(interference_contribution)})")
-
-        # (X): If the lepton beam is unpolarized on the whole...
-        if lepton_helicity == 0.0:
+                compton_form_factor_h,
+                compton_form_factor_h_tilde,
+                compton_form_factor_e,
+                compton_form_factor_e_tilde,
+                use_ww,
+                verbose) + calculate_dvcs_amplitude_squared(
+                1.0,
+                target_polarization,
+                squared_q_momentum_transfer,
+                x_bjorken,
+                squared_hadronic_momentum_transfer_t,
+                azimuthal_phi,
+                epsilon,
+                lepton_energy_fraction_y,
+                skewness_parameter,
+                shorthand_k,
+                compton_form_factor_h,
+                compton_form_factor_h_tilde,
+                compton_form_factor_e,
+                compton_form_factor_e_tilde,
+                use_ww,
+                verbose)))
 
             if verbose:
                 print("[VERBOSE]: Now evaluating unpolarized-beam DVCS amplitude squared.")
@@ -514,7 +429,7 @@ def calculate_bkm10_cross_section(
             if debugging:
                 print(f"[DEBUG]: Now evaluating unpolarized-beam DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
 
-            # (X): ... compute 0/5 * (sigma(+1) + sigma(-1)), the coherent-averaged
+            # (19.3): ... compute 0/5 * (sigma(+1) + sigma(-1)), the coherent-averaged
             # | cross section:
             interference_contribution = (0.5 * (
                 calculate_interference_contribution(
@@ -564,8 +479,56 @@ def calculate_bkm10_cross_section(
                 use_ww,
                 verbose)))
 
-        # (X): If the beam has a particular polarization...
+        # (20): If the beam has a particular polarization...
         else:
+
+            if verbose:
+                print("[VERBOSE]: Now evaluating polarized-beam BH amplitude squared.")
+
+            if debugging:
+                print(f"[DEBUG]: Now evaluating polarized-beam BH amplitude squared because lepton helicity was set to: {lepton_helicity}")
+
+            # (20.1): ... and then calculate the BH contribution according to that beam configuration:
+            bh_amplitude_squared = calculate_bh_amplitude_squared(
+                lepton_helicity,
+                target_polarization,
+                squared_q_momentum_transfer,
+                x_bjorken,
+                squared_hadronic_momentum_transfer_t,
+                azimuthal_phi,
+                epsilon,
+                lepton_energy_fraction_y,
+                shorthand_k,
+                lepton_propagator_p1,
+                lepton_propagator_p2,
+                dirac_form_factor_f1,
+                pauli_form_factor_f2,
+                verbose)
+
+            if verbose:
+                print("[VERBOSE]: Now evaluating polarized-beam DVCS amplitude squared.")
+
+            if debugging:
+                print(f"[DEBUG]: Now evaluating polarized-beam DVCS amplitude squared because lepton helicity was set to: {lepton_helicity}")
+
+            # (20.2): ... and then calculate the DVCS contribution according to that beam configuration:
+            dvcs_amplitude_squared = calculate_dvcs_amplitude_squared(
+                lepton_helicity,
+                target_polarization,
+                squared_q_momentum_transfer,
+                x_bjorken,
+                squared_hadronic_momentum_transfer_t,
+                azimuthal_phi,
+                epsilon,
+                lepton_energy_fraction_y,
+                skewness_parameter,
+                shorthand_k,
+                compton_form_factor_h,
+                compton_form_factor_h_tilde,
+                compton_form_factor_e,
+                compton_form_factor_e_tilde,
+                use_ww,
+                verbose)
 
             if verbose:
                 print("[VERBOSE]: Now evaluating polarized-beam Interference amplitude squared.")
@@ -573,7 +536,7 @@ def calculate_bkm10_cross_section(
             if debugging:
                 print(f"[DEBUG]: Now evaluating polarized-beam Interference amplitude squared because lepton helicity was set to: {lepton_helicity}")
 
-            # (X): ... then run the standard function to compute the cross-section:
+            # (20.3): ... then run the standard function to compute the cross-section:
             interference_contribution = calculate_interference_contribution(
                 lepton_helicity,
                 target_polarization,
@@ -598,7 +561,7 @@ def calculate_bkm10_cross_section(
                 use_ww,
                 verbose)
 
-        # (18): Calculate the total cross section:
+        # (21): Calculate the total cross section:
         bkm10_cross_section = cross_section_prefactor * (bh_amplitude_squared + dvcs_amplitude_squared + interference_contribution)
 
         if verbose:
@@ -607,7 +570,7 @@ def calculate_bkm10_cross_section(
         if debugging:
             print(f"[DEBUG]: Obtained the BKM cross section: {bkm10_cross_section}")
 
-        # (19): Convert to nb/GeV^{4}:
+        # (22): Convert to nb/GeV^{4}:
         bkm10_cross_section_in_nb_gev4 = convert_to_nb_over_GeV4(bkm10_cross_section)
 
         if verbose:
@@ -616,325 +579,9 @@ def calculate_bkm10_cross_section(
         if debugging:
             print(f"[DEBUG]: Converted BKM10 differential cross section to {bkm10_cross_section_in_nb_gev4} nb/GeV4")
 
-        # (20): Return the cross section.
+        # (22): Return the cross section.
         return bkm10_cross_section_in_nb_gev4
 
     except Exception as ERROR:
         print(f"> Error in calculating the entire cross section:\n> {ERROR}")
         return 0.
-    
-def calculate_bkm10_bsa(
-    target_polarization: float,
-    squared_q_momentum_transfer: float,
-    x_bjorken: float,
-    squared_hadronic_momentum_transfer_t: float,
-    lab_kinematics_k: float,
-    azimuthal_phi: float,
-    compton_form_factor_h: complex,
-    compton_form_factor_h_tilde: complex,
-    compton_form_factor_e: complex,
-    compton_form_factor_e_tilde: complex,
-    use_ww: bool = False,
-    verbose: bool = False,
-    debugging: bool = False) -> float:
-    """
-    ## Description:
-    Numerically evaluates the beam-spin asymmetry (BSA) for a given target polarization. *Note: no `lepton_polarization` argument
-    needed here because the BSA is computed based on (+) and (-) beam polarizations (i.e. both are included!).
-
-    :param str target_polarization:
-        (See BKM formalism.) Either `"polarized"` or `"unpolarized"`. Nothing else! 
-
-    :param float squared_q_momentum_transfer: 
-        The virtuality of the DVCS photon.
-
-    :param float x_bjorken:
-        Partonic momentum fraction of hadron.
-
-    :param float squared_hadronic_momentum_transfer_t:
-        Difference between final and initial hadron momentum (Mandelstam t).
-
-    :param float lab_kinematics_k: 
-        Incident lepton beam energy.
-
-    :param np.ndarray azimuthal_phi: 
-        An *array* of LAB azimuthal angles **in radians, not degrees**.
-
-    :param complex compton_form_factor_h:
-        The Compton Form Factor (CFF) called H.
-
-    :param complex compton_form_factor_h_tilde:
-            The Compton Form Factor (CFF) called Ht (H-tilde)
-
-    :param complex compton_form_factor_e: 
-        The Compton Form Factor (CFF) called E.
-
-    :param complex compton_form_factor_e_tilde:
-        The Compton Form Factor (CFF) called Et (E-tilde).
-
-    :param bool verbose:
-        If `True`, will print to inform user "where" in the code the program is.
-
-    :param bool debugging:
-        Do not turn this on! It will print *every step and computed piece of data in the code*.
-
-    :returns: bkm10_cross_section_in_nb_gev4: (float)
-        The four-fold differential cross section.
-
-    ## Notes:
-    None!
-    """
-
-    # (1): Compute the sigma(lambda = +1) component of the BSA by reusing the function above:
-    positive_beam_cross_section = calculate_bkm10_cross_section(
-        +1.0, target_polarization,
-        squared_q_momentum_transfer, x_bjorken, squared_hadronic_momentum_transfer_t, lab_kinematics_k,
-        azimuthal_phi,
-        compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, use_ww,
-        verbose, debugging)
-    
-    # (2): Compute sigma(lambda = -1) for the other half of the BSA:
-    negative_beam_cross_section = calculate_bkm10_cross_section(
-        -1.0, target_polarization,
-        squared_q_momentum_transfer, x_bjorken, squared_hadronic_momentum_transfer_t, lab_kinematics_k,
-        azimuthal_phi,
-        compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, use_ww,
-        verbose, debugging)
-    
-    # (3): Compute the BSA:
-    bsa = ((positive_beam_cross_section - negative_beam_cross_section) / (positive_beam_cross_section + negative_beam_cross_section))
-    
-    # (4): Return the BSA:
-    return bsa
-
-def calculate_bkm10_tsa(
-    lepton_helicity: float,
-    squared_q_momentum_transfer: float,
-    x_bjorken: float,
-    squared_hadronic_momentum_transfer_t: float,
-    lab_kinematics_k: float,
-    azimuthal_phi: float,
-    compton_form_factor_h: complex,
-    compton_form_factor_h_tilde: complex,
-    compton_form_factor_e: complex,
-    compton_form_factor_e_tilde: complex,
-    use_ww: bool = False,
-    verbose: bool = False,
-    debugging: bool = False) -> float:
-    """
-    ## Description:
-    Numerically evaluates the target-spin asymmetry (TSA) for a given beam polarization. *Note: no `target_polarization` argument
-    needed here because the TSA is computed based on (+0.5) and (-0.5) target polarizations.
-
-    :param str lepton_helicity:
-        (See BKM formalism.) Either `"positive"`, `"negative"`, or `"none"`. Nothing else! Specifies the helicity of the incoming
-        lepton. The strings specifying the polarization are chosen with respect to the coordinate frame chosen in the BKM10 formalism.
-
-    :param float squared_q_momentum_transfer: 
-        The virtuality of the DVCS photon.
-
-    :param float x_bjorken:
-        Partonic momentum fraction of hadron.
-
-    :param float squared_hadronic_momentum_transfer_t:
-        Difference between final and initial hadron momentum (Mandelstam t).
-
-    :param float lab_kinematics_k: 
-        Incident lepton beam energy.
-
-    :param np.ndarray azimuthal_phi: 
-        An *array* of LAB azimuthal angles **in radians, not degrees**.
-
-    :param complex compton_form_factor_h:
-        The Compton Form Factor (CFF) called H.
-
-    :param complex compton_form_factor_h_tilde:
-            The Compton Form Factor (CFF) called Ht (H-tilde)
-
-    :param complex compton_form_factor_e: 
-        The Compton Form Factor (CFF) called E.
-
-    :param complex compton_form_factor_e_tilde:
-        The Compton Form Factor (CFF) called Et (E-tilde).
-
-    :param bool verbose:
-        If `True`, will print to inform user "where" in the code the program is.
-
-    :param bool debugging:
-        Do not turn this on! It will print *every step and computed piece of data in the code*.
-
-    :returns: bkm10_cross_section_in_nb_gev4: (float)
-        The four-fold differential cross section.
-
-    ## Notes:
-    None!
-    """
-
-    if lepton_helicity == 0.0:
-
-        # (X): Compute the sigma(lambda = +1, Lambda = +1/2) component of the TSA by reusing the function above:
-        plus_beam_plus_lp_target_cross_section = calculate_bkm10_cross_section(
-            +1.0, +0.5,
-            squared_q_momentum_transfer, x_bjorken, squared_hadronic_momentum_transfer_t, lab_kinematics_k,
-            azimuthal_phi,
-            compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, use_ww,
-            verbose, debugging)
-        
-        # (X): Compute the sigma(lambda = -1, Lambda = +1/2) component of the TSA by reusing the function above:
-        minus_beam_plus_lp_target_cross_section = calculate_bkm10_cross_section(
-            -1.0, +0.5,
-            squared_q_momentum_transfer, x_bjorken, squared_hadronic_momentum_transfer_t, lab_kinematics_k,
-            azimuthal_phi,
-            compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, use_ww,
-            verbose, debugging)
-        
-        # (X): Compute the sigma(lambda = +1, Lambda = -1/2) component of the TSA by reusing the function above:
-        plus_beam_minus_lp_target_cross_section = calculate_bkm10_cross_section(
-            +1.0, -0.5,
-            squared_q_momentum_transfer, x_bjorken, squared_hadronic_momentum_transfer_t, lab_kinematics_k,
-            azimuthal_phi,
-            compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, use_ww,
-            verbose, debugging)
-        
-        # (X): Compute the sigma(lambda = -1, Lambda = -1/2) component of the TSA by reusing the function above:
-        minus_beam_minus_lp_target_cross_section = calculate_bkm10_cross_section(
-            -1.0, -0.5,
-            squared_q_momentum_transfer, x_bjorken, squared_hadronic_momentum_transfer_t, lab_kinematics_k,
-            azimuthal_phi,
-            compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, use_ww,
-            verbose, debugging)
-        
-        # (3): Compute the TSA:
-        tsa = (
-            ((plus_beam_plus_lp_target_cross_section + minus_beam_plus_lp_target_cross_section) - (plus_beam_minus_lp_target_cross_section + minus_beam_minus_lp_target_cross_section)) /
-            (plus_beam_plus_lp_target_cross_section + minus_beam_plus_lp_target_cross_section + plus_beam_minus_lp_target_cross_section + minus_beam_minus_lp_target_cross_section)
-        )
-
-    elif lepton_helicity == +1.0 or lepton_helicity == -1.0:
-
-        # (1): Compute the sigma(Lambda = +1/2) component of the TSA by reusing the function above:
-        plus_lp_target_cross_section = calculate_bkm10_cross_section(
-            lepton_helicity, +0.5,
-            squared_q_momentum_transfer, x_bjorken, squared_hadronic_momentum_transfer_t, lab_kinematics_k,
-            azimuthal_phi,
-            compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, use_ww,
-            verbose, debugging)
-        
-        # (2): Compute sigma(Lambda = -1/2) for the other half of the TSA:
-        minus_lp_target_cross_section = calculate_bkm10_cross_section(
-            lepton_helicity, -0.5,
-            squared_q_momentum_transfer, x_bjorken, squared_hadronic_momentum_transfer_t, lab_kinematics_k,
-            azimuthal_phi,
-            compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, use_ww,
-            verbose, debugging)
-    
-        # (3): Compute the TSA:
-        tsa = (
-            (plus_lp_target_cross_section - minus_lp_target_cross_section) / (plus_lp_target_cross_section + minus_lp_target_cross_section)
-            )
-
-    else:
-
-        raise NotImplementedError("[ERROR]: Cannot parse beam and targer polarization settings.")
-    
-    # (4): Return the BSA:
-    return tsa
-
-def calculate_bkm10_dsa(
-    squared_q_momentum_transfer: float,
-    x_bjorken: float,
-    squared_hadronic_momentum_transfer_t: float,
-    lab_kinematics_k: float,
-    azimuthal_phi: float,
-    compton_form_factor_h: complex,
-    compton_form_factor_h_tilde: complex,
-    compton_form_factor_e: complex,
-    compton_form_factor_e_tilde: complex,
-    use_ww: bool = False,
-    verbose: bool = False,
-    debugging: bool = False) -> float:
-    """
-    ## Description:
-    Numerically evaluates the double-spin asymmetry (DSA, or DSSA) for a given beam polarization.
-    *Note: there are no polarization arguments here because the DSA calculation enforces a particular
-    configuration of them.*
-
-    :param float squared_q_momentum_transfer: 
-        The virtuality of the DVCS photon.
-
-    :param float x_bjorken:
-        Partonic momentum fraction of hadron.
-
-    :param float squared_hadronic_momentum_transfer_t:
-        Difference between final and initial hadron momentum (Mandelstam t).
-
-    :param float lab_kinematics_k: 
-        Incident lepton beam energy.
-
-    :param np.ndarray azimuthal_phi: 
-        An *array* of LAB azimuthal angles **in radians, not degrees**.
-
-    :param complex compton_form_factor_h:
-        The Compton Form Factor (CFF) called H.
-
-    :param complex compton_form_factor_h_tilde:
-            The Compton Form Factor (CFF) called Ht (H-tilde)
-
-    :param complex compton_form_factor_e: 
-        The Compton Form Factor (CFF) called E.
-
-    :param complex compton_form_factor_e_tilde:
-        The Compton Form Factor (CFF) called Et (E-tilde).
-
-    :param bool verbose:
-        If `True`, will print to inform user "where" in the code the program is.
-
-    :param bool debugging:
-        Do not turn this on! It will print *every step and computed piece of data in the code*.
-
-    :returns: bkm10_cross_section_in_nb_gev4: (float)
-        The four-fold differential cross section.
-
-    ## Notes:
-    None!
-    """
-
-    # (X): Compute the sigma(lambda = +1, Lambda = +1/2) component of the DSA by reusing the function above:
-    plus_beam_plus_lp_target_cross_section = calculate_bkm10_cross_section(
-        +1.0, +0.5,
-        squared_q_momentum_transfer, x_bjorken, squared_hadronic_momentum_transfer_t, lab_kinematics_k,
-        azimuthal_phi,
-        compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, use_ww,
-        verbose, debugging)
-    
-    # (X): Compute the sigma(lambda = -1, Lambda = +1/2) component of the DSA by reusing the function above:
-    minus_beam_plus_lp_target_cross_section = calculate_bkm10_cross_section(
-        -1.0, +0.5,
-        squared_q_momentum_transfer, x_bjorken, squared_hadronic_momentum_transfer_t, lab_kinematics_k,
-        azimuthal_phi,
-        compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, use_ww,
-        verbose, debugging)
-    
-    # (X): Compute the sigma(lambda = +1, Lambda = -1/2) component of the DSA by reusing the function above:
-    plus_beam_minus_lp_target_cross_section = calculate_bkm10_cross_section(
-        +1.0, -0.5,
-        squared_q_momentum_transfer, x_bjorken, squared_hadronic_momentum_transfer_t, lab_kinematics_k,
-        azimuthal_phi,
-        compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, use_ww,
-        verbose, debugging)
-    
-    # (X): Compute the sigma(lambda = -1, Lambda = -1/2) component of the DSA by reusing the function above:
-    minus_beam_minus_lp_target_cross_section = calculate_bkm10_cross_section(
-        -1.0, -0.5,
-        squared_q_momentum_transfer, x_bjorken, squared_hadronic_momentum_transfer_t, lab_kinematics_k,
-        azimuthal_phi,
-        compton_form_factor_h, compton_form_factor_h_tilde, compton_form_factor_e, compton_form_factor_e_tilde, use_ww,
-        verbose, debugging)
-    
-    # (3): Compute the DSA:
-    dsa = (
-        ((plus_beam_plus_lp_target_cross_section - plus_beam_minus_lp_target_cross_section) - (minus_beam_plus_lp_target_cross_section + minus_beam_minus_lp_target_cross_section)) /
-        (plus_beam_plus_lp_target_cross_section + plus_beam_minus_lp_target_cross_section + minus_beam_plus_lp_target_cross_section + minus_beam_minus_lp_target_cross_section)
-    )
-
-    return dsa
