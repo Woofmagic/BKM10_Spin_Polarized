@@ -1,11 +1,23 @@
-from decimal import Decimal
-import math
+"""
+## Description:
+A file containing all of the plotting workflow that serves as the main "deliverable" of
+this script. The main point is to generate plots of all of the major observables that
+the BKM formalism predicts.
 
+## Notes:
+    1. 2026/06/16: Remembered that this logic exists... We will work on it soon.
+"""
 
+# 3rd Party Library | NumPy
 import numpy as np
+
+# 3rd Party Library | Matplotlib
 import matplotlib.pyplot as plt
+
+# 3rd Party Library | pandas
 import pandas as pd
 
+# Helper Modules | Plotting Customizer
 from utilities.plotting.plot_customizer import PlotCustomizer
 
 # Helper Modules | Convert Degrees to Radians
@@ -231,6 +243,9 @@ def plot_cross_section(
     return customized_plot
 
 def plot_coefficient_contributions():
+    """
+    [TODO]: Actually finish this function...
+    """
 
     # (1): Figure instance:
     figure = plt.figure(figsize = (18, 6))
