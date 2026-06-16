@@ -19,9 +19,6 @@ import os
 # Native Library | sys
 import sys
 
-# 3rd Party Library | NumPy
-import numpy as np
-
 # 3rd Party Library | Matplotlib
 import matplotlib.pyplot as plt
 
@@ -124,17 +121,17 @@ from statics.strings.static_strings import _COLUMN_NAME_CFF_IMAG_E_TILDE
 # static_strings > .png
 from statics.strings.static_strings import _FIGURE_FORMAT_PNG
 
-# (X): Function | calculation > bkm10_cross_section:
+# calculation > bkm10_cross_section:
 from calculation.bkm10_cross_section import calculate_bkm10_cross_section
 
-# (X): Function | calculation > bkm10_bsa:
-from calculation.bkm10_cross_section import calculate_bkm10_bsa
+# calculation > bkm10_bsa:
+from calculation.bkm10_bsa import calculate_bkm10_bsa
 
-# (X): Function | calculation > bkm10_tsa:
-from calculation.bkm10_cross_section import calculate_bkm10_tsa
+# calculation > bkm10_tsa:
+from calculation.bkm10_tsa import calculate_bkm10_tsa
 
-# (X): Function | calculation > bkm10_dsa:
-from calculation.bkm10_cross_section import calculate_bkm10_dsa
+# calculation > bkm10_dsa:
+from calculation.bkm10_dsa import calculate_bkm10_dsa
 
 def main(
     kinematics_dataframe_path: str,
@@ -374,26 +371,6 @@ def main(
 
         if debugging:
             print(f"[DEBUG]: Obtained single k value from dataframe: {value_of_k} ({type(value_of_k)})")
-            
-        range_of_lab_azimuthal_phi = np.linspace(0., 2.*np.pi, 360)
-        compton_form_factor_h_real = -2.449
-        compton_form_factor_h_imaginary = 3.482
-        compton_form_factor_e_real = 2.217
-        compton_form_factor_e_imaginary = 0.0
-        compton_form_factor_h_tilde_real = 1.409
-        compton_form_factor_h_tilde_imaginary = 1.577
-        compton_form_factor_e_tilde_real = 144.410
-        compton_form_factor_e_tilde_imaginary = 0.0
-        
-        # compton_form_factor_h_real = -0.897
-        # compton_form_factor_h_imaginary = 2.421
-        # compton_form_factor_e_real = -0.541
-        # compton_form_factor_e_imaginary = 0.903
-        # compton_form_factor_h_tilde_real = 2.444
-        # compton_form_factor_h_tilde_imaginary = 1.131
-        # compton_form_factor_e_tilde_real = 2.207
-        # compton_form_factor_e_tilde_imaginary = 5.383
-
 
         # (8): Attempt to calculate the BKM10 Cross Section:
         computed_cross_sections = calculate_bkm10_cross_section(
@@ -408,8 +385,9 @@ def main(
             complex(compton_form_factor_e_real, compton_form_factor_e_imaginary),
             complex(compton_form_factor_h_imaginary, compton_form_factor_h_tilde_imaginary),
             complex(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary),
-            verbose,
-            debugging)
+            use_ww = False,
+            verbose = verbose,
+            debugging = debugging)
         
         # (X): Compute the BSA:
         computed_bsa = calculate_bkm10_bsa(
@@ -423,23 +401,25 @@ def main(
             complex(compton_form_factor_e_real, compton_form_factor_e_imaginary),
             complex(compton_form_factor_h_imaginary, compton_form_factor_h_tilde_imaginary),
             complex(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary),
-            verbose,
-            debugging)
+            use_ww = False,
+            verbose = verbose,
+            debugging = debugging)
         
         # # (X): Compute the TSA:
-        # computed_tsa = calculate_bkm10_tsa(
-        #     numerical_lepton_polarization,
-        #     value_of_q_squared,
-        #     value_of_x_bjorken,
-        #     value_of_t,
-        #     value_of_k,
-        #     range_of_lab_azimuthal_phi,
-        #     complex(compton_form_factor_h_real, compton_form_factor_h_tilde_real),
-        #     complex(compton_form_factor_e_real, compton_form_factor_e_imaginary),
-        #     complex(compton_form_factor_h_imaginary, compton_form_factor_h_tilde_imaginary),
-        #     complex(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary),
-        #     verbose,
-        #     debugging)
+        computed_tsa = calculate_bkm10_tsa(
+            numerical_lepton_polarization,
+            value_of_q_squared,
+            value_of_x_bjorken,
+            value_of_t,
+            value_of_k,
+            range_of_lab_azimuthal_phi,
+            complex(compton_form_factor_h_real, compton_form_factor_h_tilde_real),
+            complex(compton_form_factor_e_real, compton_form_factor_e_imaginary),
+            complex(compton_form_factor_h_imaginary, compton_form_factor_h_tilde_imaginary),
+            complex(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary),
+            use_ww = False,
+            verbose = verbose,
+            debugging = debugging)
         
         # (X): Compute the DSA:
         computed_dsa = calculate_bkm10_dsa(
@@ -452,25 +432,27 @@ def main(
             complex(compton_form_factor_e_real, compton_form_factor_e_imaginary),
             complex(compton_form_factor_h_imaginary, compton_form_factor_h_tilde_imaginary),
             complex(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary),
-            verbose,
-            debugging)
+            use_ww = False,
+            verbose = verbose,
+            debugging = debugging)
         
         # (X): Coerce kinematic values into a string:
         title_string = (
-            rf"$Q^2 = {value_of_q_squared:.2f}$ GeV$^2$, "
-            rf"$x_B = {value_of_x_bjorken:.2f}$, "
-            rf"$t = {value_of_t:.2f}$ GeV$^2$, "
-            rf"$k = {value_of_k:.2f}$ GeV")
+            rf"$k = {value_of_k:.4f}$ GeV, "
+            rf"$t = {value_of_t:.4f}$ GeV$^2$, "
+            rf"$x_B = {value_of_x_bjorken:.4f}$, "
+            rf"$Q^2 = {value_of_q_squared:.4f}$ GeV$^2$"
+            )
         
         # (X): Obtain the CFF inputs as well to display:
         cff_string = (
-            rf"$\mathcal{{H}} = {complex(compton_form_factor_h_real, compton_form_factor_h_imaginary):.3f}$, "
-            rf"$\widetilde{{\mathcal{{H}}}} = {complex(compton_form_factor_h_tilde_real, compton_form_factor_h_tilde_imaginary):.3f}$, "
-            rf"$\mathcal{{E}} = {complex(compton_form_factor_e_real, compton_form_factor_e_imaginary):.3f}$, "
-            rf"$\widetilde{{\mathcal{{E}}}} = {complex(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary):.3f}$")
+            rf"$\mathcal{{H}} = {complex(compton_form_factor_h_real, compton_form_factor_h_imaginary):.5f}$, "
+            rf"$\widetilde{{\mathcal{{H}}}} = {complex(compton_form_factor_h_tilde_real, compton_form_factor_h_tilde_imaginary):.5f}$, "
+            rf"$\mathcal{{E}} = {complex(compton_form_factor_e_real, compton_form_factor_e_imaginary):.5f}$, "
+            rf"$\widetilde{{\mathcal{{E}}}} = {complex(compton_form_factor_e_tilde_real, compton_form_factor_e_tilde_imaginary):.5f}$")
 
         # (X): Initialize a figure for the cross-section:
-        cross_section_figure = plt.figure(figsize = (8, 5))
+        cross_section_figure = plt.figure(figsize = (9, 7))
 
         # (X): Add an Axis object to the cross-section plot:
         cross_section_axis = cross_section_figure.add_subplot(1, 1, 1)
@@ -480,10 +462,10 @@ def main(
             range_of_lab_azimuthal_phi,
             computed_cross_sections,
             marker = ".",
-            markersize = 1.0,
+            markersize = 5.0,
             linestyle = "none",
             color = "red",
-            alpha = 0.65)
+            alpha = 0.97)
         
         # (X): Set the x-label of the *cross-section* plot:
         cross_section_axis.set_xlabel(r"Azimuthal Angle $\phi$ (radians)")
@@ -500,9 +482,6 @@ def main(
         # (X): Compute the *cross-section* figure filename:
         cross_section_figure_filename = f"{formalism_version}_cross_section.{_FIGURE_FORMAT_PNG}"
 
-        # (X): Compute the *cross-section* figure filename:
-        bsa_figure_filename = f"{formalism_version}_bsa.{_FIGURE_FORMAT_PNG}"
-
         # (X): Save the *cross-section* figure as PNG:
         cross_section_figure.savefig(
             fname = cross_section_figure_filename,
@@ -512,8 +491,11 @@ def main(
         # (X): Close the *cross-section* figure to avoid killing the machine's memory and etc.:
         plt.close(cross_section_figure)
 
+        del cross_section_figure
+        del cross_section_axis
+
         # (X): Initialize a figure for the BSA:
-        bsa_figure = plt.figure(figsize = (8, 5))
+        bsa_figure = plt.figure(figsize = (9, 7))
 
         # (X): Add an Axis object to the BSA plot:
         bsa_axis = bsa_figure.add_subplot(1, 1, 1)
@@ -523,10 +505,10 @@ def main(
             range_of_lab_azimuthal_phi,
             computed_bsa,
             marker = ".",
-            markersize = 1.0,
+            markersize = 5.0,
             linestyle = "none",
             color = "red",
-            alpha = 0.65)
+            alpha = 0.97)
 
         # (X): Set the x-label of the *BSA* plot:
         bsa_axis.set_xlabel(r"Azimuthal Angle $\phi$ (radians)")
@@ -539,6 +521,9 @@ def main(
         
         # (X): Add a grid to the *BSA* plot:
         bsa_axis.grid(True)
+
+        # (X): Compute the *BSA figure filename:
+        bsa_figure_filename = f"{formalism_version}_bsa.{_FIGURE_FORMAT_PNG}"
         
         # (X): Save the *BSA* figure as PNG:
         bsa_figure.savefig(
@@ -549,58 +534,67 @@ def main(
         # (X): Close the *BSA* figure to avoid killing the machine's memory and etc.:
         plt.close(bsa_figure)
 
-        # # (X): Initialize a figure for the TSA:
-        # tsa_figure = plt.figure(figsize = (8, 5))
+        del bsa_figure
+        del bsa_axis
 
-        # # (X): Add an Axis object to the TSA plot:
-        # tsa_axis = bsa_figure.add_subplot(1, 1, 1)
-        
-        # # (X): Plot the computed TSA data:
-        # tsa_axis.plot(
-        #     range_of_lab_azimuthal_phi,
-        #     computed_tsa,
-        #     marker = ".",
-        #     markersize = 1.0,
-        #     linestyle = "none",
-        #     color = "red",
-        #     alpha = 0.65)
+        # (X): Initialize a figure for the TSA:
+        tsa_figure = plt.figure(figsize = (9, 7))
 
-        # # (X): Set the x-label of the TSA plot:
-        # tsa_axis.set_xlabel(r"Azimuthal Angle $\phi$ (radians)")
+        # (X): Add an Axis object to the TSA plot:
+        tsa_axis = tsa_figure.add_subplot(1, 1, 1)
         
-        # # (X): Set the y-label of the TSA plot:
-        # tsa_axis.set_ylabel(r"$\frac{d^4\sigma \left( \Lambda = +1 \right) - d^4\sigma \left( \Lambda = -1 \right)}{d^4\sigma \left( \Lambda = +1 \right) + d^4\sigma \left( \Lambda = -1 \right)}$ (unitless)",)
+        # (X): Plot the computed TSA data:
+        tsa_axis.plot(
+            range_of_lab_azimuthal_phi,
+            computed_tsa,
+            marker = ".",
+            markersize = 5.0,
+            linestyle = "none",
+            color = "red",
+            alpha = 0.97)
 
-        # # (X): Set the title of the TSA plot:
-        # tsa_axis.set_title(f"{title_string}\n{cff_string}")
+        # (X): Set the x-label of the TSA plot:
+        tsa_axis.set_xlabel(r"Azimuthal Angle $\phi$ (radians)")
         
-        # # (X): Add a grid to the TSA plot:
-        # tsa_axis.grid(True)
-        
-        # # (X): Save the TSA figure as PNG:
-        # tsa_figure.savefig(
-        #     fname = bsa_figure_filename,
-        #     format = _FIGURE_FORMAT_PNG,
-        #     dpi = 400)
+        # (X): Set the y-label of the TSA plot:
+        tsa_axis.set_ylabel(r"$\frac{d^4\sigma \left( \Lambda = +1 \right) - d^4\sigma \left( \Lambda = -1 \right)}{d^4\sigma \left( \Lambda = +1 \right) + d^4\sigma \left( \Lambda = -1 \right)}$ (unitless)",)
 
-        # # (X): Close the TSA figure:
-        # plt.close(tsa_figure)
+        # (X): Set the title of the TSA plot:
+        tsa_axis.set_title(f"{title_string}\n{cff_string}")
+        
+        # (X): Add a grid to the TSA plot:
+        tsa_axis.grid(True)
+
+        # (X): Compute the *TSA* figure filename:
+        tsa_figure_filename = f"{formalism_version}_tsa.{_FIGURE_FORMAT_PNG}"
+        
+        # (X): Save the TSA figure as PNG:
+        tsa_figure.savefig(
+            fname = tsa_figure_filename,
+            format = _FIGURE_FORMAT_PNG,
+            dpi = 400)
+
+        # (X): Close the TSA figure:
+        plt.close(tsa_figure)
+
+        del tsa_figure
+        del tsa_axis
 
         # (X): Initialize a figure for the DSA:
-        dsa_figure = plt.figure(figsize = (8, 5))
+        dsa_figure = plt.figure(figsize = (9, 7))
 
         # (X): Add an Axis object to the DSA plot:
-        dsa_axis = bsa_figure.add_subplot(1, 1, 1)
+        dsa_axis = dsa_figure.add_subplot(1, 1, 1)
         
         # (X): Plot the computed DSA data:
         dsa_axis.plot(
             range_of_lab_azimuthal_phi,
             computed_dsa,
             marker = ".",
-            markersize = 1.0,
+            markersize = 5.0,
             linestyle = "none",
             color = "red",
-            alpha = 0.65)
+            alpha = 0.97)
 
         # (X): Set the x-label of the DSA plot:
         dsa_axis.set_xlabel(r"Azimuthal Angle $\phi$ (radians)")
@@ -613,18 +607,24 @@ def main(
         
         # (X): Add a grid to the DSA plot:
         dsa_axis.grid(True)
+
+        # (X): Compute the *DSA* figure filename:
+        dsa_figure_filename = f"{formalism_version}_dsa.{_FIGURE_FORMAT_PNG}"
         
         # (X): Save the DSA figure as PNG:
         dsa_figure.savefig(
-            fname = bsa_figure_filename,
+            fname = dsa_figure_filename,
             format = _FIGURE_FORMAT_PNG,
             dpi = 400)
 
         # (X): Close the DSA figure:
         plt.close(dsa_figure)
 
+        del dsa_figure
+        del dsa_axis
+
         # (X): Return the numerical value of the cross section:
-        return computed_cross_sections, computed_bsa, computed_dsa
+        return computed_cross_sections, computed_bsa, computed_tsa, computed_dsa
 
     except KeyboardInterrupt:
 
@@ -703,7 +703,7 @@ if __name__ == "__main__":
     # (8): Parse the arguments:
     arguments = parser.parse_args()
 
-    # (9): Run main() with the arguments:
+    # (9): Run script with the arguments:
     main(
         kinematics_dataframe_path = arguments.input_datafile,
         kinematic_set_number = arguments.kinematic_set,
