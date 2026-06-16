@@ -5,16 +5,11 @@ differential cross-section according to the BKM10 formulation.
 
 ## Notes:
     1. 2025/09/01: Initiated refactoring with slightly more up-to-date workflow information.
+    2. 2026/06/16: Removed now-redundant observable plotting imports.
 """
 
 # Helper Module | Convert GeV^{-6} to nb/GeV^{4}
 from utilities.mathematics.math_units import convert_to_nb_over_GeV4
-
-from calculation.plot_results import plot_cross_section
-
-from calculation.plot_results import plot_beam_spin_asymmetry
-
-from calculation.plot_results import plot_coefficient_contributions
 
 # Derived Kinematics | Epsilon | ε
 from derived_kinematics.epsilon import calculate_kinematics_epsilon
