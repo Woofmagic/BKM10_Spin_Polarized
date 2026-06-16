@@ -170,6 +170,25 @@ cython_debug/
 *.keras
 
 # Slurm jobs:
-.slurm
+*.slurm
 
-*-env
+# .png files:
+# [NOTE]: The decision to ignore image files is unfortunate, but we have to do this because
+# there are a million of them.
+*.png
+
+# .eps files:
+*eps
+
+# .csv files
+*.csv
+
+# NumPy Array files:
+*.npz
+*.npy
+
+# .txt files:
+*.txt
+
+# .json files
+*.json
